@@ -1444,80 +1444,1662 @@ var SETDEX_GEN8_SETS = {
 			]
 		}
 	},
-	"Bewear": {
-		"Assault Vest": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "252",
-				"df": "4"
-			},
-			"nature": "Adamant",
-			"ability": "Fluffy",
-			"item": "Assault Vest",
-			"moves": [
-				"Close Combat",
-				"Double-Edge",
-				"Iron Head",
-				"Darkest Lariat"
-			]
-		}
-	},
-	"Blastoise": {
-		"Wallbreaker": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "4",
-				"sa": "252"
-			},
-			"nature": "Modest",
-			"ability": "Torrent",
-			"item": "Blastoisinite",
-			"moves": [
-				"Water Pulse",
-				"Aura Sphere",
-				"Ice Beam",
-				"Dark Pulse"
-			]
-		}
-	},
-	"Bronzong": {
-		"Sash Trick Room": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "4",
-				"sa": "252"
-			},
-			"nature": "Quiet",
-			"ability": "Levitate",
-			"item": "Focus Sash",
-			"moves": [
-				"Steel Beam",
-				"Psychic",
-				"Body Press",
-				"Gyro Ball"
-			]
-		},
-		"Bulky Trick Room": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sa": "4"
-			},
-			"nature": "Relaxed",
-			"ability": "Levitate",
-			"item": "Kasib Berry",
-			"moves": [
-				"Steel Beam",
-				"Psychic",
-				"Body Press",
-				"Gyro Ball"
-			]
-		}
-	},
+  "Barbaracle": {
+    "Barbaracle-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Impish",
+      "ability": "Sniper",
+      "item": "Tough Claws",
+      "moves": [
+        "Sandstorm",
+        "Whirlpool",
+        "Poison Jab",
+        "Rest"
+      ]
+    },
+    "Barbaracle-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Tough Claws",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Bulk Up",
+        "Razor Shell",
+        "Sleep Talk",
+        "Rest"
+      ]
+    },
+     "Barbaracle-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Tough Claws",
+      "item": "Rindo Berry",
+      "moves": [
+        "Shell Smash",
+        "Liquidation",
+        "Rock Slide",
+        "Cross Chop"
+      ]
+    },
+     "Barbaracle-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Sniper",
+      "item": "Razor Fang",
+      "moves": [
+        "Stone Edge",
+        "Cross Chop",
+        "Razor Shell",
+        "Shadow Claw"
+      ]
+    }
+  },
+  "Barraskewda": {
+    "Barraskewda-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Swift Swim",
+      "item": "Leftovers",
+      "moves": [
+        "Poison Jab",
+        "Bounce",
+        "Dive",
+        "Protect"
+      ]
+    },
+    "Barraskewda-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Swift Swim",
+      "item": "Bright Powder",
+      "moves": [
+        "Acupressure",
+        "Rest",
+        "Sleep Talk",
+        "Waterfall"
+      ]
+    },
+     "Barraskewda-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Swift Swim",
+      "item": "Focus Sash",
+      "moves": [
+        "Drill Run",
+        "Night Slash",
+        "Slash",
+        "Focus Energy"
+      ]
+    },
+     "Barraskewda-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Swift Swim",
+      "item": "Life Orb",
+      "moves": [
+        "Close Combat",
+        "Liquidation",
+        "Poison Jab",
+        "Ice Fang"
+      ]
+    },
+     "Barraskewda-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Swift Swim",
+      "item": "Rindo Berry",
+      "moves": [
+        "Acupressure",
+        "Waterfall",
+        "Ice Fang",
+        "Drill Run"
+      ]
+    }
+  },
+  "Basculin": {
+    "Basculin-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Adaptability",
+      "item": "Bright Powder",
+      "moves": [
+        "Muddy Water",
+        "Icy Wind",
+        "Uproar",
+        "Protect"
+      ]
+    },
+    "Basculin-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Adaptability",
+      "item": "Salac Berry",
+      "moves": [
+        "Endure",
+        "Aqua Jet",
+        "Reversal",
+        "Endeavor"
+      ]
+    },
+     "Basculin-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Adaptability",
+      "item": "King's Rock",
+      "moves": [
+        "Agility",
+        "Waterfall",
+        "Zen Headbutt",
+        "Ice Fang"
+      ]
+    },
+     "Basculin-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Adaptability",
+      "item": "Expert Belt",
+      "moves": [
+        "Head Smash",
+        "Psychic Fangs",
+        "Liquidation",
+        "Crunch"
+      ]
+    }
+  },
+  "Beartic": {
+    "Beartic-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Swift Swim",
+      "item": "Leftovers",
+      "moves": [
+        "Yawn",
+        "Protect",
+        "Swords Dance",
+        "Frost Breath"
+      ]
+    },
+    "Beartic-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Modest",
+      "ability": "Snow Cloak",
+      "item": "Bright Powder",
+      "moves": [
+        "Rain Dance",
+        "Hail",
+        "Liquidation",
+        "Frost Breath"
+      ]
+    },
+     "Beartic-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Slush Rush",
+      "item": "King's Rock",
+      "moves": [
+        "Icicle Crash",
+        "Low Kick",
+        "Rock Slide",
+        "Throat Chop"
+      ]
+    },
+     "Beartic-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Swift Swim",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Yawn",
+        "Focus Punch",
+        "Avalanche",
+        "Aqua Jet"
+      ]
+    },
+     "Beartic-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Snow Cloak",
+      "item": "Damp Rock",
+      "moves": [
+        "Rain Dance",
+        "Liquidation",
+        "Superpower",
+        "Swords Dance"
+      ]
+    }
+  },
+  "Beheeyem": {
+    "Beheeyem-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Sassy",
+      "ability": "Analytic",
+      "item": "Leftovers",
+      "moves": [
+        "Cosmic Power",
+        "Stored Power",
+        "Protect",
+        "Tri Attack"
+      ]
+    },
+    "Beheeyem-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Sassy",
+      "ability": "Analytic",
+      "item": "Mental Herb",
+      "moves": [
+        "Protect",
+        "Trick Room",
+        "Imprison",
+        "Psychic"
+      ]
+    },
+     "Beheeyem-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Quiet",
+      "ability": "Analytic",
+      "item": "Weakness Policy",
+      "moves": [
+        "Psychic",
+        "Psyshock",
+        "Energy Ball",
+        "Psychic Terrain"
+      ]
+    },
+     "Beheeyem-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Quiet",
+      "ability": "Analytic",
+      "item": "Expert Belt",
+      "moves": [
+        "Psychic",
+        "Energy Ball",
+        "Shadow Ball",
+        "Flash Cannon"
+      ]
+    },
+     "Beheeyem-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Analytic",
+      "item": "Psychic Seed",
+      "moves": [
+        "Psychic Terrain",
+        "Psychic",
+        "Cosmic Power",
+        "Energy Ball"
+      ]
+    }
+  },
+  "Bellossom": {
+    "Bellossom-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Quiet",
+      "ability": "Chlorophyll",
+      "item": "Lum Berry",
+      "moves": [
+        "Petal Dance",
+        "Dazzling Gleam",
+        "Protect",
+        "Helping Hand"
+      ]
+    },
+    "Bellossom-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Chlorophyll",
+      "item": "Salac Berry",
+      "moves": [
+        "Leaf Blade",
+        "Flail",
+        "Quiver Dance",
+        "Baton Pass"
+      ]
+    },
+     "Bellossom-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Chlorophyll",
+      "item": "Expert Belt",
+      "moves": [
+        "Leaf Blade",
+        "Drain Punch",
+        "Play Rough",
+        "Swords Dance"
+      ]
+    },
+     "Bellossom-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Chlorophyll",
+      "item": "Heat Rock",
+      "moves": [
+        "Solar Beam",
+        "Moonblast",
+        "Nature Power",
+        "Sunny Day"
+      ]
+    }
+  },
+"Bewear": {
+    "Bewear-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Impish",
+      "ability": "Fluffy",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Taunt",
+        "Bulk Up",
+        "Drain Punch",
+        "Payback"
+      ]
+    },
+    "Bewear-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Fluffy",
+      "item": "King's Rock",
+      "moves": [
+        "Iron Head",
+        "Rock Slide",
+        "Zen Headbutt",
+        "Stomp"
+      ]
+    },
+     "Bewear-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Brave",
+      "ability": "Fluffy",
+      "item": "Quick Claw",
+      "moves": [
+        "Hammer Arm",
+        "Ice Punch",
+        "Thunder Punch",
+        "Zen Headbutt"
+      ]
+    },
+     "Bewear-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Fluffy",
+      "item": "Life Orb",
+      "moves": [
+        "Giga Impact",
+        "Close Combat",
+        "Darkest Lariat",
+        "High Horsepower"
+      ]
+    }
+  },
+"Bisharp": {
+    "Bisharp-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Defiant",
+      "item": "Chople Berry",
+      "moves": [
+        "Stealth Rock",
+        "Thunder Wave",
+        "Rock Tomb",
+        "Iron Head"
+      ]
+    },
+    "Bisharp-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Defiant",
+      "item": "Razor Fang",
+      "moves": [
+        "Guillotine",
+        "Thunder Wave",
+        "Night Slash",
+        "Psycho Cut"
+      ]
+    },
+     "Bisharp-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Defiant",
+      "item": "Expert Belt",
+      "moves": [
+        "Iron Head",
+        "Night Slash",
+        "Brick Break",
+        "Psycho Cut"
+      ]
+    },
+     "Bisharp-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Relaxed",
+      "ability": "Defiant",
+      "item": "Focus Sash",
+      "moves": [
+        "Metal Burst",
+        "Sucker Punch",
+        "Payback",
+        "Quick Guard"
+      ]
+    },
+     "Bisharp-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Defiant",
+      "item": "Black Glasses",
+      "moves": [
+        "Sucker Punch",
+        "Torment",
+        "Brick Break",
+        "Slash"
+      ]
+    }
+  },
+  "Blissey": {
+     "Blissey-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Serene Grace",
+      "item": "Mental Herb",
+      "moves": [
+        "Metronome",
+        "Flamethrower",
+        "Grass Knot",
+        "Safeguard"
+      ]
+    }
+  },
+  "Boltund": {
+    "Boltund-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Naive",
+      "ability": "Competitive",
+      "item": "Salac Berry",
+      "moves": [
+        "Electro Ball",
+        "Flame Charge",
+        "Thunder Wave",
+        "Howl"
+      ]
+    },
+    "Boltund-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Bold",
+      "ability": "Competitive",
+      "item": "Air Balloon",
+      "moves": [
+        "Eerie Impulse",
+        "Charm",
+        "Discharge",
+        "Hyper Voice"
+      ]
+    },
+     "Boltund-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Strong Jaw",
+      "item": "King's Rock",
+      "moves": [
+        "Psychic Fangs",
+        "Crunch",
+        "Fire Fang",
+        "Thunder Fang"
+      ]
+    },
+     "Boltund-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Strong Jaw",
+      "item": "Life Orb",
+      "moves": [
+        "Wild Charge",
+        "Double-Edge",
+        "Play Rough",
+        "Protect"
+      ]
+    },
+        "Boltund-5": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Naive",
+      "ability": "Competitive",
+      "item": "Salac Berry",
+      "moves": [
+        "Electro Ball",
+        "Flame Charge",
+        "Thunder Wave",
+        "Howl"
+      ]
+    },
+    "Boltund-6": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Bold",
+      "ability": "Competitive",
+      "item": "Air Balloon",
+      "moves": [
+        "Eerie Impulse",
+        "Charm",
+        "Discharge",
+        "Hyper Voice"
+      ]
+    },
+     "Boltund-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Strong Jaw",
+      "item": "King's Rock",
+      "moves": [
+        "Psychic Fangs",
+        "Crunch",
+        "Fire Fang",
+        "Thunder Fang"
+      ]
+    },
+     "Boltund-8": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Strong Jaw",
+      "item": "Life Orb",
+      "moves": [
+        "Wild Charge",
+        "Double-Edge",
+        "Play Rough",
+        "Protect"
+      ]
+    },
+     "Boltund-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ability": "Strong Jaw",
+      "item": "Cell Battery",
+      "moves": [
+        "Electrify",
+        "Wild Charge",
+        "Fire Fang",
+        "Crunch"
+      ]
+    }
+  },
+    "Bouffalant": {
+     "Bouffalant-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Reckless",
+      "item": "Kee Berry",
+      "moves": [
+        "Head Charge",
+        "Giga Impact",
+        "Earthquake",
+        "Revenge"
+      ]
+    }
+  },
+  "Braviary": {
+    "Braviary-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Defiant",
+      "item": "White Herb",
+      "moves": [
+        "Superpower",
+        "U-turn",
+        "Retaliate",
+        "Protect"
+      ]
+    },
+    "Braviary-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Defiant",
+      "item": "Eject Pack",
+      "moves": [
+        "Brave Bird",
+        "Close Combat",
+        "Giga Impact",
+        "Protect"
+      ]
+    },
+     "Braviary-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Defiant",
+      "item": "Expert Belt",
+      "moves": [
+        "Brave Bird",
+        "Close Combat",
+        "Shadow Claw",
+        "U-turn"
+      ]
+    },
+     "Braviary-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Sheer Force",
+      "item": "King's Rock",
+      "moves": [
+        "Tailwind",
+        "Rock Slide",
+        "Sky Attack",
+        "Iron Head"
+      ]
+    },
+     "Braviary-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "nature": "Adamant",
+      "ability": "Sheer Force",
+      "item": "Adrenaline Orb",
+      "moves": [
+        "Brave Bird",
+        "Iron Head",
+        "Bulk Up",
+        "Whirlwind"
+      ]
+    }
+  },
+"Bronzong": {
+    "Bronzong-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "Lum Berry",
+      "moves": [
+        "Rain Dance",
+        "Sunny Day",
+        "Sandstorm",
+        "Weather Ball"
+      ]
+    },
+    "Bronzong-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Heavy Metal",
+      "item": "Toxic Orb",
+      "moves": [
+        "Trick",
+        "Stealth Rock",
+        "Heavy Slam",
+        "Protect"
+      ]
+    },
+     "Bronzong-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "Leftovers",
+      "moves": [
+        "Psychic",
+        "Flash Cannon",
+        "Protect",
+        "Calm Mind"
+      ]
+    },
+     "Bronzong-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Levitate",
+      "item": "Mental Herb",
+      "moves": [
+        "Gyro Ball",
+        "Zen Headbutt",
+        "Earthquake",
+        "Trick Room"
+      ]
+    }
+  },
+  "Butterfree": {
+    "Butterfree-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Timid",
+      "ability": "Tinted Lens",
+      "item": "Charti Berry",
+      "moves": [
+        "Pollen Puff",
+        "Energy Ball",
+        "Tailwind",
+        "Safeguard"
+      ]
+    },
+    "Butterfree-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Tinted Lens",
+      "item": "Big Root",
+      "moves": [
+        "Giga Drain",
+        "Draining Kiss",
+        "Sleep Powder",
+        "Substitute"
+      ]
+    },
+     "Butterfree-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Tinted Lens",
+      "item": "Choice Scarf",
+      "moves": [
+        "Air Slash",
+        "Bug Buzz",
+        "Energy Ball",
+        "Shadow Ball"
+      ]
+    },
+     "Butterfree-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Tinted Lens",
+      "item": "Focus Sash",
+      "moves": [
+        "Quiver Dance",
+        "Bug Buzz",
+        "Energy Ball",
+        "Hurricane"
+      ]
+    },
+     "Butterfree-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Tinted Lens",
+      "item": "Leftovers",
+      "moves": [
+        "Sleep Powder",
+        "Substitute",
+        "Quiver Dance",
+        "Hurricane"
+      ]
+    }
+  },
 	"Charizard": {
 		"Solar Power": {
 			"level": 50,
@@ -4266,4 +5848,4 @@ var SETDEX_GEN8_SETS = {
 			]
 		}
 	}
-}
+};
