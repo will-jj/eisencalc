@@ -3100,247 +3100,1910 @@ var SETDEX_GEN8_SETS = {
       ]
     }
   },
+  "Centiskorch": {
+    "Centiskorch-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Bold",
+      "ability": "Flash Fire",
+      "item": "Grip Claw",
+      "moves": [
+        "Scald",
+        "Heat Wave",
+        "Protect",
+        "Wrap"
+      ]
+    },
+    "Centiskorch-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Flash Fire",
+      "item": "Charti Berry",
+      "moves": [
+        "Thunder Fang",
+        "Fire Fang",
+        "Lunge",
+        "Knock Off"
+      ]
+    },
+     "Centiskorch-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Flash Fire",
+      "item": "White Herb",
+      "moves": [
+        "Sunny Day",
+        "Solar Beam",
+        "Overheat",
+        "Bug Buzz"
+      ]
+    },
+     "Centiskorch-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Flash Fire",
+      "item": "Leftovers",
+      "moves": [
+        "Flare Blitz",
+        "Leech Life",
+        "Coil",
+        "Protect"
+      ]
+    },
+        "Centiskorch-5": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Bold",
+      "ability": "Flash Fire",
+      "item": "Grip Claw",
+      "moves": [
+        "Scald",
+        "Heat Wave",
+        "Protect",
+        "Wrap"
+      ]
+    },
+    "Centiskorch-6": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Flash Fire",
+      "item": "Charti Berry",
+      "moves": [
+        "Thunder Fang",
+        "Fire Fang",
+        "Lunge",
+        "Knock Off"
+      ]
+    },
+     "Centiskorch-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Flash Fire",
+      "item": "White Herb",
+      "moves": [
+        "Sunny Day",
+        "Solar Beam",
+        "Overheat",
+        "Bug Buzz"
+      ]
+    },
+     "Centiskorch-8": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Flash Fire",
+      "item": "Leftovers",
+      "moves": [
+        "Flare Blitz",
+        "Leech Life",
+        "Coil",
+        "Protect"
+      ]
+    },
+     "Centiskorch-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ability": "Flash Fire",
+      "item": "Leftovers",
+      "moves": [
+        "Scorching Sands",
+        "Burn Up",
+        "Skitter Smack",
+        "Lunge"
+      ]
+    }
+  },
+  "Chandelure": {
+    "Chandelure-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Bold",
+      "ability": "Flash Fire",
+      "item": "Grip Claw",
+      "moves": [
+        "Curse",
+        "Fire Spin",
+        "Protect",
+        "Rest"
+      ]
+    },
+    "Chandelure-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Quiet",
+      "ability": "Flash Fire",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Trick Room",
+        "Curse",
+        "Flamethrower",
+        "Shadow Ball"
+      ]
+    },
+     "Chandelure-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Flash Fire",
+      "item": "Choice Scarf",
+      "moves": [
+        "Fire Blast",
+        "Shadow Ball",
+        "Energy Ball",
+        "Psychic"
+      ]
+    },
+     "Chandelure-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Flash Fire",
+      "item": "White Herb",
+      "moves": [
+        "Overheat",
+        "Shadow Ball",
+        "Energy Ball",
+        "Haze"
+      ]
+    }
 	"Charizard": {
-		"Solar Power": {
-			"level": 50,
-			"evs": {
-				"sa": "252",
-				"sd": "4",
-				"sp": "252"
-			},
-			"nature": "Timid",
-			"ability": "Solar Power",
-			"item": "Heavy-Duty Boots",
-			"moves": [
-				"Flamethrower",
-				"Air Slash",
-				"Solar Beam",
-				"Dragon Pulse"
-			]
-		},
-		"Belly Drum": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Blaze",
-			"item": "",
-			"moves": [
-				"Acrobatics",
-				"Fire Punch",
-				"Steel Wing",
-				"Earthquake"
-			]
-		},
-	},
-	"Cinccino": {
-		"Offensive": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Skill Link",
-			"item": "King's Rock",
-			"moves": [
-				"Tail Slap",
-				"Rock Blast",
-				"Bullet Seed",
-				"U-turn"
-			]
-		}
-	},
-	"Cinderace": {
-		"Libero": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Libero",
-			"item": "Life Orb",
-			"moves": [
-				"Pyro Ball",
-				"High Jump Kick",
-				"Sucker Punch",
-				"Bounce"
-			],
-			"isGmax": true
-		},
-		"Blaze": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Blaze",
-			"item": "Focus Sash",
-			"moves": [
-				"Pyro Ball",
-				"High Jump Kick",
-				"Sucker Punch",
-				"Zen Headbutt"
-			],
-			"isGmax": true
-		}
-	},
+    "Leon's Charizard": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Timid",
+      "ability": "Blaze",
+      "item": "Charti Berry",
+      "moves": [
+        "Fire Blast",
+        "Hurricane",
+        "Solar Beam",
+        "Weather Ball"
+      ]
+    },
+    "Charizard-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Blaze",
+      "item": "Charti Berry",
+      "moves": [
+        "Fire Pledge",
+        "Dragon Pulse",
+        "Air Slash",
+        "Protect"
+      ]
+    },
+    "Charizard-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Solar Power",
+      "item": "Life Orb",
+      "moves": [
+        "Fire Blast",
+        "Solar Beam",
+        "Hurricane",
+        "Sunny Day"
+      ]
+    }
+"Cherrim": {
+    "Cherrim-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Flower Gift",
+      "item": "Leftovers",
+      "moves": [
+        "Protect",
+        "Draining Kiss",
+        "Giga Drain",
+        "Sunny Day"
+      ]
+    },
+    "Cherrim-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Modest",
+      "ability": "Flower Gift",
+      "item": "Lum Berry",
+      "moves": [
+        "Petal Dance",
+        "Helping Hand",
+        "Protect",
+        "Sunny Day"
+      ]
+    },
+     "Cherrim-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Flower Gift",
+      "item": "Focus Sash",
+      "moves": [
+        "Dazzling Gleam",
+        "Nature Power",
+        "Solar Beam",
+        "Sunny Day"
+      ]
+    },
+     "Cherrim-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Flower Gift",
+      "item": "Heat Rock",
+      "moves": [
+        "Solar Blade",
+        "Play Rough",
+        "Protect",
+        "Sunny Day"
+      ]
+    }
+  },
+  "Cinccino": {
+    "Cinccino-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Timid",
+      "ability": "Technician",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Hyper Voice",
+        "Dazzling Gleam",
+        "Tail Whip",
+        "Helping Hand"
+      ]
+    },
+    "Cinccino-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Technician",
+      "item": "Focus Sash",
+      "moves": [
+        "Thunder Wave",
+        "U-turn",
+        "Encore",
+        "Tail Slap"
+      ]
+    },
+     "Cinccino-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Calm",
+      "ability": "Technician",
+      "item": "Assault Vest",
+      "moves": [
+        "Hyper Voice",
+        "Thunderbolt",
+        "Grass Knot",
+        "Dazzling Gleam"
+      ]
+    },
+     "Cinccino-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Technician",
+      "item": "King's Rock",
+      "moves": [
+        "Rock Blast",
+        "Bullet Seed",
+        "Tail Slap",
+        "Knock Off"
+      ]
+    },
+     "Cinccino-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Technician",
+      "item": "Metronome",
+      "moves": [
+        "Tail Slap",
+        "Rock Blast",
+        "Bullet Seed",
+        "Tripe Axel"
+      ]
+    }
+  },
+  "Cinderace": {
+    "Cinderace-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Libero",
+      "item": "Choice Scarf",
+      "moves": [
+        "Fire Pledge",
+        "Shadow Ball",
+        "Focus Blast",
+        "Electro Ball"
+      ]
+    },
+    "Cinderace-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Libero",
+      "item": "Focus Sash",
+      "moves": [
+        "Blaze Kick",
+        "Feint",
+        "Focus Sash",
+        "Sucker Punch"
+      ]
+    },
+     "Cinderace-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Libero",
+      "item": "King's Rock",
+      "moves": [
+        "Double Kick",
+        "Fire Fang",
+        "Zen Headbutt",
+        "Iron Head"
+      ]
+    },
+     "Cinderace-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Libero",
+      "item": "Life Orb",
+      "moves": [
+        "Double-Edge",
+        "Pyro Ball",
+        "High Jump Kick",
+        "Sucker Punch"
+      ]
+    },
+    "Cinderace-5": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Libero",
+      "item": "Choice Scarf",
+      "moves": [
+        "Fire Pledge",
+        "Shadow Ball",
+        "Focus Blast",
+        "Electro Ball"
+      ]
+    },
+    "Cinderace-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Libero",
+      "item": "Focus Sash",
+      "moves": [
+        "Blaze Kick",
+        "Feint",
+        "Focus Sash",
+        "Sucker Punch"
+      ]
+    },
+     "Cinderace-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Libero",
+      "item": "King's Rock",
+      "moves": [
+        "Double Kick",
+        "Fire Fang",
+        "Zen Headbutt",
+        "Iron Head"
+      ]
+    },
+     "Cinderace-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Libero",
+      "item": "Life Orb",
+      "moves": [
+        "Double-Edge",
+        "Pyro Ball",
+        "High Jump Kick",
+        "Sucker Punch"
+      ]
+    },
+    "Cinderace-1 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Modest",
+      "ability": "Libero",
+      "item": "Choice Scarf",
+      "moves": [
+        "Fire Pledge",
+        "Shadow Ball",
+        "Focus Blast",
+        "Electro Ball"
+      ]
+    },
+    "Cinderace-2 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Adamant",
+      "ability": "Libero",
+      "item": "Focus Sash",
+      "moves": [
+        "Blaze Kick",
+        "Feint",
+        "Focus Sash",
+        "Sucker Punch"
+      ]
+    },
+     "Cinderace-3 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Jolly",
+      "ability": "Libero",
+      "item": "King's Rock",
+      "moves": [
+        "Double Kick",
+        "Fire Fang",
+        "Zen Headbutt",
+        "Iron Head"
+      ]
+    },
+     "Cinderace-4 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Adamant",
+      "ability": "Libero",
+      "item": "Life Orb",
+      "moves": [
+        "Double-Edge",
+        "Pyro Ball",
+        "High Jump Kick",
+        "Sucker Punch"
+      ]
+    }
+  },
+      "Clawitzer": {
+     "Clawitzer-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Mega Launcher",
+      "item": "Misty Seed",
+      "moves": [
+        "Water Pulse",
+        "Dragon Pulse",
+        "Terrain Pulse",
+        "Aqua Jet"
+      ]
+    }
+  },
+  "Claydol": {
+    "Claydol-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Levitate",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Stealth Rock",
+        "Earth Power",
+        "Eerie Impulse",
+        "Extrasensory"
+      ]
+    },
+    "Claydol-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Levitate",
+      "item": "Weakness Policy",
+      "moves": [
+        "Sunny Day",
+        "Sandstorm",
+        "Solar Beam",
+        "Earth Power"
+      ]
+    },
+     "Claydol-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Brave",
+      "ability": "Levitate",
+      "item": "Room Service",
+      "moves": [
+        "Explosion",
+        "Zen Headbutt",
+        "Drill Run",
+        "Trick Room"
+      ]
+    },
+     "Claydol-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Levitate",
+      "item": "Leftovers",
+      "moves": [
+        "Protect",
+        "Earth Power",
+        "Psychic",
+        "Cosmic Power"
+      ]
+    }
+  },
 	"Clefable": {
-		"Bulky": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sd": "4"
-			},
-			"nature": "Bold",
-			"ability": "Magic Guard",
-			"item": "Kee Berry",
-			"moves": [
-				"Moonblast",
-				"Stored Power",
-				"Fire Blast",
-				"Thunderbolt"
-			]
-		},
-		"Offensive": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"sa": "252",
-				"sd": "4"
-			},
-			"nature": "Modest",
-			"ability": "Magic Guard",
-			"item": "Life Orb",
-			"moves": [
-				"Moonblast",
-				"Stored Power",
-				"Fire Blast",
-				"Thunderbolt"
-			]
-		}
-	},
+    "Clefable-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Calm",
+      "ability": "Unaware",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Encore",
+        "Light Screen",
+        "Dazzling Gleam",
+        "Follow Me"
+      ]
+    },
+    "Clefable-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Sassy",
+      "ability": "Unaware",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Metronome",
+        "Protect",
+        "Moonlight",
+        "Follow Me"
+      ]
+    },
+     "Clefable-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Calm",
+      "ability": "Unaware",
+      "item": "Leftovers",
+      "moves": [
+        "Protect",
+        "Cosmic Power",
+        "Moonblast",
+        "Stored Power"
+      ]
+    },
+     "Clefable-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Unaware",
+      "item": "Life Orb",
+      "moves": [
+        "Moonblast",
+        "Fire Blast",
+        "Blizzard",
+        "Fire Blast"
+      ]
+    }
+  },
 	"Cloyster": {
-		"Shell Smash": {
-			"level": 50,
-			"evs": {
-				"hp": "108",
-				"at": "252",
-				"df": "4",
-				"sd": "4",
-				"sp": "140"
-			},
-			"nature": "Adamant",
-			"ability": "Skill Link",
-			"item": "King's Rock",
-			"moves": [
-				"Razor Shell",
-				"Icicle Spear",
-				"Rock Blast",
-				"Ice Shard"
-			]
-		},
-		"Iapapa Smash": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "244",
-				"sp": "12",
-			},
-			"nature": "Impish",
-			"ability": "Skill Link",
-			"item": "Iapapa Berry",
-			"moves": [
-				"Shell Smash",
-				"Icicle Spear",
-				"Rock Blast",
-				"Liquidation"
-			]
-		}
-	},
-	"Conkeldurr": {
-		"Assault Vest": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "252",
-				"df": "4"
-			},
-			"nature": "Adamant",
-			"ability": "Guts",
-			"item": "Assault Vest",
-			"moves": [
-				"Drain Punch",
-				"Mach Punch",
-				"Thunder Punch",
-				"Ice Punch"
-			]
-		}
-	},
-	"Corsola-Galar": {
-		"Defensive": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sd": "4"
-			},
-			"nature": "Bold",
-			"ability": "Cursed Body",
-			"item": "Eviolite",
-			"moves": [
-				"Night Shade",
-				"Hex",
-				"Scald",
-				"Giga Drain"
-			]
-		}
-	},
+    "Cloyster-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Calm",
+      "ability": "Overcoat",
+      "item": "Lum Berry",
+      "moves": [
+        "Hail",
+        "Rain Dance",
+        "Weather Ball",
+        "Protect"
+      ]
+    },
+    "Cloyster-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Overcoat",
+      "item": "Expert Belt",
+      "moves": [
+        "Poison Jab",
+        "Smart Strike",
+        "Icicle Crash",
+        "Razor Shell"
+      ]
+    },
+     "Cloyster-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Relaxed",
+      "ability": "Overcoat",
+      "item": "Leftovers",
+      "moves": [
+        "Protect",
+        "Blizzard",
+        "Life Dew",
+        "Toxic Spikes"
+      ]
+    },
+     "Cloyster-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Skill Link",
+      "item": "Focus Sash",
+      "moves": [
+        "Pin Missile",
+        "Rock Blast",
+        "Icicle Spear",
+        "Shell Smash"
+      ]
+    },
+     "Cloyster-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Skill Link",
+      "item": "Shell Bell",
+      "moves": [
+        "Shell Smash",
+        "Icicle Spear",
+        "Rock Blast",
+        "Razor Shell"
+      ]
+    }
+  },
+  "Coalossal": {
+    "Coalossal-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Impish",
+      "ability": "Flash Fire",
+      "item": "Bright Powder",
+      "moves": [
+        "Stealth Rock",
+        "Will-O-Wisp",
+        "Protect",
+        "Mud-Slap"
+      ]
+    },
+    "Coalossal-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Flash Fire",
+      "item": "Expert Belt",
+      "moves": [
+        "Tar Shot",
+        "Heat Crash",
+        "High Horsepower",
+        "Iron Head"
+      ]
+    },
+     "Coalossal-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Flash Fire",
+      "item": "Assault Vest",
+      "moves": [
+        "Earth Power",
+        "Fire Blast",
+        "Ancient Power",
+        "Burn Up"
+      ]
+    },
+     "Coalossal-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Flash Fire",
+      "item": "Quick Claw",
+      "moves": [
+        "Stone Edge",
+        "Flare Blitz",
+        "Earthquake",
+        "Explosion"
+      ]
+    },
+     "Coalossal-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Flash Fire",
+      "item": "Liechi Berry",
+      "moves": [
+        "Heat Crash",
+        "Rock Blast",
+        "Tar Shot",
+        "Endure"
+      ]
+    }
+  },
+  "Comfey": {
+     "Comfey-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Triage",
+      "item": "Big Root",
+      "moves": [
+        "Draining Kiss",
+        "Giga Drain",
+        "Leech Seed",
+        "Grassy Terrain"
+      ]
+    }
+  },
+"Conkeldurr": {
+    "Conkeldurr-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Guts",
+      "item": "Flame Orb",
+      "moves": [
+        "Payback",
+        "Facade",
+        "Drain Punch",
+        "Protect"
+      ]
+    },
+    "Conkeldurr-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Iron Fist",
+      "item": "Bright Powder",
+      "moves": [
+        "Substitute",
+        "Payback",
+        "Focus Punch",
+        "Mach Punch"
+      ]
+    },
+     "Conkeldurr-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Iron Fist",
+      "item": "Expert Belt",
+      "moves": [
+        "Fire Punch",
+        "Ice Punch",
+        "Thunder Punch",
+        "Power-Up Punch"
+      ]
+    },
+     "Conkeldurr-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Iron Fist",
+      "item": "Life Orb",
+      "moves": [
+        "Close Combat",
+        "Stone Edge",
+        "High Horsepower",
+        "Mach Punch"
+      ]
+    },
+     "Conkeldurr-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Iron Fist",
+      "item": "Life Orb",
+      "moves": [
+        "Focus Punch",
+        "Low Kick",
+        "Stone Edge",
+        "Bulk Up"
+      ]
+    }
+  },
+  "Copperajah": {
+    "Copperajah-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Impish",
+      "ability": "Heavy Metal",
+      "item": "Leftovers",
+      "moves": [
+        "Whirlwind",
+        "Stealth Rock",
+        "Heavy Slam",
+        "Protect"
+      ]
+    },
+    "Copperajah-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Modest",
+      "ability": "Sheer Force",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Belch",
+        "Earth Power",
+        "Flash Cannon",
+        "Snarl"
+      ]
+    },
+     "Copperajah-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Sheer Force",
+      "item": "Expert Belt",
+      "moves": [
+        "Play Rough",
+        "Iron Head",
+        "Zen Headbutt",
+        "Stone Edge"
+      ]
+    },
+     "Copperajah-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Heavy Metal",
+      "item": "Quick Claw",
+      "moves": [
+        "Heavy Slam",
+        "Heat Crash",
+        "High Horsepower",
+        "Play Rough"
+      ]
+    }
+  },
 	"Corviknight": {
-		"Iron Defence": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sd": "4"
-			},
-			"nature": "Impish",
-			"ability": "Mirror Armor",
-			"item": "Rocky Helmet",
-			"moves": [
-				"Brave Bird",
-				"Body Press",
-				"Iron Head",
-				"U-turn"
-			]
-		},
-		"Pressure Stall": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "4",
-				"sd": "252",
-			},
-			"nature": "Careful",
-			"ability": "Pressure",
-			"item": "",
-			"moves": [
-				"Drill Peck",
-				"Body Press",
-				"Iron Head",
-				"U-turn"
-			]
-		}
-	},
+    "Corviknight-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Impish",
+      "ability": "Mirror Armor",
+      "item": "Lum Berry",
+      "moves": [
+        "Drill Peck",
+        "Iron Head",
+        "Light Screen",
+        "Tailwind"
+      ]
+    },
+    "Corviknight-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Mirror Armor",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Spite",
+        "Swagger",
+        "Screech",
+        "Fly"
+      ]
+    },
+     "Corviknight-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Mirror Armor",
+      "item": "Leftovers",
+      "moves": [
+        "Fake Tears",
+        "Nasty Plot",
+        "Flash Cannon",
+        "Hurricane"
+      ]
+    },
+     "Corviknight-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Mirror Armor",
+      "item": "Salac Berry",
+      "moves": [
+        "Brave Bird",
+        "Body Press",
+        "Steel Wing",
+        "Bulk Up"
+      ]
+    },
+     "Corviknight-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Mirror Armor",
+      "item": "Petaya Berry",
+      "moves": [
+        "Steel Beam",
+        "Metal Sound",
+        "Taunt",
+        "Spite"
+      ]
+    }
+  },
 	"Darmanitan-Galar": {
 		"Scarf": {
 			"level": 50,
