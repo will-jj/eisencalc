@@ -3925,7 +3925,7 @@ var SETDEX_GEN8_SETS = {
         "Electro Ball"
       ]
     },
-    "Cinderace-2": {
+    "Cinderace-6": {
       "level": "50",
       "evs": {
         "hp": 0,
@@ -3953,7 +3953,7 @@ var SETDEX_GEN8_SETS = {
         "Sucker Punch"
       ]
     },
-     "Cinderace-3": {
+     "Cinderace-7": {
       "level": "50",
       "evs": {
         "hp": 0,
@@ -3981,7 +3981,7 @@ var SETDEX_GEN8_SETS = {
         "Iron Head"
       ]
     },
-     "Cinderace-4": {
+     "Cinderace-8": {
       "level": "50",
       "evs": {
         "hp": 0,
@@ -5006,281 +5006,2873 @@ var SETDEX_GEN8_SETS = {
       ]
     }
   },
+  "Cramorant": {
+    "Cramorant-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Gulp Missile",
+      "item": "Binding Band",
+      "moves": [
+        "Dive",
+        "Whirlpool",
+        "Protect",
+        "Fly"
+      ]
+    },
+    "Cramorant-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Gulp Missile",
+      "item": "Wacan Berry",
+      "moves": [
+        "Surf",
+        "Air Slash",
+        "Ice Beam",
+        "Belch"
+      ]
+    },
+     "Cramorant-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Calm",
+      "ability": "Gulp Missile",
+      "item": "Damp Rock",
+      "moves": [
+        "Surf",
+        "Hurricane",
+        "Blizzard",
+        "Rain Dance"
+      ]
+    },
+     "Cramorant-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Gulp Missile",
+      "item": "Power Herb",
+      "moves": [
+        "Dive",
+        "Protect",
+        "Brave Bird",
+        "Steel Wing"
+      ]
+    },
+     "Cramorant-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Gulp Missile",
+      "item": "Leftovers",
+      "moves": [
+        "Surf",
+        "Aqua Ring",
+        "Feather Dance",
+        "Endure"
+      ]
+    }
+  },
+  "Crawdaunt": {
+    "Crawdaunt-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Bold",
+      "ability": "Adaptability",
+      "item": "Leftovers",
+      "moves": [
+        "Snarl",
+        "Ancient Power",
+        "Rest",
+        "Sleep Talk"
+      ]
+    },
+    "Crawdaunt-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Brave",
+      "ability": "Adaptability",
+      "item": "Focus Sash",
+      "moves": [
+        "Payback",
+        "Protect",
+        "Revenge",
+        "Avalanche"
+      ]
+    },
+     "Crawdaunt-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Adaptability",
+      "item": "Quick Claw",
+      "moves": [
+        "Scald",
+        "Dark Pulse",
+        "Ice Beam",
+        "Nasty Plot"
+      ]
+    },
+     "Crawdaunt-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Adaptability",
+      "item": "Choice Scarf",
+      "moves": [
+        "Crunch",
+        "X-Scissor",
+        "Crabhammer",
+        "Brick Break"
+      ]
+    },
+     "Crawdaunt-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Adaptability",
+      "item": "Assault Vest",
+      "moves": [
+        "Knock Off",
+        "Crabhammer",
+        "Brick Break",
+        "Rock Tomb"
+      ]
+    }
+  },
+  "Crustle": {
+    "Crustle-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Sturdy",
+      "item": "Quick Claw",
+      "moves": [
+        "Swords Dance",
+        "Poison Jab",
+        "X-Scissor",
+        "Rock Slide"
+      ]
+    },
+    "Crustle-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Careful",
+      "ability": "Sturdy",
+      "item": "Leftovers",
+      "moves": [
+        "Body Press",
+        "Stealth Rock",
+        "Poison Jab",
+        "Protect"
+      ]
+    },
+     "Crustle-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Sturdy",
+      "item": "Scope Lens",
+      "moves": [
+        "Night Slash",
+        "Slash",
+        "Stone Edge",
+        "Protect"
+      ]
+    },
+     "Crustle-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Sturdy",
+      "item": "Salac Berry",
+      "moves": [
+        "Shell Smash",
+        "Knock Off",
+        "Stone Edge",
+        "X-Scissor"
+      ]
+    },
+     "Crustle-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "nature": "Impish",
+      "ability": "Sturdy",
+      "item": "Smooth Rock",
+      "moves": [
+        "Sandstorm",
+        "Body Press",
+        "Heavy Slam",
+        "Iron Defense"
+      ]
+    }
+  },
+  "Cursola": {
+    "Cursola-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Perish Body",
+      "item": "Leftovers",
+      "moves": [
+        "Stealth Rock",
+        "Curse",
+        "Giga Drain",
+        "Protect"
+      ]
+    },
+    "Cursola-2": {
+      "level": "50",
+      "evs": {
+        "hp": 20,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Bold",
+      "ability": "Perish Body",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Will-O-Wisp",
+        "Strength Sap",
+        "Hex",
+        "Amnesia"
+      ]
+    },
+     "Cursola-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Weak Armor",
+      "item": "Weakness Policy",
+      "moves": [
+        "Shadow Ball",
+        "Revenge",
+        "Stone Edge",
+        "Leech Life"
+      ]
+    },
+     "Cursola-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Perish Body",
+      "item": "Assault Vest",
+      "moves": [
+        "Power Gem",
+        "Shadow Ball",
+        "Scald",
+        "Earth Power"
+      ]
+    },
+     "Cursola-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Perish Body",
+      "item": "Ring Target",
+      "moves": [
+        "Shadow Ball",
+        "Spite",
+        "Grudge",
+        "Endure"
+      ]
+    }
+  },
 	"Darmanitan-Galar": {
-		"Scarf": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Gorilla Tactics",
-			"item": "Choice Scarf",
-			"moves": [
-				"Icicle Crash",
-				"Flare Blitz",
-				"Earthquake",
-				"U-turn"
-			]
-		},
-		"Band": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Gorilla Tactics",
-			"item": "Choice Band",
-			"moves": [
-				"Icicle Crash",
-				"Flare Blitz",
-				"Earthquake",
-				"U-turn"
-			]
-		},
-		"Zen Mode": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Zen Mode",
-			"item": "Salac Berry",
-			"moves": [
-				"Ice Punch",
-				"Fire Punch",
-				"Earthquake",
-				"Brick Break"
-			]
-		}
-	},
-	"Diggersby": {
-		"Focus Sash": {
-			"level": 50,
-			"evs": {
-				"at": "252",
-				"df": "4",
-				"sp": "252"
-			},
-			"nature": "Adamant",
-			"ability": "Huge Power",
-			"item": "Focus Sash",
-			"moves": [
-				"Earthquake",
-				"Quick Attack",
-				"Bounce",
-				"Thunder Punch"
-			]
-		},
-		"Normal Gem Dynamaxer": {
-			"level": 50,
-			"evs": {
-				"at": "252",
-				"df": "4",
-				"sp": "252"
-			},
-			"nature": "Adamant",
-			"ability": "Huge Power",
-			"item": "Normal Gem",
-			"moves": [
-				"Giga Impact",
-				"Earthquake",
-				"Bounce",
-				"Wild Charge"
-			]
-		}
-	},
-	"Ditto": {
-		"did they not use Imposter..?": {
-			"level": 50,
-			"evs": {
-				"hp": 252,
-				"df": 252,
-				"sd": 4,
-			},
-			"ivs": {
-				"at": 0,
-				"sp": 0,
-			},
-			"nature": "Relaxed",
-			"ability": "Imposter",
-			"item": "Choice Scarf",
-			"moves": [
-				"Transform",
-				"",
-				"",
-				""
-			]
-		}
-	},
-	"Dracovish": {
-		"Standard": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Adamant",
-			"ability": "Strong Jaw",
-			"item": "Choice Scarf",
-			"moves": [
-				"Fisheous Rend (Doubled)",
-				"Crunch",
-				"Psychic Fangs",
-				"Fisheous Rend"
-			]
-		}
-	},
+    "Darmanitan-G-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Gorilla Tactics",
+      "item": "Eject Button",
+      "moves": [
+        "Yawn",
+        "U-turn",
+        "Ice Fang",
+        "Fire Fang"
+      ]
+    },
+    "Darmanitan-G-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Gorilla Tactics",
+      "item": "Charti Berry",
+      "moves": [
+        "Power-Up Punch",
+        "Fire Punch",
+        "Ice Punch",
+        "Body Slam"
+      ]
+    },
+     "Darmanitan-G-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Gorilla Tactics",
+      "item": "King's Rock",
+      "moves": [
+        "Icicle Crash",
+        "Rock Slide",
+        "Iron Head",
+        "Zen Headbutt"
+      ]
+    },
+     "Darmanitan-G-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Gorilla Tactics",
+      "item": "Expert Belt",
+      "moves": [
+        "Stone Edge",
+        "Flare Blitz",
+        "Hammer Arm",
+        "Icicle Crash"
+      ]
+    }
+  },
+  "Dedenne": {
+     "Dedenne-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Timid",
+      "ability": "Cheek Pouch",
+      "item": "Air Balloon",
+      "moves": [
+        "Parabolic Charge",
+        "Dazzling Gleam",
+        "Super Fang",
+        "Charm"
+      ]
+    }
+  },
+  "Delibird": {
+    "Delibird-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Timid",
+      "ability": "Hustle",
+      "item": "Light Clay",
+      "moves": [
+        "Rapid Spin",
+        "Icy Wind",
+        "Aurora Veil",
+        "Hail"
+      ]
+    },
+    "Delibird-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Hustle",
+      "item": "King's Rock",
+      "moves": [
+        "Quick Attack",
+        "Fake Out",
+        "Ice Shard",
+        "Destiny Bond"
+      ]
+    },
+     "Delibird-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Hustle",
+      "item": "Focus Sash",
+      "moves": [
+        "Protect",
+        "Freeze-Dry",
+        "Ice Shard",
+        "Counter"
+      ]
+    },
+     "Delibird-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Hustle",
+      "item": "Choice Band",
+      "moves": [
+        "Drill Peck",
+        "Seed Bomb",
+        "Ice Punch",
+        "Brick Break"
+      ]
+    }
+  },
+  "Dhelmise": {
+    "Dhelmise-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Steelworker",
+      "item": "Assault Vest",
+      "moves": [
+        "Grass Knot",
+        "Flash Cannon",
+        "Shadow Ball",
+        "Hydro Pump"
+      ]
+    },
+    "Dhelmise-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Relaxed",
+      "ability": "Steelworker",
+      "item": "Binding Band",
+      "moves": [
+        "Whirlpool",
+        "Protect",
+        "Giga Drain",
+        "Phantom Force"
+      ]
+    },
+     "Dhelmise-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Steelworker",
+      "item": "Expert Belt",
+      "moves": [
+        "Anchor Shot",
+        "Power Whip",
+        "Phantom Force",
+        "Liquidation"
+      ]
+    },
+     "Dhelmise-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Quiet",
+      "ability": "Steelworker",
+      "item": "Weakness Policy",
+      "moves": [
+        "Gyro Ball",
+        "Power Whip",
+        "Shadow Ball",
+        "Hydro Pump"
+      ]
+    }
+  },
+"Diggersby": {
+    "Diggersby-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Huge Power",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Mega Kick",
+        "Stomping Tantrum",
+        "Leer",
+        "Quick Attack"
+      ]
+    },
+    "Diggersby-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Huge Power",
+      "item": "Binding Band",
+      "moves": [
+        "Bounce",
+        "Dig",
+        "Quick Attack",
+        "Sand Tomb"
+      ]
+    },
+     "Diggersby-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Cheek Pouch",
+      "item": "Assault Vest",
+      "moves": [
+        "Earth Power",
+        "Sludge Bomb",
+        "Uproar",
+        "Foul Play"
+      ]
+    },
+     "Diggersby-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Huge Power",
+      "item": "Zoom Lens",
+      "moves": [
+        "Hammer Arm",
+        "Iron Tail",
+        "Stone Edge",
+        "Gunk Shot"
+      ]
+    }
+  },
+"Ditto": {
+    "Ditto-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Timid",
+      "ability": "Limber",
+      "item": "Lum Berry",
+      "moves": [
+        "Transform"
+      ]
+    },
+    "Ditto-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Limber",
+      "item": "Bright Powder",
+      "moves": [
+        "Transform"
+      ]
+    },
+     "Ditto-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Limber",
+      "item": "Expert Belt",
+      "moves": [
+        "Transform"
+      ]
+    },
+     "Ditto-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Limber",
+      "item": "Choice Scarf",
+      "moves": [
+        "Transform"
+      ]
+    }
+  },
+"Dracovish": {
+    "Dracovish-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Strong Jaw",
+      "item": "Binding Band",
+      "moves": [
+        "Whirlpool",
+        "Protect",
+        "Dive",
+        "Leech Life"
+      ]
+    },
+    "Dracovish-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Strong Jaw",
+      "item": "Choice Scarf",
+      "moves": [
+        "Crunch",
+        "Ice Fang",
+        "Psychic Fangs",
+        "Super Fang"
+      ]
+    },
+     "Dracovish-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Water Absorb",
+      "item": "King's Rock",
+      "moves": [
+        "Zen Headbutt",
+        "Iron Head",
+        "Rock Slide",
+        "Waterfall"
+      ]
+    },
+     "Dracovish-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Strong Jaw",
+      "item": "Quick Claw",
+      "moves": [
+        "Dragon Rush",
+        "Fishious Rend (Doubled)",
+        "Zen Headbutt",
+        "Body Slam"
+      ]
+    }
+  },
 	"Dracozolt": {
-		"AV Volt Absorb": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Adamant",
-			"ability": "Volt Absorb",
-			"item": "Assault Vest",
-			"moves": [
-				"Bolt Beak (Doubled)",
-				"Fire Fang",
-				"Earthquake",
-				"Bolt Beak"
-			]
-		},
-		"Hustle": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Adamant",
-			"ability": "Hustle",
-			"item": "Life Orb",
-			"moves": [
-				"Bolt Beak (Doubled)",
-				"Fire Fang",
-				"Earthquake",
-				"Bolt Beak"
-			]
-		}
-	},
+    "Dracozolt-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Impish",
+      "ability": "Hustle",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Bolt Beak",
+        "Dragon Tail",
+        "Rest",
+        "Sleep Talk"
+      ]
+    },
+    "Dracozolt-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Hustle",
+      "item": "Zoom Lens",
+      "moves": [
+        "Dragon Rush",
+        "Bolt Beak",
+        "Stone Edge",
+        "Iron Tail"
+      ]
+    },
+     "Dracozolt-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Volt Absorb",
+      "item": "Life Orb",
+      "moves": [
+        "Dragon Pulse",
+        "Thunderbolt",
+        "Earth Power",
+        "Flamethrower"
+      ]
+    },
+     "Dracozolt-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Hustle",
+      "item": "Quick Claw",
+      "moves": [
+        "Dragon Rush",
+        "Bolt Beak (Doubled)",
+        "Stone Edge",
+        "Iron Tail"
+      ]
+    }
+  },
+  "Dragalge": {
+     "Dragalge-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ability": "Adaptability",
+      "item": "White Herb",
+      "moves": [
+        "Toxic Spikes",
+        "Draco Meteor",
+        "Venoshock",
+        "Flip Turn"
+      ]
+    }
+  },
 	"Dragapult": {
-		"Special Scarf": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"sa": "252",
-				"sp": "252"
-			},
-			"nature": "Timid",
-			"ability": "Clear Body",
-			"item": "Choice Scarf",
-			"moves": [
-				"Draco Meteor",
-				"Shadow Ball",
-				"Fire Blast",
-				"Thunderbolt"
-			]
-		},
-		"Choice Specs": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"sa": "252",
-				"sp": "252"
-			},
-			"nature": "Timid",
-			"ability": "Clear Body",
-			"item": "Choice Specs",
-			"moves": [
-				"Draco Meteor",
-				"Shadow Ball",
-				"Fire Blast",
-				"Thunderbolt"
-			]
-		},
-		"Physical": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Clear Body",
-			"item": "Weakness Policy",
-			"moves": [
-				"Dragon Darts",
-				"Phantom Force",
-				"Steel Wing",
-				"U-turn"
-			]
-		}
-	},
+    "Dragapult-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Clear Body",
+      "item": "Liechi Berry",
+      "moves": [
+        "Dragon Darts",
+        "Psychic Fangs",
+        "Sucker Punch",
+        "Acrobatics"
+      ]
+    },
+    "Dragapult-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Infiltrator",
+      "item": "Eject Button",
+      "moves": [
+        "Draco Meteor",
+        "Scald",
+        "Shadow Ball",
+        "U-turn"
+      ]
+    },
+        "Dragapult-1 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "nature": "Adamant",
+      "ability": "Clear Body",
+      "item": "Liechi Berry",
+      "moves": [
+        "Dragon Darts",
+        "Psychic Fangs",
+        "Sucker Punch",
+        "Acrobatics"
+      ]
+    },
+    "Dragapult-2 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Timid",
+      "ability": "Infiltrator",
+      "item": "Eject Button",
+      "moves": [
+        "Draco Meteor",
+        "Scald",
+        "Shadow Ball",
+        "U-turn"
+      ]
+    }
+  },
+  "Drampa": {
+    "Drampa-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Bold",
+      "ability": "Cloud Nine",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Icy Wind",
+        "Snarl",
+        "Dragon Pulse",
+        "Protect"
+      ]
+    },
+    "Drampa-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Cloud Nine",
+      "item": "Red Card",
+      "moves": [
+        "Dragon Pulse",
+        "Extrasensory",
+        "Flamethrower",
+        "Glare"
+      ]
+    },
+     "Drampa-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Cloud Nine",
+      "item": "Weakness Policy",
+      "moves": [
+        "Hyper Voice",
+        "Dragon Pulse",
+        "Flamethrower",
+        "Energy Ball"
+      ]
+    },
+     "Drampa-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Quiet",
+      "ability": "Cloud Nine",
+      "item": "Zoom Lens",
+      "moves": [
+        "Blizzard",
+        "Hurricane",
+        "Focus Blast",
+        "Draco Meteor"
+      ]
+    },
+     "Drampa-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ability": "Cloud Nine",
+      "item": "Adrenaline Orb",
+      "moves": [
+        "Dragon Pulse",
+        "Scale Shot",
+        "Fly",
+        "Snarl"
+      ]
+    }
+  },
+  "Drapion": {
+    "Drapion-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Impish",
+      "ability": "Battle Armor",
+      "item": "Leftovers",
+      "moves": [
+        "Toxic",
+        "Protect",
+        "Confuse Ray",
+        "Throat Chop"
+      ]
+    },
+    "Drapion-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Battle Armor",
+      "item": "Big Root",
+      "moves": [
+        "Acupressure",
+        "Rest",
+        "Sleep Talk",
+        "Leech Life"
+      ]
+    },
+     "Drapion-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Battle Armor",
+      "item": "Shuca Berry",
+      "moves": [
+        "Toxic",
+        "Venoshock",
+        "Dark Pulse",
+        "Bug Buzz"
+      ]
+    },
+     "Drapion-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Sniper",
+      "item": "Scope Lens",
+      "moves": [
+        "Cross Poison",
+        "Night Slash",
+        "Earthquake",
+        "Ice Fang"
+      ]
+    },
+        "Drapion-5": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Impish",
+      "ability": "Battle Armor",
+      "item": "Leftovers",
+      "moves": [
+        "Toxic",
+        "Protect",
+        "Confuse Ray",
+        "Throat Chop"
+      ]
+    },
+    "Drapion-6": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Battle Armor",
+      "item": "Big Root",
+      "moves": [
+        "Acupressure",
+        "Rest",
+        "Sleep Talk",
+        "Leech Life"
+      ]
+    },
+     "Drapion-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Battle Armor",
+      "item": "Shuca Berry",
+      "moves": [
+        "Toxic",
+        "Venoshock",
+        "Dark Pulse",
+        "Bug Buzz"
+      ]
+    },
+     "Drapion-8": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Sniper",
+      "item": "Scope Lens",
+      "moves": [
+        "Cross Poison",
+        "Night Slash",
+        "Earthquake",
+        "Ice Fang"
+      ]
+    },
+     "Drapion-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Jolly",
+      "ability": "Battle Armor",
+      "item": "Chilan Berry",
+      "moves": [
+        "Acupressure",
+        "Crunch",
+        "Poison Fang",
+        "Skitter Smack"
+      ]
+    }
+  },
+  "Drednaw": {
+    "Drednaw-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Strong Jaw",
+      "item": "Rindo Berry",
+      "moves": [
+        "Rock Slide",
+        "Ice Fang",
+        "Gastro Acid",
+        "Rain Dance"
+      ]
+    },
+    "Drednaw-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Swift Swim",
+      "item": "Red Card",
+      "moves": [
+        "Stealth Rock",
+        "Dragon Tail",
+        "Razor Shell",
+        "Protect"
+      ]
+    },
+     "Drednaw-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Impish",
+      "ability": "Strong Jaw",
+      "item": "Leftovers",
+      "moves": [
+        "Protect",
+        "Liquidation",
+        "Poison Jab",
+        "Jaw Lock"
+      ]
+    },
+     "Drednaw-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Strong Jaw",
+      "item": "Expert Belt",
+      "moves": [
+        "Head Smash",
+        "Iron Tail",
+        "Liquidation",
+        "Crunch"
+      ]
+    },
+     "Drednaw-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Strong Jaw",
+      "item": "Expert Belt",
+      "moves": [
+        "Skitter Smack",
+        "Jaw Lock",
+        "Skull Bash",
+        "Dragon Tail"
+      ]
+    }
+  },
+  "Drifblim": {
+    "Drifblim-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Aftermath",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Psychic",
+        "Shadow Ball",
+        "Haze",
+        "Defog"
+      ]
+    },
+    "Drifblim-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Aftermath",
+      "item": "Apicot Berry",
+      "moves": [
+        "Hex",
+        "Will-O-Wisp",
+        "Calm Mind",
+        "Baton Pass"
+      ]
+    },
+     "Drifblim-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Aftermath",
+      "item": "Liechi Berry",
+      "moves": [
+        "Phantom Force",
+        "Acrobatics",
+        "Body Slam",
+        "Protect"
+      ]
+    },
+     "Drifblim-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Flare Boost",
+      "item": "Flame Orb",
+      "moves": [
+        "Explosion",
+        "Shadow Ball",
+        "Trick",
+        "Thunderbolt"
+      ]
+    },
+     "Drifblim-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Flare Boost",
+      "item": "Flame Orb",
+      "moves": [
+        "Trick",
+        "Tailwind",
+        "Hex",
+        "Thunderbolt"
+      ]
+    }
+  },
+  "Druddigon": {
+     "Druddigon-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Rough Skin",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Dragon Tail",
+        "Poison Tail",
+        "Endure",
+        "Taunt"
+      ]
+    }
+  },
+  "Dubwool": {
+    "Dubwool-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Impish",
+      "ability": "Fluffy",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Retaliate",
+        "Counter",
+        "Body Slam",
+        "Rest"
+      ]
+    },
+    "Dubwool-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Careful",
+      "ability": "Fluffy",
+      "item": "Weakness Policy",
+      "moves": [
+        "Body Slam",
+        "Reversal",
+        "Baton Pass",
+        "Cotton Guard"
+      ]
+    },
+     "Dubwool-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Fluffy",
+      "item": "Lum Berry",
+      "moves": [
+        "Body Slam",
+        "Zen Headbutt",
+        "Body Press",
+        "Cotton Guard"
+      ]
+    },
+     "Dubwool-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Fluffy",
+      "item": "Leftovers",
+      "moves": [
+        "Double-Edge",
+        "Wild Charge",
+        "Protect",
+        "Bounce"
+      ]
+    },
+     "Dubwool-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Fluffy",
+      "item": "Luminous Moss",
+      "moves": [
+        "Cotton Guard",
+        "Copycat",
+        "Reversal",
+        "Last Resort"
+      ]
+    }
+  },
+  "Dugtrio": {
+    "Dugtrio-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Sand Force",
+      "item": "Smooth Rock",
+      "moves": [
+        "High Horsepower",
+        "Rock Slide",
+        "Ally Switch",
+        "Sandstorm"
+      ]
+    },
+    "Dugtrio-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Sand Force",
+      "item": "Bright Powder",
+      "moves": [
+        "Sandstorm",
+        "Fissure",
+        "Hone Claws",
+        "Rock Slide"
+      ]
+    },
+     "Dugtrio-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Sand Force",
+      "item": "Focus Sash",
+      "moves": [
+        "Sucker Punch",
+        "Reversal",
+        "Memento",
+        "Earthquake"
+      ]
+    },
+     "Dugtrio-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Sand Force",
+      "item": "Razor Fang",
+      "moves": [
+        "Stone Edge",
+        "Shadow Claw",
+        "Slash",
+        "Protect"
+      ]
+    }
+  },
+  "Dunsparce": {
+     "Dunsparce-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Serene Grace",
+      "item": "Eject Pack",
+      "moves": [
+        "Skitter Smack",
+        "Dragon Rush",
+        "Dual Wingbeat",
+        "Ancient Power"
+      ]
+    }
+  },
 	"Duraludon": {
-		"Assault Vest": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"sa": "252",
-				"sd": "4"
-			},
-			"nature": "Modest",
-			"ability": "Light Metal",
-			"item": "Assault Vest",
-			"moves": [
-				"Draco Meteor",
-				"Flash Cannon",
-				"Thunderbolt",
-				"Rock Tomb"
-			]
-		},
-		"Screens Lead": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"sa": "252",
-				"sd": "4"
-			},
-			"nature": "Timid",
-			"ability": "Light Metal",
-			"item": "Focus Sash",
-			"moves": [
-				"Draco Meteor",
-				"Steel Beam",
-				"Thunderbolt",
-				"Rock Tomb"
-			]
-		}
-	},
-	"Durant": {
-		"Standard": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Hustle",
-			"item": "Life Orb",
-			"moves": [
-				"Iron Head",
-				"Superpower",
-				"Thunder Fang",
-				"Stone Edge"
-			]
-		}
-	},
+    "Duraludon-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Sassy",
+      "ability": "Light Metal",
+      "item": "Leftovers",
+      "moves": [
+        "Breaking Swipe",
+        "Snarl",
+        "Protect",
+        "Metal Burst"
+      ]
+    },
+    "Duraludon-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Light Metal",
+      "item": "Lum Berry",
+      "moves": [
+        "Swords Dance",
+        "Dragon Claw",
+        "Iron Head",
+        "Brick Break"
+      ]
+    },
+     "Duraludon-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Calm",
+      "ability": "Light Metal",
+      "item": "Assault Vest",
+      "moves": [
+        "Dark Pulse",
+        "Dragon Pulse",
+        "Thunderbolt",
+        "Mirror Coat"
+      ]
+    },
+     "Duraludon-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Relaxed",
+      "ability": "Light Metal",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Body Press",
+        "Dragon Claw",
+        "Stone Edge",
+        "Metal Burst"
+      ]
+    }
+  },
+"Durant": {
+    "Durant-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Hustle",
+      "item": "King's Rock",
+      "moves": [
+        "Thunder Wave",
+        "Rock Slide",
+        "Iron Head",
+        "Thunder Fang"
+      ]
+    },
+    "Durant-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Hustle",
+      "item": "Grip Claw",
+      "moves": [
+        "Entrainment",
+        "Infestation",
+        "Giga Impact",
+        "Stomping Tantrum"
+      ]
+    },
+     "Durant-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Hustle",
+      "item": "Eject Button",
+      "moves": [
+        "First Impression",
+        "Guillotine",
+        "Endure",
+        "Flail"
+      ]
+    },
+     "Durant-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Hustle",
+      "item": "Occa Berry",
+      "moves": [
+        "Iron Head",
+        "First Impression",
+        "Stone Edge",
+        "Superpower"
+      ]
+    }
+  },
+  "Dusknoir": {
+    "Dusknoir-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Pressure",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Shadow Sneak",
+        "Pain Split",
+        "Will-O-Wisp",
+        "Protect"
+      ]
+    },
+    "Dusknoir-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Pressure",
+      "item": "Leftovers",
+      "moves": [
+        "Curse",
+        "Will-O-Wisp",
+        "Hex",
+        "Protect"
+      ]
+    },
+     "Dusknoir-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Quiet",
+      "ability": "Pressure",
+      "item": "Mental Herb",
+      "moves": [
+        "Trick Room",
+        "Shadow Ball",
+        "Focus Blast",
+        "Psychic"
+      ]
+    },
+     "Dusknoir-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Pressure",
+      "item": "Assault Vest",
+      "moves": [
+        "Earthquake",
+        "Shadow Punch",
+        "Brick Break",
+        "Ice Punch"
+      ]
+    },
+        "Dusknoir-5": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Careful",
+      "ability": "Pressure",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Shadow Sneak",
+        "Pain Split",
+        "Will-O-Wisp",
+        "Protect"
+      ]
+    },
+    "Dusknoir-6": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Calm",
+      "ability": "Pressure",
+      "item": "Leftovers",
+      "moves": [
+        "Curse",
+        "Will-O-Wisp",
+        "Hex",
+        "Protect"
+      ]
+    },
+     "Dusknoir-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Quiet",
+      "ability": "Pressure",
+      "item": "Mental Herb",
+      "moves": [
+        "Trick Room",
+        "Shadow Ball",
+        "Focus Blast",
+        "Psychic"
+      ]
+    },
+     "Dusknoir-8": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Pressure",
+      "item": "Assault Vest",
+      "moves": [
+        "Earthquake",
+        "Shadow Punch",
+        "Brick Break",
+        "Ice Punch"
+      ]
+    },
+     "Dusknoir-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Pressure",
+      "item": "Expert Belt",
+      "moves": [
+        "Shadow Punch",
+        "Fire Punch",
+        "Ice Punch",
+        "Thunder Punch"
+      ]
+    }
+  },
 	"Espeon": {
 		"Solerme's Dual Screens Lead": {
 			"level": 50,
