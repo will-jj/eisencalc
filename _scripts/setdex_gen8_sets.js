@@ -3458,6 +3458,7 @@ var SETDEX_GEN8_SETS = {
         "Haze"
       ]
     }
+    },
 	"Charizard": {
     "Leon's Charizard": {
       "level": "50",
@@ -3535,6 +3536,7 @@ var SETDEX_GEN8_SETS = {
         "Sunny Day"
       ]
     }
+    },
 "Cherrim": {
     "Cherrim-1": {
       "level": "50",
