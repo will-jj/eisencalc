@@ -718,7 +718,8 @@ var SETDEX_GEN8_SETS = {
         "Hail",
         "Aurora Veil"
       ]
-    },
+    }
+  },
 	"Araquanid": {
     "Araquanid-1": {
       "level": "50",
