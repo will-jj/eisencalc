@@ -4265,4 +4265,4 @@ var SETDEX_GEN8_SETS = {
 			]
 		}
 	}
-};
+}
