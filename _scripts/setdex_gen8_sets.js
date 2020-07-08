@@ -112,236 +112,1334 @@ var SETDEX_GEN8_SETS = {
         "Protect"
       ]
     }
+     "Abomasnow-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Snow Warning",
+      "item": "Miracle Seed",
+      "moves": [
+        "Ice Punch",
+        "Wood Hammer",
+        "Ice Shard",
+        "Ingrain"
+      ]
+    }
+  },
+  "Accelgor": {
+    "Accelgor-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Unburden",
+      "item": "Leftovers",
+      "moves": [
+        "Spikes",
+        "Leech Life",
+        "Yawn",
+        "Protect"
+      ]
+    },
+    "Accelgor-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Unburden",
+      "item": "Bright Powder",
+      "moves": [
+        "Final Gambit",
+        "U-turn",
+        "Feint",
+        "Protect"
+      ]
+    },
+     "Accelgor-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Unburden",
+      "item": "Focus Sash",
+      "moves": [
+        "Toxic",
+        "Protect",
+        "U-turn",
+        "Drain Punch"
+      ]
+    },
+     "Accelgor-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Unburden",
+      "item": "Life Orb",
+      "moves": [
+        "Bug Buzz",
+        "Energy Ball",
+        "Water Shuriken",
+        "Focus Blast"
+      ]
+    }
+     "Accelgor-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Unburden",
+      "item": "Wiki Berry",
+      "moves": [
+        "Acid Spray",
+        "Leech Life",
+        "Sludge Bomb",
+        "Spikes"
+      ]
+    }
   },
 	"Aegislash": {
-		"THE CRUMBLER (Special Attacker)": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"sa": "252",
-				"sd": "4"
-			},
-			"ivs": {
-				"sp": "0"
-			},
-			"nature": "Quiet",
-			"ability": "Stance Change",
-			"item": "Weakness Policy",
-			"moves": [
-				"Shadow Ball",
-				"Shadow Sneak",
-				"Sacred Sword",
-				"Flash Cannon"
-			]
-		},
-		"Bulky Physical Attacker": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "252",
-				"sd": "4"
-			},
-			"ivs": {
-				"sp": "0"
-			},
-			"nature": "Brave",
-			"ability": "Stance Change",
-			"item": "Life Orb",
-			"moves": [
-				"Shadow Sneak",
-				"Sacred Sword",
-				"Iron Head",
-				"Shadow Claw"
-			]
-		},
-		"Fast Physical Sash": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"ivs": {
-				"sp": "0"
-			},
-			"nature": "Adamant",
-			"ability": "Stance Change",
-			"item": "Focus Sash",
-			"moves": [
-				"Iorn Head",
-				"Shadow Claw",
-				"Close Combat",
-				"Shadow Sneak"
-			]
-		},
-		"Mixed Sash": {
-			"level": 50,
-			"evs": {
-				"at": "204",
-				"sa": "252",
-				"sp": "52"
-			},
-			"nature": "Rash",
-			"ability": "Stance Change",
-			"item": "Focus Sash",
-			"moves": [
-				"Shadow Ball",
-				"Flash Cannon",
-				"Close Combat",
-				"Shadow Sneak"
-			]
-		},
-		"The Ethan Special (PhysDef)": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "4",
-				"df": "252"
-			},
-			"ivs": {
-				"sp": "0"
-			},
-			"nature": "Relaxed",
-			"ability": "Stance Change",
-			"item": "Weakness Policy",
-			"moves": [
-				"King's Shield",
-				"Shadow Ball",
-				"Shadow Sneak",
-				"Sacred Sword"
-			]
-		}
-	},
+    "Aegislash-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Relaxed",
+      "ability": "Stance Change",
+      "item": "Sitrus Berry",
+      "moves": [
+        "King's Shield",
+        "Swords Dance",
+        "Shadow Sneak",
+        "Iron Head"
+      ]
+    },
+    "Aegislash-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Sassy",
+      "ability": "Stance Change",
+      "item": "Assault Vest",
+      "moves": [
+        "Shadow Sneak",
+        "Sacred Sword",
+        "Shadow Ball",
+        "Flash Cannon"
+      ]
+    },
+     "Aegislash-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Stance Change",
+      "item": "Weakness Policy",
+      "moves": [
+        "King's Shield",
+        "Shadow Ball",
+        "Flash Cannon",
+        "Air Slash"
+      ]
+    },
+     "Aegislash-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Stance Change",
+      "item": "Life Orb",
+      "moves": [
+        "King's Shield",
+        "Shadow Sneak",
+        "Psycho Cut",
+        "Sacred Sword"
+      ]
+    },
+        "Aegislash-1 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "nature": "Relaxed",
+      "ability": "Stance Change",
+      "item": "Sitrus Berry",
+      "moves": [
+        "King's Shield",
+        "Swords Dance",
+        "Shadow Sneak",
+        "Iron Head"
+      ]
+    },
+    "Aegislash-2 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "nature": "Sassy",
+      "ability": "Stance Change",
+      "item": "Assault Vest",
+      "moves": [
+        "Shadow Sneak",
+        "Sacred Sword",
+        "Shadow Ball",
+        "Flash Cannon"
+      ]
+    },
+     "Aegislash-3 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "nature": "Modest",
+      "ability": "Stance Change",
+      "item": "Weakness Policy",
+      "moves": [
+        "King's Shield",
+        "Shadow Ball",
+        "Flash Cannon",
+        "Air Slash"
+      ]
+    },
+     "Aegislash-4 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "nature": "Adamant",
+      "ability": "Stance Change",
+      "item": "Life Orb",
+      "moves": [
+        "King's Shield",
+        "Shadow Sneak",
+        "Psycho Cut",
+        "Sacred Sword"
+      ]
+    }
+  },
+  "Alakazam": {
+  "Alakazam-RS": {
+        "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Synchronize",
+      "item": "Absorb Bulb",
+      "moves": [
+        "Safeguard",
+        "Light Screen",
+        "Shadow Ball",
+        "Psychic"
+      ]
+    }
+  },
+  "Alcremie": {
+    "Alcremie-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Sassy",
+      "ability": "Sweet Veil",
+      "item": "Big Root",
+      "moves": [
+        "Draining Kiss",
+        "Drain Punch",
+        "Giga Drain",
+        "Charm"
+      ]
+    },
+    "Alcremie-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Sweet Veil",
+      "item": "Red Card",
+      "moves": [
+        "Magic Room",
+        "Decorate",
+        "Helping Hand",
+        "Dazzling Gleam"
+      ]
+    },
+     "Alcremie-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Calm",
+      "ability": "Sweet Veil",
+      "item": "Leftovers",
+      "moves": [
+        "Calm Mind",
+        "Dazzling Gleam",
+        "Protect",
+        "Misty Terrain"
+      ]
+    },
+     "Alcremie-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Sweet Veil",
+      "item": "Choice Scarf",
+      "moves": [
+        "Dazzling Gleam",
+        "Energy Ball",
+        "Psychic",
+        "Tri Attack"
+      ]
+    },
+    "Alcremie-RS": {
+        "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Sweet Veil",
+      "item": "Misty Seed",
+      "moves": [
+        "Baby-Doll Eyes",
+        "Misty Explosion",
+        "Safeguard",
+        "Fake Tears"
+      ]
+    }
+  },
+  "Amoonguss": {
+  "Amoonguss-RS": {
+        "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Effect Spore",
+      "item": "Miracle Seed",
+      "moves": [
+        "Giga Drain",
+        "Clear Smog",
+        "Ingrain",
+        "Spore"
+      ]
+    }
+  },
+  "Appletun": {
+    "Appletun-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Brave",
+      "ability": "Thick Fat",
+      "item": "Yache Berry",
+      "moves": [
+        "Curse",
+        "Gyro Ball",
+        "Body Press",
+        "Bullet Seed"
+      ]
+    },
+    "Appletun-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Thick Fat",
+      "item": "Petaya Berry",
+      "moves": [
+        "Giga Drain",
+        "Dragon Pulse",
+        "Rest",
+        "Sleep Talk"
+      ]
+    },
+     "Appletun-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Snow Warning",
+      "item": "Icy Rock",
+      "moves": [
+        "Blizzard",
+        "Energy Ball",
+        "Hail",
+        "Aurora Veil"
+      ]
+    },
 	"Araquanid": {
-		"Assault Vest": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "252",
-				"df": "4"
-			},
-			"nature": "Adamant",
-			"ability": "Water Bubble",
-			"item": "Assault Vest",
-			"moves": [
-				"Liquidation",
-				"Leech Life",
-				"Poison Jab",
-				"Crunch"
-			]
-		},
-		"Choice Band": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "252",
-				"df": "4"
-			},
-			"nature": "Adamant",
-			"ability": "Water Bubble",
-			"item": "Choice Band",
-			"moves": [
-				"Liquidation",
-				"Leech Life",
-				"Poison Jab",
-				"Crunch"
-			]
-		}
-	},
+    "Araquanid-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Water Bubble",
+      "item": "Scope Lens",
+      "moves": [
+        "Rain Dance",
+        "Waterfall",
+        "Sticky Web",
+        "X-Scissor"
+      ]
+    },
+    "Araquanid-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Relaxed",
+      "ability": "Water Bubble",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Mirror Coat",
+        "Lunge",
+        "Scald",
+        "Aqua Ring"
+      ]
+    },
+     "Araquanid-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Water Bubble",
+      "item": "Leftovers",
+      "moves": [
+        "Scald",
+        "Bug Buzz",
+        "Ice Beam",
+        "Protect"
+      ]
+    },
+     "Araquanid-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Water Bubble",
+      "item": "Choice Band",
+      "moves": [
+        "Leech Life",
+        "Liquidation",
+        "Poison Jab",
+        "Crunch"
+      ]
+    }
+  },
 	"Arcanine": {
-		"Fast Offence": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Intimidate",
-			"item": "Expert Belt",
-			"moves": [
-				"Flare Blitz",
-				"Wild Charge",
-				"Extreme Speed",
-				"Play Rough"
-			]
-		},
-		"Bulky Attacker": {
-			"level": 50,
-			"evs": {
-				"hp": "140",
-				"at": "204",
-				"df": "156",
-				"sd": "4",
-				"sp": "4"
-			},
-			"nature": "Adamant",
-			"ability": "Intimidate",
-			"item": "Assault Vest",
-			"moves": [
-				"Flare Blitz",
-				"Wild Charge",
-				"Extreme Speed",
-				"Play Rough"
-			]
-		}
-	},
+    "Arcanine-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Intimidate",
+      "item": "Leftovers",
+      "moves": [
+        "Will-O-Wisp",
+        "Dig",
+        "Protect",
+        "Fire Fang"
+      ]
+    },
+    "Arcanine-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Hasty",
+      "ability": "Intimidate",
+      "item": "Weakness Policy",
+      "moves": [
+        "Overheat",
+        "Flare Blitz",
+        "Extreme Speed",
+        "Howl"
+      ]
+    },
+     "Arcanine-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Intimidate",
+      "item": "Eject Button",
+      "moves": [
+        "Burn Up",
+        "Fire Blast",
+        "Dragon Pulse",
+        "Extreme Speed"
+      ]
+    },
+     "Arcanine-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Intimidate",
+      "item": "Assault Vest",
+      "moves": [
+        "Flare Blitz",
+        "Close Combat",
+        "Extreme Speed",
+        "Play Rough"
+      ]
+    }
+  },
+  "Arctovish": {
+    "Arctovish-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Water Absorb",
+      "item": "Leftovers",
+      "moves": [
+        "Hail",
+        "Blizzard",
+        "Aurora Veil",
+        "Protect"
+      ]
+    },
+    "Arctovish-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Careful",
+      "ability": "Water Absorb",
+      "item": "Icy Rock",
+      "moves": [
+        "Hail",
+        "Blizzard",
+        "Aurora Veil",
+        "Hydro Pump"
+      ]
+    },
+     "Arctovish-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Water Absorb",
+      "item": "King's Rock",
+      "moves": [
+        "Zen Headbutt",
+        "Iron Head",
+        "Rock Slide",
+        "Waterfall"
+      ]
+    },
+     "Arctovish-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Water Absorb",
+      "item": "Quick Claw",
+      "moves": [
+        "Icicle Crash",
+        "Fishious Rend (Doubled)",
+        "Zen Headbutt",
+        "Body Slam"
+      ]
+    }
+  },
+  "Arctozolt": {
+    "Arctozolt-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Impish",
+      "ability": "Volt Absorb",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Payback",
+        "Avalanche",
+        "Rest",
+        "Sleep Talk"
+      ]
+    },
+    "Arctozolt-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Volt Absorb",
+      "item": "Leftovers",
+      "moves": [
+        "Taunt",
+        "Thunder Fang",
+        "Ice Fang",
+        "Rock Slide"
+      ]
+    },
+     "Arctozolt-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Volt Absorb",
+      "item": "Life Orb",
+      "moves": [
+        "Blizzard",
+        "Surf",
+        "Discharge",
+        "Hyper Voice"
+      ]
+    },
+     "Arctozolt-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Volt Absorb",
+      "item": "Quick Claw",
+      "moves": [
+        "Icicle Crash",
+        "Bolt Beak (Doubled)",
+        "Stone Edge",
+        "Iron Tail"
+      ]
+    }
+  },
+  "Aromatisse": {
+    "Aromatisse-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Calm",
+      "ability": "Aroma Veil",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Fake Tears",
+        "Dazzling Gleam",
+        "Helping Hand",
+        "Ally Switch"
+      ]
+    },
+    "Aromatisse-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Quiet",
+      "ability": "Aroma Veil",
+      "item": "Mental Herb",
+      "moves": [
+        "Trick Room",
+        "Dazzling Gleam",
+        "Encore",
+        "After You"
+      ]
+    },
+     "Aromatisse-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Relaxed",
+      "ability": "Aroma Veil",
+      "item": "Weakness Policy",
+      "moves": [
+        "Trick Room",
+        "Dazzling Gleam",
+        "Gyro Ball",
+        "Drain Punch"
+      ]
+    },
+     "Aromatisse-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Aroma Veil",
+      "item": "Quick Claw",
+      "moves": [
+        "Moonblast",
+        "Psychic",
+        "Flash Cannon",
+        "Thunderbolt"
+      ]
+    }
+     "Aromatisse-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ability": "Aroma Veil",
+      "item": "Pixie Plate",
+      "moves": [
+        "Moonblast",
+        "Draining Kiss",
+        "Calm Mind",
+        "Wish"
+      ]
+    }
+  },
+  "Avalugg": {
+    "Avalugg-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Sturdy",
+      "item": "Icy Rock",
+      "moves": [
+        "Avalanche",
+        "High Horsepower",
+        "Hail",
+        "Aurora Veil"
+      ]
+    },
+    "Avalugg-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Sturdy",
+      "item": "Leftovers",
+      "moves": [
+        "Avalanche",
+        "High Horsepower",
+        "Body Press",
+        "Curse"
+      ]
+    },
+     "Avalugg-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Careful",
+      "ability": "Sturdy",
+      "item": "Assault Vest",
+      "moves": [
+        "Avalanche",
+        "High Horsepower",
+        "Gyro Ball",
+        "Mirror Coat"
+      ]
+    },
+     "Avalugg-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Sturdy",
+      "item": "Choice Band",
+      "moves": [
+        "Avalanche",
+        "High Horsepower",
+        "Gyro Ball",
+        "Stone Edge"
+      ]
+    }
+  },
 	"Azumarill": {
-		"Belly Drum": {
+		"Azumarill-RS": {
 			"level": 50,
 			"evs": {
-				"hp": "228",
-				"at": "252",
-				"df": "12",
-				"sd": "12",
-				"sp": "4"
+				"hp": "0",
+				"at": "0",
+				"df": "0",
+				"sa": "0",
+				"sd": "0",
+				"sp": "0"
 			},
-			"nature": "Adamant",
 			"ability": "Huge Power",
-			"item": "Sitrus Berry",
+			"item": "Mystic Water",
 			"moves": [
+				"Belly Drum",
 				"Aqua Jet",
-				"Play Rough",
-				"Waterfall",
-				"Superpower"
-			]
-		},
-		"Assault Vest": {
-			"level": 50,
-			"evs": {
-				"hp": "228",
-				"at": "252",
-				"df": "12",
-				"sd": "12",
-				"sp": "4"
-			},
-			"nature": "Adamant",
-			"ability": "Huge Power",
-			"item": "Assault Vest",
-			"moves": [
-				"Aqua Jet",
-				"Play Rough",
-				"Waterfall",
-				"Knock Off"
-			]
-		},
-		"Choice Band": {
-			"level": 50,
-			"evs": {
-				"hp": "228",
-				"at": "252",
-				"df": "12",
-				"sd": "12",
-				"sp": "4"
-			},
-			"nature": "Adamant",
-			"ability": "Huge Power",
-			"item": "Choice Band",
-			"moves": [
-				"Aqua Jet",
-				"Play Rough",
-				"Waterfall",
-				"Superpower"
+				"Body Slam",
+				"Steel Roller"
 			]
 		}
 	},
