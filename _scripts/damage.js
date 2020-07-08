@@ -94,7 +94,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1 && defAbility !== "Shadow Shield") {
 		defAbility = "";
 		description.attackerAbility = attacker.ability;
-	} else if (["Moongeist Beam", "Sunsteel Strike", "Searing Sunraze Smash", "Menacing Moonraze Maelstrom", "Light That Burns the Sky"].includes(move.name) && defAbility !== "Shadow Shield")
+	} else if (["Moongeist Beam", "Sunsteel Strike", "Searing Sunraze Smash", "Menacing Moonraze Maelstrom", "Light That Burns the Sky", "G-Max Drum Solo", "G-Max Hydrosnipe", "G-Max Fireball"].includes(move.name) && defAbility !== "Shadow Shield")
 		defAbility = ""; //works as a mold breaker
 
 	var isCritical = move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1;
@@ -108,6 +108,10 @@ function getDamageResult(attacker, defender, move, field) {
 						"Normal";
 		description.weather = field.weather;
 		description.moveType = move.type;
+		break;
+
+	case "Terrain Pulse":
+		move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : move.type = field.terrain === "Psychic" ? "Psychic" : "Normal";
 		break;
 
 	case "Judgment":
@@ -233,6 +237,10 @@ function getDamageResult(attacker, defender, move, field) {
 		return {"damage": [lv], "description": buildDescription(description)};
 	}
 
+	if (move.name === "Surging Strikes") {
+		move.hits = 3;
+	}
+
 	if (move.hits > 1) {
 		description.hits = move.hits;
 	}
@@ -291,6 +299,10 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Weather Ball":
 		basePower = field.weather !== "" ? 100 : 50;
+		description.moveBP = basePower;
+		break;
+	case "Terrain Pulse":
+		basePower = field.terrain !== "" ? 100 : 50;
 		description.moveBP = basePower;
 		break;
 	case "Fling":

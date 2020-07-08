@@ -398,7 +398,7 @@ $(".set-selector, #levelswitch").bind("change click keyup keydown", function () 
 				pokeObj.find("." + STATS[i] + " .dvs").val(set.dvs && typeof set.dvs[STATS[i]] !== "undefined" ? set.dvs[STATS[i]] : 15);
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
-			setSelectValueIfValid(abilityObj, pokemon.ab ? pokemon.ab : set.ability, "");
+			setSelectValueIfValid(abilityObj, set.ability ? set.ability : pokemon.ab, "");
 			setSelectValueIfValid(itemObj, set.item, "");
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
@@ -447,13 +447,16 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 
 	if (setName !== "Blank Set") {
 		var set = setdex[pokemonName][setName];
+
+		if (set.isGmax) defaultForme = 1;
+
 		if (set.item) {
 		// Repurpose the previous filtering code to provide the "different default" logic
 			if (set.item.includes("ite") && !(set.item.includes("ite Y")) ||
-            pokemonName === "Groudon" && set.item.includes("Red Orb") ||
-            pokemonName === "Kyogre" && set.item.includes("Blue Orb") ||
-            pokemonName === "Meloetta" && set.moves.includes("Relic Song") ||
-            pokemonName === "Rayquaza" && set.moves.includes("Dragon Ascent") ||
+        pokemonName === "Groudon" && set.item.includes("Red Orb") ||
+        pokemonName === "Kyogre" && set.item.includes("Blue Orb") ||
+        pokemonName === "Meloetta" && set.moves.includes("Relic Song") ||
+        pokemonName === "Rayquaza" && set.moves.includes("Dragon Ascent") ||
         pokemonName === "Necrozma-Dusk Mane" && set.item.includes("Ultranecrozium Z") ||
         pokemonName === "Necrozma-Dawn Wings" && set.item.includes("Ultranecrozium Z")) {
 				defaultForme = 1;
@@ -762,14 +765,14 @@ var stickyMoves = (function () {
 	});
 
 	return {
-		clearStickyMove: function () {
+		"clearStickyMove": function () {
 			lastClicked = null;
 			$(".locked-move").removeClass("locked-move");
 		},
-		setSelectedMove: function (slot) {
+		"setSelectedMove": function (slot) {
 			lastClicked = slot;
 		},
-		getSelectedSide: function () {
+		"getSelectedSide": function () {
 			if (lastClicked) {
 				if (lastClicked.includes("resultMoveL")) {
 					return "p1";
@@ -807,6 +810,7 @@ function Pokemon(pokeInfo) {
 		this.avs = [];
 
 		var set = setdex[this.name][setName];
+		this.isGmax = setName.includes("-Gmax") || pokemon.isGmax || set.isGmax;
 		this.level = set.level;
 		if (gen !== 22) {
 			this.HPEVs = set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0;
@@ -865,14 +869,14 @@ function Pokemon(pokeInfo) {
 			var moveName = set.moves[i];
 			var defaultDetails = moves[moveName] || moves["(No Move)"];
 			this.moves.push($.extend({}, defaultDetails, {
-				name: defaultDetails.bp === 0 ? "(No Move)" : moveName,
-				bp: defaultDetails.bp,
-				type: defaultDetails.type,
-				category: defaultDetails.category,
-				isCrit: !!defaultDetails.alwaysCrit,
-				acc: defaultDetails.acc,
-				hits: defaultDetails.isMultiHit ? this.ability === "Skill Link" || this.item === "Grip Claw" ? 5 : 3 : defaultDetails.isTwoHit ? 2 : 1,
-				usedTimes: 1
+				"name": defaultDetails.bp === 0 ? "(No Move)" : moveName,
+				"bp": defaultDetails.bp,
+				"type": defaultDetails.type,
+				"category": defaultDetails.category,
+				"isCrit": !!defaultDetails.alwaysCrit,
+				"acc": defaultDetails.acc,
+				"hits": defaultDetails.isMultiHit ? this.ability === "Skill Link" || this.item === "Grip Claw" ? 5 : 3 : defaultDetails.isTwoHit ? 2 : 1,
+				"usedTimes": 1
 			}));
 		}
 		this.weight = pokemon.weight;
@@ -912,10 +916,10 @@ function Pokemon(pokeInfo) {
 		this.status = pokeInfo.find(".status").val();
 		this.toxicCounter = this.status === "Badly Poisoned" ? ~~pokeInfo.find(".toxic-counter").val() : 0;
 		this.moves = [
-			getMoveDetails(pokeInfo.find(".move1"), this.item),
-			getMoveDetails(pokeInfo.find(".move2"), this.item),
-			getMoveDetails(pokeInfo.find(".move3"), this.item),
-			getMoveDetails(pokeInfo.find(".move4"), this.item)
+			getMoveDetails(pokeInfo.find(".move1"), this.item, this.name),
+			getMoveDetails(pokeInfo.find(".move2"), this.item, this.name),
+			getMoveDetails(pokeInfo.find(".move3"), this.item, this.name),
+			getMoveDetails(pokeInfo.find(".move4"), this.item, this.name)
 		];
 		this.weight = +pokeInfo.find(".weight").val();
 	}
@@ -924,7 +928,7 @@ function Pokemon(pokeInfo) {
 	};
 }
 
-function getMoveDetails(moveInfo, item) {
+function getMoveDetails(moveInfo, item, species) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var defaultDetails = moves[moveName];
 	var isZMove = gen >= 7 && gen != 8 && moveInfo.find("input.move-z").prop("checked");
@@ -934,10 +938,10 @@ function getMoveDetails(moveInfo, item) {
 		var exceptions_100_fight = ["Low Kick", "Reversal", "Final Gambit"];
 		var exceptions_80_fight = ["Double Kick", "Triple Kick"];
 		var exceptions_75_fight = ["Counter", "Seismic Toss"];
-		var exceptions_140 = ["Crush Grip", "Wring Out", "Magnitude", "Double Iron Bash"];
-		var exceptions_130 = ["Bolt Beak (Doubled)", "Fishious Rend (Doubled)", "Pin Missile", "Power Trip", "Punishment", "Dragon Darts", "Dual Chop", "Electro Ball", "Heat Crash",
+		var exceptions_140 = ["Triple Axel", "Crush Grip", "Wring Out", "Magnitude", "Double Iron Bash", "Rising Voltage"];
+		var exceptions_130 = ["Scale Shot", "Dual Wing Beat", "Terrain Pulse", "Bolt Beak (Doubled)", "Fishious Rend (Doubled)", "Pin Missile", "Power Trip", "Punishment", "Dragon Darts", "Dual Chop", "Electro Ball", "Heat Crash",
 			"Bullet Seed", "Grass Knot", "Bonemerang", "Bone Rush", "Fissure", "Icicle Spear", "Sheer Cold", "Weather Ball", "Tail Slap", "Guillotine", "Horn Drill",
-			"Flail", "Return", "Frustration", "Endeavor", "Natural Gift", "Trump Card", "Stored Power", "Rock Blast", "Gear Grind", "Gyro Ball", "Heavy Slam", "Bolt Beak (Doubled)", "Fishious Rend (Doubled)"];
+			"Flail", "Return", "Frustration", "Endeavor", "Natural Gift", "Trump Card", "Stored Power", "Rock Blast", "Gear Grind", "Gyro Ball", "Heavy Slam"];
 		var exceptions_120 = ["Double Hit", "Spike Cannon"];
 		var exceptions_100 = ["Twineedle", "Beat Up", "Fling", "Dragon Rage", "Nature\'s Madness", "Night Shade", "Comet Punch", "Fury Swipes", "Sonic Boom", "Bide",
 			"Super Fang", "Present", "Spit Up", "Psywave", "Mirror Coat", "Metal Burst"];
@@ -947,32 +951,43 @@ function getMoveDetails(moveInfo, item) {
 		var maxMoveName = MAXMOVES_LOOKUP[defaultDetails.type];
 
 		if (moves[maxMoveName].type == "Fighting" || moves[maxMoveName].type == "Poison") {
-			if (defaultDetails.bp >= 150 || exceptions_100_fight.includes(moveName)) tempBP = 100;
-			else if (defaultDetails.bp >= 110) tempBP = 95;
+			if (defaultDetails.bp >= 110) tempBP = 95;
 			else if (defaultDetails.bp >= 75) tempBP = 90;
 			else if (defaultDetails.bp >= 65) tempBP = 85;
 			else if (defaultDetails.bp >= 55 || exceptions_80_fight.includes(moveName)) tempBP = 80;
 			else if (defaultDetails.bp >= 45 || exceptions_75_fight.includes(moveName)) tempBP = 75;
+			else if (defaultDetails.bp >= 150 || exceptions_100_fight.includes(moveName)) tempBP = 100;
 			else tempBP = 70;
 		} else {
-			if (defaultDetails.bp >= 150) tempBP = 150;
-			else if (defaultDetails.bp >= 110 || exceptions_140.includes(moveName)) tempBP = 140;
+			if (defaultDetails.bp >= 110 || exceptions_140.includes(moveName)) tempBP = 140;
 			else if (defaultDetails.bp >= 75 || exceptions_130.includes(moveName)) tempBP = 130;
 			else if (defaultDetails.bp >= 65 || exceptions_120.includes(moveName)) tempBP = 120;
 			else if (defaultDetails.bp >= 55 || exceptions_100.includes(moveName)) tempBP = 110;
 			else if (defaultDetails.bp >= 45) tempBP = 100;
+			else if (defaultDetails.bp >= 150) tempBP = 150;
 			else tempBP = 90;
 		}
 
+		if (species === "Cinderace-Gmax" && defaultDetails.type === "Fire") {
+			tempBP = 160;
+			maxMoveName = "G-Max Fireball";
+		} else if (species === "Inteleon-Gmax" && defaultDetails.type === "Water") {
+			tempBP = 160;
+			maxMoveName = "G-Max Hydrosnipe";
+		} else if (species === "Rillaboom-Gmax" && defaultDetails.type === "Grass") {
+			tempBP = 160;
+			maxMoveName = "G-Max Drum Solo";
+		}
+
 		return $.extend({}, moves[maxMoveName], {
-			name: maxMoveName,
-			moveDescName: maxMoveName + " (" + tempBP + "BP)",
-			bp: tempBP,
-			type: defaultDetails.type,
-			category: defaultDetails.category,
-			isCrit: moveInfo.find(".move-crit").prop("checked"),
-			hits: 1,
-			isMax: true
+			"name": maxMoveName,
+			"moveDescName": maxMoveName + " (" + tempBP + "BP)",
+			"bp": tempBP,
+			"type": defaultDetails.type,
+			"category": defaultDetails.category,
+			"isCrit": moveInfo.find(".move-crit").prop("checked"),
+			"hits": 1,
+			"isMax": true
 		});
 	}
 
@@ -980,22 +995,22 @@ function getMoveDetails(moveInfo, item) {
 	if (isZMove && "zp" in defaultDetails) {
 		var zMoveName = getZMoveName(moveName, defaultDetails.type, item);
 		return $.extend({}, moves[zMoveName], {
-			name: zMoveName,
-			bp: moves[zMoveName].bp === 1 ? defaultDetails.zp : moves[zMoveName].bp,
-			category: defaultDetails.category,
-			isCrit: moveInfo.find(".move-crit").prop("checked"),
-			hits: 1
+			"name": zMoveName,
+			"bp": moves[zMoveName].bp === 1 ? defaultDetails.zp : moves[zMoveName].bp,
+			"category": defaultDetails.category,
+			"isCrit": moveInfo.find(".move-crit").prop("checked"),
+			"hits": 1
 		});
 	} else {
 		return $.extend({}, defaultDetails, {
-			name: moveName,
-			bp: ~~moveInfo.find(".move-bp").val(),
-			type: moveInfo.find(".move-type").val(),
-			category: moveInfo.find(".move-cat").val(),
-			isCrit: moveInfo.find(".move-crit").prop("checked"),
-			isMax: isMax,
-			hits: defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1,
-			usedTimes: defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1
+			"name": moveName,
+			"bp": ~~moveInfo.find(".move-bp").val(),
+			"type": moveInfo.find(".move-type").val(),
+			"category": moveInfo.find(".move-cat").val(),
+			"isCrit": moveInfo.find(".move-crit").prop("checked"),
+			"isMax": isMax,
+			"hits": defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1,
+			"usedTimes": defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1
 		});
 	}
 }
@@ -1319,26 +1334,26 @@ function getSetOptions() {
 	for (var i = 0; i < pokeNames.length; i++) {
 		var pokeName = pokeNames[i];
 		setOptions.push({
-			pokemon: pokeName,
-			text: pokeName
+			"pokemon": pokeName,
+			"text": pokeName
 		});
 		if (pokeName in setdex) {
 			var setNames = Object.keys(setdex[pokeName]);
 			for (var j = 0; j < setNames.length; j++) {
 				var setName = setNames[j];
 				setOptions.push({
-					pokemon: pokeName,
-					set: setName,
-					text: pokeName + " (" + setName + ")",
-					id: pokeName + " (" + setName + ")"
+					"pokemon": pokeName,
+					"set": setName,
+					"text": pokeName + " (" + setName + ")",
+					"id": pokeName + " (" + setName + ")"
 				});
 			}
 		}
 		setOptions.push({
-			pokemon: pokeName,
-			set: "Blank Set",
-			text: pokeName + " (Blank Set)",
-			id: pokeName + " (Blank Set)"
+			"pokemon": pokeName,
+			"set": "Blank Set",
+			"text": pokeName + " (Blank Set)",
+			"id": pokeName + " (Blank Set)"
 		});
 	}
 	return setOptions;
@@ -1416,10 +1431,10 @@ $(document).ready(function () {
 	$(".terrain-trigger").bind("change keyup", getTerrainEffects);
 	$(".calc-trigger").bind("change keyup", calculate);
 	$(".set-selector").select2({
-		formatResult: function (object) {
+		"formatResult": function (object) {
 			return object.set ? "&nbsp;&nbsp;&nbsp;" + object.set : "<b>" + object.text + "</b>";
 		},
-		query: function (query) {
+		"query": function (query) {
 			var setOptions = getSetOptions();
 			var pageSize = 30;
 			var results = [];
@@ -1430,18 +1445,18 @@ $(document).ready(function () {
 				}
 			}
 			query.callback({
-				results: results.slice((query.page - 1) * pageSize, query.page * pageSize),
-				more: results.length >= query.page * pageSize
+				"results": results.slice((query.page - 1) * pageSize, query.page * pageSize),
+				"more": results.length >= query.page * pageSize
 			});
 		},
-		initSelection: function (element, callback) {
+		"initSelection": function (element, callback) {
 			var data = getSetOptions()[gen > 3 ? 1 : gen === 1 ? 5 : 3];
 			callback(data);
 		}
 	});
 	$(".move-selector").select2({
-		dropdownAutoWidth: true,
-		matcher: function (term, text) {
+		"dropdownAutoWidth": true,
+		"matcher": function (term, text) {
 			// 2nd condition is for Hidden Power
 			return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().includes(" " + term.toUpperCase());
 		}
