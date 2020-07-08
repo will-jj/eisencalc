@@ -1,23 +1,118 @@
 var SETDEX_GEN8_SETS = {
-	"Abomasnow": {
-		"Focus Sash Lead": {
-			"level": 50,
-			"evs": {
-				"at": "4",
-				"sa": "252",
-				"sp": "252"
-			},
-			"nature": "Modest",
-			"ability": "Snow Warning",
-			"item": "Focus Sash",
-			"moves": [
-				"Blizzard",
-				"Energy Ball",
-				"Earth Power",
-				"Ice Shard"
-			]
-		}
-	},
+"Abomasnow": {
+    "Abomasnow-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Brave",
+      "ability": "Snow Warning",
+      "item": "Occa Berry",
+      "moves": [
+        "Seed Bomb",
+        "Ice Shard",
+        "Avalanche",
+        "Protect"
+      ]
+    },
+    "Abomasnow-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Bold",
+      "ability": "Snow Warning",
+      "item": "Leftovers",
+      "moves": [
+        "Protect",
+        "Ingrain",
+        "Giga Drain",
+        "Sheer Cold"
+      ]
+    },
+     "Abomasnow-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Snow Warning",
+      "item": "Icy Rock",
+      "moves": [
+        "Blizzard",
+        "Energy Ball",
+        "Hail",
+        "Aurora Veil"
+      ]
+    },
+     "Abomasnow-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Snow Warning",
+      "item": "White Herb",
+      "moves": [
+        "Leaf Storm",
+        "Blizzard",
+        "Earth Power",
+        "Protect"
+      ]
+    }
+  },
 	"Aegislash": {
 		"THE CRUMBLER (Special Attacker)": {
 			"level": 50,
