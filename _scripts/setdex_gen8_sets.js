@@ -111,7 +111,7 @@ var SETDEX_GEN8_SETS = {
         "Earth Power",
         "Protect"
       ]
-    }
+    },
      "Abomasnow-RS": {
       "level": "50",
       "evs": {
@@ -244,7 +244,7 @@ var SETDEX_GEN8_SETS = {
         "Water Shuriken",
         "Focus Blast"
       ]
-    }
+    },
      "Accelgor-RS": {
       "level": "50",
       "evs": {
@@ -1287,7 +1287,7 @@ var SETDEX_GEN8_SETS = {
         "Flash Cannon",
         "Thunderbolt"
       ]
-    }
+    },
      "Aromatisse-RS": {
       "level": "50",
       "evs": {
