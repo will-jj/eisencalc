@@ -87,7 +87,7 @@ var MOVES_RBY = {
 	    "Counter": {
         "bp": 0,
         "type": "Fighting"
-	    }
+	    },
 	"Defense Curl": {
 		"bp": 0,
 		"type": "Normal"
