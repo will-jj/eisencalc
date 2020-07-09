@@ -4830,6 +4830,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 70,
 		"type": "Bug",
 		"category": "Physical",
+		"hasSecondaryEffect": true,
 		"acc": 90
 	},
 	"Meteor Beam": {
@@ -4889,7 +4890,15 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"category": "Physical",
 		"acc": 100,
 		"alwaysCrit": true
-	}
+	},
+	"Coaching": {
+		"bp": 0,
+		"type": "Fighting"
+	},
+	"Corrosive Gas": {
+		"bp": 0,
+		"type": "Poison"
+}
 });
 
 var MAXMOVES_LOOKUP = {
