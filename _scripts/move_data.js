@@ -10,6 +10,10 @@ var MOVES_RBY = {
 		"type": "Poison",
 		"acc": 100
 	},
+	"Acid Armor": {
+        "bp": 0,
+        "type": "Poison",
+    },
 	"Agility": {
 		"bp": 0,
 		"type": "Psychic"
@@ -80,6 +84,10 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Ghost"
 	},
+	    "Counter": {
+        "bp": 0,
+        "type": "Fighting"
+	    }
 	"Defense Curl": {
 		"bp": 0,
 		"type": "Normal"
@@ -95,6 +103,13 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Normal"
 	},
+		    "Dizzy Punch": {
+        "bp": 70,
+        "type": "Normal",
+        "category": "Physical",
+        "hasSecondaryEffect": true,
+        "makesContact": true
+    },
 	"Double Kick": {
 		"bp": 30,
 		"type": "Fighting",
@@ -115,6 +130,12 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Normal"
 	},
+		    "Dragon Breath": {
+        "bp": 60,
+        "type": "Dragon",
+        "category": "Special",
+		"hasSecondaryEffect": true
+    },
 	"Dream Eater": {
 		"bp": 100,
 		"type": "Psychic",
@@ -137,6 +158,12 @@ var MOVES_RBY = {
 		"isSpread": true,
 		"acc": 100
 	},
+	    "Egg Bomb": {
+        "bp": 100,
+        "type": "Normal",
+        "category": "Physical",
+		"acc": 75
+    },	
 	"Explosion": {
 		"bp": 170,
 		"type": "Normal",
@@ -172,6 +199,10 @@ var MOVES_RBY = {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
+		    "Flash": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Fly": {
 		"bp": 70,
 		"type": "Flying",
@@ -191,6 +222,14 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Normal"
 	},
+		    "Growl": {
+        "bp": 0,
+        "type": "Normal"
+    },
+	        "Guillotine": {
+        "bp": 0,
+        "type": "Normal",
+    },
 	"Gust": {
 		"bp": 40,
 		"type": "Normal",
@@ -209,6 +248,10 @@ var MOVES_RBY = {
 		"hasRecoil": "crash",
 		"acc": 90
 	},
+		    "Horn Drill": {
+        "bp": 0,
+        "type": "Normal",
+    },
 	"Hydro Pump": {
 		"bp": 120,
 		"type": "Water",
@@ -230,6 +273,10 @@ var MOVES_RBY = {
 		"isBite": true,
 		"acc": 90
 	},
+		    "Hypnosis": {
+        "bp": 0,
+        "type": "Psychic",
+    },
 	"Ice Beam": {
 		"bp": 95,
 		"type": "Ice",
@@ -267,6 +314,13 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Grass"
 	},
+		    "Lick": {
+        "bp": 30,
+        "type": "Ghost",
+        "category": "Physical",
+        "makesContact": true,
+        "hasSecondaryEffect": true
+    },
 	"Light Screen": {
 		"bp": 0,
 		"type": "Psychic"
@@ -282,10 +336,18 @@ var MOVES_RBY = {
 		"percentHealed": 0.5,
 		"acc": 100
 	},
+		    "Minimize": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Mirror Move": {
 		"bp": 0,
 		"type": "Flying"
 	},
+		    "Mist": {
+        "bp": 0,
+        "type": "Ice"
+    },
 	"Night Shade": {
 		"bp": 1,
 		"type": "Ghost",
@@ -321,6 +383,11 @@ var MOVES_RBY = {
 		"alwaysCrit": true,
 		"acc": 95
 	},
+		    "Razor Wind": {
+        "bp": 80,
+        "type": "Normal",
+        "category": "Special"
+    },
 	"Recover": {
 		"bp": 0,
 		"type": "Normal"
@@ -351,6 +418,10 @@ var MOVES_RBY = {
 		"category": "Physical",
 		"acc": 90
 	},
+		    "Screech": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Seismic Toss": {
 		"bp": 100,
 		"type": "Fighting",
@@ -390,6 +461,10 @@ var MOVES_RBY = {
 		"makesContact": true,
 		"acc": 100
 	},
+		    "Sleep Powder": {
+        "bp": 0,
+        "type": "Grass"
+    },
 	"Sludge": {
 		"bp": 65,
 		"type": "Poison",
@@ -417,6 +492,10 @@ var MOVES_RBY = {
 		"hasRecoil": 50,
 		"acc": 101
 	},
+		    "Stun Spore": {
+        "bp": 0,
+        "type": "Grass",
+    },
 	"Submission": {
 		"bp": 80,
 		"type": "Fighting",
@@ -459,6 +538,10 @@ var MOVES_RBY = {
 		"makesContact": true,
 		"acc": 100
 	},
+		    "Tail Whip": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Take Down": {
 		"bp": 90,
 		"type": "Normal",
