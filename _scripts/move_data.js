@@ -3081,8 +3081,16 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"isMultiHit": true,
 		"acc": 100
 	},
+		"Aromatic Mist": {
+        "bp": 0,
+        "type": "Fairy"
+    },
 	"Assurance": {"bp": 60},
 	"Aura Sphere": {"bp": 80},
+		"Baby-Doll Eyes": {
+        "bp": 0,
+        "type": "Fairy"
+    },
 	"Belch": {
 		"bp": 120,
 		"type": "Poison",
@@ -3099,6 +3107,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"acc": 100
 	},
 	"Chatter": {"bp": 65},
+		"Confide": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Crabhammer": {"bp": 100},
 	"Dazzling Gleam": {
 		"bp": 80,
@@ -3139,8 +3151,17 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"percentHealed": 0.75,
 		"acc": 100
 	},
+		"Electric Terrain": {
+        "bp": 0,
+        "type": "Electric"
+    },
 	"Energy Ball": {"bp": 90},
 	"Facade": {"ignoresBurn": true},
+		"Fairy Wind": {
+		"bp": 40,
+		"type": "Fairy",
+		"category": "Special"
+	},
 	"Fell Stinger": {
 		"bp": 30,
 		"type": "Bug",
@@ -3151,6 +3172,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 	"Fire Blast": {"bp": 110},
 	"Fire Pledge": {"bp": 80},
 	"Flamethrower": {"bp": 90},
+		"Flower Shield": {
+        "bp": 0,
+        "type": "Flying"
+    },
 	"Flying Press": {
 		"bp": 80,
 		"type": "Fighting",
@@ -3172,6 +3197,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"type": "Fairy"
 	},
 	"Grass Pledge": {"bp": 80},
+		"Grassy Terrain": {
+        "bp": 0,
+        "type": "Grass"
+    },
 	"Heat Wave": {"bp": 95},
 	"Hex": {"bp": 65},
 	"Hidden Power Bug": {"bp": 60},
@@ -3237,7 +3266,15 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 	},
 	"Low Sweep": {"bp": 65},
 	"Magma Storm": {"bp": 100},
+		"Mat Block": {
+        "bp": 0,
+        "type": "Fighting"
+    },
 	"Meteor Mash": {"bp": 90},
+		"Misty Terrain": {
+        "bp": 0,
+        "type": "Fairy"
+    },
 	"Moonblast": {
 		"bp": 95,
 		"type": "Fairy",
@@ -3254,6 +3291,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
+		"Noble Roar": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Nuzzle": {
 		"bp": 20,
 		"type": "Electric",
@@ -3287,6 +3328,12 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"percentHealed": 0.5,
 		"acc": 100
 	},
+		"Petal Blizzard": {
+        "bp": 90,
+        "type": "Grass",
+        "category": "Physical",
+        "isSpread": true
+    },
 	"Phantom Force": {
 		"bp": 90,
 		"type": "Ghost",
@@ -3296,6 +3343,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"acc": 100
 	},
 	"Pin Missile": {"bp": 25},
+		"Play Nice": {
+        "bp": 0,
+        "type": "Fairy"
+    },
 	"Play Rough": {
 		"bp": 90,
 		"type": "Fairy",
@@ -3361,6 +3412,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 	},
 	"Thunder": {"bp": 110},
 	"Thunderbolt": {"bp": 90},
+		"Trick-or-Treat": {
+        "bp": 0,
+        "type": "Ghost"
+    },
 	"Wake-Up Slap": {"bp": 70},
 	"Water Pledge": {"bp": 80},
 	"Water Shuriken": {
@@ -3445,7 +3500,15 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	"Attack Order": {"zp": 175},
 	"Aura Sphere": {"zp": 160},
 	"Aurora Beam": {"zp": 120},
+		"Aurora Veil": {
+        "bp": 0,
+        "type": "Ice"
+    },
 	"Avalanche": {"zp": 120},
+		"Baneful Bunker": {
+        "bp": 0,
+        "type": "Poison"
+    },
 	"Beak Blast": {
 		"bp": 100,
 		"type": "Flying",
