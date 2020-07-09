@@ -338,7 +338,7 @@ function getDamageResult(attacker, defender, move, field) {
     		description.moveBP = basePower;
     		break;
 	case 'Rising Voltage':
-   		 basePower = move.bp * (field.hasTerrain === "Electric" ? 2 : 1);
+   		 basePower = move.bp * (field.terrain === "Electric" ? 2 : 1);
    		 description.moveBP = basePower;
     		break;
 	default:
