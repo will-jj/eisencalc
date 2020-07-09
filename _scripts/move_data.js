@@ -3060,7 +3060,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"makesContact": true,
 		"hasRecoil": 25,
 		"acc": 100
-	}
+	},
 		"Wonder Room": {
         "bp": 0,
         "type": "Psychic"
