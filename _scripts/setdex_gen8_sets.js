@@ -13165,102 +13165,1271 @@ var SETDEX_GEN8_SETS = {
       ]
     }
   },
-	"Incineroar": {
-		"Offensive": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "252",
-				"sd": "4"
-			},
-			"ivs": {
-				"sp": "0"
-			},
-			"nature": "Adamant",
-			"ability": "Intimidate",
-			"item": "Incinium Z",
-			"moves": [
-				"Flare Blitz",
-				"Darkest Lariat",
-				"Close Combat",
-				"Acrobatics"
-			]
-		}
-	},
-	"Jellicent": {
-		"Wall": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sd": "4"
-			},
-			"nature": "Bold",
-			"ability": "Cursed Body",
-			"item": "Sitrus Berry",
-			"moves": [
-				"Scald",
-				"Ice Beam",
-				"Hex",
-				"Giga Drain"
-			]
-		}
-	},
-	"Kingdra": {
-		"Rain Sweeper": {
-			"level": 50,
-			"evs": {
-				"sa": "252",
-				"sd": "4",
-				"sp": "252"
-			},
-			"nature": "Modest",
-			"ability": "Swift Swim",
-			"item": "Life Orb",
-			"moves": [
-				"Hydro Pump",
-				"Draco Meteor",
-				"Ice Beam",
-				"Surf"
-			]
-		}
-	},
+"Indeedee-M": {
+    "Indeedee-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Psychic Surge",
+      "item": "Life Orb",
+      "moves": [
+        "Fake Out",
+        "Zen Headbutt",
+        "Drain Punch",
+        "Last Resort"
+      ]
+    },
+    "Indeedee-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Psychic Surge",
+      "item": "Psychic Seed",
+      "moves": [
+        "Fake Out",
+        "Baton Pass",
+        "Calm Mind",
+        "Stored Power"
+      ]
+    },
+     "Indeedee-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Psychic Surge",
+      "item": "Expert Belt",
+      "moves": [
+        "Mystical Fire",
+        "Psychic",
+        "Shadow Ball",
+        "Energy Ball"
+      ]
+    },
+     "Indeedee-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Calm",
+      "ability": "Psychic Surge",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Future Sight",
+        "Follow Me",
+        "Helping Hand",
+        "Draining Kiss"
+      ]
+    }
+  },
+  "Indeedee-F": {
+    "Indeedee-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Psychic Surge",
+      "item": "Life Orb",
+      "moves": [
+        "Fake Out",
+        "Zen Headbutt",
+        "Drain Punch",
+        "Last Resort"
+      ]
+    },
+    "Indeedee-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Psychic Surge",
+      "item": "Psychic Seed",
+      "moves": [
+        "Fake Out",
+        "Baton Pass",
+        "Calm Mind",
+        "Stored Power"
+      ]
+    },
+     "Indeedee-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Psychic Surge",
+      "item": "Expert Belt",
+      "moves": [
+        "Mystical Fire",
+        "Psychic",
+        "Shadow Ball",
+        "Energy Ball"
+      ]
+    },
+     "Indeedee-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Calm",
+      "ability": "Psychic Surge",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Future Sight",
+        "Follow Me",
+        "Helping Hand",
+        "Draining Kiss"
+      ]
+    }
+  },
+  "Inteleon": {
+    "Inteleon-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Torrent",
+      "item": "Expert Belt",
+      "moves": [
+        "Water Pledge",
+        "Shadow Ball",
+        "Blizzard",
+        "Mud Shot"
+      ]
+    },
+    "Inteleon-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Torrent",
+      "item": "Bright Powder",
+      "moves": [
+        "Muddy Water",
+        "Shadow Ball",
+        "Baton Pass",
+        "Double Team"
+      ]
+    },
+     "Inteleon-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Torrent",
+      "item": "Assault Vest",
+      "moves": [
+        "Sucker Punch",
+        "Waterfall",
+        "Icicle Spear",
+        "Fell Stinger"
+      ]
+    },
+     "Inteleon-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Sniper",
+      "item": "Focus Sash",
+      "moves": [
+        "Snipe Shot",
+        "Air Slash",
+        "Dark Pulse",
+        "Focus Energy"
+      ]
+    },
+        "Inteleon-5": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Torrent",
+      "item": "Expert Belt",
+      "moves": [
+        "Water Pledge",
+        "Shadow Ball",
+        "Blizzard",
+        "Mud Shot"
+      ]
+    },
+    "Inteleon-6": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Torrent",
+      "item": "Bright Powder",
+      "moves": [
+        "Muddy Water",
+        "Shadow Ball",
+        "Baton Pass",
+        "Double Team"
+      ]
+    },
+     "Inteleon-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Torrent",
+      "item": "Assault Vest",
+      "moves": [
+        "Sucker Punch",
+        "Waterfall",
+        "Icicle Spear",
+        "Fell Stinger"
+      ]
+    },
+     "Inteleon-8": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Sniper",
+      "item": "Focus Sash",
+      "moves": [
+        "Snipe Shot",
+        "Air Slash",
+        "Dark Pulse",
+        "Focus Energy"
+      ]
+    },
+        "Inteleon-1 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Modest",
+      "ability": "Torrent",
+      "item": "Expert Belt",
+      "moves": [
+        "Water Pledge",
+        "Shadow Ball",
+        "Blizzard",
+        "Mud Shot"
+      ]
+    },
+    "Inteleon-2 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Timid",
+      "ability": "Torrent",
+      "item": "Bright Powder",
+      "moves": [
+        "Muddy Water",
+        "Shadow Ball",
+        "Baton Pass",
+        "Double Team"
+      ]
+    },
+     "Inteleon-3 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Adamant",
+      "ability": "Torrent",
+      "item": "Assault Vest",
+      "moves": [
+        "Sucker Punch",
+        "Waterfall",
+        "Icicle Spear",
+        "Fell Stinger"
+      ]
+    },
+     "Inteleon-4 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Modest",
+      "ability": "Sniper",
+      "item": "Focus Sash",
+      "moves": [
+        "Snipe Shot",
+        "Air Slash",
+        "Dark Pulse",
+        "Focus Energy"
+      ]
+    }
+  },
+"Jellicent": {
+    "Jellicent-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Bold",
+      "ability": "Water Absorb",
+      "item": "Colbur Berry",
+      "moves": [
+        "Recover",
+        "Scald",
+        "Hex",
+        "Acid Armor"
+      ]
+    },
+    "Jellicent-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Water Absorb",
+      "item": "Binding Band",
+      "moves": [
+        "Whirlpool",
+        "Protect",
+        "Recover",
+        "Night Shade"
+      ]
+    },
+     "Jellicent-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Relaxed",
+      "ability": "Water Absorb",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Scald",
+        "Shadow Ball",
+        "Giga Drain",
+        "Trick Room"
+      ]
+    },
+     "Jellicent-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Calm",
+      "ability": "Water Absorb",
+      "item": "Assault Vest",
+      "moves": [
+        "Hydro Pump",
+        "Shadow Ball",
+        "Ice Beam",
+        "Energy Ball"
+      ]
+    },
+     "Jellicent-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Water Absorb",
+      "item": "Spell Tag",
+      "moves": [
+        "Poltergeist",
+        "Brine",
+        "Sludge Wave",
+        "Substitute"
+      ]
+    }
+  },
+  "Jolteon": {
+    "Jolteon-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Calm",
+      "ability": "Volt Absorb",
+      "item": "Salac Berry",
+      "moves": [
+        "Thunder Wave",
+        "Agility",
+        "Baton Pass",
+        "Electro Ball"
+      ]
+    },
+    "Jellicent-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Volt Absorb",
+      "item": "Damp Rock",
+      "moves": [
+        "Weather Ball",
+        "Thunder",
+        "Rain Dance",
+        "Shadow Ball"
+      ]
+    },
+     "Jolteon-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Volt Absorb",
+      "item": "Air Balloon",
+      "moves": [
+        "Discharge",
+        "Hyper Voice",
+        "Light Screen",
+        "Protect"
+      ]
+    },
+     "Jolteon-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Volt Absorb",
+      "item": "Bright Powder",
+      "moves": [
+        "Thunder",
+        "Mud-Slap",
+        "Shadow Ball",
+        "Hyper Voice"
+      ]
+    }
+  },
+  "Kangaskhan": {
+     "Kangaskhan-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Scrappy",
+      "item": "Protective Pads",
+      "moves": [
+        "Retaliate",
+        "Sucker Punch",
+        "Drain Punch",
+        "Rock Slide"
+      ]
+    }
+  },
+"Kingdra": {
+     "Kingdra-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Timid",
+      "ability": "Sniper",
+      "item": "Scope Lens",
+      "moves": [
+        "Draco Meteor",
+        "Dragon Pulse",
+        "Hydro Pump",
+        "Blizzard"
+      ]
+    }
+  },
+  "Kingler": {
+    "Kingler-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Sheer Force",
+      "item": "Blunder Policy",
+      "moves": [
+        "Guillotine",
+        "Stomping Tantrum",
+        "Rock Slide",
+        "Protect"
+      ]
+    },
+    "Kingler-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Modest",
+      "ability": "Sheer Force",
+      "item": "Expert Belt",
+      "moves": [
+        "Sclad",
+        "Blizzard",
+        "Ancient Power",
+        "Mud Shot"
+      ]
+    },
+     "Kingler-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Sheer Force",
+      "item": "Choice Scarf",
+      "moves": [
+        "X-Scissor",
+        "High Horsepower",
+        "Liquidation",
+        "Brick Break"
+      ]
+    },
+     "Kingler-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Hyper Cutter",
+      "item": "Razor Fang",
+      "moves": [
+        "Crabhammer",
+        "Night Slash",
+        "Slash",
+        "Protect"
+      ]
+    },
+     "Kingler-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Hyper Cutter",
+      "item": "Wacan Berry",
+      "moves": [
+        "Crabhammer",
+        "High Horsepower",
+        "X-Scissor",
+        "Agility"
+      ]
+    }
+  },
+  "Klefki": {
+     "Klefki-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Prankster",
+      "item": "Mental Herb",
+      "moves": [
+        "Steel Beam",
+        "Metal Sound",
+        "Torment",
+        "Foul Play"
+      ]
+    }
+  },
+  "Klinklang": {
+    "Klinklang-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Clear Body",
+      "item": "Air Balloon",
+      "moves": [
+        "Magnetic Flux",
+        "Gear Up",
+        "Gear Grind",
+        "Wild Charge"
+      ]
+    },
+    "Klinklang-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Clear Body",
+      "item": "Leftovers",
+      "moves": [
+        "Protect",
+        "Wild Charge",
+        "Gear Grind",
+        "Shift Gear"
+      ]
+    },
+     "Klinklang-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Quiet",
+      "ability": "Clear Body",
+      "item": "Room Service",
+      "moves": [
+        "Trick Room",
+        "Thunder Wave",
+        "Discharge",
+        "Flash Cannon"
+      ]
+    },
+     "Klinklang-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Clear Body",
+      "item": "Life Orb",
+      "moves": [
+        "Flash Cannon",
+        "Power Gem",
+        "Thunder",
+        "Metal Sound"
+      ]
+    },
+     "Klinklang-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Clear Body",
+      "item": "Lum Berry",
+      "moves": [
+        "Gear Grind",
+        "Wild Charge",
+        "Power Gem",
+        "Shift Gear"
+      ]
+    }
+  },
 	"Kommo-o": {
-		"Special": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"sa": "252",
-				"sp": "252"
-			},
-			"nature": "Timid",
-			"ability": "Soundproof",
-			"item": "Throat Spray",
-			"moves": [
-				"Clanging Scales",
-				"Flamethrower",
-				"Flash Cannon",
-				"Aura Sphere"
-			]
-		},
-		"Physical": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Adamant",
-			"ability": "Bulletproof",
-			"item": "Kommonium Z",
-			"moves": [
-				"Close Combat",
-				"Earthquake",
-				"Iron Head",
-				"Outrage"
-			]
-		}
-	},
+    "Kommo-o-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Bulletproof",
+      "item": "Roseli Berry",
+      "moves": [
+        "Drain Punch",
+        "Iron Head",
+        "Dragon Claw",
+        "Clangorous Soul"
+      ]
+    },
+    "Kommo-o-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Bulletproof",
+      "item": "Life Orb",
+      "moves": [
+        "Clanging Scales",
+        "Focus Blast",
+        "Flash Cannon",
+        "Flamethrower"
+      ]
+    },
+     "Kommo-o-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Bulletproof",
+      "item": "Roseli Berry",
+      "moves": [
+        "Drain Punch",
+        "Iron Head",
+        "Dragon Claw",
+        "Clangorous Soul"
+      ]
+    },
+    "Kommo-o-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Bulletproof",
+      "item": "Life Orb",
+      "moves": [
+        "Clanging Scales",
+        "Focus Blast",
+        "Flash Cannon",
+        "Flamethrower"
+      ]
+    },
+     "Kommo-o-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Bulletproof",
+      "item": "Muscle Band",
+      "moves": [
+        "Clangorous Soul",
+        "Close Combat",
+        "Scale Shot",
+        "Draco Meteor"
+      ]
+    }
+  },
+  "Krookodile": {
+       "Krookodile-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Intimidate",
+      "item": "Weakness Policy",
+      "moves": [
+        "Thief",
+        "Power Trip",
+        "Sand Tomb",
+        "Bulk Up"
+      ]
+    }
+  },
 	"Lanturn": {
 		"Specs": {
 			"level": 50,
