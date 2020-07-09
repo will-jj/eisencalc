@@ -645,6 +645,10 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
+		"Attract": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Baton Pass": {
 		"bp": 0,
 		"type": "Normal"
@@ -669,6 +673,14 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"isMultiHit": true,
 		"acc": 90
 	},
+		"Charm": {
+        "bp": 0,
+        "type": "Fairy"
+    },
+    "Cotton Spore": {
+        "bp": 0,
+        "type": "Grass"
+    },
 	"Crabhammer": {"alwaysCrit": false},
 	"Cross Chop": {
 		"bp": 100,
@@ -694,6 +706,10 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 0,
 		"type": "Ghost"
 	},
+		"Detect": {
+        "bp": 0,
+        "type": "Fighting"
+    },
 	"Dig": {"bp": 60},
 	"Double-Edge": {"bp": 120},
 	"Dynamic Punch": {
@@ -890,6 +906,10 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"hasSecondaryEffect": true,
 		"acc": 75
 	},
+		"Lock-On": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Mach Punch": {
 		"bp": 40,
 		"type": "Fighting",
@@ -918,10 +938,36 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 0,
 		"type": "Normal"
 	},
+		"Mind Reader": {
+        "bp": 0,
+        "type": "Normal"
+    },
+    "Mirror Coat": {
+        "bp": 0,
+        "type": "Psychic"
+    },
 	"Moonlight": {
 		"bp": 0,
 		"type": "Normal"
 	},
+		"Mud-Slap": {
+		"bp": 20,
+		"type": "Ground",
+		"category": "Special",
+		"hasSecondaryEffect": true
+	},
+	"Nightmare": {
+        "bp": 0,
+        "type": "Ghost"
+    },
+	"Pain Split": {
+        "bp": 0,
+        "type": "Normal"
+    },
+    "Perish Song": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Protect": {
 		"bp": 0,
 		"type": "Normal"
@@ -933,6 +979,14 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"makesContact": true,
 		"acc": 100
 	},
+		"Psych Up": {
+        "bp": 0,
+        "type": "Normal"
+    },
+		"Rain Dance": {
+        "bp": 0,
+        "type": "Water"
+    },
 	"Rapid Spin": {
 		"bp": 20,
 		"type": "Normal",
@@ -963,6 +1017,12 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
+		"Rollout": {
+        "bp": 30,
+        "type": "Rock",
+        "category": "Physical",
+        "makesContact": true
+    },
 	"Sacred Fire": {
 		"bp": 100,
 		"type": "Fire",
@@ -970,6 +1030,18 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"hasSecondaryEffect": true,
 		"acc": 95
 	},
+		"Safeguard": {
+        "bp": 0,
+        "type": "Normal"
+    },
+    "Sandstorm": {
+        "bp": 0,
+        "type": "Rock"
+    },
+    "Scary Face": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Self-Destruct": {"bp": 200},
 	"Shadow Ball": {
 		"bp": 80,
@@ -1035,6 +1107,10 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 0,
 		"type": "Normal"
 	},
+		"Sweet Kiss": {
+        "bp": 0,
+        "type": "Fairy"
+    },
 	"Synthesis": {
 		"bp": 0,
 		"type": "Grass"
@@ -1047,6 +1123,18 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"acc": 100
 	},
 	"Tri Attack": {"hasSecondaryEffect": true},
+		"Twister": {
+		"bp": 40,
+		"type": "Dragon",
+		"category": "Special",
+		"hasSecondaryEffect": true
+	},
+	"Vital Throw": {
+        "bp": 70,
+        "type": "Fighting",
+        "category": "Physical",
+        "makesContact": true
+    },
 	"Whirlpool": {
 		"bp": 15,
 		"type": "Water",
