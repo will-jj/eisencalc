@@ -228,7 +228,7 @@ var MOVES_RBY = {
     },
 	        "Guillotine": {
         "bp": 0,
-        "type": "Normal",
+        "type": "Normal"
     },
 	"Gust": {
 		"bp": 40,
@@ -250,7 +250,7 @@ var MOVES_RBY = {
 	},
 		    "Horn Drill": {
         "bp": 0,
-        "type": "Normal",
+        "type": "Normal"
     },
 	"Hydro Pump": {
 		"bp": 120,
@@ -275,7 +275,7 @@ var MOVES_RBY = {
 	},
 		    "Hypnosis": {
         "bp": 0,
-        "type": "Psychic",
+        "type": "Psychic"
     },
 	"Ice Beam": {
 		"bp": 95,
@@ -494,7 +494,7 @@ var MOVES_RBY = {
 	},
 		    "Stun Spore": {
         "bp": 0,
-        "type": "Grass",
+        "type": "Grass"
     },
 	"Submission": {
 		"bp": 80,
