@@ -10325,7 +10325,7 @@ var SETDEX_GEN8_SETS = {
       ]
     }
   },
-  "Gengar" {
+  "Gengar": {
 	  "Gengar-1": {
       "level": "50",
       "evs": {
