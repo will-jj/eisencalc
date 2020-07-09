@@ -122,39 +122,50 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 ]);
 
 var ITEMS_BW = ITEMS_DPP.concat([
+	"Absorb Bulb",
 	"Air Balloon",
+	"Binding Band",
 	"Bug Gem",
+	"Burn Drive",
+	"Cell Battery",
+	"Chill Drive",
 	"Dark Gem",
 	"Dragon Gem",
+	"Douse Drive",
+	"Eject Button",
 	"Electric Gem",
 	"Eviolite",
 	"Fighting Gem",
 	"Fire Gem",
+	"Float Stone",
 	"Flying Gem",
 	"Ghost Gem",
 	"Grass Gem",
 	"Ground Gem",
 	"Ice Gem",
+	"Icy Rock",
 	"Normal Gem",
 	"Poison Gem",
 	"Psychic Gem",
+	"Red Card",
 	"Ring Target",
 	"Rock Gem",
+	"Rocky Helmet",
+	"Shock Drive",
 	"Steel Gem",
-	"Water Gem",
-	"Burn Drive",
-	"Chill Drive",
-	"Douse Drive",
-	"Shock Drive"
+	"Water Gem"
 ]);
 
 var ITEMS_XY = ITEMS_BW.concat([
 	"Assault Vest",
 	"Kee Berry",
+	"Luminous Moss",
 	"Maranga Berry",
 	"Pixie Plate",
+	"Power Herb",
 	"Roseli Berry",
 	"Safety Goggles",
+	"Snowball",
 	"Weakness Policy"
 ]);
 
@@ -242,7 +253,14 @@ var ITEMS_SM = ITEMS_XY.concat([
 ]);
 
 var ITEMS_SS = ITEMS_SM.concat([
-	"Heavy-Duty Boots"
+	"Blunder Policy",
+	"Eject Pack",
+	"Heavy-Duty Boots",
+	"Room Service",
+	"Rusted Shield",
+	"Rusted Sword",
+	"Throat Spray",
+	"Utility Umbrella"
 ]);
 
 function getTechnoBlast(item) {
