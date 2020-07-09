@@ -1846,6 +1846,10 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"hasPriority": true,
 		"acc": 100
 	},
+		"Captivate": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Charge Beam": {
 		"bp": 50,
 		"type": "Electric",
@@ -1868,6 +1872,10 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"makesContact": true,
 		"acc": 100
 	},
+		"Copycat": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Covet": {"bp": 60},
 	"Cross Poison": {
 		"bp": 70,
@@ -1953,6 +1961,10 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
+		"Embargo": {
+        "bp": 0,
+        "type": "Dark"
+    },
 	"Energy Ball": {
 		"bp": 80,
 		"type": "Grass",
@@ -2016,6 +2028,10 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
+		"Gastro Acid": {
+        "bp": 0,
+        "type": "Poison"
+    },
 	"Giga Impact": {
 		"bp": 150,
 		"type": "Normal",
@@ -2030,6 +2046,10 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"makesContact": true,
 		"acc": 100
 	},
+		"Gravity": {
+        "bp": 0,
+        "type": "Psychic"
+    },
 	"Gunk Shot": {
 		"bp": 120,
 		"type": "Poison",
@@ -2149,6 +2169,14 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"bp": 0,
 		"type": "Normal"
 	},
+		"Metal Burst": {
+        "bp": 0,
+        "type": "Steel"
+    },
+    "Miracle Eye": {
+        "bp": 0,
+        "type": "Psychic"
+    },
 	"Mirror Shot": {
 		"bp": 65,
 		"type": "Steel",
@@ -2202,13 +2230,6 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"makesContact": true,
 		"acc": 100
 	},
-	"Paleo Wave": {
-		"bp": 85,
-		"type": "Rock",
-		"category": "Special",
-		"hasSecondaryEffect": true,
-		"acc": 100
-	},
 	"Payback": {
 		"bp": 50,
 		"type": "Dark",
@@ -2237,6 +2258,10 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"category": "Special",
 		"acc": 100
 	},
+		"Power Trick": {
+        "bp": 0,
+        "type": "Psychic"
+    },
 	"Power Whip": {
 		"bp": 120,
 		"type": "Grass",
@@ -2327,14 +2352,6 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"makesContact": true,
 		"hasPriority": true,
 		"acc": 100
-	},
-	"Shadow Strike": {
-		"bp": 80,
-		"type": "Ghost",
-		"category": "Physical",
-		"hasSecondaryEffect": true,
-		"makesContact": true,
-		"acc": 95
 	},
 	"Spacial Rend": {
 		"bp": 100,
@@ -2457,6 +2474,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"makesContact": true,
 		"acc": 100
 	},
+		"Ally Switch": {
+        "bp": 0,
+        "type": "Psychic"
+    },
 	"Autotomize": {
 		"bp": 0,
 		"type": "Steel"
@@ -2553,6 +2574,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"isSpread": true,
 		"acc": 95
 	},
+		"Entrainment": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Feint": {"bp": 30},
 	"Fiery Dance": {
 		"bp": 80,
@@ -2668,6 +2693,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"category": "Special",
 		"acc": 100
 	},
+		"Guard Split": {
+        "bp": 0,
+        "type": "Psychic"
+    },
 	"Heal Pulse": {
 		"bp": 0,
 		"type": "Psychic"
@@ -2688,6 +2717,12 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"hasRecoil": 25,
 		"acc": 100
 	},
+		"Heat Crash": {
+        "bp": 1,
+        "type": "Fire",
+        "category": "Physical",
+        "makesContact": true
+    },
 	"Heavy Slam": {
 		"bp": 1,
 		"type": "Steel",
@@ -2782,6 +2817,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"makesContact": true,
 		"acc": 100
 	},
+		"Power Split": {
+        "bp": 0,
+        "type": "Psychic"
+    },
 	"Psyshock": {
 		"bp": 80,
 		"type": "Psychic",
@@ -2796,6 +2835,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"dealsPhysicalDamage": true,
 		"acc": 100
 	},
+		"Quash": {
+        "bp": 0,
+        "type": "Dark"
+    },
 	"Quick Guard": {
 		"bp": 0,
 		"type": "Fighting"
@@ -2816,6 +2859,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"hasSecondaryEffect": true,
 		"acc": 95
 	},
+		"Reflect Type": {
+        "bp": 0,
+        "type": "Normal"
+    },
 	"Relic Song": {
 		"bp": 75,
 		"type": "Normal",
@@ -2958,6 +3005,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"category": "Special",
 		"acc": 100
 	},
+		"Telekinesis": {
+        "bp": 0,
+        "type": "Psychic"
+    },
 	"Thrash": {"bp": 120},
 	"Uproar": {"bp": 90},
 	"V-create": {
@@ -3010,6 +3061,14 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"hasRecoil": 25,
 		"acc": 100
 	}
+		"Wonder Room": {
+        "bp": 0,
+        "type": "Psychic"
+    },
+    "Work Up": {
+        "bp": 0,
+        "type": "Normal"
+    }
 });
 
 var MOVES_XY = $.extend(true, {}, MOVES_BW, {
