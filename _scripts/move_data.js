@@ -4829,6 +4829,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 100,
 		"type": "Fairy",
 		"category": "Special",
+		"isSpread": true,
 		"acc": 100
 	},
 	"Surging Strikes": {
