@@ -346,6 +346,10 @@ function getDamageResult(attacker, defender, move, field) {
 		move.isSpread = (field.terrain === "Psychic" ? true : false);
 		description.moveBP = basePower
 		break;
+	case 'Triple Axel':
+    		basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
+   	 	description.moveBP = basePower;
+   		 break;
 	default:
 		basePower = move.bp;
 	}
