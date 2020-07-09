@@ -14431,456 +14431,3170 @@ var SETDEX_GEN8_SETS = {
     }
   },
 	"Lanturn": {
-		"Specs": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "4",
-				"sa": "252"
-			},
-			"nature": "Modest",
-			"ability": "Volt Absorb",
-			"item": "Leftovers",
-			"moves": [
-				"Scald",
-				"Volt Switch",
-				"Thunderbolt",
-				"Ice Beam"
-			]
-		}
-	},
-	"Lapras": {
-		"infinitymkds' Assault Vest": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "4",
-				"sa": "252"
-			},
-			"nature": "Quiet",
-			"ability": "Water Absorb",
-			"item": "Assault Vest",
-			"moves": [
-				"Sheer Cold",
-				"Freeze-Dry",
-				"Surf",
-				"Ice Shard"
-			]
-		}
-	},
+    "Lanturn-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Volt Absorb",
+      "item": "Leftovers",
+      "moves": [
+        "Bounce",
+        "Dive",
+        "Volt Switch",
+        "Protect"
+      ]
+    },
+    "Lanturn-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Modest",
+      "ability": "Volt Absorb",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Soak",
+        "Thunderbolt",
+        "Rest",
+        "Sleep Talk"
+      ]
+    },
+     "Lanturn-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Volt Absorb",
+      "item": "Choice Specs",
+      "moves": [
+        "Discharge",
+        "Surf",
+        "Blizzard",
+        "Dazzling Gleam"
+      ]
+    },
+     "Lanturn-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Quiet",
+      "ability": "Volt Absorb",
+      "item": "Lum Berry",
+      "moves": [
+        "Hydro Pump",
+        "Thunder",
+        "Ice Beam",
+        "Rain Dance"
+      ]
+    },
+     "Lanturn-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Volt Absorb",
+      "item": "Leftovers",
+      "moves": [
+        "Surf",
+        "Thunderbolt",
+        "Stockpile",
+        "Aqua Ring"
+      ]
+    }
+  },
+"Lapras": {
+    "Lapras-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Water Absorb",
+      "item": "King's Rock",
+      "moves": [
+        "Waterfall",
+        "Iron Head",
+        "Zen Headbutt",
+        "Dragon Dance"
+      ]
+    },
+    "Lapras-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Sassy",
+      "ability": "Water Absorb",
+      "item": "Zoom Lens",
+      "moves": [
+        "Rest",
+        "Sleep Talk",
+        "Sheer Cold",
+        "Horn Drill"
+      ]
+    },
+     "Lapras-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Relaxed",
+      "ability": "Water Absorb",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Perish Song",
+        "Protect",
+        "Whirlpool",
+        "Avalanche"
+      ]
+    },
+     "Lapras-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Quiet",
+      "ability": "Water Absorb",
+      "item": "Assault Vest",
+      "moves": [
+        "Ice Shard",
+        "Freeze-Dry",
+        "Hydro Pump",
+        "Psychic"
+      ]
+    }
+  },
+  "Leafeon": {
+    "Abomasnow-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Impish",
+      "ability": "Chlorophyll",
+      "item": "Liechi Berry",
+      "moves": [
+        "Yawn",
+        "Swords Dance",
+        "Baton Pass",
+        "Razor Leaf"
+      ]
+    },
+    "Leafeon-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Bold",
+      "ability": "Chlorophyll",
+      "item": "Heat Rock",
+      "moves": [
+        "Weather Ball",
+        "Solar Beam",
+        "Sunny Day",
+        "Hyper Voice"
+      ]
+    },
+     "Leafeon-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Impish",
+      "ability": "Chlorophyll",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Solar Blade",
+        "Sunny Day",
+        "Synthesis",
+        "Charm"
+      ]
+    },
+     "Leafeon-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Chlorophyll",
+      "item": "Scope Lens",
+      "moves": [
+        "Leaf Blade",
+        "Quick Attack",
+        "X-Scissor",
+        "Iron Tail"
+      ]
+    }
+  },
+  "Lickilicky": {
+     "Lickilicky-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Cloud Nine",
+      "item": "Metronome",
+      "moves": [
+        "Body Slam",
+        "Rollout",
+        "Defense Curl",
+        "Disable"
+      ]
+    }
+  },
 	"Liepard": {
-		"Tacticat": {
-			"level": 50,
-			"evs": {
-				"hp": "44",
-				"df": "212",
-				"sp": "252"
-			},
-			"ivs": {
-				"at": "0"
-			},
-			"nature": "Timid",
-			"ability": "Prankster",
-			"item": "Leftovers",
-			"moves": [
-				"Assist",
-				"Substitute",
-				"Swagger",
-				"Foul Play"
-			]
-		}
-	},
+    "Liepard-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Unburden",
+      "item": "Liechi Berry",
+      "moves": [
+        "Fake Out",
+        "Sucker Punch",
+        "Encore",
+        "Endure"
+      ]
+    },
+    "Liepard-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Prankster",
+      "item": "Bright Powder",
+      "moves": [
+        "Snarl",
+        "Hyper Voice,
+        "Substitute",
+        "Thunder Wave"
+      ]
+    },
+     "Liepard-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Unburden",
+      "item": "Focus Sash",
+      "moves": [
+        "Dark Pulse",
+        "Hyper Voice",
+        "Shadow Ball",
+        "Nasty Plot"
+      ]
+    },
+     "Liepard-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Unburden",
+      "item": "Scope Lens",
+      "moves": [
+        "Slash",
+        "Night Slash",
+        "Psycho Cut",
+        "Fake Out"
+      ]
+    }
+  },
+  "Lilligant": {
+     "Lilligant-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Timid",
+      "ability": "Chlorophyll",
+      "item": "Big Root",
+      "moves": [
+        "Giga Drain",
+        "Pollen Puff",
+        "Charm",
+        "Quiver Dance"
+      ]
+    }
+  },
+  "Lopunny": {
+     "Lopunny-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Jolly",
+      "ability": "Cute Charm",
+      "item": "Salac Berry",
+      "moves": [
+        "Play Rough",
+        "Triple Axel",
+        "Cosmic Power",
+        "Baton Pass"
+      ]
+    }
+  },
 	"Lucario": {
-		"Physical": {
-			"level": 50,
-			"evs": {
-				"at": "252",
-				"sp": "252",
-				"sd": "4"
-			},
-			"nature": "Jolly",
-			"ability": "Justified",
-			"item": "Focus Sash",
-			"moves": [
-				"Close Combat",
-				"Bullet Punch",
-				"Meteor Mash",
-				"Ice Punch"
-			]
-		},
-		"Special": {
-			"level": 50,
-			"evs": {
-				"sa": "252",
-				"sp": "252",
-				"sd": "4"
-			},
-			"nature": "Timid",
-			"ability": "Inner Focus",
-			"item": "Focus Sash",
-			"moves": [
-				"Aura Sphere",
-				"Flash Cannon",
-				"Vacuum Wave",
-				"Dark Pulse"
-			]
-		}
-	},
-	"Lunala": {
-		"Offensive": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"sa": "252",
-				"sp": "252",
-			},
-			"ivs": {
-				"at": "0",
-			},
-			"nature": "Timid",
-			"ability": "Shadow Shield",
-			"item": "Lunalium Z",
-			"moves": [
-				"Moongeist Beam",
-				"Moonblast",
-				"Psychic",
-				"Focus Blast"
-			]
-		}
-	},
-	"Magearna": {
-		"Trick Room": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"sa": "252",
-				"sd": "4",
-			},
-			"ivs": {
-				"at": "0",
-				"sp": "0",
-			},
-			"nature": "Quiet",
-			"ability": "Soul-Heart",
-			"item": "Fairium Z",
-			"moves": [
-				"Trick Room",
-				"Fleur Cannon",
-				"Flash Cannon",
-				"Focus Blast"
-			]
-		}
-	},
-	"Magnezone": {
-		"Offensive": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"sa": "252",
-				"sd": "4"
-			},
-			"nature": "Modest",
-			"ability": "Analytic",
-			"item": "Choice Specs",
-			"moves": [
-				"Thunderbolt",
-				"Flash Cannon",
-				"Volt Switch",
-				"Tri Attack"
-			]
-		},
-		"Trapper": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sd": "4",
-			},
-			"nature": "Bold",
-			"ability": "Magnet Pull",
-			"item": "",
-			"moves": [
-				"Thunderbolt",
-				"Body Press",
-				"Flash Cannon",
-				"Volt Switch"
-			]
-		}
-	},
+    "Lucario-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Brave",
+      "ability": "Inner Focus",
+      "item": "Focus Sash",
+      "moves": [
+        "Counter",
+        "Extreme Speed",
+        "Payback",
+        "Bullet Punch"
+      ]
+    },
+    "Lucario-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Naive",
+      "ability": "Inner Focus",
+      "item": "Assault Vest",
+      "moves": [
+        "Detect",
+        "Bullet Punch",
+        "Aura Sphere",
+        "Psychic"
+      ]
+    },
+     "Lucario-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Steadfast",
+      "item": "Quick Claw",
+      "moves": [
+        "Aura Sphere",
+        "Shadow Ball",
+        "Flash Cannon",
+        "Psychic"
+      ]
+    },
+     "Lucario-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Inner Focus",
+      "item": "Life Orb",
+      "moves": [
+        "Extreme Speed",
+        "Close Combat",
+        "Meteor Mash",
+        "Stone Edge"
+      ]
+    },
+        "Lucario-5": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Inner Focus",
+      "item": "Focus Sash",
+      "moves": [
+        "Counter",
+        "Extreme Speed",
+        "Payback",
+        "Bullet Punch"
+      ]
+    },
+    "Lucario-6": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Naive",
+      "ability": "Inner Focus",
+      "item": "Assault Vest",
+      "moves": [
+        "Detect",
+        "Bullet Punch",
+        "Aura Sphere",
+        "Psychic"
+      ]
+    },
+     "Lucario-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Steadfast",
+      "item": "Quick Claw",
+      "moves": [
+        "Aura Sphere",
+        "Shadow Ball",
+        "Flash Cannon",
+        "Psychic"
+      ]
+    },
+     "Lucario-8": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Inner Focus",
+      "item": "Life Orb",
+      "moves": [
+        "Extreme Speed",
+        "Close Combat",
+        "Meteor Mash",
+        "Stone Edge"
+      ]
+    }
+  },
+"Ludicolo": {
+    "Ludicolo-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Rain Dish",
+      "item": "Leftovers",
+      "moves": [
+        "Protect",
+        "Leech Seed",
+        "Drain Punch",
+        "Rain Dance"
+      ]
+    },
+    "Ludicolo-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Swift Swim",
+      "item": "King's Rock",
+      "moves": [
+        "Fake Out",
+        "Zen Headbutt",
+        "Waterfall",
+        "Bullet Seed"
+      ]
+    },
+     "Ludicolo-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Swift Swim",
+      "item": "Damp Rock",
+      "moves": [
+        "Surf",
+        "Energy Ball",
+        "Ice Beam",
+        "Rain Dance"
+      ]
+    },
+     "Ludicolo-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Quiet",
+      "ability": "Swift Swim",
+      "item": "Zoom Lens",
+      "moves": [
+        "Focus Blast",
+        "Hydro Pump",
+        "Leaf Storm",
+        "Blizzard"
+      ]
+    }
+  },
+  "Lunatone": {
+    "Lunatone-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Calm",
+      "ability": "Levitate",
+      "item": "Binding Band",
+      "moves": [
+        "Moonlight",
+        "Sand Tomb",
+        "Protect",
+        "Psychic"
+      ]
+    },
+    "Lunatone-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Bold",
+      "ability": "Levitate",
+      "item": "Light Clay",
+      "moves": [
+        "Reflect",
+        "Stealth Rock",
+        "Psychic",
+        "Explosion"
+      ]
+    },
+     "Lunatone-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Quiet",
+      "ability": "Levitate",
+      "item": "Mental Herb",
+      "moves": [
+        "Trick Room",
+        "Psychic",
+        "Power Gem",
+        "Moonlight"
+      ]
+    },
+     "Lunatone-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "Expert Belt",
+      "moves": [
+        "Moonblast",
+        "Psychic",
+        "Power Gem",
+        "Blizzard"
+      ]
+    },
+     "Lunatone-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ability": "Levitate",
+      "item": "Utility Umbrella",
+      "moves": [
+        "Moonlight",
+        "Moonblast",
+        "Cosmic Power",
+        "Power Gem"
+      ]
+    }
+  },
+  "Lurantis": {
+     "Lurantis-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Contrary",
+      "item": "Heat Rock",
+      "moves": [
+        "Solar Blade",
+        "Night Slash",
+        "Leaf Storm",
+        "Sunny Day"
+      ]
+    }
+  },
+  "Luxray": {
+     "Luxray-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Intimidate",
+      "item": "Magnet",
+      "moves": [
+        "Wild Charge",
+        "Psychic Fangs",
+        "Play Rough",
+        "Eerie Impulse"
+      ]
+    }
+  },
+  "Lycanroc-Day": {
+     "Lycanroc-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Sand Rush",
+      "item": "Hard Stone",
+      "moves": [
+        "Accelerock",
+        "Psychic Fangs",
+        "Stealth Rock",
+        "Roar"
+      ]
+    }
+  },
+  "Lycanroc-Night": {
+     "Lycanroc-M-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "No Guard",
+      "item": "Salac Berry",
+      "moves": [
+        "Rock Slide",
+        "Fire Punch",
+        "Reversal",
+        "Endure"
+      ]
+    }
+  },
+"Machamp": {
+    "Machamp-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Brave",
+      "ability": "Guts",
+      "item": "Weakness Policy",
+      "moves": [
+        "Revenge",
+        "Payback",
+        "Counter",
+        "Bullet Punch"
+      ]
+    },
+    "Machamp-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Guts",
+      "item": "Flame Orb",
+      "moves": [
+        "Facade",
+        "Seismic Toss",
+        "Fling",
+        "Bullet Punch"
+      ]
+    },
+     "Machamp-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "No Guard",
+      "item": "Choice Scarf",
+      "moves": [
+        "Dynamic Punch",
+        "Throat Chop",
+        "Darkest Lariat",
+        "Rock Slide"
+      ]
+    },
+     "Machamp-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "No Guard",
+      "item": "Scope Lens",
+      "moves": [
+        "Cross Chop",
+        "Stone Edge",
+        "High Horsepower",
+        "Dual Chop"
+      ]
+    }
+  },
+  "Magneton": {
+     "Magneton-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Analytic",
+      "item": "Eviolite",
+      "moves": [
+        "Flash Cannon",
+        "Electro Ball",
+        "Thunder Wave",
+        "Magnet Rise"
+      ]
+    }
+  },
+"Magnezone": {
+     "Magnezone-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Analytic",
+      "item": "Air Balloon",
+      "moves": [
+        "Steel Beam",
+        "Thunderbolt",
+        "Light Screen",
+        "Reflect"
+      ]
+    }
+  },
+  "Malamar": {
+    "Malamar-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Relaxed",
+      "ability": "Contrary",
+      "item": "Binding Band",
+      "moves": [
+        "Wrap",
+        "Disable",
+        "Rest",
+        "Payback"
+      ]
+    },
+    "Malamar-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Contrary",
+      "item": "Scope Lens",
+      "moves": [
+        "Superpower",
+        "Foul Play",
+        "Protect",
+        "Psycho Cut"
+      ]
+    },
+     "Malamar-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Infiltrator",
+      "item": "Tanga Berry",
+      "moves": [
+        "Dark Pulse",
+        "Psychic",
+        "Thunderbolt",
+        "Flamethrower"
+      ]
+    },
+     "Malamar-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Contrary",
+      "item": "Choice Scarf",
+      "moves": [
+        "Superpower",
+        "Rock Slide",
+        "Liquidation",
+        "Psycho Cut"
+      ]
+    },
+     "Malamar-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Contrary",
+      "item": "Quick Claw",
+      "moves": [
+        "Superpower",
+        "Liquidation",
+        "Night Slash",
+        "Baton Pass"
+      ]
+    }
+  },
 	"Mamoswine": {
-		"Sash": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Thick Fat",
-			"item": "Focus Sash",
-			"moves": [
-				"Earthquake",
-				"Icicle Spear",
-				"Ice Shard",
-				"Knock Off"
-			]
-		},
-		"Assault Vest": {
-			"level": 50,
-			"evs": {
-				"hp": "44",
-				"at": "212",
-				"sd": "252"
-			},
-			"nature": "Adamant",
-			"ability": "Thick Fat",
-			"item": "Assault Vest",
-			"moves": [
-				"Earthquake",
-				"Icicle Spear",
-				"Ice Shard",
-				"Fissure"
-			]
-		},
-		"Physically Defensive": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "4",
-				"df": "252"
-			},
-			"nature": "Impish",
-			"ability": "Thick Fat",
-			"item": "Rocky Helmet",
-			"moves": [
-				"Earthquake",
-				"Icicle Spear",
-				"Ice Shard",
-				"Knock Off"
-			]
-		},
-		"Life Orb": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Thick Fat",
-			"item": "Life Orb",
-			"moves": [
-				"Earthquake",
-				"Icicle Spear",
-				"Ice Shard",
-				"Knock Off"
-			]
-		}
-	},
-	"Mandibuzz": {
-		"Physically Defensive": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sd": "4"
-			},
-			"nature": "Bold",
-			"ability": "Overcoat",
-			"item": "Leftovers",
-			"moves": [
-				"Foul Play",
-				"Roost",
-				"Taunt",
-				"Toxic"
-			]
-		},
-		"Specially Defensive": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "4",
-				"sd": "252"
-			},
-			"nature": "Calm",
-			"ability": "Overcoat",
-			"item": "Leftovers",
-			"moves": [
-				"Foul Play",
-				"Roost",
-				"Taunt",
-				"Toxic"
-			]
-		}
-	},
-	"Marowak-Alola": {
-		"Standard": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "252",
-				"df": "4"
-			},
-			"nature": "Adamant",
-			"ability": "Lightningrod",
-			"item": "Thick Club",
-			"moves": [
-				"Flare Blitz",
-				"Poltergeist",
-				"Bonemerang",
-				"Thunder Punch"
-			]
-		}
-	},
-	"Marshadow": {
-		"Physical Sash": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252",
-			},
-			"nature": "Jolly",
-			"ability": "Technician",
-			"item": "Focus Sash",
-			"moves": [
-				"Spectral Thief",
-				"Close Combat",
-				"Shadow Sneak",
-				"Ice Punch"
-			]
-		},
-		"Mixed Sash": {
-			"level": 50,
-			"evs": {
-				"at": "252",
-				"sa": "4",
-				"sp": "252",
-			},
-			"nature": "Naive",
-			"ability": "Technician",
-			"item": "Focus Sash",
-			"moves": [
-				"Spectral Thief",
-				"Close Combat",
-				"Shadow Sneak",
-				"Hidden Power Ice"
-			]
-		}
-	},
-	"Mewtwo": {
-		"Standard X": {
-			"level": 50,
-			"evs": {
-				"at": "252",
-				"sd": "4",
-				"sp": "252",
-			},
-			"nature": "Jolly",
-			"ability": "Pressure",
-			"item": "Mewtwonite X",
-			"moves": [
-				"Drain Punch",
-				"Zen Headbutt",
-				"Ice Punch",
-				"Self-Destruct"
-			]
-		},
-		"Standard Y": {
-			"level": 50,
-			"evs": {
-				"sa": "252",
-				"sd": "4",
-				"sp": "252",
-			},
-			"ivs": {
-				"at": "0",
-			},
-			"nature": "Timid",
-			"ability": "Pressure",
-			"item": "Mewtwonite Y",
-			"moves": [
-				"Psystrike",
-				"Ice Beam",
-				"Flamethrower",
-				"Focus Blast"
-			]
-		}
-	},
+    "Mamoswine-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Thick Fat",
+      "item": "Bright Powder",
+      "moves": [
+        "Icy Wind",
+        "Rock Slide",
+        "Stealth Rock",
+        "Hail"
+      ]
+    },
+    "Mamoswine-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Bold",
+      "ability": "Thick Fat",
+      "item": "Leftovers",
+      "moves": [
+        "Rest",
+        "Ancient Power",
+        "Fissure",
+        "Sleep Talk"
+      ]
+    },
+     "Mamoswine-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Brave",
+      "ability": "Thick Fat",
+      "item": "Lum Berry",
+      "moves": [
+        "High Horsepower",
+        "Avalanche",
+        "Curse",
+        "Body Press"
+      ]
+    },
+     "Mamoswine-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Thick Fat",
+      "item": "Assault Vest",
+      "moves": [
+        "Earthquake",
+        "Icicle Crash",
+        "Stone Edge",
+        "Ice Shard"
+      ]
+    },
+     "Mamoswine-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Thick Fat",
+      "item": "Wise Glasses",
+      "moves": [
+        "Ice Beam",
+        "Icy Wind",
+        "Earth Power",
+        "Amnesia"
+      ]
+    }
+  },
+"Mandibuzz": {
+    "Mandibuzz-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Overcoat",
+      "item": "Roseli Berry",
+      "moves": [
+        "Snarl",
+        "Heat Wave",
+        "Roost",
+        "Defog"
+      ]
+    },
+    "Mandibuzz-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Modest",
+      "ability": "Overcoat",
+      "item": "Quick Claw",
+      "moves": [
+        "Air Slash",
+        "Dark Pulse",
+        "Heat Wave",
+        "Nasty Plot"
+      ]
+    },
+     "Mandibuzz-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Overcoat",
+      "item": "Assault Vest",
+      "moves": [
+        "Brave Bird",
+        "Bone Rush",
+        "Knock Off",
+        "U-turn"
+      ]
+    },
+     "Mandibuzz-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Impish",
+      "ability": "Overcoat",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Roost",
+        "Foul Play",
+        "Toxic",
+        "Taunt"
+      ]
+    },
+     "Mandibuzz-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Overcoat",
+      "item": "Sticky Barb",
+      "moves": [
+        "Knock Off",
+        "Snarl",
+        "Bone Rush",
+        "Tailwind"
+      ]
+    }
+  },
+"Manectric": {
+    "Manectric-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Lightning Rod",
+      "item": "Focus Sash",
+      "moves": [
+        "Thunder Fang",
+        "Ice Fang",
+        "Fire Fang",
+        "Agility"
+      ]
+    },
+    "Manectric-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Lightning Rod",
+      "item": "Air Balloon",
+      "moves": [
+        "Discharge",
+        "Snarl",
+        "Hyper Voice",
+        "Protect"
+      ]
+    },
+     "Manectric-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Lightning Rod",
+      "item": "Assault Vest",
+      "moves": [
+        "Psychic Fangs",
+        "Crunch",
+        "Ice Fang",
+        "Volt Switch"
+      ]
+    },
+     "Manectric-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Lightning Rod",
+      "item": "Eject Button",
+      "moves": [
+        "Thunder",
+        "Overheat",
+        "Hyper Beam",
+        "Volt Switch"
+      ]
+    }
+  },
+	"Mantine": {
+    "Mantine-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Water Absorb",
+      "item": "King's Rock",
+      "moves": [
+        "Rock Blast",
+        "Bullet Seed",
+        "Waterfall",
+        "Tailwind"
+      ]
+    },
+    "Mantine-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Water Absorb",
+      "item": "Damp Rock",
+      "moves": [
+        "Scald",
+        "Air Slash",
+        "Aqua Ring",
+        "Rain Dance"
+      ]
+    },
+     "Mantine-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Calm",
+      "ability": "Water Absorb",
+      "item": "Lum Berry",
+      "moves": [
+        "Scald",
+        "Air Slash",
+        "Ice Beam",
+        "Roost"
+      ]
+    },
+     "Mantine-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Quiet",
+      "ability": "Water Absorb",
+      "item": "Zoom Lens",
+      "moves": [
+        "Hydro Pump",
+        "Blizzard",
+        "Hurricane",
+        "Roost"
+      ]
+    },
+     "Mantine-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Water Absorb",
+      "item": "Chesto Berry",
+      "moves": [
+        "Rain Dance",
+        "Hydro Pump",
+        "Hurricane",
+        "Rest"
+      ]
+    }
+  },
+	"Maractus": {
+    "Maractus-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Storm Drain",
+      "item": "Occa Berry",
+      "moves": [
+        "Rain Dance",
+        "Sunny Day",
+        "Weather Ball",
+        "Solar Beam"
+      ]
+    },
+    "Maractus-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Careful",
+      "ability": "Storm Drain",
+      "item": "Leftovers",
+      "moves": [
+        "Cotton Guard",
+        "Leech Seed",
+        "Spiky Shield",
+        "Sucker Punch"
+      ]
+    },
+     "Maractus-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Quiet",
+      "ability": "Storm Drain",
+      "item": "Focus Sash",
+      "moves": [
+        "Grassy Terrain",
+        "Sucker Punch",
+        "Spiky Shield",
+        "Energy Ball"
+      ]
+    },
+     "Maractus-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Storm Drain",
+      "item": "Choice Scarf",
+      "moves": [
+        "Wood Hammer",
+        "Poison Jab",
+        "Throat Chop",
+        "Drain Punch"
+      ]
+    }
+  },
+  "Marowak": {
+     "Marowak-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Rock Head",
+      "item": "Thick Club",
+      "moves": [
+        "Bonemerang",
+        "Outrage",
+        "Iron Head",
+        "Throat Chop"
+      ]
+    }
+  },
+  "Mawile": {
+    "Mawile-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Intimidate",
+      "item": "Eject Button",
+      "moves": [
+        "Sucker Punch",
+        "Helping Hand",
+        "Power-Up Punch",
+        "Baton Pass"
+      ]
+    },
+    "Mawile-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Modest",
+      "ability": "Sheer Force",
+      "item": "Focus Sash",
+      "moves": [
+        "Flash Cannon",
+        "Dark Pulse",
+        "Flamethrower",
+        "Ice Beam"
+      ]
+    },
+     "Mawile-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Sheer Force",
+      "item": "Life Orb",
+      "moves": [
+        "Ice Punch",
+        "Crunch",
+        "Iron Head",
+        "Play Rough"
+      ]
+    },
+     "Mawile-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Sheer Force",
+      "item": "Liechi Berry",
+      "moves": [
+        "Play Rough",
+        "Sucker Punch",
+        "Swords Dance",
+        "Iron Head"
+      ]
+    }
+  },
+  "Meowstic": {
+    "Meowstic-M-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Calm",
+      "ability": "Infiltrator",
+      "item": "Light Clay",
+      "moves": [
+        "Reflect",
+        "Light Screen",
+        "Psyshock",
+        "Fake Out"
+      ]
+    },
+    "Meowstic-M-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Infiltrator",
+      "item": "Scope Lens",
+      "moves": [
+        "Extrasensory",
+        "Energy Ball",
+        "Dark Pulse",
+        "Fake Out"
+      ]
+    },
+     "Meowstic-M-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Brave",
+      "ability": "Infiltrator",
+      "item": "Terrain Extender",
+      "moves": [
+        "Thunder Wave",
+        "Psychic Terrain",
+        "Psyshock",
+        "Fake Out"
+      ]
+    },
+     "Meowstic-M-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Infiltrator",
+      "item": "Expert Belt",
+      "moves": [
+        "Psychic",
+        "Thunderbolt",
+        "Shadow Ball",
+        "Fake Out"
+      ]
+    },
+     "Meowstic-M-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Infiltrator",
+      "item": "Throat Spray",
+      "moves": [
+        "Disarming Voice",
+        "Snore",
+        "Yawn",
+        "Rest"
+      ]
+    }
+  },
+  "Mienshao": {
+     "Mienshao-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Jolly",
+      "ability": "Reckless",
+      "item": "Lum Berry",
+      "moves": [
+        "High Jump Kick",
+        "Blaze Kick",
+        "Aura Sphere",
+        "Fake Out"
+      ]
+    }
+  },
 	"Milotic": {
-		"Wall": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sd": "4"
-			},
-			"nature": "Bold",
-			"ability": "Marvel Scale",
-			"item": "Flame Orb",
-			"moves": [
-				"Scald",
-				"Ice Beam",
-				"Dragon Tail",
-				"Icy Wind"
-			]
-		}
-	},
-	"Mimikyu": {
-		"Sweeper": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"at": "252",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Disguise",
-			"item": "Life Orb",
-			"moves": [
-				"Play Rough",
-				"Phantom Force",
-				"Shadow Sneak",
-				"Drain Punch"
-			]
-		},
-		"Curse": {
-			"level": 50,
-			"evs": {
-				"hp": "228",
-				"at": "252",
-				"df": "28"
-			},
-			"nature": "Adamant",
-			"ability": "Disguise",
-			"item": "Life Orb",
-			"moves": [
-				"Play Rough",
-				"Shadow Claw",
-				"Shadow Sneak",
-				"Drain Punch"
-			]
-		}
-	},
+    "Milotic-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Timid",
+      "ability": "Competitive",
+      "item": "Damp Rock",
+      "moves": [
+        "Rain Dance",
+        "Scald",
+        "Icy Wind",
+        "Recover"
+      ]
+    },
+    "Milotic-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Marvel Scale",
+      "item": "Weakness Policy",
+      "moves": [
+        "Coil",
+        "Breaking Swipe",
+        "Aqua Tail",
+        "Iron Tail"
+      ]
+    },
+     "Milotic-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Calm",
+      "ability": "Competitive",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Scald",
+        "Mirror Coat",
+        "Rest",
+        "Sleep Talk"
+      ]
+    },
+     "Milotic-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Competitive",
+      "item": "Assault Vest",
+      "moves": [
+        "Hydro Pump",
+        "Blizzard",
+        "Dragon Pulse",
+        "Mud Shot"
+      ]
+    },
+     "Milotic-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Competitive",
+      "item": "Leftovers",
+      "moves": [
+        "Scald",
+        "Ice Beam",
+        "Rest",
+        "Sleep Talk"
+      ]
+    }
+  },
+  "Miltank": {
+     "Miltank-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "nature": "Bold",
+      "ability": "Thick Fat",
+      "item": "Binding Band",
+      "moves": [
+        "Thunderbolt",
+        "Whirlpool",
+        "Endure",
+        "Milk Drink"
+      ]
+    }
+  },
+"Mimikyu": {
+    "Mimikyu-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Disguise",
+      "item": "Leftovers",
+      "moves": [
+        "Curse",
+        "Protect",
+        "Phantom Force",
+        "Will-O-Wisp"
+      ]
+    },
+    "Mimikyu-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Disguise",
+      "item": "Lum Berry",
+      "moves": [
+        "Curse",
+        "Substitute",
+        "Pain Split",
+        "Play Rough"
+      ]
+    },
+     "Mimikyu-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Brave",
+      "ability": "Disguise",
+      "item": "Mental Herb",
+      "moves": [
+        "Trick Room",
+        "Play Rough",
+        "Shadow Claw",
+        "Destiny Bond"
+      ]
+    },
+     "Mimikyu-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Disguise",
+      "item": "Life Orb",
+      "moves": [
+        "Play Rough",
+        "Shadow Sneak",
+        "Shadow Claw",
+        "Swords Dance"
+      ]
+    }
+  },
+  "Morpeko": {
+    "Morpeko-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Timid",
+      "ability": "Hunger Switch",
+      "item": "Lum Berry",
+      "moves": [
+        "Snarl",
+        "Electroweb",
+        "Protect",
+        "Nasty Plot"
+      ]
+    },
+    "Morpeko-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Hunger Switch",
+      "item": "Heavy-Duty Boots",
+      "moves": [
+        "Volt Switch",
+        "Parting Shot",
+        "Fake Out",
+        "Taunt"
+      ]
+    },
+     "Morpeko-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Hunger Switch",
+      "item": "Expert Belt",
+      "moves": [
+        "Aura Wheel",
+        "Psychic Fangs",
+        "Seed Bomb",
+        "Brick Break"
+      ]
+    },
+     "Morpeko-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Hunger Switch",
+      "item": "King's Rock",
+      "moves": [
+        "Aura Wheel",
+        "Quick Attack",
+        "Fire Fang",
+        "Ice Fang"
+      ]
+    },
+     "Morpeko-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Hunger Switch",
+      "item": "Liechi Berry",
+      "moves": [
+        "Fake Out",
+        "Aura Wheel",
+        "Bullet Seed",
+        "Parting Shot"
+      ]
+    }
+  },
+  "Mr. Rime": {
+    "Mr. Rime-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Quiet",
+      "ability": "Screen Cleaner",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Fake Out",
+        "Slack Off",
+        "Freeze-Dry",
+        "Psychic"
+      ]
+    },
+    "Mr. Rime-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Screen Cleaner",
+      "item": "Terrain Extender",
+      "moves": [
+        "Icy Wind",
+        "Dazzling Gleam",
+        "Psychic",
+        "Psychic Terrain"
+      ]
+    },
+     "Mr. Rime-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Screen Cleaner",
+      "item": "Life Orb",
+      "moves": [
+        "Fake Out",
+        "Ice Shard",
+        "Sucker Punch",
+        "Zen Headbutt"
+      ]
+    },
+     "Mr. Rime-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Screen Cleaner",
+      "item": "Expert Belt",
+      "moves": [
+        "Grass Knot",
+        "Psychic",
+        "Blizzard",
+        "Thunder"
+      ]
+    },
+        "Mr. Rime-1 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "nature": "Quiet",
+      "ability": "Screen Cleaner",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Fake Out",
+        "Slack Off",
+        "Freeze-Dry",
+        "Psychic"
+      ]
+    },
+    "Mr. Rime-2 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "nature": "Calm",
+      "ability": "Screen Cleaner",
+      "item": "Terrain Extender",
+      "moves": [
+        "Icy Wind",
+        "Dazzling Gleam",
+        "Psychic",
+        "Psychic Terrain"
+      ]
+    },
+     "Mr. Rime-3 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "nature": "Adamant",
+      "ability": "Screen Cleaner",
+      "item": "Life Orb",
+      "moves": [
+        "Fake Out",
+        "Ice Shard",
+        "Sucker Punch",
+        "Zen Headbutt"
+      ]
+    },
+     "Mr. Rime-4 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Modest",
+      "ability": "Screen Cleaner",
+      "item": "Expert Belt",
+      "moves": [
+        "Grass Knot",
+        "Psychic",
+        "Blizzard",
+        "Thunder"
+      ]
+    },
+     "Mr. Rime-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Screen Cleaner",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Psychic",
+        "Copycat",
+        "Mirror Coat",
+        "Recycle"
+      ]
+    }
+  },
 	"Mudsdale": {
-		"Assault Vest": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "252",
-				"sd": "4"
-			},
-			"nature": "Adamant",
-			"ability": "Stamina",
-			"item": "Assault Vest",
-			"moves": [
-				"Earthquake",
-				"Heavy Slam",
-				"Close Combat",
-				"Rock Tomb"
-			]
-		}
-	},
+    "Mudsdale-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Inner Focus",
+      "item": "Leftovers",
+      "moves": [
+        "Body Slam",
+        "Protect",
+        "Sandstorm",
+        "Stealth Rock"
+      ]
+    },
+    "Mudsdale-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Inner Focus",
+      "item": "Zoom Lens",
+      "moves": [
+        "Fissure",
+        "Smack Down",
+        "Stomping Tantrum",
+        "Protect"
+      ]
+    },
+     "Mudsdale-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Sassy",
+      "ability": "Inner Focus",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Counter",
+        "Payback",
+        "Rest",
+        "Sleep Talk"
+      ]
+    },
+     "Mudsdale-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Inner Focus",
+      "item": "White Herb",
+      "moves": [
+        "Superpower",
+        "Protect",
+        "Heavy Slam",
+        "High Horsepower"
+      ]
+    }
+  },
+  "Musharna": {
+    "Musharna-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Synchronize",
+      "item": "Leftovers",
+      "moves": [
+        "Dream Eater",
+        "Yawn",
+        "Protect",
+        "Dazzling Gleam"
+      ]
+    },
+    "Musharna-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Brave",
+      "ability": "Synchronize",
+      "item": "Room Service",
+      "moves": [
+        "Zen Headbutt",
+        "Gyro Ball",
+        "Rock Slide",
+        "Trick Room"
+      ]
+    },
+     "Musharna-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Bold",
+      "ability": "Synchronize",
+      "item": "Life Orb",
+      "moves": [
+        "Rest",
+        "Sleep Talk",
+        "Moonblast",
+        "Psychic"
+      ]
+    },
+     "Musharna-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Quiet",
+      "ability": "Synchronize",
+      "item": "Weakness Policy",
+      "moves": [
+        "Shadow Ball",
+        "Moonblast",
+        "Psychic",
+        "Energy Ball"
+      ]
+    },
+     "Musharna-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Synchronize",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Psychic Terrain",
+        "Expanding Force",
+        "Trick Room",
+        "Yawn"
+      ]
+    }
+  },
 	"Necrozma-Dusk Mane": {
 		"ULTRA Swords Dance": {
 			"level": 50,
