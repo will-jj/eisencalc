@@ -1,15 +1,15 @@
 include: ['_pages', '_css', '_scripts', '_images']
 
-title: Battle Spot Damage Calculator
+title: Battle Facilities Calculator
 
 github: [metadata]
   
-url: "https://cantsay.github.io"
+url: "https://to-metrion.github.io"
   
-repository: cantsay/cantsay.github.io
+repository: to-metrion/to-metrion.github.io
 
 description:
-  Pokemon Damage Calculator for Gen 5, 6, 7, and 8 BSS and competitive LGPE, preloaded with viable sets for all formats.
+  Pokemon Damage Calculator for SwSh Battle Facilities, with Battle Tower and Restricted Sparring sets preloaded.
   
 
 plugins:
