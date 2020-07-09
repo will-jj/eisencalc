@@ -4803,7 +4803,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"type": "Ice",
 		"category": "Physical",
 		"makesContact": true,
-		"isMultihit": true,
+		"isMultiHit": true,
 		"acc": 90,
 	},
 	"Scorching Sands": {
