@@ -3730,6 +3730,10 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"acc": 90
 	},
 	"Fling": {"zp": 100},
+		"Floral Healing": {
+        "bp": 0,
+        "type": "Fairy"
+    },
 	"Fly": {"zp": 175},
 	"Flying Press": {"bp": 100, "zp": 170},
 	"Focus Blast": {"zp": 190},
@@ -3845,6 +3849,10 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"isZ": true
 	},
 	"Infestation": {"zp": 100},
+		"Instruct": {
+        "bp": 0,
+        "type": "Psychic"
+    },
 	"Iron Head": {"zp": 160},
 	"Iron Tail": {"zp": 180},
 	"Judgment": {"zp": 180},
@@ -4153,6 +4161,10 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"acc": 100
 	},
 	"Shock Wave": {"zp": 120},
+		"Shore Up": {
+        "bp": 0,
+        "type": "Ground"
+    },
 	"Signal Beam": {"zp": 140},
 	"Silver Wind": {"zp": 120},
 	"Sinister Arrow Raid": {
@@ -4249,6 +4261,10 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	"Stone Edge": {"zp": 180},
 	"Stored Power": {"zp": 160},
 	"Storm Throw": {"zp": 120},
+		"Strength Sap": {
+        "bp": 0,
+        "type": "Grass"
+    },
 	"Struggle Bug": {"zp": 100},
 	"Submission": {"zp": 160},
 	"Subzero Slammer": {
