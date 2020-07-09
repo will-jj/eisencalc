@@ -4731,7 +4731,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 50,
 		"type": "Normal",
 		"category": "Special",
-		"isPulse": true
+		"isPulse": true,
 		"acc": 100
 	},
 	"Burning Jealousy": {
