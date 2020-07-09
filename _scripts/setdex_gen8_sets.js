@@ -14864,7 +14864,7 @@ var SETDEX_GEN8_SETS = {
       "item": "Bright Powder",
       "moves": [
         "Snarl",
-        "Hyper Voice,
+        "Hyper Voice",
         "Substitute",
         "Thunder Wave"
       ]
