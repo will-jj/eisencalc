@@ -4652,6 +4652,46 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"type": "Steel",
 		"category": "Special",
 	},
+	"Stuff Cheeks": {
+		"bp": 0,
+		"type": "Normal"
+	},
+	"Tar Shot": {
+		"bp": 0,
+		"type": "Rock"
+	},
+	"Teatime": {
+		"bp": 0,
+		"type": "Normal"
+	},
+	"Magic Powder": {
+		"bp": 0,
+		"type": "Psychic"
+	},
+	"No Retreat": {
+		"bp": 0,
+		"type": "Fighting"
+	},
+	"Clangorous Soul": {
+		"bp": 0,
+		"type": "Dragon"
+	},
+	"Octolock": {
+		"bp": 0,
+		"type": "Fighting"
+	},
+	"Court Change": {
+		"bp": 0,
+		"type": "Normal"
+	},
+	"Decorate": {
+		"bp": 0,
+		"type": "Fairy"
+	},
+	"Obstruct": {
+		"bp": 0,
+		"type": "Dark"
+	},
 	"Max Strike": {
 		"type": "Normal",
 		"acc": 101
@@ -4762,12 +4802,15 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 20,
 		"type": "Ice",
 		"category": "Physical",
+		"makesContact": true,
+		"isMultihit": 3,
 		"acc": 90,
 	},
 	"Scorching Sands": {
 		"bp": 70,
 		"type": "Ground",
 		"category": "Special",
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Dual Wingbeat": {
@@ -4787,7 +4830,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 70,
 		"type": "Bug",
 		"category": "Physical",
-		"acc": 100
+		"acc": 90
 	},
 	"Meteor Beam": {
 		"bp": 120,
