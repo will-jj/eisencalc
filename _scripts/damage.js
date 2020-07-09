@@ -384,6 +384,11 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x14CD);
 		description.attackerAbility = attacker.ability;
 	}
+	
+	  if (attacker.ability === "Steely Spirit" && move.type === "Steel") {
+    		bpMods.push(0x1800);
+    		description.attackerAbility = attacker.ability;
+  }
 
 	if (getItemBoostType(attacker.item) === move.type) {
 		bpMods.push(0x1333);
