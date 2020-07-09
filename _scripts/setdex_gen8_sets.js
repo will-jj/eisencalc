@@ -11443,7 +11443,7 @@ var SETDEX_GEN8_SETS = {
     "Grapploct-2": {
       "level": "50",
       "evs": {
-        "hp": ,
+        "hp": 0,
         "at": 0,
         "df": 252,
         "sa": 0,
