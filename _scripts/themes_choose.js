@@ -11,7 +11,7 @@ var changetheme = function () {
 		$("#select2css")[0].href = "_css/select2.css";
 		$("#nbcalccss")[0].href = "_css/dark_nb_calc.css";
 		$("#apcalccss")[0].href = "_css/dark_ap_calc.css";
-		$("#midimg")[0].src = "_images/shiny aegi trozei.png";
+		$("#midimg")[0].src = "_images/tower.png";
 		localStorage.setItem("selectedTheme", $("#theme").val());
 		break;
 	case "legacy":
@@ -35,12 +35,12 @@ var changetheme = function () {
 		$("#midimg")[0].src = "_images/volc.png";
 		localStorage.setItem("selectedTheme", $("#theme").val());
 		break;
-	case "aegislash":
+	case "dark":
 	default:
 		$("#select2css")[0].href = "_css/select2.css";
-		$("#nbcalccss")[0].href = "_css/nb_calc.css";
-		$("#apcalccss")[0].href = "_css/ap_calc.css";
-		$("#midimg")[0].src = "_images/aegi trozei.png";
+		$("#nbcalccss")[0].href = "_css/dark_nb_calc.css";
+		$("#apcalccss")[0].href = "_css/dark_ap_calc.css";
+		$("#midimg")[0].src = "_images/tower.png";
 		localStorage.setItem("selectedTheme", $("#theme").val());
 	}
 };
