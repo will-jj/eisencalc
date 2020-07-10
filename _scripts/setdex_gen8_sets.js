@@ -26657,226 +26657,2223 @@ var SETDEX_GEN8_SETS = {
       ]
     }
   },
-	"Umbreon": {
-		"Defensive Standard": {
+"Umbreon": {
+    "Umbreon-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Bold",
+      "ability": "Synchronize",
+      "item": "Apicot Berry",
+      "moves": [
+        "Confuse Ray",
+        "Work Up",
+        "Baton Pass",
+        "Snarl"
+      ]
+    },
+    "Umbreon-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Quiet",
+      "ability": "Synchronize",
+      "item": "Bright Powder",
+      "moves": [
+        "Dark Pulse",
+        "Shadow Ball",
+        "Mud-Slap",
+        "Hyper Voice"
+      ]
+    },
+     "Umbreon-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Calm",
+      "ability": "Synchronize",
+      "item": "Leftovers",
+      "moves": [
+        "Protect",
+        "Wish",
+        "Foul Play",
+        "Taunt"
+      ]
+    },
+     "Umbreon-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Inner Focus",
+      "item": "Assault Vest",
+      "moves": [
+        "Crunch",
+        "Iron Tail",
+        "Body Slam",
+        "Double Kick"
+      ]
+    }
+  },
+	"Unfezant": {
+    "Unfezant-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Naive",
+      "ability": "Super Luck",
+      "item": "Scope Lens",
+      "moves": [
+        "Air Cutter",
+        "Night Slash",
+        "Detect",
+        "Work Up"
+      ]
+    },
+    "Unfezant-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Super Luck",
+      "item": "Bright Powder",
+      "moves": [
+        "Air Slash",
+        "Attract",
+        "Roost",
+        "Feather Dance"
+      ]
+    },
+     "Unfezant-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Super Luck",
+      "item": "King's Rock",
+      "moves": [
+        "Air Slash",
+        "Heat Wave",
+        "Detect",
+        "Defog"
+      ]
+    },
+     "Unfezant-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Super Luck",
+      "item": "Power Herb",
+      "moves": [
+        "Sky Attack",
+        "U-turn",
+        "Steel Wing",
+        "Night Slash"
+      ]
+    }
+  },
+	"Vanilluxe": {
+    "Vanilluxe-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Snow Warning",
+      "item": "Leftovers",
+      "moves": [
+        "Imprison",
+        "Icicle Crash",
+        "Explosion",
+        "Protect"
+      ]
+    },
+    "Vanilluxe-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Brave",
+      "ability": "Snow Warning",
+      "item": "Zoom Lens",
+      "moves": [
+        "Sheer Cold",
+        "Avalanche",
+        "Explosion",
+        "Ice Shard"
+      ]
+    },
+     "Vanilluxe-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Quiet",
+      "ability": "Snow Warning",
+      "item": "Icy Rock",
+      "moves": [
+        "Blizzard",
+        "Flash Cannon",
+        "Hail",
+        "Aurora Veil"
+      ]
+    },
+     "Vanilluxe-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Snow Warning",
+      "item": "Assault Vest",
+      "moves": [
+        "Ice Shard",
+        "Blizzard",
+        "Flash Cannon",
+        "Mirror Coat"
+      ]
+    },
+     "Vanilluxe-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "nature": "Modest",
+      "ability": "Snow Warning",
+      "item": "Never-Melt Ice",
+      "moves": [
+        "Ice Beam",
+        "Flash Cannon",
+        "Light Screen",
+        "Acid Armor"
+      ]
+    }
+  },
+  "Vaporeon": {
+    "Vaporeon-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Calm",
+      "ability": "Water Absorb",
+      "item": "Ganlon Berry",
+      "moves": [
+        "Yawn",
+        "Acid Armor",
+        "Baton Pass",
+        "Water Pulse"
+      ]
+    },
+    "Vaporeon-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Modest",
+      "ability": "Water Absorb",
+      "item": "Damp Rock",
+      "moves": [
+        "Weather Ball",
+        "Ice Beam",
+        "Rain Dance",
+        "Shadow Ball"
+      ]
+    },
+     "Vaporeon-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Water Absorb",
+      "item": "Leftovers",
+      "moves": [
+        "Scald",
+        "Protect",
+        "Wish",
+        "Shadow Ball"
+      ]
+    },
+     "Vaporeon-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Water Absorb",
+      "item": "Bright Powder",
+      "moves": [
+        "Hydro Pump",
+        "Mud-Slap",
+        "Shadow Ball",
+        "Blizzard"
+      ]
+    }
+  },
+  "Vespiquen": {
+    "Vespiquen-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Impish",
+      "ability": "Unnerve",
+      "item": "Bright Powder",
+      "moves": [
+        "Swagger",
+        "Toxic Spikes",
+        "Attack Order",
+        "Attract"
+      ]
+    },
+    "Vespiquen-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Careful",
+      "ability": "Unnerve",
+      "item": "Leftovers",
+      "moves": [
+        "Defend Order",
+        "Toxic",
+        "Fell Stinger",
+        "Protect"
+      ]
+    },
+     "Vespiquen-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Unnerve",
+      "item": "Charti Berry",
+      "moves": [
+        "Attack Order",
+        "Acrobatics",
+        "Cross Poison",
+        "Protect"
+      ]
+    },
+     "Vespiquen-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Unnerve",
+      "item": "Quick Claw",
+      "moves": [
+        "Air Slash",
+        "Bug Buzz",
+        "Power Gem",
+        "Destiny Bond"
+      ]
+    },
+        "Vespiquen-5": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Impish",
+      "ability": "Unnerve",
+      "item": "Bright Powder",
+      "moves": [
+        "Swagger",
+        "Toxic Spikes",
+        "Attack Order",
+        "Attract"
+      ]
+    },
+    "Vespiquen-6": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Careful",
+      "ability": "Unnerve",
+      "item": "Leftovers",
+      "moves": [
+        "Defend Order",
+        "Toxic",
+        "Fell Stinger",
+        "Protect"
+      ]
+    },
+     "Vespiquen-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Unnerve",
+      "item": "Charti Berry",
+      "moves": [
+        "Attack Order",
+        "Acrobatics",
+        "Cross Poison",
+        "Protect"
+      ]
+    },
+     "Vespiquen-8": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Unnerve",
+      "item": "Quick Claw",
+      "moves": [
+        "Air Slash",
+        "Bug Buzz",
+        "Power Gem",
+        "Destiny Bond"
+      ]
+    },
+     "Vespiquen-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Unnerve",
+      "item": "Red Card",
+      "moves": [
+        "Toxic Spikes",
+        "U-turn",
+        "Thief",
+        "Venoshock"
+      ]
+    }
+  },
+	  "Vikavolt": {
+    "Vikavolt-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Discharge",
+        "Bug Buzz",
+        "Eerie Impulse",
+        "Sticky Web"
+      ]
+    },
+    "Vikavolt-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Relaxed",
+      "ability": "Levitate",
+      "item": "Zoom Lens",
+      "moves": [
+        "Guillotine",
+        "Mud-Slap",
+        "Thunder Wave",
+        "Substitute"
+      ]
+    },
+     "Vikavolt-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Levitate",
+      "item": "Life Orb",
+      "moves": [
+        "Wild Charge",
+        "X-Scissor",
+        "Poison Jab",
+        "Crunch"
+      ]
+    },
+     "Vikavolt-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "Expert Belt",
+      "moves": [
+        "Thunderbolt",
+        "Bug Buzz",
+        "Flash Cannon",
+        "Air Slash"
+      ]
+    },
+          "Vikavolt-5": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Discharge",
+        "Bug Buzz",
+        "Eerie Impulse",
+        "Sticky Web"
+      ]
+    },
+    "Vikavolt-6": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Relaxed",
+      "ability": "Levitate",
+      "item": "Zoom Lens",
+      "moves": [
+        "Guillotine",
+        "Mud-Slap",
+        "Thunder Wave",
+        "Substitute"
+      ]
+    },
+     "Vikavolt-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Levitate",
+      "item": "Life Orb",
+      "moves": [
+        "Wild Charge",
+        "X-Scissor",
+        "Poison Jab",
+        "Crunch"
+      ]
+    },
+     "Vikavolt-8": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "Expert Belt",
+      "moves": [
+        "Thunderbolt",
+        "Bug Buzz",
+        "Flash Cannon",
+        "Air Slash"
+      ]
+    }
+  },
+  "Vileplume": {
+    "Vileplume-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Effect Spore",
+      "item": "Leftovers",
+      "moves": [
+        "Giga Drain",
+        "Sludge Wave",
+        "Charm",
+        "Protect"
+      ]
+    },
+    "Vileplume-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Effect Spore",
+      "item": "Terrain Extender",
+      "moves": [
+        "Sludge Bomb",
+        "Strength Sap",
+        "Grassy Terrain",
+        "Giga Drain"
+      ]
+    },
+     "Vileplume-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Impish",
+      "ability": "Effect Spore",
+      "item": "Black Sludge",
+      "moves": [
+        "Toxic",
+        "Protect",
+        "Leech Seed",
+        "Drain Punch"
+      ]
+    },
+     "Vileplume-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Effect Spore",
+      "item": "Quick Claw",
+      "moves": [
+        "Dazzling Gleam",
+        "Pollen Puff",
+        "Sludge Wave",
+        "Nature Power"
+      ]
+    },
+     "Vileplume-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ability": "Effect Spore",
+      "item": "Big Root",
+      "moves": [
+        "Giga Drain",
+        "Moonblast",
+        "Corrosive Gas",
+        "Strength Sap"
+      ]
+    }
+  },
+	"Volcarona": {
+		"Volcarona-RS": {
 			"level": 50,
 			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sd": "4"
-			},
-			"nature": "Bold",
-			"ability": "Synchronize",
-			"item": "Leftovers",
-			"moves": [
-				"Foul Play",
-				"Wish",
-				"Protect",
-				"Yawn"
-			]
-		}
-	},
-	"Urshifu-Rapid-Strike": {
-		"Life Orb": {
-			"level": 50,
-			"evs": {
-				"at": "252",
-				"df": "4",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Unseen Fist",
-			"item": "Life Orb",
-			"moves": [
-				"Surging Strikes",
-				"Close Combat",
-				"Thunder Punch",
-				"Aerial Ace"
-			]
-		},
-		"Assault Vest": {
-			"level": 50,
-			"evs": {
-				"at": "252",
-				"df": "4",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Unseen Fist",
-			"item": "Assault Vest",
-			"moves": [
-				"Surging Strikes",
-				"Close Combat",
-				"Thunder Punch",
-				"Aerial Ace"
-			]
-		}
-	},
-	"Urshifu-Single-Strike": {
-		"Offensive": {
-			"level": 50,
-			"evs": {
-				"at": "252",
-				"df": "4",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Unseen Fist",
-			"item": "Focus Sash",
-			"moves": [
-				"Wicked Blow",
-				"Close Combat",
-				"Sucker Punch",
-				"Aerial Ace"
-			]
-		}
-	},
-	"Venusaur": {
-		"Offensive Mega": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "4",
 				"sa": "252"
 			},
 			"nature": "Modest",
-			"ability": "Overgrow",
-			"item": "Venusaurite",
-			"moves": [
-				"Sludge Bomb",
-				"Giga Drain",
-				"Hidden Power Fire",
-				"Earthquake"
-			]
-		},
-		"Defensive Mega": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sd": "4"
-			},
-			"nature": "Bold",
-			"ability": "Overgrow",
-			"item": "Venusaurite",
-			"moves": [
-				"Sludge Bomb",
-				"Giga Drain",
-				"Hidden Power Fire",
-				"Earthquake"
-			]
-		}
-	},
-	"Vikavolt": {
-		"Webs Lead": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"sa": "252",
-				"sp": "252"
-			},
-			"nature": "Modest",
-			"ability": "Levitate",
-			"item": "Focus Sash",
-			"moves": [
-				"Volt Switch",
-				"Guillotine",
-				"Bug Buzz",
-				"Thunderbolt"
-			]
-		},
-		"Blunder Policy Gimmick": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"sa": "252",
-				"sp": "252"
-			},
-			"nature": "Modest",
-			"ability": "Levitate",
-			"item": "Blunder Policy",
-			"moves": [
-				"Zap Cannon",
-				"Guillotine",
-				"Bug Buzz",
-				"Thunderbolt"
-			]
-		}
-	},
-	"Volcarona": {
-		"Offensive": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"sa": "252",
-				"sp": "252"
-			},
-			"nature": "Timid",
 			"ability": "Swarm",
-			"item": "Lum Berry",
+			"item": "Heavy-Duty Boots",
 			"moves": [
+				"Heat Wave",
 				"Bug Buzz",
-				"Fire Blast",
-				"Hurricane",
-				"Giga Drain"
+				"Flame Charge",
+				"Struggle Bug"
 			]
 		}
 	},
+  "Wailord": {
+    "Wailord-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Oblivious",
+      "item": "Leftovers",
+      "moves": [
+        "Protect",
+        "Dive",
+        "Bounce",
+        "Amnesia"
+      ]
+    },
+    "Wailord-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Oblivious",
+      "item": "Grip Claw",
+      "moves": [
+        "Fissure",
+        "Soak",
+        "Whirlpool",
+        "Body Slam"
+      ]
+    },
+     "Wailord-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Oblivious",
+      "item": "Bright Powder",
+      "moves": [
+        "Water Spout",
+        "Ice Beam",
+        "Surf",
+        "Hyper Voice"
+      ]
+    },
+     "Wailord-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Oblivious",
+      "item": "Choice Band",
+      "moves": [
+        "Liquidation",
+        "Heavy Slam",
+        "Zen Headbutt",
+        "Earthquake"
+      ]
+    },
+     "Wailord-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Pressure",
+      "item": "Liechi Berry",
+      "moves": [
+        "Bulldoze",
+        "Self-Destruct",
+        "Tickle",
+        "Soak"
+      ]
+    }
+  },
 	"Weavile": {
-		"Physical Attacker": {
-			"level": 50,
-			"evs": {
-				"at": "252",
-				"sd": "4",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Pressure",
-			"item": "Life Orb",
-			"moves": [
-				"Ice Shard",
-				"Knock Off",
-				"Low Kick",
-				"Icicle Crash"
-			]
-		}
-	},
-	"Whimsicott": {
-		"Cotton Stall": {
-			"level": 50,
-			"evs": {
-				"hp": "204",
-				"sd": "52",
-				"sp": "252"
-			},
-			"nature": "Timid",
-			"ability": "Prankster",
-			"item": "Leftovers",
-			"moves": [
-				"Encore",
-				"Leech Seed",
-				"Moonblast",
-				"Cotton Guard"
-			]
-		}
-	},
-	"Wobbuffet": {
-		"\(>_<)7": {
-			"level": 50,
-			"evs": {
-				"df": "252",
-				"sd": "252",
-				"sp": "4"
-			},
-			"nature": "Bold",
-			"ability": "Shadow Tag",
-			"item": "Sitrus Berry",
-			"moves": [
-				"Encore",
-				"Counter",
-				"Mirror Coat",
-				"Destiny Bond"
-			]
-		}
-	}
+    "Weavile-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Pickpocket",
+      "item": "Lum Berry",
+      "moves": [
+        "Icy Wind",
+        "Snarl",
+        "Reflect",
+        "Fake Out"
+      ]
+    },
+    "Weavile-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Brave",
+      "ability": "Pickpocket",
+      "item": "Focus Sash",
+      "moves": [
+        "Fake Out",
+        "Counter",
+        "Ice Shard",
+        "Feint"
+      ]
+    },
+     "Weavile-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Pickpocket",
+      "item": "Chople Berry",
+      "moves": [
+        "Swords Dance",
+        "Brick Break",
+        "Ice Punch",
+        "Throat Chop"
+      ]
+    },
+     "Weavile-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Pressure",
+      "item": "Life Orb",
+      "moves": [
+        "Low Kick",
+        "Icicle Crash",
+        "Throat Chop",
+        "Poison Jab"
+      ]
+    },
+        "Weavile-5": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Pickpocket",
+      "item": "Lum Berry",
+      "moves": [
+        "Icy Wind",
+        "Snarl",
+        "Reflect",
+        "Fake Out"
+      ]
+    },
+    "Weavile-6": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Pickpocket",
+      "item": "Focus Sash",
+      "moves": [
+        "Fake Out",
+        "Counter",
+        "Ice Shard",
+        "Feint"
+      ]
+    },
+     "Weavile-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Pickpocket",
+      "item": "Chople Berry",
+      "moves": [
+        "Swords Dance",
+        "Brick Break",
+        "Ice Punch",
+        "Throat Chop"
+      ]
+    },
+     "Weavile-8": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Pressure",
+      "item": "Life Orb",
+      "moves": [
+        "Low Kick",
+        "Icicle Crash",
+        "Throat Chop",
+        "Poison Jab"
+      ]
+    },
+     "Weavile-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Pressure",
+      "item": "Scope Lens",
+      "moves": [
+        "Triple Axel",
+        "Night Slash",
+        "Shadow Claw",
+        "Taunt"
+      ]
+    }
+  },
+  "Weezing-Galar": {
+    "Weezing-G-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Relaxed",
+      "ability": "Levitate",
+      "item": "Leftovers",
+      "moves": [
+        "Curse",
+        "Gyro Ball",
+        "Play Rough",
+        "Will-O-Wisp"
+      ]
+    },
+    "Weezing-G-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "Quick Claw",
+      "moves": [
+        "Wonder Room",
+        "Haze",
+        "Dazzling Gleam",
+        "Sludge Wave"
+      ]
+    },
+     "Weezing-G-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Impish",
+      "ability": "Levitate",
+      "item": "Black Sludge",
+      "moves": [
+        "Toxic",
+        "Protect",
+        "Pain Split",
+        "Strange Steam"
+      ]
+    },
+     "Weezing-G-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "White Herb",
+      "moves": [
+        "Strange Steam",
+        "Sludge Bomb",
+        "Overheat",
+        "Thunder"
+      ]
+    }
+  },
+"Whimsicott": {
+    "Whimsicott-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Infiltrator",
+      "item": "Kebia Berry",
+      "moves": [
+        "Charm",
+        "U-turn",
+        "Play Rough",
+        "Seed Bomb"
+      ]
+    },
+    "Whimsicott-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Infiltrator",
+      "item": "Leftovers",
+      "moves": [
+        "Nature Power",
+        "Grassy Terrain",
+        "Misty Terrain",
+        "Leech Seed"
+      ]
+    },
+     "Whimsicott-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Bold",
+      "ability": "Infiltrator",
+      "item": "Eject Button",
+      "moves": [
+        "Dazzling Gleam",
+        "Hurricane",
+        "Tailwind",
+        "Taunt"
+      ]
+    },
+     "Whimsicott-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Infiltrator",
+      "item": "Life Orb",
+      "moves": [
+        "Moonblast",
+        "Energy Ball",
+        "Psychic",
+        "Shadow Ball"
+      ]
+    }
+  },
+  "Whiscash": {
+    "Whiscash-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Hydration",
+      "item": "Lum Berry",
+      "moves": [
+        "Dragon Dance",
+        "Zen Headbutt",
+        "Waterfall",
+        "Thrash"
+      ]
+    },
+    "Whiscash-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Modest",
+      "ability": "Hydration",
+      "item": "Rindo Berry",
+      "moves": [
+        "Belch",
+        "Muddy Water",
+        "Scald",
+        "Future Sight"
+      ]
+    },
+     "Whiscash-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Hydration",
+      "item": "Damp Rock",
+      "moves": [
+        "Hydro Pump",
+        "Earth Power",
+        "Blizzard",
+        "Rain Dance"
+      ]
+    },
+     "Whiscash-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Hydration",
+      "item": "Expert Belt",
+      "moves": [
+        "Earthquake",
+        "Aqua Tail",
+        "Stone Edge",
+        "Zen Headbutt"
+      ]
+    },
+     "Whiscash-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Jolly",
+      "ability": "Hydration",
+      "item": "Adrenaline Orb",
+      "moves": [
+        "Dragon Dance",
+        "Waterfall",
+        "Earthquake",
+        "Zen Headbutt"
+      ]
+    }
+  },
+  "Wishiwashi": {
+    "Wishiwashi-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Bold",
+      "ability": "Schooling",
+      "item": "Bright Powder",
+      "moves": [
+        "Muddy Water",
+        "Ice Beam",
+        "Protect",
+        "Endeavor"
+      ]
+    },
+    "Wishiwashi-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Schooling",
+      "item": "Leftovers",
+      "moves": [
+        "Scald",
+        "Ice Beam",
+        "Protect",
+        "Tearful Look"
+      ]
+    },
+     "Wishiwashi-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Schooling",
+      "item": "Expert Belt",
+      "moves": [
+        "Liquidation",
+        "Earthquake",
+        "Rest",
+        "Sleep Talk"
+      ]
+    },
+     "Wishiwashi-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Schooling",
+      "item": "Weakness Policy",
+      "moves": [
+        "Hydro Pump",
+        "Ice Beam",
+        "Rest",
+        "Sleep Talk"
+      ]
+    },
+     "Wishiwashi-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Schooling",
+      "item": "Figy Berry",
+      "moves": [
+        "Brine",
+        "Ice Beam",
+        "Earthquake",
+        "Aqua Ring"
+      ]
+    }
+  },
+"Wobbuffet": {
+    "Wobbuffet-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Calm",
+      "ability": "Shadow Tag",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Counter",
+        "Mirror Coat",
+        "Encore",
+        "Destiny Bond"
+      ]
+    },
+    "Wobbuffet-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Bold",
+      "ability": "Shadow Tag",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Counter",
+        "Mirror Coat",
+        "Encore",
+        "Destiny Bond"
+      ]
+    },
+     "Wobbuffet-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Calm",
+      "ability": "Shadow Tag",
+      "item": "Quick Claw",
+      "moves": [
+        "Counter",
+        "Mirror Coat",
+        "Encore",
+        "Destiny Bond"
+      ]
+    },
+     "Wobbuffet-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Bold",
+      "ability": "Shadow Tag",
+      "item": "Safety Goggles",
+      "moves": [
+        "Counter",
+        "Mirror Coat",
+        "Encore",
+        "Destiny Bond"
+      ]
+    }
+  },
+  "Xatu": {
+    "Xatu-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Timid",
+      "ability": "Magic Bounce",
+      "item": "Focus Sash",
+      "moves": [
+        "Wish",
+        "U-turn",
+        "Tailwind",
+        "Air Slash"
+      ]
+    },
+    "Xatu-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Magic Bounce",
+      "item": "Leftovers",
+      "moves": [
+        "Simple Beam",
+        "Feather Dance",
+        "Protect",
+        "Air Slash"
+      ]
+    },
+     "Xatu-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Magic Bounce",
+      "item": "Heavy-Duty Boots",
+      "moves": [
+        "U-turn",
+        "Sucker Punch",
+        "Drill Peck",
+        "Zen Headbutt"
+      ]
+    },
+     "Xatu-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Magic Bounce",
+      "item": "Choice Scarf",
+      "moves": [
+        "Air Slash",
+        "Psychic",
+        "Heat Wave",
+        "Dazzling Gleam"
+      ]
+    }
+  },
+  "Zoroark": {
+     "Zoroark-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Illusion",
+      "item": "Eject Button",
+      "moves": [
+        "Night Daze",
+        "Flamethrower",
+        "Foul Play",
+        "U-turn"
+      ]
+    }
+  }
 };
