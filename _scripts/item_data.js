@@ -256,6 +256,7 @@ var ITEMS_SS = ITEMS_SM.concat([
 	"Blunder Policy",
 	"Eject Pack",
 	"Heavy-Duty Boots",
+	"Leek",
 	"Room Service",
 	"Rusted Shield",
 	"Rusted Sword",
