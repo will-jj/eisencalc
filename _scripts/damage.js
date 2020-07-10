@@ -1428,8 +1428,17 @@ function getFinalSpeed(pokemon, weather, terrain) {
             pokemon.ability === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
 	}
+	printStat(pokemon, SP, speed);
 	return speed;
 }
+
+function printStat(pokemon, statName, stat) {
+ 	if (typeof pokemon.pokeInfo === "string") {
+ 		return;
+ 	} else {
+ 		pokemon.pokeInfo.find("." + statName + " .totalMod").text(stat);
+ 	}
+ }
 
 function checkAirLock(pokemon, field) {
 	if (pokemon.ability === "Air Lock" || pokemon.ability === "Cloud Nine") {
