@@ -21795,7 +21795,7 @@ var SETDEX_GEN8_SETS = {
       "evs": {
         "hp": 0,
         "at": 252,
-        "df": ,
+        "df": 0,
         "sa": 0,
         "sd": 252,
         "sp": 0
