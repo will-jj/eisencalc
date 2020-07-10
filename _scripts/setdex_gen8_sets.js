@@ -16454,6 +16454,7 @@ var SETDEX_GEN8_SETS = {
         "sd": 0,
         "sp": 0
       },
+      "nature": "Adamant",
       "ability": "Rock Head",
       "item": "Thick Club",
       "moves": [
@@ -19872,255 +19873,1838 @@ var SETDEX_GEN8_SETS = {
       ]
     }
   },
-	"Raichu-Alola": {
-		"Offensive": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"sa": "252",
-				"sp": "252"
-			},
-			"nature": "Timid",
-			"ability": "Surge Surfer",
-			"item": "Life Orb",
-			"moves": [
-				"Thunderbolt",
-				"Psychic",
-				"Hidden Power Ice",
-				"Grass Knot"
-			]
-		}
-	},
-	"Rhyperior": {
-		"Assault Vest": {
-			"level": 50,
-			"evs": {
-				"at": "252",
-				"df": "4",
-				"sd": "252"
-			},
-			"nature": "Adamant",
-			"ability": "Solid Rock",
-			"item": "Assault Vest",
-			"moves": [
-				"Earthquake",
-				"Rock Blast",
-				"Ice Punch",
-				"Horn Drill"
-			]
-		}
-	},
+	"Raichu": {
+    "Raichu-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Bold",
+      "ability": "Lightning Rod",
+      "item": "Light Clay",
+      "moves": [
+        "Feint",
+        "Discharge",
+        "Swift",
+        "Reflect"
+      ]
+    },
+    "Raichu-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Lightning Rod",
+      "item": "Heavy-Duty Boots",
+      "moves": [
+        "Nuzzle",
+        "Speed Swap",
+        "Volt Switch",
+        "Fake Out"
+      ]
+    },
+     "Raichu-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Lightning Rod",
+      "item": "Blunder Policy",
+      "moves": [
+        "Thunder",
+        "Focus Blast",
+        "Grass Knot",
+        "Surf"
+      ]
+    },
+     "Raichu-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Lightning Rod",
+      "item": "Life Orb",
+      "moves": [
+        "Iron Tail",
+        "Electroweb",
+        "Volt Tackle",
+        "Fake Out"
+      ]
+    }
+  },
+  "Rapidash-Galar": {
+    "Rapidash-G-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Timid",
+      "ability": "Pastel Veil",
+      "item": "Leftovers",
+      "moves": [
+        "Protect",
+        "Imprison",
+        "Psychic",
+        "Dazzling Gleam"
+      ]
+    },
+    "Rapidash-G-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Modest",
+      "ability": "Pastel Veil",
+      "item": "Kasib Berry",
+      "moves": [
+        "Psychic",
+        "Dazzling Gleam",
+        "Mystical Fire",
+        "Calm Mind"
+      ]
+    },
+     "Rapidash-G-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Pastel Veil",
+      "item": "King's Rock",
+      "moves": [
+        "Zen Headbutt",
+        "Stomp",
+        "Play Rough",
+        "Throat Chop"
+      ]
+    },
+     "Rapidash-G-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Pastel Veil",
+      "item": "Scope Lens",
+      "moves": [
+        "Psycho Cut",
+        "Drill Run",
+        "Play Rough",
+        "Throat Chop"
+      ]
+    },
+        "Rapidash-G-5": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Pastel Veil",
+      "item": "Leftovers",
+      "moves": [
+        "Protect",
+        "Imprison",
+        "Psychic",
+        "Dazzling Gleam"
+      ]
+    },
+    "Rapidash-G-6": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Pastel Veil",
+      "item": "Kasib Berry",
+      "moves": [
+        "Psychic",
+        "Dazzling Gleam",
+        "Mystical Fire",
+        "Calm Mind"
+      ]
+    },
+     "Rapidash-G-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Pastel Veil",
+      "item": "King's Rock",
+      "moves": [
+        "Zen Headbutt",
+        "Stomp",
+        "Play Rough",
+        "Throat Chop"
+      ]
+    },
+     "Rapidash-G-8": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Pastel Veil",
+      "item": "Scope Lens",
+      "moves": [
+        "Psycho Cut",
+        "Drill Run",
+        "Play Rough",
+        "Throat Chop"
+      ]
+    }
+  },
+  "Reuniclus": {
+    "Reuniclus-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Overcoat",
+      "item": "Light Clay",
+      "moves": [
+        "Light Screen",
+        "Reflect",
+        "Psychic",
+        "Shadow Ball"
+      ]
+    },
+    "Reuniclus-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Brave",
+      "ability": "Overcoat",
+      "item": "Mental Herb",
+      "moves": [
+        "Trick Room",
+        "Gyro Ball",
+        "Zen Headbutt",
+        "Rock Slide"
+      ]
+    },
+     "Reuniclus-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Brave",
+      "ability": "Magic Guard",
+      "item": "Toxic Orb",
+      "moves": [
+        "Trick",
+        "Protect",
+        "Pain Split",
+        "Drain Punch"
+      ]
+    },
+     "Reuniclus-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Overcoat",
+      "item": "Life Orb",
+      "moves": [
+        "Psychic",
+        "Focus Blast",
+        "Shadow Ball",
+        "Energy Ball"
+      ]
+    }
+  },
+"Rhyperior": {
+    "Rhyperior-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Jolly",
+      "ability": "Solid Rock",
+      "item": "Weakness Policy",
+      "moves": [
+        "Rock Polish",
+        "Rock Blast",
+        "Earthquake",
+        "Dragon Rush"
+      ]
+    },
+    "Rhyperior-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Brave",
+      "ability": "Solid Rock",
+      "item": "Passho Berry",
+      "moves": [
+        "Rock Slide",
+        "High Horsepower",
+        "Ice Punch",
+        "Protect"
+      ]
+    },
+     "Rhyperior-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Brave",
+      "ability": "Solid Rock",
+      "item": "Rindo Berry",
+      "moves": [
+        "Rock Slide",
+        "High Horsepower",
+        "Thunder Punch",
+        "Protect"
+      ]
+    },
+     "Rhyperior-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Solid Rock",
+      "item": "Assault Vest",
+      "moves": [
+        "Earthquake",
+        "Stone Edge",
+        "Avalanche",
+        "Hammer Arm"
+      ]
+    },
+    "Rhyperior-1 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Jolly",
+      "ability": "Solid Rock",
+      "item": "Weakness Policy",
+      "moves": [
+        "Rock Polish",
+        "Rock Blast",
+        "Earthquake",
+        "Dragon Rush"
+      ]
+    },
+    "Rhyperior-2 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "nature": "Brave",
+      "ability": "Solid Rock",
+      "item": "Passho Berry",
+      "moves": [
+        "Rock Slide",
+        "High Horsepower",
+        "Ice Punch",
+        "Protect"
+      ]
+    },
+     "Rhyperior-3 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "nature": "Brave",
+      "ability": "Solid Rock",
+      "item": "Rindo Berry",
+      "moves": [
+        "Rock Slide",
+        "High Horsepower",
+        "Thunder Punch",
+        "Protect"
+      ]
+    },
+     "Rhyperior-4 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "nature": "Brave",
+      "ability": "Solid Rock",
+      "item": "Assault Vest",
+      "moves": [
+        "Earthquake",
+        "Stone Edge",
+        "Avalanche",
+        "Hammer Arm"
+      ]
+    },
+     "Rhyperior-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Solid Rock",
+      "item": "Weakness Policy",
+      "moves": [
+        "Rock Wrecker",
+        "Heat Crash",
+        "Breaking Swipe",
+        "Sandstorm"
+      ]
+    }
+  },
+  "Ribombee": {
+    "Ribombee-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Shield Dust",
+      "item": "Leftovers",
+      "moves": [
+        "Skill Swap",
+        "Draining Kiss",
+        "Protect",
+        "Aromatherapy"
+      ]
+    },
+    "Ribombee-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Shield Dust",
+      "item": "Big Root",
+      "moves": [
+        "Quiver Dance",
+        "Baton Pass",
+        "Draining Kiss",
+        "Stun Spore"
+      ]
+    },
+     "Ribombee-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Shield Dust",
+      "item": "Quick Claw",
+      "moves": [
+        "Speed Swap",
+        "Dazzling Gleam",
+        "Pollen Puff",
+        "Helping Hand"
+      ]
+    },
+     "Ribombee-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Shield Dust",
+      "item": "Expert Belt",
+      "moves": [
+        "Moonblast",
+        "Bug Buzz",
+        "Psychic",
+        "Energy Ball"
+      ]
+    },
+    "Ribombee-5": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Shield Dust",
+      "item": "Leftovers",
+      "moves": [
+        "Skill Swap",
+        "Draining Kiss",
+        "Protect",
+        "Aromatherapy"
+      ]
+    },
+    "Ribombee-6": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Shield Dust",
+      "item": "Big Root",
+      "moves": [
+        "Quiver Dance",
+        "Baton Pass",
+        "Draining Kiss",
+        "Stun Spore"
+      ]
+    },
+     "Ribombee-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Shield Dust",
+      "item": "Quick Claw",
+      "moves": [
+        "Speed Swap",
+        "Dazzling Gleam",
+        "Pollen Puff",
+        "Helping Hand"
+      ]
+    },
+     "Ribombee-8": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Shield Dust",
+      "item": "Expert Belt",
+      "moves": [
+        "Moonblast",
+        "Bug Buzz",
+        "Psychic",
+        "Energy Ball"
+      ]
+    },
+     "Ribombee-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ability": "Shield Dust",
+      "item": "Pixie Plate",
+      "moves": [
+        "Moonblast",
+        "Bug Buzz",
+        "Pollen Puff",
+        "Psychic"
+      ]
+    }
+  },
 	"Rillaboom": {
-		"Choice Band": {
-			"level": 50,
-			"evs": {
-				"at": "252",
-				"df": "4",
-				"sp": "252"
-			},
-			"nature": "Adamant",
-			"ability": "Grassy Surge",
-			"item": "Choice Band",
-			"moves": [
-				"Grassy Glide",
-				"Knock Off",
-				"Superpower",
-				"U-turn"
-			],
-			"isGmax": true
-		},
-		"Assault Vest": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "252",
-				"df": "4"
-			},
-			"nature": "Adamant",
-			"ability": "Grassy Surge",
-			"item": "Assault Vest",
-			"moves": [
-				"Grassy Glide",
-				"Knock Off",
-				"Drain Punch",
-				"U-turn"
-			],
-			"isGmax": true
-		}
-	},
+    "Rillaboom-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Grassy Surge",
+      "item": "Assault Vest",
+      "moves": [
+        "Grass Pledge",
+        "Earth Power",
+        "Focus Blast",
+        "Snarl"
+      ]
+    },
+    "Rillaboom-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Grassy Surge",
+      "item": "Leftovers",
+      "moves": [
+        "Drain Punch",
+        "Protect",
+        "Swords Dance",
+        "Leech Seed"
+      ]
+    },
+     "Rillaboom-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Grassy Surge",
+      "item": "Life Orb",
+      "moves": [
+        "Drum Beating",
+        "High Horsepower",
+        "Darkest Lariat",
+        "Body Slam"
+      ]
+    },
+     "Rillaboom-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Grassy Surge",
+      "item": "Eject Pack",
+      "moves": [
+        "Wood Hammer",
+        "U-turn",
+        "Superpower",
+        "Fake Out"
+      ]
+    },
+    "Rillaboom-5": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Grassy Surge",
+      "item": "Assault Vest",
+      "moves": [
+        "Grass Pledge",
+        "Earth Power",
+        "Focus Blast",
+        "Snarl"
+      ]
+    },
+    "Rillaboom-6": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Grassy Surge",
+      "item": "Leftovers",
+      "moves": [
+        "Drain Punch",
+        "Protect",
+        "Swords Dance",
+        "Leech Seed"
+      ]
+    },
+     "Rillaboom-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Grassy Surge",
+      "item": "Life Orb",
+      "moves": [
+        "Drum Beating",
+        "High Horsepower",
+        "Darkest Lariat",
+        "Body Slam"
+      ]
+    },
+     "Rillaboom-8": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Grassy Surge",
+      "item": "Eject Pack",
+      "moves": [
+        "Wood Hammer",
+        "U-turn",
+        "Superpower",
+        "Fake Out"
+      ]
+    },
+    "Rillaboom-1 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "nature": "Modest",
+      "ability": "Grassy Surge",
+      "item": "Assault Vest",
+      "moves": [
+        "Grass Pledge",
+        "Earth Power",
+        "Focus Blast",
+        "Snarl"
+      ]
+    },
+    "Rillaboom-2 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "nature": "Adamant",
+      "ability": "Grassy Surge",
+      "item": "Leftovers",
+      "moves": [
+        "Drain Punch",
+        "Protect",
+        "Swords Dance",
+        "Leech Seed"
+      ]
+    },
+     "Rillaboom-3 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Adamant",
+      "ability": "Grassy Surge",
+      "item": "Life Orb",
+      "moves": [
+        "Drum Beating",
+        "High Horsepower",
+        "Darkest Lariat",
+        "Body Slam"
+      ]
+    },
+     "Rillaboom-4 (Leon)": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Adamant",
+      "ability": "Grassy Surge",
+      "item": "Eject Pack",
+      "moves": [
+        "Wood Hammer",
+        "U-turn",
+        "Superpower",
+        "Fake Out"
+      ]
+    }
+  },
 	"Roserade": {
-		"Offensive AV": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"sa": "252",
-				"sp": "252"
-			},
-			"nature": "Timid",
-			"ability": "Natural Cure",
-			"item": "Assault Vest",
-			"moves": [
-				"Sludge Bomb",
-				"Giga Drain",
-				"Dazzling Gleam",
-				"Shadow Ball"
-			]
-		}
-	},
-	"Rotom-C": {
-		"Standard": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "196",
-				"sa": "60"
-			},
-			"ivs": {
-				"at": "0"
-			},
-			"nature": "Modest",
-			"ability": "Levitate",
-			"item": "Sitrus Berry",
-			"moves": [
-				"Thunderbolt",
-				"Leaf Storm",
-				"Dark Pulse",
-				"Volt Switch"
-			]
-		}
-	},
-	"Rotom-H": {
-		"Tank": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"sd": "252",
-				"sp": "4"
-			},
-			"nature": "Calm",
-			"ability": "Levitate",
-			"item": "Sitrus Berry",
-			"moves": [
-				"Volt Switch",
-				"Overheat",
-				"Thunderbolt",
-				"Dark Pulse"
-			]
-		},
-		"Choice Specs": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"sa": "252",
-				"sp": "4"
-			},
-			"ivs": {
-				"at": "0",
-				"df": "30",
-			},
-			"nature": "Modest",
-			"ability": "Levitate",
-			"item": "Choice Specs",
-			"moves": [
-				"Overheat",
-				"Volt Switch",
-				"Dark Pulse",
-				"Thunderbolt"
-			]
-		},
-		"Choice Scarf": {
-			"level": 50,
-			"evs": {
-				"hp": "76",
-				"df": "24",
-				"sa": "188",
-				"sp": "220"
-			},
-			"ivs": {
-				"at": "0",
-				"df": "30",
-			},
-			"nature": "Timid",
-			"ability": "Levitate",
-			"item": "Choice Scarf",
-			"moves": [
-				"Volt Switch",
-				"Overheat",
-				"Dark Pulse",
-				"Thunderbolt"
-			]
-		},
-		"Substitute": {
-			"level": 50,
-			"evs": {
-				"hp": "156",
-				"sd": "220",
-				"sp": "132"
-			},
-			"nature": "Calm",
-			"ability": "Levitate",
-			"item": "Leftovers",
-			"moves": [
-				"Substitute",
-				"Overheat",
-				"Will-O-Wisp",
-				"Discharge"
-			]
-		}
-	},
-	"Rotom-W": {
-		"Choice Specs": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "4",
-				"sa": "252"
-			},
-			"nature": "Modest",
-			"ability": "Levitate",
-			"item": "Choice Specs",
-			"moves": [
-				"Hydro Pump",
-				"Thunderbolt",
-				"Volt Switch",
-				"Dark Pulse"
-			]
-		},
-		"Physically Defensive": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sa": "4"
-			},
-			"nature": "Bold",
-			"ability": "Levitate",
-			"item": "Sitrus Berry",
-			"moves": [
-				"Hydro Pump",
-				"Thunderbolt",
-				"Volt Switch",
-				"Dark Pulse"
-			]
-		},
-		"Choice Scarf": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"sa": "252",
-				"sp": "252"
-			},
-			"nature": "Timid",
-			"ability": "Levitate",
-			"item": "Choice Scarf",
-			"moves": [
-				"Hydro Pump",
-				"Thunderbolt",
-				"Volt Switch",
-				"Dark Pulse"
-			]
-		}
-	},
+    "Roserade-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Adamant",
+      "ability": "Technician",
+      "item": "Bright Powder",
+      "moves": [
+        "Toxic Spikes",
+        "Life Dew",
+        "Protect",
+        "Razor Leaf"
+      ]
+    },
+    "Roserade-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Poison Point",
+      "item": "Black Sludge",
+      "moves": [
+        "Toxic",
+        "Venom Drench",
+        "Protect",
+        "Giga Drain"
+      ]
+    },
+     "Roserade-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Poison Point",
+      "item": "Focus Sash",
+      "moves": [
+        "Power Whip",
+        "Poison Jab",
+        "Body Slam",
+        "Swords Dance"
+      ]
+    },
+     "Roserade-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Poison Point",
+      "item": "White Herb",
+      "moves": [
+        "Leaf Storm",
+        "Dazzling Gleam",
+        "Shadow Ball",
+        "Extrasensory"
+      ]
+    }
+  },
+  "Rotom": {
+    "Rotom-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Timid",
+      "ability": "Levitate",
+      "item": "Bright Powder",
+      "moves": [
+        "Thunder Wave",
+        "Double Team",
+        "Thunderbolt",
+        "Hex"
+      ]
+    },
+    "Rotom-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Levitate",
+      "item": "Leftovers",
+      "moves": [
+        "Will-O-Wisp",
+        "Protect",
+        "Thunderbolt",
+        "Hex"
+      ]
+    },
+     "Rotom-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Levitate",
+      "item": "Shuca Berry",
+      "moves": [
+        "Discharge",
+        "Volt Switch",
+        "Hyper Voice",
+        "Light Screen"
+      ]
+    }
+  },
+ "Rotom-Fan": {
+    "Rotom-Fan-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Levitate",
+      "item": "Leftovers",
+      "moves": [
+        "Air Slash",
+        "Electroweb",
+        "Will-O-Wisp",
+        "Protect"
+      ]
+    },
+    "Rotom-Fan-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Levitate",
+      "item": "King's Rock",
+      "moves": [
+        "Air Slash",
+        "Thunderbolt",
+        "Thunder Wave",
+        "Shadow Ball"
+      ]
+    }
+  },
+   "Rotom-Frost": {
+    "Rotom-Frost-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Levitate",
+      "item": "Weakness Policy",
+      "moves": [
+        "Blizzard",
+        "Thunderbolt",
+        "Thunder Wave",
+        "Hex"
+      ]
+    },
+    "Rotom-Frost-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "Life Orb",
+      "moves": [
+        "Blizzard",
+        "Thunder",
+        "Shadow Ball",
+        "Nasty Plot"
+      ]
+    }
+  },
+	 "Rotom-Heat": {
+    "Rotom-Heat-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "Leftovers",
+      "moves": [
+        "Overheat",
+        "Thunderbolt",
+        "Will-O-Wisp",
+        "Protect"
+      ]
+    },
+    "Rotom-Heat-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "White Herb",
+      "moves": [
+        "Overheat",
+        "Volt Switch",
+        "Shadow Ball",
+        "Helping Hand"
+      ]
+    }
+  },
+   "Rotom-Mow": {
+    "Rotom-Mow-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "Leftovers",
+      "moves": [
+        "Leaf Storm",
+        "Thunderbolt",
+        "Will-O-Wisp",
+        "Protect"
+      ]
+    },
+    "Rotom-Mow-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "White Herb",
+      "moves": [
+        "Leaf Storm",
+        "Volt Switch",
+        "Shadow Ball",
+        "Helping Hand"
+      ]
+    }
+  },
+	 "Rotom-Wash": {
+    "Rotom-Wash-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Timid",
+      "ability": "Levitate",
+      "item": "Weakness Policy",
+      "moves": [
+        "Hydro Pump",
+        "Thunderbolt",
+        "Thunder Wave",
+        "Hex"
+      ]
+    },
+    "Rotom-Wash-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Levitate",
+      "item": "Life Orb",
+      "moves": [
+        "Hydro Pump",
+        "Thunder",
+        "Shadow Ball",
+        "Nasty Plot"
+      ]
+    }
+  },
+  "Runerigus": {
+    "Runerigus-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Bold",
+      "ability": "Wandering Spirit",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Will-O-Wisp",
+        "Power Split",
+        "Night Shade",
+        "Body Press"
+      ]
+    },
+    "Runerigus-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Sassy",
+      "ability": "Wandering Spirit",
+      "item": "Leftovers",
+      "moves": [
+        "Curse",
+        "Protect",
+        "Amnesia",
+        "Stone Edge"
+      ]
+    },
+     "Runerigus-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Quiet",
+      "ability": "Wandering Spirit",
+      "item": "Life Orb",
+      "moves": [
+        "Trick Room",
+        "Shadow Ball",
+        "Earth Power",
+        "Dragon Pulse"
+      ]
+    },
+     "Runerigus-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Relaxed",
+      "ability": "Wandering Spirit",
+      "item": "Quick Claw",
+      "moves": [
+        "Will-O-Wisp",
+        "Phantom Force",
+        "Earthquake",
+        "Stone Edge"
+      ]
+    },
+     "Runerigus-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Wandering Spirit",
+      "item": "Sticky Barb",
+      "moves": [
+        "Night Shade",
+        "Earth Power",
+        "Dark Pulse",
+        "Haze"
+      ]
+    }
+  },
 	"Sableye": {
 		"Defensive": {
 			"level": 50,
