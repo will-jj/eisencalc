@@ -3187,6 +3187,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"makesContact": true,
 		"acc": 95
 	},
+	"Forest's Curse": {
+		"bp": 0,
+		"type": "Grass"
+	},
 	"Freeze-Dry": {
 		"bp": 70,
 		"type": "Ice",
