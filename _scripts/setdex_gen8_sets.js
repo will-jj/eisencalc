@@ -24975,7 +24975,7 @@ var SETDEX_GEN8_SETS = {
         "sd": 0,
         "sp": 252
       },
-      "nature": "Jolly"
+      "nature": "Jolly",
       "ability": "Intimidate",
       "item": "Toxic Orb",
       "moves": [
