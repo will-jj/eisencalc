@@ -6453,7 +6453,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		"w": 0.3,
 		"ab": "Levitate"
 	},
-	"Rotom-C": {
+	"Rotom-Mow": {
 		"t1": "Electric",
 		"t2": "Ghost",
 		"bs": {
@@ -6467,7 +6467,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		"w": 0.3,
 		"ab": "Levitate"
 	},
-	"Rotom-F": {
+	"Rotom-Frost": {
 		"t1": "Electric",
 		"t2": "Ghost",
 		"bs": {
@@ -6481,7 +6481,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		"w": 0.3,
 		"ab": "Levitate"
 	},
-	"Rotom-H": {
+	"Rotom-Heat": {
 		"t1": "Electric",
 		"t2": "Ghost",
 		"bs": {
@@ -6495,7 +6495,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		"w": 0.3,
 		"ab": "Levitate"
 	},
-	"Rotom-S": {
+	"Rotom-Fan": {
 		"t1": "Electric",
 		"t2": "Ghost",
 		"bs": {
@@ -6509,7 +6509,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		"w": 0.3,
 		"ab": "Levitate"
 	},
-	"Rotom-W": {
+	"Rotom-Wash": {
 		"t1": "Electric",
 		"t2": "Ghost",
 		"bs": {
@@ -6885,11 +6885,11 @@ delete POKEDEX_DPP["Sealeo"].ab;
 delete POKEDEX_DPP["Walrein"].ab;
 
 var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
-	"Rotom-C": {"t2": "Grass"},
-	"Rotom-F": {"t2": "Ice"},
-	"Rotom-H": {"t2": "Fire"},
-	"Rotom-S": {"t2": "Flying"},
-	"Rotom-W": {"t2": "Water"},
+	"Rotom-Mow": {"t2": "Grass"},
+	"Rotom-Frost": {"t2": "Ice"},
+	"Rotom-Heat": {"t2": "Fire"},
+	"Rotom-Fan": {"t2": "Flying"},
+	"Rotom-Wash": {"t2": "Water"},
 	"Accelgor": {
 		"t1": "Bug",
 		"bs": {
