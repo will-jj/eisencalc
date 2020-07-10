@@ -263,7 +263,7 @@ function getKOChanceText(damage, move, defender, field, isBadDreams, attacker, i
 		}
 	}
 
-	return "possibly the worst move ever";
+	return "every bit counts";
 }
 
 function getKOChance(damage, multihit, hp, eot, hits, maxHP, toxicCounter, hasSitrus, hasFigy, hasIapapa, hasWiki, hasAguav, hasMago, gluttony, gen) {
