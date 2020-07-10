@@ -1640,6 +1640,10 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
+	    "Skill Swap": {
+        "bp": 0,
+        "type": "Psychic"
+    },
 	"Sky Uppercut": {
 		"bp": 85,
 		"type": "Fighting",
