@@ -3278,6 +3278,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         "bp": 0,
         "type": "Fighting"
     },
+		"Magnetic Flux": {
+		"bp": 0,
+		"type": "Electric"
+	},
 	"Meteor Mash": {"bp": 90},
 		"Misty Terrain": {
         "bp": 0,
