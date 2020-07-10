@@ -24155,24 +24155,6 @@ var SETDEX_GEN8_SETS = {
         "Rock Blast",
         "Flare Blitz"
       ]
-    },
-     "Martin's Solrock": {
-      "level": "70",
-      "evs": {
-        "hp": 0,
-        "at": 0,
-        "df": 0,
-        "sa": 0,
-        "sd": 0,
-        "sp": 0
-      },
-      "ability": "Levitate",
-      "moves": [
-        "Cosmic Power",
-        "Rock Throw",
-        "Psychic",
-        "Rock Polish"
-      ]
     }
   },
   "Starmie": {
@@ -24940,173 +24922,1741 @@ var SETDEX_GEN8_SETS = {
       ]
     }
   },
-	"Togedemaru": {
-		"Support": {
-			"level": 50,
-			"evs": {
-				"at": "252",
-				"df": "4",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Lightningrod",
-			"item": "Focus Sash",
-			"moves": [
-				"Nuzzle",
-				"Iron Head",
-				"Zing Zap",
-				"Fake Out"
-			]
-		}
-	},
-	"Togekiss": {
-		"Offensive": {
-			"level": 50,
-			"evs": {
-				"hp": "4",
-				"sa": "252",
-				"sp": "252"
-			},
-			"nature": "Timid",
-			"ability": "Super Luck",
-			"item": "Weakness Policy",
-			"moves": [
-				"Dazzling Gleam",
-				"Air Slash",
-				"Flamethrower",
-				"Ancient Power"
-			]
-		}
-	},
-	"Torkoal": {
-		"Sun Setter": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sa": "4"
-			},
-			"nature": "Relaxed",
-			"ability": "Drought",
-			"item": "Eject Pack",
-			"moves": [
-				"Overheat",
-				"Solar Beam",
-				"Explosion",
-				"Lava Plume"
-			]
-		}
-	},
-	"Toxapex": {
-		"Stall": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sd": "4"
-			},
-			"nature": "Bold",
-			"ability": "Regenerator",
-			"item": "Black Sludge",
-			"moves": [
-				"Scald",
-				"Sludge Bomb",
-				"Infestation",
-				"Mud Shot"
-			]
-		}
-	},
+  "Talonflame": {
+     "Talonflame-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Gale Wings",
+      "item": "Sticky Barb",
+      "moves": [
+        "Fly",
+        "Overheat",
+        "U-turn",
+        "Roost"
+      ]
+    }
+  },
+  "Tangrowth": {
+     "Tangrowth-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Leaf Guard",
+      "item": "Grassy Seed",
+      "moves": [
+        "Grassy Terrain",
+        "Grassy Glide",
+        "Payback",
+        "Ancient Power"
+      ]
+    }
+  },
+  "Tauros": {
+     "Tauros-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "nature": "Jolly"
+      "ability": "Intimidate",
+      "item": "Toxic Orb",
+      "moves": [
+        "Facade",
+        "Stomping Tantrum",
+        "Lash Out",
+        "Rock Tomb"
+      ]
+    }
+  },
+  "Tentacruel": {
+     "Tentacruel-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Clear Body",
+      "item": "Black Sludge",
+      "moves": [
+        "Waterfall",
+        "Cross Poison",
+        "Icy Wind",
+        "Swords Dance"
+      ]
+    }
+  },
+  "Thievul": {
+    "Thievul-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Timid",
+      "ability": "Unburden",
+      "item": "Focus Sash",
+      "moves": [
+        "Snarl",
+        "Grass Knot",
+        "Nasty Plot",
+        "Baton Pass"
+      ]
+    },
+    "Thievul-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Stakeout",
+      "item": "King's Rock",
+      "moves": [
+        "Sucker Punch",
+        "Fire Fang",
+        "Thunder Fang",
+        "Ice Fang"
+      ]
+    },
+     "Thievul-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Unburden",
+      "item": "Lum Berry",
+      "moves": [
+        "Dark Pulse",
+        "Grass Knot",
+        "Psychic",
+        "Parting Shot"
+      ]
+    },
+     "Thievul-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Stakeout",
+      "item": "Assault Vest",
+      "moves": [
+        "U-turn",
+        "Knock Off",
+        "Quick Attack",
+        "Play Rough"
+      ]
+    },
+        "Thievul-5": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Unburden",
+      "item": "Focus Sash",
+      "moves": [
+        "Snarl",
+        "Grass Knot",
+        "Nasty Plot",
+        "Baton Pass"
+      ]
+    },
+    "Thievul-6": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Stakeout",
+      "item": "King's Rock",
+      "moves": [
+        "Sucker Punch",
+        "Fire Fang",
+        "Thunder Fang",
+        "Ice Fang"
+      ]
+    },
+     "Thievul-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Unburden",
+      "item": "Lum Berry",
+      "moves": [
+        "Dark Pulse",
+        "Grass Knot",
+        "Psychic",
+        "Parting Shot"
+      ]
+    },
+     "Thievul-8": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Stakeout",
+      "item": "Assault Vest",
+      "moves": [
+        "U-turn",
+        "Knock Off",
+        "Quick Attack",
+        "Play Rough"
+      ]
+    },
+     "Thievul-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Unburden",
+      "item": "Red Card",
+      "moves": [
+        "Knock Off",
+        "Burning Jealousy",
+        "Torment",
+        "Parting Shot"
+      ]
+    }
+  },
+  "Throh": {
+    "Throh-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Mold Breaker",
+      "item": "Scope Lens",
+      "moves": [
+        "Rest",
+        "Sleep Talk",
+        "Revenge",
+        "Payback"
+      ]
+    },
+    "Throh-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Mold Breaker",
+      "item": "Binding Band",
+      "moves": [
+        "Bind",
+        "Poison Jab",
+        "Protect",
+        "Dig"
+      ]
+    },
+     "Throh-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Impish",
+      "ability": "Guts",
+      "item": "Flame Orb",
+      "moves": [
+        "Facade",
+        "Seismic Toss",
+        "Fling",
+        "Rest"
+      ]
+    },
+     "Throh-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Mold Breaker",
+      "item": "Expert Belt",
+      "moves": [
+        "Storm Throw",
+        "Stone Edge",
+        "Earthquake",
+        "Zen Headbutt"
+      ]
+    }
+  },
+"Togedemaru": {
+    "Togedemaru-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Lightning Rod",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Fake Out",
+        "Spiky Shield",
+        "Eerie Impulse",
+        "Iron Head"
+      ]
+    },
+    "Togedemaru-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Lightning Rod",
+      "item": "Shuca Berry",
+      "moves": [
+        "Nuzzle",
+        "Wish",
+        "Volt Switch",
+        "U-turn"
+      ]
+    },
+     "Togedemaru-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Lightning Rod",
+      "item": "Heavy-Duty Boots",
+      "moves": [
+        "Fake Out",
+        "Spiky Shield",
+        "Volt Switch",
+        "U-turn"
+      ]
+    },
+     "Togedemaru-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Lightning Rod",
+      "item": "King's Rock",
+      "moves": [
+        "Nuzzle",
+        "Zing Zap",
+        "Iron Head",
+        "Zen Headbutt"
+      ]
+    }
+  },
+  "Togekiss": {
+    "Togekiss-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Bold",
+      "ability": "Super Luck",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Encore",
+        "Light Screen",
+        "Dazzling Gleam",
+        "Follow Me"
+      ]
+    },
+    "Togekiss-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Serene Grace",
+      "item": "King's Rock",
+      "moves": [
+        "Thunder Wave",
+        "Air Slash",
+        "Extrasensory",
+        "Morning Sun"
+      ]
+    },
+     "Togekiss-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Brave",
+      "ability": "Hustle",
+      "item": "Assault Vest",
+      "moves": [
+        "Extreme Speed",
+        "Play Rough",
+        "Zen Headbutt",
+        "Brick Break"
+      ]
+    },
+     "Togekiss-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Super Luck",
+      "item": "Scope Lens",
+      "moves": [
+        "Aura Sphere",
+        "Air Slash",
+        "Dazzling Gleam",
+        "Grass Knot"
+      ]
+    },
+        "Togekiss-5": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Bold",
+      "ability": "Super Luck",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Encore",
+        "Light Screen",
+        "Dazzling Gleam",
+        "Follow Me"
+      ]
+    },
+    "Togekiss-6": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Timid",
+      "ability": "Serene Grace",
+      "item": "King's Rock",
+      "moves": [
+        "Thunder Wave",
+        "Air Slash",
+        "Extrasensory",
+        "Morning Sun"
+      ]
+    },
+     "Togekiss-7": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Hustle",
+      "item": "Assault Vest",
+      "moves": [
+        "Extreme Speed",
+        "Play Rough",
+        "Zen Headbutt",
+        "Brick Break"
+      ]
+    },
+     "Togekiss-8": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Super Luck",
+      "item": "Scope Lens",
+      "moves": [
+        "Aura Sphere",
+        "Air Slash",
+        "Dazzling Gleam",
+        "Grass Knot"
+      ]
+    }
+  },
+"Torkoal": {
+    "Torkoal-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Calm",
+      "ability": "Drought",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Yawn",
+        "Stealth Rock",
+        "Heat Wave",
+        "Protect"
+      ]
+    },
+    "Torkoal-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Modest",
+      "ability": "Drought",
+      "item": "Bright Powder",
+      "moves": [
+        "Eruption",
+        "Lava Plume",
+        "Earth Power",
+        "Sludge Bomb"
+      ]
+    },
+     "Torkoal-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Drought",
+      "item": "White Herb",
+      "moves": [
+        "Yawn",
+        "Overheat",
+        "Earth Power",
+        "Sludge Bomb"
+      ]
+    },
+     "Torkoal-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Impish",
+      "ability": "Drought",
+      "item": "Leftovers",
+      "moves": [
+        "Heat Crash",
+        "Body Press",
+        "Curse",
+        "Protect"
+      ]
+    },
+     "Torkoal-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Drought",
+      "item": "Charcoal",
+      "moves": [
+        "Lava Plume",
+        "Scorching Sands",
+        "Solar Beam",
+        "Amnesia"
+      ]
+    }
+  },
+"Toxapex": {
+    "Toxapex-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Merciless",
+      "item": "Assault Vest",
+      "moves": [
+        "Poison Jab",
+        "Liquidation",
+        "Payback",
+        "Pin Missile"
+      ]
+    },
+    "Toxapex-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Calm",
+      "ability": "Merciless",
+      "item": "Binding Band",
+      "moves": [
+        "Toxic",
+        "Baneful Bunker",
+        "Muddy Water",
+        "Infestation"
+      ]
+    },
+     "Toxapex-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Calm",
+      "ability": "Merciless",
+      "item": "Leftovers",
+      "moves": [
+        "Toxic Spikes",
+        "Baneful Bunker",
+        "Hex",
+        "Muddy Water"
+      ]
+    },
+     "Toxapex-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Bold",
+      "ability": "Merciless",
+      "item": "Black Sludge",
+      "moves": [
+        "Toxic",
+        "Recover",
+        "Baneful Bunker",
+        "Scald"
+      ]
+    },
+     "Toxapex-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Merciless",
+      "item": "Rocky Helmet",
+      "moves": [
+        "Baneful Bunker",
+        "Surf",
+        "Venoshock",
+        "Venom Drench"
+      ]
+    }
+  },
+  "Toxicroak": {
+    "Toxicroak-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Careful",
+      "ability": "Dry Skin",
+      "item": "Leftovers",
+      "moves": [
+        "Toxic",
+        "Protect",
+        "Drain Punch",
+        "Sucker Punch"
+      ]
+    },
+    "Toxicroak-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Impish",
+      "ability": "Dry Skin",
+      "item": "Black Sludge",
+      "moves": [
+        "Bulk Up",
+        "Drain Punch",
+        "Bullet Punch",
+        "Protect"
+      ]
+    },
+     "Toxicroak-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Dry Skin",
+      "item": "Payapa Berry",
+      "moves": [
+        "Focus Blast",
+        "Dark Pulse",
+        "Belch",
+        "Vacuum Wave"
+      ]
+    },
+     "Toxicroak-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Dry Skin",
+      "item": "Scope Lens",
+      "moves": [
+        "Cross Chop",
+        "Gunk Shot",
+        "Fake Out",
+        "Stone Edge"
+      ]
+    },
+     "Toxicroak-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Dry Skin",
+      "item": "Payapa Berry",
+      "moves": [
+        "Nasty Plot",
+        "Sludge Wave",
+        "Shadow Ball",
+        "Corrosive Gas"
+      ]
+    }
+  },
 	"Toxtricity": {
-		"Assault Vest": {
-			"level": 50,
-			"evs": {
-				"hp": "180",
-				"df": "4",
-				"sa": "172",
-				"sd": "4",
-				"sp": "148"
-			},
-			"nature": "Modest",
-			"ability": "Punk Rock",
-			"item": "Assault Vest",
-			"moves": [
-				"Overdrive",
-				"Boomburst",
-				"Nuzzle",
-				"Hex"
-			]
-		},
-		"Shift Gear": {
-			"level": 50,
-			"evs": {
-				"at": "4",
-				"sa": "252",
-				"sp": "252"
-			},
-			"nature": "Hasty",
-			"ability": "Punk Rock",
-			"item": "Throat Spray",
-			"moves": [
-				"Overdrive",
-				"Boomburst",
-				"Drain Punch",
-				"Fire Punch"
-			]
-		}
-	},
+    "Toxtricity-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Plus",
+      "item": "Shuca Berry",
+      "moves": [
+        "Wild Charge",
+        "Gunk Shot",
+        "Throat Chop",
+        "Shift Gear"
+      ]
+    },
+    "Toxtricity-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Bold",
+      "ability": "Minus",
+      "item": "Leftovers",
+      "moves": [
+        "Toxic",
+        "Hex",
+        "Protect",
+        "Magnetic Flux"
+      ]
+    },
+     "Toxtricity-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Rash",
+      "ability": "Punk Rock",
+      "item": "Throat Spray",
+      "moves": [
+        "Overdrive",
+        "Sludge Wave",
+        "Boomburst",
+        "Snarl"
+      ]
+    },
+     "Toxtricity-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Punk Rock",
+      "item": "Throat Spray",
+      "moves": [
+        "Overdrive",
+        "Sludge Wave",
+        "Boomburst",
+        "Snarl"
+      ]
+    }
+  },
+  "Trevenant": {
+    "Trevenant-1": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Impish",
+      "ability": "Natural Cure",
+      "item": "Big Root",
+      "moves": [
+        "Horn Leech",
+        "Drain Punch",
+        "Will-O-Wisp",
+        "Protect"
+      ]
+    },
+    "Trevenant-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Adamant",
+      "ability": "Natural Cure",
+      "item": "Quick Claw",
+      "moves": [
+        "Forest's Curse",
+        "X-Scissor",
+        "Poison Jab",
+        "Shadow Claw"
+      ]
+    },
+     "Trevenant-3": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Careful",
+      "ability": "Harvest",
+      "item": "Sitrus Berry",
+      "moves": [
+        "Curse",
+        "Leech Seed",
+        "Protect",
+        "Sucker Punch"
+      ]
+    },
+     "Trevenant-4": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Adamant",
+      "ability": "Natural Cure",
+      "item": "Assault Vest",
+      "moves": [
+        "Wood Hammer",
+        "Shadow Claw",
+        "Sucker Punch",
+        "Earthquake"
+      ]
+    },
+     "Trevenant-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Natural Cure",
+      "item": "Assault Vest",
+      "moves": [
+        "Poltergeist",
+        "Horn Leech",
+        "Earthquake",
+        "Skitter Smack"
+      ]
+    }
+  },
+  "Tsareena": {
+    "Tsareena-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Modest",
+      "ability": "Queenly Majesty",
+      "item": "Big Root",
+      "moves": [
+        "Draining Kiss",
+        "Giga Drain",
+        "Acepressure",
+        "Protect"
+      ]
+    },
+    "Tsareena-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Jolly",
+      "ability": "Queenly Majesty",
+      "item": "Light Clay",
+      "moves": [
+        "Light Screen",
+        "Reflect",
+        "Trop Kick",
+        "U-turn"
+      ]
+    },
+     "Tsareena-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Jolly",
+      "ability": "Queenly Majesty",
+      "item": "Assault Vest",
+      "moves": [
+        "Low Kick",
+        "Trop Kick",
+        "Acrobatics",
+        "Zen Headbutt"
+      ]
+    },
+     "Tsareena-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Jolly",
+      "ability": "Queenly Majesty",
+      "item": "Heat Rock",
+      "moves": [
+        "Solar Blade",
+        "Play Rough",
+        "Synthesis",
+        "Sunny Day"
+      ]
+    }
+  },
+  "Turtonator": {
+    "Turtonator-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 0,
+        "sd": 252,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 16,
+        "at": 16,
+        "df": 16,
+        "sa": 16,
+        "sd": 16,
+        "sp": 16
+      },
+      "nature": "Calm",
+      "ability": "Shell Armor",
+      "item": "Weakness Policy",
+      "moves": [
+        "Shell Trap",
+        "Dragon Pulse",
+        "Flash Cannon",
+        "Wide Guard"
+      ]
+    },
+    "Turtonator-2": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 0,
+        "sa": 252,
+        "sd": 0,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 19,
+        "at": 19,
+        "df": 19,
+        "sa": 19,
+        "sd": 19,
+        "sp": 19
+      },
+      "nature": "Timid",
+      "ability": "Shell Armor",
+      "item": "Life Orb",
+      "moves": [
+        "Shell Smash",
+        "Flamethrower",
+        "Dragon Pulse",
+        "Flash Cannon"
+      ]
+    },
+     "Turtonator-3": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 252,
+        "df": 252,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Adamant",
+      "ability": "Shell Armor",
+      "item": "Lum Berry",
+      "moves": [
+        "Heavy Slam",
+        "Heat Crash",
+        "Body Press",
+        "Curse"
+      ]
+    },
+     "Turtonator-4": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Modest",
+      "ability": "Shell Armor",
+      "item": "White Herb",
+      "moves": [
+        "Overheat",
+        "Draco Meteor",
+        "Focus Blast",
+        "Wide Guard"
+      ]
+    },
+     "Turtonator-RS": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ability": "Shell Armor",
+      "item": "Absorb Bulb",
+      "moves": [
+        "Shell Trap",
+        "Dragon Pulse",
+        "Burning Jealousy",
+        "Incinerate"
+      ]
+    }
+  },
 	"Tyranitar": {
-		"Fast Weakness Policy": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "4",
-				"sp": "252"
-			},
-			"nature": "Jolly",
-			"ability": "Sand Stream",
-			"item": "Weakness Policy",
-			"moves": [
-				"Stone Edge",
-				"Crunch",
-				"Iron Head",
-				"Fire Punch"
-			]
-		},
-		"Defensive Sand Setter": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"df": "252",
-				"sd": "4"
-			},
-			"nature": "Bold",
-			"ability": "Sand Stream",
-			"item": "Smooth Rock",
-			"moves": [
-				"Ice Beam",
-				"Foul Play",
-				"Fire Blast",
-				"Thunderbolt"
-			]
-		},
-		"Slow Weakness Policy": {
-			"level": 50,
-			"evs": {
-				"hp": "252",
-				"at": "252",
-				"df": "4"
-			},
-			"nature": "Adamant",
-			"ability": "Sand Stream",
-			"item": "Weakness Policy",
-			"moves": [
-				"Stone Edge",
-				"Crunch",
-				"Iron Head",
-				"Fire Punch"
-			]
-		}
-	},
+    "Tyranitar-1": {
+      "level": "50",
+      "evs": {
+        "hp": 0,
+        "at": 0,
+        "df": 252,
+        "sa": 252,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 23,
+        "at": 23,
+        "df": 23,
+        "sa": 23,
+        "sd": 23,
+        "sp": 23
+      },
+      "nature": "Modest",
+      "ability": "Sand Stream",
+      "item": "Assault Vest",
+      "moves": [
+        "Fire Blast",
+        "Blizzard",
+        "Dark Pulse",
+        "Thunder"
+      ]
+    },
+    "Tyranitar-2": {
+      "level": "50",
+      "evs": {
+        "hp": 252,
+        "at": 252,
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "ivs": {
+        "hp": 27,
+        "at": 27,
+        "df": 27,
+        "sa": 27,
+        "sd": 27,
+        "sp": 27
+      },
+      "nature": "Brave",
+      "ability": "Sand Stream",
+      "item": "Chople Berry",
+      "moves": [
+        "Stone Edge",
+        "Crunch",
+        "High Horsepower",
+        "Iron Tail"
+      ]
+    }
+  },
 	"Umbreon": {
 		"Defensive Standard": {
 			"level": 50,
