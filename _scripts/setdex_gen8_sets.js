@@ -14678,7 +14678,7 @@ var SETDEX_GEN8_SETS = {
     }
   },
   "Leafeon": {
-    "Abomasnow-1": {
+    "Leafeon-1": {
       "level": "50",
       "evs": {
         "hp": 0,
@@ -21790,7 +21790,7 @@ var SETDEX_GEN8_SETS = {
         "Power Gem"
       ]
     },
-     "Abomasnow-4": {
+     "Sableye-4": {
       "level": "50",
       "evs": {
         "hp": 0,
