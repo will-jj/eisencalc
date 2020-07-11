@@ -32,7 +32,9 @@ var ITEMS_ADV = ITEMS_GSC.concat([
 	"Choice Band",
 	"DeepSeaScale",
 	"DeepSeaTooth",
+	"Quick Claw",
 	"Oran Berry",
+	"Scope Lens",
 	"Silk Scarf",
 	"Sitrus Berry",
 	"Soul Dew"
