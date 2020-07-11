@@ -227,7 +227,7 @@ function getDamageResult(attacker, defender, move, field) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 
-	description.HPEVs = defender.EVs + " HP";
+	description.HPEVs = defender.HPEVs + " HP";
 
 	if (["Seismic Toss", "Night Shade"].indexOf(move.name) !== -1) {
 		var lv = attacker.level;
