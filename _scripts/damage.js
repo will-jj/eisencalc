@@ -227,7 +227,7 @@ function getDamageResult(attacker, defender, move, field) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 
-	description.HPEVs = defender.HPEVs + " HP";
+	description.HPEVs = defender.EVs + " HP";
 
 	if (["Seismic Toss", "Night Shade"].indexOf(move.name) !== -1) {
 		var lv = attacker.level;
@@ -237,7 +237,7 @@ function getDamageResult(attacker, defender, move, field) {
 		return {"damage": [lv], "description": buildDescription(description)};
 	}
 	
-	  if (move.named === "Final Gambit") {
+	  if (move.name === "Final Gambit") {
     result.damage = attacker.curHP();
     return result;
   }
