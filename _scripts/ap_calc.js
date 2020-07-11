@@ -581,8 +581,8 @@ function calculate() {
 	optimizeEVs("#p1", p1);
 	optimizeEVs("#p2", p2);
 	damageResults = calculateAllMoves(p1, p2, field);
-	p1info.find(".sp .totalMod").text(p1.stats.spe);
-	p2info.find(".sp .totalMod").text(p2.stats.spe);
+	p1info.find(".sp .totalMod").text(p1.stats.sp);
+	p2info.find(".sp .totalMod").text(p2.stats.sp);
 	var result, minDamage, maxDamage, minPercent, maxPercent, percentText;
 	var highestMaxPercent = -1;
 	var bestResult;
