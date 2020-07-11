@@ -238,8 +238,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	
 	  if (move.name === "Final Gambit") {
-    result.damage = attacker.curHP();
-    return result;
+		  return {"damage": [attacker.curHP]};
   }
 
 	if (move.name === "Surging Strikes") {
