@@ -29,6 +29,7 @@ var ITEMS_GSC = [
 ];
 
 var ITEMS_ADV = ITEMS_GSC.concat([
+	"Bright Powder",
 	"Choice Band",
 	"DeepSeaScale",
 	"DeepSeaTooth",
@@ -37,7 +38,8 @@ var ITEMS_ADV = ITEMS_GSC.concat([
 	"Scope Lens",
 	"Silk Scarf",
 	"Sitrus Berry",
-	"Soul Dew"
+	"Soul Dew",
+	"White Herb"
 ]);
 
 ITEMS_ADV.splice(ITEMS_ADV.indexOf("Berry"), 1);
@@ -50,6 +52,7 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	"Apicot Berry",
 	"Babiri Berry",
 	"Belue Berry",
+	"Big Root",
 	"Black Sludge",
 	"Charti Berry",
 	"Chesto Berry",
@@ -69,6 +72,7 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	"Fist Plate",
 	"Flame Orb",
 	"Flame Plate",
+	"Focus Sash",
 	"Ganlon Berry",
 	"Griseous Orb",
 	"Haban Berry",
