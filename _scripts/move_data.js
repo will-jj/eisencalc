@@ -3346,6 +3346,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         "category": "Physical",
         "isSpread": true
     },
+			"Parting Shot": {
+		"bp": 0,
+		"type": "Dark"
+	},
 	"Phantom Force": {
 		"bp": 90,
 		"type": "Ghost",
