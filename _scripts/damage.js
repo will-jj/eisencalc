@@ -236,6 +236,11 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 		return {"damage": [lv], "description": buildDescription(description)};
 	}
+	
+	  if (move.named === "Final Gambit") {
+    result.damage = attacker.curHP();
+    return result;
+  }
 
 	if (move.name === "Surging Strikes") {
 		move.hits = 3;
