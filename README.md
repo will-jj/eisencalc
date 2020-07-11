@@ -1,6 +1,6 @@
 # BATTLE FACILITIES DAMAGE CALCULATOR // SWSH EDITION
 
-By Eisenherz, based on the BSS damage calculator by cant say ([@jakecantsay](https://twitter.com/jakecantsay)) and [Lego](https://www.smogon.com/forums/members/188833/).
+By [Eisenherz](https://www.smogon.com/forums/members/eisenherz.326390/), based on the BSS damage calculator by cant say ([@jakecantsay](https://twitter.com/jakecantsay)) and [Lego](https://www.smogon.com/forums/members/188833/).
 
 The calculator includes all SwSh Tower / Restricted Sparring / Battle Tree / Battle Maison / Battle Subway sets preloaded and has been updated for IoA.
 
