@@ -3209,6 +3209,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         "bp": 0,
         "type": "Grass"
     },
+				"Grassy Terrain": {
+		"bp": 0,
+		"type": "Grass"
+	},
 	"Heat Wave": {"bp": 95},
 	"Hex": {"bp": 65},
 	"Hidden Power Bug": {"bp": 60},
@@ -3287,6 +3291,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         "bp": 0,
         "type": "Fairy"
     },
+				"Misty Terrain": {
+		"bp": 0,
+		"type": "Fairy"
+	},
 	"Moonblast": {
 		"bp": 95,
 		"type": "Fairy",
@@ -3387,6 +3395,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"category": "Physical",
 		"isSpread": "true",
 		"acc": 85
+	},
+				"Psychic Terrain": {
+		"bp": 0,
+		"type": "Psychic"
 	},
 	"Rock Tomb": {"bp": 60},
 	"Skull Bash": {"bp": 130},
