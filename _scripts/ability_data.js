@@ -121,7 +121,7 @@ var ABILITIES_DPP = ABILITIES_ADV.concat([
 ]);
 
 var ABILITIES_BW = ABILITIES_DPP.concat([
-"Analytic",
+	"Analytic",
 	"Big Pecks",
 	"Contrary",
 	"Cursed Body",

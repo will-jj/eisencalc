@@ -236,10 +236,10 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 		return {"damage": [lv], "description": buildDescription(description)};
 	}
-	
+
 	  if (move.name === "Final Gambit") {
 		  return {"damage": [attacker.curHP]};
-  }
+	}
 
 	if (move.name === "Surging Strikes") {
 		move.hits = 3;
@@ -338,9 +338,9 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Misty Explosion":
-    		basePower = move.bp * (field.terrain === "Misty" ? 1.5 : 1);
-    		description.moveBP = basePower;
-    		break;
+		basePower = move.bp * (field.terrain === "Misty" ? 1.5 : 1);
+		description.moveBP = basePower;
+		break;
 	case "Rising Voltage":
 		basePower = move.bp * (field.terrain === "Electric" && (field.isGravity || (defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
                 defender.item !== "Air Balloon" && defender.ability !== "Levitate")) ? 2 : 1);
@@ -348,13 +348,13 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Expanding Force":
 		basePower = move.bp * (field.terrain === "Psychic" ? 1.5 : 1);
-		move.isSpread = (field.terrain === "Psychic" ? true : false);
-		description.moveBP = basePower
+		move.isSpread = (field.terrain === "Psychic");
+		description.moveBP = basePower;
 		break;
-	case 'Triple Axel':
-    		basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
-   	 	description.moveBP = basePower;
-   		 break;
+	case "Triple Axel":
+		basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
+		description.moveBP = basePower;
+		break;
 	default:
 		basePower = move.bp;
 	}
@@ -406,11 +406,11 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x14CD);
 		description.attackerAbility = attacker.ability;
 	}
-	
+
 	  if (attacker.ability === "Steely Spirit" && move.type === "Steel") {
-    		bpMods.push(0x1800);
-    		description.attackerAbility = attacker.ability;
-  }
+		bpMods.push(0x1800);
+		description.attackerAbility = attacker.ability;
+	}
 
 	if (getItemBoostType(attacker.item) === move.type) {
 		bpMods.push(0x1333);
