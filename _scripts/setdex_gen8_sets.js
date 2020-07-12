@@ -19484,8 +19484,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
-			"nature": "Modest",
-			"ability": "Download",
+			"ability": "Adaptability",
 			"item": "Normal Gem",
 			"moves": [
 				"Shadow Ball",
