@@ -1090,6 +1090,10 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 0,
 		"type": "Ground"
 	},
+	"Spite": {
+		"bp": 0,
+		"type": "Normal"
+	},
 	"Steel Wing": {
 		"bp": 70,
 		"type": "Steel",
