@@ -701,22 +701,13 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
-			"ivs": {
-				"hp": 23,
-				"at": 23,
-				"df": 23,
-				"sa": 23,
-				"sd": 23,
-				"sp": 23
-			},
-			"nature": "Modest",
-			"ability": "Snow Warning",
-			"item": "Icy Rock",
+			"ability": "Thick Fat",
+			"item": "Sitrus Berry",
 			"moves": [
-				"Blizzard",
-				"Energy Ball",
-				"Hail",
-				"Aurora Veil"
+				"Dragon Pulse",
+				"Solar Beam",
+				"Sunny Day",
+				"Recycle"
 			]
 		}
 	},
