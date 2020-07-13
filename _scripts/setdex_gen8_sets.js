@@ -14097,13 +14097,14 @@ var SETDEX_GEN8_SETS = {
 		"Kingler-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 0,
-				"at": 0,
+				"hp": 252,
+				"at": 252,
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
 			},
+			"nature": "Adamant",
 			"ability": "Hyper Cutter",
 			"item": "Wacan Berry",
 			"moves": [
