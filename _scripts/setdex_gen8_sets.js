@@ -19094,7 +19094,7 @@ var SETDEX_GEN8_SETS = {
 		"Perrserker-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 0,
+				"hp": 252,
 				"at": 252,
 				"df": 0,
 				"sa": 0,
