@@ -10186,7 +10186,7 @@ var SETDEX_GEN8_SETS = {
 		"Gardevoir-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 0,
+				"hp": 252,
 				"at": 0,
 				"df": 0,
 				"sa": 0,
