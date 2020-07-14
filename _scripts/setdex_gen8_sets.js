@@ -5254,7 +5254,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
-			"nature": "Adamant,
+			"nature": "Adamant",
 			"ability": "Adaptability",
 			"item": "Assault Vest",
 			"moves": [
