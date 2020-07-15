@@ -27005,7 +27005,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
-			"nature": "Modest",
+			"nature": "Timid",
 			"ability": "Snow Warning",
 			"item": "Never-Melt Ice",
 			"moves": [
