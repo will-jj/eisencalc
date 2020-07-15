@@ -4981,9 +4981,9 @@ var SETDEX_GEN8_SETS = {
 		"Corviknight-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 252,
+				"hp": 0,
 				"at": 0,
-				"df": 0,
+				"df": 252,
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
