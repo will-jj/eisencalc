@@ -16698,7 +16698,7 @@ var SETDEX_GEN8_SETS = {
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
 			"ability": "Infiltrator",
 			"item": "Throat Spray",
