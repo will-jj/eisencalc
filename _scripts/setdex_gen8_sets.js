@@ -24301,6 +24301,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"nature": "Impish",
 			"ability": "Sturdy",
 			"item": "Ganlon Berry",
 			"moves": [
