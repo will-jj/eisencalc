@@ -27007,7 +27007,7 @@ var SETDEX_GEN8_SETS = {
 				"df": 0,
 				"sa": 252,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
 			"nature": "Timid",
 			"ability": "Snow Warning",
