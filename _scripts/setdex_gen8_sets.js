@@ -5651,7 +5651,7 @@ var SETDEX_GEN8_SETS = {
 		"Dedenne-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 0,
+				"hp": 252,
 				"at": 0,
 				"df": 0,
 				"sa": 0,
@@ -7242,7 +7242,7 @@ var SETDEX_GEN8_SETS = {
 		"Dubwool-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 0,
+				"hp": 252,
 				"at": 0,
 				"df": 0,
 				"sa": 0,
