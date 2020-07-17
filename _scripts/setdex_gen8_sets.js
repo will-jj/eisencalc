@@ -8124,7 +8124,7 @@ var SETDEX_GEN8_SETS = {
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
 			"ability": "Motor Drive",
 			"item": "Apicot Berry",
@@ -21269,8 +21269,9 @@ var SETDEX_GEN8_SETS = {
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
+			"nature": "Timid",
 			"ability": "Levitate",
 			"item": "Shuca Berry",
 			"moves": [
