@@ -22224,6 +22224,15 @@ var SETDEX_GEN8_SETS = {
 	"Scizor": {
 		"Scizor-RS": {
 			"level": 50,
+				"evs": {
+				"hp": 252,
+				"at": 252,
+				"df": 0,
+				"sa": 0,
+				"sd": 0,
+				"sp": 0
+			},
+			"nature": "Adamant",
 			"ability": "Technician",
 			"item": "Expert Belt",
 			"moves": [
