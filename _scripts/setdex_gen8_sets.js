@@ -2827,14 +2827,14 @@ var SETDEX_GEN8_SETS = {
 		"Braviary-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 252,
+				"hp": 0,
 				"at": 252,
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
-			"nature": "Adamant",
+			"nature": "Jolly",
 			"ability": "Sheer Force",
 			"item": "Adrenaline Orb",
 			"moves": [
