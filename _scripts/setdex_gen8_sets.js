@@ -24966,7 +24966,6 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
-			"nature": "Adamant",
 			"ability": "Leaf Guard",
 			"item": "Grassy Seed",
 			"moves": [
