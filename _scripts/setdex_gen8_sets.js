@@ -468,7 +468,7 @@ var SETDEX_GEN8_SETS = {
 				"df": 0,
 				"sa": 252,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
 			"ability": "Synchronize",
 			"item": "Absorb Bulb",
@@ -1670,8 +1670,9 @@ var SETDEX_GEN8_SETS = {
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
+			"nature": "Jolly",
 			"ability": "Swift Swim",
 			"item": "Rindo Berry",
 			"moves": [
@@ -10804,7 +10805,7 @@ var SETDEX_GEN8_SETS = {
 				"hp": 0,
 				"at": 0,
 				"df": 0,
-				"sa": 0,
+				"sa": 252,
 				"sd": 0,
 				"sp": 0
 			},
@@ -16069,7 +16070,7 @@ var SETDEX_GEN8_SETS = {
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
 			"ability": "Overcoat",
 			"item": "Sticky Barb",
@@ -23641,7 +23642,8 @@ var SETDEX_GEN8_SETS = {
 		"Skarmory-RS": {
 			"level": 50,
 			"evs": {
-				"at": "252"
+				"at": 252,
+				"df": 252
 			},
 			"ability": "Sturdy",
 			"item": "Maranga Berry",
@@ -26105,7 +26107,7 @@ var SETDEX_GEN8_SETS = {
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
 			"ability": "Dry Skin",
 			"item": "Payapa Berry",
@@ -27753,7 +27755,8 @@ var SETDEX_GEN8_SETS = {
 		"Volcarona-RS": {
 			"level": 50,
 			"evs": {
-				"sa": "252"
+				"sa": 252,
+				"sp": 252
 			},
 			"nature": "Modest",
 			"ability": "Swarm",
