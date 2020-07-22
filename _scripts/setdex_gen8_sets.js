@@ -24968,6 +24968,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"nature": "Brave",
 			"ability": "Leaf Guard",
 			"item": "Grassy Seed",
 			"moves": [
