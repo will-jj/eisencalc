@@ -17854,6 +17854,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Jolly",
 			"ability": "Hunger Switch",
 			"item": "Liechi Berry",
 			"moves": [
