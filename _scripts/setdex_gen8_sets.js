@@ -122,6 +122,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Snow Warning",
 			"item": "Miracle Seed",
 			"moves": [
