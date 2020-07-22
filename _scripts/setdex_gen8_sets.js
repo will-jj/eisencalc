@@ -255,6 +255,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Unburden",
 			"item": "Wiki Berry",
 			"moves": [
@@ -470,6 +478,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Synchronize",
 			"item": "Absorb Bulb",
 			"moves": [
@@ -603,6 +619,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Sweet Veil",
 			"item": "Misty Seed",
 			"moves": [
@@ -623,6 +647,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Effect Spore",
 			"item": "Miracle Seed",
@@ -700,6 +732,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 252,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Thick Fat",
 			"item": "Sitrus Berry",
@@ -1290,6 +1330,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 252,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Aroma Veil",
 			"item": "Pixie Plate",
 			"moves": [
@@ -1424,6 +1472,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": "0",
 				"sd": "0",
 				"sp": "0"
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Huge Power",
 			"item": "Mystic Water",
@@ -1671,6 +1727,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Jolly",
 			"ability": "Swift Swim",
@@ -1920,6 +1984,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Snow Cloak",
 			"item": "Damp Rock",
 			"moves": [
@@ -2052,6 +2124,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Analytic",
 			"item": "Psychic Seed",
@@ -2414,6 +2494,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Adamant",
 			"ability": "Defiant",
 			"item": "Black Glasses",
@@ -2435,6 +2523,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 252,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Serene Grace",
 			"item": "Mental Herb",
@@ -2681,6 +2777,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Strong Jaw",
 			"item": "Cell Battery",
 			"moves": [
@@ -2701,6 +2805,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Reckless",
 			"item": "Kee Berry",
@@ -2834,6 +2946,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Jolly",
 			"ability": "Sheer Force",
@@ -3083,6 +3203,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Tinted Lens",
 			"item": "Leftovers",
 			"moves": [
@@ -3327,6 +3455,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 252,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Flash Fire",
 			"item": "Leftovers",
@@ -3767,6 +3903,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Technician",
 			"item": "Metronome",
 			"moves": [
@@ -4093,6 +4237,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 252,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Modest",
 			"ability": "Mega Launcher",
@@ -4456,6 +4608,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Skill Link",
 			"item": "Shell Bell",
 			"moves": [
@@ -4589,6 +4749,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Flash Fire",
 			"item": "Liechi Berry",
 			"moves": [
@@ -4609,6 +4777,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Triage",
 			"item": "Big Root",
@@ -4742,6 +4918,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Iron Fist",
 			"item": "Life Orb",
@@ -4990,6 +5174,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Mirror Armor",
 			"item": "Petaya Berry",
 			"moves": [
@@ -5123,6 +5315,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Gulp Missile",
 			"item": "Leftovers",
 			"moves": [
@@ -5255,6 +5455,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Adamant",
 			"ability": "Adaptability",
@@ -5390,6 +5598,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Impish",
 			"ability": "Sturdy",
 			"item": "Smooth Rock",
@@ -5523,6 +5739,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Perish Body",
 			"item": "Ring Target",
@@ -5658,6 +5882,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Timid",
 			"ability": "Cheek Pouch",
@@ -6353,6 +6585,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Adaptability",
 			"item": "White Herb",
 			"moves": [
@@ -6583,6 +6823,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 252,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Cloud Nine",
 			"item": "Adrenaline Orb",
@@ -6829,6 +7077,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Jolly",
 			"ability": "Battle Armor",
 			"item": "Chilan Berry",
@@ -6963,6 +7219,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Strong Jaw",
 			"item": "Expert Belt",
 			"moves": [
@@ -7096,6 +7360,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Flare Boost",
 			"item": "Flame Orb",
 			"moves": [
@@ -7116,6 +7388,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Rough Skin",
 			"item": "Rocky Helmet",
@@ -7249,6 +7529,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Fluffy",
 			"item": "Luminous Moss",
@@ -7384,6 +7672,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 252,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Serene Grace",
 			"item": "Eject Pack",
@@ -7858,6 +8154,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Adamant",
 			"ability": "Pressure",
 			"item": "Expert Belt",
@@ -8106,6 +8410,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 252,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Cotton Down",
 			"item": "Eject Pack",
 			"moves": [
@@ -8126,6 +8438,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Motor Drive",
 			"item": "Apicot Berry",
@@ -8371,6 +8691,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Swarm",
 			"item": "Occa Berry",
@@ -8621,6 +8949,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Chlorophyll",
 			"item": "Power Herb",
 			"moves": [
@@ -8641,6 +8977,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 252,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Scrappy",
 			"item": "Throat Spray",
@@ -8774,6 +9118,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Adamant",
 			"ability": "Defiant",
@@ -8966,6 +9318,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Hustle",
 			"item": "Yache Berry",
@@ -9328,6 +9688,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Jolly",
 			"ability": "Snow Cloak",
 			"item": "Lum Berry",
@@ -9688,6 +10056,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Justified",
 			"item": "Cell Battery",
 			"moves": [
@@ -9821,6 +10197,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Compound Eyes",
 			"item": "Utility Umbrella",
 			"moves": [
@@ -9953,6 +10337,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Aftermath",
 			"item": "Blunder Policy",
@@ -10198,6 +10590,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 252,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Modest",
 			"ability": "Synchronize",
@@ -10561,6 +10961,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Sand Stream",
 			"item": "Power Herb",
 			"moves": [
@@ -10810,6 +11218,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Cloud Nine",
 			"item": "Mystic Water",
 			"moves": [
@@ -10942,6 +11358,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Emergency Exit",
 			"item": "Leftovers",
@@ -11076,6 +11500,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Iron Fist",
 			"item": "Life Orb",
 			"moves": [
@@ -11152,6 +11584,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Sap Sipper",
 			"item": "Lansat Berry",
@@ -11400,6 +11840,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Pickup",
 			"item": "Spell Tag",
 			"moves": [
@@ -11533,6 +11981,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Technician",
 			"item": "Cell Battery",
 			"moves": [
@@ -11665,6 +12121,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Cheek Pouch",
 			"item": "Petaya Berry",
@@ -11912,6 +12376,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Intimidate",
 			"item": "Rocky Helmet",
@@ -12583,6 +13055,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Guts",
 			"item": "Blunder Policy",
@@ -13821,6 +14301,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 252,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Calm",
 			"ability": "Water Absorb",
 			"item": "Spell Tag",
@@ -13957,6 +14445,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Scrappy",
 			"item": "Protective Pads",
 			"moves": [
@@ -13977,6 +14473,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Timid",
 			"ability": "Sniper",
@@ -14112,6 +14616,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Adamant",
 			"ability": "Hyper Cutter",
 			"item": "Wacan Berry",
@@ -14133,6 +14645,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Prankster",
 			"item": "Mental Herb",
@@ -14267,6 +14787,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Clear Body",
 			"item": "Lum Berry",
 			"moves": [
@@ -14400,6 +14928,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Bulletproof",
 			"item": "Muscle Band",
 			"moves": [
@@ -14420,6 +14956,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Intimidate",
 			"item": "Weakness Policy",
@@ -14553,6 +15097,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 252,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Volt Absorb",
 			"item": "Leftovers",
@@ -14803,6 +15355,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Cloud Nine",
 			"item": "Metronome",
 			"moves": [
@@ -14938,6 +15498,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Timid",
 			"ability": "Chlorophyll",
 			"item": "Big Root",
@@ -14959,6 +15527,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Jolly",
 			"ability": "Cute Charm",
@@ -15434,6 +16010,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 252,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Levitate",
 			"item": "Utility Umbrella",
 			"moves": [
@@ -15454,6 +16038,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Contrary",
 			"item": "Heat Rock",
@@ -15476,6 +16068,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Intimidate",
 			"item": "Magnet",
 			"moves": [
@@ -15497,6 +16097,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Sand Rush",
 			"item": "Hard Stone",
 			"moves": [
@@ -15517,6 +16125,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "No Guard",
 			"item": "Salac Berry",
@@ -15653,6 +16269,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Analytic",
 			"item": "Eviolite",
 			"moves": [
@@ -15673,6 +16297,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 252,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Analytic",
 			"item": "Air Balloon",
@@ -15807,6 +16439,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Contrary",
 			"item": "Quick Claw",
 			"moves": [
@@ -15940,6 +16580,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Thick Fat",
 			"item": "Wise Glasses",
 			"moves": [
@@ -16072,6 +16720,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Overcoat",
 			"item": "Sticky Barb",
@@ -16313,12 +16969,20 @@ var SETDEX_GEN8_SETS = {
 		"Mantine-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 0,
+				"hp": 252,
 				"at": 0,
 				"df": 0,
 				"sa": 252,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Water Absorb",
 			"item": "Chesto Berry",
@@ -16454,6 +17118,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Adamant",
 			"ability": "Rock Head",
@@ -16703,6 +17375,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Infiltrator",
 			"item": "Throat Spray",
 			"moves": [
@@ -16723,6 +17403,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Jolly",
 			"ability": "Reckless",
@@ -16858,6 +17546,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 252,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Competitive",
 			"item": "Leftovers",
 			"moves": [
@@ -16878,6 +17574,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Bold",
 			"ability": "Thick Fat",
@@ -17127,6 +17831,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Hunger Switch",
 			"item": "Liechi Berry",
 			"moves": [
@@ -17339,6 +18051,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Screen Cleaner",
 			"item": "Sitrus Berry",
@@ -17586,6 +18306,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 252,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Synchronize",
 			"item": "Sitrus Berry",
@@ -18176,6 +18904,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Defiant",
 			"item": "Kee Berry",
 			"moves": [
@@ -18308,6 +19044,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Sniper",
 			"item": "Starf Berry",
@@ -18442,6 +19186,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 252,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Inner Focus",
 			"item": "Wise Glasses",
 			"moves": [
@@ -18575,6 +19327,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Swarm",
 			"item": "Room Service",
 			"moves": [
@@ -18595,6 +19355,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Water Compaction",
 			"item": "Passho Berry",
@@ -18843,6 +19611,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Defiant",
 			"item": "Light Ball",
 			"moves": [
@@ -18975,6 +19751,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 252,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Modest",
 			"ability": "Drizzle",
@@ -19110,6 +19894,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Adamant",
 			"ability": "Tough Claws",
 			"item": "Metal Coat",
@@ -19131,6 +19923,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Lightning Rod",
 			"item": "Light Ball",
@@ -19258,12 +20058,20 @@ var SETDEX_GEN8_SETS = {
 		"Pincurchin-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 0,
+				"hp": 252,
 				"at": 0,
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Electric Surge",
 			"item": "Electric Seed",
@@ -19286,6 +20094,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Mold Breaker",
 			"item": "Eject Pack",
 			"moves": [
@@ -19307,6 +20123,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 252,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Drizzle",
 			"item": "Damp Rock",
 			"moves": [
@@ -19327,6 +20151,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Water Absorb",
 			"item": "Zoom Lens",
@@ -19463,6 +20295,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Download",
 			"item": "Eviolite",
 			"moves": [
@@ -19483,6 +20323,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 252,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Adaptability",
 			"item": "Normal Gem",
@@ -19617,6 +20465,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Unaware",
 			"item": "Red Card",
 			"moves": [
@@ -19749,6 +20605,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Unaware",
 			"item": "Leftovers",
@@ -20531,6 +21395,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Solid Rock",
 			"item": "Weakness Policy",
 			"moves": [
@@ -20775,6 +21647,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 252,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Shield Dust",
 			"item": "Pixie Plate",
@@ -21273,6 +22153,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Timid",
 			"ability": "Levitate",
 			"item": "Shuca Berry",
@@ -21697,6 +22585,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Wandering Spirit",
 			"item": "Sticky Barb",
 			"moves": [
@@ -21944,6 +22840,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Oblivious",
 			"item": "Dragon Fang",
 			"moves": [
@@ -22077,6 +22981,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Sand Spit",
 			"item": "Quick Claw",
 			"moves": [
@@ -22097,6 +23009,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Jolly",
 			"ability": "Sand Veil",
@@ -22234,6 +23154,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Adamant",
 			"ability": "Technician",
 			"item": "Expert Belt",
@@ -22255,6 +23183,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Swarm",
 			"item": "Liechi Berry",
@@ -22389,6 +23325,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Intimidate",
 			"item": "Life Orb",
 			"moves": [
@@ -22521,6 +23465,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Lightning Rod",
 			"item": "Assault Vest",
@@ -22735,6 +23687,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Water Absorb",
 			"item": "Poison Barb",
 			"moves": [
@@ -22755,6 +23715,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Rough Skin",
 			"item": "Adrenaline Orb",
@@ -23629,6 +24597,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Scrappy",
 			"item": "Leek",
 			"moves": [
@@ -23645,6 +24621,14 @@ var SETDEX_GEN8_SETS = {
 			"evs": {
 				"at": 252,
 				"df": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Sturdy",
 			"item": "Maranga Berry",
@@ -23779,6 +24763,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Aftermath",
 			"item": "Salac Berry",
 			"moves": [
@@ -23911,6 +24903,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Bold",
 			"ability": "Unburden",
@@ -24160,6 +25160,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Levitate",
 			"item": "Hard Stone",
 			"moves": [
@@ -24180,6 +25188,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 252,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Timid",
 			"ability": "Analytic",
@@ -24314,6 +25330,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Impish",
 			"ability": "Sturdy",
@@ -24450,6 +25474,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Intimidate",
 			"item": "Silk Scarf",
@@ -24812,6 +25844,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Timid",
 			"ability": "Unaware",
 			"item": "Mental Herb",
@@ -24948,6 +25988,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Gale Wings",
 			"item": "Sticky Barb",
 			"moves": [
@@ -24968,6 +26016,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Brave",
 			"ability": "Leaf Guard",
@@ -24991,6 +26047,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Jolly",
 			"ability": "Intimidate",
 			"item": "Toxic Orb",
@@ -25012,6 +26076,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Clear Body",
 			"item": "Black Sludge",
@@ -25257,6 +26329,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Unburden",
 			"item": "Red Card",
@@ -25845,6 +26925,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Drought",
 			"item": "Charcoal",
 			"moves": [
@@ -25978,6 +27066,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Merciless",
 			"item": "Rocky Helmet",
 			"moves": [
@@ -26110,6 +27206,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Dry Skin",
 			"item": "Payapa Berry",
@@ -26358,6 +27462,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Natural Cure",
 			"item": "Assault Vest",
 			"moves": [
@@ -26604,6 +27716,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Shell Armor",
 			"item": "Absorb Bulb",
@@ -27024,6 +28144,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Timid",
 			"ability": "Snow Warning",
 			"item": "Never-Melt Ice",
@@ -27384,6 +28512,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Unnerve",
 			"item": "Red Card",
 			"moves": [
@@ -27743,6 +28879,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 252,
 				"sp": 0
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"ability": "Effect Spore",
 			"item": "Big Root",
 			"moves": [
@@ -27759,6 +28903,14 @@ var SETDEX_GEN8_SETS = {
 			"evs": {
 				"sa": 252,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"nature": "Modest",
 			"ability": "Swarm",
@@ -27893,6 +29045,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Pressure",
 			"item": "Liechi Berry",
@@ -28138,6 +29298,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 252
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Pressure",
 			"item": "Scope Lens",
@@ -28500,6 +29668,14 @@ var SETDEX_GEN8_SETS = {
 				"sd": 0,
 				"sp": 252
 			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
+			},
 			"nature": "Jolly",
 			"ability": "Hydration",
 			"item": "Adrenaline Orb",
@@ -28633,6 +29809,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Schooling",
 			"item": "Figy Berry",
@@ -28882,6 +30066,14 @@ var SETDEX_GEN8_SETS = {
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
+			},
+			"ivs": {
+				"hp": 15,
+				"at": 15,
+				"df": 15,
+				"sa": 15,
+				"sd": 15,
+				"sp": 15
 			},
 			"ability": "Illusion",
 			"item": "Eject Button",
