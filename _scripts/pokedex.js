@@ -13596,7 +13596,7 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SM, {
 			"sd": 68,
 			"sp": 74
 		},
-		"w": 8.5,
+		"w": 115.5,
 		"ab": "Strong Jaw",
 	},
 	"Drednaw-Gmax": {
@@ -13611,7 +13611,7 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SM, {
 			"sd": 68,
 			"sp": 74
 		},
-		"w": 8.5,
+		"w": 115.5,
 		"ab": "Strong Jaw",
 		"isAlternateForme": true,
 	},
