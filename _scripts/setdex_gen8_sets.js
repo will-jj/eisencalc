@@ -16854,7 +16854,7 @@ var SETDEX_GEN8_SETS = {
 				"at": 0,
 				"df": 0,
 				"sa": 0,
-				"sd": 0,
+				"sd": 252,
 				"sp": 0
 			},
 			"ability": "Competitive",
