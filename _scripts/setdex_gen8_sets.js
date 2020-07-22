@@ -1474,12 +1474,12 @@ var SETDEX_GEN8_SETS = {
 		"Azumarill-RS": {
 			"level": 50,
 			"evs": {
-				"hp": "252",
-				"at": "0",
-				"df": "0",
-				"sa": "0",
-				"sd": "0",
-				"sp": "0"
+				"hp": 252,
+				"at": 252,
+				"df": 0,
+				"sa": 0,
+				"sd": 0,
+				"sp": 0
 			},
 			"ivs": {
 				"hp": 15,
@@ -1489,6 +1489,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Adamant",
 			"ability": "Huge Power",
 			"item": "Mystic Water",
 			"moves": [
@@ -5319,9 +5320,9 @@ var SETDEX_GEN8_SETS = {
 			"evs": {
 				"hp": 252,
 				"at": 0,
-				"df": 252,
+				"df": 0,
 				"sa": 0,
-				"sd": 0,
+				"sd": 252,
 				"sp": 0
 			},
 			"ivs": {
@@ -5332,6 +5333,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Calm",
 			"ability": "Gulp Missile",
 			"item": "Leftovers",
 			"moves": [
@@ -6827,11 +6829,11 @@ var SETDEX_GEN8_SETS = {
 			"level": "50",
 			"evs": {
 				"hp": 0,
-				"at": 0,
+				"at": 252,
 				"df": 0,
 				"sa": 252,
 				"sd": 0,
-				"sp": 252
+				"sp": 0
 			},
 			"ivs": {
 				"hp": 15,
@@ -6841,6 +6843,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Timid",
 			"ability": "Cloud Nine",
 			"item": "Adrenaline Orb",
 			"moves": [
@@ -11361,9 +11364,9 @@ var SETDEX_GEN8_SETS = {
 		"Golisopod-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 252,
+				"hp": 0,
 				"at": 252,
-				"df": 0,
+				"df": 252,
 				"sa": 0,
 				"sd": 0,
 				"sp": 0
@@ -11376,6 +11379,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Impish",
 			"ability": "Emergency Exit",
 			"item": "Leftovers",
 			"moves": [
@@ -15115,6 +15119,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Modest",
 			"ability": "Volt Absorb",
 			"item": "Leftovers",
 			"moves": [
@@ -17422,7 +17427,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
-			"nature": "Jolly",
+			"nature": "Hasty",
 			"ability": "Reckless",
 			"item": "Lum Berry",
 			"moves": [
@@ -19619,7 +19624,7 @@ var SETDEX_GEN8_SETS = {
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
 			"ivs": {
 				"hp": 15,
@@ -19629,6 +19634,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Jolly",
 			"ability": "Defiant",
 			"item": "Light Ball",
 			"moves": [
@@ -20332,7 +20338,7 @@ var SETDEX_GEN8_SETS = {
 				"df": 0,
 				"sa": 252,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
 			"ivs": {
 				"hp": 15,
@@ -20342,6 +20348,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Hardy",
 			"ability": "Adaptability",
 			"item": "Normal Gem",
 			"moves": [
@@ -24640,6 +24647,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Impish",
 			"ability": "Sturdy",
 			"item": "Maranga Berry",
 			"moves": [
@@ -27084,6 +27092,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Bold",
 			"ability": "Merciless",
 			"item": "Rocky Helmet",
 			"moves": [
@@ -27724,7 +27733,7 @@ var SETDEX_GEN8_SETS = {
 				"hp": 252,
 				"at": 0,
 				"df": 0,
-				"sa": 0,
+				"sa": 252,
 				"sd": 0,
 				"sp": 0
 			},
@@ -27736,6 +27745,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Modest",
 			"ability": "Shell Armor",
 			"item": "Absorb Bulb",
 			"moves": [
@@ -28531,6 +28541,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Hardy",
 			"ability": "Unnerve",
 			"item": "Red Card",
 			"moves": [
@@ -29050,8 +29061,8 @@ var SETDEX_GEN8_SETS = {
 		"Wailord-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 0,
-				"at": 0,
+				"hp": 252,
+				"at": 252,
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
@@ -29065,6 +29076,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Impish",
 			"ability": "Pressure",
 			"item": "Liechi Berry",
 			"moves": [
@@ -29817,7 +29829,7 @@ var SETDEX_GEN8_SETS = {
 				"hp": 252,
 				"at": 0,
 				"df": 0,
-				"sa": 0,
+				"sa": 252,
 				"sd": 0,
 				"sp": 0
 			},
@@ -29829,6 +29841,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Quiet",
 			"ability": "Schooling",
 			"item": "Figy Berry",
 			"moves": [
