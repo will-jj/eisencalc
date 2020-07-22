@@ -10195,10 +10195,11 @@ var SETDEX_GEN8_SETS = {
 				"hp": 252,
 				"at": 0,
 				"df": 0,
-				"sa": 0,
+				"sa": 252,
 				"sd": 0,
 				"sp": 0
 			},
+			"nature": "Modest",
 			"ability": "Synchronize",
 			"item": "Psychic Seed",
 			"moves": [
