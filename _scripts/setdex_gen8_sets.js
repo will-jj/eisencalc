@@ -27211,7 +27211,7 @@ var SETDEX_GEN8_SETS = {
 			"level": "50",
 			"evs": {
 				"hp": 0,
-				"at": 0,
+				"at": 252,
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
@@ -27225,6 +27225,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Modest",
 			"ability": "Dry Skin",
 			"item": "Payapa Berry",
 			"moves": [
