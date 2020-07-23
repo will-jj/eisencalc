@@ -2819,8 +2819,8 @@ var SETDEX_GEN8_SETS = {
 		"Bouffalant-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 0,
-				"at": 252,
+				"hp": 252,
+				"at": 0,
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
