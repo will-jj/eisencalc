@@ -494,6 +494,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Timid",
 			"ability": "Synchronize",
 			"item": "Absorb Bulb",
 			"moves": [
@@ -10204,9 +10205,9 @@ var SETDEX_GEN8_SETS = {
 			"level": "50",
 			"evs": {
 				"hp": 0,
-				"at": 0,
+				"at": 252,
 				"df": 0,
-				"sa": 0,
+				"sa": 252,
 				"sd": 0,
 				"sp": 0
 			},
@@ -10218,6 +10219,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Hardy",
 			"ability": "Compound Eyes",
 			"item": "Utility Umbrella",
 			"moves": [
@@ -19765,12 +19767,12 @@ var SETDEX_GEN8_SETS = {
 		"Pelipper-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 252,
+				"hp": 0,
 				"at": 0,
 				"df": 0,
 				"sa": 252,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
 			"ivs": {
 				"hp": 15,
@@ -19942,7 +19944,7 @@ var SETDEX_GEN8_SETS = {
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
 			"ivs": {
 				"hp": 15,
@@ -19952,6 +19954,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Hardy",
 			"ability": "Lightning Rod",
 			"item": "Light Ball",
 			"moves": [
@@ -20108,11 +20111,11 @@ var SETDEX_GEN8_SETS = {
 			"level": "50",
 			"evs": {
 				"hp": 0,
-				"at": 0,
+				"at": 252,
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
 			"ivs": {
 				"hp": 15,
@@ -20122,6 +20125,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Adamant",
 			"ability": "Mold Breaker",
 			"item": "Eject Pack",
 			"moves": [
@@ -20151,6 +20155,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Calm",
 			"ability": "Drizzle",
 			"item": "Damp Rock",
 			"moves": [
@@ -20481,9 +20486,9 @@ var SETDEX_GEN8_SETS = {
 			"evs": {
 				"hp": 0,
 				"at": 0,
-				"df": 0,
+				"df": 252,
 				"sa": 0,
-				"sd": 0,
+				"sd": 252,
 				"sp": 0
 			},
 			"ivs": {
@@ -20494,6 +20499,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Sassy",
 			"ability": "Unaware",
 			"item": "Red Card",
 			"moves": [
@@ -24612,7 +24618,7 @@ var SETDEX_GEN8_SETS = {
 			"level": "50",
 			"evs": {
 				"hp": 0,
-				"at": 0,
+				"at": 252,
 				"df": 252,
 				"sa": 0,
 				"sd": 0,
@@ -24626,6 +24632,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Brave",
 			"ability": "Scrappy",
 			"item": "Leek",
 			"moves": [
@@ -26093,11 +26100,11 @@ var SETDEX_GEN8_SETS = {
 		"Tentacruel-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 0,
+				"hp": 252,
 				"at": 0,
 				"df": 0,
 				"sa": 0,
-				"sd": 0,
+				"sd": 252,
 				"sp": 0
 			},
 			"ivs": {
@@ -26108,6 +26115,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Careful",
 			"ability": "Clear Body",
 			"item": "Black Sludge",
 			"moves": [
