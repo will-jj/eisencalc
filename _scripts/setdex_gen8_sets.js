@@ -2796,6 +2796,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Jolly",
 			"ability": "Strong Jaw",
 			"item": "Cell Battery",
 			"moves": [
@@ -3908,11 +3909,11 @@ var SETDEX_GEN8_SETS = {
 			"level": "50",
 			"evs": {
 				"hp": 0,
-				"at": 0,
+				"at": 252,
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
-				"sp": 0
+				"sp": 252
 			},
 			"ivs": {
 				"hp": 15,
@@ -3922,6 +3923,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Jolly",
 			"ability": "Technician",
 			"item": "Metronome",
 			"moves": [
@@ -4753,8 +4755,8 @@ var SETDEX_GEN8_SETS = {
 		"Coalossal-RS": {
 			"level": "50",
 			"evs": {
-				"hp": 0,
-				"at": 0,
+				"hp": 252,
+				"at": 252,
 				"df": 0,
 				"sa": 0,
 				"sd": 0,
@@ -4768,6 +4770,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Adamant",
 			"ability": "Flash Fire",
 			"item": "Liechi Berry",
 			"moves": [
