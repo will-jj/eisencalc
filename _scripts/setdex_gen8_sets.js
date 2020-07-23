@@ -749,6 +749,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Calm",
 			"ability": "Thick Fat",
 			"item": "Sitrus Berry",
 			"moves": [
@@ -11861,6 +11862,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Hardy",
 			"ability": "Pickup",
 			"item": "Spell Tag",
 			"moves": [
@@ -14937,7 +14939,7 @@ var SETDEX_GEN8_SETS = {
 				"hp": 0,
 				"at": 252,
 				"df": 0,
-				"sa": 0,
+				"sa": 252,
 				"sd": 0,
 				"sp": 0
 			},
@@ -14949,6 +14951,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Hardy",
 			"ability": "Bulletproof",
 			"item": "Muscle Band",
 			"moves": [
@@ -26015,6 +26018,7 @@ var SETDEX_GEN8_SETS = {
 				"sd": 15,
 				"sp": 15
 			},
+			"nature": "Brave",
 			"ability": "Gale Wings",
 			"item": "Sticky Barb",
 			"moves": [
