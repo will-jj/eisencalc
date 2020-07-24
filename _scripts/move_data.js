@@ -4880,7 +4880,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"acc": 90,
 		"isMultiHit": true,
 	},
-	"Last Out": {
+	"Lash Out": {
 		"bp": 75,
 		"type": "Dark",
 		"category": "Physical",
