@@ -960,6 +960,13 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 0,
 		"type": "Ghost"
 	},
+	"Octazooka": {
+		"bp": 65,
+		"type": "Water",
+		"category": "Special",
+		"acc": 85,
+		"hasSecondaryEffect": true
+	},
 	"Pain Split": {
 		"bp": 0,
 		"type": "Normal"
