@@ -15312,7 +15312,6 @@ delete POKEDEX_SS["Xurkitree"];
 delete POKEDEX_SS["Celesteela"];
 delete POKEDEX_SS["Kartana"];
 delete POKEDEX_SS["Guzzlord"];
-delete POKEDEX_SS["Magearna"];
 delete POKEDEX_SS["Poipole"];
 delete POKEDEX_SS["Naganadel"];
 delete POKEDEX_SS["Stakataka"];
