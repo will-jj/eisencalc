@@ -499,6 +499,7 @@ var MOVES_RBY = {
 	"Submission": {
 		"bp": 80,
 		"type": "Fighting",
+		"category": "Physical",
 		"makesContact": true,
 		"hasRecoil": 25,
 		"acc": 80
