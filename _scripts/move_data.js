@@ -3452,6 +3452,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"bp": 0,
 		"type": "Ghost"
 	},
+	"Venom Drench": {
+		"bp": 0,
+		"type": "Poison"
+	},
 	"Wake-Up Slap": {"bp": 70},
 	"Water Pledge": {"bp": 80},
 	"Water Shuriken": {
