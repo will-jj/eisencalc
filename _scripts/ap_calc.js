@@ -1076,6 +1076,9 @@ function Field() {
 	this.clearWeather = function () {
 		weather = "";
 	};
+	this.getTerrain = function () {
+		return terrain;
+	};
 	this.getSide = function (i) {
 		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isSeeded[i], isForesight[i], isHelpingHand[i], isMinimized[i], isVictoryStar[i], isFriendGuard[i], isBattery[i], isProtect[i], isPowerSpot[i], isBusted8[i], isBusted16[i]);
 	};

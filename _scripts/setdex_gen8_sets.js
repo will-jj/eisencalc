@@ -23246,7 +23246,7 @@ var SETDEX_GEN8_SETS = {
 	"Scizor": {
 		"Scizor-RS": {
 			"level": 50,
-				"evs": {
+			"evs": {
 				"hp": 252,
 				"at": 252,
 				"df": 0,

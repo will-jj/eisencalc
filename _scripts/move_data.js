@@ -1771,8 +1771,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 
 var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 	"Acupressure": {
-	"bp": 0,
-	"type": "Normal",
+		"bp": 0,
+		"type": "Normal",
 	},
 	"Air Slash": {
 		"bp": 75,
