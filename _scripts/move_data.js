@@ -344,6 +344,10 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Normal"
 	},
+	"Metronome": {
+		"bp": 0,
+		"type": "Normal"
+	},
 	"Mirror Move": {
 		"bp": 0,
 		"type": "Flying"
