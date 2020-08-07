@@ -321,6 +321,10 @@ var MOVES_RBY = {
 		"makesContact": true,
 		"hasSecondaryEffect": true
 	},
+	"Leer": {
+		"bp": 0,
+		"type": "Normal"
+	},
 	"Light Screen": {
 		"bp": 0,
 		"type": "Psychic"
@@ -1300,6 +1304,10 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"category": "Physical",
 		"makesContact": true,
 		"acc": 100
+	},
+	"Dragon Dance": {
+		"bp": 0,
+		"type": "Dragon"
 	},
 	"Double-Edge": {"hasRecoil": 33},
 	"Endeavor": {
