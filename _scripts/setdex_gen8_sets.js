@@ -12702,7 +12702,7 @@ var SETDEX_GEN8_SETS = {
 			"ability": "Mold Breaker",
 			"item": "Scope Lens",
 			"moves": [
-				"Scope Lens",
+				"Snarl",
 				"Breaking Swipe",
 				"Rock Slide",
 				"Leer"
