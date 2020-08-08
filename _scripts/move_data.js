@@ -3183,6 +3183,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"percentHealed": 0.75,
 		"acc": 100
 	},
+	"Eerie Impulse": {
+		"bp": 0,
+		"type": "Electric"
+	},
 	"Electric Terrain": {
 		"bp": 0,
 		"type": "Electric"
