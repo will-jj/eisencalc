@@ -14671,7 +14671,20 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SM, {
 		"ab": "Unseen Fist",
 		"isAlternateForme": true,
 	},
-
+	"Zarude": {
+		"t1": "Dark",
+		"t2": "Grass",
+		"bs": {
+			"hp": 105,
+			"at": 120,
+			"df": 105,
+			"sa": 70,
+			"sd": 95,
+			"sp": 105
+		},
+		"w": 70,
+		"ab": "Leaf Guard",
+	},
 	"Aegislash-Shield": {"bs": {"df": 140, "sd": 140}},
 	"Aegislash-Both": {"bs": {"at": 140, "df": 140, "sa": 140, "sd": 140}},
 	"Aegislash-Blade": {"bs": {"at": 140, "sa": 140}},
