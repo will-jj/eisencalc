@@ -2465,6 +2465,10 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"hasRecoil": 33,
 		"acc": 100
 	},
+	"Worry Seed": {
+		"bp": 0,
+		"type": "Grass"
+	},
 	"Wring Out": {
 		"bp": 1,
 		"type": "Normal",
