@@ -7433,7 +7433,7 @@ var SETDEX_GEN8_SETS = {
 				"sp": 15
 			},
 			"nature": "Adamant",
-			"ability": "Rough Skin",
+			"ability": "Mold Breaker",
 			"item": "Rocky Helmet",
 			"moves": [
 				"Dragon Tail",
