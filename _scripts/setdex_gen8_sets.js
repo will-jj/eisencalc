@@ -1527,8 +1527,8 @@ var SETDEX_GEN8_SETS = {
 				"sp": 16
 			},
 			"nature": "Impish",
-			"ability": "Sniper",
-			"item": "Tough Claws",
+			"ability": "Tough Claws",
+			"item": "Binding Band",
 			"moves": [
 				"Sandstorm",
 				"Whirlpool",
