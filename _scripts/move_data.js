@@ -210,6 +210,10 @@ var MOVES_RBY = {
 		"makesContact": true,
 		"acc": 95
 	},
+	"Focus Energy": {
+		"bp": 0,
+		"type": "Normal"
+	},
 	"Fury Swipes": {
 		"bp": 18,
 		"type": "Normal",
