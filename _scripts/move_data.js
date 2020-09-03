@@ -2995,6 +2995,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"isSpread": true,
 		"acc": 95
 	},
+	"Soak": {
+		"bp": 0,
+		"type": "Water"
+	},
 	"Steamroller": {
 		"bp": 65,
 		"type": "Bug",
