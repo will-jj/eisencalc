@@ -75,6 +75,7 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	"Flame Plate",
 	"Focus Sash",
 	"Ganlon Berry",
+	"Grip Claw",
 	"Griseous Orb",
 	"Haban Berry",
 	"Heat Rock",
