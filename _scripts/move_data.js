@@ -4696,7 +4696,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"type": "Fairy",
 		"category": "Physical",
 	},
-	"Strange Stream": {
+	"Strange Steam": {
 		"bp": 90,
 		"type": "Fairy",
 		"category": "Special",
