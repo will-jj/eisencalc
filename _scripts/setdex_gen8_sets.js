@@ -3941,7 +3941,7 @@ var SETDEX_GEN8_SETS = {
 				"Tail Slap",
 				"Rock Blast",
 				"Bullet Seed",
-				"Tripe Axel"
+				"Triple Axel"
 			]
 		}
 	},
