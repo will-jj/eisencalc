@@ -5010,6 +5010,19 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"type": "Ghost",
 		"category": "Special",
 		"acc": 100
+	},
+	"Thunder Cage": {
+		"bp": 80,
+		"type": "Electric",
+		"category": "Special",
+		"acc": 90
+	},
+	"Dragon Energy": {
+		"bp": 150,
+		"type": "Dragon",
+		"category": "Special",
+		"isSpread": true,
+		"acc": 100
 	}
 });
 
