@@ -14685,6 +14685,161 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SM, {
 		"w": 70,
 		"ab": "Leaf Guard",
 	},
+	"Regieleki": {
+		"t1": "Electric",
+		"bs": {
+			"hp": 80,
+			"at": 100,
+			"df": 50,
+			"sa": 100,
+			"sd": 50,
+			"sp": 200
+		},
+		"w": 145,
+		"ab": "Transistor",
+	},
+	"Regidrago": {
+		"t1": "Dragon",
+		"bs": {
+			"hp": 200,
+			"at": 100,
+			"df": 50,
+			"sa": 100,
+			"sd": 50,
+			"sp": 80
+		},
+		"w": 200,
+		"ab": "Dragon's Maw",
+	},
+	"Glastrier": {
+		"t1": "Ice",
+		"bs": {
+			"hp": 100,
+			"at": 145,
+			"df": 130,
+			"sa": 65,
+			"sd": 110,
+			"sp": 30
+		},
+		"w": 800,
+		"ab": "Chilling Neigh",
+	},
+	"Spectrier": {
+		"t1": "Ghost",
+		"bs": {
+			"hp": 100,
+			"at": 65,
+			"df": 60,
+			"sa": 145,
+			"sd": 80,
+			"sp": 130
+		},
+		"w": 44.5,
+		"ab": "Grim Neigh",
+	},
+	"Calyrex": {
+		"formes": ["Calyrex", "Calyrex-Ice", "Calyrex-Shadow"],
+		"t1": "Psychic",
+		"t2": "Grass",
+		"bs": {
+			"hp": 100,
+			"at": 80,
+			"df": 80,
+			"sa": 80,
+			"sd": 80,
+			"sp": 80
+		},
+		"w": 7.7,
+		"ab": "Unnerve",
+	},
+	"Calyrex-Ice": {
+		"formes": ["Calyrex", "Calyrex-Ice", "Calyrex-Shadow"],
+		"t1": "Psychic",
+		"t2": "Ice",
+		"bs": {
+			"hp": 100,
+			"at": 165,
+			"df": 150,
+			"sa": 85,
+			"sd": 130,
+			"sp": 50
+		},
+		"w": 809.1,
+		"ab": "As One",
+		"isAlternateForme": true,
+	},
+	"Calyrex-Shadow": {
+		"formes": ["Calyrex", "Calyrex-Ice", "Calyrex-Shadow"],
+		"t1": "Psychic",
+		"t2": "Ghost",
+		"bs": {
+			"hp": 100,
+			"at": 85,
+			"df": 80,
+			"sa": 165,
+			"sd": 100,
+			"sp": 150
+		},
+		"w": 53.6,
+		"ab": "As One",
+		"isAlternateForme": true,
+	},
+	"Slowking-Galar": {
+		"t1": "Poison",
+		"t2": "Psychic",
+		"bs": {
+			"hp": 95,
+			"at": 65,
+			"df": 80,
+			"sa": 110,
+			"sd": 110,
+			"sp": 30
+		},
+		"w": 79.5,
+		"ab": "Curious Medicine"
+	},
+	"Articuno-Galar": {
+		"t1": "Psychic",
+		"t2": "Flying",
+		"bs": {
+			"hp": 90,
+			"at": 85,
+			"df": 85,
+			"sa": 125,
+			"sd": 100,
+			"sp": 95
+		},
+		"w": 50.9,
+		"ab": "Competitive"
+	},
+	"Zapdos-Galar": {
+		"t1": "Fighting",
+		"t2": "Flying",
+		"bs": {
+			"hp": 90,
+			"at": 125,
+			"df": 90,
+			"sa": 85,
+			"sd": 90,
+			"sp": 100
+		},
+		"w": 58.2,
+		"ab": "Defiant"
+	},
+	"Moltres-Galar": {
+		"t1": "Dark",
+		"t2": "Flying",
+		"bs": {
+			"hp": 90,
+			"at": 85,
+			"df": 90,
+			"sa": 100,
+			"sd": 125,
+			"sp": 90
+		},
+		"w": 66,
+		"ab": "Berserk"
+	},
 	"Aegislash-Shield": {"bs": {"df": 140, "sd": 140}},
 	"Aegislash-Both": {"bs": {"at": 140, "df": 140, "sa": 140, "sd": 140}},
 	"Aegislash-Blade": {"bs": {"at": 140, "sa": 140}},
