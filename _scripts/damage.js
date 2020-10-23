@@ -315,6 +315,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerItem = attacker.item;
 		break;
 	case "Eruption":
+	case "Dragon Energy":
 	case "Water Spout":
 		basePower = Math.max(1, Math.floor(150 * attacker.curHP / attacker.maxHP));
 		description.moveBP = basePower;
