@@ -14738,7 +14738,6 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SM, {
 		"ab": "Grim Neigh",
 	},
 	"Calyrex": {
-		"formes": ["Calyrex", "Calyrex-Ice", "Calyrex-Shadow"],
 		"t1": "Psychic",
 		"t2": "Grass",
 		"bs": {
@@ -14753,7 +14752,6 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SM, {
 		"ab": "Unnerve",
 	},
 	"Calyrex-Ice": {
-		"formes": ["Calyrex", "Calyrex-Ice", "Calyrex-Shadow"],
 		"t1": "Psychic",
 		"t2": "Ice",
 		"bs": {
@@ -14766,10 +14764,8 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SM, {
 		},
 		"w": 809.1,
 		"ab": "As One",
-		"isAlternateForme": true,
 	},
 	"Calyrex-Shadow": {
-		"formes": ["Calyrex", "Calyrex-Ice", "Calyrex-Shadow"],
 		"t1": "Psychic",
 		"t2": "Ghost",
 		"bs": {
@@ -14782,7 +14778,6 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SM, {
 		},
 		"w": 53.6,
 		"ab": "As One",
-		"isAlternateForme": true,
 	},
 	"Slowking-Galar": {
 		"t1": "Poison",
