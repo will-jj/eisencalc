@@ -15308,7 +15308,6 @@ delete POKEDEX_SS["Swadloon"];
 delete POKEDEX_SS["Swanna"];
 delete POKEDEX_SS["Tepig"];
 delete POKEDEX_SS["Tynamo"];
-delete POKEDEX_SS["Victini"];
 delete POKEDEX_SS["Watchog"];
 delete POKEDEX_SS["Zebstrika"];
 delete POKEDEX_SS["Arceus-Fairy"];
