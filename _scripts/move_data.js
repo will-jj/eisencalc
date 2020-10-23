@@ -5008,7 +5008,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 	"Astral Barrage": {
 		"bp": 120,
 		"type": "Ghost"
-		"category": "Physical",
+		"category": "Special",
 		"acc": 100
 	},
 });
