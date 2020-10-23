@@ -5010,7 +5010,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"type": "Ghost"
 		"category": "Special",
 		"acc": 100
-	},
+	}
 });
 
 var MAXMOVES_LOOKUP = {
