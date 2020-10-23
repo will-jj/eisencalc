@@ -411,6 +411,14 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x1800);
 		description.attackerAbility = attacker.ability;
 	}
+	if (attacker.ability === "Transistor" && move.type === "Electric") {
+		bpMods.push(0x1800);
+		description.attackerAbility = attacker.ability;
+	}
+	if (attacker.ability === "Dragon's Maw" && move.type === "Dragon") {
+		bpMods.push(0x1800);
+		description.attackerAbility = attacker.ability;
+	}
 
 	if (getItemBoostType(attacker.item) === move.type) {
 		bpMods.push(0x1333);
