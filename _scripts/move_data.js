@@ -4989,6 +4989,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 90,
 		"type": "Dark",
 		"category": "Special",
+		"isSpread": true,
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
