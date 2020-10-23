@@ -4974,40 +4974,40 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 	},
 	"Eerie Spell": {
 		"bp": 80,
-		"type": "Psychic"
+		"type": "Psychic",
 		"category": "Special",
 		"acc": 100
 	},
 	"Freezing Glare": {
 		"bp": 90,
-		"type": "Psychic"
+		"type": "Psychic",
 		"category": "Special",
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Fiery Wrath": {
 		"bp": 90,
-		"type": "Dark"
+		"type": "Dark",
 		"category": "Special",
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Thunderous Kick": {
 		"bp": 90,
-		"type": "Fighting"
+		"type": "Fighting",
 		"category": "Physical",
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Glacial Lance": {
 		"bp": 130,
-		"type": "Ice"
+		"type": "Ice",
 		"category": "Physical",
 		"acc": 100
 	},
 	"Astral Barrage": {
 		"bp": 120,
-		"type": "Ghost"
+		"type": "Ghost",
 		"category": "Special",
 		"acc": 100
 	}
