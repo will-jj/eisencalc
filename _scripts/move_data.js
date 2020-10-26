@@ -375,7 +375,7 @@ var MOVES_RBY = {
 	},
 	"Psybeam": {
 		"bp": 65,
-		"type": "Psybeam",
+		"type": "Psychic",
 		"category": "Special",
 		"hasSecondaryEffect": true,
 		"acc": 100
