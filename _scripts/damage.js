@@ -151,13 +151,6 @@ function getDamageResult(attacker, defender, move, field) {
 		move.type = attacker.type1;
 		break;
 
-	case "Aura Wheel":
-		if (attacker.name.includes("Morpeko-Hangry")) {
-			move.type = "Dark";
-		}
-		break;
-	}
-
 	var isAerilate = attacker.ability === "Aerilate" && move.type === "Normal" && move.name !== "Revelation Dance";
 	var isPixilate = attacker.ability === "Pixilate" && move.type === "Normal" && move.name !== "Revelation Dance";
 	var isRefrigerate = attacker.ability === "Refrigerate" && move.type === "Normal" && move.name !== "Revelation Dance";
