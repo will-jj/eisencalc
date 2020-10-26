@@ -373,6 +373,13 @@ var MOVES_RBY = {
 		"isMultiHit": true,
 		"acc": 95
 	},
+	"Psybeam": {
+		"bp": 65,
+		"type": "Psybeam",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
 	"Psychic": {
 		"bp": 90,
 		"type": "Psychic",
