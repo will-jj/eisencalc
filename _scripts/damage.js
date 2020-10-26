@@ -150,6 +150,7 @@ function getDamageResult(attacker, defender, move, field) {
 	case "Revelation Dance":
 		move.type = attacker.type1;
 		break;
+	}
 
 	var isAerilate = attacker.ability === "Aerilate" && move.type === "Normal" && move.name !== "Revelation Dance";
 	var isPixilate = attacker.ability === "Pixilate" && move.type === "Normal" && move.name !== "Revelation Dance";
