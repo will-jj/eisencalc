@@ -14406,7 +14406,7 @@ var SETDEX_GEN8_SETS = {
 				"Electro Ball"
 			]
 		},
-		"Jellicent-2": {
+		"Jolteon-2": {
 			"level": "50",
 			"evs": {
 				"hp": 0,
