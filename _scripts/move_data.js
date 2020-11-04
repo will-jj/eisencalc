@@ -476,6 +476,7 @@ var MOVES_RBY = {
 	"Slash": {
 		"bp": 70,
 		"type": "Normal",
+		"category": "Physical",
 		"alwaysCrit": true,
 		"makesContact": true,
 		"acc": 100
