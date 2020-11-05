@@ -8,6 +8,8 @@ var MOVES_RBY = {
 	"Acid": {
 		"bp": 40,
 		"type": "Poison",
+		"category": "Special",
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Acid Armor": {
@@ -158,11 +160,18 @@ var MOVES_RBY = {
 		"isSpread": true,
 		"acc": 100
 	},
-	    "Egg Bomb": {
+	 "Egg Bomb": {
 		"bp": 100,
 		"type": "Normal",
 		"category": "Physical",
 		"acc": 75
+	},
+	"Ember": {
+		"bp": 40,
+		"type": "Fire",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 100
 	},
 	"Explosion": {
 		"bp": 170,
@@ -599,6 +608,13 @@ var MOVES_RBY = {
 		"makesContact": true,
 		"hasSecondaryEffect": true,
 		"isPunch": true,
+		"acc": 100
+	},
+	"Thunder Shock": {
+		"bp": 40,
+		"type": "Electric",
+		"category": "Special",
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Thunder Wave": {
@@ -1183,9 +1199,6 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"acc": 50
 	}
 });
-
-delete MOVES_GSC["Acid"];
-delete MOVES_GSC["Mega Drain"];
 
 var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 	"Mega Drain": {
