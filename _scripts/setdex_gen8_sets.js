@@ -3998,7 +3998,7 @@ var SETDEX_GEN8_SETS = {
 			"moves": [
 				"Blaze Kick",
 				"Feint",
-				"Focus Sash",
+				"Focus Energy",
 				"Sucker Punch"
 			]
 		},
@@ -4110,7 +4110,7 @@ var SETDEX_GEN8_SETS = {
 			"moves": [
 				"Blaze Kick",
 				"Feint",
-				"Focus Sash",
+				"Focus Energy",
 				"Sucker Punch"
 			]
 		},
@@ -4206,7 +4206,7 @@ var SETDEX_GEN8_SETS = {
 			"moves": [
 				"Blaze Kick",
 				"Feint",
-				"Focus Sash",
+				"Focus Energy",
 				"Sucker Punch"
 			]
 		},
