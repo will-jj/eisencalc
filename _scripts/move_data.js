@@ -223,6 +223,10 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Normal"
 	},
+	"Foresight": {
+		"bp": 0,
+		"type": "Normal"
+	},
 	"Fury Swipes": {
 		"bp": 18,
 		"type": "Normal",
@@ -514,6 +518,10 @@ var MOVES_RBY = {
 		"makesContact": true,
 		"hasSecondaryEffect": true,
 		"acc": 100
+	},
+	"String Shot": {
+		"bp": 0,
+		"type": "Bug"
 	},
 	"Struggle": {
 		"bp": 50,
