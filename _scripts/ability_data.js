@@ -44,6 +44,7 @@ var ABILITIES_ADV = [
 	"Pressure",
 	"Pure Power",
 	"Rain Dish",
+	"Rough Skin",
 	"Sand Stream",
 	"Sand Veil",
 	"Serene Grace",
