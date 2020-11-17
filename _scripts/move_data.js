@@ -995,6 +995,10 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 0,
 		"type": "Normal"
 	},
+	"Morning Sun": {
+		"bp": 0,
+		"type": "Normal"
+	},
 	"Mud-Slap": {
 		"bp": 20,
 		"type": "Ground",
