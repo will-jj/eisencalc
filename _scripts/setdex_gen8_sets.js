@@ -14602,7 +14602,7 @@ var SETDEX_GEN8_SETS = {
 			"ability": "Sheer Force",
 			"item": "Expert Belt",
 			"moves": [
-				"Sclad",
+				"Scald",
 				"Blizzard",
 				"Ancient Power",
 				"Mud Shot"
