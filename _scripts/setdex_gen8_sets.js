@@ -12441,7 +12441,7 @@ var SETDEX_GEN8_SETS = {
 				"sp": 15
 			},
 			"nature": "Bold",
-			"ability": "Intimidate",
+			"ability": "Moxie",
 			"item": "Rocky Helmet",
 			"moves": [
 				"Scald",
@@ -15027,7 +15027,7 @@ var SETDEX_GEN8_SETS = {
 				"sp": 15
 			},
 			"nature": "Adamant",
-			"ability": "Intimidate",
+			"ability": "Anger Point",
 			"item": "Weakness Policy",
 			"moves": [
 				"Thief",
@@ -16143,7 +16143,7 @@ var SETDEX_GEN8_SETS = {
 				"sp": 15
 			},
 			"nature": "Adamant",
-			"ability": "Intimidate",
+			"ability": "Rivalry",
 			"item": "Magnet",
 			"moves": [
 				"Wild Charge",
@@ -23435,7 +23435,7 @@ var SETDEX_GEN8_SETS = {
 				"sp": 15
 			},
 			"nature": "Adamant",
-			"ability": "Intimidate",
+			"ability": "Shed Skin",
 			"item": "Life Orb",
 			"moves": [
 				"Low Kick",
@@ -25593,7 +25593,7 @@ var SETDEX_GEN8_SETS = {
 				"sp": 15
 			},
 			"nature": "Hardy",
-			"ability": "Intimidate",
+			"ability": "Scrappy",
 			"item": "Silk Scarf",
 			"moves": [
 				"Hyper Beam",
@@ -26167,7 +26167,7 @@ var SETDEX_GEN8_SETS = {
 				"sp": 15
 			},
 			"nature": "Jolly",
-			"ability": "Intimidate",
+			"ability": "Sheer Force",
 			"item": "Toxic Orb",
 			"moves": [
 				"Facade",
