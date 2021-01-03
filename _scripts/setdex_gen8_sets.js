@@ -12504,7 +12504,7 @@ var SETDEX_GEN8_SETS = {
 			"moves": [
 				"Magic Powder",
 				"Shadow Ball",
-				"Dazzling Glean",
+				"Dazzling Gleam",
 				"Mystical Fire"
 			]
 		},
