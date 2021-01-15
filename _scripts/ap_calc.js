@@ -942,6 +942,7 @@ function getMoveDetails(moveInfo, item, species) {
 		var exceptions_100_fight = ["Low Kick", "Reversal", "Final Gambit"];
 		var exceptions_80_fight = ["Double Kick", "Triple Kick"];
 		var exceptions_75_fight = ["Counter", "Seismic Toss"];
+		var exceptions_150 = ["Head Smash"];
 		var exceptions_140 = ["Triple Axel", "Crush Grip", "Wring Out", "Magnitude", "Double Iron Bash", "Rising Voltage"];
 		var exceptions_130 = ["Scale Shot", "Dual Wingbeat", "Terrain Pulse", "Bolt Beak (Doubled)", "Fishious Rend (Doubled)", "Pin Missile", "Power Trip", "Punishment", "Dragon Darts", "Dual Chop", "Electro Ball", "Heat Crash",
 			"Bullet Seed", "Grass Knot", "Bonemerang", "Bone Rush", "Fissure", "Icicle Spear", "Sheer Cold", "Weather Ball", "Tail Slap", "Guillotine", "Horn Drill",
