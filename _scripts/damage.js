@@ -19,8 +19,8 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	checkIntimidate(p2, p1);
 	checkZacianZamazaenta(p1);
 	checkZacianZamazaenta(p2);
-	checkDownload(p1, p2);
-	checkDownload(p2, p1);
+	//checkDownload(p1, p2);
+	//checkDownload(p2, p1);
 	p1.stats[AT] = getModifiedStat(p1.rawStats[AT], p1.boosts[AT]);
 	p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
 	p2.stats[AT] = getModifiedStat(p2.rawStats[AT], p2.boosts[AT]);
@@ -1560,15 +1560,15 @@ function checkEvo(p1, p2) {
 	}
 }
 
-function checkDownload(source, target) {
-	if (source.ability === "Download") {
-		if (target.stats[SD] <= target.stats[DF]) {
-			source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
-		} else {
-			source.boosts[AT] = Math.min(6, source.boosts[AT] + 1);
-		}
-	}
-}
+//function checkDownload(source, target) {
+//	if (source.ability === "Download") {
+//		if (target.stats[SD] <= target.stats[DF]) {
+//			source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
+//		} else {
+//			source.boosts[AT] = Math.min(6, source.boosts[AT] + 1);
+//		}
+//	}
+//}
 function checkInfiltrator(attacker, affectedSide) {
 	if (attacker.ability === "Infiltrator") {
 		affectedSide.isReflect = false;
