@@ -2327,6 +2327,10 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"category": "Special",
 		"acc": 100
 	},
+	"Power Swap": {
+		"bp": 0,
+		"type": "Psychic"
+	},
 	"Power Trick": {
 		"bp": 0,
 		"type": "Psychic"
