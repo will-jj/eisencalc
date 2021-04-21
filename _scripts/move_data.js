@@ -4401,6 +4401,10 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	"Tackle": {"bp": 40, "zp": 100},
 	"Take Down": {"zp": 160},
 	"Tail Slap": {"zp": 140},
+	"Tearful Look": {
+		"bp": 0,
+		"type": "Normal"
+	},
 	"Techno Blast": {"zp": 190},
 	"Tectonic Rage": {
 		"bp": 1,
