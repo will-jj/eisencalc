@@ -86,6 +86,10 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Ghost"
 	},
+		"Conversion": {
+		"bp": 0,
+		"type": "Normal"
+	},
 	    "Counter": {
 		"bp": 0,
 		"type": "Fighting"
@@ -721,6 +725,10 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 	"Charm": {
 		"bp": 0,
 		"type": "Fairy"
+	},
+		"Conversion 2": {
+		"bp": 0,
+		"type": "Normal"
 	},
 	"Cotton Spore": {
 		"bp": 0,
