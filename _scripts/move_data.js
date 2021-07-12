@@ -86,6 +86,13 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Ghost"
 	},
+	"Confusion": {
+		"bp": 50,
+		"type": "Psychic",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
 		"Conversion": {
 		"bp": 0,
 		"type": "Normal"
