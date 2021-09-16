@@ -979,6 +979,10 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"hasPriority": true,
 		"acc": 100
 	},
+	"Mean Look": {
+		"bp": 0,
+		"type": "Normal"
+	},
 	"Megahorn": {
 		"bp": 120,
 		"type": "Bug",
