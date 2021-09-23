@@ -13041,7 +13041,7 @@ var SETDEX_GEN8_SETS = {
 				"Thunderbolt",
 				"Weather Ball",
 				"Dark Pulse",
-				"Sand Storm"
+				"Sandstorm"
 			]
 		},
 		"Heliolisk-3": {
