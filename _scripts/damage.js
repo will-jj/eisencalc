@@ -650,13 +650,13 @@ function getDamageResult(attacker, defender, move, field) {
 	if (field.isGravity || attacker.type1 !== "Flying" && attacker.type2 !== "Flying" &&
                 attacker.item !== "Air Balloon" && attacker.ability !== "Levitate") {
 		if (field.terrain === "Electric" && move.type === "Electric") {
-			baseDamage = pokeRound(baseDamage * terrainMultiplier / 0x1000);
+			bpMods.push(terrainMultiplier);
 			description.terrain = field.terrain;
 		} else if (field.terrain === "Grassy" && move.type == "Grass") {
-			baseDamage = pokeRound(baseDamage * terrainMultiplier / 0x1000);
+			bpMods.push(terrainMultiplier);
 			description.terrain = field.terrain;
 		} else if (field.terrain === "Psychic" && move.type == "Psychic") {
-			baseDamage = pokeRound(baseDamage * terrainMultiplier / 0x1000);
+			bpMods.push(terrainMultiplier);
 			description.terrain = field.terrain;
 		}
 	}
