@@ -139,14 +139,14 @@ function getKOChanceText(damage, move, defender, field, isBadDreams, attacker, i
 		}
 	}
 	if (defender.item === "Leftovers") {
-		eot += Math.floor(defender.maxHP / defender.isDynamax ? 32 : 16);
+		eot += Math.floor(defender.maxHP / (defender.isDynamax ? 32 : 16));
 		eotText.push("Leftovers recovery");
 	} else if (defender.item === "Black Sludge") {
 		if (defender.type1 === "Poison" || defender.type2 === "Poison") {
-			eot += Math.floor(defender.maxHP / defender.isDynamax ? 32 : 16);
+			eot += Math.floor(defender.maxHP / (defender.isDynamax ? 32 : 16));
 			eotText.push("Black Sludge recovery");
 		} else if (defender.ability !== "Magic Guard" && defender.ability !== "Klutz") {
-			eot -= Math.floor(defender.maxHP / defender.isDynamax ? 16 : 8);
+			eot -= Math.floor(defender.maxHP / (defender.isDynamax ? 16 : 8));
 			eotText.push("Black Sludge damage");
 		}
 	}
