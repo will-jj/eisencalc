@@ -501,7 +501,7 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x1800);
 	}
 
-	basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096)));
+	basePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096));
 	if (gen == 6) basePower = attacker.isChild ? basePower / 2 : basePower;
 	else if (gen >= 7) basePower = attacker.isChild ? basePower / 4 : basePower;
 
