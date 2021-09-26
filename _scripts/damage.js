@@ -1417,9 +1417,18 @@ function getMoveEffectiveness(move, type, isGhostRevealed, isGravity) {
 }
 
 function getModifiedStat(stat, mod) {
-	return mod > 0 ? Math.floor(stat * (2 + mod) / 2) :
-		mod < 0 ? Math.floor(stat * 2 / (2 - mod)) :
-			stat;
+  const boostTable = [1, 1.5, 2, 2.5, 3, 3.5, 4];
+  const numerators = [100, 66, 50, 40, 33, 28, 25];
+  stat = Math.floor((stat * numerators[-mod]) / 100);
+  return Math.min(999, Math.max(1, stat));
+
+  if (mod >= 0) {
+    stat = Math.floor(stat * boostTable[mod]);
+  } else {
+    stat = Math.floor(stat / boostTable[-mod]);
+  }
+
+  return stat;
 }
 
 function getFinalSpeed(pokemon, weather, terrain) {
