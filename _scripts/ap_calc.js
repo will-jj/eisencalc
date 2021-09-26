@@ -571,11 +571,6 @@ for (var i = 0; i < 4; i++) {
 	});
 }
 
-// 16-bit Overflow
-export function OF16(n: number) {
-  return n > 65535 ? n % 65536 : n;
-}
-
 var damageResults;
 function calculate() {
 	var p1info = $("#p1");
