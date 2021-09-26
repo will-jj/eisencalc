@@ -500,6 +500,21 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.type === "Steel" && attacker.ability === "Steelworker") {
 		bpMods.push(0x1800);
 	}
+	
+		var terrainMultiplier = [8].includes(gen) ? 0x14CD : 0x1800;
+	if (field.isGravity || attacker.type1 !== "Flying" && attacker.type2 !== "Flying" &&
+                attacker.item !== "Air Balloon" && attacker.ability !== "Levitate") {
+		if (field.terrain === "Electric" && move.type === "Electric") {
+			bpMods.push(terrainMultiplier);
+			description.terrain = field.terrain;
+		} else if (field.terrain === "Grassy" && move.type == "Grass") {
+			bpMods.push(terrainMultiplier);
+			description.terrain = field.terrain;
+		} else if (field.terrain === "Psychic" && move.type == "Psychic") {
+			bpMods.push(terrainMultiplier);
+			description.terrain = field.terrain;
+		}
+	}
 
 	basePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096));
 	if (gen == 6) basePower = attacker.isChild ? basePower / 2 : basePower;
@@ -645,20 +660,6 @@ function getDamageResult(attacker, defender, move, field) {
                typeChart[move.type]["Flying"] > 1) {
 		baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
 		description.weather = field.weather;
-	}
-	var terrainMultiplier = [8].includes(gen) ? 0x14CD : 0x1800;
-	if (field.isGravity || attacker.type1 !== "Flying" && attacker.type2 !== "Flying" &&
-                attacker.item !== "Air Balloon" && attacker.ability !== "Levitate") {
-		if (field.terrain === "Electric" && move.type === "Electric") {
-			bpMods.push(terrainMultiplier);
-			description.terrain = field.terrain;
-		} else if (field.terrain === "Grassy" && move.type == "Grass") {
-			bpMods.push(terrainMultiplier);
-			description.terrain = field.terrain;
-		} else if (field.terrain === "Psychic" && move.type == "Psychic") {
-			bpMods.push(terrainMultiplier);
-			description.terrain = field.terrain;
-		}
 	}
 	if (field.isGravity || defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
             defender.item !== "Air Balloon" && defender.ability !== "Levitate") {
