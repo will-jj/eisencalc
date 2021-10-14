@@ -1280,10 +1280,10 @@ function clearField() {
 			break;
 
 		default:
-			$("#singles").prop("checked", true);
+			$("#doubles").prop("checked", true);
 		}
 	} else {
-		$("#singles").prop("checked", true);
+		$("#doubles").prop("checked", true);
 	}
 	$("#clear").prop("checked", true);
 	$("#gscClear").prop("checked", true);
@@ -1425,12 +1425,12 @@ $(document).ready(function () {
 			break;
 
 		default:
-			$("#gen7").prop("checked", true);
-			$("#gen7").change();
+			$("#gen8").prop("checked", true);
+			$("#gen8").change();
 		}
 	} else {
-		$("#gen7").prop("checked", true);
-		$("#gen7").change();
+		$("#gen8").prop("checked", true);
+		$("#gen8").change();
 	}
 	for (var n = 1; n < 101; n++) {
 		$("#autolevel-select").append($("<option />").val(n).text(n));
