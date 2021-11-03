@@ -2570,6 +2570,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"makesContact": true,
 		"acc": 100
 	},
+	"After You": {
+		"bp": 0,
+		"type": "Normal"
+	},
 	"Ally Switch": {
 		"bp": 0,
 		"type": "Psychic"
