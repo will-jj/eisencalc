@@ -13,7 +13,9 @@ title: Battle Facilities Calculator
 
 			<input class="gen btn-input" type="radio" name="gen" value="7" id="gen7" /><label class=" btn btn-small btn-mid" for="gen7">USUM</label>
 
-			<input class="gen btn-input" type="radio" name="gen" value="8" id="gen8" checked="checked" /><label class=" btn btn-small btn-right" for="gen8">SwSh</label>
+			<input class="gen btn-input" type="radio" name="gen" value="8" id="gen8" checked="checked" /><label class=" btn btn-small btn-mid" for="gen8">SwSh</label>
+			
+			<input class="gen btn-input" type="radio" name="gen" value="80" id="gen80" /><label class=" btn btn-small btn-right" for="gen80">BDSP</label>
 		</span>
 
 	</div>
@@ -81,8 +83,8 @@ title: Battle Facilities Calculator
 					<tr>
 						<th></th>
 						<th>Base</th>
-						<th class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g7 g8 g20 g21 g22">IVs</th>
-						<th class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g7 g8 g20 g21">EVs</th>
+						<th class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g7 g8 g20 g21 g22">IVs</th>
+						<th class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g7 g8 g20 g21">EVs</th>
 						<th class="gen-specific g1 g2 hide">DVs</th>
 						<th class="gen-specific g22 hide">AVs</th>
 						<th></th>
@@ -91,8 +93,8 @@ title: Battle Facilities Calculator
 					<tr class="hp">
 						<td><label>HP</label></td>
 						<td><input class="base calc-trigger" value="100" /></td>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
 						<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 						<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" disabled="disabled" /></td>
 						<td><span class="total">341</span></td>
@@ -101,8 +103,8 @@ title: Battle Facilities Calculator
 					<tr class="at">
 						<td><label>Attack</label></td>
 						<td><input class="base calc-trigger" value="100" /></td>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
 						<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 						<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td>
 						<td><span class="total">236</span></td>
@@ -125,8 +127,8 @@ title: Battle Facilities Calculator
 					<tr class="df">
 						<td><label>Defense</label></td>
 						<td><input class="base calc-trigger" value="100" /></td>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
 						<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 						<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td>
 						<td><span class="total">236</span></td>
@@ -146,11 +148,11 @@ title: Battle Facilities Calculator
 								<option value="-6">-6</option>
 							</select></td>
 					</tr>
-					<tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g20 g21 g22">
+					<tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g80 g20 g21 g22">
 						<td><label>Sp. Atk</label></td>
 						<td><input class="base calc-trigger" value="100" /></td>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
 						<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 						<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td>
 						<td><span class="total">236</span></td>
@@ -170,11 +172,11 @@ title: Battle Facilities Calculator
 								<option value="-6">-6</option>
 							</select></td>
 					</tr>
-					<tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g20 g21 g22">
+					<tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g80 g20 g21 g22">
 						<td><label>Sp. Def</label></td>
 						<td><input class="base calc-trigger" value="100" /></td>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
 						<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 						<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" disabled="disabled" /></td>
 						<td><span class="total">236</span></td>
@@ -218,8 +220,8 @@ title: Battle Facilities Calculator
 					<tr class="sp">
 						<td><label>Speed</label></td>
 						<td><input class="base calc-trigger" value="100" /></td>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
 						<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 						<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td>
 						<td><span class="total">236</span></td>
@@ -260,7 +262,7 @@ title: Battle Facilities Calculator
 						<th>
 						<th></th>
 						</th>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22">
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22">
 						<td><select class="boost calc-trigger">
 								<option value="6">+6</option>
 								<option value="5">+5</option>
@@ -284,7 +286,7 @@ title: Battle Facilities Calculator
 						<th>
 						<th></th>
 						</th>
-						<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22">
+						<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22">
 						<td><select class="boost calc-trigger">
 								<option value="6">+6</option>
 								<option value="5">+5</option>
@@ -305,7 +307,7 @@ title: Battle Facilities Calculator
 				</table>
 			</div>
 			<div class="info-group info-selectors">
-				<div class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22">
+				<div class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22">
 					<label>Nature</label>
 					<select class="nature calc-trigger">
 						<option value="Adamant">Adamant (+Atk, -SpA)</option>
@@ -335,11 +337,11 @@ title: Battle Facilities Calculator
 						<option value="Timid">Timid (+Spe, -Atk)</option>
 					</select>
 				</div>
-				<div class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21">
+				<div class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21">
 					<label>Ability</label>
 					<select class="ability terrain-trigger calc-trigger"></select>
 				</div>
-				<div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g20 g21">
+				<div class="gen-specific g2 g3 g4 g5 g6 g7 g80 g8 g20 g21">
 					<label>Item</label>
 					<select class="item terrain-trigger calc-trigger"></select>
 				</div>
@@ -404,7 +406,7 @@ title: Battle Facilities Calculator
 				<select class="move-selector calc-trigger small-select"></select>
 				<input class="move-bp calc-trigger" value="50" />
 				<select class="move-type calc-trigger"></select>
-				<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g20 g21 g22">
+				<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g80 g20 g21 g22">
 					<option value="Physical">Physical</option>
 					<option value="Special">Special</option>
 				</select>
@@ -422,7 +424,7 @@ title: Battle Facilities Calculator
 				<select class="move-selector calc-trigger small-select"></select>
 				<input class="move-bp calc-trigger" value="0" />
 				<select class="move-type calc-trigger"></select>
-				<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g20 g21 g22">
+				<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g80 g20 g21 g22">
 					<option value="Physical">Physical</option>
 					<option value="Special">Special</option>
 				</select>
@@ -440,7 +442,7 @@ title: Battle Facilities Calculator
 				<select class="move-selector calc-trigger small-select"></select>
 				<input class="move-bp calc-trigger" value="0" />
 				<select class="move-type calc-trigger"></select>
-				<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g20 g21 g22">
+				<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g80 g20 g21 g22">
 					<option value="Physical">Physical</option>
 					<option value="Special">Special</option>
 				</select>
@@ -458,7 +460,7 @@ title: Battle Facilities Calculator
 				<select class="move-selector calc-trigger small-select"></select>
 				<input class="move-bp calc-trigger" value="0" />
 				<select class="move-type calc-trigger"></select>
-				<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g20 g21 g22">
+				<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g80 g20 g21 g22">
 					<option value="Physical">Physical</option>
 					<option value="Special">Special</option>
 				</select>
@@ -490,31 +492,31 @@ title: Battle Facilities Calculator
 			</h4>
 		</div>
 		<div class="panel-body">
-			<div class="gen-specific g5 g6 g7 g8 g20 g21 g22" style="width: 3.0em; margin: 0 auto 5px;">
+			<div class="gen-specific g5 g6 g7 g8 g80 g20 g21 g22" style="width: 3.0em; margin: 0 auto 5px;">
 				<a href="https://www.smogon.com/forums/threads/8th-generation-battle-tower-restricted-sparring-discussion-records.3656190/">
 					<img id="midimg" align="middle" src="../_images/tower.png" alt="cant say" height="50" width="50">
 				</a>
 			</div>
-			<div class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
+			<div class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
 				<input class="btn-input calc-trigger" type="radio" name="format" value="Singles" id="singles" checked="checked" /><label class="btn btn-left" for="singles">Singles</label>
 				<input class="btn-input calc-trigger" type="radio" name="format" value="Doubles" id="doubles" /><label class="btn btn-right" for="doubles">Doubles</label>
 			</div>
-			<div class="gen-specific g6 g7 g8 g20 g21" style="width: 22.0em; margin: 5px auto;" title="Select the current terrain.">
+			<div class="gen-specific g6 g7 g8 g80 g20 g21" style="width: 22.0em; margin: 5px auto;" title="Select the current terrain.">
 				<input class="btn-input terrain-trigger calc-trigger" type="radio" name="terrain" value="" id="noterrain" checked="checked" /><label class="btn btn-small btn-left" for="noterrain">None</label>
 				<input class="btn-input terrain-trigger calc-trigger" type="radio" name="terrain" value="Electric" id="electric" /><label class="btn btn-small btn-mid" for="electric">Electric</label>
 				<input class="btn-input terrain-trigger calc-trigger" type="radio" name="terrain" value="Grassy" id="grassy" /><label class="btn btn-small btn-mid" for="grassy">Grassy</label>
 				<input class="btn-input terrain-trigger calc-trigger" type="radio" name="terrain" value="Misty" id="misty" /><label class="btn btn-small btn-mid" for="misty">Misty</label>
 				<input class="btn-input terrain-trigger calc-trigger" type="radio" name="terrain" value="Psychic" id="psychic" /><label class="btn btn-small btn-right" for="psychic">Psychic</label>
 			</div>
-			<hr class="gen-specific g6 g7 g8 g20 g21 g7 g8 g20 g21" />
-			<div class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g7 g8 g20 g21" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
+			<hr class="gen-specific g6 g7 g8 g80 g20 g21 g7 g8 g20 g21" />
+			<div class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g7 g8 g20 g21" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
 				<input class="btn-input calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" /><label class="btn btn-small btn-left" for="clear">None</label>
 				<input class="btn-input calc-trigger" type="radio" name="weather" value="Sun" id="sun" /><label class="btn btn-small btn-mid" for="sun">Sun</label>
 				<input class="btn-input calc-trigger" type="radio" name="weather" value="Rain" id="rain" /><label class="btn btn-small btn-mid" for="rain">Rain</label>
 				<input class="btn-input calc-trigger" type="radio" name="weather" value="Sand" id="sand" /><label class="btn btn-small btn-mid" for="sand">Sand</label>
 				<input class="btn-input calc-trigger" type="radio" name="weather" value="Hail" id="hail" /><label class="btn btn-small btn-right" for="hail">Hail</label>
 			</div>
-			<div class="gen-specific g6 g7 g8 g20 g21 g7 g8 g20 g21" style="width: 21.1em; margin: 5px auto;" title="Select the current weather condition.">
+			<div class="gen-specific g6 g7 g8 g80 g20 g21 g7 g8 g20 g21" style="width: 21.1em; margin: 5px auto;" title="Select the current weather condition.">
 				<input class="btn-input calc-trigger" type="radio" name="weather" value="Harsh Sun" id="harsh-sun" /><label class="btn btn-wide btn-left" for="harsh-sun">Harsh Sun</label>
 				<input class="btn-input calc-trigger" type="radio" name="weather" value="Heavy Rain" id="heavy-rain" /><label class="btn btn-wide btn-mid" for="heavy-rain">Heavy Rain</label>
 				<input class="btn-input calc-trigger" type="radio" name="weather" value="Strong Winds" id="strong-winds" /><label class="btn btn-xwide btn-right" for="strong-winds">Strong Winds</label>
@@ -525,17 +527,17 @@ title: Battle Facilities Calculator
 				<input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Rain" id="gscRain" /><label class="btn btn-small btn-mid" for="gscRain">Rain</label>
 				<input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Sand" id="gscSand" /><label class="btn btn-small btn-right" for="gscSand">Sand</label>
 			</div>
-			<div class="gen-specific g6 g7 g8 g20 g21 g7 g8 g20 g21" style="width: 21.1em; margin: 5px auto;" title="Select the current radiating aura.">
+			<div class="gen-specific g6 g7 g8 g80 g20 g21 g7 g8 g20 g21" style="width: 21.1em; margin: 5px auto;" title="Select the current radiating aura.">
 				<input class="btn-input calc-trigger" type="checkbox" name="aura" value="Aura Break" id="aura-break" /><label class="btn btn-wide btn-left" for="aura-break">Aura Break</label>
 				<input class="btn-input calc-trigger" type="checkbox" name="aura" value="Fairy Aura" id="fairy-aura" /><label class="btn btn-wide btn-mid" for="fairy-aura">Fairy Aura</label>
 				<input class="btn-input calc-trigger" type="checkbox" name="aura" value="Dark Aura" id="dark-aura" /><label class="btn btn-wide btn-right" for="dark-aura">Dark Aura</label>
 			</div>
-			<div class="gen-specific g4 g5 g6 g7 g8 g20 g21" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
+			<div class="gen-specific g4 g5 g6 g7 g8 g80 g20 g21" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
 				<input class="btn-input calc-trigger" type="checkbox" id="gravity" /><label class="btn" for="gravity">Gravity</label>
 			</div>
-			<hr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g20 g21 g7 g8 g20 g21 g22" />
+			<hr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g80 g20 g21 g7 g8 g20 g21 g22" />
 
-			<div class="btn-group gen-specific g7 g8 g20 g21">
+			<div class="btn-group gen-specific g7 g8 g80 g20 g21">
 				<div class="left" title="Is this Pokemon protecting?">
 					<input class="btn-input calc-trigger" type="checkbox" id="protectL" /><label class="btn btn-xwide" for="protectL">Protect</label>
 				</div>
@@ -543,7 +545,7 @@ title: Battle Facilities Calculator
 					<input class="btn-input calc-trigger" type="checkbox" id="protectR" /><label class="btn btn-xwide" for="protectR">Protect</label>
 				</div>
 			</div>
-			<div class="btn-group gen-specific g4 g5 g6 g7 g8 g20 g21 g7 g8 g20 g21 g22">
+			<div class="btn-group gen-specific g4 g5 g6 g7 g8 g80 g20 g21 g7 g8 g20 g21 g22">
 				<div class="left" title="Is Stealth Rock affecting this side of the field?">
 					<input class="btn-input calc-trigger" type="checkbox" id="srL" /><label class="btn btn-xwide" for="srL">Stealth Rock</label>
 				</div>
@@ -551,7 +553,7 @@ title: Battle Facilities Calculator
 					<input class="btn-input calc-trigger" type="checkbox" id="srR" /><label class="btn btn-xwide" for="srR">Stealth Rock</label>
 				</div>
 			</div>
-			<div class="btn-group gen-specific g3 g4 g5 g6 g7 g20 g21 g7 g20 g21">
+			<div class="btn-group gen-specific g3 g4 g5 g6 g7 g80 g20 g21 g7 g20 g21">
 				<div class="left" title="Are there Spikes on this side of the field?">
 					<input class="btn-input calc-trigger" type="radio" name="spikesL" value="0" id="spikesL0" checked="checked" /><label class="btn btn-xsmall btn-left" for="spikesL0">0</label>
 					<input class="btn-input calc-trigger" type="radio" name="spikesL" value="1" id="spikesL1" /><label class="btn btn-xsmall btn-mid" for="spikesL1">1</label>
@@ -617,7 +619,7 @@ title: Battle Facilities Calculator
 					<input class="btn-input calc-trigger" type="checkbox" id="foresightR" /><label class="btn btn-wide" for="foresightR">Foresight</label>
 				</div>
 			</div>
-			<div class="btn-group gen-specific g6 g7 g8 g20 g21 g22">
+			<div class="btn-group gen-specific g6 g7 g8 g80 g20 g21 g22">
 				<div class="left" title="Has this Pokemon used Minimize?">
 					<input class="btn-input calc-trigger" type="checkbox" id="minimL" /><label class="btn btn-xwide" for="minimL">Minimize</label>
 				</div>
@@ -633,7 +635,7 @@ title: Battle Facilities Calculator
 					<input class="btn-input calc-trigger" type="checkbox" id="vicStarR" /><label class="btn btn-xwide" for="vicStarR">Victory Star</label>
 				</div>
 			</div>
-			<div class="btn-group gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g7 g8 g20 g21 g22">
+			<div class="btn-group gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g7 g8 g20 g21 g22">
 				<div class="left" title="Has this Pokemon's power been boosted by an ally's Helping Hand?">
 					<input class="btn-input calc-trigger" type="checkbox" id="helpingHandL" /><label class="btn btn-xxwide" for="helpingHandL">Helping Hand</label>
 				</div>
@@ -641,7 +643,7 @@ title: Battle Facilities Calculator
 					<input class="btn-input calc-trigger" type="checkbox" id="helpingHandR" /><label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
 				</div>
 			</div>
-			<div class="btn-group gen-specific g5 g6 g7 g8 g20 g21 g7 g8 g20 g21">
+			<div class="btn-group gen-specific g5 g6 g7 g8 g80 g20 g21 g7 g8 g20 g21">
 				<div class="left" title="Is this Pokemon protected by an ally's Friend Guard?">
 					<input class="btn-input calc-trigger" type="checkbox" id="friendGuardL" /><label class="btn btn-xxwide" for="friendGuardL">Friend Guard</label>
 				</div>
@@ -649,7 +651,7 @@ title: Battle Facilities Calculator
 					<input class="btn-input calc-trigger" type="checkbox" id="friendGuardR" /><label class="btn btn-xxwide" for="friendGuardR">Friend Guard</label>
 				</div>
 			</div>
-			<div class="btn-group gen-specific g7">
+			<div class="btn-group gen-specific g7 g8">
 				<div class="left" title="Has this Pokemon's power been boosted by an ally's Battery?">
 					<input class="btn-input calc-trigger" type="checkbox" id="batteryL" /><label class="btn btn-xxwide" for="batteryL">Battery</label>
 				</div>
@@ -690,14 +692,14 @@ title: Battle Facilities Calculator
 				</div>
 			</div>
 			<div>&nbsp;</div>
-			<div class="btn-group gen-specific g5 g6 g7 g8 g20 g21 g22">
-				<button class="left gen-specific g5 g6 g7 g8 g20 g21" type="button" id="exportL" onclick="exportToPsFormat($('#p1'))">Export Set</button>
-				<button class="right gen-specific g5 g6 g7 g8 g20 g21" type="button" id="exportR" onclick="exportToPsFormat($('#p2'))">Export Set</button>
+			<div class="btn-group gen-specific g5 g6 g7 g8 g80 g20 g21 g22">
+				<button class="left gen-specific g5 g6 g7 g8 g80 g20 g21" type="button" id="exportL" onclick="exportToPsFormat($('#p1'))">Export Set</button>
+				<button class="right gen-specific g5 g6 g7 g8 g80 g20 g21" type="button" id="exportR" onclick="exportToPsFormat($('#p2'))">Export Set</button>
 				<button class="left gen-specific g22" type="button" id="exportL" onclick="exportToPsFormatLG($('#p1'))">Export Set</button>
 				<button class="right gen-specific g22" type="button" id="exportR" onclick="exportToPsFormatLG($('#p2'))">Export Set</button>
 			</div>
 			<!--squirrelboy1225's HTML additions are right here-->
-			<span class="gen-specific g5 g6 g7 g8 g20 g21 g22">
+			<span class="gen-specific g5 g6 g7 g8 g80 g20 g21 g22">
 				<p>Please enter your custom set(s) here.</p>
 				Spread Name: <input type="text" id="spreadName" style="width: 60%" value="My Custom Set(s)">
 				<br>
@@ -741,8 +743,8 @@ title: Battle Facilities Calculator
 						<tr>
 							<th></th>
 							<th>Base</th>
-							<th class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g7 g8 g20 g21 g22">IVs</th>
-							<th class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g7 g8 g20 g21">EVs</th>
+							<th class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g7 g8 g80 g20 g21 g22">IVs</th>
+							<th class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g7 g8 g80 g20 g21">EVs</th>
 							<th class="gen-specific g1 g2 hide">DVs</th>
 							<th class="gen-specific g22 hide">AVs</th>
 							<th></th>
@@ -751,8 +753,8 @@ title: Battle Facilities Calculator
 						<tr class="hp">
 							<td><label>HP</label></td>
 							<td><input class="base calc-trigger" value="100" /></td>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
 							<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 							<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" disabled="disabled" /></td>
 							<td><span class="total">341</span></td>
@@ -761,8 +763,8 @@ title: Battle Facilities Calculator
 						<tr class="at">
 							<td><label>Attack</label></td>
 							<td><input class="base calc-trigger" value="100" /></td>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
 							<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 							<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td>
 							<td><span class="total">236</span></td>
@@ -785,8 +787,8 @@ title: Battle Facilities Calculator
 						<tr class="df">
 							<td><label>Defense</label></td>
 							<td><input class="base calc-trigger" value="100" /></td>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
 							<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 							<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td>
 							<td><span class="total">236</span></td>
@@ -806,11 +808,11 @@ title: Battle Facilities Calculator
 									<option value="-6">-6</option>
 								</select></td>
 						</tr>
-						<tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g20 g21 g22">
+						<tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g80 g20 g21 g22">
 							<td><label>Sp. Atk</label></td>
 							<td><input class="base calc-trigger" value="100" /></td>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
 							<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 							<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td>
 							<td><span class="total">236</span></td>
@@ -830,11 +832,11 @@ title: Battle Facilities Calculator
 									<option value="-6">-6</option>
 								</select></td>
 						</tr>
-						<tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g20 g21 g22">
+						<tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g80 g20 g21 g22">
 							<td><label>Sp. Def</label></td>
 							<td><input class="base calc-trigger" value="100" /></td>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
 							<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 							<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" disabled="disabled" /></td>
 							<td><span class="total">236</span></td>
@@ -878,8 +880,8 @@ title: Battle Facilities Calculator
 						<tr class="sp">
 							<td><label>Speed</label></td>
 							<td><input class="base calc-trigger" value="100" /></td>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
 							<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 							<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td>
 							<td><span class="total">236</span></td>
@@ -920,7 +922,7 @@ title: Battle Facilities Calculator
 							<th>
 							<th></th>
 							</th>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22">
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22">
 							<td><select class="boost calc-trigger">
 									<option value="6">+6</option>
 									<option value="5">+5</option>
@@ -944,7 +946,7 @@ title: Battle Facilities Calculator
 							<th>
 							<th></th>
 							</th>
-							<td class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22">
+							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22">
 							<td><select class="boost calc-trigger">
 									<option value="6">+6</option>
 									<option value="5">+5</option>
@@ -965,7 +967,7 @@ title: Battle Facilities Calculator
 					</table>
 				</div>
 				<div class="info-group info-selectors">
-					<div class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g22">
+					<div class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22">
 						<label>Nature</label>
 						<select class="nature calc-trigger">
 							<option value="Adamant">Adamant (+Atk, -SpA)</option>
@@ -995,11 +997,11 @@ title: Battle Facilities Calculator
 							<option value="Timid">Timid (+Spe, -Atk)</option>
 						</select>
 					</div>
-					<div class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21">
+					<div class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21">
 						<label>Ability</label>
 						<select class="ability terrain-trigger calc-trigger"></select>
 					</div>
-					<div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g20 g21">
+					<div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g80 g20 g21">
 						<label>Item</label>
 						<select class="item terrain-trigger calc-trigger"></select>
 					</div>
@@ -1064,7 +1066,7 @@ title: Battle Facilities Calculator
 					<select class="move-selector calc-trigger small-select"></select>
 					<input class="move-bp calc-trigger" value="50" />
 					<select class="move-type calc-trigger"></select>
-					<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g20 g21 g22">
+					<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g80 g20 g21 g22">
 						<option value="Physical">Physical</option>
 						<option value="Special">Special</option>
 					</select>
@@ -1082,7 +1084,7 @@ title: Battle Facilities Calculator
 					<select class="move-selector calc-trigger small-select"></select>
 					<input class="move-bp calc-trigger" value="0" />
 					<select class="move-type calc-trigger"></select>
-					<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g20 g21 g22">
+					<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g80 g20 g21 g22">
 						<option value="Physical">Physical</option>
 						<option value="Special">Special</option>
 					</select>
@@ -1100,7 +1102,7 @@ title: Battle Facilities Calculator
 					<select class="move-selector calc-trigger small-select"></select>
 					<input class="move-bp calc-trigger" value="0" />
 					<select class="move-type calc-trigger"></select>
-					<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g20 g21 g22">
+					<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g80 g20 g21 g22">
 						<option value="Physical">Physical</option>
 						<option value="Special">Special</option>
 					</select>
@@ -1118,7 +1120,7 @@ title: Battle Facilities Calculator
 					<select class="move-selector calc-trigger small-select"></select>
 					<input class="move-bp calc-trigger" value="0" />
 					<select class="move-type calc-trigger"></select>
-					<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g20 g21 g22">
+					<select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g80 g20 g21 g22">
 						<option value="Physical">Physical</option>
 						<option value="Special">Special</option>
 					</select>
@@ -1143,12 +1145,14 @@ title: Battle Facilities Calculator
 	<script type="text/javascript" src="../_scripts/setdex_gen6_sets.js"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen7_sets.js"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen8_sets.js"></script>
+	<script type="text/javascript" src="../_scripts/setdex_gen80_sets.js"></script>
 	<script type="text/javascript" src="../_scripts/setdex_LG_sets.js"></script>
 	<script type="text/javascript" src="../_scripts/setdex_factory_sets.js"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen5.js"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen6.js" id="XYScript"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen7.js" id="SMScript"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen8.js" id="SSScript"></script>
+	<script type="text/javascript" src="../_scripts/setdex_gen80.js" id="BDSPScript"></script>
 	<script type="text/javascript" src="../_scripts/setdex_LG.js" id="LGScript"></script>
 	<script type="text/javascript" src="../_scripts/setdex_factory.js" id="BSSFScript"></script>
 	<script type="text/javascript" src="../_scripts/stat_data.js"></script>
