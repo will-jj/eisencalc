@@ -139,8 +139,8 @@ var SETDEX_GEN80_SETS = {
 				"Earth Power",
 				"Focus Blast"
 			]
-		}
-	}
+		},
+	},
 		"Absol": {
 		"Absol-1": {
 			"level": "50",
@@ -254,7 +254,7 @@ var SETDEX_GEN80_SETS = {
 				"Play Rough"
 			]
 		},
-	}
+	},
 	"Aerodactyl": {
 		"Aerodactyl-1": {
 			"level": "50",
