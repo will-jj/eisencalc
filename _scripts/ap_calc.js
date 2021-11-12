@@ -1211,6 +1211,19 @@ $(".gen").change(function () {
 		calcStat = CALC_STAT_ADV;
 		localStorage.setItem("selectedGen", 8);
 		break;
+	case 80:
+		pokedex = POKEDEX_BDSP;
+		setdex = SETDEX_GEN80;
+		typeChart = TYPE_CHART_XY;
+		moves = MOVES_SS;
+		items = ITEMS_SS;
+		abilities = ABILITIES_SS;
+		STATS = STATS_GSC;
+		calculateAllMoves = CALCULATE_ALL_MOVES_BW;
+		calcHP = CALC_HP_ADV;
+		calcStat = CALC_STAT_ADV;
+		localStorage.setItem("selectedGen", 80);
+		break;
 	case 20:
 		pokedex = POKEDEX_SM;
 		setdex = SETDEX_FACTORY;
@@ -1407,6 +1420,11 @@ $(document).ready(function () {
 		case "8":
 			$("#gen8").prop("checked", true);
 			$("#gen8").change();
+			break;
+				
+		case "80":
+			$("#gen80").prop("checked", true);
+			$("#gen80").change();
 			break;
 
 		case "20":
