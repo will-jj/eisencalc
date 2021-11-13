@@ -1987,6 +1987,8 @@ var SETDEX_GEN80_SETS = {
 "Yawn"
 ]
 },
+"Bidoof-2": {
+"level": "50",
 "evs": {
 "hp": 108,
 "at": 108,
