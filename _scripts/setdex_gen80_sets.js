@@ -396,5 +396,87 @@ var SETDEX_GEN80_SETS = {
 				"Iron Head"
 			]
 		}
-	}
+	},
+	"Aggron": {
+		"Aggron-1": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sp": 25
+},
+"nature": "Jolly",
+"ability": "Sturdy",
+"item": "Chople Berry",
+"moves": [
+"Rock Polish",
+"Iron Head",
+"Earthquake",
+"Dragon Rush"
+]
+},
+		"Aggron-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Shuca Berry",
+"moves": [
+"Stone Edge",
+"Avalanche",
+"Payback",
+"Earthquake"
+]
+},
+		"Aggron-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Mago Berry",
+"moves": [
+"Metal Burst",
+"Heavy Slam",
+"Earthquake",
+"Stone Edge"
+]
+},
 };
