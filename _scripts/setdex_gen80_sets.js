@@ -645,4 +645,5 @@ var SETDEX_GEN80_SETS = {
 "Protect"
 ]
 }
+	}
 };
