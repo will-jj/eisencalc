@@ -1257,6 +1257,7 @@ var SETDEX_GEN80_SETS = {
 "Roar"
 ]
 }
+},
 "Articuno": {
 		"Articuno-1": {
 			"level": "50",
