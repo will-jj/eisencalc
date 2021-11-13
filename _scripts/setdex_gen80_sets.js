@@ -529,7 +529,8 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 20,
 "sa": 31,
-"sp": 20
+"sd": 20,
+"sp": 31
 },
 "nature": "Modest",
 "ability": "Magic Guard",
@@ -556,6 +557,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Timid",
@@ -583,6 +585,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Timid",
@@ -610,6 +613,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Timid",
@@ -637,6 +641,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Timid",
@@ -666,7 +671,8 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 20,
 "sa": 31,
-"sp": 31
+"sd": 31,
+"sp": 20
 },
 "nature": "Calm",
 "ability": "Cloud Nine",
@@ -693,6 +699,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Modest",
@@ -720,6 +727,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Modest",
@@ -749,6 +757,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 15,
+"sd": 15,
 "sp": 15
 },
 "nature": "Impish",
@@ -776,6 +785,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Modest",
@@ -803,6 +813,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Jolly",
@@ -832,7 +843,8 @@ var SETDEX_GEN80_SETS = {
 "at": 20,
 "df": 31,
 "sa": 20,
-"sp": 31
+"sd": 31,
+"sp": 0
 },
 "nature": "Mild",
 "ability": "Static",
@@ -859,6 +871,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Careful",
@@ -886,6 +899,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Bold",
@@ -915,7 +929,8 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 0,
 "sa": 0,
-"sp": 0
+"sd": 0,
+"sp": 31
 },
 "nature": "Adamant",
 "ability": "Battle Armor",
@@ -944,7 +959,8 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 0,
 "sa": 0,
-"sp": 0
+"sd": 0,
+"sp": 31
 },
 "nature": "Adamant",
 "ability": "Intimidate",
@@ -973,7 +989,8 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 25,
 "sa": 31,
-"sp": 25
+"sd": 25,
+"sp": 31
 },
 "nature": "Modest",
 "ability": "Intimidate",
@@ -1000,6 +1017,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Jolly",
@@ -1027,6 +1045,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Bold",
@@ -1054,6 +1073,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -1081,6 +1101,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Timid",
@@ -1108,6 +1129,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Timid",
@@ -1137,7 +1159,8 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 0,
 "sa": 0,
-"sp": 0
+"sd": 0,
+"sp": 31
 },
 "nature": "Timid",
 "ability": "Insomnia",
@@ -1166,7 +1189,8 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 20,
 "sa": 0,
-"sp": 31
+"sd": 31,
+"sp": 20
 },
 "nature": "Careful",
 "ability": "Battle Armor",
@@ -1193,6 +1217,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Jolly",
@@ -1220,6 +1245,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Brave",
@@ -1249,6 +1275,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 0,
 "sa": 0,
+"sd": 0,
 "sp": 0
 },
 "nature": "Adamant",
@@ -1278,6 +1305,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Calm",
@@ -1305,6 +1333,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Modest",
@@ -1332,6 +1361,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Timid",
@@ -1372,7 +1402,6 @@ var SETDEX_GEN80_SETS = {
 ]
 },
 		"Articuno-5": {
-			"level": "50",
 "evs": {
 "hp": 4,
 "at": 0,
@@ -1386,6 +1415,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Timid",
@@ -1413,6 +1443,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Modest",
@@ -1442,6 +1473,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 0,
 "sa": 0,
+"sd": 0,
 "sp": 0
 },
 "nature": "Adamant",
@@ -1469,6 +1501,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -1498,7 +1531,8 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 0,
 "sa": 0,
-"sp": 0
+"sd": 0,
+"sp": 31
 },
 "nature": "Naughty",
 "ability": "Rock Head",
@@ -1527,6 +1561,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 0,
 "sa": 31,
+"sd": 0,
 "sp": 0
 },
 "nature": "Modest",
@@ -1554,6 +1589,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 0,
 "sa": 31,
+"sd": 0,
 "sp": 0
 },
 "nature": "Naughty",
@@ -1583,7 +1619,8 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 0,
-"sp": 31
+"sd": 31,
+"sp": 0
 },
 "nature": "Sassy",
 "ability": "Cursed Body",
@@ -1610,6 +1647,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -1637,6 +1675,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -1666,7 +1705,8 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 20,
 "sa": 0,
-"sp": 20
+"sd": 20,
+"sp": 31
 },
 "nature": "Adamant",
 "ability": "Sturdy",
@@ -1693,6 +1733,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Modest",
@@ -1720,6 +1761,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -1734,6 +1776,8 @@ var SETDEX_GEN80_SETS = {
 },
 		"Bastiodon-4": {
 			"level": "50",
+"evs": {
+"hp": 4,
 "at": 252,
 "df": 0,
 "sa": 0,
@@ -1745,6 +1789,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -1772,6 +1817,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -1787,8 +1833,6 @@ var SETDEX_GEN80_SETS = {
 		"Bastiodon-6": {
 		"level": "50",
 "evs": {
-"hp": 4,
-"evs": {
 "hp": 0,
 "at": 252,
 "df": 4,
@@ -1801,6 +1845,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -1830,7 +1875,8 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 0,
 "sa": 31,
-"sp": 0
+"sd": 0,
+"sp": 31
 },
 "nature": "Docile",
 "ability": "Overgrow",
@@ -1859,7 +1905,8 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 0,
 "sa": 31,
-"sp": 0
+"sd": 0,
+"sp": 31
 },
 "nature": "Modest",
 "ability": "Swarm",
@@ -1888,7 +1935,8 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 0,
 "sa": 0,
-"sp": 0
+"sd": 0,
+"sp": 31
 },
 "nature": "Jolly",
 "ability": "Swarm",
@@ -1917,7 +1965,8 @@ var SETDEX_GEN80_SETS = {
 "at": 10,
 "df": 10,
 "sa": 31,
-"sp": 10
+"sd": 10,
+"sp": 31
 },
 "nature": "Modest",
 "ability": "Chlorophyll",
@@ -1946,6 +1995,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 0,
 "sp": 0
 },
 "nature": "Adamant",
@@ -1975,6 +2025,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 0,
 "sa": 0,
+"sd": 0,
 "sp": 0
 },
 "nature": "Adamant",
@@ -2002,6 +2053,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 0,
 "sa": 0,
+"sd": 0,
 "sp": 0
 },
 "nature": "Adamant",
@@ -2031,6 +2083,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 15,
+"sd": 15,
 "sp": 15
 },
 "nature": "Brave",
@@ -2058,7 +2111,8 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 25,
 "sa": 0,
-"sp": 25
+"sd": 25,
+"sp": 31
 },
 "nature": "Adamant",
 "ability": "Torrent",
@@ -2085,6 +2139,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Modest",
@@ -2114,7 +2169,8 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 15,
 "sa": 15,
-"sp": 15
+"sd": 15,
+"sp": 31
 },
 "nature": "Adamant",
 "ability": "Blaze",
@@ -2141,7 +2197,8 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 25,
 "sa": 0,
-"sp": 25
+"sd": 25,
+"sp": 31
 },
 "nature": "Jolly",
 "ability": "Blaze",
@@ -2168,6 +2225,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Naughty",
@@ -2195,6 +2253,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -2222,6 +2281,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Jolly",
@@ -2249,6 +2309,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -2276,6 +2337,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -2305,6 +2367,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 25,
+"sd": 31,
 "sp": 31
 },
 "nature": "Bold",
@@ -2332,6 +2395,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Bold",
@@ -2359,6 +2423,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Bold",
@@ -2386,6 +2451,7 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 31,
 "sa": 31,
+"sd": 31,
 "sp": 31
 },
 "nature": "Bold",
@@ -2415,7 +2481,8 @@ var SETDEX_GEN80_SETS = {
 "at": 0,
 "df": 0,
 "sa": 0,
-"sp": 31
+"sd": 31,
+"sp": 0
 },
 "nature": "Careful",
 "ability": "Sturdy",
@@ -2444,7 +2511,8 @@ var SETDEX_GEN80_SETS = {
 "at": 15,
 "df": 31,
 "sa": 15,
-"sp": 15
+"sd": 15,
+"sp": 31
 },
 "nature": "Jolly",
 "ability": "Poison Heal",
@@ -2471,6 +2539,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Jolly",
@@ -2498,6 +2567,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Jolly",
@@ -2525,6 +2595,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Jolly",
@@ -2537,7 +2608,7 @@ var SETDEX_GEN80_SETS = {
 "Bullet Seed"
 ]
 },
-		"Breloom-5": {
+			"Breloom-5": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -2552,33 +2623,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
-"sp": 31
-},
-"nature": "Jolly",
-"ability": "Technician",
-"item": "Focus Sash",
-"moves": [
-"Spore",
-"Mach Punch",
-"Bullet Seed",
-"Rock Tomb"
-]
-},
-			"Breloom-6": {
-			"level": "50",
-"evs": {
-"hp": 4,
-"at": 252,
-"df": 0,
-"sa": 0,
-"sd": 0,
-"sp": 252
-},
-"ivs": {
-"hp": 31,
-"at": 31,
-"df": 31,
-"sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Jolly",
@@ -2591,5 +2636,357 @@ var SETDEX_GEN80_SETS = {
 "Protect"
 ]
 },
+},
+	"Bronzong": {
+		"Bronzong-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 0,
+"df": 60,
+"sa": 204,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 31,
+"sd": 20,
+"sp": 0
+},
+"nature": "Quiet",
+"ability": "Levitate",
+"item": "Twisted Spoon",
+"moves": [
+"Trick Room",
+"Gyro Ball",
+"Flash Cannon",
+"Hypnosis"
+]
+},
+		"Bronzong-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Levitate",
+"item": "Custap Berry",
+"moves": [
+"Gyro Ball",
+"Body Press",
+"Iron Defense",
+"Earthquake"
+]
+},
+		"Bronzong-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Levitate",
+"item": "Mental Herb",
+"moves": [
+"Trick Room",
+"Gyro Ball",
+"Rock Slide",
+"Zen Headbutt"
+]
+},
+		"Bronzong-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Levitate",
+"item": "Muscle Band",
+"moves": [
+"Gyro Ball",
+"Explosion",
+"Zen Headbutt",
+"Earthquake"
+]
 }
+	},
+"Bronzor": {
+		"Bronzor-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Hardy",
+"ability": "Levitate",
+"item": "Sitrus Berry",
+"moves": [
+"Confusion",
+"Hypnosis",
+"Confuse Ray",
+"Gyro Ball"
+]
+}
+	},
+"Budew": {
+		"Budew-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Poison Point",
+"item": "Big Root",
+"moves": [
+"Giga Drain",
+"Stun Spore",
+"Worry Seed",
+"Growth"
+]
+}
+	},
+"Buizel": {
+		"Buizel-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Swift Swim",
+"item": "Wacan Berry",
+"moves": [
+"Aqua Jet",
+"Quick Attack",
+"Brick Break",
+"Growl"
+]
+}
+	},
+"Bulbasaur": {
+		"Bulbasaur-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Overgrow",
+"item": "Bright Powder",
+"moves": [
+"Razor Leaf",
+"Take Down",
+"Sleep Powder",
+"Leech Seed"
+]
+},
+		"Bulbasaur-2": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Modest",
+"ability": "Overgrow",
+"item": "Leftovers",
+"moves": [
+"Giga Drain",
+"Toxic",
+"Synthesis",
+"Leech Seed"
+]
+}
+	},
+"Buneary": {
+		"Buneary-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Limber",
+"item": "Black Belt",
+"moves": [
+"Bounce",
+"Quick Attack",
+"Charm",
+"Splash"
+]
+}
+	},
+"Burmy": {
+		"Burmy-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Shed Skin",
+"item": "Choice Scarf",
+"moves": [
+"Bug Bite",
+"String Shot",
+"-",
+"-"
+]
+}
+	},
+"Butterfree": {
+		"Butterfree-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Compound Eyes",
+"item": "Leftovers",
+"moves": [
+"Sleep Powder",
+"Quiver Dance",
+"Substitute",
+"Bug Buzz"
+]
+}
+	},
 };
