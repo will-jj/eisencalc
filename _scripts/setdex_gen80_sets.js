@@ -413,7 +413,8 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 25,
 "sa": 0,
-"sp": 25
+"sd": 25,
+"sp": 31
 },
 "nature": "Jolly",
 "ability": "Sturdy",
@@ -440,6 +441,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -467,6 +469,7 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 31,
 "sa": 0,
+"sd": 31,
 "sp": 31
 },
 "nature": "Adamant",
@@ -496,7 +499,8 @@ var SETDEX_GEN80_SETS = {
 "at": 31,
 "df": 0,
 "sa": 0,
-"sp": 0
+"sd": 0,
+"sp": 31
 },
 "nature": "Jolly",
 "ability": "Skill Link",
@@ -1645,5 +1649,945 @@ var SETDEX_GEN80_SETS = {
 "Gunk Shot"
 ]
 }
-	}
+	},
+"Bastiodon": {
+		"Bastiodon-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sp": 20
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Custap Berry",
+"moves": [
+"Metal Burst",
+"Taunt",
+"Iron Head",
+"Stone Edge"
+]
+},
+		"Bastiodon-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sturdy",
+"item": "Quick Claw",
+"moves": [
+"Sandstorm",
+"Thunder",
+"Blizzard",
+"Fire Blast"
+]
+},
+		"Bastiodon-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Muscle Band",
+"moves": [
+"Iron Head",
+"Iron Tail",
+"Metal Burst",
+"Stone Edge"
+]
+},
+		"Bastiodon-4": {
+			"level": "50",
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Custap Berry",
+"moves": [
+"Metal Burst",
+"Rock Slide",
+"Iron Head",
+"Wide Guard"
+]
+},
+		"Bastiodon-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Shuca Berry",
+"moves": [
+"Iron Head",
+"Rock Slide",
+"Fissure",
+"Body Slam"
+]
+},
+		"Bastiodon-6": {
+		"level": "50",
+"evs": {
+"hp": 4,
+"evs": {
+"hp": 0,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Mago Berry",
+"moves": [
+"Metal Burst",
+"Heavy Slam",
+"Earthquake",
+"Stone Edge"
+]
+}
+	},
+"Bayleef": {
+		"Bayleef-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sp": 0
+},
+"nature": "Docile",
+"ability": "Overgrow",
+"item": "Bright Powder",
+"moves": [
+"Razor Leaf",
+"Synthesis",
+"Safeguard",
+"Light Screen"
+]
+}
+	},
+"Beautifly": {
+		"Beautifly-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sp": 0
+},
+"nature": "Modest",
+"ability": "Swarm",
+"item": "Mental Herb",
+"moves": [
+"Bug Buzz",
+"Mega Drain",
+"Attract",
+"Quiver Dance"
+]
+}
+	},
+"Beedrill": {
+		"Beedrill-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sp": 0
+},
+"nature": "Jolly",
+"ability": "Swarm",
+"item": "Focus Sash",
+"moves": [
+"Poison Jab",
+"Fell Stinger",
+"Endeavor",
+"Agility"
+]
+}
+	},
+"Bellossom": {
+		"Bellossom-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 10,
+"df": 10,
+"sa": 31,
+"sp": 10
+},
+"nature": "Modest",
+"ability": "Chlorophyll",
+"item": "Power Herb",
+"moves": [
+"Solar Beam",
+"Safeguard",
+"Sunny Day",
+"Synthesis"
+]
+}
+	},
+"Bibarel": {
+		"Bibarel-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Simple",
+"item": "Metronome",
+"moves": [
+"Defense Curl",
+"Rollout",
+"Waterfall",
+"Yawn"
+]
+}
+	},
+"Bidoof": {
+		"Bidoof-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Simple",
+"item": "Leftovers",
+"moves": [
+"Curse",
+"Headbutt",
+"Pluck",
+"Yawn"
+]
+},
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Simple",
+"item": "Metronome",
+"moves": [
+"Defense Curl",
+"Headbutt",
+"Rollout",
+"Yawn"
+]
+}
+	},
+   "Blastoise": {
+		"Blastoise-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 148,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 15,
+"sp": 15
+},
+"nature": "Brave",
+"ability": "Torrent",
+"item": "Iron Ball",
+"moves": [
+"Double Team",
+"Focus Punch",
+"Aqua Jet",
+"Gyro Ball"
+]
+},
+		"Blastoise-2": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sp": 25
+},
+"nature": "Adamant",
+"ability": "Torrent",
+"item": "Power Herb",
+"moves": [
+"Skull Bash",
+"Earthquake",
+"Waterfall",
+"Aqua Jet"
+]
+},
+		"Blastoise-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Rain Dish",
+"item": "Quick Claw",
+"moves": [
+"Hydro Pump",
+"Ice Beam",
+"Focus Blast",
+"Rain Dance"
+]
+}
+	},
+"Blaziken": {
+		"Blaziken-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sp": 15
+},
+"nature": "Adamant",
+"ability": "Blaze",
+"item": "Shell Bell",
+"moves": [
+"Aerial Ace",
+"Flare Blitz",
+"Will-O-Wisp",
+"Bulk Up"
+]
+},
+		"Blaziken-2": {
+			"level": "50",
+"evs": {
+"hp": 68,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sp": 25
+},
+"nature": "Jolly",
+"ability": "Blaze",
+"item": "Life Orb",
+"moves": [
+"Protect",
+"Close Combat",
+"Flare Blitz",
+"Baton Pass"
+]
+},
+		"Blaziken-3": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 252,
+"df": 0,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sp": 31
+},
+"nature": "Naughty",
+"ability": "Speed Boost",
+"item": "Passho Berry",
+"moves": [
+"Overheat",
+"Flare Blitz",
+"Protect",
+"Close Combat"
+]
+},
+		"Blaziken-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Speed Boost",
+"item": "Expert Belt",
+"moves": [
+"Flare Blitz",
+"Close Combat",
+"Thunder Punch",
+"Swords Dance"
+]
+},
+		"Blaziken-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Speed Boost",
+"item": "Life Orb",
+"moves": [
+"Protect",
+"Flare Blitz",
+"Close Combat",
+"Rock Slide"
+]
+},
+		"Blaziken-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Speed Boost",
+"item": "Muscle Band",
+"moves": [
+"Flare Blitz",
+"Close Combat",
+"Earthquake",
+"Protect"
+]
+},
+		"Blaziken-7": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Speed Boost",
+"item": "Sitrus Berry",
+"moves": [
+"Protect",
+"Close Combat",
+"Flare Blitz",
+"Rock Slide"
+]
+}
+},
+"Blissey": {
+		"Blissey-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 220,
+"sa": 0,
+"sd": 44,
+"sp": 220
+},
+"ivs": {
+"hp": 25,
+"at": 0,
+"df": 31,
+"sa": 25,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Serene Grace",
+"item": "Leftovers",
+"moves": [
+"Ice Beam",
+"Thunderbolt",
+"Flamethrower",
+"Soft-Boiled"
+]
+},
+		"Blissey-2": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 252,
+"sa": 252,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Serene Grace",
+"item": "Leftovers",
+"moves": [
+"Soft-Boiled",
+"Tri Attack",
+"Thunderbolt",
+"Flamethrower"
+]
+},
+		"Blissey-3": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Serene Grace",
+"item": "Wise Glasses",
+"moves": [
+"Icy Wind",
+"Dazzling Gleam",
+"Tri Attack",
+"Flamethrower"
+]
+},
+		"Blissey-4": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Serene Grace",
+"item": "Leftovers",
+"moves": [
+"Icy Wind",
+"Dazzling Gleam",
+"Tri Attack",
+"Flamethrower"
+]
+}
+	},
+"Bonsly": {
+		"Bonsly-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 108,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Sturdy",
+"item": "Passho Berry",
+"moves": [
+"Fake Tears",
+"Rock Throw",
+"Copycat",
+"Low Kick"
+]
+}
+	},
+"Breloom": {
+		"Breloom-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 148,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 31,
+"sa": 15,
+"sp": 15
+},
+"nature": "Jolly",
+"ability": "Poison Heal",
+"item": "Toxic Orb",
+"moves": [
+"Protect",
+"Spore",
+"Leech Seed",
+"Low Sweep"
+]
+},
+		"Breloom-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Effect Spore",
+"item": "Big Root",
+"moves": [
+"Spore",
+"Focus Punch",
+"Drain Punch",
+"Swords Dance"
+]
+},
+		"Breloom-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Poison Heal",
+"item": "Toxic Orb",
+"moves": [
+"Spore",
+"Substitute",
+"Bulk Up",
+"Rock Tomb"
+]
+},
+		"Breloom-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Technician",
+"item": "Focus Sash",
+"moves": [
+"Spore",
+"Mach Punch",
+"Rock Tomb",
+"Bullet Seed"
+]
+},
+		"Breloom-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Technician",
+"item": "Focus Sash",
+"moves": [
+"Spore",
+"Mach Punch",
+"Bullet Seed",
+"Rock Tomb"
+]
+},
+			"Breloom-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Technician",
+"item": "Muscle Band",
+"moves": [
+"Mach Punch",
+"Bullet Seed",
+"Spore",
+"Protect"
+]
+},
+}
 };
