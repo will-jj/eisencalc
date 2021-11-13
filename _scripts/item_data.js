@@ -36,6 +36,7 @@ var ITEMS_ADV = ITEMS_GSC.concat([
 	"Mental Herb",
 	"Quick Claw",
 	"Oran Berry",
+	"Persim Berry",
 	"Scope Lens",
 	"Silk Scarf",
 	"Sitrus Berry",
