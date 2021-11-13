@@ -479,5 +479,170 @@ var SETDEX_GEN80_SETS = {
 "Stone Edge"
 ]
 }
-	}		
+	},
+	"Aipom": {
+		"Aipom-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sp": 0
+},
+"nature": "Jolly",
+"ability": "Skill Link",
+"item": "Silk Scarf",
+"moves": [
+"Fury Swipes",
+"Sand Attack",
+"Baton Pass",
+"Agility"
+]
+}
+	},
+	"Alakazam": {
+		"Alakazam-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 0,
+"df": 0,
+"sa": 204,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 20,
+"sa": 31,
+"sp": 20
+},
+"nature": "Modest",
+"ability": "Magic Guard",
+"item": "Life Orb",
+"moves": [
+"Psyshock",
+"Psychic",
+"Focus Blast",
+"Energy Ball"
+]
+},
+"Alakazam-2": {
+"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Magic Guard",
+"item": "Colbur Berry",
+"moves": [
+"Psychic",
+"Calm Mind",
+"Shadow Ball",
+"Future Sight"
+]
+},
+"Alakazam-3": {
+"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Magic Guard",
+"item": "Sitrus Berry",
+"moves": [
+"Psychic",
+"Shadow Ball",
+"Charge Beam",
+"Energy Ball"
+]
+},
+"Alakazam-4": {
+"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Magic Guard",
+"item": "Life Orb",
+"moves": [
+"Psychic",
+"Dazzling Gleam",
+"Focus Blast",
+"Protect"
+]
+},
+"Alakazam-5": {
+"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Magic Guard",
+"item": "Life Orb",
+"moves": [
+"Psyshock",
+"Dazzling Gleam",
+"Focus Blast",
+"Protect"
+]
+}
 };
