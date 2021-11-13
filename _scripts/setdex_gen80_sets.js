@@ -160,7 +160,7 @@ var SETDEX_GEN80_SETS = {
 				"sd": 31,
 				"sp": 15
 			},
-			"nature": Careful,
+			"nature": "Careful",
 			"ability": "Pressure",
 			"item": "White Herb",
 			"moves": [
