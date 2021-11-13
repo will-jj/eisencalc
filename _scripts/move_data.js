@@ -827,6 +827,12 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"makesContact": true,
 		"acc": 100
 	},
+	"Fury Cutter": {
+		"bp": 40,
+		"type": "Bug",
+		"category": "Physical",
+		"acc": 95
+	},
 	"Future Sight": {
 		"bp": 80,
 		"type": "Psychic",
