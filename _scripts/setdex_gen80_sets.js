@@ -2989,4 +2989,214 @@ var SETDEX_GEN80_SETS = {
 ]
 }
 	},
+"Cacnea": {
+		"Cacnea-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Water Absorb",
+"item": "Sitrus Berry",
+"moves": [
+"Pin Missile",
+"Payback",
+"Cotton Spore",
+"Sand Attack"
+]
+}
+	},
+"Cacturne": {
+		"Cacturne-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 10,
+"sd": 10,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Water Absorb",
+"item": "Scope Lens",
+"moves": [
+"Seed Bomb",
+"Sucker Punch",
+"Poison Jab",
+"Revenge"
+]
+}
+	},
+"Camerupt": {
+		"Camerupt-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 10,
+"df": 10,
+"sa": 31,
+"sd": 10,
+"sp": 31
+},
+"nature": "Quirky",
+"ability": "Solid Rock",
+"item": "Sitrus Berry",
+"moves": [
+"Eruption",
+"Protect",
+"Sandstorm",
+"Rock Slide"
+]
+}
+	},
+"Carnivine": {
+		"Carnivine-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 148,
+"sa": 0,
+"sd": 148,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Sassy",
+"ability": "Levitate",
+"item": "Rose Incense",
+"moves": [
+"Power Whip",
+"Crunch",
+"Sweet Scent",
+"Leech Seed"
+]
+}
+	},
+"Carvanha": {
+		"Carvanha-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Quiet",
+"ability": "Rough Skin",
+"item": "Shell Bell",
+"moves": [
+"Bite",
+"Screech",
+"Scary Face",
+"Swagger"
+]
+}
+	},
+"Castform": {
+		"Castform-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Hasty",
+"ability": "Forecast",
+"item": "Persim Berry",
+"moves": [
+"Ember",
+"Water Pulse",
+"Shock Wave",
+"Weather Ball"
+]
+}
+	},
+"Chansey": {
+		"Chansey-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 148,
+"sa": 0,
+"sd": 148,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Relaxed",
+"ability": "Serene Grace",
+"item": "Sitrus Berry",
+"moves": [
+"Substitute",
+"Seismic Toss",
+"Soft-Boiled",
+"Minimize"
+]
+}
+	}
 };
