@@ -1477,5 +1477,173 @@ var SETDEX_GEN80_SETS = {
 "Belly Drum"
 ]
 }
-	}	
+	},
+"Bagon": {
+		"Bagon-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sp": 0
+},
+"nature": "Naughty",
+"ability": "Rock Head",
+"item": "Liechi Berry",
+"moves": [
+"Dragon Breath",
+"Headbutt",
+"Brick Break",
+"Scary Face"
+]
+}
+	},
+"Baltoy": {
+		"Baltoy-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sp": 0
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "Twisted Spoon",
+"moves": [
+"Psybeam",
+"Ancient Power",
+"Light Screen",
+"Mud-Slap"
+]
+},
+		"Baltoy-2": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sp": 0
+},
+"nature": "Naughty",
+"ability": "Levitate",
+"item": "Twisted Spoon",
+"moves": [
+"Psybeam",
+"Ancient Power",
+"Light Screen",
+"Mud-Slap"
+]
+}
+},
+"Banette": {
+		"Banette-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 148,
+"sa": 0,
+"sd": 148,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Sassy",
+"ability": "Cursed Body",
+"item": "Rawst Berry",
+"moves": [
+"Night Shade",
+"Will-O-Wisp",
+"Spite",
+"Knock Off"
+]
+},
+		"Banette-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Cursed Body",
+"item": "Muscle Band",
+"moves": [
+"Shadow Sneak",
+"Knock Off",
+"Gunk Shot",
+"Phantom Force"
+]
+},
+		"Banette-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Cursed Body",
+"item": "Sitrus Berry",
+"moves": [
+"Knock Off",
+"Phantom Force",
+"Sucker Punch",
+"Gunk Shot"
+]
+}
+	}
 };
