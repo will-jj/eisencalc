@@ -9356,4 +9356,1182 @@ var SETDEX_GEN80_SETS = {
 ]
 }
 	},
+"Happiny": {
+		"Happiny-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 108,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Modest",
+"ability": "Serene Grace",
+"item": "Lucky Punch",
+"moves": [
+"Sweet Kiss",
+"Psychic",
+"Flamethrower",
+"Shadow Ball"
+]
+}
+	},
+"Hariyama": {
+		"Hariyama-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Thick Fat",
+"item": "Bright Powder",
+"moves": [
+"Sand Attack",
+"Focus Punch",
+"Rock Tomb",
+"Fake Out"
+]
+},
+		"Hariyama-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Impish",
+"ability": "Thick Fat",
+"item": "Quick Claw",
+"moves": [
+"Belly Drum",
+"Brick Break",
+"Earthquake",
+"Stone Edge"
+]
+},
+		"Hariyama-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Thick Fat",
+"item": "Salac Berry",
+"moves": [
+"Endure",
+"Reversal",
+"Earthquake",
+"Rock Tomb"
+]
+}
+	},
+"Haunter": {
+		"Haunter-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Rash",
+"ability": "Levitate",
+"item": "Persim Berry",
+"moves": [
+"Shadow Punch",
+"Confuse Ray",
+"Spite",
+"Grudge"
+]
+}
+	},
+"Heatran": {
+		"Heatran-1": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flash Fire",
+"item": "Bright Powder",
+"moves": [
+"Earth Power",
+"Magma Storm",
+"Dark Pulse",
+"Flash Cannon"
+]
+},
+		"Heatran-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Flash Fire",
+"item": "Focus Sash",
+"moves": [
+"Magma Storm",
+"Flash Cannon",
+"Earth Power",
+"Dragon Pulse"
+]
+},
+		"Heatran-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flash Fire",
+"item": "Shuca Berry",
+"moves": [
+"Flamethrower",
+"Earth Power",
+"Dragon Pulse",
+"Ancient Power"
+]
+},
+		"Heatran-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Flash Fire",
+"item": "Quick Claw",
+"moves": [
+"Explosion",
+"Fire Fang",
+"Crunch",
+"Iron Head"
+]
+},
+		"Heatran-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Flash Fire",
+"item": "Bright Powder",
+"moves": [
+"Earth Power",
+"Magma Storm",
+"Dark Pulse",
+"Flash Cannon"
+]
+},
+		"Heatran-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flash Fire",
+"item": "Focus Sash",
+"moves": [
+"Heat Wave",
+"Flash Cannon",
+"Dragon Pulse",
+"Earth Power"
+]
+},
+		"Heatran-7": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flash Fire",
+"item": "Choice Scarf",
+"moves": [
+"Magma Storm",
+"Flash Cannon",
+"Earth Power",
+"Dragon Pulse"
+]
+},
+		"Heatran-8": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Flash Fire",
+"item": "Focus Sash",
+"moves": [
+"Magma Storm",
+"Flash Cannon",
+"Earth Power",
+"Dragon Pulse"
+]
+},
+		"Heatran-9": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flash Fire",
+"item": "Focus Sash",
+"moves": [
+"Magma Storm",
+"Flash Cannon",
+"Earth Power",
+"Dragon Pulse"
+]
+},
+   		"Heatran-10": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Flash Fire",
+"item": "Leftovers",
+"moves": [
+"Heat Wave",
+"Protect",
+"Flash Cannon",
+"Magma Storm"
+]
+}
+	},
+"Heracross": {
+		"Heracross-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Moxie",
+"item": "Focus Band",
+"moves": [
+"Close Combat",
+"Stone Edge",
+"Megahorn",
+"Earthquake"
+]
+},
+		"Heracross-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Moxie",
+"item": "Scope Lens",
+"moves": [
+"Close Combat",
+"Aerial Ace",
+"Night Slash",
+"Bulk Up"
+]
+},
+		"Heracross-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Moxie",
+"item": "Coba Berry",
+"moves": [
+"Megahorn",
+"Stone Edge",
+"Facade",
+"Shadow Claw"
+]
+},
+		"Heracross-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Moxie",
+"item": "Choice Scarf",
+"moves": [
+"Close Combat",
+"Megahorn",
+"Stone Edge",
+"Earthquake"
+]
+},
+		"Heracross-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Moxie",
+"item": "Expert Belt",
+"moves": [
+"Close Combat",
+"Megahorn",
+"Earthquake",
+"Bullet Seed"
+]
+}
+	},
+"Hippopotas": {
+		"Hippopotas-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Sand Stream",
+"item": "Passho Berry",
+"moves": [
+"Bite",
+"Sand Attack",
+"Sand Tomb",
+"Yawn"
+]
+}
+	},
+"Hippowdon": {
+		"Hippowdon-1": {
+			"level": "50",
+"evs": {
+"hp": 220,
+"at": 0,
+"df": 44,
+"sa": 0,
+"sd": 220,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 25,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 25
+},
+"nature": "Careful",
+"ability": "Sand Stream",
+"item": "Passho Berry",
+"moves": [
+"Yawn",
+"Stealth Rock",
+"Roar",
+"Ice Fang"
+]
+},
+		"Hippowdon-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Sand Stream",
+"item": "Leftovers",
+"moves": [
+"Earthquake",
+"Ice Fang",
+"Slack Off",
+"Yawn"
+]
+},
+		"Hippowdon-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Sand Stream",
+"item": "Iapapa Berry",
+"moves": [
+"Rock Slide",
+"Fissure",
+"Body Press",
+"Slack Off"
+]
+}
+	},
+"Hitmonchan": {
+		"Hitmonchan-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Iron Fist",
+"item": "King's Rock",
+"moves": [
+"Mach Punch",
+"Ice Punch",
+"Detect",
+"Counter"
+]
+}
+	},
+  "Hitmonlee": {
+		"Hitmonlee-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Limber",
+"item": "Black Belt",
+"moves": [
+"Blaze Kick",
+"Close Combat",
+"Focus Energy",
+"Facade"
+]
+}
+	},
+"Hitmontop": {
+		"Himontop-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 148,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Hardy",
+"ability": "Intimidate",
+"item": "Liechi Berry",
+"moves": [
+"Triple Kick",
+"Dig",
+"Mach Punch",
+"Fake Out"
+]
+},
+		"Hitmontop-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Sitrus Berry",
+"moves": [
+"Close Combat",
+"Bulldoze",
+"Bullet Punch",
+"Fake Out"
+]
+},
+		"Hitmontop-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Sitrus Berry",
+"moves": [
+"Close Combat",
+"Fake Out",
+"Wide Guard",
+"Quick Guard"
+]
+},
+		"Hitmontop-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Sitrus Berry",
+"moves": [
+"Close Combat",
+"Fake Out",
+"Wide Guard",
+"Quick Guard"
+]
+},
+		"Hitmontop-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Sitrus Berry",
+"moves": [
+"Close Combat",
+"Fake Out",
+"Wide Guard",
+"Quick Guard"
+]
+}
+	},
+"Honchkrow": {
+		"Honchkrow-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Super Luck",
+"item": "Power Herb",
+"moves": [
+"Night Slash",
+"Sky Attack",
+"Brave Bird",
+"Payback"
+]
+},
+		"Honchkrow-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Super Luck",
+"item": "Sharp Beak",
+"moves": [
+"Night Slash",
+"Pluck",
+"Aerial Ace",
+"Roost"
+]
+}
+	},
+"Houndoom": {
+		"Houndoom-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Flash Fire",
+"item": "Focus Sash",
+"moves": [
+"Counter",
+"Flame Charge",
+"Crunch",
+"Thunder Fang"
+]
+},
+		"Houndoom-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Flash Fire",
+"item": "Passho Berry",
+"moves": [
+"Fire Fang",
+"Thunder Fang",
+"Crunch",
+"Will-O-Wisp"
+]
+},
+		"Houndoom-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Flash Fire",
+"item": "White Herb",
+"moves": [
+"Sunny Day",
+"Overheat",
+"Solar Beam",
+"Dark Pulse"
+]
+}
+	},
+"Houndour": {
+		"Hondour-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Docile",
+"ability": "Flash Fire",
+"item": "Charcoal",
+"moves": [
+"Crunch",
+"Ember",
+"Roar",
+"Protect"
+]
+}
+	},
+"Huntail": {
+		"Huntail-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 31,
+"sd": 10,
+"sp": 10
+},
+"nature": "Quiet",
+"ability": "Swift Swim",
+"item": "Persim Berry",
+"moves": [
+"Whirlpool",
+"Scary Face",
+"Screech",
+"Bite"
+]
+}
+	},
+"Hypno": {
+		"Hypno-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 148,
+"sa": 148,
+"sd": 4,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 31,
+"sa": 31,
+"sd": 15,
+"sp": 15
+},
+"nature": "Relaxed",
+"ability": "Insomnia",
+"item": "Leftovers",
+"moves": [
+"Thunder Punch",
+"Zen Headbutt",
+"Headbutt",
+"Drain Punch"
+]
+},
+		"Hypno-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Insomnia",
+"item": "Focus Band",
+"moves": [
+"Psychic",
+"Focus Blast",
+"Thunder Wave",
+"Calm Mind"
+]
+},
+		"Hypno-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Insomnia",
+"item": "Quick Claw",
+"moves": [
+"Zen Headbutt",
+"Brick Break",
+"Swagger",
+"Psych Up"
+]
+}
+	},
 };
