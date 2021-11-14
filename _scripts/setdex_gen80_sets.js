@@ -10534,4 +10534,234 @@ var SETDEX_GEN80_SETS = {
 ]
 }
 	},
+"Illumise": {
+		"Illumise-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Quirky",
+"ability": "Tinted Lens",
+"item": "Liechi Berry",
+"moves": [
+"Bug Buzz",
+"Wish",
+"Quick Attack",
+"Helping Hand"
+]
+}
+	},
+"Infernape": {
+		"Infernape-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Quirky",
+"ability": "Blaze",
+"item": "Coba Berry",
+"moves": [
+"Fake Out",
+"Mach Punch",
+"U-turn",
+"Overheat"
+]
+},
+		"Infernape-2": {
+			"level": "50",
+"evs": {
+"hp": 36,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sd": 25,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Blaze",
+"item": "Muscle Band",
+"moves": [
+"Flare Blitz",
+"Thunder Punch",
+"Close Combat",
+"U-turn"
+]
+},
+		"Infernape-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Blaze",
+"item": "Wise Glasses",
+"moves": [
+"Flamethrower",
+"Focus Blast",
+"Calm Mind",
+"Grass Knot"
+]
+},
+		"Infernape-4": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 252,
+"df": 0,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Naive",
+"ability": "Blaze",
+"item": "Focus Sash",
+"moves": [
+"Overheat",
+"Stealth Rock",
+"Fake Out",
+"Close Combat"
+]
+},
+		"Infernape-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Iron Fist",
+"item": "Focus Sash",
+"moves": [
+"Fake Out",
+"Fire Punch",
+"Thunder Punch",
+"Close Combat"
+]
+},
+		"Infernape-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Iron Fist",
+"item": "Focus Sash",
+"moves": [
+"Fake Out",
+"Close Combat",
+"Fire Punch",
+"Acrobatics"
+]
+}
+	},
+"Ivysaur": {
+		"Ivysaur-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 108,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Gentle",
+"ability": "Overgrow",
+"item": "Persim Berry",
+"moves": [
+"Petal Dance",
+"Growth",
+"Sweet Scent",
+"Take Down"
+]
+}
+	}
 };
