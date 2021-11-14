@@ -4794,5 +4794,383 @@ var SETDEX_GEN80_SETS = {
 "Rollout"
 ]
 }
-	}
+	},
+"Delcatty": {
+		"Delcatty-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Lonely",
+"ability": "Cute Charm",
+"item": "Sitrus Berry",
+"moves": [
+"Fake Out",
+"Sing",
+"Double Team",
+"Shadow Ball"
+]
+}
+	},
+"Delibird": {
+		"Delibird-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Docile",
+"ability": "Vital Spirit",
+"item": "Never-Melt Ice",
+"moves": [
+"Present",
+"Ice Beam",
+"Aerial Ace",
+"Hail"
+]
+}
+	},
+"Dewgong": {
+		"Dewgong-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Thick Fat",
+"item": "Razor Fang",
+"moves": [
+"Aqua Jet",
+"Ice Shard",
+"Fake Out",
+"Protect"
+]
+},
+		"Dewgong-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Calm",
+"ability": "Thick Fat",
+"item": "Chesto Berry",
+"moves": [
+"Encore",
+"Disable",
+"Rest",
+"Ice Beam"
+]
+},
+		"Dewgong-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Calm",
+"ability": "Thick Fat",
+"item": "Leftovers",
+"moves": [
+"Sheer Cold",
+"Horn Drill",
+"Rest",
+"Sleep Talk"
+]
+}
+	},
+"Dodrio": {
+		"Dodrio-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 10,
+"sd": 10,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Early Bird",
+"item": "Chesto Berry",
+"moves": [
+"Drill Peck",
+"Tri Attack",
+"Sleep Talk",
+"Rest"
+]
+}
+	},
+"Doduo": {
+		"Doduo-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Early Bird",
+"item": "Liechi Berry",
+"moves": [
+"Fury Attack",
+"Uproar",
+"Quick Attack",
+"Rest"
+]
+},
+		"Doduo-2": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Lonely",
+"ability": "Early Bird",
+"item": "Liechi Berry",
+"moves": [
+"Fury Attack",
+"Uproar",
+"Quick Attack",
+"Rest"
+]
+}
+	},
+"Donphan": {
+		"Donphan-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Lum Berry",
+"moves": [
+"Earthquake",
+"Ice Shard",
+"Rock Slide",
+"Play Rough"
+]
+},
+		"Donphan-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Sturdy",
+"item": "Focus Band",
+"moves": [
+"Counter",
+"Stealth Rock",
+"Roar",
+"Fire Fang"
+]
+},
+		"Donphan-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Bright Powder",
+"moves": [
+"Earthquake",
+"Stone Edge",
+"Thunder Fang",
+"Ice Shard"
+]
+},
+		"Donphan-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Expert Belt",
+"moves": [
+"Earthquake",
+"Ice Shard",
+"Play Rough",
+"Rock Slide"
+]
+}
+	},
+"Dragonair": {
+		"Dragonair-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Docile",
+"ability": "Shed Skin",
+"item": "Cheri Berry",
+"moves": [
+"Dragon Breath",
+"Leer",
+"Wrap",
+"Safeguard"
+]
+}
+	},
 };
