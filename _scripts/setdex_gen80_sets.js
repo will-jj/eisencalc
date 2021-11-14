@@ -7452,4 +7452,1908 @@ var SETDEX_GEN80_SETS = {
 ]
 }
 	},
+	"Gabite": {
+		"Gabite-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Hardy",
+"ability": "Rough Skin",
+"item": "Yache Berry",
+"moves": [
+"Dragon Claw",
+"Take Down",
+"Sand Attack",
+"Roar"
+]
+}
+	},
+"Gallade": {
+		"Gallade-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Justified",
+"item": "King's Rock",
+"moves": [
+"Psycho Cut",
+"Poison Jab",
+"Thunder Wave",
+"Confuse Ray"
+]
+},
+		"Gallade-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Steadfast",
+"item": "Kasib Berry",
+"moves": [
+"Psycho Cut",
+"Close Combat",
+"Shadow Sneak",
+"Destiny Bond"
+]
+},
+		"Gallade-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Steadfast",
+"item": "Sitrus Berry",
+"moves": [
+"Psycho Cut",
+"Close Combat",
+"Shadow Sneak",
+"Knock Off"
+]
+}
+	},
+"Garchomp": {
+		"Garchomp-1": {
+			"level": "50",
+"evs": {
+"hp": 36,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sd": 25,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Rough Skin",
+"item": "Persim Berry",
+"moves": [
+"Outrage",
+"Swords Dance",
+"Stone Edge",
+"Earthquake"
+]
+},
+		"Garchomp-2": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 252,
+"df": 0,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Naive",
+"ability": "Rough Skin",
+"item": "Focus Sash",
+"moves": [
+"Draco Meteor",
+"Earthquake",
+"Rock Tomb",
+"Stealth Rock"
+]
+},
+		"Garchomp-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Rough Skin",
+"item": "Focus Sash",
+"moves": [
+"Earthquake",
+"Outrage",
+"Rock Tomb",
+"Swords Dance"
+]
+},
+		"Garchomp-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Sand Veil",
+"item": "Bright Powder",
+"moves": [
+"Earthquake",
+"Outrage",
+"Aerial Ace",
+"Swords Dance"
+]
+},
+		"Garchomp-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Rough Skin",
+"item": "Yache Berry",
+"moves": [
+"Earthquake",
+"Rock Slide",
+"Dragon Claw",
+"Crunch"
+]
+},
+		"Garchomp-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Rough Skin",
+"item": "Focus Sash",
+"moves": [
+"Earthquake",
+"Outrage",
+"Stone Edge",
+"Swords Dance"
+]
+},
+		"Garchomp-7": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Rough Skin",
+"item": "Choice Band",
+"moves": [
+"Outrage",
+"Earthquake",
+"Stone Edge",
+"Poison Jab"
+]
+},
+		"Garchomp-8": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Rough Skin",
+"item": "Choice Scarf",
+"moves": [
+"Outrage",
+"Earthquake",
+"Stone Edge",
+"Poison Jab"
+]
+}
+	},
+"Gardevoir": {
+		"Gardevoir-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 0,
+"df": 0,
+"sa": 204,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 20,
+"sa": 31,
+"sd": 20,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Synchronize",
+"item": "Lum Berry",
+"moves": [
+"Psychic",
+"Shadow Ball",
+"Thunder Wave",
+"Confuse Ray"
+]
+},
+		"Gardevoir-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Trace",
+"item": "Choice Scarf",
+"moves": [
+"Moonblast",
+"Psychic",
+"Thunderbolt",
+"Mystical Fire"
+]
+},
+		"Gardevoir-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Trace",
+"item": "Choice Scarf",
+"moves": [
+"Dazzling Gleam",
+"Psychic",
+"Thunderbolt",
+"Mystical Fire"
+]
+},
+		"Gardevoir-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Telepathy",
+"item": "Choice Scarf",
+"moves": [
+"Psychic",
+"Dazzling Gleam",
+"Thunderbolt",
+"Icy Wind"
+]
+}
+	},
+"Gastrodon": {
+		"Gastrodon-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 148,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 31,
+"sp": 15
+},
+"nature": "Careful",
+"ability": "Storm Drain",
+"item": "Leftovers",
+"moves": [
+"Mirror Coat",
+"Recover",
+"Waterfall",
+"Earthquake"
+]
+},
+		"Gastrodon-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 4,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Calm",
+"ability": "Storm Drain",
+"item": "Bright Powder",
+"moves": [
+"Earth Power",
+"Scald",
+"Ice Beam",
+"Yawn"
+]
+},
+		"Gastrodon-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Storm Drain",
+"item": "Rindo Berry",
+"moves": [
+"Surf",
+"Earth Power",
+"Recover",
+"Counter"
+]
+},
+		"Gastrodon-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 0
+},
+"nature": "Quiet",
+"ability": "Sand Force",
+"item": "Leftovers",
+"moves": [
+"Stone Edge",
+"Surf",
+"Ice Beam",
+"Earth Power"
+]
+},
+		"Gastrodon-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Calm",
+"ability": "Storm Drain",
+"item": "Leftovers",
+"moves": [
+"Scald",
+"Earth Power",
+"Mirror Coat",
+"Recover"
+]
+}
+	},
+"Gengar": {
+		"Gengar-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 0,
+"df": 0,
+"sa": 204,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 20,
+"sa": 31,
+"sd": 20,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Cursed Body",
+"item": "Focus Sash",
+"moves": [
+"Shadow Ball",
+"Psychic",
+"Energy Ball",
+"Focus Blast"
+]
+},
+		"Gengar-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Cursed Body",
+"item": "Payapa Berry",
+"moves": [
+"Explosion",
+"Thunder Punch",
+"Poison Jab",
+"Shadow Claw"
+]
+},
+		"Gengar-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Cursed Body",
+"item": "Bright Powder",
+"moves": [
+"Hypnosis",
+"Dream Eater",
+"Shadow Ball",
+"Focus Blast"
+]
+},
+		"Gengar-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Cursed Body",
+"item": "Life Orb",
+"moves": [
+"Icy Wind",
+"Shadow Ball",
+"Sludge Wave",
+"Thunderbolt"
+]
+},
+		"Gengar-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Cursed Body",
+"item": "Focus Sash",
+"moves": [
+"Sludge Wave",
+"Dazzling Gleam",
+"Icy Wind",
+"Shadow Ball"
+]
+},
+		"Gengar-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Cursed Body",
+"item": "Life Orb",
+"moves": [
+"Shadow Ball",
+"Sludge Bomb",
+"Icy Wind",
+"Dazzling Gleam"
+]
+},
+		"Gengar-7": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Cursed Body",
+"item": "Focus Sash",
+"moves": [
+"Shadow Ball",
+"Sludge Bomb",
+"Icy Wind",
+"Dazzling Gleam"
+]
+},
+		"Gengar-8": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Cursed Body",
+"item": "Focus Sash",
+"moves": [
+"Shadow Ball",
+"Sludge Bomb",
+"Icy Wind",
+"Destiny Bond"
+]
+}
+	},
+"Geodude": {
+		"Geodude-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Sturdy",
+"item": "Sitrus Berry",
+"moves": [
+"Bulldoze",
+"Rock Blast",
+"Strength",
+"Protect"
+]
+}
+	},
+"Gible": {
+		"Gible-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Rough Skin",
+"item": "Soft Sand",
+"moves": [
+"Dragon Claw",
+"Dig",
+"Sand Tomb",
+"Sand Attack"
+]
+}
+	},
+"Girafarig": {
+		"Girafarig-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 148,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 31,
+"sp": 0
+},
+"nature": "Quiet",
+"ability": "Sap Sipper",
+"item": "Petaya Berry",
+"moves": [
+"Psybeam",
+"Thunderbolt",
+"Wish",
+"Skill Swap"
+]
+}
+	},
+"Glaceon": {
+		"Glaceon-1": {
+			"level": "50",
+"evs": {
+"hp": 220,
+"at": 0,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 44
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Ice Body",
+"item": "Leftovers",
+"moves": [
+"Mirror Coat",
+"Tail Whip",
+"Sand Attack",
+"Last Resort"
+]
+},
+		"Glaceon-2": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Naughty",
+"ability": "Ice Body",
+"item": "Focus Sash",
+"moves": [
+"Hyper Beam",
+"Mirror Coat",
+"Avalanche",
+"Freeze-Dry"
+]
+},
+		"Glaceon-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Ice Body",
+"item": "Never-Melt Ice",
+"moves": [
+"Freeze-Dry",
+"Shadow Ball",
+"Ice Shard",
+"Mirror Coat"
+]
+}
+	},
+"Glalie": {
+		"Glalie-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 4,
+"sa": 148,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 15,
+"sa": 31,
+"sd": 15,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Moody",
+"item": "Leftovers",
+"moves": [
+"Protect",
+"Substitute",
+"Frost Breath",
+"Sheer Cold"
+]
+},
+		"Glalie-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Moody",
+"item": "Leftovers",
+"moves": [
+"Double Team",
+"Sheer Cold",
+"Rest",
+"Sleep Talk"
+]
+},
+		"Glalie-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Moody",
+"item": "Scope Lens",
+"moves": [
+"Ice Beam",
+"Shadow Ball",
+"Water Pulse",
+"Safeguard"
+]
+}
+	},
+"Glameow": {
+		"Glameow-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Limber",
+"item": "Quick Claw",
+"moves": [
+"Fake Out",
+"Fury Swipes",
+"Growl",
+"Attract"
+]
+}
+	},
+"Gligar": {
+		"Gligar-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Hasty",
+"ability": "Hyper Cutter",
+"item": "Scope Lens",
+"moves": [
+"Metal Claw",
+"Dig",
+"Aerial Ace",
+"Quick Attack"
+]
+}
+	},
+"Gliscor": {
+		"Gliscor-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 60,
+"df": 204,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 20,
+"sp": 20
+},
+"nature": "Impish",
+"ability": "Hyper Cutter",
+"item": "Sitrus Berry",
+"moves": [
+"Earthquake",
+"Guillotine",
+"Fire Fang",
+"Acrobatics"
+]
+},
+		"Gliscor-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Hyper Cutter",
+"item": "Yache Berry",
+"moves": [
+"Earthquake",
+"Guillotine",
+"Poison Jab",
+"Thunder Fang"
+]
+}
+	},
+"Gloom": {
+		"Gloom-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Modest",
+"ability": "Chlorophyll",
+"item": "Persim Berry",
+"moves": [
+"Petal Dance",
+"Acid",
+"Stun Spore",
+"Moonlight"
+]
+}
+	},
+"Golbat": {
+		"Golbat-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Inner Focus",
+"item": "Scope Lens",
+"moves": [
+"Poison Fang",
+"Confuse Ray",
+"Wing Attack",
+"Steel Wing"
+]
+}
+	},
+"Goldeen": {
+		"Goldeen-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Lightning Rod",
+"item": "Petaya Berry",
+"moves": [
+"Waterfall",
+"Peck",
+"Agility",
+"Horn Drill"
+]
+}
+	},
+"Golduck": {
+		"Golduck-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 60,
+"df": 0,
+"sa": 204,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 20,
+"at": 31,
+"df": 20,
+"sa": 31,
+"sd": 20,
+"sp": 31
+},
+"nature": "Naive",
+"ability": "Cloud Nine",
+"item": "Pecha Berry",
+"moves": [
+"Psychic",
+"Disable",
+"Surf",
+"Brick Break"
+]
+},
+		"Golduck-2": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 252,
+"df": 0,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Hasty",
+"ability": "Cloud Nine",
+"item": "Wide Lens",
+"moves": [
+"Hydro Pump",
+"Zen Headbutt",
+"Shadow Claw",
+"Brine"
+]
+},
+		"Golduck-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Cloud Nine",
+"item": "Muscle Band",
+"moves": [
+"Swagger",
+"Psych Up",
+"Waterfall",
+"Cross Chop"
+]
+}
+	},
+"Golem": {
+		"Golem-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Sturdy",
+"item": "Liechi Berry",
+"moves": [
+"Endure",
+"Earthquake",
+"Flail",
+"Rock Tomb"
+]
+},
+		"Golem-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Sand Veil",
+"item": "Focus Band",
+"moves": [
+"Sandstorm",
+"Defense Curl",
+"Rock Blast",
+"Gyro Ball"
+]
+},
+		"Golem-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Passho Berry",
+"moves": [
+"Substitute",
+"Focus Punch",
+"Earthquake",
+"Rock Blast"
+]
+}
+	},
+"Gorebyss": {
+		"Gorebyss-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 10,
+"df": 10,
+"sa": 31,
+"sd": 10,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Swift Swim",
+"item": "Focus Sash",
+"moves": [
+"Hydro Pump",
+"Psychic",
+"Baton Pass",
+"Shell Smash"
+]
+}
+	},
+"Granbull": {
+		"Granbull-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 148,
+"sa": 4,
+"sd": 4,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 15,
+"sd": 15,
+"sp": 15
+},
+"nature": "Brave",
+"ability": "Intimidate",
+"item": "Razor Claw",
+"moves": [
+"Thunder Wave",
+"Bite",
+"Rock Slide",
+"Giga Impact"
+]
+},
+		"Granbull-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Intimidate",
+"item": "Muscle Band",
+"moves": [
+"Fire Fang",
+"Play Rough",
+"Brick Break",
+"Thunder Fang"
+]
+},
+		"Granbull-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Quick Claw",
+"moves": [
+"Ice Fang",
+"Stone Edge",
+"Crunch",
+"Earthquake"
+]
+}
+	},
+"Graveler": {
+		"Graveler-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Focus Band",
+"moves": [
+"Rollout",
+"Rock Throw",
+"Defense Curl",
+"Brick Break"
+]
+}
+	},
+"Grimer": {
+		"Grimer-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Stench",
+"item": "Black Sludge",
+"moves": [
+"Sludge",
+"Rock Tomb",
+"Acid Armor",
+"Minimize"
+]
+}
+	},
+"Grotle": {
+		"Grotle-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Hardy",
+"ability": "Overgrow",
+"item": "Big Root",
+"moves": [
+"Mega Drain",
+"Bite",
+"Leech Seed",
+"Synthesis"
+]
+}
+	},
+"Grovyle": {
+		"Grovyle-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Relaxed",
+"ability": "Overgrow",
+"item": "Bright Powder",
+"moves": [
+"Fury Cutter",
+"Endeavor",
+"Brick Break",
+"Double Team"
+]
+}
+	},
+"Growlithe": {
+		"Growlithe-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Shuca Berry",
+"moves": [
+"Flame Wheel",
+"Bite",
+"Roar",
+"Agility"
+]
+}
+	},
+"Grumpig": {
+		"Grumpig-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 148,
+"sa": 0,
+"sd": 148,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 10,
+"df": 31,
+"sa": 10,
+"sd": 31,
+"sp": 10
+},
+"nature": "Relaxed",
+"ability": "Thick Fat",
+"item": "Petaya Berry",
+"moves": [
+"Psybeam",
+"Confuse Ray",
+"Future Sight",
+"Magic Coat"
+]
+}
+	},
+"Gyarados": {
+		"Gyarados-1": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sd": 25,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Lum Berry",
+"moves": [
+"Dragon Dance",
+"Waterfall",
+"Earthquake",
+"Ice Fang"
+]
+},
+		"Gyarados-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Intimidate",
+"item": "Leftovers",
+"moves": [
+"Rest",
+"Earthquake",
+"Dragon Dance",
+"Waterfall"
+]
+},
+		"Gyarados-3": {
+			"level": "50",
+"evs": {
+"hp": 84,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 172
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Sitrus Berry",
+"moves": [
+"Waterfall",
+"Earthquake",
+"Ice Fang",
+"Dragon Dance"
+]
+},
+		"Gyarados-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Sitrus Berry",
+"moves": [
+"Dragon Dance",
+"Waterfall",
+"Ice Fang",
+"Power Whip"
+]
+},
+		"Gyarados-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Mago Berry",
+"moves": [
+"Dragon Dance",
+"Waterfall",
+"Ice Fang",
+"Power Whip"
+]
+}
+	},
 };
