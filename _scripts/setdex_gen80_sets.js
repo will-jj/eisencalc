@@ -10763,5 +10763,705 @@ var SETDEX_GEN80_SETS = {
 "Take Down"
 ]
 }
+	},
+"Jolteon": {
+		"Jolteon-1": {
+			"level": "50",
+"evs": {
+"hp": 36,
+"at": 0,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Volt Absorb",
+"item": "Magnet",
+"moves": [
+"Thunderbolt",
+"Volt Switch",
+"Shadow Ball",
+"Yawn"
+]
+},
+		"Jolteon-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Volt Absorb",
+"item": "Razor Claw",
+"moves": [
+"Thunder Wave",
+"Thunderbolt",
+"Shadow Ball",
+"Flash"
+]
+}
+	},
+"Jumpluff": {
+		"Jumpluff-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Docile",
+"ability": "Chlorophyll",
+"item": "Lax Incense",
+"moves": [
+"Aerial Ace",
+"Swagger",
+"Psych Up",
+"Synthesis"
+]
+}
+	},
+"Jynx": {
+		"Jynx-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 148,
+"sa": 148,
+"sd": 4,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 31,
+"sa": 31,
+"sd": 15,
+"sp": 15
+},
+"nature": "Bold",
+"ability": "Dry Skin",
+"item": "Bright Powder",
+"moves": [
+"Mean Look",
+"Perish Song",
+"Protect",
+"Lovely Kiss"
+]
+},
+		"Jynx-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Dry Skin",
+"item": "Odd Incense",
+"moves": [
+"Lovely Kiss",
+"Dream Eater",
+"Sweet Kiss",
+"Energy Ball"
+]
+},
+		"Jynx-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Dry Skin",
+"item": "Wise Glasses",
+"moves": [
+"Ice Beam",
+"Psychic",
+"Focus Blast",
+"Shadow Ball"
+]
+}
+	},
+"Kabuto": {
+		"Kabuto-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Hardy",
+"ability": "Battle Armor",
+"item": "Sitrus Berry",
+"moves": [
+"Mega Drain",
+"Ancient Power",
+"Sand Attack",
+"Protect"
+]
+}
+	},
+"Kabutops": {
+		"Kabutops-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 10,
+"sd": 10,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Swift Swim",
+"item": "Scope Lens",
+"moves": [
+"Slash",
+"Dig",
+"Night Slash",
+"Metal Sound"
+]
+},
+		"Kabutops-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Weak Armor",
+"item": "Focus Sash",
+"moves": [
+"Waterfall",
+"Rock Slide",
+"Leech Life",
+"Swords Dance"
+]
+},
+		"Kabutops-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Swift Swim",
+"item": "Focus Sash",
+"moves": [
+"Waterfall",
+"Stone Edge",
+"Leech Life",
+"Swords Dance"
+]
+}
+	},
+"Kadabra": {
+		"Kadabra-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Inner Focus",
+"item": "Twisted Spoon",
+"moves": [
+"Confusion",
+"Role Play",
+"Future Sight",
+"Disable"
+]
+}
+	},
+"Kangaskhan": {
+		"Kangaskhan-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 148,
+"sd": 4,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 31,
+"sd": 15,
+"sp": 15
+},
+"nature": "Rash",
+"ability": "Scrappy",
+"item": "Pecha Berry",
+"moves": [
+"Thunderbolt",
+"Focus Punch",
+"Ice Beam",
+"Drain Punch"
+]
+},
+		"Kangaskhan-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Impish",
+"ability": "Scrappy",
+"item": "Focus Sash",
+"moves": [
+"Endure",
+"Reversal",
+"Fake Out",
+"Double Hit"
+]
+},
+		"Kangaskhan-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Scrappy",
+"item": "Salac Berry",
+"moves": [
+"Endure",
+"Reversal",
+"Crunch",
+"Earthquake"
+]
+}
+	},
+"Kecleon": {
+		"Kecleon-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Naive",
+"ability": "Color Change",
+"item": "Focus Band",
+"moves": [
+"Brick Break",
+"Psybeam",
+"Magic Coat",
+"Shadow Sneak"
+]
+}
+	},
+"Kingdra": {
+		"Kingdra-1": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sd": 25,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Sniper",
+"item": "Razor Claw",
+"moves": [
+"Waterfall",
+"Focus Energy",
+"Dragon Dance",
+"Yawn"
+]
+},
+		"Kingdra-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Swift Swim",
+"item": "Wide Lens",
+"moves": [
+"Hydro Pump",
+"Ice Beam",
+"Hurricane",
+"Rain Dance"
+]
+},
+		"Kingdra-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Swift Swim",
+"item": "Life Orb",
+"moves": [
+"Hydro Pump",
+"Dragon Pulse",
+"Hurricane",
+"Ice Beam"
+]
+},
+		"Kingdra-4": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 4,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Swift Swim",
+"item": "Life Orb",
+"moves": [
+"Hydro Pump",
+"Dragon Pulse",
+"Hurricane",
+"Flash Cannon"
+]
+}
+	},
+"Kingler": {
+		"Kingler-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 10,
+"sd": 10,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Hyper Cutter",
+"item": "Scope Lens",
+"moves": [
+"Crabhammer",
+"Metal Claw",
+"Knock Off",
+"Protect"
+]
+}
+	},
+"Koffing": {
+		"Koffing-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Levitate",
+"item": "Poison Barb",
+"moves": [
+"Sludge",
+"Smokescreen",
+"Torment",
+"Haze"
+]
+}
+	},
+"Krabby": {
+		"Krabby-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Hyper Cutter",
+"item": "Focus Sash",
+"moves": [
+"Crabhammer",
+"Mud Shot",
+"Flail",
+"Guillotine"
+]
+}
+	},
+"Kricketot": {
+		"Kricketot-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Impish",
+"ability": "Shed Skin",
+"item": "Sticky Barb",
+"moves": [
+"Struggle Bug",
+"Bug Bite",
+"Growl",
+"Pound"
+]
+}
+	},
+"Kricketune": {
+		"Kricketune-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Swarm",
+"item": "Metronome",
+"moves": [
+"Fury Cutter",
+"Sticky Web",
+"Sing",
+"Growl"
+]
+}
 	}
 };
