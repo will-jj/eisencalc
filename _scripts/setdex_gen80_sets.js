@@ -5173,4 +5173,755 @@ var SETDEX_GEN80_SETS = {
 ]
 }
 	},
+"Dragonite": {
+		"Dragonite-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 10,
+"sd": 10,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Multiscale",
+"item": "Wide Lens",
+"moves": [
+"Dragon Rush",
+"Aqua Tail",
+"Iron Tail",
+"Stone Edge"
+]
+},
+		"Dragonite-2": {
+			"level": "50",
+"evs": {
+"hp": 36,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sd": 25,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Multiscale",
+"item": "Wide Lens",
+"moves": [
+"Outrage",
+"Aqua Tail",
+"Iron Tail",
+"Stone Edge"
+]
+},
+		"Dragonite-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Multiscale",
+"item": "Lum Berry",
+"moves": [
+"Outrage",
+"Earthquake",
+"Thunder Punch",
+"Brick Break"
+]
+},
+		"Dragonite-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Multiscale",
+"item": "Lum Berry",
+"moves": [
+"Outrage",
+"Earthquake",
+"Fire Punch",
+"Dragon Dance"
+]
+},
+		"Dragonite-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Multiscale",
+"item": "Lum Berry",
+"moves": [
+"Dragon Dance",
+"Outrage",
+"Earthquake",
+"Thunder Punch"
+]
+},
+		"Dragonite-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Multiscale",
+"item": "Choice Band",
+"moves": [
+"Fire Punch",
+"Outrage",
+"Earthquake",
+"Thunder Punch"
+]
+}
+	},
+"Drapion": {
+		"Drapion-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 60
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Battle Armor",
+"item": "Rawst Berry",
+"moves": [
+"Acupressure",
+"Toxic Spikes",
+"Crunch",
+"Cross Poison"
+]
+},
+		"Drapion-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Impish",
+"ability": "Battle Armor",
+"item": "Leftovers",
+"moves": [
+"Toxic Spikes",
+"Double Team",
+"Roar",
+"Payback"
+]
+}
+	},
+"Dratini": {
+		"Dratini-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Docile",
+"ability": "Shed Skin",
+"item": "Persim Berry",
+"moves": [
+"Outrage",
+"Thunder Wave",
+"Dragon Dance",
+"Water Pulse"
+]
+}
+	},
+"Drifblim": {
+		"Drifblim-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 0,
+"df": 0,
+"sa": 204,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 20,
+"sa": 31,
+"sd": 20,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Unburden",
+"item": "Lum Berry",
+"moves": [
+"Hypnosis",
+"Dream Eater",
+"Rest",
+"Charge Beam"
+]
+},
+		"Drifblim-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Aftermath",
+"item": "Apicot Berry",
+"moves": [
+"Phantom Force",
+"Explosion",
+"Memento",
+"Destiny Bond"
+]
+},
+		"Drifblim-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Aftermath",
+"item": "Wise Glasses",
+"moves": [
+"Hypnosis",
+"Dream Eater",
+"Charge Beam",
+"Shadow Ball"
+]
+}
+	},
+"Drifloon": {
+		"Drifloon-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Quirky",
+"ability": "Aftermath",
+"item": "Grip Claw",
+"moves": [
+"Shadow Ball",
+"Will-O-Wisp",
+"Gust",
+"Astonish"
+]
+}
+	},
+"Drowzee": {
+		"Drowzee-1": {
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Quirky",
+"ability": "Insomnia",
+"item": "Sitrus Berry",
+"moves": [
+"Confusion",
+"Headbutt",
+"Disable",
+"Shadow Ball"
+]
+}
+	},
+"Dugtrio": {
+		"Dugtrio-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Arena Trap",
+"item": "Focus Sash",
+"moves": [
+"Shadow Claw",
+"Earthquake",
+"Rock Slide",
+"Thief"
+]
+},
+		"Dugtrio-2": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 220,
+"sp": 44
+},
+"ivs": {
+"hp": 25,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Arena Trap",
+"item": "Bright Powder",
+"moves": [
+"Swagger",
+"Attract",
+"Sand Attack",
+"Sucker Punch"
+]
+},
+		"Dugtrio-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Arena Trap",
+"item": "Razor Claw",
+"moves": [
+"Fissure",
+"Earthquake",
+"Aerial Ace",
+"Night Slash"
+]
+},
+		"Dugtrio-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sand Veil",
+"item": "Bright Powder",
+"moves": [
+"Earthquake",
+"Fissure",
+"Reversal",
+"Sucker Punch"
+]
+}
+	},
+"Dunsparce": {
+		"Dunsparce-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Docile",
+"ability": "Serene Grace",
+"item": "Lax Incense",
+"moves": [
+"Headbutt",
+"Glare",
+"Defense Curl",
+"Rollout"
+]
+}
+	},
+"Dusclops": {
+		"Dusclops-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 148,
+"sa": 0,
+"sd": 148,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 10,
+"df": 31,
+"sa": 10,
+"sd": 31,
+"sp": 10
+},
+"nature": "Impish",
+"ability": "Pressure",
+"item": "Leftovers",
+"moves": [
+"Will-O-Wisp",
+"Night Shade",
+"Pain Split",
+"Confuse Ray"
+]
+}
+	},
+"Dusknoir": {
+		"Dusknoir-1": {
+			"level": "50",
+"evs": {
+"hp": 220,
+"at": 44,
+"df": 220,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 25,
+"sp": 25
+},
+"nature": "Impish",
+"ability": "Pressure",
+"item": "Ganlon Berry",
+"moves": [
+"Curse",
+"Pain Split",
+"Ice Punch",
+"Protect"
+]
+},
+		"Dusknoir-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Sassy",
+"ability": "Pressure",
+"item": "Bright Powder",
+"moves": [
+"Double Team",
+"Rest",
+"Sleep Talk",
+"Night Shade"
+]
+},
+		"Dusknoir-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 0
+},
+"nature": "Relaxed",
+"ability": "Pressure",
+"item": "Sitrus Berry",
+"moves": [
+"Trick Room",
+"Fire Punch",
+"Ice Punch",
+"Rock Slide"
+]
+},
+		"Dusknoir-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Pressure",
+"item": "Mago Berry",
+"moves": [
+"Pain Split",
+"Curse",
+"Will-O-Wisp",
+"Night Shade"
+]
+}
+	},
+"Duskull": {
+		"Duskull-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Impish",
+"ability": "Levitate",
+"item": "Spell Tag",
+"moves": [
+"Shadow Sneak",
+"Will-O-Wisp",
+"Disable",
+"Confuse Ray"
+]
+}
+	},
+"Dustox": {
+		"Dustox-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Modest",
+"ability": "Shield Dust",
+"item": "Silver Powder",
+"moves": [
+"Bug Buzz",
+"Toxic",
+"Psybeam",
+"Whirlwind"
+]
+}
+	},
 };
