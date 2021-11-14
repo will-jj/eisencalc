@@ -5924,4 +5924,838 @@ var SETDEX_GEN80_SETS = {
 ]
 }
 	},
+"Eevee": {
+		"Eevee-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Docile",
+"ability": "Adaptability",
+"item": "Salac Berry",
+"moves": [
+"Charm",
+"Attract",
+"Take Down",
+"Endure"
+]
+}
+	},
+"Electabuzz": {
+		"Electabuzz-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 31,
+"sd": 10,
+"sp": 10
+},
+"nature": "Relaxed",
+"ability": "Static",
+"item": "Cheri Berry",
+"moves": [
+"Thunderbolt",
+"Thunder Wave",
+"Brick Break",
+"Light Screen"
+]
+}
+	},
+"Electivire": {
+		"Electivire-1": {
+			"level": "50",
+"evs": {
+"hp": 220,
+"at": 44,
+"df": 220,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 25,
+"sp": 25
+},
+"nature": "Impish",
+"ability": "Motor Drive",
+"item": "Cheri Berry",
+"moves": [
+"Thunder Punch",
+"Cross Chop",
+"Thunder Wave",
+"Screech"
+]
+},
+		"Electivire-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Relaxed",
+"ability": "Motor Drive",
+"item": "Wide Lens",
+"moves": [
+"Thunder",
+"Dynamic Punch",
+"Rock Slide",
+"Iron Tail"
+]
+},
+		"Electivire-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Motor Drive",
+"item": "Magnet",
+"moves": [
+"Fire Punch",
+"Ice Punch",
+"Volt Switch",
+"Wild Charge"
+]
+},
+		"Electivire-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Motor Drive",
+"item": "Shuca Berry",
+"moves": [
+"Wild Charge",
+"Ice Punch",
+"Feint",
+"Rock Slide"
+]
+},
+		"Electivire-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Motor Drive",
+"item": "Shuca Berry",
+"moves": [
+"Thunder Punch",
+"Ice Punch",
+"Earthquake",
+"Rock Slide"
+]
+}
+	},
+"Electrode": {
+		"Electrode-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Hasty",
+"ability": "Aftermath",
+"item": "Sitrus Berry",
+"moves": [
+"Explosion",
+"Spark",
+"Thunder Wave",
+"Thief"
+]
+},
+		"Electrode-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Aftermath",
+"item": "Shuca Berry",
+"moves": [
+"Magnet Rise",
+"Charge Beam",
+"Hyper Beam",
+"Thunder Wave"
+]
+},
+		"Electrode-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Aftermath",
+"item": "Jaboca Berry",
+"moves": [
+"Thunderbolt",
+"Volt Switch",
+"Swift",
+"Thunder Wave"
+]
+}
+	},
+"Elekid": {
+		"Elekid-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Naive",
+"ability": "Static",
+"item": "Cheri Berry",
+"moves": [
+"Thunder Punch",
+"Quick Attack",
+"Swift",
+"Light Screen"
+]
+}
+	},
+"Empoleon": {
+		"Empoleon-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 4,
+"sa": 148,
+"sd": 148,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 15,
+"sa": 31,
+"sd": 31,
+"sp": 15
+},
+"nature": "Calm",
+"ability": "Torrent",
+"item": "Chesto Berry",
+"moves": [
+"Aqua Ring",
+"Double Team",
+"Whirlpool",
+"Rest"
+]
+},
+		"Empoleon-2": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 220,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 44
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Docile",
+"ability": "Torrent",
+"item": "Wacan Berry",
+"moves": [
+"Drill Peck",
+"Brick Break",
+"Aqua Jet",
+"Ice Beam"
+]
+},
+		"Empoleon-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Defiant",
+"item": "Chople Berry",
+"moves": [
+"Waterfall",
+"Aqua Jet",
+"Avalanche",
+"Earthquake"
+]
+},
+		"Empoleon-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Defiant",
+"item": "Shuca Berry",
+"moves": [
+"Waterfall",
+"Drill Peck",
+"Protect",
+"Aqua Jet"
+]
+}
+	},
+"Entei": {
+		"Entei-1": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Inner Focus",
+"item": "Wise Glasses",
+"moves": [
+"Lava Plume",
+"Snarl",
+"Calm Mind",
+"Extrasensory"
+]
+},
+		"Entei-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Inner Focus",
+"item": "Heat Rock",
+"moves": [
+"Sunny Day",
+"Flamethrower",
+"Solar Beam",
+"Extrasensory"
+]
+},
+		"Entei-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Pressure",
+"item": "Leftovers",
+"moves": [
+"Fire Blast",
+"Extrasensory",
+"Shadow Ball",
+"Calm Mind"
+]
+},
+		"Entei-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Inner Focus",
+"item": "Passho Berry",
+"moves": [
+"Fire Fang",
+"Iron Tail",
+"Bite",
+"Double Team"
+]
+},
+		"Entei-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Inner Focus",
+"item": "Muscle Band",
+"moves": [
+"Sacred Fire",
+"Extreme Speed",
+"Bulldoze",
+"Iron Head"
+]
+}
+	},
+"Espeon": {
+		"Espeon-1": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 0,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Magic Bounce",
+"item": "Focus Sash",
+"moves": [
+"Light Screen",
+"Psychic",
+"Shadow Ball",
+"Dazzling Gleam"
+]
+},
+		"Espeon-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Magic Bounce",
+"item": "Bright Powder",
+"moves": [
+"Reflect",
+"Shadow Ball",
+"Psychic",
+"Morning Sun"
+]
+},
+		"Espeon-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Magic Bounce",
+"item": "Light Clay",
+"moves": [
+"Reflect",
+"Dazzling Gleam",
+"Baton Pass",
+"Light Screen"
+]
+}
+	},
+"Exeggcute": {
+		"Exeggcute-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Modest",
+"ability": "Chlorophyll",
+"item": "Persim Berry",
+"moves": [
+"Confusion",
+"Giga Drain",
+"Leech Seed",
+"Light Screen"
+]
+}
+	},
+"Exeggutor": {
+		"Exeggutor-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 0,
+"df": 0,
+"sa": 60,
+"sd": 204,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 20,
+"sa": 31,
+"sd": 31,
+"sp": 20
+},
+"nature": "Calm",
+"ability": "Chlorophyll",
+"item": "Leftovers",
+"moves": [
+"Giga Drain",
+"Leech Seed",
+"Double Team",
+"Substitute"
+]
+},
+		"Exeggutor-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Chlorophyll",
+"item": "Miracle Seed",
+"moves": [
+"Leech Seed",
+"Worry Seed",
+"Bullet Seed",
+"Psychic"
+]
+}
+	},
+"Exploud": {
+		"Exploud-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 4,
+"sa": 148,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 15,
+"sa": 31,
+"sd": 15,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Soundproof",
+"item": "Focus Band",
+"moves": [
+"Boomburst",
+"Fire Blast",
+"Solar Beam",
+"Focus Blast"
+]
+},
+		"Exploud-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Impish",
+"ability": "Soundproof",
+"item": "Sitrus Berry",
+"moves": [
+"Rest",
+"Sleep Talk",
+"Boomburst",
+"Double Team"
+]
+},
+		"Exploud-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Soundproof",
+"item": "Quick Claw",
+"moves": [
+"Giga Impact",
+"Earthquake",
+"Avalanche",
+"Crunch"
+]
+}
+	},
 };
