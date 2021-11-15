@@ -16824,7 +16824,7 @@ var SETDEX_GEN80_SETS = {
 ]
 }
 	},
-"Poyrgon": {
+"Porygon": {
 		"Porygon-1": {
 			"level": "50",
 "evs": {
@@ -17259,6 +17259,152 @@ var SETDEX_GEN80_SETS = {
 "Fake Out",
 "Bulldoze",
 "Body Slam"
+]
+}
+	},
+"Quagsire": {
+		"Quagsire-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 148,
+"sa": 4,
+"sd": 4,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 15,
+"sd": 15,
+"sp": 15
+},
+"nature": "Brave",
+"ability": "Water Absorb",
+"item": "Leftovers",
+"moves": [
+"Body Slam",
+"Rock Slide",
+"Ice Beam",
+"Brick Break"
+]
+},
+		"Quagsire-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Unaware",
+"item": "Focus Sash",
+"moves": [
+"Counter",
+"Focus Punch",
+"Yawn",
+"Ice Beam"
+]
+},
+		"Quagsire-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Water Absorb",
+"item": "Quick Claw",
+"moves": [
+"Amnesia",
+"Scald",
+"Sludge Bomb",
+"Recover"
+]
+}
+	},
+"Quilava": {
+		"Quilava-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 108,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Blaze",
+"item": "Focus Band",
+"moves": [
+"Flame Wheel",
+"Fury Swipes",
+"Swift",
+"Smokescreen"
+]
+}
+	},
+"Qwilfish": {
+		"Qwilfish-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 108,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Impish",
+"ability": "Intimidate",
+"item": "Cheri Berry",
+"moves": [
+"Bubble Beam",
+"Pin Missile",
+"Spikes",
+"Minimize"
 ]
 }
 	}
