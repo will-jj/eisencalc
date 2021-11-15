@@ -17407,5 +17407,2007 @@ var SETDEX_GEN80_SETS = {
 "Minimize"
 ]
 }
+	},
+"Raichu": {
+		"Raichu-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 4,
+"sa": 148,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 15,
+"sa": 31,
+"sd": 15,
+"sp": 31
+},
+"nature": "Docile",
+"ability": "Lightning Rod",
+"item": "Wide Lens",
+"moves": [
+"Thunderbolt",
+"Quick Attack",
+"Slam",
+"Iron Tail"
+]
+},
+		"Raichu-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Lightning Rod",
+"item": "Focus Band",
+"moves": [
+"Thunder Punch",
+"Feint",
+"Brick Break",
+"Double Team"
+]
+},
+		"Raichu-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Lightning Rod",
+"item": "Focus Sash",
+"moves": [
+"Nasty Plot",
+"Focus Blast",
+"Grass Knot",
+"Thunder"
+]
+},
+		"Raichu-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Lightning Rod",
+"item": "Choice Band",
+"moves": [
+"Volt Switch",
+"Facade",
+"Play Rough",
+"Volt Tackle"
+]
+},
+		"Raichu-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Lightning Rod",
+"item": "Light Clay",
+"moves": [
+"Thunderbolt",
+"Reflect",
+"Light Screen",
+"Grass Knot"
+]
+}
+	},
+"Raikou": {
+		"Raikou-1": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Pressure",
+"item": "Magnet",
+"moves": [
+"Rain Dance",
+"Thunder",
+"Calm Mind",
+"Iron Tail"
+]
+},
+		"Raikou-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Pressure",
+"item": "Lax Incense",
+"moves": [
+"Scald",
+"Calm Mind",
+"Rest",
+"Double Team"
+]
+},
+		"Raikou-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Pressure",
+"item": "Wise Glasses",
+"moves": [
+"Shadow Ball",
+"Scald",
+"Thunderbolt",
+"Volt Switch"
+]
+},
+		"Raikou-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Pressure",
+"item": "Shuca Berry",
+"moves": [
+"Thunderbolt",
+"Scald",
+"Shadow Ball",
+"Calm Mind"
+]
+},
+		"Raikou-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Pressure",
+"item": "Choice Specs",
+"moves": [
+"Thunderbolt",
+"Volt Switch",
+"Scald",
+"Shadow Ball"
+]
+}
+	},
+"Rampardos": {
+		"Rampardos-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Mold Breaker",
+"item": "Persim Berry",
+"moves": [
+"Thrash",
+"Headbutt",
+"Zen Headbutt",
+"Head Smash"
+]
+},
+		"Rampardos-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Mold Breaker",
+"item": "Focus Sash",
+"moves": [
+"Rock Polish",
+"Stone Edge",
+"Earthquake",
+"Zen Headbutt"
+]
+},
+		"Rampardos-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Mold Breaker",
+"item": "Choice Scarf",
+"moves": [
+"Head Smash",
+"Zen Headbutt",
+"Earthquake",
+"Iron Head"
+]
+},
+		"Rampardos-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Mold Breaker",
+"item": "Life Orb",
+"moves": [
+"Head Smash",
+"Zen Headbutt",
+"Earthquake",
+"Iron Head"
+]
+},
+		"Rampardos-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Mold Breaker",
+"item": "Focus Sash",
+"moves": [
+"Head Smash",
+"Zen Headbutt",
+"Hammer Arm",
+"Protect"
+]
+},
+		"Rampardos-6": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Sheer Force",
+"item": "Life Orb",
+"moves": [
+"Protect",
+"Stone Edge",
+"Zen Headbutt",
+"Brick Break"
+]
+}
+	},
+"Rapidash": {
+		"Rapidash-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 0,
+"df": 0,
+"sa": 204,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 20,
+"sa": 31,
+"sd": 20,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flame Body",
+"item": "Chesto Berry",
+"moves": [
+"Sunny Day",
+"Fire Blast",
+"Solar Beam",
+"Rest"
+]
+},
+		"Rapidash-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Flame Body",
+"item": "Focus Band",
+"moves": [
+"Flare Blitz",
+"Megahorn",
+"Horn Drill",
+"Poison Jab"
+]
+},
+		"Rapidash-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Flash Fire",
+"item": "Focus Band",
+"moves": [
+"Flare Blitz",
+"Megahorn",
+"Horn Drill",
+"Poison Jab"
+]
+}
+	},
+"Raticate": {
+		"Raticate-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Naive",
+"ability": "Guts",
+"item": "Silk Scarf",
+"moves": [
+"Endeavor",
+"Super Fang",
+"Scary Face",
+"Quick Attack"
+]
+}
+	},
+"Regice": {
+		"Regice-1": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Clear Body",
+"item": "Shell Bell",
+"moves": [
+"Ice Beam",
+"Thunderbolt",
+"Hyper Beam",
+"Flash Cannon"
+]
+},
+		"Regice-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Serious",
+"ability": "Clear Body",
+"item": "Ganlon Berry",
+"moves": [
+"Focus Blast",
+"Blizzard",
+"Giga Impact",
+"Rock Polish"
+]
+},
+		"Regice-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Clear Body",
+"item": "Chesto Berry",
+"moves": [
+"Ice Beam",
+"Ancient Power",
+"Charge Beam",
+"Rest"
+]
+},
+		"Regice-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Clear Body",
+"item": "Leftovers",
+"moves": [
+"Ice Beam",
+"Thunderbolt",
+"Protect",
+"Focus Blast"
+]
+},
+		"Regice-5": {
+			"level": "50",
+"evs": {
+"hp": 172,
+"at": 0,
+"df": 252,
+"sa": 84,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Ice Body",
+"item": "Leftovers",
+"moves": [
+"Blizzard",
+"Thunderbolt",
+"Amnesia",
+"Rest"
+]
+}
+	},
+"Regigigas": {
+		"Regigigas-1": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Slow Start",
+"item": "Chople Berry",
+"moves": [
+"Crush Grip",
+"Ice Punch",
+"Stone Edge",
+"Protect"
+]
+},
+		"Regigigas-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Slow Start",
+"item": "Leftovers",
+"moves": [
+"Substitute",
+"Double Team",
+"Thunder Wave",
+"Ice Punch"
+]
+},
+		"Regigigas-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Slow Start",
+"item": "Bright Powder",
+"moves": [
+"Swagger",
+"Psych Up",
+"Crush Grip",
+"Aerial Ace"
+]
+},
+		"Regigigas-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 124,
+"df": 0,
+"sa": 124,
+"sd": 4,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Quiet",
+"ability": "Slow Start",
+"item": "Shell Bell",
+"moves": [
+"Thunderbolt",
+"Focus Blast",
+"Earthquake",
+"Drain Punch"
+]
+},
+		"Regigigas-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Slow Start",
+"item": "Chople Berry",
+"moves": [
+"Crush Grip",
+"Protect",
+"Stone Edge",
+"Brick Break"
+]
+},
+		"Regigigas-6": {
+			"level": "50",
+"evs": {
+"hp": 140,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 116
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Slow Start",
+"item": "Life Orb",
+"moves": [
+"Crush Grip",
+"Earthquake",
+"Knock Off",
+"Protect"
+]
+}
+	},
+"Regirock": {
+		"Regirock-1": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Passho Berry",
+"moves": [
+"Superpower",
+"Stone Edge",
+"Rock Tomb",
+"Strength"
+]
+},
+		"Regirock-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Clear Body",
+"item": "Leftovers",
+"moves": [
+"Stone Edge",
+"Earthquake",
+"Brick Break",
+"Sandstorm"
+]
+},
+		"Regirock-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Smooth Rock",
+"moves": [
+"Sandstorm",
+"Stone Edge",
+"Earthquake",
+"Iron Defense"
+]
+},
+		"Regirock-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Clear Body",
+"item": "Quick Claw",
+"moves": [
+"Explosion",
+"Stone Edge",
+"Earthquake",
+"Brick Break"
+]
+},
+		"Regirock-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Custap Berry",
+"moves": [
+"Rock Slide",
+"Fire Punch",
+"Ice Punch",
+"Thunder Punch"
+]
+}
+	},
+"Registeel": {
+		"Registeel-1": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Relaxed",
+"ability": "Clear Body",
+"item": "Chesto Berry",
+"moves": [
+"Curse",
+"Rest",
+"Flash Cannon",
+"Metal Claw"
+]
+},
+		"Registeel-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Clear Body",
+"item": "Occa Berry",
+"moves": [
+"Iron Defense",
+"Rest",
+"Substitute",
+"Earthquake"
+]
+},
+		"Registeel-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Clear Body",
+"item": "Damp Rock",
+"moves": [
+"Rain Dance",
+"Thunder",
+"Stealth Rock",
+"Protect"
+]
+},
+		"Registeel-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Clear Body",
+"item": "Quick Claw",
+"moves": [
+"Explosion",
+"Double Team",
+"Swagger",
+"Substitute"
+]
+}
+	},
+"Relicanth": {
+		"Relicanth-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 148,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 10,
+"sd": 10,
+"sp": 10
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Liechi Berry",
+"moves": [
+"Ancient Power",
+"Water Pulse",
+"Harden",
+"Amnesia"
+]
+},
+		"Relicanth-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Swift Swim",
+"item": "Figy Berry",
+"moves": [
+"Waterfall",
+"Head Smash",
+"Earthquake",
+"Body Press"
+]
+}
+	},
+"Remoraid": {
+		"Remoraid-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Modest",
+"ability": "Sniper",
+"item": "Petaya Berry",
+"moves": [
+"Bubble Beam",
+"Aurora Beam",
+"Psybeam",
+"Protect"
+]
+},
+		"Remoraid-2": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Quirky",
+"ability": "Sniper",
+"item": "Petaya Berry",
+"moves": [
+"Bubble Beam",
+"Aurora Beam",
+"Psybeam",
+"Protect"
+]
+}
+	},
+"Rhydon": {
+		"Rhydon-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 148,
+"sa": 148,
+"sd": 4,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 31,
+"sa": 31,
+"sd": 15,
+"sp": 15
+},
+"nature": "Quiet",
+"ability": "Lightning Rod",
+"item": "Wise Glasses",
+"moves": [
+"Ice Beam",
+"Thunderbolt",
+"Dragon Pulse",
+"Surf"
+]
+}
+		"Rhydon-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Lightning Rod",
+"item": "Smooth Rock",
+"moves": [
+"Rock Blast",
+"Fire Fang",
+"Earthquake",
+"Avalanche"
+]
+},
+		"Rhydon-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Brave",
+"ability": "Lightning Rod",
+"item": "Passho Berry",
+"moves": [
+"Earthquake",
+"Hammer Arm",
+"Shadow Claw",
+"Stone Edge"
+]
+}
+	},
+"Rhyhorn": {
+		"Rhyhorn-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Rock Head",
+"item": "Focus Band",
+"moves": [
+"Rock Blast",
+"Dig",
+"Scary Face",
+"Roar"
+]
+}
+	},
+"Rhyperior": {
+		"Rhyperior-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 31,
+"sd": 10,
+"sp": 10
+},
+"nature": "Quiet",
+"ability": "Solid Rock",
+"item": "Expert Belt",
+"moves": [
+"Rock Wrecker",
+"Ice Beam",
+"Thunderbolt",
+"Flamethrower"
+]
+},
+		"Rhyperior-2": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 0,
+"df": 0,
+"sa": 220,
+"sd": 220,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Quiet",
+"ability": "Solid Rock",
+"item": "Expert Belt",
+"moves": [
+"Rock Wrecker",
+"Ice Beam",
+"Thunderbolt",
+"Flamethrower"
+]
+},
+		"Rhyperior-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Impish",
+"ability": "Solid Rock",
+"item": "Zoom Lens",
+"moves": [
+"Stone Edge",
+"Megahorn",
+"Dragon Rush",
+"Avalanche"
+]
+},
+		"Rhyperior-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Solid Rock",
+"item": "Sitrus Berry",
+"moves": [
+"Rock Slide",
+"Earthquake",
+"Ice Punch",
+"Protect"
+]
+},
+		"Rhyperior-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Solid Rock",
+"item": "Muscle Band",
+"moves": [
+"Rock Slide",
+"Earthquake",
+"Ice Punch",
+"Protect"
+]
+},
+		"Rhyperior-6": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Solid Rock",
+"item": "Muscle Band",
+"moves": [
+"Rock Slide",
+"Earthquake",
+"Ice Punch",
+"Thunder Punch"
+]
+},
+		"Rhyperior-7": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Solid Rock",
+"item": "Sitrus Berry",
+"moves": [
+"Earthquake",
+"Rock Blast",
+"Ice Punch",
+"Horn Drill"
+]
+},
+		"Rhyperior-8": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Lightning Rod",
+"item": "Expert Belt",
+"moves": [
+"Earthquake",
+"Rock Blast",
+"Ice Punch",
+"Thunder Punch"
+]
+}
+	},
+	"Riolu": {
+		"Riolu-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Prankster",
+"item": "Focus Sash",
+"moves": [
+"Force Palm",
+"Counter",
+"Copycat",
+"Screech"
+]
+}
+	},
+"Roselia": {
+		"Roselia-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Poison Point",
+"item": "Black Sludge",
+"moves": [
+"Magical Leaf",
+"Toxic",
+"Sludge Bomb",
+"Cotton Spore"
+]
+}
+	},
+"Roserade": {
+		"Roserade-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 0,
+"df": 204,
+"sa": 60,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 20,
+"sp": 20
+},
+"nature": "Bold",
+"ability": "Poison Point",
+"item": "Big Root",
+"moves": [
+"Leech Seed",
+"Ingrain",
+"Giga Drain",
+"Substitute"
+]
+},
+		"Roserade-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Poison Point",
+"item": "White Herb",
+"moves": [
+"Leaf Storm",
+"Sludge Bomb",
+"Shadow Ball",
+"Dazzling Gleam"
+]
+},
+		"Roserade-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Poison Point",
+"item": "Focus Sash",
+"moves": [
+"Leaf Storm",
+"Sludge Bomb",
+"Shadow Ball",
+"Dazzling Gleam"
+]
+},
+		"Roserade-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Technician",
+"item": "Life Orb",
+"moves": [
+"Swift",
+"Solar Beam",
+"Energy Ball",
+"Sludge Bomb"
+]
+}
+	},
+	"Rotom": {
+		"Rotom-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "Cheri Berry",
+"moves": [
+"Thunderbolt",
+"Shadow Ball",
+"Thunder Wave",
+"Confuse Ray"
+]
+}
+	},
+"Rotom-Heat": {
+		"Rotom-Heat-1": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Levitate",
+"item": "Sitrus Berry",
+"moves": [
+"Overheat",
+"Thunderbolt",
+"Volt Switch",
+"Will-O-Wisp"
+]
+},
+		"Rotom-Heat-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "Choice Scarf",
+"moves": [
+"Overheat",
+"Discharge",
+"Volt Switch",
+"Shadow Ball"
+]
+}
+	},
+"Rotom-Mow": {
+		"Rotom-Mow-1": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "Sitrus Berry",
+"moves": [
+"Thunderbolt",
+"Leaf Storm",
+"Volt Switch",
+"Thunder Wave"
+]
+},
+		"Rotom-Mow-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "Choice Specs",
+"moves": [
+"Thunderbolt",
+"Leaf Storm",
+"Volt Switch",
+"Trick"
+]
+}
+	},
+"Rotom-Wash": {
+		"Rotom-Wash-1": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Levitate",
+"item": "Wiki Berry",
+"moves": [
+"Hydro Pump",
+"Thunderbolt",
+"Volt Switch",
+"Will-O-Wisp"
+]
+},
+		"Rotom-Wash-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Levitate",
+"item": "Jaboca Berry",
+"moves": [
+"Hydro Pump",
+"Thunderbolt",
+"Volt Switch",
+"Will-O-Wisp"
+]
+},
+		"Rotom-Wash-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "Life Orb",
+"moves": [
+"Hydro Pump",
+"Thunderbolt",
+"Volt Switch",
+"Trick"
+]
+}
 	}
 };
