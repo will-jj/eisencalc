@@ -12095,5 +12095,929 @@ var SETDEX_GEN80_SETS = {
 "Agility"
 ]
 }
+	},
+"Lickilicky: {
+		"Lickilicky-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 60,
+"df": 0,
+"sa": 0,
+"sd": 204,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 31,
+"sp": 20
+},
+"nature": "Careful",
+"ability": "Own Tempo",
+"item": "Chesto Berry",
+"moves": [
+"Belly Drum",
+"Rest",
+"Explosion",
+"Earthquake"
+]
+},
+		"Lickilicky-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Oblivious",
+"item": "Expert Belt",
+"moves": [
+"Surf",
+"Ice Beam",
+"Thunderbolt",
+"Shadow Ball"
+]
+}
+	},
+"Lickitung": {
+		"Lickitung-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Own Tempo",
+"item": "Sitrus Berry",
+"moves": [
+"Slam",
+"Brick Break",
+"Lick",
+"Screech"
+]
+}
+	},
+	"Lileep": {
+		"Lileep-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Docile",
+"ability": "Storm Drain",
+"item": "Lax Incense",
+"moves": [
+"Giga Drain",
+"Acid",
+"Ingrain",
+"Confuse Ray"
+]
+}
+	},
+"Linoone": {
+		"Linoone-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Gluttony",
+"item": "Sitrus Berry",
+"moves": [
+"Extreme Speed",
+"Sand Attack",
+"Covet",
+"Tickle"
+]
+}
+	},
+"Lombre": {
+		"Lombre-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Quirky",
+"ability": "Swift Swim",
+"item": "Yache Berry",
+"moves": [
+"Water Pulse",
+"Fake Out",
+"Brick Break",
+"Absorb"
+]
+}
+	},
+"Lopunny": {
+		"Lopunny-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 148,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 31,
+"sp": 15
+},
+"nature": "Careful",
+"ability": "Limber",
+"item": "Bright Powder",
+"moves": [
+"Thunder Wave",
+"Attract",
+"Sweet Kiss",
+"Focus Punch"
+]
+},
+		"Lopunny-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Limber",
+"item": "Focus Band",
+"moves": [
+"Fire Punch",
+"Charm",
+"Encore",
+"Thunder Punch"
+]
+},
+		"Lopunny-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Limber",
+"item": "Focus Band",
+"moves": [
+"Mirror Coat",
+"Cosmic Power",
+"Charm",
+"Drain Punch"
+]
+}
+	},
+"Loudred": {
+		"Loudred-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Modest",
+"ability": "Scrappy",
+"item": "Focus Band",
+"moves": [
+"Hyper Voice",
+"Howl",
+"Astonish",
+"Supersonic"
+]
+}
+	},
+"Lucario": {
+		"Lucario-1": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 0,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Inner Focus",
+"item": "Bright Powder",
+"moves": [
+"Dark Pulse",
+"Dragon Pulse",
+"Aura Sphere",
+"Nasty Plot"
+]
+},
+		"Lucario-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Inner Focus",
+"item": "Focus Sash",
+"moves": [
+"Aura Sphere",
+"Flash Cannon",
+"Dark Pulse",
+"Vacuum Wave"
+]
+},
+		"Lucario-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Inner Focus",
+"item": "Choice Scarf",
+"moves": [
+"Focus Blast",
+"Flash Cannon",
+"Dark Pulse",
+"Dragon Pulse"
+]
+},
+		"Lucario-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Inner Focus",
+"item": "Focus Sash",
+"moves": [
+"Focus Blast",
+"Flash Cannon",
+"Dark Pulse",
+"Vacuum Wave"
+]
+},
+		"Lucario-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Inner Focus",
+"item": "Shuca Berry",
+"moves": [
+"Close Combat",
+"Extreme Speed",
+"Meteor Mash",
+"Ice Punch"
+]
+},
+		"Lucario-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Inner Focus",
+"item": "Muscle Band",
+"moves": [
+"Close Combat",
+"Extreme Speed",
+"Meteor Mash",
+"Protect"
+]
+},
+		"Lucario-7": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Inner Focus",
+"item": "Focus Sash",
+"moves": [
+"Close Combat",
+"Meteor Mash",
+"Earthquake",
+"Rock Slide"
+]
+},
+		"Lucario-8": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Inner Focus",
+"item": "Choice Band",
+"moves": [
+"Close Combat",
+"Meteor Mash",
+"Ice Punch",
+"Extreme Speed"
+]
+},
+		"Lucario-9": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Inner Focus",
+"item": "Focus Sash",
+"moves": [
+"Focus Blast",
+"Flash Cannon",
+"Dragon Pulse",
+"Dark Pulse"
+]
+}
+	},
+"Ludicolo": {
+		"Ludicolo-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Own Tempo",
+"item": "Muscle Band",
+"moves": [
+"Waterfall",
+"Razor Leaf",
+"Drain Punch",
+"Swords Dance"
+]
+},
+		"Ludicolo-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Rain Dish",
+"item": "Leftovers",
+"moves": [
+"Leech Seed",
+"Double Team",
+"Scald",
+"Substitute"
+]
+},
+		"Ludicolo-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Swift Swim",
+"item": "Lum Berry",
+"moves": [
+"Hydro Pump",
+"Ice Beam",
+"Grass Knot",
+"Focus Blast"
+]
+},
+		"Ludicolo-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Swift Swim",
+"item": "Life Orb",
+"moves": [
+"Hydro Pump",
+"Energy Ball",
+"Ice Beam",
+"Focus Blast"
+]
+}
+	},
+"Lumineon": {
+		"Lumineon-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 10,
+"df": 10,
+"sa": 31,
+"sd": 10,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Storm Drain",
+"item": "Rindo Berry",
+"moves": [
+"Brine",
+"Gust",
+"Whirlpool",
+"U-turn"
+]
+}
+	},
+"Lunatone": {
+		"Lunatone-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 108,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Quiet",
+"ability": "Levitate",
+"item": "Sitrus Berry",
+"moves": [
+"Confusion",
+"Cosmic Power",
+"Light Screen",
+"Sandstorm"
+]
+},
+		"Lunatone-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 0
+},
+"nature": "Quiet",
+"ability": "Levitate",
+"item": "Focus Sash",
+"moves": [
+"Trick Room",
+"Ice Beam",
+"Grass Knot",
+"Psychic"
+]
+}
+	},
+"Luvdisc": {
+		"Luvdisc-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Relaxed",
+"ability": "Swift Swim",
+"item": "Quick Claw",
+"moves": [
+"Sweet Kiss",
+"Attract",
+"Water Pulse",
+"Rain Dance"
+]
+}
+	},
+"Luxio": {
+		"Luxio-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Magnet",
+"moves": [
+"Spark",
+"Bite",
+"Roar",
+"Swagger"
+]
+}
+	},
+"Luxray": {
+		"Luxray-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 0,
+"df": 60,
+"sa": 204,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 20,
+"df": 31,
+"sa": 31,
+"sd": 20,
+"sp": 20
+},
+"nature": "Quiet",
+"ability": "Intimidate",
+"item": "Shuca Berry",
+"moves": [
+"Charge",
+"Charge Beam",
+"Thunderbolt",
+"Flash"
+]
+},
+		"Luxray-2": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 252,
+"df": 148,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Life Orb",
+"moves": [
+"Play Rough",
+"Quick Attack",
+"Wild Charge",
+"Fire Fang"
+]
+},
+		"Luxray-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Intimidate",
+"item": "Sitrus Berry",
+"moves": [
+"Volt Switch",
+"Thunder Wave",
+"Ice Fang",
+"Wild Charge"
+]
+},
+		"Luxray-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Intimidate",
+"item": "Sitrus Berry",
+"moves": [
+"Snarl",
+"Thunderbolt",
+"Baby-Doll Eyes",
+"Protect"
+]
+}
 	}
 };
