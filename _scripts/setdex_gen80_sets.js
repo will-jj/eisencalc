@@ -11463,5 +11463,637 @@ var SETDEX_GEN80_SETS = {
 "Growl"
 ]
 }
+	},
+"Lairon": {
+		"Lairon-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Sassy",
+"ability": "Sturdy",
+"item": "Metal Coat",
+"moves": [
+"Metal Claw",
+"Rock Tomb",
+"Iron Defense",
+"Protect"
+]
+}
+	},
+"Lanturn": {
+		"Lanturn-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 148,
+"sa": 148,
+"sd": 4,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 31,
+"sa": 31,
+"sd": 15,
+"sp": 15
+},
+"nature": "Bold",
+"ability": "Volt Absorb",
+"item": "Rindo Berry",
+"moves": [
+"Scald",
+"Shock Wave",
+"Ice Beam",
+"Double Team"
+]
+},
+		"Lanturn-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 4,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Calm",
+"ability": "Volt Absorb",
+"item": "Expert Belt",
+"moves": [
+"Thunderbolt",
+"Charge",
+"Scald",
+"Surf"
+]
+},
+		"Lanturn-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Volt Absorb",
+"item": "Quick Claw",
+"moves": [
+"Charge",
+"Charge Beam",
+"Hydro Pump",
+"Ice Beam"
+]
+}
+	},
+"Lapras": {
+		"Lapras-1": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sd": 25,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Shell Armor",
+"item": "Lum Berry",
+"moves": [
+"Dragon Dance",
+"Body Slam",
+"Waterfall",
+"Ice Shard"
+]
+},
+		"Lapras-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Calm",
+"ability": "Shell Armor",
+"item": "Sitrus Berry",
+"moves": [
+"Sheer Cold",
+"Sleep Talk",
+"Rest",
+"Double Team"
+]
+},
+		"Lapras-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Quiet",
+"ability": "Water Absorb",
+"item": "Sitrus Berry",
+"moves": [
+"Surf",
+"Freeze-Dry",
+"Thunderbolt",
+"Sheer Cold"
+]
+},
+		"Lapras-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Quiet",
+"ability": "Water Absorb",
+"item": "Sitrus Berry",
+"moves": [
+"Surf",
+"Freeze-Dry",
+"Thunderbolt",
+"Sheer Cold"
+]
+}
+	},
+"Larvitar": {
+		"Larvitar-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Guts",
+"item": "Persim Berry",
+"moves": [
+"Thrash",
+"Rock Slide",
+"Dig",
+"Bite"
+]
+}
+	},
+"Latias": {
+		"Latias-1": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Levitate",
+"item": "Colbur Berry",
+"moves": [
+"Psychic",
+"Energy Ball",
+"Grass Knot",
+"Recover"
+]
+},
+		"Latias-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "Lum Berry",
+"moves": [
+"Calm Mind",
+"Dragon Pulse",
+"Psychic",
+"Roost"
+]
+},
+		"Latias-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Levitate",
+"item": "Bright Powder",
+"moves": [
+"Psychic",
+"Dragon Pulse",
+"Thunderbolt",
+"Surf"
+]
+},
+		"Latias-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Levitate",
+"item": "Leftovers",
+"moves": [
+"Mist Ball",
+"Dragon Pulse",
+"Calm Mind",
+"Safeguard"
+]
+}
+	},
+"Latios": {
+		"Latios-1": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Levitate",
+"item": "Lum Berry",
+"moves": [
+"Dragon Dance",
+"Recover",
+"Dragon Claw",
+"Shadow Claw"
+]
+},
+		"Latios-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Levitate",
+"item": "Expert Belt",
+"moves": [
+"Psychic",
+"Dragon Pulse",
+"Ice Beam",
+"Shadow Ball"
+]
+},
+		"Latios-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "Haban Berry",
+"moves": [
+"Luster Purge",
+"Water Pulse",
+"Dragon Breath",
+"Recover"
+]
+},
+		"Latios-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "White Herb",
+"moves": [
+"Draco Meteor",
+"Psychic",
+"Thunder",
+"Hyper Beam"
+]
+},
+		"Latios-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Levitate",
+"item": "Choice Specs",
+"moves": [
+"Draco Meteor",
+"Surf",
+"Psychic",
+"Thunderbolt"
+]
+},
+		"Latios-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Levitate",
+"item": "White Herb",
+"moves": [
+"Surf",
+"Thunderbolt",
+"Psychic",
+"Draco Meteor"
+]
+}
+	},
+"Leafeon": {
+		"Leafeon-1": {
+			"level": "50",
+"evs": {
+"hp": 220,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 44
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sd": 25,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Chlorophyll",
+"item": "Leftovers",
+"moves": [
+"Synthesis",
+"Leaf Blade",
+"Leech Seed",
+"Yawn"
+]
+},
+		"Leafeon-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Sassy",
+"ability": "Chlorophyll",
+"item": "Shed Shell",
+"moves": [
+"Grass Knot",
+"Aerial Ace",
+"Energy Ball",
+"Bite"
+]
+}
+	},
+"Ledian": {
+		"Ledian-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 108,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Bashful",
+"ability": "Early Bird",
+"item": "Focus Band",
+"moves": [
+"Light Screen",
+"Baton Pass",
+"Swords Dance",
+"Agility"
+]
+}
 	}
 };
