@@ -12096,7 +12096,7 @@ var SETDEX_GEN80_SETS = {
 ]
 }
 	},
-"Lickilicky: {
+"Lickilicky": {
 		"Lickilicky-1": {
 			"level": "50",
 "evs": {
