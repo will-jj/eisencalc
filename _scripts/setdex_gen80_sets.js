@@ -15303,5 +15303,559 @@ var SETDEX_GEN80_SETS = {
 "Taunt"
 ]
 }
+	},
+"Natu": {
+		"Natu-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Relaxed",
+"ability": "Magic Bounce",
+"item": "Twisted Spoon",
+"moves": [
+"Night Shade",
+"Future Sight",
+"Psychic",
+"Flash"
+]
+}
+	},
+"Nidoking": {
+		"Nidoking-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 0,
+"df": 0,
+"sa": 204,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 20,
+"sa": 31,
+"sd": 20,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sheer Force",
+"item": "Life Orb",
+"moves": [
+"Sludge Bomb",
+"Ice Beam",
+"Thunderbolt",
+"Flamethrower"
+]
+},
+		"Nidoking-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sheer Force",
+"item": "Wise Glasses",
+"moves": [
+"Earth Power",
+"Dragon Pulse",
+"Sludge Bomb",
+"Sandstorm"
+]
+},
+		"Nidoking-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Poison Point",
+"item": "Expert Belt",
+"moves": [
+"Earth Power",
+"Sludge Bomb",
+"Ice Beam",
+"Shadow Ball"
+]
+},
+		"Nidoking-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sheer Force",
+"item": "Life Orb",
+"moves": [
+"Sludge Bomb",
+"Earth Power",
+"Blizzard",
+"Thunderbolt"
+]
+}
+	},
+"Nidoqueen": {
+		"Nidoqueen-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 0,
+"df": 0,
+"sa": 204,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 20,
+"sa": 31,
+"sd": 20,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sheer Force",
+"item": "Life Orb",
+"moves": [
+"Sludge Bomb",
+"Ice Beam",
+"Thunderbolt",
+"Flamethrower"
+]
+},
+		"Nidoqueen-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sheer Force",
+"item": "Wide Lens",
+"moves": [
+"Earth Power",
+"Sludge Bomb",
+"Fire Blast",
+"Blizzard"
+]
+},
+		"Nidoqueen-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Brave",
+"ability": "Poison Point",
+"item": "Bright Powder",
+"moves": [
+"Stone Edge",
+"Avalanche",
+"Iron Tail",
+"Aerial Ace"
+]
+}
+	},
+"Nidorina": {
+		"Nidorina-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Poison Point",
+"item": "Focus Band",
+"moves": [
+"Double Kick",
+"Bite",
+"Aerial Ace",
+"Flatter"
+]
+}
+	},
+"Nidorino": {
+		"Nidorino-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Quirky",
+"ability": "Poison Point",
+"item": "Focus Band",
+"moves": [
+"Double Kick",
+"Water Pulse",
+"Toxic Spikes",
+"Flatter"
+]
+}
+	},
+"Ninetales": {
+		"Ninetales-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 0,
+"df": 0,
+"sa": 204,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 20,
+"sa": 31,
+"sd": 20,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Drought",
+"item": "Rawst Berry",
+"moves": [
+"Solar Beam",
+"Disable",
+"Will-O-Wisp",
+"Flamethrower"
+]
+},
+		"Ninetales-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Drought",
+"item": "White Herb",
+"moves": [
+"Solar Beam",
+"Overheat",
+"Psyshock",
+"Nasty Plot"
+]
+},
+		"Ninetales-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Drought",
+"item": "Focus Sash",
+"moves": [
+"Solar Beam",
+"Fire Blast",
+"Hex",
+"Will-O-Wisp"
+]
+},
+		"Ninetales-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Drought",
+"item": "Heat Rock",
+"moves": [
+"Solar Beam",
+"Fire Blast",
+"Hex",
+"Will-O-Wisp"
+]
+}
+	},
+"Ninjask": {
+		"Ninjask-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 10,
+"sd": 10,
+"sp": 31
+},
+"nature": "Mild",
+"ability": "Speed Boost",
+"item": "Petaya Berry",
+"moves": [
+"Baton Pass",
+"Swords Dance",
+"Endure",
+"Dig"
+]
+}
+	},
+"Noctowl": {
+		"Noctowl-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 148,
+"sa": 148,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Relaxed",
+"ability": "Keen Eye",
+"item": "Persim Berry",
+"moves": [
+"Air Slash",
+"Aerial Ace",
+"Psychic",
+"Reflect"
+]
+}
+	},
+"Nosepass": {
+		"Nosepass-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Sassy",
+"ability": "Sturdy",
+"item": "Hard Stone",
+"moves": [
+"Rock Slide",
+"Shock Wave",
+"Thunder Wave",
+"Sandstorm"
+]
+}
+	},
+"Numel": {
+		"Numel-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Hardy",
+"ability": "Oblivious",
+"item": "Lax Incense",
+"moves": [
+"Ember",
+"Earth Power",
+"Rock Tomb",
+"Sandstorm"
+]
+}
+	},
+"Nuzleaf": {
+		"Nuzleaf-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Hardy",
+"ability": "Chlorophyll",
+"item": "Sitrus Berry",
+"moves": [
+"Extrasensory",
+"Fake Out",
+"Razor Leaf",
+"Rock Tomb"
+]
+}
 	}
 };
