@@ -13019,5 +13019,2289 @@ var SETDEX_GEN80_SETS = {
 "Protect"
 ]
 }
+	},
+"Machamp": {
+		"Machamp-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "No Guard",
+"item": "Focus Sash",
+"moves": [
+"Counter",
+"Dynamic Punch",
+"Payback",
+"Earthquake"
+]
+},
+		"Machamp-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "No Guard",
+"item": "Muscle Band",
+"moves": [
+"Rock Slide",
+"Dynamic Punch",
+"Ice Punch",
+"Thunder Punch"
+]
+}
+	},
+"Machoke": {
+		"Machoke-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Guts",
+"item": "Focus Band",
+"moves": [
+"Low Kick",
+"Rock Tomb",
+"Facade",
+"Scary Face"
+]
+}
+	},
+"Machop": {
+		"Machop-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "No Guard",
+"item": "Scope Lens",
+"moves": [
+"Seismic Toss",
+"Revenge",
+"Rock Tomb",
+"Scary Face"
+]
+}
+	},
+"Magby": {
+		"Magby-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Flame Body",
+"item": "Lax Incense",
+"moves": [
+"Fire Punch",
+"Smokescreen",
+"Confuse Ray",
+"Smog"
+]
+}
+	},
+"Magcargo": {
+		"Magcargo-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Gentle",
+"ability": "Flame Body",
+"item": "Lax Incense",
+"moves": [
+"Rock Slide",
+"Ember",
+"Acid Armor",
+"Sandstorm"
+]
+}
+	},
+"Magmar": {
+		"Magmar-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 31,
+"sd": 10,
+"sp": 10
+},
+"nature": "Relaxed",
+"ability": "Flame Body",
+"item": "Rawst Berry",
+"moves": [
+"Flamethrower",
+"Smokescreen",
+"Brick Break",
+"Psychic"
+]
+}
+	},
+"Magmortar": {
+		"Magmortar-1": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 0,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flame Body",
+"item": "Sitrus Berry",
+"moves": [
+"Overheat",
+"Thunderbolt",
+"Psychic",
+"Belch"
+]
+},
+		"Magmortar-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Docile",
+"ability": "Flame Body",
+"item": "Wiki Berry",
+"moves": [
+"Earthquake",
+"Flamethrower",
+"Thunderbolt",
+"Will-O-Wisp"
+]
+},
+		"Magmortar-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flame Body",
+"item": "Choice Specs",
+"moves": [
+"Heat Wave",
+"Psychic",
+"Focus Blast",
+"Fire Blast"
+]
+},
+		"Magmortar-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flame Body",
+"item": "Sitrus Berry",
+"moves": [
+"Heat Wave",
+"Psychic",
+"Focus Blast",
+"Fire Blast"
+]
+}
+},
+"Magnemite": {
+		"Magnemite-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Modest",
+"ability": "Sturdy",
+"item": "Rawst Berry",
+"moves": [
+"Shock Wave",
+"Supersonic",
+"Metal Sound",
+"Reflect"
+]
+}
+	},
+"Magnezone": {
+		"Magnezone-1": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 0,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sturdy",
+"item": "Quick Claw",
+"moves": [
+"Thunderbolt",
+"Flash Cannon",
+"Tri Attack",
+"Volt Switch"
+]
+},
+		"Magnezone-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sturdy",
+"item": "Bright Powder",
+"moves": [
+"Body Press",
+"Thunderbolt",
+"Volt Switch",
+"Flash Cannon"
+]
+},
+		"Magnezone-3": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sturdy",
+"item": "Custap Berry",
+"moves": [
+"Thunderbolt",
+"Flash Cannon",
+"Body Press",
+"Tri Attack"
+]
+},
+		"Magnezone-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sturdy",
+"item": "Custap Berry",
+"moves": [
+"Thunderbolt",
+"Flash Cannon",
+"Volt Switch",
+"Body Press"
+]
+}
+	},
+"Mamoswine": {
+		"Mamoswine-1": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 0,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Snow Cloak",
+"item": "Icy Rock",
+"moves": [
+"Hail",
+"Blizzard",
+"Mud Shot",
+"Ancient Power"
+]
+},
+		"Mamoswine-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Thick Fat",
+"item": "Leftovers",
+"moves": [
+"Fissure",
+"Double Team",
+"Avalanche",
+"Earthquake"
+]
+},
+		"Mamoswine-3": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Thick Fat",
+"item": "Focus Sash",
+"moves": [
+"Earthquake",
+"Icicle Spear",
+"Ice Shard",
+"Rock Tomb"
+]
+},
+		"Mamoswine-4": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Snow Cloak",
+"item": "Lax Incense",
+"moves": [
+"Earthquake",
+"Icicle Spear",
+"Ice Shard",
+"Rock Tomb"
+]
+},
+		"Mamoswine-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Thick Fat",
+"item": "Focus Sash",
+"moves": [
+"Earthquake",
+"Icicle Spear",
+"Rock Tomb",
+"Ice Shard"
+]
+}
+	},
+"Manectric": {
+		"Manectric-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Lightning Rod",
+"item": "Magnet",
+"moves": [
+"Spark",
+"Ice Fang",
+"Bite",
+"Howl"
+]
+},
+		"Manectric-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Lightning Rod",
+"item": "Shuca Berry",
+"moves": [
+"Thunderbolt",
+"Overheat",
+"Roar",
+"Thunder Wave"
+]
+},
+		"Manectric-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Lightning Rod",
+"item": "Damp Rock",
+"moves": [
+"Rain Dance",
+"Thunder",
+"Thunder Wave",
+"Hyper Beam"
+]
+}
+	},
+"Mantine": {
+		"Mantine-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 10,
+"df": 10,
+"sa": 31,
+"sd": 10,
+"sp": 31
+},
+"nature": "Docile",
+"ability": "Swift Swim",
+"item": "Mystic Water",
+"moves": [
+"Bubble Beam",
+"Aerial Ace",
+"Rain Dance",
+"Psybeam"
+]
+}
+	},
+"Mantyke": {
+		"Mantyke-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Swift Swim",
+"item": "Bright Powder",
+"moves": [
+"Bubble Beam",
+"Agility",
+"Aqua Ring",
+"Air Slash"
+]
+}
+	},
+"Marowak": {
+		"Marowak-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Battle Armor",
+"item": "Thick Club",
+"moves": [
+"Brick Break",
+"Earthquake",
+"Rock Tomb",
+"Iron Head"
+]
+},
+		"Marowak-2": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sd": 25,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Battle Armor",
+"item": "Thick Club",
+"moves": [
+"Earthquake",
+"Double-Edge",
+"Aerial Ace",
+"Brick Break"
+]
+},
+		"Marowak-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Battle Armor",
+"item": "Thick Club",
+"moves": [
+"Thunder Punch",
+"Stone Edge",
+"Earthquake",
+"Low Kick"
+]
+}
+	},
+"Marshtomp": {
+		"Marshtomp-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Hardy",
+"ability": "Torrent",
+"item": "Focus Band",
+"moves": [
+"Mud Shot",
+"Water Gun",
+"Rock Tomb",
+"Mud-Slap"
+]
+}
+	},
+"Masquerain": {
+		"Masquerain-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Intimidate",
+"item": "Sitrus Berry",
+"moves": [
+"Hydro Pump",
+"Air Slash",
+"Bug Buzz",
+"Stun Spore"
+]
+}
+	},
+"Mawile": {
+		"Mawile-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Bright Powder",
+"moves": [
+"Crunch",
+"Fake Tears",
+"Iron Defense",
+"Baton Pass"
+]
+}
+	},
+"Medicham": {
+		"Medicham-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Pure Power",
+"item": "Focus Band",
+"moves": [
+"High Jump Kick",
+"Thunder Punch",
+"Ice Punch",
+"Fire Punch"
+]
+},
+		"Medicham-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Pure Power",
+"item": "Salac Berry",
+"moves": [
+"Endure",
+"Reversal",
+"Psycho Cut",
+"Thunder Punch"
+]
+},
+		"Medicham-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Pure Power",
+"item": "Choice Scarf",
+"moves": [
+"High Jump Kick",
+"Thunder Punch",
+"Zen Headbutt",
+"Ice Punch"
+]
+}
+	},
+"Meganium": {
+		"Meganium-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 148,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 15,
+"sa": 31,
+"sd": 31,
+"sp": 15
+},
+"nature": "Calm",
+"ability": "Overgrow",
+"item": "Leftovers",
+"moves": [
+"Giga Drain",
+"Leech Seed",
+"Synthesis",
+"Substitute"
+]
+},
+		"Meganium-2": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 0,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Overgrow",
+"item": "Occa Berry",
+"moves": [
+"Solar Beam",
+"Sunny Day",
+"Synthesis",
+"Ancient Power"
+]
+},
+		"Meganium-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Overgrow",
+"item": "Light Clay",
+"moves": [
+"Leech Seed",
+"Leaf Storm",
+"Light Screen",
+"Reflect"
+]
+		}
+	},
+"Metagross": {
+		"Metagross-1": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sd": 25,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Clear Body",
+"item": "Occa Berry",
+"moves": [
+"Magnet Rise",
+"Rock Polish",
+"Zen Headbutt",
+"Meteor Mash"
+]
+},
+		"Metagross-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Clear Body",
+"item": "Wise Glasses",
+"moves": [
+"Psychic",
+"Flash Cannon",
+"Shadow Ball",
+"Sludge Bomb"
+]
+},
+		"Metagross-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 68,
+"sa": 0,
+"sd": 4,
+"sp": 180
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Clear Body",
+"item": "Figy Berry",
+"moves": [
+"Ice Punch",
+"Bullet Punch",
+"Zen Headbutt",
+"Meteor Mash"
+]
+},
+		"Metagross-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Clear Body",
+"item": "Sitrus Berry",
+"moves": [
+"Meteor Mash",
+"Earthquake",
+"Ice Punch",
+"Bullet Punch"
+]
+},
+		"Metagross-5": {
+			"level": "50",
+"evs": {
+"hp": 52,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Clear Body",
+"item": "Sitrus Berry",
+"moves": [
+"Meteor Mash",
+"Zen Headbutt",
+"Earthquake",
+"Agility"
+]
+},
+		"Metagross-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Clear Body",
+"item": "Lum Berry",
+"moves": [
+"Meteor Mash",
+"Zen Headbutt",
+"Ice Punch",
+"Bullet Punch"
+]
+},
+"Metagross-7": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Clear Body",
+"item": "Sitrus Berry",
+"moves": [
+"Ice Punch",
+"Bullet Punch",
+"Zen Headbutt",
+"Meteor Mash"
+]
+}
+	},
+"Metang": {
+		"Metang-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Hardy",
+"ability": "Clear Body",
+"item": "Focus Band",
+"moves": [
+"Metal Claw",
+"Confusion",
+"Take Down",
+"Scary Face"
+]
+}
+	},
+"Mightyena": {
+		"Mighyena-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Intimidate",
+"item": "Mental Herb",
+"moves": [
+"Bite",
+"Poison Fang",
+"Taunt",
+"Roar"
+]
+}
+	},
+"Milotic": {
+		"Milotic-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 148,
+"sa": 148,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 10,
+"sp": 10
+},
+"nature": "Bold",
+"ability": "Marvel Scale",
+"item": "Salac Berry",
+"moves": [
+"Dragon Pulse",
+"Hypnosis",
+"Hydro Pump",
+"Recover"
+]
+},
+		"Milotic-2": {
+			"level": "50",
+"evs": {
+"hp": 36,
+"at": 0,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Competitive",
+"item": "Salac Berry",
+"moves": [
+"Hydro Pump",
+"Ice Beam",
+"Recover",
+"Hypnosis"
+]
+},
+		"Milotic-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Cute Charm",
+"item": "Leftovers",
+"moves": [
+"Surf",
+"Ice Beam",
+"Aqua Ring",
+"Haze"
+]
+},
+		"Milotic-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Marvel Scale",
+"item": "Flame Orb",
+"moves": [
+"Scald",
+"Icy Wind",
+"Mirror Coat",
+"Recover"
+]
+},
+		"Milotic-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Competitive",
+"item": "Sitrus Berry",
+"moves": [
+"Muddy Water",
+"Ice Beam",
+"Dragon Pulse",
+"Recover"
+]
+}
+	},
+"Miltank": {
+		"Miltank-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 204,
+"df": 60,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 20,
+"sp": 20
+},
+"nature": "Impish",
+"ability": "Thick Fat",
+"item": "Muscle Band",
+"moves": [
+"Defense Curl",
+"Rollout",
+"Milk Drink",
+"Seismic Toss"
+]
+},
+		"Miltank-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Scrappy",
+"item": "Silk Scarf",
+"moves": [
+"Body Slam",
+"Giga Impact",
+"Earthquake",
+"Milk Drink"
+]
+},
+		"Miltank-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Scrappy",
+"item": "Salac Berry",
+"moves": [
+"Endure",
+"Reversal",
+"Milk Drink",
+"Rock Slide"
+]
+}
+	},
+"Mime Jr.": {
+		"Mime Jr.": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Bold",
+"ability": "Soundproof",
+"item": "Lax Incense",
+"moves": [
+"Copycat",
+"Confusion",
+"Reflect",
+"Light Screen"
+]
+}
+	},
+"Minun": {
+		"Minun-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Docile",
+"ability": "Minus",
+"item": "Salac Berry",
+"moves": [
+"Spark",
+"Charm",
+"Encore",
+"Helping Hand"
+]
+}
+	},
+"Misdreavus": {
+		"Misdreavus-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 108,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Impish",
+"ability": "Levitate",
+"item": "Focus Band",
+"moves": [
+"Pain Split",
+"Shadow Ball",
+"Confuse Ray",
+"Thunder Wave"
+]
+}
+	},
+"Mismagius": {
+		"Mismagius-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 0,
+"df": 0,
+"sa": 60,
+"sd": 204,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 20,
+"sd": 31,
+"sp": 20
+},
+"nature": "Calm",
+"ability": "Levitate",
+"item": "Colbur Berry",
+"moves": [
+"Psychic",
+"Confuse Ray",
+"Perish Song",
+"Mean Look"
+]
+},
+		"Mismagius-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Levitate",
+"item": "Leftovers",
+"moves": [
+"Shadow Ball",
+"Dark Pulse",
+"Charge Beam",
+"Imprison"
+]
+},
+		"Mismagius-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Relaxed",
+"ability": "Levitate",
+"item": "Spell Tag",
+"moves": [
+"Shadow Ball",
+"Payback",
+"Energy Ball",
+"Psychic"
+]
+},
+		"Mismagius-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Levitate",
+"item": "Bright Powder",
+"moves": [
+"Shadow Ball",
+"Mystical Fire",
+"Thunderbolt",
+"Nasty Plot"
+]
+}
+	},
+"Moltres": {
+		"Moltres-1": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Flame Body",
+"item": "Heat Rock",
+"moves": [
+"Sunny Day",
+"Flamethrower",
+"Solar Beam",
+"Endure"
+]
+},
+		"Moltres-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Flame Body",
+"item": "King's Rock",
+"moves": [
+"Air Slash",
+"Agility",
+"Heat Wave",
+"Will-O-Wisp"
+]
+},
+		"Moltres-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flame Body",
+"item": "Bright Powder",
+"moves": [
+"Overheat",
+"Sky Attack",
+"Fire Blast",
+"U-turn"
+]
+},
+		"Moltres-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Pressure",
+"item": "Bright Powder",
+"moves": [
+"Roost",
+"Air Slash",
+"Will-O-Wisp",
+"Double Team"
+]
+}
+	},
+"Monferno": {
+		"Monferno-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Hardy",
+"ability": "Blaze",
+"item": "Coba Berry",
+"moves": [
+"Mach Punch",
+"Feint",
+"Torment",
+"U-turn"
+]
+}
+	},
+"Mothim": {
+		"Mothim-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Tinted Lens",
+"item": "Coba Berry",
+"moves": [
+"Psybeam",
+"Gust",
+"Poison Powder",
+"Bug Buzz"
+]
+}
+	},
+"Mr. Mime": {
+		"Mr. Mime-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 148,
+"sa": 148,
+"sd": 4,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 31,
+"sa": 31,
+"sd": 15,
+"sp": 15
+},
+"nature": "Bold",
+"ability": "Filter",
+"item": "Sitrus Berry",
+"moves": [
+"Psychic",
+"Reflect",
+"Light Screen",
+"Mimic"
+]
+},
+		"Mr. Mime-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 4,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Calm",
+"ability": "Filter",
+"item": "Light Clay",
+"moves": [
+"Psybeam",
+"Reflect",
+"Light Screen",
+"Role Play"
+]
+},
+		"Mr. Mime-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Filter",
+"item": "Light Clay",
+"moves": [
+"Psychic",
+"Light Screen",
+"Reflect",
+"Thunder Wave"
+]
+},
+		"Mr. Mime-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Filter",
+"item": "Light Clay",
+"moves": [
+"Psychic",
+"Dazzling Gleam",
+"Reflect",
+"Light Screen"
+]
+}
+	},
+"Mudkip": {
+		"Mudkip-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Docile",
+"ability": "Torrent",
+"item": "Rindo Berry",
+"moves": [
+"Water Pulse",
+"Endeavor",
+"Rock Slide",
+"Dig"
+]
+},
+		"Mudkip-2": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Torrent",
+"item": "Rindo Berry",
+"moves": [
+"Rock Slide",
+"Dig",
+"Avalanche",
+"Waterfall"
+]
+}
+	},
+"Muk": {
+		"Muk-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 60,
+"df": 204,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 20,
+"sp": 20
+},
+"nature": "Impish",
+"ability": "Poison Touch",
+"item": "Black Sludge",
+"moves": [
+"Poison Jab",
+"Minimize",
+"Acid Armor",
+"Brick Break"
+]
+},
+		"Muk-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Poison Touch",
+"item": "Focus Sash",
+"moves": [
+"Gunk Shot",
+"Brick Break",
+"Shadow Punch",
+"Rock Slide"
+]
+},
+		"Muk-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Poison Touch",
+"item": "Quick Claw",
+"moves": [
+"Gunk Shot",
+"Fling",
+"Explosion",
+"Shadow Punch"
+]
+}
+	},
+"Munchlax": {
+		"Munchlax-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Relaxed",
+"ability": "Gluttony",
+"item": "Figy Berry",
+"moves": [
+"Metronome",
+"Recycle",
+"Stockpile",
+"Fissure"
+]
+}
+	},
+"Murkrow": {
+		"Murkrow-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Prankster",
+"item": "Wacan Berry",
+"moves": [
+"Dark Pulse",
+"Fly",
+"Torment",
+"Taunt"
+]
+}
 	}
 };
