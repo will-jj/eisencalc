@@ -15857,5 +15857,183 @@ var SETDEX_GEN80_SETS = {
 "Rock Tomb"
 ]
 }
+	},
+"Octillery": {
+		"Octillery-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 10,
+"df": 10,
+"sa": 31,
+"sd": 10,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Moody",
+"item": "Leftovers",
+"moves": [
+"Octazooka",
+"Ice Beam",
+"Psychic",
+"Protect"
+]
+}
+	},
+"Oddish": {
+		"Oddish-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Relaxed",
+"ability": "Chlorophyll",
+"item": "Pecha Berry",
+"moves": [
+"Acid",
+"Stun Spore",
+"Sweet Scent",
+"Moonlight"
+]
+}
+	},
+"Omanyte": {
+		"Omanyte-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Quirky",
+"ability": "Shell Armor",
+"item": "Sitrus Berry",
+"moves": [
+"Mud Shot",
+"Water Gun",
+"Ancient Power",
+"Tickle"
+]
+}
+	},
+"Omastar": {
+		"Omastar-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 31,
+"sd": 10,
+"sp": 10
+},
+"nature": "Quirky",
+"ability": "Swift Swim",
+"item": "Shell Bell",
+"moves": [
+"Bubble Beam",
+"Rock Blast",
+"Tickle",
+"Ancient Power"
+]
+},
+		"Omastar-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 0
+},
+"nature": "Quiet",
+"ability": "Shell Armor",
+"item": "Choice Specs",
+"moves": [
+"Hydro Pump",
+"Ice Beam",
+"Ancient Power",
+"Surf"
+]
+}
+	},
+"Onix": {
+		"Onix-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Sitrus Berry",
+"moves": [
+"Rock Slide",
+"Bind",
+"Dragon Breath",
+"Sandstorm"
+]
+}
 	}
 };
