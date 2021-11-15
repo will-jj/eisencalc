@@ -22571,4 +22571,1356 @@ var SETDEX_GEN80_SETS = {
 ]
 }
 	},
+"Tangela": {
+		"Tangela-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 108,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Hardy",
+"ability": "Regenerator",
+"item": "Lax Incense",
+"moves": [
+"Mega Drain",
+"Slam",
+"Leech Seed",
+"Bind"
+]
+}
+	},
+"Tangrowth": {
+		"Tangrowth-1": {
+			"level": "50",
+"evs": {
+"hp": 220,
+"at": 0,
+"df": 0,
+"sa": 44,
+"sd": 220,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 25,
+"sa": 31,
+"sd": 31,
+"sp": 25
+},
+"nature": "Calm",
+"ability": "Regenerator",
+"item": "Big Root",
+"moves": [
+"Leech Seed",
+"Double Team",
+"Stun Spore",
+"Giga Drain"
+]
+},
+		"Tangrowth-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Impish",
+"ability": "Regenerator",
+"item": "Leftovers",
+"moves": [
+"Knock Off",
+"Rock Tomb",
+"Leech Seed",
+"Poison Jab"
+]
+},
+		"Tangrowth-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Regenerator",
+"item": "Occa Berry",
+"moves": [
+"Giga Drain",
+"Sludge Bomb",
+"Focus Blast",
+"Sleep Powder"
+]
+},
+		"Tangrowth-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Regenerator",
+"item": "Leftovers",
+"moves": [
+"Giga Drain",
+"Rage Powder",
+"Sludge Bomb",
+"Focus Blast"
+]
+}
+	},
+"Tauros": {
+		"Tauros-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Intimidate",
+"item": "Lum Berry",
+"moves": [
+"Thrash",
+"Zen Headbutt",
+"Earthquake",
+"Giga Impact"
+]
+},
+		"Tauros-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Leftovers",
+"moves": [
+"Double-Edge",
+"Payback",
+"Stone Edge",
+"Substitute"
+]
+},
+		"Tauros-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Intimidate",
+"item": "Chesto Berry",
+"moves": [
+"Earthquake",
+"Facade",
+"Iron Tail",
+"Rest"
+]
+}
+	},
+"Teddiursa": {
+		"Teddiursa-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Relaxed",
+"ability": "Pickup",
+"item": "Chesto Berry",
+"moves": [
+"Lick",
+"Fake Tears",
+"Brick Break",
+"Rest"
+]
+}
+	},
+"Tentacool": {
+		"Tentacool-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Liquid Ooze",
+"item": "Pecha Berry",
+"moves": [
+"Bubble Beam",
+"Acid",
+"Sludge Bomb",
+"Wrap"
+]
+}
+	},
+"Tentacruel": {
+		"Tentacruel-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 0,
+"df": 0,
+"sa": 60,
+"sd": 204,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 20,
+"sa": 31,
+"sd": 31,
+"sp": 20
+},
+"nature": "Calm",
+"ability": "Liquid Ooze",
+"item": "Leftovers",
+"moves": [
+"Acupressure",
+"Rest",
+"Sleep Talk",
+"Surf"
+]
+},
+		"Tentacruel-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 4,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Calm",
+"ability": "Clear Body",
+"item": "Black Sludge",
+"moves": [
+"Surf",
+"Sludge Bomb",
+"Giga Drain",
+"Mirror Coat"
+]
+}
+	},
+"Togekiss": {
+		"Togekiss-1": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 220,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 0,
+"sd": 25,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Hustle",
+"item": "Wide Lens",
+"moves": [
+"Extreme Speed",
+"Aerial Ace",
+"Steel Wing",
+"Roost"
+]
+},
+		"Togekiss-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Serene Grace",
+"item": "Leftovers",
+"moves": [
+"Thunder Wave",
+"Double Team",
+"Substitute",
+"Air Slash"
+]
+},
+		"Togekiss-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Serene Grace",
+"item": "Choice Scarf",
+"moves": [
+"Air Slash",
+"Dazzling Gleam",
+"Grass Knot",
+"Fire Blast"
+]
+},
+		"Togekiss-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Serene Grace",
+"item": "Leftovers",
+"moves": [
+"Thunder Wave",
+"Air Slash",
+"Roost",
+"Mystical Fire"
+]
+}
+	},
+"Togetic": {
+		"Togetic-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Relaxed",
+"ability": "Serene Grace",
+"item": "Lax Incense",
+"moves": [
+"Aerial Ace",
+"Dazzling Gleam",
+"Wish",
+"Follow Me"
+]
+}
+	},
+"Torchic": {
+		"Torchic-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Blaze",
+"item": "Shuca Berry",
+"moves": [
+"Flame Charge",
+"Quick Attack",
+"Sand Attack",
+"Double Team"
+]
+},
+		"Torchic-2": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Blaze",
+"item": "Sitrus Berry",
+"moves": [
+"Will-O-Wisp",
+"Feather Dance",
+"Double Team",
+"Flamethrower"
+]
+}
+	},
+"Torkoal": {
+		"Torkoal-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 148,
+"sa": 0,
+"sd": 148,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 10,
+"df": 31,
+"sa": 10,
+"sd": 31,
+"sp": 10
+},
+"nature": "Relaxed",
+"ability": "Drought",
+"item": "Sitrus Berry",
+"moves": [
+"Lava Plume",
+"Earthquake",
+"Stealth Rock",
+"Yawn"
+]
+}
+	},
+"Torterra": {
+		"Torterra-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 148,
+"sd": 4,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 31,
+"sd": 15,
+"sp": 15
+},
+"nature": "Serious",
+"ability": "Overgrow",
+"item": "Heat Rock",
+"moves": [
+"Sunny Day",
+"Synthesis",
+"Solar Beam",
+"Stone Edge"
+]
+},
+		"Torterra-2": {
+			"level": "50",
+"evs": {
+"hp": 220,
+"at": 44,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 0
+},
+"nature": "Quiet",
+"ability": "Overgrow",
+"item": "White Herb",
+"moves": [
+"Leaf Storm",
+"Worry Seed",
+"Earthquake",
+"Bite"
+]
+},
+		"Torterra-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Overgrow",
+"item": "Bright Powder",
+"moves": [
+"Frenzy Plant",
+"Double Team",
+"Hyper Beam",
+"Leech Seed"
+]
+},
+		"Torterra-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Shell Armor",
+"item": "Figy Berry",
+"moves": [
+"Wood Hammer",
+"Crunch",
+"Earthquake",
+"Rock Slide"
+]
+},
+		"Torterra-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Impish",
+"ability": "Shell Armor",
+"item": "Leftovers",
+"moves": [
+"Leech Seed",
+"Wood Hammer",
+"Crunch",
+"Synthesis"
+]
+}
+	},
+"Totodile": {
+		"Totodile-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Bashful",
+"ability": "Torrent",
+"item": "Scope Lens",
+"moves": [
+"Slash",
+"Water Pulse",
+"Screech",
+"Scary Face"
+]
+},
+		"Totodile-2": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Torrent",
+"item": "Wacan Berry",
+"moves": [
+"Waterfall",
+"Aerial Ace",
+"Slash",
+"Screech"
+]
+}
+	},
+"Toxicroak": {
+		"Toxicroak-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Dry Skin",
+"item": "Black Glasses",
+"moves": [
+"Poison Jab",
+"Drain Punch",
+"Sucker Punch",
+"Flatter"
+]
+},
+		"Toxicroak-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Dry Skin",
+"item": "Light Ball",
+"moves": [
+"Fling",
+"Poison Jab",
+"Taunt",
+"Sucker Punch"
+]
+},
+		"Toxicroak-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Poison Touch",
+"item": "Scope Lens",
+"moves": [
+"Poison Jab",
+"X-Scissor",
+"Giga Impact",
+"Focus Blast"
+]
+},
+		"Toxicroak-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Poison Touch",
+"item": "Muscle Band",
+"moves": [
+"Poison Jab",
+"Cross Chop",
+"Fake Out",
+"Bullet Punch"
+]
+}
+	},
+"Treecko": {
+		"Treecko-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Quirky",
+"ability": "Overgrow",
+"item": "Big Root",
+"moves": [
+"Mega Drain",
+"Aerial Ace",
+"Flash",
+"Double Team"
+]
+},
+		"Treecko-2": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Overgrow",
+"item": "Focus Sash",
+"moves": [
+"Mega Drain",
+"Endeavor",
+"Brick Break",
+"Rock Slide"
+]
+}
+	},
+"Tropius": {
+		"Tropius-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 10,
+"sd": 10,
+"sp": 31
+},
+"nature": "Hardy",
+"ability": "Chlorophyll",
+"item": "Sitrus Berry",
+"moves": [
+"Magical Leaf",
+"Whirlwind",
+"Aerial Ace",
+"Steel Wing"
+]
+}
+	},
+"Turtwig": {
+		"Turtwig-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Overgrow",
+"item": "Occa Berry",
+"moves": [
+"Grass Knot",
+"Bite",
+"Curse",
+"Withdraw"
+]
+},
+		"Turtwig-2": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Impish",
+"ability": "Overgrow",
+"item": "Leftovers",
+"moves": [
+"Razor Leaf",
+"Curse",
+"Leech Seed",
+"Synthesis"
+]
+}
+	},
+"Typhlosion": {
+		"Typhlosion-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 15,
+"sa": 31,
+"sd": 15,
+"sp": 31
+},
+"nature": "Hardy",
+"ability": "Blaze",
+"item": "Wide Lens",
+"moves": [
+"Will-O-Wisp",
+"Focus Blast",
+"Double Team",
+"Fire Blast"
+]
+},
+		"Typhlosion-2": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 44,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Docile",
+"ability": "Blaze",
+"item": "Salac Berry",
+"moves": [
+"Eruption",
+"Earthquake",
+"Endure",
+"Reversal"
+]
+},
+		"Typhlosion-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Blaze",
+"item": "Shuca Berry",
+"moves": [
+"Flare Blitz",
+"Earthquake",
+"Shadow Claw",
+"Aerial Ace"
+]
+}
+	},
+"Tyranitar": {
+		"Tyranitar-1": {
+			"level": "50",
+"evs": {
+"hp": 44,
+"at": 0,
+"df": 0,
+"sa": 220,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sand Stream",
+"item": "Expert Belt",
+"moves": [
+"Dark Pulse",
+"Ice Beam",
+"Flamethrower",
+"Ancient Power"
+]
+},
+		"Tyranitar-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sand Stream",
+"item": "Quick Claw",
+"moves": [
+"Earthquake",
+"Dragon Claw",
+"Shadow Claw",
+"Iron Head"
+]
+},
+		"Tyranitar-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Sand Stream",
+"item": "Expert Belt",
+"moves": [
+"Dragon Dance",
+"Stone Edge",
+"Ice Punch",
+"Thunder Punch"
+]
+},
+		"Tyranitar-4": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 4,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Sand Stream",
+"item": "Focus Sash",
+"moves": [
+"Dragon Dance",
+"Rock Slide",
+"Crunch",
+"Ice Punch"
+]
+},
+		"Tyranitar-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Impish",
+"ability": "Sand Stream",
+"item": "Smooth Rock",
+"moves": [
+"Stealth Rock",
+"Thunder Wave",
+"Rock Tomb",
+"Crunch"
+]
+},
+		"Tyranitar-6": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Sand Stream",
+"item": "Choice Scarf",
+"moves": [
+"Ice Punch",
+"Rock Slide",
+"Fire Punch",
+"Earthquake"
+]
+},
+		"Tyranitar-7": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sand Stream",
+"item": "Chople Berry",
+"moves": [
+"Rock Slide",
+"Ice Punch",
+"Fire Punch",
+"Low Kick"
+]
+},
+		"Tyranitar-8": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Sand Stream",
+"item": "Choice Scarf",
+"moves": [
+"Ice Punch",
+"Rock Slide",
+"Fire Punch",
+"Earthquake"
+]
+}
+	},
 };
