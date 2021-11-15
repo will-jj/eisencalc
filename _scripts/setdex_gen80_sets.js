@@ -16035,5 +16035,1231 @@ var SETDEX_GEN80_SETS = {
 "Sandstorm"
 ]
 }
+	},
+"Pachirisu": {
+		"Pachirisu-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Volt Absorb",
+"item": "Shuca Berry",
+"moves": [
+"Discharge",
+"Sweet Kiss",
+"Quick Attack",
+"Nuzzle"
+]
+}
+	},
+"Parasect": {
+		"Parasect-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Rash",
+"ability": "Effect Spore",
+"item": "Sticky Barb",
+"moves": [
+"Slash",
+"Psybeam",
+"Spore",
+"Flash"
+]
+}
+	},
+"Pelipper": {
+		"Pelipper-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Quiet",
+"ability": "Drizzle",
+"item": "Sitrus Berry",
+"moves": [
+"Water Pulse",
+"Aerial Ace",
+"Stockpile",
+"Swallow"
+]
+},
+		"Pelipper-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Drizzle",
+"item": "Choice Scarf",
+"moves": [
+"Hydro Pump",
+"Ice Beam",
+"Hurricane",
+"U-turn"
+]
+},
+		"Pelipper-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Drizzle",
+"item": "Damp Rock",
+"moves": [
+"Hydro Pump",
+"Ice Beam",
+"Hurricane",
+"U-turn"
+]
+},
+		"Pelipper-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Drizzle",
+"item": "Choice Scarf",
+"moves": [
+"Hydro Pump",
+"Hurricane",
+"Ice Beam",
+"U-turn"
+]
+}
+	},
+"Persian": {
+		"Persian-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Quirky",
+"ability": "Technician",
+"item": "Silk Scarf",
+"moves": [
+"Fake Out",
+"Slash",
+"Torment",
+"Swagger"
+]
+}
+	},
+"Phanpy": {
+		"Phanpy-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Pickup",
+"item": "Lax Incense",
+"moves": [
+"Rollout",
+"Defense Curl",
+"Rock Tomb",
+"Sandstorm"
+]
+}
+	},
+"Pidgeot": {
+		"Pidgeot-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 10,
+"sd": 10,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Big Pecks",
+"item": "Sharp Beak",
+"moves": [
+"U-turn",
+"Feather Dance",
+"Brave Bird",
+"Quick Attack"
+]
+}
+	},
+"Pidgeotto": {
+		"Pidgeotto-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Big Pecks",
+"item": "White Herb",
+"moves": [
+"Aerial Ace",
+"Quick Attack",
+"Feather Dance",
+"Sand Attack"
+]
+}
+	},
+"Pikachu": {
+		"Pikachu-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 15,
+"at": 31,
+"df": 15,
+"sa": 0,
+"sd": 15,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Lightning Rod",
+"item": "Light Ball",
+"moves": [
+"Spark",
+"Brick Break",
+"Iron Tail",
+"Quick Attack"
+]
+}
+	},
+"Piloswine": {
+		"Piloswine-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 148,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Thick Fat",
+"item": "Soft Sand",
+"moves": [
+"Rock Tomb",
+"Earthquake",
+"Ice Shard",
+"Light Screen"
+]
+}
+	},
+"Pinsir": {
+		"Pinsir-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Mold Breaker",
+"item": "Toxic Orb",
+"moves": [
+"Facade",
+"Guillotine",
+"Earthquake",
+"Swords Dance"
+]
+},
+		"Pinsir-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Mold Breaker",
+"item": "Bright Powder",
+"moves": [
+"Bulk Up",
+"Earthquake",
+"X-Scissor",
+"Stone Edge"
+]
+},
+		"Pinsir-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Hyper Cutter",
+"item": "Salac Berry",
+"moves": [
+"Endure",
+"Flail",
+"X-Scissor",
+"Superpower"
+]
+}
+	},
+"Piplup": {
+		"Piplup-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Lax",
+"ability": "Torrent",
+"item": "Wacan Berry",
+"moves": [
+"Bubble Beam",
+"Peck",
+"Growl",
+"Mist"
+]
+},
+		"Piplup-2": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Torrent",
+"item": "Wacan Berry",
+"moves": [
+"Brine",
+"Ice Beam",
+"Grass Knot",
+"Scald"
+]
+}
+	},
+"Plusle": {
+		"Plusle-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Docile",
+"ability": "Plus",
+"item": "Petaya Berry",
+"moves": [
+"Spark",
+"Fake Tears",
+"Quick Attack",
+"Helping Hand"
+]
+}
+	},
+"Politoed": {
+		"Politoed-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 60,
+"df": 204,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 20,
+"sp": 20
+},
+"nature": "Impish",
+"ability": "Drizzle",
+"item": "Quick Claw",
+"moves": [
+"Perish Song",
+"Ice Beam",
+"Surf",
+"Hypnosis"
+]
+},
+		"Aerodactyl-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Drizzle",
+"item": "Bright Powder",
+"moves": [
+"Surf",
+"Focus Blast",
+"Ice Beam",
+"Perish Song"
+]
+},
+		"Politoed-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Drizzle",
+"item": "Salac Berry",
+"moves": [
+"Belly Drum",
+"Waterfall",
+"Earthquake",
+"Rest"
+]
+},
+		"Politoed-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Calm",
+"ability": "Drizzle",
+"item": "Eject Button",
+"moves": [
+"Scald",
+"Ice Beam",
+"Earth Power",
+"Perish Song"
+]
+}
+	},
+"Poliwhirl": {
+		"Poliwhirl-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Quirky",
+"ability": "Water Absorb",
+"item": "Petaya Berry",
+"moves": [
+"Water Pulse",
+"Earth Power",
+"Hypnosis",
+"Rain Dance"
+]
+}
+	},
+"Poliwrath": {
+		"Poliwrath-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 0,
+"df": 0,
+"sa": 204,
+"sd": 0,
+"sp": 60
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 20,
+"sa": 31,
+"sd": 20,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Water Absorb",
+"item": "Rindo Berry",
+"moves": [
+"Hydro Pump",
+"Ice Beam",
+"Focus Blast",
+"Mind Reader"
+]
+},
+		"Poliwrath-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Water Absorb",
+"item": "Quick Claw",
+"moves": [
+"Waterfall",
+"Brick Break",
+"Earthquake",
+"Hypnosis"
+]
+},
+		"Poliwrath-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Water Absorb",
+"item": "King's Rock",
+"moves": [
+"Focus Punch",
+"Strength",
+"Giga Impact",
+"Earthquake"
+]
+}
+	},
+"Ponyta": {
+		"Ponyta-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Flame Body",
+"item": "Passho Berry",
+"moves": [
+"Flame Charge",
+"Iron Tail",
+"Take Down",
+"Tail Whip"
+]
+}
+	},
+"Poyrgon": {
+		"Porygon-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Relaxed",
+"ability": "Download",
+"item": "Sitrus Berry",
+"moves": [
+"Psybeam",
+"Tri Attack",
+"Recycle",
+"Agility"
+]
+}
+	},
+"Porygon-Z": {
+		"Porygon-Z-1": {
+			"level": "50",
+"evs": {
+"hp": 36,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 220
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 25,
+"sa": 31,
+"sd": 25,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Download",
+"item": "Choice Specs",
+"moves": [
+"Tri Attack",
+"Shadow Ball",
+"Ice Beam",
+"Thunderbolt"
+]
+},
+		"Porygon-Z-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Download",
+"item": "Bright Powder",
+"moves": [
+"Thunderbolt",
+"Ice Beam",
+"Shadow Ball",
+"Tri Attack"
+]
+},
+		"Porygon-Z-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Adaptability",
+"item": "Choice Scarf",
+"moves": [
+"Tri Attack",
+"Ice Beam",
+"Thunderbolt",
+"Dark Pulse"
+]
+},
+		"Porygon-Z-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Download",
+"item": "Choice Specs",
+"moves": [
+"Discharge",
+"Hyper Beam",
+"Ice Beam",
+"Dark Pulse"
+]
+}
+	},
+"Porygon2": {
+		"Porygon2-1": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 0,
+"df": 0,
+"sa": 60,
+"sd": 204,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 20,
+"sa": 31,
+"sd": 31,
+"sp": 20
+},
+"nature": "Calm",
+"ability": "Analytic",
+"item": "Leftovers",
+"moves": [
+"Magnet Rise",
+"Conversion",
+"Recover",
+"Charge Beam"
+]
+},
+		"Porygon2-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Trace",
+"item": "Wise Glasses",
+"moves": [
+"Ice Beam",
+"Defense Curl",
+"Recover",
+"Tri Attack"
+]
+}
+	},
+"Primeape": {
+		"Primeape-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Quirky",
+"ability": "Defiant",
+"item": "Sitrus Berry",
+"moves": [
+"Cross Chop",
+"Stomping Tantrum",
+"Swagger",
+"Thief"
+]
+}
+	},
+"Prinplup": {
+		"Prinplup-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Bashful",
+"ability": "Torrent",
+"item": "Wacan Berry",
+"moves": [
+"Whirlpool",
+"Metal Claw",
+"Peck",
+"Double Team"
+]
+}
+	},
+"Probopass": {
+		"Probopass-1": {
+			"level": "50",
+"evs": {
+"hp": 220,
+"at": 44,
+"df": 220,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 25,
+"sp": 25
+},
+"nature": "Impish",
+"ability": "Sturdy",
+"item": "Rock Incense",
+"moves": [
+"Rock Polish",
+"Stealth Rock",
+"Lock-On",
+"Stone Edge"
+]
+},
+		"Probopass-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "King's Rock",
+"moves": [
+"Rock Polish",
+"Earthquake",
+"Stone Edge",
+"Explosion"
+]
+}
+	},
+"Psyduck": {
+		"Psyduck-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Hasty",
+"ability": "Cloud Nine",
+"item": "Persim Berry",
+"moves": [
+"Confusion",
+"Fury Swipes",
+"Aerial Ace",
+"Disable"
+]
+}
+	},
+"Pupitar": {
+		"Pupitar-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Shed Skin",
+"item": "Soft Sand",
+"moves": [
+"Dig",
+"Bite",
+"Scary Face",
+"Sandstorm"
+]
+}
+	},
+"Purugly": {
+		"Purugly-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 148,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Thick Fat",
+"item": "Silk Scarf",
+"moves": [
+"Slash",
+"U-turn",
+"Attract",
+"Fake Out"
+]
+},
+		"Purugly-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Thick Fat",
+"item": "Sitrus Berry",
+"moves": [
+"U-turn",
+"Fake Out",
+"Bulldoze",
+"Body Slam"
+]
+}
 	}
 };
