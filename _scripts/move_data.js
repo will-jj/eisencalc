@@ -465,6 +465,10 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Normal"
 	},
+	"Sand Attack": {
+		"bp": 0,
+		"type": "Ground"
+	},
 	"Seismic Toss": {
 		"bp": 100,
 		"type": "Fighting",
