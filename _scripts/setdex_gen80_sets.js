@@ -18690,7 +18690,7 @@ var SETDEX_GEN80_SETS = {
 "Dragon Pulse",
 "Surf"
 ]
-}
+},
 		"Rhydon-2": {
 			"level": "50",
 "evs": {
