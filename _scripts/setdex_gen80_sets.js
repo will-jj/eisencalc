@@ -23923,4 +23923,148 @@ var SETDEX_GEN80_SETS = {
 ]
 }
 	},
+"Umbreon": {
+		"Umbreon-1": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Calm",
+"ability": "Inner Focus",
+"item": "Bright Powder",
+"moves": [
+"Foul Play",
+"Attract",
+"Protect",
+"Moonlight"
+]
+},
+		"Umbreon-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Inner Focus",
+"item": "Leftovers",
+"moves": [
+"Foul Play",
+"Helping Hand",
+"Snarl",
+"Detect"
+]
+}
+	},
+"Ursaring": {
+		"Ursaring-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Guts",
+"item": "Flame Orb",
+"moves": [
+"Facade",
+"Earthquake",
+"Rock Tomb",
+"Protect"
+]
+},
+		"Ursaring-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Guts",
+"item": "Flame Orb",
+"moves": [
+"Facade",
+"Aerial Ace",
+"Sleep Talk",
+"Rest"
+]
+},
+		"Ursaring-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Guts",
+"item": "Flame Orb",
+"moves": [
+"Facade",
+"Protect",
+"Earthquake",
+"Crunch"
+]
+}
+	},
 };
