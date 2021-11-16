@@ -56,6 +56,10 @@ th {
   width: 28em;
 }
 
+.panel-group > .panel {
+    clear: left;
+}
+
 /* general button styling */
 .btn {
   text-align: center;
