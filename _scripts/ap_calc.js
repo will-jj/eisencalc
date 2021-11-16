@@ -886,7 +886,7 @@ function Pokemon(pokeInfo) {
 		this.weight = pokemon.weight;
 	} else {
 		var setName = pokeInfo.find("input.set-selector").val();
-		if (!(setName.includes("("))) {
+		if (setName.indexOf("(") === -1) {
 			this.name = setName;
 		} else {
 			var pokemonName = setName.substring(0, setName.indexOf(" ("));
