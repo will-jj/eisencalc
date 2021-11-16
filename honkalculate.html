@@ -466,23 +466,24 @@ title: Battle Facilities Calculator
                 </div>
         </fieldset>
         <fieldset class="panel panel-default field-info">
-            <legend class="panel-heading panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">>  Field</a>
-            </legend>
-            <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-                  				<div id="autolevel">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				Field
+				<div id="autolevel">
 					Auto-Level to:
 					<select id="autolevel-select">
 						<option value="50" selected="selected">50</option>
 						<option value="100">100</option>
 					</select>
 				</div>
+			</h4>
+		</div>
+                <div class="panel-body">
                     <div class="gen-specific g3 g4 g5 g6 g7 g8 g80" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
-                        <input class="btn-input calc-trigger" type="radio" name="format" value="Singles" id="singles-format" />
-                        <label class="btn btn-left" for="singles-format">Singles</label>
-                        <input class="btn-input calc-trigger" type="radio" name="format" value="Doubles" id="doubles-format" checked="checked" />
-                        <label class="btn btn-right" for="doubles-format">Doubles</label>
+                        <input class="btn-input calc-trigger" type="radio" name="format" value="Singles" id="singles" />
+                        <label class="btn btn-left" for="singles">Singles</label>
+                        <input class="btn-input calc-trigger" type="radio" name="format" value="Doubles" id="doubles" checked="checked" />
+                        <label class="btn btn-right" for="doubles">Doubles</label>
                     </div>
 			<div class="gen-specific g6 g7 g8 g80 g20 g21" style="width: 22.0em; margin: 5px auto;" title="Select the current terrain.">
 				<input class="btn-input terrain-trigger calc-trigger" type="radio" name="terrain" value="" id="noterrain" checked="checked" /><label class="btn btn-small btn-left" for="noterrain">None</label>
@@ -649,7 +650,6 @@ title: Battle Facilities Calculator
                 </div>
             </div>
                 </div>
-            </div>
         </fieldset>
     </div>
     <div>
