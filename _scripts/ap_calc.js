@@ -1490,6 +1490,18 @@ $(document).ready(function () {
 	$(".set-selector").change();
 });
 
+$(".mode").change(function () {
+	var params = new URLSearchParams(window.location.search);
+	params.set('mode', $(this).attr("id"));
+	if ($("#one-vs-one").prop("checked")) {
+		params.delete('mode');
+		params = '' + params;
+		window.location.replace('index' + linkExtension + (params.length ? '?' + params : ''));
+	} else {
+		window.location.replace('honkalculate.html' + '?' + params);
+	}
+});
+
 /******************/
 /*  EV OPTIMIZER  */
 /******************/
