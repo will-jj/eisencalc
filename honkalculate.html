@@ -31,7 +31,7 @@ title: Battle Facilities Calculator
     <div>
         <span class="title-text">Sets: </span>
         <span class="tiers" title="Select the sets.">
-            <input class="btn-input" type="checkbox" name="tier" id="All" /><label class="btn btn-mid gen-specific g5 g6 g7 g8 g80" for="All">All sets</label>
+            <input class="btn-input" type="checkbox" name="tier" id="All" checked="checked" /><label class="btn btn-mid gen-specific g5 g6 g7 g8 g80" for="All">All sets</label>
             <input class="btn-input" type="checkbox" name="tier" id="40" /><label class="btn btn-mid gen-specific g7" for="40">40+</label>
 	<input class="btn-input" type="checkbox" name="tier" id="BT" /><label class="btn btn-mid gen-specific g8" for="BT">Tower</label>
 	<input class="btn-input" type="checkbox" name="tier" id="RS" /><label class="btn btn-mid gen-specific g8" for="RS">RS</label>
@@ -40,8 +40,7 @@ title: Battle Facilities Calculator
 
 </div>
 
-    <div class="panel-group" id="accordion">
-        <fieldset class="panel panel-default poke-info" id="p1">
+    <div class="panel-group poke-info" id="p1">
 		<div class="panel-heading">
 			<h4 class="panel-title">Pokémon</h4>
 		</div>
@@ -452,8 +451,8 @@ title: Battle Facilities Calculator
                             <option value="5">5 hits</option>
                         </select>
                     </div>
-                </div>
-        </fieldset>
+			</div>
+
         <fieldset class="panel panel-default field-info">
 		<div class="panel-heading">
 			<h4 class="panel-title">
