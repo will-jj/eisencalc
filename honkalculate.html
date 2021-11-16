@@ -30,7 +30,7 @@ title: Battle Facilities Calculator
     <hr />
     <div>
         <span class="title-text">Sets: </span>
-        <span class="tiers" title="Select the tier(s)/format.">
+        <span class="tiers" title="Select the sets.">
             <input class="btn-input" type="checkbox" name="tier" id="All" /><label class="btn btn-mid gen-specific g5 g6 g7 g8 g80" for="All">All sets</label>
             <input class="btn-input" type="checkbox" name="tier" id="40" /><label class="btn btn-mid gen-specific g7" for="40">40+</label>
 	<input class="btn-input" type="checkbox" name="tier" id="BT" /><label class="btn btn-mid gen-specific g8" for="BT">Tower</label>
@@ -63,7 +63,7 @@ title: Battle Facilities Calculator
                         </div>
                         <div class="hide">
                             <label>Weight (kg)</label>
-                            <input class="weight" value="10.0" />
+                            <input class="weight calc-trigger" value="10.0" />
                         </div>
                     </div>
                     <div class="info-group">
@@ -78,23 +78,12 @@ title: Battle Facilities Calculator
                                 <th></th>
                             </tr>
                             <tr class="hp">
-                                <td>
-                                    <label>HP</label>
-                                </td>
-                                <td>
-                                    <input class="base calc-trigger" value="100" />
-                                </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g80">
-                                    <input class="ivs calc-trigger" value="31" />
-                                </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g80">
-                                    <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                                </td>
-                                <td class="gen-specific g1 g2 hide">
-                                    <input class="dvs calc-trigger" value="15" disabled="disabled" />
-                                </td>
-                                <td><span class="total">341</span>
-                                </td>
+                                <td><label>HP</label></td>
+                                <td><input class="base calc-trigger" value="100" /></td>
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g80"><input class="ivs calc-trigger" value="31" /></td>
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g80"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
+                                <td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" disabled="disabled" /></td>
+                                <td><span class="total">341</span></td>
                                 <td></td>
                             </tr>
                             <tr class="at">
