@@ -24067,4 +24067,700 @@ var SETDEX_GEN80_SETS = {
 ]
 }
 	},
+"Vaporeon": {
+		"Vaporeon-1": {
+			"level": "50",
+"evs": {
+"hp": 220,
+"at": 0,
+"df": 220,
+"sa": 44,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 25,
+"sp": 25
+},
+"nature": "Bold",
+"ability": "Water Absorb",
+"item": "Leftovers",
+"moves": [
+"Scald",
+"Ice Beam",
+"Acid Armor",
+"Rest"
+]
+},
+		"Vaporeon-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Relaxed",
+"ability": "Water Absorb",
+"item": "Rindo Berry",
+"moves": [
+"Surf",
+"Aqua Ring",
+"Acid Armor",
+"Baton Pass"
+]
+}
+	},
+"Venomoth": {
+		"Venomoth-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Quirky",
+"ability": "Shield Dust",
+"item": "Persim Berry",
+"moves": [
+"Bug Buzz",
+"Psybeam",
+"Sleep Powder",
+"Skill Swap"
+]
+}
+	},
+"Venonat": {
+		"Venonat-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Relaxed",
+"ability": "Compound Eyes",
+"item": "Sitrus Berry",
+"moves": [
+"Psybeam",
+"Supersonic",
+"Stun Spore",
+"Skill Swap"
+]
+}
+	},
+"Venusaur": {
+		"Venusaur-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Brave",
+"ability": "Overgrow",
+"item": "Power Herb",
+"moves": [
+"Skull Bash",
+"Worry Seed",
+"Earthquake",
+"Petal Dance"
+]
+},
+		"Venusaur-2": {
+			"level": "50",
+"evs": {
+"hp": 220,
+"at": 0,
+"df": 220,
+"sa": 44,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 25,
+"sp": 25
+},
+"nature": "Bold",
+"ability": "Overgrow",
+"item": "Big Root",
+"moves": [
+"Leech Seed",
+"Ingrain",
+"Giga Drain",
+"Sleep Powder"
+]
+},
+		"Venusaur-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Overgrow",
+"item": "Quick Claw",
+"moves": [
+"Earthquake",
+"Outrage",
+"Petal Blizzard",
+"Curse"
+]
+},
+		"Venusaur-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Chlorophyll",
+"item": "Life Orb",
+"moves": [
+"Solar Beam",
+"Sludge Bomb",
+"Weather Ball",
+"Earth Power"
+]
+},
+		"Venusaur-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Overgrow",
+"item": "Black Sludge",
+"moves": [
+"Giga Drain",
+"Synthesis",
+"Leech Seed",
+"Toxic"
+]
+},
+		"Venusaur-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Chlorophyll",
+"item": "Black Sludge",
+"moves": [
+"Sludge Bomb",
+"Solar Beam",
+"Earth Power",
+"Energy Ball"
+]
+}
+	},
+"Vespiquen": {
+		"Vespiquen-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Pressure",
+"item": "Razor Claw",
+"moves": [
+"Attack Order",
+"Slash",
+"Defend Order",
+"-"
+]
+},
+		"Vespiquen-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Pressure",
+"item": "Leftovers",
+"moves": [
+"Double Team",
+"Defend Order",
+"Roost",
+"Toxic"
+]
+},
+		"Vespiquen-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Pressure",
+"item": "Wise Glasses",
+"moves": [
+"Bug Buzz",
+"Sludge Bomb",
+"Power Gem",
+"Roost"
+]
+}
+	},
+"Vibrava": {
+		"Vibrava-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Quirky",
+"ability": "Levitate",
+"item": "Cheri Berry",
+"moves": [
+"Dragon Breath",
+"Dig",
+"Screech",
+"Rock Tomb"
+]
+}
+	},
+"Victreebel": {
+		"Victreebel-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 4,
+"sa": 4,
+"sd": 4,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 15,
+"sa": 15,
+"sd": 15,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Gluttony",
+"item": "Sitrus Berry",
+"moves": [
+"Leaf Blade",
+"Poison Jab",
+"Leech Life",
+"Strength Sap"
+]
+},
+		"Victreebel-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Chlorophyll",
+"item": "Scope Lens",
+"moves": [
+"Power Whip",
+"Leech Life",
+"Swords Dance",
+"Poison Jab"
+]
+},
+		"Victreebel-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Chlorophyll",
+"item": "Power Herb",
+"moves": [
+"Sludge Bomb",
+"Energy Ball",
+"Solar Beam",
+"Synthesis"
+]
+}
+	},
+"Vigoroth": {
+		"Vigoroth-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Lonely",
+"ability": "Vital Spirit",
+"item": "Focus Band",
+"moves": [
+"Slash",
+"Counter",
+"Encore",
+"Uproar"
+]
+}
+	},
+"Vileplume": {
+		"Vileplume-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 4,
+"sa": 148,
+"sd": 148,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 15,
+"sa": 31,
+"sd": 31,
+"sp": 15
+},
+"nature": "Lax",
+"ability": "Chlorophyll",
+"item": "Big Root",
+"moves": [
+"Poison Powder",
+"Sleep Powder",
+"Stun Spore",
+"Giga Drain"
+]
+},
+		"Vileplume-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Chlorophyll",
+"item": "Black Sludge",
+"moves": [
+"Toxic",
+"Grass Knot",
+"Double Team",
+"Attract"
+]
+},
+		"Vileplume-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Brave",
+"ability": "Effect Spore",
+"item": "Quick Claw",
+"moves": [
+"Drain Punch",
+"Sludge Bomb",
+"Swords Dance",
+"Tickle"
+]
+}
+	},
+"Volbeat": {
+		"Volbeat-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Quirky",
+"ability": "Swarm",
+"item": "Liechi Berry",
+"moves": [
+"Bug Buzz",
+"Confuse Ray",
+"Quick Attack",
+"Helping Hand"
+]
+}
+	},
+"Voltorb": {
+		"Voltorb-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Aftermath",
+"item": "Lax Incense",
+"moves": [
+"Spark",
+"Screech",
+"Rollout",
+"Light Screen"
+]
+}
+	},
+"Vulpix": {
+		"Vulpix-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Drought",
+"item": "Focus Sash",
+"moves": [
+"Will-O-Wisp",
+"Confuse Ray",
+"Fire Spin",
+"Quick Attack"
+]
+}
+	}
 };
