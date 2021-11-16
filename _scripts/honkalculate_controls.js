@@ -244,12 +244,7 @@ $(".mode").change(function () {
 		params.delete('mode');
 		params = '' + params;
 		window.location.replace('index' + linkExtension + (params.length ? '?' + params : ''));
-	} else if ($("#randoms").prop("checked")) {
-		var params = new URLSearchParams(window.location.search);
-		params.delete('mode');
-		params = '' + params;
-		window.location.replace('randoms' + linkExtension + (params.length ? '?' + params : ''));
-	} else {
+ else {
 		var params = new URLSearchParams(window.location.search);
 		params.set('mode', $(this).attr("id"));
 		window.location.replace('honkalculate' + linkExtension + '?' + params);
@@ -272,19 +267,6 @@ $(".tiers input").change(function () {
 	var type = $(this).attr("type");
 	var id = $(this).attr("id");
 	$(".tiers input").not(":" + type).prop("checked", false); // deselect all radios if a checkbox is checked, and vice-versa
-
-	if (id === "Doubles" || startsWith(id, "VGC")) {
-		$("#doubles-format").prop("checked", true);
-		$("#singles-format").attr("disabled", true);
-	}
-
-	if (id === "LC" && $('.level').val() !== "5") {
-		setLevel("5");
-	}
-
-	if (startsWith(id, "VGC") && $('.level').val() !== "50") {
-		setLevel("50");
-	}
 });
 
 function setLevel(lvl) {
@@ -302,10 +284,6 @@ $(".set-selector").change(function (e) {
 	var format = getSelectedTiers()[0];
 	if (genWasChanged) {
 		genWasChanged = false;
-	} else if (startsWith(format, "VGC") && $('.level').val() !== "50") {
-		setLevel("50");
-	} else if (format === "LC" && $('.level').val() !== "5") {
-		setLevel("5");
 	}
 });
 
