@@ -24762,5 +24762,1073 @@ var SETDEX_GEN80_SETS = {
 "Quick Attack"
 ]
 }
+	},
+"Wailmer": {
+		"Wailmer-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"nature": "Docile",
+"ability": "Oblivious",
+"item": "Mystic Water",
+"moves": [
+"Whirlpool",
+"Roar",
+"Defense Curl",
+"Rollout"
+]
+}
+	},
+"Wailord": {
+		"Wailord-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Pressure",
+"item": "Wacan Berry",
+"moves": [
+"Defense Curl",
+"Rollout",
+"Waterfall",
+"Avalanche"
+]
+},
+		"Wailord-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 4,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Calm",
+"ability": "Pressure",
+"item": "Mystic Water",
+"moves": [
+"Water Spout",
+"Brine",
+"Whirlpool",
+"Surf"
+]
+},
+		"Wailord-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Pressure",
+"item": "Leftovers",
+"moves": [
+"Curse",
+"Earthquake",
+"Waterfall",
+"Double Team"
+]
+}
+	},
+"Walrein": {
+		"Walrein-1": {
+			"level": "50",
+"evs": {
+"hp": 220,
+"at": 44,
+"df": 220,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 25,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 25
+},
+"nature": "Impish",
+"ability": "Thick Fat",
+"item": "Quick Claw",
+"moves": [
+"Rest",
+"Sleep Talk",
+"Sheer Cold",
+"Fissure"
+]
+},
+		"Walrein-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Thick Fat",
+"item": "Bright Powder",
+"moves": [
+"Sheer Cold",
+"Fissure",
+"Sleep Talk",
+"Rest"
+]
+},
+		"Walrein-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Ice Body",
+"item": "Bright Powder",
+"moves": [
+"Sheer Cold",
+"Fissure",
+"Sleep Talk",
+"Rest"
+]
+}
+	},
+"Wartortle": {
+		"Wartortle-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 108,
+"df": 0,
+"sa": 0,
+"sd": 108,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 0,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Adamant",
+"ability": "Torrent",
+"item": "Focus Band",
+"moves": [
+"Aqua Tail",
+"Bite",
+"Rapid Spin",
+"Yawn"
+]
+}
+	},
+"Weavile": {
+		"Weavile-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Pressure",
+"item": "Razor Claw",
+"moves": [
+"Night Slash",
+"Ice Punch",
+"Ice Shard",
+"Shadow Claw"
+]
+},
+		"Weavile-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Pickpocket",
+"item": "Chople Berry",
+"moves": [
+"Night Slash",
+"Ice Shard",
+"Ice Punch",
+"Fake Out"
+]
+},
+		"Weavile-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Pickpocket",
+"item": "Focus Sash",
+"moves": [
+"Ice Shard",
+"Fake Out",
+"Night Slash",
+"Ice Punch"
+]
+}
+	},
+"Weepinbell": {
+		"Weepinbell-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 0
+},
+"nature": "Quiet",
+"ability": "Gluttony",
+"item": "Aguav Berry",
+"moves": [
+"Razor Leaf",
+"Acid",
+"Wrap",
+"Sweet Scent"
+]
+}
+	},
+"Weezing": {
+		"Weezing-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 4,
+"sa": 148,
+"sd": 148,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 15,
+"sa": 31,
+"sd": 31,
+"sp": 15
+},
+"nature": "Calm",
+"ability": "Levitate",
+"item": "Leftovers",
+"moves": [
+"Will-O-Wisp",
+"Double Team",
+"Sludge Bomb",
+"Substitute"
+]
+},
+		"Weezing-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Calm",
+"ability": "Levitate",
+"item": "Bright Powder",
+"moves": [
+"Sludge Bomb",
+"Fire Blast",
+"Will-O-Wisp",
+"Pain Split"
+]
+},
+		"Weezing-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "Quick Claw",
+"moves": [
+"Sludge Bomb",
+"Fire Blast",
+"Dark Pulse",
+"Destiny Bond"
+]
+}
+	},
+"Whiscash": {
+		"Whiscash-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 4,
+"df": 148,
+"sa": 148,
+"sd": 4,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 15,
+"df": 31,
+"sa": 31,
+"sd": 15,
+"sp": 15
+},
+"nature": "Relaxed",
+"ability": "Hydration",
+"item": "Leftovers",
+"moves": [
+"Earthquake",
+"Water Pulse",
+"Tickle",
+"Sandstorm"
+]
+},
+		"Whiscash-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Sassy",
+"ability": "Oblivious",
+"item": "Chesto Berry",
+"moves": [
+"Fissure",
+"Amnesia",
+"Spark",
+"Rest"
+]
+},
+		"Whiscash-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Oblivious",
+"item": "Zoom Lens",
+"moves": [
+"Hydro Pump",
+"Blizzard",
+"Fissure",
+"Future Sight"
+]
+}
+	},
+"Wigglytuff": {
+		"Wigglytuff-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 108,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Relaxed",
+"ability": "Competitive",
+"item": "Silk Scarf",
+"moves": [
+"Sing",
+"Disable",
+"Wish",
+"Dazzling Gleam"
+]
+}
+	},
+"Wobbuffet": {
+		"Wobbuffet-1": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 108,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 0,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Careful",
+"ability": "Shadow Tag",
+"item": "Leftovers",
+"moves": [
+"Counter",
+"Mirror Coat",
+"Encore",
+"Safeguard"
+]
+}
+	},
+"Wormadam": {
+		"Wormadam": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 108,
+"sa": 0,
+"sd": 108,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Overcoat",
+"item": "Coba Berry",
+"moves": [
+"Razor Leaf",
+"Psybeam",
+"Protect",
+"Bug Buzz"
+]
+}
+	},
+"Xatu": {
+		"Xatu-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 0,
+"df": 0,
+"sa": 148,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 10,
+"df": 10,
+"sa": 31,
+"sd": 10,
+"sp": 31
+},
+"nature": "Hardy",
+"ability": "Magic Bounce",
+"item": "Sharp Beak",
+"moves": [
+"Air Slash",
+"Night Shade",
+"Wish",
+"Future Sight"
+]
+}
+	},
+"Yanma": {
+		"Yanma-1": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 108,
+"sd": 0,
+"sp": 108
+},
+"ivs": {
+"hp": 0,
+"at": 0,
+"df": 0,
+"sa": 31,
+"sd": 0,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Speed Boost",
+"item": "Lax Incense",
+"moves": [
+"Bug Buzz",
+"Air Slash",
+"Double Team",
+"Detect"
+]
+}
+	},
+"Yanmega": {
+		"Yanmega-1": {
+			"level": "50",
+"evs": {
+"hp": 60,
+"at": 204,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 204
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 20,
+"sa": 0,
+"sd": 20,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Speed Boost",
+"item": "Charti Berry",
+"moves": [
+"Aerial Ace",
+"Steel Wing",
+"Thief",
+"U-turn"
+]
+},
+		"Yanmega-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Speed Boost",
+"item": "Lum Berry",
+"moves": [
+"Detect",
+"Air Slash",
+"Bug Buzz",
+"Giga Drain"
+]
+}
+	},
+"Zangoose": {
+		"Zangoose-1": {
+			"level": "50",
+"evs": {
+"hp": 148,
+"at": 148,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 148
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 10,
+"sa": 10,
+"sd": 10,
+"sp": 31
+},
+"nature": "Hardy",
+"ability": "Toxic Boost",
+"item": "Persim Berry",
+"moves": [
+"Slash",
+"Double Kick",
+"Roar",
+"Quick Attack"
+]
+}
+	},
+"Zapdos": {
+		"Zapdos-1": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Pressure",
+"item": "Bright Powder",
+"moves": [
+"Double Team",
+"Roost",
+"Discharge",
+"Heat Wave"
+]
+},
+		"Zapdos-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Docile",
+"ability": "Pressure",
+"item": "Focus Band",
+"moves": [
+"Roost",
+"Ancient Power",
+"Drill Peck",
+"Discharge"
+]
+},
+		"Zapdos-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Pressure",
+"item": "King's Rock",
+"moves": [
+"Drill Peck",
+"U-turn",
+"Steel Wing",
+"Ancient Power"
+]
+},
+		"Zapdos-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Static",
+"item": "Sharp Beak",
+"moves": [
+"Rain Dance",
+"Thunder",
+"Charge Beam",
+"Drill Peck"
+]
+},
+		"Zapdos-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Static",
+"item": "Leftovers",
+"moves": [
+"Discharge",
+"Heat Wave",
+"Roost",
+"Hurricane"
+]
+},
+		"Zapdos-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Static",
+"item": "Life Orb",
+"moves": [
+"Thunder",
+"Hurricane",
+"Heat Wave",
+"Volt Switch"
+]
+},
+		"Zapdos-7": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Static",
+"item": "Wise Glasses",
+"moves": [
+"Heat Wave",
+"Hurricane",
+"Thunderbolt",
+"Volt Switch"
+]
+},
+		"Zapdos-8": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Static",
+"item": "Sitrus Berry",
+"moves": [
+"Hurricane",
+"Heat Wave",
+"Discharge",
+"Thunderbolt"
+]
+},
+		"Zapdos-9": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Static",
+"item": "Sitrus Berry",
+"moves": [
+"Thunderbolt",
+"Volt Switch",
+"Heat Wave",
+"Hurricane"
+]
+},
+		"Zapdos-10": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Static",
+"item": "Choice Scarf",
+"moves": [
+"Thunderbolt",
+"Volt Switch",
+"Heat Wave",
+"Hurricane"
+]
+},
+		"Zapdos-11": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Static",
+"item": "Life Orb",
+"moves": [
+"Heat Wave",
+"Thunderbolt",
+"Hurricane",
+"Ancient Power"
+]
+}
 	}
 };
