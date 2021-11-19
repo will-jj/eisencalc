@@ -1453,7 +1453,35 @@ var SETDEX_GEN80_SETS = {
 "Aerial Ace",
 "Giga Impact"
 ]
-}
+},
+		"Armaldo-4 (Crasher Wake)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Swift Swim",
+"item": "Focus Sash",
+"moves": [
+"X-Scissor",
+"Stone Edge",
+"Earthquake",
+"Knock Off"
+]
+},
 	},	
 "Aron": {
 		"Aron-1": {
@@ -1598,6 +1626,34 @@ var SETDEX_GEN80_SETS = {
 ]
 },
 		"Articuno-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Pressure",
+"item": "Bright Powder",
+"moves": [
+"Sheer Cold",
+"Mind Reader",
+"Substitute",
+"Roost"
+]
+},
+		"Articuno-6 (Candice/Maylene)": {
 "evs": {
 "hp": 4,
 "at": 0,
@@ -1680,34 +1736,6 @@ var SETDEX_GEN80_SETS = {
 "Facade",
 "Play Rough",
 "Aqua Jet"
-]
-},
-		"Azumarill-2": {
-			"level": "50",
-"evs": {
-"hp": 252,
-"at": 252,
-"df": 0,
-"sa": 0,
-"sd": 0,
-"sp": 4
-},
-"ivs": {
-"hp": 31,
-"at": 31,
-"df": 31,
-"sa": 0,
-"sd": 31,
-"sp": 31
-},
-"nature": "Adamant",
-"ability": "Huge Power",
-"item": "Sitrus Berry",
-"moves": [
-"Aqua Jet",
-"Play Rough",
-"Superpower",
-"Belly Drum"
 ]
 }
 	},
@@ -1828,7 +1856,7 @@ var SETDEX_GEN80_SETS = {
 "Knock Off"
 ]
 },
-		"Banette-2": {
+		"Banette-2 (Gardenia/Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -1854,34 +1882,6 @@ var SETDEX_GEN80_SETS = {
 "Knock Off",
 "Gunk Shot",
 "Phantom Force"
-]
-},
-		"Banette-3": {
-			"level": "50",
-"evs": {
-"hp": 252,
-"at": 252,
-"df": 4,
-"sa": 0,
-"sd": 0,
-"sp": 0
-},
-"ivs": {
-"hp": 31,
-"at": 31,
-"df": 31,
-"sa": 0,
-"sd": 31,
-"sp": 31
-},
-"nature": "Adamant",
-"ability": "Cursed Body",
-"item": "Sitrus Berry",
-"moves": [
-"Knock Off",
-"Phantom Force",
-"Sucker Punch",
-"Gunk Shot"
 ]
 }
 	},
@@ -1970,7 +1970,7 @@ var SETDEX_GEN80_SETS = {
 "Stone Edge"
 ]
 },
-		"Bastiodon-4": {
+		"Bastiodon-4 (Roark/Byron)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -1998,7 +1998,7 @@ var SETDEX_GEN80_SETS = {
 "Wide Guard"
 ]
 },
-		"Bastiodon-5": {
+		"Bastiodon-5 (Roark/Byron)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -2026,7 +2026,7 @@ var SETDEX_GEN80_SETS = {
 "Body Slam"
 ]
 },
-		"Bastiodon-6": {
+		"Bastiodon-6 (Byron)": {
 		"level": "50",
 "evs": {
 "hp": 0,
@@ -2172,6 +2172,34 @@ var SETDEX_GEN80_SETS = {
 "Safeguard",
 "Sunny Day",
 "Synthesis"
+]
+},
+		"Bellossom-2": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Chlorophyll",
+"item": "Focus Sash",
+"moves": [
+"After You",
+"Solar Beam",
+"Moonblast",
+"Sleep Powder"
 ]
 }
 	},
@@ -2480,6 +2508,34 @@ var SETDEX_GEN80_SETS = {
 "sd": 31,
 "sp": 31
 },
+"nature": "Adamant",
+"ability": "Speed Boost",
+"item": "Focus Sash",
+"moves": [
+"Fire Punch",
+"Close Combat",
+"Acrobatics",
+"Swords Dance"
+]
+},
+		"Blaziken-6 (Maylene)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
 "nature": "Jolly",
 "ability": "Speed Boost",
 "item": "Life Orb",
@@ -2490,7 +2546,7 @@ var SETDEX_GEN80_SETS = {
 "Rock Slide"
 ]
 },
-		"Blaziken-6": {
+		"Blaziken-7 (Candice/Maylene)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -2518,7 +2574,7 @@ var SETDEX_GEN80_SETS = {
 "Protect"
 ]
 },
-		"Blaziken-7": {
+		"Blaziken-8 (Flint/Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -2610,6 +2666,34 @@ var SETDEX_GEN80_SETS = {
 "hp": 0,
 "at": 0,
 "df": 252,
+"sa": 252,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Serene Grace",
+"item": "Leftovers",
+"moves": [
+"Soft-Boiled",
+"Calm Mind",
+"Flamethrower",
+"Substitute"
+]
+},
+		"Blissey-4 (Mira/Cheryl)": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 0,
+"df": 252,
 "sa": 4,
 "sd": 0,
 "sp": 252
@@ -2632,7 +2716,7 @@ var SETDEX_GEN80_SETS = {
 "Flamethrower"
 ]
 },
-		"Blissey-4": {
+		"Blissey-5 (Mira/Cheryl)": {
 			"level": "50",
 "evs": {
 "hp": 0,
@@ -2804,7 +2888,91 @@ var SETDEX_GEN80_SETS = {
 "Bullet Seed"
 ]
 },
-			"Breloom-5": {
+		"Breloom-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Technician",
+"item": "Focus Sash",
+"moves": [
+"Spore",
+"Mach Punch",
+"Counter",
+"Bullet Seed"
+]
+},
+		"Breloom-6 (Gardenia)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Technician",
+"item": "Focus Sash",
+"moves": [
+"Spore",
+"Mach Punch",
+"Bullet Seed",
+"Rock Tomb"
+]
+},
+		"Breloom-7 (Maylene)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Technician",
+"item": "Focus Sash",
+"moves": [
+"Spore",
+"Mach Punch",
+"Bullet Seed",
+"Rock Tomb"
+]
+},
+			"Breloom-8 (Gardenia/Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -2906,6 +3074,34 @@ var SETDEX_GEN80_SETS = {
 "df": 31,
 "sa": 0,
 "sd": 31,
+"sp": 31
+},
+"nature": "Brave",
+"ability": "Levitate",
+"item": "Mental Herb",
+"moves": [
+"Gyro Ball",
+"Body Press",
+"Rock Slide",
+"Trick Room"
+]
+},
+		"Bronzong-4 (Roark/Byron)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
 "sp": 0
 },
 "nature": "Brave",
@@ -2918,7 +3114,7 @@ var SETDEX_GEN80_SETS = {
 "Zen Headbutt"
 ]
 },
-		"Bronzong-4": {
+		"Bronzong-5 (Mars/Cyrus)": {
 			"level": "50",
 "evs": {
 "hp": 252,
