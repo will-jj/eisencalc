@@ -1679,35 +1679,7 @@ var SETDEX_GEN80_SETS = {
 "Freeze-Dry",
 "Ancient Power"
 ]
-},
-		"Articuno-6": {
-			"level": "50",
-"evs": {
-"hp": 252,
-"at": 0,
-"df": 0,
-"sa": 252,
-"sd": 0,
-"sp": 4
-},
-"ivs": {
-"hp": 31,
-"at": 0,
-"df": 31,
-"sa": 31,
-"sd": 31,
-"sp": 31
-},
-"nature": "Modest",
-"ability": "Pressure",
-"item": "Leftovers",
-"moves": [
-"Blizzard",
-"Hurricane",
-"Roost",
-"Sheer Cold"
-]
-}	
+}
 },
 "Azumarill": {
 		"Azumarill-1": {
