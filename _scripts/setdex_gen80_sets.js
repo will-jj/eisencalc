@@ -415,6 +415,34 @@ var SETDEX_GEN80_SETS = {
 				"sp": 31
 			},
 			"nature": "Jolly",
+			"ability": "Pressure",
+			"item": "Muscle Band",
+			"moves": [
+				"Rock Slide",
+				"Earthquake",
+				"Ice Fang",
+				"Iron Head"
+			]
+		},
+		"Aerodactyl-4 (Roark)": {
+			"level": "50",
+			"evs": {
+				"hp": 4,
+				"at": 252,
+				"df": 0,
+				"sa": 0,
+				"sd": 0,
+				"sp": 252
+			},
+			"ivs": {
+				"hp": 31,
+				"at": 31,
+				"df": 31,
+				"sa": 0,
+				"sd": 31,
+				"sp": 31
+			},
+			"nature": "Jolly",
 			"ability": "Unnerve",
 			"item": "Lum Berry",
 			"moves": [
@@ -424,13 +452,13 @@ var SETDEX_GEN80_SETS = {
 				"Iron Head"
 			]
 		},
-		"Aerodactyl-4": {
+		"Aerodactyl-5 (Roark/Byron)": {
 			"level": "50",
 			"evs": {
 				"hp": 4,
-				"at": 0,
+				"at": 252,
 				"df": 0,
-				"sa": 252,
+				"sa": 0,
 				"sd": 0,
 				"sp": 252
 			},
@@ -452,7 +480,7 @@ var SETDEX_GEN80_SETS = {
 				"Ice Fang"
 			]
 		},
-		"Aerodactyl-5": {
+		"Aerodactyl-6 (Riley/Marley)": {
 			"level": "50",
 			"evs": {
 				"hp": 4,
@@ -538,7 +566,7 @@ var SETDEX_GEN80_SETS = {
 "Earthquake"
 ]
 },
-		"Aggron-3": {
+		"Aggron-3 (Byron)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -704,10 +732,10 @@ var SETDEX_GEN80_SETS = {
 "ability": "Magic Guard",
 "item": "Life Orb",
 "moves": [
-"Psychic",
 "Dazzling Gleam",
-"Focus Blast",
-"Protect"
+"Psychic",
+"Energy Ball",
+"Nasty Plot"
 ]
 },
 "Alakazam-5": {
@@ -733,6 +761,34 @@ var SETDEX_GEN80_SETS = {
 "item": "Life Orb",
 "moves": [
 "Psyshock",
+"Shadow Ball",
+"Energy Ball",
+"Dazzling Gleam"
+]
+},
+"Alakazam-6 (Mira/Cheryl)": {
+"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Magic Guard",
+"item": "Life Orb",
+"moves": [
+"Psychic",
 "Dazzling Gleam",
 "Focus Blast",
 "Protect"
@@ -908,6 +964,34 @@ var SETDEX_GEN80_SETS = {
 "Thief",
 "Dual Chop",
 "Fake Out"
+]
+},
+		"Ambipom-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Skill Link",
+"item": "Razor Fang",
+"moves": [
+"Fake Out",
+"Fury Swipes",
+"Last Resort",
+"-"
 ]
 }
 	},
@@ -1160,6 +1244,34 @@ var SETDEX_GEN80_SETS = {
 "sd": 31,
 "sp": 31
 },
+"nature": "Jolly",
+"ability": "Intimidate",
+"item": "Choice Band",
+"moves": [
+"Flare Blitz",
+"Wild Charge",
+"Play Rough",
+"Close Combat"
+]
+},
+		"Arcanine-5 (Riley/Marley)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
 "nature": "Adamant",
 "ability": "Intimidate",
 "item": "Sitrus Berry",
@@ -1170,7 +1282,7 @@ var SETDEX_GEN80_SETS = {
 "Will-O-Wisp"
 ]
 },
-		"Arcanine-5": {
+		"Arcanine-6 (Riley/Marley)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -1198,7 +1310,7 @@ var SETDEX_GEN80_SETS = {
 "Flamethrower"
 ]
 },
-		"Arcanine-6": {
+		"Arcanine-7 (Riley/Marley)": {
 			"level": "50",
 "evs": {
 "hp": 4,
