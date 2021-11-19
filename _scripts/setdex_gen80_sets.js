@@ -84,7 +84,35 @@ var SETDEX_GEN80_SETS = {
 				"Water Pulse"
 			]
 		},
-		"Abomasnow-4": {
+			"Abomasnow-4": {
+			"level": "50",
+			"evs": {
+				"hp": 252,
+				"at": 0,
+				"df": 4,
+				"sa": 252,
+				"sd": 0,
+				"sp": 0
+			},
+			"ivs": {
+				"hp": 31,
+				"at": 0,
+				"df": 31,
+				"sa": 31,
+				"sd": 31,
+				"sp": 31
+			},
+			"nature": "Quiet",
+			"ability": "Snow Warning",
+			"item": "Focus Sash",
+			"moves": [
+				"Blizzard",
+				"Energy Ball",
+				"Shadow Ball",
+				"Protect"
+			]
+		},
+		"Abomasnow-5": {
 			"level": "50",
 			"evs": {
 				"hp": 4,
@@ -112,7 +140,7 @@ var SETDEX_GEN80_SETS = {
 				"Focus Blast"
 			]
 		},
-		"Abomasnow-5": {
+		"Abomasnow-6": {
 			"level": "50",
 			"evs": {
 				"hp": 252,
@@ -140,6 +168,62 @@ var SETDEX_GEN80_SETS = {
 				"Focus Blast"
 			]
 		},
+			"Abomasnow-7 (Candice/Maylene)": {
+			"level": "50",
+			"evs": {
+				"hp": 4,
+				"at": 0,
+				"df": 0,
+				"sa": 252,
+				"sd": 0,
+				"sp": 252
+			},
+			"ivs": {
+				"hp": 31,
+				"at": 0,
+				"df": 31,
+				"sa": 31,
+				"sd": 31,
+				"sp": 31
+			},
+			"nature": "Timid",
+			"ability": "Snow Warning",
+			"item": "Choice Scarf",
+			"moves": [
+				"Blizzard",
+				"Energy Ball",
+				"Earth Power",
+				"Focus Blast"
+			]
+		},
+		"Abomasnow-8 (Candice)": {
+			"level": "50",
+			"evs": {
+				"hp": 252,
+				"at": 4,
+				"df": 0,
+				"sa": 252,
+				"sd": 0,
+				"sp": 0
+			},
+			"ivs": {
+				"hp": 31,
+				"at": 0,
+				"df": 31,
+				"sa": 31,
+				"sd": 31,
+				"sp": 31
+			},
+			"nature": "Modest",
+			"ability": "Snow Warning",
+			"item": "Icy Rock",
+			"moves": [
+				"Blizzard",
+				"Giga Drain",
+				"Earth Power",
+				"Ice Shard"
+			]
+		}
 	},
 		"Absol": {
 		"Absol-1": {
@@ -226,7 +310,7 @@ var SETDEX_GEN80_SETS = {
 				"Psycho Cut"
 			]
 		},
-		"Absol-4": {
+		"Absol-4 (Saturn/Jupiter)": {
 			"level": "50",
 			"evs": {
 				"hp": 4,
@@ -253,7 +337,7 @@ var SETDEX_GEN80_SETS = {
 				"Psycho Cut",
 				"Play Rough"
 			]
-		},
+		}
 	},
 	"Aerodactyl": {
 		"Aerodactyl-1": {
@@ -3924,7 +4008,7 @@ var SETDEX_GEN80_SETS = {
 "moves": [
 "Icicle Spear",
 "Rock Blast",
-"Ice Shard",
+"Razor Shell",
 "Shell Smash"
 ]
 },
@@ -3953,7 +4037,7 @@ var SETDEX_GEN80_SETS = {
 "Shell Smash",
 "Icicle Spear",
 "Rock Blast",
-"Ice Shard"
+"Razor Shell"
 ]
 },
 		"Cloyster-3": {
@@ -3981,7 +4065,35 @@ var SETDEX_GEN80_SETS = {
 "Shell Smash",
 "Icicle Spear",
 "Rock Blast",
-"Ice Shard"
+"Razor Shell"
+]
+},
+		"Cloyster-4 (Candice)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Skill Link",
+"item": "Focus Sash",
+"moves": [
+"Shell Smash",
+"Razor Shell",
+"Icicle Spear",
+"Rock Blast"
 ]
 }
 	},
