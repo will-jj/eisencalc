@@ -10819,7 +10819,7 @@ var SETDEX_GEN80_SETS = {
 }
 	},
 "Heatran": {
-		"Heatran-1": {
+		"Heatran-1 (Palmer Classic)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -10979,15 +10979,15 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Modest",
 "ability": "Flash Fire",
-"item": "Focus Sash",
+"item": "Choice Scarf",
 "moves": [
-"Heat Wave",
+"Magma Storm",
 "Flash Cannon",
-"Dragon Pulse",
-"Earth Power"
+"Earth Power",
+"Dragon Pulse"
 ]
 },
-		"Heatran-7": {
+		"Heatran-7 (Roark/Byron)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -11007,15 +11007,15 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Modest",
 "ability": "Flash Fire",
-"item": "Choice Scarf",
+"item": "Focus Sash",
 "moves": [
-"Magma Storm",
+"Heat Wave",
 "Flash Cannon",
-"Earth Power",
-"Dragon Pulse"
+"Dragon Pulse",
+"Earth Power"
 ]
 },
-		"Heatran-8": {
+		"Heatran-8 (Byron)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -11043,7 +11043,35 @@ var SETDEX_GEN80_SETS = {
 "Dragon Pulse"
 ]
 },
-		"Heatran-9": {
+		"Heatran-9 (Candice)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Flash Fire",
+"item": "Choice Scarf",
+"moves": [
+"Magma Storm",
+"Flash Cannon",
+"Earth Power",
+"Dark Pulse"
+]
+},
+		"Heatran-10 (Palmer Master)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -11071,7 +11099,35 @@ var SETDEX_GEN80_SETS = {
 "Dragon Pulse"
 ]
 },
-   		"Heatran-10": {
+		"Heatran-11 (Palmer Master)": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 4,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flash Fire",
+"item": "Focus Sash",
+"moves": [
+"Magma Storm",
+"Flash Cannon",
+"Earth Power",
+"Dragon Pulse"
+]
+},
+   		"Heatran-12 (Barry/Palmer)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -11097,6 +11153,34 @@ var SETDEX_GEN80_SETS = {
 "Protect",
 "Flash Cannon",
 "Magma Storm"
+]
+},
+   		"Heatran-13 (Barry/Palmer)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flash Fire",
+"item": "Focus Sash",
+"moves": [
+"Heat Wave",
+"Flash Cannon",
+"Dragon Pulse",
+"Earth Power"
 ]
 }
 	},
