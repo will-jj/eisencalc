@@ -21931,7 +21931,7 @@ var SETDEX_GEN80_SETS = {
 "Fake Out"
 ]
 },
-		"Sableye-2": {
+		"Sableye-2 (Gardenia/Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -21959,7 +21959,7 @@ var SETDEX_GEN80_SETS = {
 "Fake Out"
 ]
 },
-		"Sableye-3": {
+		"Sableye-3 (Saturn/Jupiter)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -21987,7 +21987,7 @@ var SETDEX_GEN80_SETS = {
 "Recover"
 ]
 },
-		"Sableye-4": {
+		"Sableye-4 (Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -22105,6 +22105,62 @@ var SETDEX_GEN80_SETS = {
 			"level": "50",
 "evs": {
 "hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Moxie",
+"item": "Choice Scarf",
+"moves": [
+"Outrage",
+"Thrash",
+"Crunch",
+"Earthquake"
+]
+},
+		"Salamence-5 (Roark)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Intimidate",
+"item": "Lum Berry",
+"moves": [
+"Earthquake",
+"Outrage",
+"Zen Headbutt",
+"Dragon Dance"
+]
+},
+		"Salamence-6 (Riley/Marley)": {
+			"level": "50",
+"evs": {
+"hp": 4,
 "at": 0,
 "df": 0,
 "sa": 252,
@@ -22129,7 +22185,7 @@ var SETDEX_GEN80_SETS = {
 "Protect"
 ]
 },
-		"Salamence-5": {
+		"Salamence-7 (Riley/Marley)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -22154,6 +22210,34 @@ var SETDEX_GEN80_SETS = {
 "Rock Slide",
 "Dragon Claw",
 "Zen Headbutt",
+"Protect"
+]
+},
+		"Salamence-8 (Mars/Cyrus)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Intimidate",
+"item": "White Herb",
+"moves": [
+"Heat Wave",
+"Draco Meteor",
+"Hurricane",
 "Protect"
 ]
 }
@@ -22464,6 +22548,90 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Adamant",
 "ability": "Technician",
+"item": "Sitrus Berry",
+"moves": [
+"Bullet Punch",
+"Thief",
+"Roost",
+"Swords Dance"
+]
+},
+		"Scizor-7 (Roark/Byron)": {
+			"level": "50",
+"evs": {
+"hp": 236,
+"at": 252,
+"df": 20,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Technician",
+"item": "Choice Band",
+"moves": [
+"Bullet Punch",
+"Quick Attack",
+"Superpower",
+"U-turn"
+]
+},
+		"Scizor-8 (Crasher Wake)": {
+			"level": "50",
+"evs": {
+"hp": 236,
+"at": 252,
+"df": 20,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Technician",
+"item": "Choice Band",
+"moves": [
+"Bullet Punch",
+"Quick Attack",
+"Superpower",
+"U-turn"
+]
+},
+		"Scizor-9 (Byron)": {
+			"level": "50",
+"evs": {
+"hp": 236,
+"at": 252,
+"df": 20,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Technician",
 "item": "Choice Band",
 "moves": [
 "Bullet Punch",
@@ -22472,7 +22640,7 @@ var SETDEX_GEN80_SETS = {
 "Thief"
 ]
 },
-		"Scizor-7": {
+		"Scizor-10 (Byron)": {
 			"level": "50",
 "evs": {
 "hp": 236,
@@ -22710,7 +22878,7 @@ var SETDEX_GEN80_SETS = {
 "Scary Face"
 ]
 },
-		"Sharpedo-2": {
+		"Sharpedo-2 (Saturn/Jupiter)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -22796,7 +22964,7 @@ var SETDEX_GEN80_SETS = {
 "Aerial Ace"
 ]
 },
-		"Shedinja-3": {
+		"Shedinja-3 (Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 0,
@@ -23028,13 +23196,13 @@ var SETDEX_GEN80_SETS = {
 "Nasty Plot"
 ]
 },
-		"Shiftry-5": {
+		"Shiftry-5 (Gardenia/Fantina)": {
 			"level": "50",
 "evs": {
-"hp": 4,
-"at": 252,
+"hp": 0,
+"at": 4,
 "df": 0,
-"sa": 0,
+"sa": 252,
 "sd": 0,
 "sp": 252
 },
@@ -23042,11 +23210,11 @@ var SETDEX_GEN80_SETS = {
 "hp": 31,
 "at": 31,
 "df": 31,
-"sa": 0,
+"sa": 31,
 "sd": 31,
 "sp": 31
 },
-"nature": "Adamant",
+"nature": "Rash",
 "ability": "Chlorophyll",
 "item": "Focus Sash",
 "moves": [
@@ -23462,7 +23630,7 @@ var SETDEX_GEN80_SETS = {
 "Flamethrower"
 ]
 },
-		"Skuntank-4": {
+		"Skuntank-4 (Saturn/Jupiter)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -23546,6 +23714,34 @@ var SETDEX_GEN80_SETS = {
 "Blizzard",
 "Fire Blast",
 "Thunderbolt"
+]
+},
+		"Slaking-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Truant",
+"item": "Sitrus Berry",
+"moves": [
+"Giga Impact",
+"Earthquake",
+"Night Slash",
+"Hammer Arm"
 ]
 }
 	},
@@ -23632,6 +23828,34 @@ var SETDEX_GEN80_SETS = {
 "Psychic",
 "Shadow Ball",
 "Flamethrower"
+]
+},
+		"Slowbro-4 (Roark)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Regenerator",
+"item": "Leftovers",
+"moves": [
+"Scald",
+"Grass Knot",
+"Ice Beam",
+"Slack Off"
 ]
 }
 	},
@@ -23901,10 +24125,38 @@ var SETDEX_GEN80_SETS = {
 "evs": {
 "hp": 4,
 "at": 252,
-"df": 0,
+"df": 252,
 "sa": 0,
 "sd": 0,
-"sp": 252
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Gluttony",
+"item": "Figy Berry",
+"moves": [
+"Body Slam",
+"Curse",
+"Heavy Slam",
+"Yawn"
+]
+},
+		"Snorlax-4 (Barry/Palmer)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 0
 },
 "ivs": {
 "hp": 31,
@@ -23921,7 +24173,7 @@ var SETDEX_GEN80_SETS = {
 "Body Slam",
 "Curse",
 "Fire Punch",
-"Recycle"
+"Crunch"
 ]
 }
 	},
@@ -24076,7 +24328,7 @@ var SETDEX_GEN80_SETS = {
 }
 	},
 "Spiritomb": {
-		"Spiritomb-1": {
+		"Spiritomb-1 (Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -24326,6 +24578,34 @@ var SETDEX_GEN80_SETS = {
 "sd": 31,
 "sp": 31
 },
+"nature": "Jolly",
+"ability": "Intimidate",
+"item": "Choice Scarf",
+"moves": [
+"Final Gambit",
+"U-turn",
+"-",
+"-"
+]
+},
+		"Staraptor-5 (Barry/Palmer)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
 "nature": "Adamant",
 "ability": "Intimidate",
 "item": "Choice Scarf",
@@ -24501,6 +24781,34 @@ var SETDEX_GEN80_SETS = {
 "sp": 31
 },
 "nature": "Timid",
+"ability": "Natural Cure",
+"item": "Focus Sash",
+"moves": [
+"Hydro Pump",
+"Dazzling Gleam",
+"Ice Beam",
+"Psychic"
+]
+},
+		"Starmie-4 (Riley/Marley)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
 "ability": "Analytic",
 "item": "Focus Sash",
 "moves": [
@@ -24599,6 +24907,34 @@ var SETDEX_GEN80_SETS = {
 ]
 },
 		"Steelix-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Brave",
+"ability": "Sheer Force",
+"item": "Life Orb",
+"moves": [
+"Iron Tail",
+"Fire Fang",
+"Stone Edge",
+"Ice Fang"
+]
+},
+		"Steelix-4 (Buck/Bertha)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -24801,6 +25137,62 @@ var SETDEX_GEN80_SETS = {
 ]
 },
 		"Suicune-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Pressure",
+"item": "Sitrus Berry",
+"moves": [
+"Tailwind",
+"Icy Wind",
+"Scald",
+"Snarl"
+]
+},
+		"Suicune-6": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Pressure",
+"item": "Leftovers",
+"moves": [
+"Rest",
+"Sleep Talk",
+"Scald",
+"Ice Beam"
+]
+},
+		"Suicune-7 (Crasher Wake)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -25023,6 +25415,34 @@ var SETDEX_GEN80_SETS = {
 "sp": 31
 },
 "nature": "Adamant",
+"ability": "Damp",
+"item": "Sitrus Berry",
+"moves": [
+"Waterfall",
+"Earthquake",
+"Yawn",
+"Counter"
+]
+},
+		"Swampert-5 (Crasher Wake)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
 "ability": "Torrent",
 "item": "Rindo Berry",
 "moves": [
@@ -25030,6 +25450,34 @@ var SETDEX_GEN80_SETS = {
 "Waterfall",
 "Rock Tomb",
 "Avalanche"
+]
+},
+		"Swampert-6 (Volkner)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Torrent",
+"item": "Life Orb",
+"moves": [
+"Earthquake",
+"Waterfall",
+"Ice Punch",
+"Counter"
 ]
 }
 	},
