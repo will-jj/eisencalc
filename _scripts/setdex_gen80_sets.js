@@ -3647,6 +3647,62 @@ var SETDEX_GEN80_SETS = {
 "Dragon Rush",
 "Dragon Dance"
 ]
+},
+		"Charizard-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Solar Power",
+"item": "Choice Scarf",
+"moves": [
+"Heat Wave",
+"Air Slash",
+"Flamethrower",
+"Dragon Pulse"
+]
+},
+		"Charizard-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Blaze",
+"item": "Sitrus Berry",
+"moves": [
+"Belly Drum",
+"Dragon Claw",
+"Fire Punch",
+"Earthquake"
+]
 }
 	},
 "Charmander": {
@@ -4123,6 +4179,34 @@ var SETDEX_GEN80_SETS = {
 "evs": {
 "hp": 252,
 "at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Levitate",
+"item": "Leftovers",
+"moves": [
+"Iron Defense",
+"Body Press",
+"Ice Beam",
+"Earth Power"
+]
+},
+		"Claydol-4 (Buck/Bertha)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
 "df": 4,
 "sa": 252,
 "sd": 0,
@@ -4146,7 +4230,7 @@ var SETDEX_GEN80_SETS = {
 "Dazzling Gleam"
 ]
 },
-		"Claydol-4": {
+		"Claydol-5 (Buck/Bertha)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -4605,12 +4689,12 @@ var SETDEX_GEN80_SETS = {
 "item": "Leftovers",
 "moves": [
 "Giga Drain",
-"Leech Seed",
 "Sludge Bomb",
-"Stockpile"
+"Stockpile",
+"Leech Seed"
 ]
 },
-		"Cradily-5": {
+		"Cradily-5 (Gardenia)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -4697,10 +4781,38 @@ var SETDEX_GEN80_SETS = {
 "Knock Off",
 "Aqua Jet"
 ]
+},
+		"Crawdaunt-2 (Fantina)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Adaptability",
+"item": "Sitrus Berry",
+"moves": [
+"Knock Off",
+"Crabhammer",
+"Swords Dance",
+"Aqua Jet"
+]
 }
 	},
 "Cresselia": {
-		"Cresselia-1": {
+		"Cresselia-1 (Palmer Classic)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -4860,6 +4972,62 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Bold",
 "ability": "Levitate",
+"item": "Wiki Berry",
+"moves": [
+"Trick Room",
+"Psychic",
+"Moonblast",
+"Moonlight"
+]
+},
+		"Cresselia-7": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Levitate",
+"item": "Wiki Berry",
+"moves": [
+"Calm Mind",
+"Moonlight",
+"Moonblast",
+"Psyshock"
+]
+},
+		"Cresselia-8 (Buck/Bertha)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Levitate",
 "item": "Mental Herb",
 "moves": [
 "Trick Room",
@@ -4868,7 +5036,7 @@ var SETDEX_GEN80_SETS = {
 "Psyshock"
 ]
 },
-		"Cresselia-7": {
+		"Cresselia-9 (Buck/Bertha)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -4896,7 +5064,7 @@ var SETDEX_GEN80_SETS = {
 "Psyshock"
 ]
 },
-		"Cresselia-8": {
+		"Cresselia-10 (Palmer Master)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -4924,7 +5092,7 @@ var SETDEX_GEN80_SETS = {
 "Ice Beam"
 ]
 },
-		"Cresselia-9": {
+		"Cresselia-11 (Barry/Palmer)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -4946,7 +5114,7 @@ var SETDEX_GEN80_SETS = {
 "ability": "Levitate",
 "item": "Sitrus Berry",
 "moves": [
-"Lunar Dance",
+"Moonblast",
 "Thunder Wave",
 "Moonlight",
 "Ice Beam"
@@ -5040,7 +5208,35 @@ var SETDEX_GEN80_SETS = {
 "U-turn"
 ]
 },
-		"Crobat-3": {
+		"Crobat-3 (Saturn/Jupiter)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Inner Focus",
+"item": "Choice Band",
+"moves": [
+"Cross Poison",
+"Brave Bird",
+"U-turn",
+"Zen Headbutt"
+]
+},
+		"Crobat-4 (Mars/Cyrus)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -5506,7 +5702,7 @@ var SETDEX_GEN80_SETS = {
 "Ice Shard"
 ]
 },
-		"Donphan-4": {
+		"Donphan-4 (Buck/Bertha)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -5566,7 +5762,7 @@ var SETDEX_GEN80_SETS = {
 }
 	},
 "Dragonite": {
-		"Dragonite-1": {
+		"Dragonite-1 (Palmer Classic)": {
 			"level": "50",
 "evs": {
 "hp": 148,
@@ -5696,6 +5892,62 @@ var SETDEX_GEN80_SETS = {
 "sd": 31,
 "sp": 31
 },
+"nature": "Adamant",
+"ability": "Multiscale",
+"item": "Lum Berry",
+"moves": [
+"Outrage",
+"Earthquake",
+"Fire Punch",
+"Dragon Dance"
+]
+},
+		"Dragonite-6 (Maylene)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Multiscale",
+"item": "Lum Berry",
+"moves": [
+"Outrage",
+"Earthquake",
+"Fire Punch",
+"Dragon Dance"
+]
+},
+		"Dragonite-7 (Fantina)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
 "nature": "Jolly",
 "ability": "Multiscale",
 "item": "Lum Berry",
@@ -5706,7 +5958,35 @@ var SETDEX_GEN80_SETS = {
 "Thunder Punch"
 ]
 },
-		"Dragonite-6": {
+		"Dragonite-8 (Palmer Master)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Multiscale",
+"item": "Lum Berry",
+"moves": [
+"Dragon Dance",
+"Outrage",
+"Earthquake",
+"Thunder Punch"
+]
+},
+		"Dragonite-9 (Palmer Master)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -5735,6 +6015,35 @@ var SETDEX_GEN80_SETS = {
 ]
 }
 	},
+		"Dragonite-10 (Barry/Palmer)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Multiscale",
+"item": "Choice Band",
+"moves": [
+"Fire Punch",
+"Outrage",
+"Earthquake",
+"Thunder Punch"
+]
+}
+	}
 "Drapion": {
 		"Drapion-1": {
 			"level": "50",
@@ -5790,6 +6099,34 @@ var SETDEX_GEN80_SETS = {
 "Double Team",
 "Roar",
 "Payback"
+]
+},
+		"Drapion-3": {
+			"level": "50",
+"evs": {
+"hp": 108,
+"at": 252,
+"df": 68,
+"sa": 0,
+"sd": 4,
+"sp": 76
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Impish",
+"ability": "Sniper",
+"item": "Scope Lens",
+"moves": [
+"Night Slash",
+"Cross Poison",
+"Earthquake",
+"Ice Fang"
 ]
 }
 	},
