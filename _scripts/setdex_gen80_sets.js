@@ -7826,6 +7826,34 @@ var SETDEX_GEN80_SETS = {
 "Ice Fang",
 "Dragon Dance"
 ]
+},
+		"Feraligatr-4": {
+			"level": "50",
+"evs": {
+"hp": 20,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 236
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Sheer Force",
+"item": "Life Orb",
+"moves": [
+"Waterfall",
+"Ice Punch",
+"Crunch",
+"Dragon Dance"
+]
 }
 	},
 "Finneon": {
@@ -8031,7 +8059,7 @@ var SETDEX_GEN80_SETS = {
 "Rain Dance"
 ]
 },
-		"Floatzel-4": {
+		"Floatzel-4 (Crasher Wake)": {
 			"level": "50",
 "evs": {
 "hp": 0,
@@ -8115,6 +8143,34 @@ var SETDEX_GEN80_SETS = {
 "Outrage",
 "Thunder Punch",
 "Dragon Dance"
+]
+},
+		"Flygon-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "Choice Specs",
+"moves": [
+"Boomburst",
+"Draco Meteor",
+"Earth Power",
+"Flamethrower"
 ]
 }
 	},
@@ -8317,7 +8373,7 @@ var SETDEX_GEN80_SETS = {
 "Psychic"
 ]
 },
-		"Froslass-5": {
+		"Froslass-5 (Candice/Maylene)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -8463,7 +8519,7 @@ var SETDEX_GEN80_SETS = {
 "Destiny Bond"
 ]
 },
-		"Gallade-3": {
+		"Gallade-3 (Maylene)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -8628,12 +8684,124 @@ var SETDEX_GEN80_SETS = {
 "item": "Yache Berry",
 "moves": [
 "Earthquake",
+"Dragon Claw",
+"Rock Slide",
+"Brick Break"
+]
+},
+		"Garchomp-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Rough Skin",
+"item": "Focus Sash",
+"moves": [
+"Earthquake",
+"Dragon Claw",
+"Rock Slide",
+"Poison Jab"
+]
+},
+		"Garchomp-7": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Rough Skin",
+"item": "King's Rock",
+"moves": [
+"Dragon Claw",
+"Rock Slide",
+"Earthquake",
+"Protect"
+]
+},
+		"Garchomp-8": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Rough Skin",
+"item": "Focus Sash",
+"moves": [
+"Earthquake",
+"Outrage",
+"Rock Tomb",
+"Swords Dance"
+]
+},
+		"Garchomp-9 (Riley/Marley)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Rough Skin",
+"item": "Yache Berry",
+"moves": [
+"Earthquake",
 "Rock Slide",
 "Dragon Claw",
 "Crunch"
 ]
 },
-		"Garchomp-6": {
+		"Garchomp-10 (Cynthia)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -8661,7 +8829,7 @@ var SETDEX_GEN80_SETS = {
 "Swords Dance"
 ]
 },
-		"Garchomp-7": {
+		"Garchomp-11 (Cynthia)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -8689,7 +8857,7 @@ var SETDEX_GEN80_SETS = {
 "Poison Jab"
 ]
 },
-		"Garchomp-8": {
+		"Garchomp-12 (Cynthia)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -8804,6 +8972,62 @@ var SETDEX_GEN80_SETS = {
 ]
 },
 		"Gardevoir-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Telepathy",
+"item": "Choice Scarf",
+"moves": [
+"Psychic",
+"Dazzling Gleam",
+"Thunderbolt",
+"Icy Wind"
+]
+},
+		"Gardevoir-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Trace",
+"item": "Choice Specs",
+"moves": [
+"Moonblast",
+"Psychic",
+"Thunderbolt",
+"Mystical Fire"
+]
+},
+		"Gardevoir-6 (Mira/Cheryl)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -8946,6 +9170,34 @@ var SETDEX_GEN80_SETS = {
 ]
 },
 		"Gastrodon-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Storm Drain",
+"item": "Wiki Berry",
+"moves": [
+"Scald",
+"Earth Power",
+"Recover",
+"Mirror Coat"
+]
+},
+		"Gastrodon-6 (Cynthia)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -9109,13 +9361,41 @@ var SETDEX_GEN80_SETS = {
 "ability": "Cursed Body",
 "item": "Focus Sash",
 "moves": [
+"Shadow Ball",
+"Sludge Bomb",
+"Destiny Bond",
+"Dazzling Gleam"
+]
+},
+		"Gengar-6 (Mira/Cheryl)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Cursed Body",
+"item": "Focus Sash",
+"moves": [
 "Sludge Wave",
 "Dazzling Gleam",
 "Icy Wind",
 "Shadow Ball"
 ]
 },
-		"Gengar-6": {
+		"Gengar-7 (Gardenia/Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -9143,7 +9423,7 @@ var SETDEX_GEN80_SETS = {
 "Dazzling Gleam"
 ]
 },
-		"Gengar-7": {
+		"Gengar-8 (Gardenia/Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -9171,7 +9451,35 @@ var SETDEX_GEN80_SETS = {
 "Dazzling Gleam"
 ]
 },
-		"Gengar-8": {
+		"Gengar-9 (Saturn/Jupiter)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Cursed Body",
+"item": "Focus Sash",
+"moves": [
+"Shadow Ball",
+"Sludge Bomb",
+"Icy Wind",
+"Dazzling Gleam"
+]
+},
+		"Gengar-10 (Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -9347,7 +9655,7 @@ var SETDEX_GEN80_SETS = {
 "Freeze-Dry"
 ]
 },
-		"Glaceon-3": {
+		"Glaceon-3 (Candice)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -9577,6 +9885,34 @@ var SETDEX_GEN80_SETS = {
 "Guillotine",
 "Poison Jab",
 "Thunder Fang"
+]
+},
+		"Gliscor-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 100,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 156
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Poison Heal",
+"item": "Toxic Orb",
+"moves": [
+"Earthquake",
+"Guillotine",
+"Substitute",
+"Protect"
 ]
 }
 	},
@@ -10226,6 +10562,62 @@ var SETDEX_GEN80_SETS = {
 		"Gyarados-4": {
 			"level": "50",
 "evs": {
+"hp": 84,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 172
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Sitrus Berry",
+"moves": [
+"Waterfall",
+"Earthquake",
+"Ice Fang",
+"Dragon Dance"
+]
+},
+		"Gyarados-5 (Volkner)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Lum Berry",
+"moves": [
+"Waterfall",
+"Earthquake",
+"Ice Fang",
+"Dragon Dance"
+]
+},
+		"Gyarados-6 (Mars/Cyrus)": {
+			"level": "50",
+"evs": {
 "hp": 4,
 "at": 252,
 "df": 0,
@@ -10251,7 +10643,7 @@ var SETDEX_GEN80_SETS = {
 "Power Whip"
 ]
 },
-		"Gyarados-5": {
+		"Gyarados-7 (Mars/Cyrus)": {
 			"level": "50",
 "evs": {
 "hp": 4,
