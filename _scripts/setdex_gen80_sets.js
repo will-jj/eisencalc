@@ -19558,6 +19558,34 @@ var SETDEX_GEN80_SETS = {
 "Sludge Bomb",
 "Recover"
 ]
+},
+		"Quagsire-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Unaware",
+"item": "Leftovers",
+"moves": [
+"Stockpile",
+"Whirlpool",
+"Toxic",
+"Recover"
+]
 }
 	},
 "Quilava": {
@@ -19705,35 +19733,7 @@ var SETDEX_GEN80_SETS = {
 "Thunder"
 ]
 },
-		"Raichu-4": {
-			"level": "50",
-"evs": {
-"hp": 4,
-"at": 252,
-"df": 0,
-"sa": 0,
-"sd": 0,
-"sp": 252
-},
-"ivs": {
-"hp": 31,
-"at": 31,
-"df": 31,
-"sa": 0,
-"sd": 31,
-"sp": 31
-},
-"nature": "Jolly",
-"ability": "Lightning Rod",
-"item": "Choice Band",
-"moves": [
-"Volt Switch",
-"Facade",
-"Play Rough",
-"Volt Tackle"
-]
-},
-		"Raichu-5": {
+		"Raichu-4 (Mars/Cyrus)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -19894,13 +19894,13 @@ var SETDEX_GEN80_SETS = {
 "sp": 31
 },
 "nature": "Timid",
-"ability": "Pressure",
+"ability": "Inner Focus",
 "item": "Choice Specs",
 "moves": [
 "Thunderbolt",
 "Volt Switch",
-"Scald",
-"Shadow Ball"
+"Shadow Ball",
+"Scald"
 ]
 }
 	},
@@ -19989,7 +19989,35 @@ var SETDEX_GEN80_SETS = {
 "Iron Head"
 ]
 },
-		"Rampardos-4": {
+		"Rampardos-4 (Roark)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Mold Breaker",
+"item": "Choice Scarf",
+"moves": [
+"Head Smash",
+"Zen Headbutt",
+"Earthquake",
+"Iron Head"
+]
+},
+		"Rampardos-5 (Roark)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -20017,7 +20045,7 @@ var SETDEX_GEN80_SETS = {
 "Iron Head"
 ]
 },
-		"Rampardos-5": {
+		"Rampardos-6 (Roark/Byron)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -20045,7 +20073,7 @@ var SETDEX_GEN80_SETS = {
 "Protect"
 ]
 },
-		"Rampardos-6": {
+		"Rampardos-7 (Roark/Byron)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -20306,6 +20334,34 @@ var SETDEX_GEN80_SETS = {
 		"Regice-5": {
 			"level": "50",
 "evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Quiet",
+"ability": "Clear Body",
+"item": "Zoom Lens",
+"moves": [
+"Thunder",
+"Blizzard",
+"Focus Blast",
+"Flash Cannon"
+]
+},
+		"Regice-6 (Candice)": {
+			"level": "50",
+"evs": {
 "hp": 172,
 "at": 0,
 "df": 252,
@@ -20333,7 +20389,7 @@ var SETDEX_GEN80_SETS = {
 }
 	},
 "Regigigas": {
-		"Regigigas-1": {
+		"Regigigas-1 (Palmer Classic)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -20474,6 +20530,34 @@ var SETDEX_GEN80_SETS = {
 ]
 },
 		"Regigigas-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Impish",
+"ability": "Slow Start",
+"item": "Leftovers",
+"moves": [
+"Crush Grip",
+"Drain Punch",
+"Knock Off",
+"Protect"
+]
+},
+		"Regigigas-7 (Palmer Master)": {
 			"level": "50",
 "evs": {
 "hp": 140,
@@ -20618,6 +20702,34 @@ var SETDEX_GEN80_SETS = {
 		"Regirock-5": {
 			"level": "50",
 "evs": {
+"hp": 0,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Sturdy",
+"item": "Liechi Berry",
+"moves": [
+"Rock Polish",
+"Earthquake",
+"Stone Edge",
+"Body Press"
+]
+},
+		"Regirock-6 (Buck/Bertha)": {
+			"level": "50",
+"evs": {
 "hp": 4,
 "at": 252,
 "df": 0,
@@ -20638,7 +20750,7 @@ var SETDEX_GEN80_SETS = {
 "item": "Custap Berry",
 "moves": [
 "Rock Slide",
-"Fire Punch",
+"Protect",
 "Ice Punch",
 "Thunder Punch"
 ]
@@ -20755,6 +20867,34 @@ var SETDEX_GEN80_SETS = {
 "Double Team",
 "Swagger",
 "Substitute"
+]
+},
+		"Registeel-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Brave",
+"ability": "Clear Body",
+"item": "Life Orb",
+"moves": [
+"Explosion",
+"Iron Head",
+"Flash Cannon",
+"Thunderbolt"
 ]
 }
 	},
@@ -20991,7 +21131,7 @@ var SETDEX_GEN80_SETS = {
 }
 	},
 "Rhyperior": {
-		"Rhyperior-1": {
+		"Rhyperior-1 (Palmer Classic)": {
 			"level": "50",
 "evs": {
 "hp": 148,
@@ -21094,13 +21234,13 @@ var SETDEX_GEN80_SETS = {
 "sp": 31
 },
 "nature": "Adamant",
-"ability": "Solid Rock",
-"item": "Sitrus Berry",
+"ability": "Lightning Rod",
+"item": "Life Orb",
 "moves": [
-"Rock Slide",
 "Earthquake",
-"Ice Punch",
-"Protect"
+"Rock Slide",
+"Thunder Punch",
+"Poison Jab"
 ]
 },
 		"Rhyperior-5": {
@@ -21128,10 +21268,66 @@ var SETDEX_GEN80_SETS = {
 "Rock Slide",
 "Earthquake",
 "Ice Punch",
+"Thunder Punch"
+]
+},
+		"Rhyperior-6 (Buck/Bertha)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Solid Rock",
+"item": "Sitrus Berry",
+"moves": [
+"Rock Slide",
+"Earthquake",
+"Ice Punch",
 "Protect"
 ]
 },
-		"Rhyperior-6": {
+		"Rhyperior-7 (Buck/Bertha)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Solid Rock",
+"item": "Muscle Band",
+"moves": [
+"Rock Slide",
+"Earthquake",
+"Ice Punch",
+"Protect"
+]
+},
+		"Rhyperior-8 (Buck/Bertha)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -21159,7 +21355,7 @@ var SETDEX_GEN80_SETS = {
 "Thunder Punch"
 ]
 },
-		"Rhyperior-7": {
+		"Rhyperior-9 (Palmer Master)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -21187,7 +21383,7 @@ var SETDEX_GEN80_SETS = {
 "Horn Drill"
 ]
 },
-		"Rhyperior-8": {
+		"Rhyperior-10 (Barry/Palmer)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -21361,7 +21557,35 @@ var SETDEX_GEN80_SETS = {
 "Dazzling Gleam"
 ]
 },
-		"Roserade-4": {
+		"Roserade-4 (Gardenia)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Poison Point",
+"item": "Focus Sash",
+"moves": [
+"Leaf Storm",
+"Sludge Bomb",
+"Shadow Ball",
+"Dazzling Gleam"
+]
+},
+		"Roserade-5 (Gardenia/Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -21421,7 +21645,7 @@ var SETDEX_GEN80_SETS = {
 }
 	},
 "Rotom-Heat": {
-		"Rotom-Heat-1": {
+		"Rotom-Heat-1 (Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -21449,7 +21673,35 @@ var SETDEX_GEN80_SETS = {
 "Will-O-Wisp"
 ]
 },
-		"Rotom-Heat-2": {
+		"Rotom-Heat-2 (Flint/Volkner)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "Choice Scarf",
+"moves": [
+"Overheat",
+"Discharge",
+"Volt Switch",
+"Shadow Ball"
+]
+},
+		"Rotom-Heat-3 (Mars/Cyrus)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -21479,7 +21731,7 @@ var SETDEX_GEN80_SETS = {
 }
 	},
 "Rotom-Mow": {
-		"Rotom-Mow-1": {
+		"Rotom-Mow-1 (Gardenia)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -21507,7 +21759,7 @@ var SETDEX_GEN80_SETS = {
 "Thunder Wave"
 ]
 },
-		"Rotom-Mow-2": {
+		"Rotom-Mow-2 (Gardenia)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -21570,6 +21822,34 @@ var SETDEX_GEN80_SETS = {
 "evs": {
 "hp": 252,
 "at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Levitate",
+"item": "Sitrus Berry",
+"moves": [
+"Hydro Pump",
+"Discharge",
+"Thunderbolt",
+"Will-O-Wisp"
+]
+},
+		"Rotom-Wash-3 (Volkner)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
 "df": 252,
 "sa": 4,
 "sd": 0,
@@ -21593,7 +21873,7 @@ var SETDEX_GEN80_SETS = {
 "Will-O-Wisp"
 ]
 },
-		"Rotom-Wash-3": {
+		"Rotom-Wash-4 (Flint/Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -21613,12 +21893,12 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Modest",
 "ability": "Levitate",
-"item": "Life Orb",
+"item": "Choice Scarf",
 "moves": [
 "Hydro Pump",
 "Thunderbolt",
 "Volt Switch",
-"Trick"
+"Discharge"
 ]
 }
 	},
