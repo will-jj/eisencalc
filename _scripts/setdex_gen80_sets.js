@@ -6243,6 +6243,34 @@ var SETDEX_GEN80_SETS = {
 "Charge Beam",
 "Shadow Ball"
 ]
+},
+		"Drifblim-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Unburden",
+"item": "Sitrus Berry",
+"moves": [
+"Baton Pass",
+"Will-O-Wisp",
+"Strength Sap",
+"Minimize"
+]
 }
 	},
 "Drifloon": {
@@ -6535,14 +6563,14 @@ var SETDEX_GEN80_SETS = {
 "Night Shade"
 ]
 },
-		"Dusknoir-3": {
+		"Dusknoir-3 (Gardenia/Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 252,
-"at": 4,
+"at": 0,
 "df": 252,
 "sa": 0,
-"sd": 0,
+"sd": 4,
 "sp": 0
 },
 "ivs": {
@@ -6563,7 +6591,7 @@ var SETDEX_GEN80_SETS = {
 "Rock Slide"
 ]
 },
-		"Dusknoir-4": {
+		"Dusknoir-4 (Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -6787,6 +6815,34 @@ var SETDEX_GEN80_SETS = {
 "sd": 31,
 "sp": 31
 },
+"nature": "Jolly",
+"ability": "Motor Drive",
+"item": "Focus Sash",
+"moves": [
+"Wild Charge",
+"Earthquake",
+"Ice Punch",
+"Quick Attack"
+]
+},
+		"Electivire-4 (Volkner)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
 "nature": "Adamant",
 "ability": "Motor Drive",
 "item": "Magnet",
@@ -6797,7 +6853,7 @@ var SETDEX_GEN80_SETS = {
 "Wild Charge"
 ]
 },
-		"Electivire-4": {
+		"Electivire-5 (Flint/Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -6821,11 +6877,11 @@ var SETDEX_GEN80_SETS = {
 "moves": [
 "Wild Charge",
 "Ice Punch",
-"Feint",
+"Protect",
 "Rock Slide"
 ]
 },
-		"Electivire-5": {
+		"Electivire-6 (Flint/Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -7055,7 +7111,35 @@ var SETDEX_GEN80_SETS = {
 "Earthquake"
 ]
 },
-		"Empoleon-4": {
+		"Empoleon-4 (Maylene)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Torrent",
+"item": "Choice Scarf",
+"moves": [
+"Hydro Pump",
+"Flash Cannon",
+"Ice Beam",
+"Grass Knot"
+]
+},
+		"Empoleon-5 (Barry/Palmer)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -7215,6 +7299,62 @@ var SETDEX_GEN80_SETS = {
 "sd": 31,
 "sp": 31
 },
+"nature": "Adamant",
+"ability": "Inner Focus",
+"item": "Choice Band",
+"moves": [
+"Sacred Fire",
+"Extreme Speed",
+"Crunch",
+"Stone Edge"
+]
+},
+		"Entei-6 (Flint/Volkner)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Inner Focus",
+"item": "Muscle Band",
+"moves": [
+"Sacred Fire",
+"Extreme Speed",
+"Bulldoze",
+"Iron Head"
+]
+},
+		"Entei-7 (Mars/Cyrus)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
 "nature": "Jolly",
 "ability": "Inner Focus",
 "item": "Muscle Band",
@@ -7310,6 +7450,34 @@ var SETDEX_GEN80_SETS = {
 "Baton Pass",
 "Light Screen"
 ]
+},
+		"Espeon-4 (Mars/Cyrus)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Magic Bounce",
+"item": "Light Clay",
+"moves": [
+"Psychic",
+"Dazzling Gleam",
+"Reflect",
+"Light Screen"
+]
 }
 	},
 "Exeggcute": {
@@ -7397,6 +7565,34 @@ var SETDEX_GEN80_SETS = {
 "Worry Seed",
 "Bullet Seed",
 "Psychic"
+]
+},
+		"Exeggutor-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Quiet",
+"ability": "Harvest",
+"item": "Sitrus Berry",
+"moves": [
+"Trick Room",
+"Giga Drain",
+"Psychic",
+"Sludge Bomb"
 ]
 }
 	},
