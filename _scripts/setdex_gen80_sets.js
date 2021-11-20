@@ -25603,6 +25603,34 @@ var SETDEX_GEN80_SETS = {
 "evs": {
 "hp": 252,
 "at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Regenerator",
+"item": "Sitrus Berry",
+"moves": [
+"Giga Drain",
+"Focus Blast",
+"Sludge Bomb",
+"Sleep Powder"
+]
+},
+		"Tangrowth-4 (Gardenia/Fantina)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
 "df": 252,
 "sa": 4,
 "sd": 0,
@@ -25624,34 +25652,6 @@ var SETDEX_GEN80_SETS = {
 "Sludge Bomb",
 "Focus Blast",
 "Sleep Powder"
-]
-},
-		"Tangrowth-4": {
-			"level": "50",
-"evs": {
-"hp": 252,
-"at": 0,
-"df": 252,
-"sa": 4,
-"sd": 0,
-"sp": 0
-},
-"ivs": {
-"hp": 31,
-"at": 0,
-"df": 31,
-"sa": 31,
-"sd": 31,
-"sp": 31
-},
-"nature": "Bold",
-"ability": "Regenerator",
-"item": "Leftovers",
-"moves": [
-"Giga Drain",
-"Rage Powder",
-"Sludge Bomb",
-"Focus Blast"
 ]
 }
 	},
@@ -25947,6 +25947,90 @@ var SETDEX_GEN80_SETS = {
 		"Togekiss-4": {
 			"level": "50",
 "evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Serene Grace",
+"item": "Salac Berry",
+"moves": [
+"Air Slash",
+"Dazzling Gleam",
+"Light Screen",
+"Flamethrower"
+]
+},
+		"Togekiss-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Super Luck",
+"item": "Scope Lens",
+"moves": [
+"Air Slash",
+"Flamethrower",
+"Dazzling Gleam",
+"Thunder Wave"
+]
+},
+		"Togekiss-6 (Cynthia)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Serene Grace",
+"item": "Choice Scarf",
+"moves": [
+"Air Slash",
+"Dazzling Gleam",
+"Fire Blast",
+"Grass Knot"
+]
+},
+		"Togekiss-7 (Cynthia)": {
+			"level": "50",
+"evs": {
 "hp": 252,
 "at": 0,
 "df": 252,
@@ -25970,6 +26054,34 @@ var SETDEX_GEN80_SETS = {
 "Air Slash",
 "Roost",
 "Mystical Fire"
+]
+},
+		"Togekiss-8 (Mars/Cyrus)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Serene Grace",
+"item": "Choice Scarf",
+"moves": [
+"Air Slash",
+"Flamethrower",
+"Aura Sphere",
+"Grass Knot"
 ]
 }
 	},
@@ -26089,6 +26201,62 @@ var SETDEX_GEN80_SETS = {
 "Stealth Rock",
 "Yawn"
 ]
+},
+		"Torkoal-2": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Quiet",
+"ability": "Drought",
+"item": "Charcoal",
+"moves": [
+"Eruption",
+"Heat Wave",
+"Solar Beam",
+"Flamethrower"
+]
+},
+		"Torkoal-3 (Roark)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 0
+},
+"nature": "Quiet",
+"ability": "Drought",
+"item": "Charcoal",
+"moves": [
+"Eruption",
+"Flamethrower",
+"Solar Beam",
+"Earth Power"
+]
 }
 	},
 "Torterra": {
@@ -26176,7 +26344,7 @@ var SETDEX_GEN80_SETS = {
 "Leech Seed"
 ]
 },
-		"Torterra-4": {
+		"Torterra-4 (Gardenia/Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -26204,7 +26372,7 @@ var SETDEX_GEN80_SETS = {
 "Rock Slide"
 ]
 },
-		"Torterra-5": {
+		"Torterra-5 (Barry/Palmer)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -26224,9 +26392,9 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Impish",
 "ability": "Shell Armor",
-"item": "Leftovers",
+"item": "Quick Claw",
 "moves": [
-"Leech Seed",
+"Bulldoze",
 "Wood Hammer",
 "Crunch",
 "Synthesis"
@@ -26376,7 +26544,7 @@ var SETDEX_GEN80_SETS = {
 "Focus Blast"
 ]
 },
-		"Toxicroak-4": {
+		"Toxicroak-4 (Saturn/Jupiter)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -26635,6 +26803,34 @@ var SETDEX_GEN80_SETS = {
 "Shadow Claw",
 "Aerial Ace"
 ]
+},
+		"Typhlosion-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Flash Fire",
+"item": "Choice Scarf",
+"moves": [
+"Eruption",
+"Flamethrower",
+"Extrasensory",
+"Focus Blast"
+]
 }
 	},
 "Tyranitar": {
@@ -26725,6 +26921,62 @@ var SETDEX_GEN80_SETS = {
 		"Tyranitar-4": {
 			"level": "50",
 "evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Sand Stream",
+"item": "Focus Sash",
+"moves": [
+"Rock Slide",
+"Thunder Punch",
+"Ice Punch",
+"Crunch"
+]
+},
+		"Tyranitar-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Sand Stream",
+"item": "Lum Berry",
+"moves": [
+"Earthquake",
+"Stone Edge",
+"Crunch",
+"Dragon Dance"
+]
+},
+		"Tyranitar-6 (Roark)": {
+			"level": "50",
+"evs": {
 "hp": 0,
 "at": 252,
 "df": 0,
@@ -26750,7 +27002,7 @@ var SETDEX_GEN80_SETS = {
 "Ice Punch"
 ]
 },
-		"Tyranitar-5": {
+		"Tyranitar-7 (Roark)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -26770,7 +27022,7 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Impish",
 "ability": "Sand Stream",
-"item": "Smooth Rock",
+"item": "Chople Berry",
 "moves": [
 "Stealth Rock",
 "Thunder Wave",
@@ -26778,7 +27030,7 @@ var SETDEX_GEN80_SETS = {
 "Crunch"
 ]
 },
-		"Tyranitar-6": {
+		"Tyranitar-8 (Roark/Byron)": {
 			"level": "50",
 "evs": {
 "hp": 0,
@@ -26806,7 +27058,7 @@ var SETDEX_GEN80_SETS = {
 "Earthquake"
 ]
 },
-		"Tyranitar-7": {
+		"Tyranitar-9 (Roark/Byron)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -26834,7 +27086,35 @@ var SETDEX_GEN80_SETS = {
 "Low Kick"
 ]
 },
-		"Tyranitar-8": {
+		"Tyranitar-10 (Roark/Byron)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Sand Stream",
+"item": "Choice Scarf",
+"moves": [
+"Ice Punch",
+"Rock Slide",
+"Fire Punch",
+"Earthquake"
+]
+},
+		"Tyranitar-11 (Saturn/Jupiter)": {
 			"level": "50",
 "evs": {
 "hp": 4,
