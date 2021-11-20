@@ -27147,6 +27147,34 @@ var SETDEX_GEN80_SETS = {
 		"Umbreon-1": {
 			"level": "50",
 "evs": {
+"hp": 220,
+"at": 0,
+"df": 220,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 25,
+"sd": 31,
+"sp": 25
+},
+"nature": "Bold",
+"ability": "Inner Focus",
+"item": "Leftovers",
+"moves": [
+"Moonlight",
+"Dark Pulse",
+"Yawn",
+"Protect"
+]
+},
+	"Umbreon-2": {
+			"level": "50",
+"evs": {
 "hp": 252,
 "at": 0,
 "df": 4,
@@ -27172,7 +27200,35 @@ var SETDEX_GEN80_SETS = {
 "Moonlight"
 ]
 },
-		"Umbreon-2": {
+		"Umbreon-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Inner Focus",
+"item": "Leftovers",
+"moves": [
+"Foul Play",
+"Swagger",
+"Yawn",
+"Protect"
+]
+},
+		"Umbreon-4 (Mira/Cheryl)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -27341,6 +27397,34 @@ var SETDEX_GEN80_SETS = {
 "Surf",
 "Aqua Ring",
 "Acid Armor",
+"Baton Pass"
+]
+},
+		"Vaporeon-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Water Absorb",
+"item": "Leftovers",
+"moves": [
+"Scald",
+"Acid Armor",
+"Yawn",
 "Baton Pass"
 ]
 }
@@ -27521,10 +27605,38 @@ var SETDEX_GEN80_SETS = {
 		"Venusaur-5": {
 			"level": "50",
 "evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Chlorophyll",
+"item": "Focus Sash",
+"moves": [
+"Sleep Powder",
+"Solar Beam",
+"Weather Ball",
+"Sludge Bomb"
+]
+},
+		"Venusaur-6": {
+			"level": "50",
+"evs": {
 "hp": 252,
 "at": 0,
-"df": 252,
-"sa": 4,
+"df": 4,
+"sa": 252,
 "sd": 0,
 "sp": 0
 },
@@ -27536,17 +27648,45 @@ var SETDEX_GEN80_SETS = {
 "sd": 31,
 "sp": 31
 },
-"nature": "Bold",
+"nature": "Modest",
 "ability": "Overgrow",
 "item": "Black Sludge",
 "moves": [
 "Giga Drain",
-"Synthesis",
-"Leech Seed",
-"Toxic"
+"Sludge Bomb",
+"Earth Power",
+"Sleep Powder"
 ]
 },
-		"Venusaur-6": {
+		"Venusaur-7 (Gardenia)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Chlorophyll",
+"item": "Black Sludge",
+"moves": [
+"Giga Drain",
+"Sleep Powder",
+"Sludge Bomb",
+"Earth Power"
+]
+},
+		"Venusaur-8 (Gardenia/Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -27572,6 +27712,34 @@ var SETDEX_GEN80_SETS = {
 "Solar Beam",
 "Earth Power",
 "Energy Ball"
+]
+},
+		"Venusaur-9 (Candice)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Overgrow",
+"item": "Black Sludge",
+"moves": [
+"Giga Drain",
+"Sludge Bomb",
+"Sleep Powder",
+"Synthesis"
 ]
 }
 	},
@@ -28294,10 +28462,66 @@ var SETDEX_GEN80_SETS = {
 "ability": "Pickpocket",
 "item": "Focus Sash",
 "moves": [
+"Night Slash",
+"Ice Punch",
+"Ice Shard",
+"Swords Dance"
+]
+},
+		"Weavile-4 (Candice/Maylene)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Pickpocket",
+"item": "Focus Sash",
+"moves": [
 "Ice Shard",
 "Fake Out",
 "Night Slash",
 "Ice Punch"
+]
+},
+		"Weavile-5 (Mars/Cyrus)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Pickpocket",
+"item": "Focus Sash",
+"moves": [
+"Fake Out",
+"Ice Punch",
+"Night Slash",
+"Ice Shard"
 ]
 }
 	},
@@ -28414,6 +28638,34 @@ var SETDEX_GEN80_SETS = {
 "Fire Blast",
 "Dark Pulse",
 "Destiny Bond"
+]
+},
+		"Weezing-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Levitate",
+"item": "Black Sludge",
+"moves": [
+"Fire Blast",
+"Sludge Bomb",
+"Will-O-Wisp",
+"Pain Split"
 ]
 }
 	},
@@ -28913,6 +29165,62 @@ var SETDEX_GEN80_SETS = {
 		"Zapdos-7": {
 			"level": "50",
 "evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Static",
+"item": "Sitrus Berry",
+"moves": [
+"Thunder",
+"Volt Switch",
+"Hurricane",
+"Roost"
+]
+},
+		"Zapdos-8": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Static",
+"item": "Magnet",
+"moves": [
+"Discharge",
+"Volt Switch",
+"Roost",
+"Hurricane"
+]
+},
+		"Zapdos-9 (Mira/Cheryl)": {
+			"level": "50",
+"evs": {
 "hp": 4,
 "at": 0,
 "df": 0,
@@ -28938,7 +29246,7 @@ var SETDEX_GEN80_SETS = {
 "Volt Switch"
 ]
 },
-		"Zapdos-8": {
+		"Zapdos-10 (Mira/Cheryl)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -28966,7 +29274,7 @@ var SETDEX_GEN80_SETS = {
 "Thunderbolt"
 ]
 },
-		"Zapdos-9": {
+		"Zapdos-11 (Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -28994,7 +29302,7 @@ var SETDEX_GEN80_SETS = {
 "Hurricane"
 ]
 },
-		"Zapdos-10": {
+		"Zapdos-12 (Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -29022,7 +29330,7 @@ var SETDEX_GEN80_SETS = {
 "Hurricane"
 ]
 },
-		"Zapdos-11": {
+		"Zapdos-13 (Flint/Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 4,
