@@ -11283,21 +11283,21 @@ var SETDEX_GEN80_SETS = {
 "hp": 31,
 "at": 31,
 "df": 31,
-"sa": 0,
+"sa": 31,
 "sd": 31,
 "sp": 31
 },
-"nature": "Adamant",
+"nature": "Jolly",
 "ability": "Moxie",
-"item": "Choice Scarf",
+"item": "Lum Berry",
 "moves": [
-"Close Combat",
 "Megahorn",
 "Stone Edge",
-"Earthquake"
+"Facade",
+"Shadow Claw"
 ]
 },
-		"Heracross-5": {
+		"Heracross-5 (Barry/Palmer)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -11317,10 +11317,10 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Jolly",
 "ability": "Moxie",
-"item": "Expert Belt",
+"item": "Choice Scarf",
 "moves": [
 "Close Combat",
-"Megahorn",
+"Rock Slide",
 "Earthquake",
 "Bullet Seed"
 ]
@@ -11417,10 +11417,10 @@ var SETDEX_GEN80_SETS = {
 			"level": "50",
 "evs": {
 "hp": 252,
-"at": 4,
-"df": 0,
+"at": 252,
+"df": 4,
 "sa": 0,
-"sd": 252,
+"sd": 0,
 "sp": 0
 },
 "ivs": {
@@ -11431,12 +11431,40 @@ var SETDEX_GEN80_SETS = {
 "sd": 31,
 "sp": 31
 },
-"nature": "Careful",
+"nature": "Adamant",
+"ability": "Sand Stream",
+"item": "Life Orb",
+"moves": [
+"Earthquake",
+"Stone Edge",
+"Ice Fang",
+"Yawn"
+]
+},
+		"Hippowdon-4 (Buck/Bertha)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Impish",
 "ability": "Sand Stream",
 "item": "Iapapa Berry",
 "moves": [
-"Rock Slide",
-"Fissure",
+"Ice Fang",
+"Earthquake",
 "Body Press",
 "Slack Off"
 ]
@@ -11553,13 +11581,41 @@ var SETDEX_GEN80_SETS = {
 "ability": "Intimidate",
 "item": "Sitrus Berry",
 "moves": [
+"Fake Out",
+"Wide Guard",
+"Helping Hand",
+"Quick Guard"
+]
+},
+		"Hitmontop-3 (Maylene)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Intimidate",
+"item": "Sitrus Berry",
+"moves": [
 "Close Combat",
 "Bulldoze",
 "Bullet Punch",
 "Fake Out"
 ]
 },
-		"Hitmontop-3": {
+		"Hitmontop-4 (Candice/Maylene)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -11587,7 +11643,7 @@ var SETDEX_GEN80_SETS = {
 "Quick Guard"
 ]
 },
-		"Hitmontop-4": {
+		"Hitmontop-5 (Candice/Maylene)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -11615,7 +11671,7 @@ var SETDEX_GEN80_SETS = {
 "Quick Guard"
 ]
 },
-		"Hitmontop-5": {
+		"Hitmontop-6 (Candice/Maylene)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -11699,6 +11755,34 @@ var SETDEX_GEN80_SETS = {
 "Pluck",
 "Aerial Ace",
 "Roost"
+]
+},
+		"Honchkrow-3": {
+			"level": "50",
+"evs": {
+"hp": 156,
+"at": 252,
+"df": 100,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Moxie",
+"item": "Black Glasses",
+"moves": [
+"Night Slash",
+"Sucker Punch",
+"Brave Bird",
+"Thunder Wave"
 ]
 }
 	},
