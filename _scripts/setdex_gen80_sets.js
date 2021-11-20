@@ -17401,6 +17401,34 @@ var SETDEX_GEN80_SETS = {
 "ability": "Sheer Force",
 "item": "Life Orb",
 "moves": [
+"Sludge Wave",
+"Ice Beam",
+"Thunderbolt",
+"Flamethrower"
+]
+},
+		"Nidoking-5 (Saturn/Jupiter)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sheer Force",
+"item": "Life Orb",
+"moves": [
 "Sludge Bomb",
 "Earth Power",
 "Blizzard",
@@ -17491,6 +17519,34 @@ var SETDEX_GEN80_SETS = {
 "Avalanche",
 "Iron Tail",
 "Aerial Ace"
+]
+},
+		"Nidoqueen-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sheer Force",
+"item": "Life Orb",
+"moves": [
+"Sludge Wave",
+"Ice Beam",
+"Thunderbolt",
+"Flamethrower"
 ]
 }
 	},
@@ -17665,6 +17721,90 @@ var SETDEX_GEN80_SETS = {
 "Fire Blast",
 "Hex",
 "Will-O-Wisp"
+]
+},
+		"Ninetales-5": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Drought",
+"item": "Shuca Berry",
+"moves": [
+"Heat Wave",
+"Solar Beam",
+"Psyshock",
+"Protect"
+]
+},
+		"Ninetales-6": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Drought",
+"item": "Choice Specs",
+"moves": [
+"Flamethrower",
+"Solar Beam",
+"Psyshock",
+"Shadow Ball"
+]
+},
+		"Ninetales-7 (Gardenia)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Drought",
+"item": "Heat Rock",
+"moves": [
+"Flamethrower",
+"Solar Beam",
+"Will-O-Wisp",
+"Hex"
 ]
 }
 	},
@@ -17936,34 +18076,6 @@ var SETDEX_GEN80_SETS = {
 "Tickle",
 "Ancient Power"
 ]
-},
-		"Omastar-2": {
-			"level": "50",
-"evs": {
-"hp": 252,
-"at": 0,
-"df": 4,
-"sa": 252,
-"sd": 0,
-"sp": 0
-},
-"ivs": {
-"hp": 31,
-"at": 0,
-"df": 31,
-"sa": 31,
-"sd": 31,
-"sp": 0
-},
-"nature": "Quiet",
-"ability": "Shell Armor",
-"item": "Choice Specs",
-"moves": [
-"Hydro Pump",
-"Ice Beam",
-"Ancient Power",
-"Surf"
-]
 }
 	},
 "Onix": {
@@ -18141,7 +18253,7 @@ var SETDEX_GEN80_SETS = {
 "U-turn"
 ]
 },
-		"Pelipper-4": {
+		"Pelipper-4 (Crasher Wake)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -18166,6 +18278,34 @@ var SETDEX_GEN80_SETS = {
 "Hydro Pump",
 "Hurricane",
 "Ice Beam",
+"U-turn"
+]
+},
+		"Pelipper-5 (Byron)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Drizzle",
+"item": "Choice Scarf",
+"moves": [
+"Surf",
+"Ice Beam",
+"Hurricane",
 "U-turn"
 ]
 }
@@ -18553,7 +18693,7 @@ var SETDEX_GEN80_SETS = {
 "Hypnosis"
 ]
 },
-		"Aerodactyl-2": {
+		"Politoed-2": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -18614,6 +18754,62 @@ var SETDEX_GEN80_SETS = {
 "evs": {
 "hp": 252,
 "at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Drizzle",
+"item": "Aguav Berry",
+"moves": [
+"Perish Song",
+"Protect",
+"Helping Hand",
+"Hydro Pump"
+]
+},
+		"Politoed-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Drizzle",
+"item": "Sitrus Berry",
+"moves": [
+"Scald",
+"Ice Beam",
+"Protect",
+"Perish Song"
+]
+},
+		"Politoed-6 (Crasher Wake)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
 "df": 4,
 "sa": 0,
 "sd": 252,
@@ -18629,7 +18825,7 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Calm",
 "ability": "Drizzle",
-"item": "Eject Button",
+"item": "Damp Rock",
 "moves": [
 "Scald",
 "Ice Beam",
@@ -18891,6 +19087,34 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Timid",
 "ability": "Adaptability",
+"item": "Silk Scarf",
+"moves": [
+"Tri Attack",
+"Thunderbolt",
+"Ice Beam",
+"Shadow Ball"
+]
+},
+		"Porygon-Z-4 (Mira/Cheryl)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Adaptability",
 "item": "Choice Scarf",
 "moves": [
 "Tri Attack",
@@ -18899,7 +19123,7 @@ var SETDEX_GEN80_SETS = {
 "Dark Pulse"
 ]
 },
-		"Porygon-Z-4": {
+		"Porygon-Z-5 (Mira/Cheryl)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -19102,6 +19326,34 @@ var SETDEX_GEN80_SETS = {
 "Stone Edge",
 "Explosion"
 ]
+},
+		"Probopass-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Sturdy",
+"item": "Custap Berry",
+"moves": [
+"Flash Cannon",
+"Dazzling Gleam",
+"Volt Switch",
+"Power Gem"
+]
 }
 	},
 "Psyduck": {
@@ -19193,7 +19445,7 @@ var SETDEX_GEN80_SETS = {
 "Fake Out"
 ]
 },
-		"Purugly-2": {
+		"Purugly-2 (Mars/Cyrus)": {
 			"level": "50",
 "evs": {
 "hp": 252,
