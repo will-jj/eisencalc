@@ -6043,7 +6043,7 @@ var SETDEX_GEN80_SETS = {
 "Thunder Punch"
 ]
 }
-	}
+	},
 "Drapion": {
 		"Drapion-1": {
 			"level": "50",
