@@ -6013,8 +6013,7 @@ var SETDEX_GEN80_SETS = {
 "Earthquake",
 "Thunder Punch"
 ]
-}
-	},
+},
 		"Dragonite-10 (Barry/Palmer)": {
 			"level": "50",
 "evs": {
