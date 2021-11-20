@@ -11531,7 +11531,7 @@ var SETDEX_GEN80_SETS = {
 }
 	},
 "Hitmontop": {
-		"Himontop-1": {
+		"Hitmontop-1": {
 			"level": "50",
 "evs": {
 "hp": 148,
@@ -12136,6 +12136,34 @@ var SETDEX_GEN80_SETS = {
 		"Infernape-4": {
 			"level": "50",
 "evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Iron Fist",
+"item": "Focus Sash",
+"moves": [
+"Close Combat",
+"Fire Punch",
+"Fake Out",
+"Mach Punch"
+]
+},
+		"Infernape-5 (Maylene)": {
+			"level": "50",
+"evs": {
 "hp": 0,
 "at": 252,
 "df": 0,
@@ -12161,7 +12189,7 @@ var SETDEX_GEN80_SETS = {
 "Close Combat"
 ]
 },
-		"Infernape-5": {
+		"Infernape-6 (Flint/Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -12189,7 +12217,7 @@ var SETDEX_GEN80_SETS = {
 "Close Combat"
 ]
 },
-		"Infernape-6": {
+		"Infernape-7 (Barry/Palmer)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -12303,6 +12331,34 @@ var SETDEX_GEN80_SETS = {
 "Thunderbolt",
 "Shadow Ball",
 "Flash"
+]
+},
+		"Jolteon-3": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Volt Absorb",
+"item": "Choice Specs",
+"moves": [
+"Volt Switch",
+"Thunderbolt",
+"Shadow Ball",
+"Baton Pass"
 ]
 }
 	},
@@ -12479,62 +12535,6 @@ var SETDEX_GEN80_SETS = {
 "Dig",
 "Night Slash",
 "Metal Sound"
-]
-},
-		"Kabutops-2": {
-			"level": "50",
-"evs": {
-"hp": 4,
-"at": 252,
-"df": 0,
-"sa": 0,
-"sd": 0,
-"sp": 252
-},
-"ivs": {
-"hp": 31,
-"at": 31,
-"df": 31,
-"sa": 0,
-"sd": 31,
-"sp": 31
-},
-"nature": "Jolly",
-"ability": "Weak Armor",
-"item": "Focus Sash",
-"moves": [
-"Waterfall",
-"Rock Slide",
-"Leech Life",
-"Swords Dance"
-]
-},
-		"Kabutops-3": {
-			"level": "50",
-"evs": {
-"hp": 4,
-"at": 252,
-"df": 0,
-"sa": 0,
-"sd": 0,
-"sp": 252
-},
-"ivs": {
-"hp": 31,
-"at": 31,
-"df": 31,
-"sa": 0,
-"sd": 31,
-"sp": 31
-},
-"nature": "Adamant",
-"ability": "Swift Swim",
-"item": "Focus Sash",
-"moves": [
-"Waterfall",
-"Stone Edge",
-"Leech Life",
-"Swords Dance"
 ]
 }
 	},
@@ -12770,6 +12770,34 @@ var SETDEX_GEN80_SETS = {
 ]
 },
 		"Kingdra-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Swift Swim",
+"item": "White Herb",
+"moves": [
+"Hydro Pump",
+"Draco Meteor",
+"Hurricane",
+"Surf"
+]
+},
+		"Kingdra-5 (Crasher Wake)": {
 			"level": "50",
 "evs": {
 "hp": 0,
@@ -13062,6 +13090,34 @@ var SETDEX_GEN80_SETS = {
 "Hydro Pump",
 "Ice Beam"
 ]
+},
+		"Lanturn-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Water Absorb",
+"item": "Sitrus Berry",
+"moves": [
+"Scald",
+"Ice Beam",
+"Volt Switch",
+"Thunderbolt"
+]
 }
 	},
 "Lapras": {
@@ -13133,7 +13189,7 @@ var SETDEX_GEN80_SETS = {
 },
 "ivs": {
 "hp": 31,
-"at": 31,
+"at": 0,
 "df": 31,
 "sa": 31,
 "sd": 31,
@@ -13143,13 +13199,41 @@ var SETDEX_GEN80_SETS = {
 "ability": "Water Absorb",
 "item": "Sitrus Berry",
 "moves": [
+"Sheer Cold",
+"Freeze-Dry",
+"Thunderbolt",
+"Hydro Pump"
+]
+},
+		"Lapras-4": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Water Absorb",
+"item": "Sitrus Berry",
+"moves": [
 "Surf",
 "Freeze-Dry",
 "Thunderbolt",
 "Sheer Cold"
 ]
 },
-		"Lapras-4": {
+		"Lapras-5 (Candice)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -13320,6 +13404,34 @@ var SETDEX_GEN80_SETS = {
 "Calm Mind",
 "Safeguard"
 ]
+},
+		"Latias-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 0,
+"sa": 4,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Levitate",
+"item": "Leftovers",
+"moves": [
+"Calm Mind",
+"Recover",
+"Stored Power",
+"Mystical Fire"
+]
 }
 	},
 "Latios": {
@@ -13483,6 +13595,34 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Timid",
 "ability": "Levitate",
+"item": "Choice Specs",
+"moves": [
+"Draco Meteor",
+"Surf",
+"Thunderbolt",
+"Psychic"
+]
+},
+		"Latios-7 (Mira/Cheryl)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Levitate",
 "item": "White Herb",
 "moves": [
 "Surf",
@@ -13547,6 +13687,34 @@ var SETDEX_GEN80_SETS = {
 "Aerial Ace",
 "Energy Ball",
 "Bite"
+]
+},
+		"Leafeon-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 4,
+"df": 0,
+"sa": 0,
+"sd": 252,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Careful",
+"ability": "Chlorophyll",
+"item": "Leftovers",
+"moves": [
+"Leaf Blade",
+"Leech Seed",
+"Synthesis",
+"Protect"
 ]
 }
 	},
@@ -13635,6 +13803,34 @@ var SETDEX_GEN80_SETS = {
 "Ice Beam",
 "Thunderbolt",
 "Shadow Ball"
+]
+},
+		"Lickilicky-3": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 0
+},
+"nature": "Brave",
+"ability": "Cloud Nine",
+"item": "Choice Band",
+"moves": [
+"Explosion",
+"Power Whip",
+"Gyro Ball",
+"Knock Off"
 ]
 }
 	},
@@ -13935,31 +14131,31 @@ var SETDEX_GEN80_SETS = {
 			"level": "50",
 "evs": {
 "hp": 4,
-"at": 0,
+"at": 252,
 "df": 0,
-"sa": 252,
+"sa": 0,
 "sd": 0,
 "sp": 252
 },
 "ivs": {
 "hp": 31,
-"at": 0,
+"at": 31,
 "df": 31,
-"sa": 31,
+"sa": 0,
 "sd": 31,
 "sp": 31
 },
-"nature": "Modest",
+"nature": "Jolly",
 "ability": "Inner Focus",
-"item": "Choice Scarf",
+"item": "Lum Berry",
 "moves": [
-"Focus Blast",
-"Flash Cannon",
-"Dark Pulse",
-"Dragon Pulse"
+"Close Combat",
+"Meteor Mash",
+"Ice Punch",
+"Bullet Punch"
 ]
 },
-		"Lucario-4": {
+		"Lucario-4 (Maylene)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -13987,7 +14183,7 @@ var SETDEX_GEN80_SETS = {
 "Vacuum Wave"
 ]
 },
-		"Lucario-5": {
+		"Lucario-5 (Maylene)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -14015,7 +14211,7 @@ var SETDEX_GEN80_SETS = {
 "Ice Punch"
 ]
 },
-		"Lucario-6": {
+		"Lucario-6 (Candice/Maylene)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -14043,7 +14239,7 @@ var SETDEX_GEN80_SETS = {
 "Protect"
 ]
 },
-		"Lucario-7": {
+		"Lucario-7 (Riley/Marley)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -14071,7 +14267,7 @@ var SETDEX_GEN80_SETS = {
 "Rock Slide"
 ]
 },
-		"Lucario-8": {
+		"Lucario-8 (Cynthia)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -14091,15 +14287,15 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Jolly",
 "ability": "Inner Focus",
-"item": "Choice Band",
+"item": "Lum Berry",
 "moves": [
 "Close Combat",
 "Meteor Mash",
 "Ice Punch",
-"Extreme Speed"
+"Bullet Punch"
 ]
 },
-		"Lucario-9": {
+		"Lucario-9 (Cynthia)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -14213,7 +14409,7 @@ var SETDEX_GEN80_SETS = {
 "Focus Blast"
 ]
 },
-		"Ludicolo-4": {
+		"Ludicolo-4 (Crasher Wake)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -14301,7 +14497,7 @@ var SETDEX_GEN80_SETS = {
 "Sandstorm"
 ]
 },
-		"Lunatone-2": {
+		"Lunatone-2 (Roark)": {
 			"level": "50",
 "evs": {
 "hp": 252,
@@ -14447,7 +14643,7 @@ var SETDEX_GEN80_SETS = {
 "Fire Fang"
 ]
 },
-		"Luxray-3": {
+		"Luxray-3 (Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -14475,7 +14671,7 @@ var SETDEX_GEN80_SETS = {
 "Wild Charge"
 ]
 },
-		"Luxray-4": {
+		"Luxray-4 (Flint/Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -14559,6 +14755,34 @@ var SETDEX_GEN80_SETS = {
 "Dynamic Punch",
 "Ice Punch",
 "Thunder Punch"
+]
+},
+		"Machamp-3": {
+			"level": "50",
+"evs": {
+"hp": 204,
+"at": 252,
+"df": 12,
+"sa": 0,
+"sd": 36,
+"sp": 4
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Guts",
+"item": "Flame Orb",
+"moves": [
+"Close Combat",
+"Ice Punch",
+"Knock Off",
+"Bullet Punch"
 ]
 }
 	},
@@ -14772,6 +14996,34 @@ var SETDEX_GEN80_SETS = {
 		"Magmortar-3": {
 			"level": "50",
 "evs": {
+"hp": 252,
+"at": 0,
+"df": 4,
+"sa": 252,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Modest",
+"ability": "Vital Spirit",
+"item": "Sitrus Berry",
+"moves": [
+"Fire Blast",
+"Thunderbolt",
+"Psychic",
+"Belch"
+]
+},
+		"Magmortar-4 (Flint/Volkner)": {
+			"level": "50",
+"evs": {
 "hp": 4,
 "at": 0,
 "df": 0,
@@ -14797,7 +15049,7 @@ var SETDEX_GEN80_SETS = {
 "Fire Blast"
 ]
 },
-		"Magmortar-4": {
+		"Magmortar-5 (Flint/Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -14941,7 +15193,7 @@ var SETDEX_GEN80_SETS = {
 "Tri Attack"
 ]
 },
-		"Magnezone-4": {
+		"Magnezone-4 (Volkner)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -14964,8 +15216,8 @@ var SETDEX_GEN80_SETS = {
 "item": "Custap Berry",
 "moves": [
 "Thunderbolt",
-"Flash Cannon",
 "Volt Switch",
+"Flash Cannon",
 "Body Press"
 ]
 }
@@ -15084,6 +15336,34 @@ var SETDEX_GEN80_SETS = {
 ]
 },
 		"Mamoswine-5": {
+			"level": "50",
+"evs": {
+"hp": 0,
+"at": 252,
+"df": 4,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Thick Fat",
+"item": "Focus Sash",
+"moves": [
+"Earthquake",
+"Icicle Spear",
+"Ice Shard",
+"Rock Tomb"
+]
+},
+		"Mamoswine-5 (Candice)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -15518,6 +15798,34 @@ var SETDEX_GEN80_SETS = {
 "Zen Headbutt",
 "Ice Punch"
 ]
+},
+		"Medicham-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 0,
+"sa": 0,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Pure Power",
+"item": "Expert Belt",
+"moves": [
+"High Jump Kick",
+"Ice Punch",
+"Fire Punch",
+"Fake Out"
+]
 }
 	},
 "Meganium": {
@@ -15696,6 +16004,34 @@ var SETDEX_GEN80_SETS = {
 "evs": {
 "hp": 4,
 "at": 252,
+"df": 68,
+"sa": 0,
+"sd": 4,
+"sp": 180
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Jolly",
+"ability": "Clear Body",
+"item": "Figy Berry",
+"moves": [
+"Ice Punch",
+"Bullet Punch",
+"Zen Headbutt",
+"Meteor Mash"
+]
+},
+		"Metagross-5 (Roark/Byron)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
 "df": 0,
 "sa": 0,
 "sd": 0,
@@ -15719,7 +16055,7 @@ var SETDEX_GEN80_SETS = {
 "Bullet Punch"
 ]
 },
-		"Metagross-5": {
+		"Metagross-6 (Byron)": {
 			"level": "50",
 "evs": {
 "hp": 52,
@@ -15747,7 +16083,7 @@ var SETDEX_GEN80_SETS = {
 "Agility"
 ]
 },
-		"Metagross-6": {
+		"Metagross-7 (Byron)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -15775,7 +16111,7 @@ var SETDEX_GEN80_SETS = {
 "Bullet Punch"
 ]
 },
-"Metagross-7": {
+"Metagross-8 (Riley/Marley)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -15865,7 +16201,7 @@ var SETDEX_GEN80_SETS = {
 }
 	},
 "Milotic": {
-		"Milotic-1": {
+		"Milotic-1 (Palmer Classic)": {
 			"level": "50",
 "evs": {
 "hp": 148,
@@ -15952,6 +16288,62 @@ var SETDEX_GEN80_SETS = {
 		"Milotic-4": {
 			"level": "50",
 "evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Competitive",
+"item": "Life Orb",
+"moves": [
+"Scald",
+"Ice Beam",
+"Hydro Pump",
+"Dragon Pulse"
+]
+},
+		"Milotic-5 (Gardenia)": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 0,
+"df": 0,
+"sa": 252,
+"sd": 0,
+"sp": 252
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Timid",
+"ability": "Competitive",
+"item": "Life Orb",
+"moves": [
+"Hypnosis",
+"Ice Beam",
+"Hydro Pump",
+"Dragon Pulse"
+]
+},
+		"Milotic-6 (Cynthia)": {
+			"level": "50",
+"evs": {
 "hp": 252,
 "at": 0,
 "df": 252,
@@ -15977,7 +16369,35 @@ var SETDEX_GEN80_SETS = {
 "Recover"
 ]
 },
-		"Milotic-5": {
+		"Milotic-7 (Palmer Master)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 0,
+"sd": 4,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Marvel Scale",
+"item": "Flame Orb",
+"moves": [
+"Scald",
+"Icy Wind",
+"Mirror Coat",
+"Recover"
+]
+},
+		"Milotic-8 (Barry/Palmer)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -15997,12 +16417,12 @@ var SETDEX_GEN80_SETS = {
 },
 "nature": "Timid",
 "ability": "Competitive",
-"item": "Sitrus Berry",
+"item": "White Herb",
 "moves": [
 "Muddy Water",
 "Ice Beam",
-"Dragon Pulse",
-"Recover"
+"Hydro Pump",
+"Protect"
 ]
 }
 	},
@@ -16089,6 +16509,34 @@ var SETDEX_GEN80_SETS = {
 "Reversal",
 "Milk Drink",
 "Rock Slide"
+]
+},
+		"Miltank-4": {
+			"level": "50",
+"evs": {
+"hp": 4,
+"at": 252,
+"df": 252,
+"sa": 0,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 31,
+"df": 31,
+"sa": 0,
+"sd": 31,
+"sp": 31
+},
+"nature": "Adamant",
+"ability": "Thick Fat",
+"item": "Metronome",
+"moves": [
+"Defense Curl",
+"Rollout",
+"Milk Drink",
+"Thunder Wave"
 ]
 }
 	},
@@ -16267,7 +16715,7 @@ var SETDEX_GEN80_SETS = {
 "Psychic"
 ]
 },
-		"Mismagius-4": {
+		"Mismagius-4 (Fantina)": {
 			"level": "50",
 "evs": {
 "hp": 4,
@@ -16407,6 +16855,62 @@ var SETDEX_GEN80_SETS = {
 "Air Slash",
 "Will-O-Wisp",
 "Double Team"
+]
+},
+		"Moltres-5": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Flame Body",
+"item": "Lax Incense",
+"moves": [
+"Mystical Fire",
+"Hurricane",
+"Will-O-Wisp",
+"Roost"
+]
+},
+		"Moltres-6 (Byron)": {
+			"level": "50",
+"evs": {
+"hp": 252,
+"at": 0,
+"df": 252,
+"sa": 4,
+"sd": 0,
+"sp": 0
+},
+"ivs": {
+"hp": 31,
+"at": 0,
+"df": 31,
+"sa": 31,
+"sd": 31,
+"sp": 31
+},
+"nature": "Bold",
+"ability": "Flame Body",
+"item": "Lax Incense",
+"moves": [
+"Mystical Fire",
+"Hurricane",
+"Will-O-Wisp",
+"Roost"
 ]
 }
 	},
@@ -16553,34 +17057,6 @@ var SETDEX_GEN80_SETS = {
 "Light Screen",
 "Reflect",
 "Thunder Wave"
-]
-},
-		"Mr. Mime-4": {
-			"level": "50",
-"evs": {
-"hp": 4,
-"at": 0,
-"df": 0,
-"sa": 252,
-"sd": 0,
-"sp": 252
-},
-"ivs": {
-"hp": 31,
-"at": 0,
-"df": 31,
-"sa": 31,
-"sd": 31,
-"sp": 31
-},
-"nature": "Timid",
-"ability": "Filter",
-"item": "Light Clay",
-"moves": [
-"Psychic",
-"Dazzling Gleam",
-"Reflect",
-"Light Screen"
 ]
 }
 	},
