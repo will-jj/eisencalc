@@ -33,7 +33,7 @@ var POKEDEX_RBY = {
 			"at": 50,
 			"df": 45,
 			"sa": 135,
-			"sd": 95,
+			"sd": 85,
 			"sp": 120,
 			"sl": 135
 		},
@@ -4240,9 +4240,9 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"hp": 70,
 			"at": 60,
 			"df": 62,
-			"sa": 100,
+			"sa": 80,
 			"sd": 82,
-			"sp": 80
+			"sp": 60
 		},
 		"w": 3.6,
 		"ab": "Intimidate"
@@ -4437,7 +4437,7 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"hp": 60,
 			"at": 50,
 			"df": 100,
-			"sa": 95,
+			"sa": 85,
 			"sd": 70,
 			"sp": 65
 		},
@@ -15418,4 +15418,4 @@ delete POKEDEX_SS["Mimikyu-Totem"];
 delete POKEDEX_SS["Bruxish"];
 delete POKEDEX_SS["Kommo-o-Totem"];
 
-var POKEDEX_BDSP = $.extend(true, {}, POKEDEX_DPP, {});
+var POKEDEX_BDSP = $.extend(true, {}, POKEDEX_INTERMEDIATE, {});
