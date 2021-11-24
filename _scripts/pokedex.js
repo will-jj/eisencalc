@@ -15418,4 +15418,4 @@ delete POKEDEX_SS["Mimikyu-Totem"];
 delete POKEDEX_SS["Bruxish"];
 delete POKEDEX_SS["Kommo-o-Totem"];
 
-var POKEDEX_BDSP = $.extend(true, {}, POKEDEX_INTERMEDIATE, {});
+var POKEDEX_BDSP = $.extend(true, {}, POKEDEX_SM, {});
