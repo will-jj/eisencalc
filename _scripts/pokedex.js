@@ -4240,9 +4240,9 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"hp": 70,
 			"at": 60,
 			"df": 62,
-			"sa": 80,
+			"sa": 100,
 			"sd": 82,
-			"sp": 60
+			"sp": 80
 		},
 		"w": 3.6,
 		"ab": "Intimidate"
@@ -4437,7 +4437,7 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"hp": 60,
 			"at": 50,
 			"df": 100,
-			"sa": 85,
+			"sa": 95,
 			"sd": 70,
 			"sp": 65
 		},
