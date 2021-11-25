@@ -526,6 +526,13 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Grass"
 	},
+	"Strength": {
+		"bp": 80,
+		"type": "Normal",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
 	"Stomp": {
 		"bp": 65,
 		"type": "Normal",
