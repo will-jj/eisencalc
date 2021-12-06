@@ -274,10 +274,10 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Crush Grip":
  	case "Wring Out":
-    	basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
-    	basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
-    	desc.moveBP = basePower;
-    	break;
+    		basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
+    		basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
+    		description.moveBP = basePower;
+    		break;
 	case "Hex":
 		basePower = move.bp * (defender.status !== "Healthy" ? 2 : 1);
 		description.moveBP = basePower;
