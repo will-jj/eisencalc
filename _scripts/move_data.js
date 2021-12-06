@@ -1990,6 +1990,13 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
+	"Crush Grip": {
+		"bp": 1,
+		"type": "Normal",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
 	"Dark Pulse": {
 		"bp": 80,
 		"type": "Dark",
