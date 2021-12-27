@@ -130,7 +130,7 @@ var SETDEX_GEN80_SETS = {
 				"sd": 31,
 				"sp": 31
 			},
-			"nature": "Timid",
+			"nature": "Modest",
 			"ability": "Snow Warning",
 			"item": "Choice Scarf",
 			"moves": [
