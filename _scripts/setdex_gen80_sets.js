@@ -165,7 +165,7 @@ var SETDEX_GEN80_SETS = {
 				"Blizzard",
 				"Giga Drain",
 				"Earth Power",
-				"Focus Blast"
+				"Ice Shard"
 			]
 		},
 			"Abomasnow-7 (Candice/Maylene)": {
