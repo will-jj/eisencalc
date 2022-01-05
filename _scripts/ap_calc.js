@@ -1443,12 +1443,12 @@ $(document).ready(function () {
 			break;
 
 		default:
-			$("#gen8").prop("checked", true);
-			$("#gen8").change();
+			$("#gen80").prop("checked", true);
+			$("#gen80").change();
 		}
 	} else {
-		$("#gen8").prop("checked", true);
-		$("#gen8").change();
+		$("#gen80").prop("checked", true);
+		$("#gen80").change();
 	}
 	for (var n = 1; n < 101; n++) {
 		$("#autolevel-select").append($("<option />").val(n).text(n));
