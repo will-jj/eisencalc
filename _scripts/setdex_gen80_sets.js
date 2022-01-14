@@ -9891,8 +9891,8 @@ var SETDEX_GEN80_SETS = {
 			"level": "50",
 "evs": {
 "hp": 252,
-"at": 100,
-"df": 0,
+"at": 0,
+"df": 100,
 "sa": 0,
 "sd": 0,
 "sp": 156
