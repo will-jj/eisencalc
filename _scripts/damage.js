@@ -450,7 +450,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.weather = field.weather;
 	} else if (gen >= 6 && move.name === "Knock Off" && !(defender.item === "" ||
             defender.name === "Giratina-O" && defender.item === "Griseous Orb" ||
-            defender.name.indexOf("Silvally") !== -1 && defender.item.indexOf("Memory") ||
+            defender.item.indexOf("Memory") ||
             defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") ||
             defender.item.indexOf(" Z") !== -1)) {
 		bpMods.push(0x1800);
