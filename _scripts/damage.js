@@ -448,10 +448,16 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x800);
 		description.moveBP = move.bp / 2;
 		description.weather = field.weather;
-	} else if (gen >= 6 && move.name === "Knock Off" && !((defender.item === "") ||
+	} else if (gen >= 6 && gen != 8 && move.name === "Knock Off" && !((defender.item === "") ||
             (defender.name === "Giratina-O" && defender.item === "Griseous Orb") ||
            (defender.item.includes("Memory")) ||
            (defender.name.includes("Arceus") && defender.item.includes("Plate")) ||
+           (defender.item.includes(" Z")))) {
+		bpMods.push(0x1800);
+		description.moveBP = move.bp * 1.5;
+	} else if (gen === 8 && move.name === "Knock Off" && !((defender.item === "") ||
+            (defender.name === "Giratina-O" && defender.item === "Griseous Orb") ||
+           (defender.item.includes("Memory")) ||
            (defender.item.includes(" Z")))) {
 		bpMods.push(0x1800);
 		description.moveBP = move.bp * 1.5;
