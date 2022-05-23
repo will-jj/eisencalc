@@ -452,7 +452,7 @@ function getDamageResult(attacker, defender, move, field) {
             (defender.name === "Giratina-O" && defender.item === "Griseous Orb") ||
            (defender.item.includes("Memory")) ||
            (defender.name.includes("Arceus") && defender.item.includes("Plate")) ||
-           (defender.item.includes(" Z"))) {
+           (defender.item.includes(" Z")))) {
 		bpMods.push(0x1800);
 		description.moveBP = move.bp * 1.5;
 	} else if (["Breakneck Blitz", "Bloom Doom", "Inferno Overdrive", "Hydro Vortex", "Gigavolt Havoc", "Subzero Slammer", "Supersonic Skystrike",
