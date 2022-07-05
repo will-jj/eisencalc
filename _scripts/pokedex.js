@@ -9572,7 +9572,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 		},
 		"w": 2.8
 	},
-	"Gourgeist-Average": {
+	"Gourgeist": {
 		"t1": "Ghost",
 		"t2": "Grass",
 		"bs": {
