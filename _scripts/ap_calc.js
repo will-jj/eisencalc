@@ -452,7 +452,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 
 		if (set.item) {
 		// Repurpose the previous filtering code to provide the "different default" logic
-			if (set.item.includes("ite") && !(set.item.includes("ite Y") && !(set.item.includes("ite Herb")) ||
+			if (set.item.includes("ite") && !(set.item.includes("ite Y")) && !(set.item.includes("ite Herb")) ||
         pokemonName === "Groudon" && set.item.includes("Red Orb") ||
         pokemonName === "Kyogre" && set.item.includes("Blue Orb") ||
         pokemonName === "Meloetta" && set.moves.includes("Relic Song") ||
