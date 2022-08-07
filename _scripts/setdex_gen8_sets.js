@@ -11769,7 +11769,7 @@ var SETDEX_GEN8_SETS = {
 			]
 		}
 	},
-	"Gourgeist-Average": {
+	"Gourgeist": {
 		"Gourgeist-1": {
 			"level": "50",
 			"evs": {
@@ -16039,7 +16039,7 @@ var SETDEX_GEN8_SETS = {
 			]
 		}
 	},
-	"Lycanroc-Day": {
+	"Lycanroc": {
 		"Lycanroc-RS": {
 			"level": "50",
 			"evs": {
@@ -16069,7 +16069,7 @@ var SETDEX_GEN8_SETS = {
 			]
 		}
 	},
-	"Lycanroc-Night": {
+	"Lycanroc-Midnight": {
 		"Lycanroc-M-RS": {
 			"level": "50",
 			"evs": {
