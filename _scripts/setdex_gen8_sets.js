@@ -27508,7 +27508,7 @@ var SETDEX_GEN8_SETS = {
 			"moves": [
 				"Draining Kiss",
 				"Giga Drain",
-				"Acepressure",
+				"Acupressure",
 				"Protect"
 			]
 		},
