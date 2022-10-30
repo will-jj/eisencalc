@@ -93,14 +93,14 @@ var MOVES_RBY = {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
-		"Conversion": {
+	"Conversion": {
 		"bp": 0,
 		"type": "Normal"
 	},
-	    "Counter": {
+	"Counter": {
 		"bp": 0,
 		"type": "Fighting"
-	    },
+	},
 	"Defense Curl": {
 		"bp": 0,
 		"type": "Normal"
@@ -116,7 +116,7 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Normal"
 	},
-		    "Dizzy Punch": {
+	"Dizzy Punch": {
 		"bp": 70,
 		"type": "Normal",
 		"category": "Physical",
@@ -143,7 +143,7 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Normal"
 	},
-		    "Dragon Breath": {
+	"Dragon Breath": {
 		"bp": 60,
 		"type": "Dragon",
 		"category": "Special",
@@ -219,7 +219,7 @@ var MOVES_RBY = {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
-		    "Flash": {
+	"Flash": {
 		"bp": 0,
 		"type": "Normal"
 	},
@@ -250,11 +250,11 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Normal"
 	},
-		    "Growl": {
+	"Growl": {
 		"bp": 0,
 		"type": "Normal"
 	},
-	        "Guillotine": {
+	"Guillotine": {
 		"bp": 0,
 		"type": "Normal"
 	},
@@ -276,7 +276,7 @@ var MOVES_RBY = {
 		"hasRecoil": "crash",
 		"acc": 90
 	},
-		    "Horn Drill": {
+	"Horn Drill": {
 		"bp": 0,
 		"type": "Normal"
 	},
@@ -301,7 +301,7 @@ var MOVES_RBY = {
 		"isBite": true,
 		"acc": 90
 	},
-		    "Hypnosis": {
+	"Hypnosis": {
 		"bp": 0,
 		"type": "Psychic"
 	},
@@ -342,7 +342,7 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Grass"
 	},
-		    "Lick": {
+	"Lick": {
 		"bp": 30,
 		"type": "Ghost",
 		"category": "Physical",
@@ -368,7 +368,7 @@ var MOVES_RBY = {
 		"percentHealed": 0.5,
 		"acc": 100
 	},
-		    "Minimize": {
+	"Minimize": {
 		"bp": 0,
 		"type": "Normal"
 	},
@@ -380,7 +380,7 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Flying"
 	},
-		    "Mist": {
+	"Mist": {
 		"bp": 0,
 		"type": "Ice"
 	},
@@ -388,6 +388,13 @@ var MOVES_RBY = {
 		"bp": 1,
 		"type": "Ghost",
 		"category": "Special",
+		"acc": 100
+	},
+	"Peck": {
+		"bp": 35,
+		"type": "Flying",
+		"category": "Physical",
+		"makesContact": true,
 		"acc": 100
 	},
 	"Pin Missile": {
@@ -426,7 +433,7 @@ var MOVES_RBY = {
 		"alwaysCrit": true,
 		"acc": 95
 	},
-		    "Razor Wind": {
+	"Razor Wind": {
 		"bp": 80,
 		"type": "Normal",
 		"category": "Special"
@@ -461,7 +468,7 @@ var MOVES_RBY = {
 		"category": "Physical",
 		"acc": 90
 	},
-		    "Screech": {
+	"Screech": {
 		"bp": 0,
 		"type": "Normal"
 	},
@@ -509,7 +516,7 @@ var MOVES_RBY = {
 		"makesContact": true,
 		"acc": 100
 	},
-		    "Sleep Powder": {
+	"Sleep Powder": {
 		"bp": 0,
 		"type": "Grass"
 	},
@@ -551,7 +558,7 @@ var MOVES_RBY = {
 		"hasRecoil": 50,
 		"acc": 101
 	},
-		    "Stun Spore": {
+	"Stun Spore": {
 		"bp": 0,
 		"type": "Grass"
 	},
@@ -598,7 +605,7 @@ var MOVES_RBY = {
 		"makesContact": true,
 		"acc": 100
 	},
-		    "Tail Whip": {
+	"Tail Whip": {
 		"bp": 0,
 		"type": "Normal"
 	},
@@ -1737,7 +1744,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
-	    "Skill Swap": {
+	"Skill Swap": {
 		"bp": 0,
 		"type": "Psychic"
 	},
