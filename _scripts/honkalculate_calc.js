@@ -63,91 +63,110 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 };
 
 function performCalculations() {
-	var attacker, defender, setName, setTier;
-	var selectedTiers = getSelectedTiers();
+	var attacker, defender, setPokemon;
+	var selectedTier = getSelectedTier(); // selectedTier can be: All, 40, Tower, RS
+	console.log("selectedTier = " + selectedTier + " (" + (typeof selectedTier) + ")");
 	var setOptions = getSetOptions();
 	var dataSet = [];
 	var pokeInfo = $("#p1");
+	var counter = 0;
 	for (var i = 0; i < setOptions.length; i++) {
-		if (setOptions[i].id && typeof setOptions[i].id !== "undefined") {
-			setName = setOptions[i].id.substring(setOptions[i].id.indexOf("(") + 1, setOptions[i].id.lastIndexOf(")"));
-			setTier = setName.substring(0, setName.indexOf(" "));
-			if (selectedTiers.indexOf(setTier) !== -1) {
-				var field = createField();
-				if (mode === "one-vs-all") {
-					defender = createPokemon(setOptions[i].id);
-					attacker = createPokemon(pokeInfo);
-				} else {
-					attacker = createPokemon(setOptions[i].id);
-					defender = createPokemon(pokeInfo);
-					field.swap();
+		var setOptionsID = setOptions[i].id;
+		if (!setOptionsID || setOptionsID.indexOf("Blank Set") !== -1) { // Blank Sets are included in getSetOptions()
+			console.log(setOptionsID);
+			continue;
+		}
+		setPokemon = new Pokemon(setOptionsID);
+		if (selectedTier !== setPokemon.tier && selectedTier !== "All") { // setPokemon.tier can currently be: 40, Tower, RS
+			continue;
+		}
+
+		var field = new Field();
+		if (mode === "one-vs-all") {
+			defender = setPokemon;
+			attacker = new Pokemon(pokeInfo); // look into keeping a single Pokemon(pokeInfo) object in memory, instead of creating a thousand
+			// look into what can modify the Pokemon object
+		} else {
+			attacker = setPokemon;
+			defender = new Pokemon(pokeInfo);
+		}
+		if (attacker.ability === "Rivalry") {
+			attacker.gender = "N";
+		}
+		if (defender.ability === "Rivalry") {
+			defender.gender = "N";
+		}
+		var damageResults = calculateMovesOfAttacker(attacker, defender, field);
+		var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
+		var highestDamage = -1;
+		var data = [setOptionsID];
+		for (var n = 0; n < 4; n++) {
+			result = damageResults[n];
+			attackerMove = attacker.moves[n];
+			minDamage = result.damage[0] * attackerMove.hits;
+			maxDamage = result.damage[result.damage.length - 1] * attackerMove.hits;
+			// If any piece of the calculation is a string and not a number ie. Pokemon.level, stats will concatinate into strings, and the below will eval to 0.
+			// I want to be very sure that everything is using the correct types, so I want this behavior. Shoutouts to writing code w/o tests.
+			minPercentage = Math.floor(minDamage * 1000 / defender.maxHP) / 10;
+			maxPercentage = Math.floor(maxDamage * 1000 / defender.maxHP) / 10;
+			minPixels = Math.floor(minDamage * 48 / defender.maxHP);
+			maxPixels = Math.floor(maxDamage * 48 / defender.maxHP);
+			if (maxDamage > highestDamage) {
+				highestDamage = maxDamage;
+				while (data.length > 1) {
+					data.pop();
 				}
-        console.log(defender);
-				if (attacker.ability === "Rivalry") {
-					attacker.gender = "N";
-				}
-				if (defender.ability === "Rivalry") {
-					defender.gender = "N";
-				}
-				var damageResults = calculateMovesOfAttacker(gen, attacker, defender, field);
-				attacker = damageResults[0].attacker;
-				defender = damageResults[0].defender;
-				var result, minMaxDamage, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
-				var highestDamage = -1;
-				var data = [setOptions[i].id];
-				for (var n = 0; n < 4; n++) {
-					result = damageResults[n];
-					minMaxDamage = result.range();
-					minDamage = minMaxDamage[0] * attacker.moves[n].hits;
-					maxDamage = minMaxDamage[1] * attacker.moves[n].hits;
-					minPercentage = Math.floor(minDamage * 1000 / defender.maxHP()) / 10;
-					maxPercentage = Math.floor(maxDamage * 1000 / defender.maxHP()) / 10;
-					minPixels = Math.floor(minDamage * 48 / defender.maxHP());
-					maxPixels = Math.floor(maxDamage * 48 / defender.maxHP());
-					if (maxDamage > highestDamage) {
-						highestDamage = maxDamage;
-						while (data.length > 1) {
-							data.pop();
-						}
-						data.push(attacker.moves[n].name.replace("Hidden Power", "HP"));
-						data.push(minPercentage + " - " + maxPercentage + "%");
-						data.push(minPixels + " - " + maxPixels + "px");
-						data.push(attacker.moves[n].bp === 0 ? 'nice move' : (result.kochance(false).text || 'possibly the worst move ever'));
-					}
-				}
-				data.push((mode === "one-vs-all") ? defender.types[0] : attacker.types[0]);
-				data.push(((mode === "one-vs-all") ? defender.types[1] : attacker.types[1]) || "");
-				data.push(((mode === "one-vs-all") ? defender.ability : attacker.ability) || "");
-				data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
-				dataSet.push(data);
+				data.push(attackerMove.name.replace("Hidden Power", "HP"));
+				data.push(minPercentage + " - " + maxPercentage + "%");
+				data.push(minPixels + " - " + maxPixels + "px");
+				data.push(attackerMove.bp === 0 ? "nice move" :
+					getKOChanceText(result.damage, attackerMove, defender, field.getSide(~~(mode === "one-vs-all")), attacker.ability === "Bad Dreams", attacker, false, attacker.isVictoryStar, gen));
 			}
 		}
+		data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
+		data.push(((mode === "one-vs-all") ? defender.type2 : attacker.type2) || "");
+		data.push(((mode === "one-vs-all") ? defender.ability : attacker.ability) || "");
+		data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
+		dataSet.push(data);
+		counter++;
 	}
 	var pokemon = mode === "one-vs-all" ? attacker : defender;
 	if (pokemon) pokeInfo.find(".sp .totalMod").text(pokemon.stats.spe);
 	table.rows.add(dataSet).draw();
+	console.log("honkalculated " + counter + " sets");
 }
 
-function getSelectedTiers() {
-	var selectedTiers = $('.tiers input:checked').map(function () {
-		return this.id;
-	}).get();
-	return selectedTiers;
+function getSelectedTier() {
+	return $("input[name=tier]:checked").attr('id'); // assumes exactly one of the the tier buttons is selected
 }
 
-function calculateMovesOfAttacker(gen, attacker, defender, field) {
-	var results = [];
-	for (var i = 0; i < 4; i++) {
-		results[i] = calc.calculate(gen, attacker, defender, attacker.moves[i], field);
-	}
-	return results;
-}
-
+var calculateMovesOfAttacker;
 $(".gen").change(function () {
-	$(".tiers input").prop("checked", false);
-	$("#singles-format").attr("disabled", false);
+	//$(".tiers input").prop("checked", false); // since tiers is a radio button now, don't uncheck it
 	adjustTierBorderRadius();
-
+	switch (gen) {
+	case 1:
+		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_RBY;
+		break;
+	case 2:
+		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_GSC;
+		break;
+	case 3:
+		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_ADV;
+		break;
+	case 4:
+		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_DPP;
+		break;
+	default:
+		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_BW;
+		break;
+	}
+	if (gen == 8) {
+		$("#Tower").prop("checked", true)
+	}
+	else {
+		$("#All").prop("checked", true)
+	}
 	if ($.fn.DataTable.isDataTable("#holder-2")) {
 		table.clear();
 		constructDataTable();
@@ -156,27 +175,21 @@ $(".gen").change(function () {
 });
 
 function adjustTierBorderRadius() {
+	 // Used to round the tier buttons to appear like the gens or mode buttons
+	var squaredRightCorner = {"border-top-right-radius": 0, "border-bottom-right-radius": 0};
+	var roundedRightCorner = {"border-top-right-radius": "8px", "border-bottom-right-radius": "8px"};
 	var squaredLeftCorner = {"border-top-left-radius": 0, "border-bottom-left-radius": 0};
 	var roundedLeftCorner = {"border-top-left-radius": "8px", "border-bottom-left-radius": "8px"};
-	if (gen <= 2) {
-		$("#UU").next("label").css(roundedLeftCorner);
-	} else {
-		$("#UU").next("label").css(squaredLeftCorner);
-		$("#NU").next("label").css(roundedLeftCorner);
-
-		if (gen > 3) {
-			$("#NU").next("label").css(squaredLeftCorner);
-			$("#LC").next("label").css(roundedLeftCorner);
-
-			if (gen > 4) {
-				$("#LC").next("label").css(squaredLeftCorner);
-				$("#Doubles").next("label").css(roundedLeftCorner);
-
-				if (gen > 5) {
-					$("#Doubles").next("label").css(squaredLeftCorner);
-				}
-			}
-		}
+	// All and Tower are always left-rounded
+	if (gen == 6 || gen == 7) {
+		$("#All").next("label").css(squaredRightCorner);
+		$("#40").next("label").css(roundedRightCorner);
+	}
+	else if (gen == 8) {
+		$("#RS").next("label").css(roundedRightCorner);
+	}
+	else {
+		$("#All").next("label").css(roundedRightCorner);
 	}
 }
 
@@ -222,16 +235,17 @@ function constructDataTable() {
 }
 
 function placeBsBtn() {
-	var honkalculator = "<button style='position:absolute' class='bs-btn bs-btn-default'>Honkalculate</button>";
+	var honkalculator = "<button id='honkalculate' style='position:absolute' class='btn'>Honkalculate</button>";
 	$("#holder-2_wrapper").prepend(honkalculator);
-	$(".bs-btn").click(function () {
-		var formats = getSelectedTiers();
-		if (!formats.length) {
-			$(".bs-btn").popover({
+	$("#honkalculate").click(function () {
+		console.log("It's honkin' time!");
+		var tier = getSelectedTier();
+		if (tier !== "") {
+			$("#honkalculate").popover({
 				content: "No format selected",
 				placement: "right"
 			}).popover('show');
-			setTimeout(function () { $(".bs-btn").popover('destroy'); }, 1350);
+			setTimeout(function () { $("#honkalculate").popover('destroy'); }, 1350);
 		}
 		table.clear();
 		performCalculations();
@@ -255,19 +269,19 @@ $(".mode").change(function () {
 $(".tiers label").mouseup(function () {
 	var oldID = $('.tiers input:checked').attr("id");
 	var newID = $(this).attr("for");
-	if ((oldID === "Doubles" || startsWith(oldID, "VGC")) && (newID !== oldID)) {
+	/*if ((oldID === "Doubles" || startsWith(oldID, "VGC")) && (newID !== oldID)) {
 		$("#singles-format").attr("disabled", false);
 		$("#singles-format").prop("checked", true);
 	}
 	if ((startsWith(oldID, "VGC") || oldID === "LC") && (!startsWith(newID, "VGC") && newID !== "LC")) {
 		setLevel("100");
-	}
+	}*/
 });
 
 $(".tiers input").change(function () {
 	var type = $(this).attr("type");
 	var id = $(this).attr("id");
-	$(".tiers input").not(":" + type).prop("checked", false); // deselect all radios if a checkbox is checked, and vice-versa
+	//$(".tiers input").not(":" + type).prop("checked", false); // deselect all radios if a checkbox is checked, and vice-versa
 });
 
 function setLevel(lvl) {
@@ -282,7 +296,7 @@ function setLevel(lvl) {
 
 $(".set-selector").change(function (e) {
 	var genWasChanged;
-	var format = getSelectedTiers()[0];
+	var format = getSelectedTier();
 	if (genWasChanged) {
 		genWasChanged = false;
 	}
@@ -293,16 +307,13 @@ $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
 	window.mode = params.get("mode");
 	if (window.mode) {
-		if (window.mode === "randoms") {
-			window.location.replace("randoms" + linkExtension + "?" + params);
-		} else if (window.mode !== "one-vs-all" && window.mode !== "all-vs-one") {
-			window.location.replace("index" + linkExtension + "?" + params);
+		if (window.mode !== "one-vs-all" && window.mode !== "all-vs-one") {
+			window.location.replace("honkalculate" + linkExtension + "?mode=one-vs-all");
 		}
 	} else {
 		window.mode = "one-vs-all";
 	}
 
-	$("#" + mode).prop("checked", true);
 	$("#holder-2 th:first").text((mode === "one-vs-all") ? "Defender" : "Attacker");
 	$("#holder-2").show();
 

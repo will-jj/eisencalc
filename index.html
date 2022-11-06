@@ -4,23 +4,25 @@ title: Battle Facilities Calculator
 ---
 <div class="wrapper">
 	<div>
-		<span class="title-text">Battle Facilities Damage Calculator</span>
-		<span class="generation-select" title="Select the format.">
-			<!-- Gen 5: GBU, Gen 6: ORAS, Gen 7: USUM, Gen 8: SwSh, Gen 80: BDSP, Gen 20: Gen 7 BSS Factory, Gen 21: Inverse, Gen 22: LGPE -->
-			<input class="gen btn-input" type="radio" name="gen" value="5" id="gen5" /><label class="btn btn-small btn-left" for="gen5">BW</label>
-
-			<input class="gen btn-input" type="radio" name="gen" value="6" id="gen6" /><label class="btn btn-small btn-mid" for="gen6">&Omega;R&alpha;S</label>
-
-			<input class="gen btn-input" type="radio" name="gen" value="7" id="gen7" /><label class=" btn btn-small btn-mid" for="gen7">USUM</label>
-
-			<input class="gen btn-input" type="radio" name="gen" value="8" id="gen8" /><label class=" btn btn-small btn-mid" for="gen8">SwSh</label>
-			
-			<input class="gen btn-input" type="radio" name="gen" value="80" id="gen80" checked="checked" /><label class=" btn btn-small btn-right" for="gen80">BDSP</label>
-		</span>
-
-	</div>
+        <span class="title-text">Battle Facilities Damage Calculator</span>
+        <span class="generation-select" title="Select the format.">
+            <!-- Gen 5: GBU, Gen 6: ORAS, Gen 7: USUM, Gen 8: SwSh, Gen 80: BDSP, Gen 20: Gen 7 BSS Factory, Gen 21: Inverse, Gen 22: LGPE -->
+            <input class="gen btn-input" type="radio" name="gen" value="5" id="gen5" /><label class="btn btn-small btn-left" for="gen5">BW</label>
+            <input class="gen btn-input" type="radio" name="gen" value="6" id="gen6" /><label class="btn btn-small btn-mid" for="gen6">&Omega;R&alpha;S</label>
+            <input class="gen btn-input" type="radio" name="gen" value="7" id="gen7" /><label class="btn btn-small btn-mid" for="gen7">USUM</label>
+            <input class="gen btn-input" type="radio" name="gen" value="8" id="gen8" checked="checked" /><label class="btn btn-small btn-mid" for="gen8">SwSh</label>
+            <input class="gen btn-input" type="radio" name="gen" value="80" id="gen80" /><label class="btn btn-small btn-right" for="gen80">BDSP</label>
+        </span>
+        <span class="one-vs-all" aria-labelledby="selectModeInstruction" role="radiogroup" title="Select the calculator's mode of function.">
+            <input class="mode btn-input" type="radio" name="mode" value="one-vs-one" id="one-vs-one" checked="checked" /><label class="btn btn-small btn-left" for="one-vs-one">1v1</label>
+            <input class="mode btn-input" type="radio" name="mode" value="one-vs-all" id="one-vs-all" /><label class="btn btn-small btn-mid" for="one-vs-all">1vAll</label>
+            <input class="mode btn-input" type="radio" name="mode" value="all-vs-one"  id="all-vs-one" /><label class="btn btn-small btn-right" for="all-vs-one">Allv1</label>
+        </span>
+    </div>
 	<hr />
 	<p>Based on the BSS calculator by <a href="https://twitter.com/jakecantsay">@jakecantsay</a> &amp; <a href="https://www.smogon.com/forums/members/188833/">Lego</a></p>
+	<p>Mass Calculator "Honkalculator" by Honko, ported by SilverstarStream</p>
+	<hr /><!--This Horizonal Rule is experimental, it can be removed-->
 
 	<!-- <div class="banner"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 	<!-- Damage Calc Header -->
@@ -49,8 +51,7 @@ title: Battle Facilities Calculator
 	</div>
 	<div class="main-result-group">
 		<div class="big-text"><span id="mainResult">Loading...</span></div>
-		<div class="small-text"><span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript. If you have that enabled, try deleting your cookies. Otherwise, I won't be able to help you unless you send a
-				screenshot of your browser console.)</span></div>
+		<div class="small-text"><span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript. If you have that enabled, try deleting your cookies. Otherwise, I won't be able to help you unless you send a screenshot of your browser console.)</span></div>
 	</div>
 
 	<div class="panel poke-info" id="p1">
@@ -746,7 +747,6 @@ title: Battle Facilities Calculator
 							<th class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g7 g8 g80 g20 g21 g22">IVs</th>
 							<th class="gen-specific g3 g4 g5 g6 g7 g8 g20 g21 g7 g8 g80 g20 g21">EVs</th>
 							<th class="gen-specific g1 g2 hide">DVs</th>
-							<th class="gen-specific g22 hide">AVs</th>
 							<th></th>
 							<th></th>
 						</tr>
@@ -755,7 +755,6 @@ title: Battle Facilities Calculator
 							<td><input class="base calc-trigger" value="100" /></td>
 							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
 							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
-							<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 							<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" disabled="disabled" /></td>
 							<td><span class="total">341</span></td>
 							<td></td>
@@ -765,7 +764,6 @@ title: Battle Facilities Calculator
 							<td><input class="base calc-trigger" value="100" /></td>
 							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
 							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
-							<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 							<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td>
 							<td><span class="total">236</span></td>
 							<td><select class="boost calc-trigger">
@@ -789,7 +787,6 @@ title: Battle Facilities Calculator
 							<td><input class="base calc-trigger" value="100" /></td>
 							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
 							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
-							<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 							<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td>
 							<td><span class="total">236</span></td>
 							<td><select class="boost calc-trigger">
@@ -813,7 +810,6 @@ title: Battle Facilities Calculator
 							<td><input class="base calc-trigger" value="100" /></td>
 							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
 							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
-							<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 							<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td>
 							<td><span class="total">236</span></td>
 							<td><select class="boost calc-trigger">
@@ -837,7 +833,6 @@ title: Battle Facilities Calculator
 							<td><input class="base calc-trigger" value="100" /></td>
 							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
 							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
-							<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 							<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" disabled="disabled" /></td>
 							<td><span class="total">236</span></td>
 							<td><select class="boost calc-trigger">
@@ -882,7 +877,6 @@ title: Battle Facilities Calculator
 							<td><input class="base calc-trigger" value="100" /></td>
 							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21 g22"><input class="ivs calc-trigger" value="31" /></td>
 							<td class="gen-specific g3 g4 g5 g6 g7 g8 g80 g20 g21"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td>
-							<td class="gen-specific g22 hide"><input class="avs calc-trigger" type="number" min="0" max="200" step="1" value="0" /></td>
 							<td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td>
 							<td><span class="total">236</span></td>
 							<td><select class="boost calc-trigger">
@@ -1146,14 +1140,12 @@ title: Battle Facilities Calculator
 	<script type="text/javascript" src="../_scripts/setdex_gen7_sets.js"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen8_sets.js"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen80_sets.js"></script>
-	<script type="text/javascript" src="../_scripts/setdex_LG_sets.js"></script>
 	<script type="text/javascript" src="../_scripts/setdex_factory_sets.js"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen5.js"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen6.js" id="XYScript"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen7.js" id="SMScript"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen8.js" id="SSScript"></script>
 	<script type="text/javascript" src="../_scripts/setdex_gen80.js" id="BDSPScript"></script>
-	<script type="text/javascript" src="../_scripts/setdex_LG.js" id="LGScript"></script>
 	<script type="text/javascript" src="../_scripts/setdex_factory.js" id="BSSFScript"></script>
 	<script type="text/javascript" src="../_scripts/stat_data.js"></script>
 	<script type="text/javascript" src="../_scripts/type_data.js"></script>
@@ -1161,6 +1153,7 @@ title: Battle Facilities Calculator
 	<script type="text/javascript" src="../_scripts/ability_data.js"></script>
 	<script type="text/javascript" src="../_scripts/item_data.js"></script>
 	<script type="text/javascript" src="../_scripts/move_data.js"></script>
+	<script type="text/javascript" src="../_scripts/shared_calc.js"></script>
 	<script type="text/javascript" src="../_scripts/ap_calc.js"></script>
 	<script type="text/javascript" src="../_scripts/damage.js"></script>
 	<script type="text/javascript" src="../_scripts/ko_chance.js"></script>
