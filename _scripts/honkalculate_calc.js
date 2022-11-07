@@ -63,6 +63,7 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 };
 
 function performCalculations() {
+	console.log("It's honkin' time!");
 	var attacker, defender, setPokemon;
 	var selectedTier = getSelectedTier(); // selectedTier can be: All, 40, Tower, RS
 	console.log("selectedTier = " + selectedTier + " (" + (typeof selectedTier) + ")");
@@ -133,7 +134,7 @@ function performCalculations() {
 	var pokemon = mode === "one-vs-all" ? attacker : defender;
 	if (pokemon) pokeInfo.find(".sp .totalMod").text(pokemon.stats.spe);
 	table.rows.add(dataSet).draw();
-	console.log("honkalculated " + counter + " sets");
+	console.log("honkalculated " + counter + " sets.");
 }
 
 function getSelectedTier() {
@@ -235,10 +236,9 @@ function constructDataTable() {
 }
 
 function placeBsBtn() {
-	var honkalculator = "<button id='honkalculate' style='position:absolute' class='btn'>Honkalculate</button>";
+	var honkalculator = "<button id='honkalculate' style='position:absolute;width:fit-content' class='btn'>Honkalculate</button>";
 	$("#holder-2_wrapper").prepend(honkalculator);
 	$("#honkalculate").click(function () {
-		console.log("It's honkin' time!");
 		var tier = getSelectedTier();
 		if (tier !== "") {
 			$("#honkalculate").popover({
