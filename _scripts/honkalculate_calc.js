@@ -72,7 +72,7 @@ function performCalculations() {
 	var counter = 0;
 	for (var i = 0; i < setOptions.length; i++) {
 		var setOptionsID = setOptions[i].id;
-		if (!setOptionsID || setOptionsID.indexOf("Blank Set") !== -1) { // Blank Sets are included in getSetOptions()
+		if (!setOptionsID || setOptionsID.indexOf("Blank Set") !== -1) {
 			console.log(setOptionsID);
 			continue;
 		}
@@ -252,17 +252,25 @@ function placeBsBtn() {
 	});
 }
 
-$(".mode").change(function () {
+/*$(".mode").change(function () {
 	if ($("#one-vs-one").prop("checked")) {
 		var params = new URLSearchParams(window.location.search);
 		params.delete('mode');
 		params = '' + params;
-		window.location.replace('index' + linkExtension + (params.length ? '?' + params : ''));
+		window.location.replace();
 	}
- else {
+ 	else {
 		var params = new URLSearchParams(window.location.search);
 		params.set('mode', $(this).attr("id"));
 		window.location.replace('honkalculate' + linkExtension + '?' + params);
+	}
+});*/
+
+$(".mode").change(function () {
+	if ($("#one-vs-one").prop("checked")) {
+		window.location.href = "/";
+	} else {
+		window.location.replace('honkalculate' + linkExtension + '?mode=' + $(this).attr("id"));
 	}
 });
 
@@ -302,26 +310,6 @@ $(".set-selector").change(function (e) {
 	}
 });
 
-var dtHeight, dtWidth;
-$(document).ready(function () {
-	var params = new URLSearchParams(window.location.search);
-	window.mode = params.get("mode");
-	if (window.mode) {
-		if (window.mode !== "one-vs-all" && window.mode !== "all-vs-one") {
-			window.location.replace("honkalculate" + linkExtension + "?mode=one-vs-all");
-		}
-	} else {
-		window.mode = "one-vs-all";
-	}
-
-	$("#holder-2 th:first").text((mode === "one-vs-all") ? "Defender" : "Attacker");
-	$("#holder-2").show();
-
-	calcDTDimensions();
-	constructDataTable();
-	placeBsBtn();
-});
-
 function calcDTDimensions() {
 	$("#holder-2").DataTable({
 		dom: 'C<"clear">frti'
@@ -337,3 +325,52 @@ function calcDTDimensions() {
 function getBottomOffset(obj) {
 	return obj.offset().top + obj.outerHeight();
 }
+
+function calcTotalMod() {
+	var speed = getModifiedStat($(".sp .total").text(), $(".sp .boost").val());
+	var item = $(".item").val();
+	if (item === "Choice Scarf") {
+		speed = Math.floor(speed * 1.5);
+	} else if (item === "Macho Brace" || item === "Iron Ball") {
+		speed = Math.floor(speed / 2);
+	}
+	var ability = $(".ability").val();
+	var weather = $("input[name=weather]:checked").attr('value');
+	var terrain = $("input[name=terrain]:checked").attr('value');
+	if (ability === "Chlorophyll" && weather.indexOf("Sun") > -1 ||
+            ability === "Sand Rush" && weather === "Sand" ||
+            ability === "Swift Swim" && weather.indexOf("Rain") > -1 ||
+            ability === "Slush Rush" && weather.indexOf("Hail") > -1 ||
+            ability === "Surge Surfer" && terrain === "Electric") {
+		speed *= 2;
+	}
+	$(".totalMod").text(speed);
+}
+
+var dtHeight, dtWidth;
+$(document).ready(function () {
+	var params = new URLSearchParams(window.location.search);
+	window.mode = params.get("mode");
+	if (window.mode) {
+		if (window.mode === "one-vs-one") {
+			window.location.replace("");
+		}
+		else if (window.mode !== "one-vs-all" && window.mode !== "all-vs-one") {
+			window.mode = "one-vs-all";
+			window.location.replace("honkalculate" + linkExtension + "?mode=" + window.mode);
+		}
+	} else {
+		window.mode = "one-vs-all";
+	}
+	$("#" + mode).prop("checked", true);
+
+	$("#holder-2 th:first").text((mode === "one-vs-all") ? "Defender" : "Attacker");
+	$("#holder-2").show();
+
+	calcDTDimensions();
+	constructDataTable();
+	placeBsBtn();
+
+	$(".calc-trigger").bind("change keyup", calcTotalMod);
+	calcTotalMod();
+});

@@ -26,8 +26,8 @@ function calculate() {
 	var p1 = new Pokemon($("#p1"));
 	var p2 = new Pokemon($("#p2"));
 	var field = new Field();
-	optimizeEVs("#p1", p1);
-	optimizeEVs("#p2", p2);
+	//optimizeEVs("#p1", p1);
+	//optimizeEVs("#p2", p2);
 	damageResults = calculateAllMoves(p1, p2, field);
 	p1info.find(".sp .totalMod").text(p1.stats.sp);
 	p2info.find(".sp .totalMod").text(p2.stats.sp);
@@ -213,6 +213,10 @@ function findDamageResult(resultMoveObj) {
 		}
 	}
 }
+
+$(".mode").change(function () {
+	window.location.replace('honkalculate' + linkExtension + '?mode=' + $(this).attr("id"));
+});
 
 $(document).ready(function () {
 	$(".calc-trigger").bind("change keyup", calculate);
