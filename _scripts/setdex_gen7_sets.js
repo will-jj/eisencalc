@@ -289,7 +289,7 @@ var SETDEX_GEN7_SETS =
         "Round"
       ],
       "nature": "Quiet",
-      "item": "King\u0027s Rock"
+      "item": "King's Rock"
     },
     "Aggron-3": {
       "level": 50,
@@ -466,7 +466,7 @@ var SETDEX_GEN7_SETS =
         "U-turn"
       ],
       "nature": "Naive",
-      "item": "King\u0027s Rock"
+      "item": "King's Rock"
     },
     "Ambipom-2": {
       "level": 50,
@@ -512,7 +512,7 @@ var SETDEX_GEN7_SETS =
         "Payback"
       ],
       "nature": "Jolly",
-      "item": "King\u0027s Rock",
+      "item": "King's Rock",
       "tier": "40"
     }
   },
@@ -2017,7 +2017,7 @@ var SETDEX_GEN7_SETS =
         "Sky Drop"
       ],
       "nature": "Adamant",
-      "item": "King\u0027s Rock"
+      "item": "King's Rock"
     },
     "Braviary-2": {
       "level": 50,
@@ -6188,7 +6188,7 @@ var SETDEX_GEN7_SETS =
         "U-turn"
       ],
       "nature": "Jolly",
-      "item": "King\u0027s Rock",
+      "item": "King's Rock",
       "tier": "40"
     },
     "Greninja-4": {
@@ -6288,7 +6288,7 @@ var SETDEX_GEN7_SETS =
         "Vital Throw"
       ],
       "nature": "Brave",
-      "item": "King\u0027s Rock"
+      "item": "King's Rock"
     },
     "Hariyama-2": {
       "level": 50,
@@ -6936,7 +6936,7 @@ var SETDEX_GEN7_SETS =
         "Acrobatics"
       ],
       "nature": "Jolly",
-      "item": "King\u0027s Rock"
+      "item": "King's Rock"
     },
     "Infernape-2": {
       "level": 50,
@@ -7096,7 +7096,7 @@ var SETDEX_GEN7_SETS =
         "Yawn"
       ],
       "nature": "Timid",
-      "item": "King\u0027s Rock",
+      "item": "King's Rock",
       "tier": "40"
     },
     "Jolteon-4": {
@@ -9230,7 +9230,7 @@ var SETDEX_GEN7_SETS =
         "High Jump Kick"
       ],
       "nature": "Jolly",
-      "item": "King\u0027s Rock"
+      "item": "King's Rock"
     },
     "Mienshao-3": {
       "level": 50,
@@ -9799,7 +9799,7 @@ var SETDEX_GEN7_SETS =
         "Sucker Punch"
       ],
       "nature": "Naughty",
-      "item": "King\u0027s Rock"
+      "item": "King's Rock"
     },
     "Nidoking-2": {
       "level": 50,
@@ -10129,8 +10129,8 @@ var SETDEX_GEN7_SETS =
       "tier": "40"
     }
   },
-  "Oricorio-Pa\u0027u": {
-    "Oricorio-Pa\u0027u-1": {
+  "Oricorio-Pa'u": {
+    "Oricorio-Pa'u-1": {
       "level": 50,
       "evs": {
         "hp": 252,
@@ -10842,7 +10842,7 @@ var SETDEX_GEN7_SETS =
         "Noble Roar"
       ],
       "nature": "Timid",
-      "item": "King\u0027s Rock"
+      "item": "King's Rock"
     },
     "Pyroar-2": {
       "level": 50,
@@ -11385,7 +11385,7 @@ var SETDEX_GEN7_SETS =
         "Trick Room"
       ],
       "nature": "Brave",
-      "item": "King\u0027s Rock"
+      "item": "King's Rock"
     },
     "Reuniclus-3": {
       "level": 50,
@@ -13000,7 +13000,7 @@ var SETDEX_GEN7_SETS =
         "Psych Up"
       ],
       "nature": "Gentle",
-      "item": "King\u0027s Rock",
+      "item": "King's Rock",
       "tier": "40"
     },
     "Slowking-3": {
@@ -13288,7 +13288,7 @@ var SETDEX_GEN7_SETS =
         "Ice Beam"
       ],
       "nature": "Timid",
-      "item": "King\u0027s Rock",
+      "item": "King's Rock",
       "tier": "40"
     }
   },
@@ -13871,7 +13871,7 @@ var SETDEX_GEN7_SETS =
         "Sacred Sword"
       ],
       "nature": "Jolly",
-      "item": "King\u0027s Rock",
+      "item": "King's Rock",
       "tier": "40"
     }
   },
@@ -14116,7 +14116,7 @@ var SETDEX_GEN7_SETS =
         "Shadow Ball"
       ],
       "nature": "Timid",
-      "item": "King\u0027s Rock",
+      "item": "King's Rock",
       "tier": "40"
     },
     "Togekiss-4": {
@@ -14296,7 +14296,7 @@ var SETDEX_GEN7_SETS =
         "Brave Bird"
       ],
       "nature": "Adamant",
-      "item": "King\u0027s Rock"
+      "item": "King's Rock"
     },
     "Toucannon-3": {
       "level": 50,
@@ -14747,7 +14747,7 @@ var SETDEX_GEN7_SETS =
         "Dragon Dance"
       ],
       "nature": "Hasty",
-      "item": "King\u0027s Rock",
+      "item": "King's Rock",
       "tier": "40"
     },
     "Tyranitar-3": {
@@ -16008,7 +16008,7 @@ var SETDEX_GEN7_SETS =
         "Shadow Ball"
       ],
       "nature": "Modest",
-      "item": "King\u0027s Rock",
+      "item": "King's Rock",
       "tier": "40"
     }
   },
