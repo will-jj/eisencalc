@@ -64,9 +64,8 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 
 function performCalculations() {
 	console.log("It's honkin' time!");
-	var attacker, defender, setPokemon;
-	var selectedTier = getSelectedTier(); // selectedTier can be: All, 40, Tower, RS
-	console.log("selectedTier = " + selectedTier + " (" + (typeof selectedTier) + ")");
+	var attacker, defender, setPokemon, setTier;
+	var selectedTier = getSelectedTier(); // selectedTier can be: All, 40, Tower, RS, SM*, DM*.  *Singles and Doubles Master
 	var setOptions = getSetOptions();
 	var dataSet = [];
 	var pokeInfo = $("#p1");
@@ -74,11 +73,17 @@ function performCalculations() {
 	for (var i = 0; i < setOptions.length; i++) {
 		var setOptionsID = setOptions[i].id;
 		if (!setOptionsID || setOptionsID.indexOf("Blank Set") !== -1) {
-			console.log(setOptionsID);
 			continue;
 		}
 		setPokemon = new Pokemon(setOptionsID);
-		if (selectedTier !== setPokemon.tier && selectedTier !== "All") { // setPokemon.tier can currently be: 40, Tower, RS
+		setTier = setPokemon.tier;
+		if (selectedTier === "All") {
+			// let set be calculated
+		}
+		else if (selectedTier !== setTier) { // setPokemon.tier can currently be: 40, Tower, RS, SM, DM, SMDM
+			continue;
+		}
+		else if (gen == 80 && setTier !== "SMDM") {
 			continue;
 		}
 
@@ -123,6 +128,7 @@ function performCalculations() {
 				data.push(attackerMove.bp === 0 ? "nice move" :
 					getKOChanceText(result.damage, attackerMove, defender, field.getSide(~~(mode === "one-vs-all")), attacker.ability === "Bad Dreams", attacker, false, attacker.isVictoryStar, gen));
 			}
+			console.log(highestDamage);
 		}
 		data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
 		data.push(((mode === "one-vs-all") ? defender.type2 : attacker.type2) || "");
@@ -130,9 +136,9 @@ function performCalculations() {
 		data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
 		dataSet.push(data);
 		counter++;
+		console.log(data);
 	}
 	var pokemon = mode === "one-vs-all" ? attacker : defender;
-	if (pokemon) pokeInfo.find(".sp .totalMod").text(pokemon.stats.spe);
 	table.rows.add(dataSet).draw();
 	console.log("honkalculated " + counter + " sets.");
 }
@@ -187,7 +193,12 @@ function adjustTierBorderRadius() {
 		$("#40").next("label").css(roundedRightCorner);
 	}
 	else if (gen == 8) {
+		$("#Tower").next("label").css(roundedLeftCorner);
 		$("#RS").next("label").css(roundedRightCorner);
+	}
+	else if (gen == 80) {
+		$("#All").next("label").css(squaredRightCorner);
+		$("#DM").next("label").css(roundedRightCorner);
 	}
 	else {
 		$("#All").next("label").css(roundedRightCorner);
@@ -236,17 +247,9 @@ function constructDataTable() {
 }
 
 function placeBsBtn() {
-	var honkalculator = "<button id='honkalculate' style='position:absolute;width:fit-content' class='btn'>Honkalculate</button>";
+	var honkalculator = "<button id='honkalculate' style='position:absolute' class='btn btn-fit'>Honkalculate</button>";
 	$("#holder-2_wrapper").prepend(honkalculator);
 	$("#honkalculate").click(function () {
-		var tier = getSelectedTier();
-		if (tier !== "") {
-			$("#honkalculate").popover({
-				content: "No format selected",
-				placement: "right"
-			}).popover('show');
-			setTimeout(function () { $("#honkalculate").popover('destroy'); }, 1350);
-		}
 		table.clear();
 		performCalculations();
 	});
