@@ -123,6 +123,10 @@ th {
   border-radius: 0;
 }
 
+.btn-fit {
+  width: fit-content;
+}
+
 .btn:hover {
   z-index: 10;
   border-color: #26272b;
