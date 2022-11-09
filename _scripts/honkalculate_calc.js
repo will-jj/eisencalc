@@ -77,11 +77,8 @@ function performCalculations() {
 		}
 		setPokemon = new Pokemon(setOptionsID);
 		setTier = setPokemon.tier;
-		if (selectedTier === "All") {
+		if (selectedTier === setTier || selectedTier === "All") { // setPokemon.tier can currently be: 40, Tower, RS, SM, DM, SMDM
 			// let set be calculated
-		}
-		else if (selectedTier !== setTier) { // setPokemon.tier can currently be: 40, Tower, RS, SM, DM, SMDM
-			continue;
 		}
 		else if (gen == 80 && setTier !== "SMDM") {
 			continue;
