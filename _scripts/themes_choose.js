@@ -35,7 +35,6 @@ var changetheme = function () {
 		$("#midimg")[0].src = "_images/volc.png";
 		localStorage.setItem("selectedTheme", $("#theme").val());
 		break;
-	case "dark":
 	default:
 		$("#select2css")[0].href = "_css/select2.css";
 		$("#nbcalccss")[0].href = "_css/dark_nb_calc.css";

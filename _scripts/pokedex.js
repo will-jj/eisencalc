@@ -11508,7 +11508,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 		},
 		"w": 180.0
 	},
-	"Oricorio": {
+	"Oricorio-Baile": {
 		"t1": "Fire",
 		"t2": "Flying",
 		"bs": {
