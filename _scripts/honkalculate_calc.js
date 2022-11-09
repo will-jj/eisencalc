@@ -84,9 +84,6 @@ function performCalculations() {
 			// let set be calculated
 		}
 		else {
-			if (setOptionsID.indexOf("-RS") != -1) {
-				console.log(setOptionsID);
-			}
 			continue;
 		}
 
