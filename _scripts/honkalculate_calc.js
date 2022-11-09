@@ -244,7 +244,7 @@ function constructDataTable() {
 }
 
 function placeBsBtn() {
-	var honkalculator = "<button id='honkalculate' style='position:absolute' class='btn btn-fit'>Honkalculate</button>";
+	var honkalculator = "<button id='honkalculate' style='position:absolute' class='btn btn-fit'>Mass Calc</button>";
 	$("#holder-2_wrapper").prepend(honkalculator);
 	$("#honkalculate").click(function () {
 		table.clear();
