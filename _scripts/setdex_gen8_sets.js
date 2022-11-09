@@ -23386,7 +23386,7 @@ var SETDEX_GEN8_SETS =
       "tier": "RS"
     }
   },
-  "Meowstic-M": {
+  "Meowstic": {
     "Meowstic-M-1": {
       "level": 50,
       "evs": {

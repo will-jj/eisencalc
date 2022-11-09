@@ -65,7 +65,7 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 function performCalculations() {
 	console.log("It's honkin' time!");
 	var attacker, defender, setPokemon, setTier;
-	var selectedTier = getSelectedTier(); // selectedTier can be: All, 40, Tower, RS, SM*, DM*.  *Singles and Doubles Master
+	var selectedTier = getSelectedTier(); // selectedTier can be: All, 28, 40, Tower, RS, SM*, DM*.  *Singles and Doubles Master
 	var setOptions = getSetOptions();
 	var dataSet = [];
 	var pokeInfo = $("#p1");
@@ -77,10 +77,13 @@ function performCalculations() {
 		}
 		setPokemon = new Pokemon(setOptionsID);
 		setTier = setPokemon.tier;
-		if (selectedTier === setTier || selectedTier === "All") { // setPokemon.tier can currently be: 40, Tower, RS, SM, DM, SMDM
+		if (selectedTier === setTier || selectedTier === "All") { // setPokemon.tier can currently be: 28, 40, Tower, RS, SM, DM, SMDM
 			// let set be calculated
 		}
-		else if (gen == 80 && setTier !== "SMDM") {
+		else if (gen == 80 && setTier === "SMDM") {
+			// let set be calculated
+		}
+		else {
 			continue;
 		}
 
@@ -125,7 +128,6 @@ function performCalculations() {
 				data.push(attackerMove.bp === 0 ? "nice move" :
 					getKOChanceText(result.damage, attackerMove, defender, field.getSide(~~(mode === "one-vs-all")), attacker.ability === "Bad Dreams", attacker, false, attacker.isVictoryStar, gen));
 			}
-			console.log(highestDamage);
 		}
 		data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
 		data.push(((mode === "one-vs-all") ? defender.type2 : attacker.type2) || "");
@@ -133,7 +135,6 @@ function performCalculations() {
 		data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
 		dataSet.push(data);
 		counter++;
-		console.log(data);
 	}
 	var pokemon = mode === "one-vs-all" ? attacker : defender;
 	table.rows.add(dataSet).draw();
@@ -185,7 +186,11 @@ function adjustTierBorderRadius() {
 	var squaredLeftCorner = {"border-top-left-radius": 0, "border-bottom-left-radius": 0};
 	var roundedLeftCorner = {"border-top-left-radius": "8px", "border-bottom-left-radius": "8px"};
 	// All and Tower are always left-rounded
-	if (gen == 6 || gen == 7) {
+	if (gen == 5) {
+		$("#All").next("label").css(squaredRightCorner);
+		$("#28").next("label").css(roundedRightCorner);
+	}
+	else if (gen == 6 || gen == 7) {
 		$("#All").next("label").css(squaredRightCorner);
 		$("#40").next("label").css(roundedRightCorner);
 	}
