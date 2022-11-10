@@ -51,7 +51,7 @@ table.dataTable thead > tr > td.sorting_desc_disabled:after {
   opacity: 0.125;
   right: 10px;
   line-height: 9px;
-  font-size: 0.8em;
+  font-size: small;
 }
 table.dataTable thead > tr > th.sorting:before, table.dataTable thead > tr > th.sorting_asc:before, table.dataTable thead > tr > th.sorting_desc:before, table.dataTable thead > tr > th.sorting_asc_disabled:before, table.dataTable thead > tr > th.sorting_desc_disabled:before,
 table.dataTable thead > tr > td.sorting:before,
