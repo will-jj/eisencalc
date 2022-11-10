@@ -229,7 +229,7 @@ function constructDataTable() {
 				iDataSort: 2
 			}
 		],
-		dom: 'C<"clear">fti',
+		dom: 'Cfti',
 		colVis: {
 			exclude: (gen > 2) ? [0, 1, 2] : (gen === 2) ? [0, 1, 2, 7] : [0, 1, 2, 7, 8],
 			stateChange: function (iColumn, bVisible) {
