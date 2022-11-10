@@ -245,7 +245,7 @@ function constructDataTable() {
 		scrollY: dtHeight,
 		scrollCollapse: true
 	});
-	$(".dataTables_wrapper").css({"max-width": dtWidth;"min-width": 845px});
+	$(".dataTables_wrapper").css({"max-width": dtWidth});
 }
 
 function placeBsBtn() {
