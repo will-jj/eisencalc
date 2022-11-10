@@ -317,7 +317,7 @@ $(".set-selector").change(function (e) {
 
 function calcDTDimensions() {
 	$("#holder-2").DataTable({
-		dom: 'C<"clear">frti'
+		dom: 'Cfrti'
 	});
 
 	var theadBottomOffset = getBottomOffset($(".sorting"));
