@@ -323,8 +323,6 @@ function calcDTDimensions() {
 	var theadBottomOffset = getBottomOffset($(".sorting"));
 	var heightUnderDT = getBottomOffset($(".holder-0")) - getBottomOffset($("#holder-2 tbody"));
 	dtHeight = $(document).height() - theadBottomOffset - heightUnderDT;
-	dtWidth = $(window).width() - $("#holder-2").offset().left;
-	dtWidth -= 2 * parseFloat($(".holder-0").css("padding-right"));
 }
 
 function getBottomOffset(obj) {
