@@ -214,7 +214,7 @@ var SETDEX_GEN5_SETS =
         "Light Screen",
         "Aromatherapy",
         "Swagger",
-        "SolarBeam"
+        "Solar Beam"
       ],
       "nature": "Gentle",
       "item": "Sitrus Berry",
@@ -227,7 +227,7 @@ var SETDEX_GEN5_SETS =
         "df": 252
       },
       "moves": [
-        "GrassWhistle",
+        "Grass Whistle",
         "Double Team",
         "Substitute",
         "Rest"
@@ -279,7 +279,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Flame Burst",
         "Flamethrower",
-        "SolarBeam",
+        "Solar Beam",
         "Sunny Day"
       ],
       "nature": "Rash",
@@ -328,7 +328,7 @@ var SETDEX_GEN5_SETS =
         "Extrasensory",
         "Lava Plume",
         "Bulldoze",
-        "SolarBeam"
+        "Solar Beam"
       ],
       "nature": "Modest",
       "item": "Power Herb",
@@ -479,7 +479,7 @@ var SETDEX_GEN5_SETS =
         "sp": 168
       },
       "moves": [
-        "Hi Jump Kick",
+        "High Jump Kick",
         "Counter",
         "Flamethrower",
         "Will-O-Wisp"
@@ -514,7 +514,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Flare Blitz",
         "Shadow Claw",
-        "ThunderPunch",
+        "Thunder Punch",
         "Earthquake"
       ],
       "nature": "Hardy",
@@ -530,7 +530,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Flame Charge",
         "Flare Blitz",
-        "ThunderPunch",
+        "Thunder Punch",
         "Low Kick"
       ],
       "nature": "Hardy",
@@ -765,7 +765,7 @@ var SETDEX_GEN5_SETS =
         "Drill Peck",
         "Aqua Jet",
         "Metal Claw",
-        "FeatherDance"
+        "Feather Dance"
       ],
       "nature": "Lonely",
       "item": "Muscle Band",
@@ -1150,7 +1150,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Fake Out",
-        "Hi Jump Kick",
+        "High Jump Kick",
         "Bulk Up",
         "Feint"
       ],
@@ -1181,7 +1181,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "Hi Jump Kick",
+        "High Jump Kick",
         "Zen Headbutt",
         "Ice Punch",
         "Bullet Punch"
@@ -1197,7 +1197,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "Hi Jump Kick",
+        "High Jump Kick",
         "Psycho Cut",
         "Fake Out",
         "Detect"
@@ -2051,7 +2051,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "ThunderPunch",
+        "Thunder Punch",
         "Reversal",
         "Thunder Wave",
         "Fake Out"
@@ -2219,7 +2219,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "U-turn",
-        "FeatherDance",
+        "Feather Dance",
         "Quick Attack",
         "Endeavor"
       ],
@@ -2269,7 +2269,7 @@ var SETDEX_GEN5_SETS =
         "Brave Bird",
         "Double-Edge",
         "Roost",
-        "FeatherDance"
+        "Feather Dance"
       ],
       "nature": "Jolly",
       "item": "Sitrus Berry",
@@ -2601,7 +2601,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Detect",
-        "FeatherDance",
+        "Feather Dance",
         "Toxic",
         "Fly"
       ],
@@ -2634,7 +2634,7 @@ var SETDEX_GEN5_SETS =
         "sa": 252
       },
       "moves": [
-        "SolarBeam",
+        "Solar Beam",
         "Sludge Bomb",
         "Synthesis",
         "Double Team"
@@ -2667,7 +2667,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Giga Drain",
-        "SolarBeam",
+        "Solar Beam",
         "Teeter Dance",
         "Sludge Bomb"
       ],
@@ -2717,7 +2717,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Sunny Day",
-        "SolarBeam",
+        "Solar Beam",
         "Sludge Bomb",
         "Weather Ball"
       ],
@@ -2733,7 +2733,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Weather Ball",
-        "SolarBeam",
+        "Solar Beam",
         "Sludge Bomb",
         "Gastro Acid"
       ],
@@ -2901,7 +2901,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Fake Out",
         "Extrasensory",
-        "SolarBeam",
+        "Solar Beam",
         "Swagger"
       ],
       "nature": "Rash",
@@ -2916,7 +2916,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Sunny Day",
-        "SolarBeam",
+        "Solar Beam",
         "Dark Pulse",
         "Explosion"
       ],
@@ -3034,7 +3034,7 @@ var SETDEX_GEN5_SETS =
         "Charm",
         "Focus Punch",
         "Substitute",
-        "ThunderPunch"
+        "Thunder Punch"
       ],
       "nature": "Jolly",
       "item": "Liechi Berry",
@@ -3198,7 +3198,7 @@ var SETDEX_GEN5_SETS =
         "sp": 124
       },
       "moves": [
-        "SolarBeam",
+        "Solar Beam",
         "Teeter Dance",
         "Charm",
         "Leech Seed"
@@ -3447,7 +3447,7 @@ var SETDEX_GEN5_SETS =
         "at": 252
       },
       "moves": [
-        "DynamicPunch",
+        "Dynamic Punch",
         "Shadow Punch",
         "Earthquake",
         "Rock Slide"
@@ -4161,7 +4161,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "Hi Jump Kick",
+        "High Jump Kick",
         "Rock Slide",
         "Taunt",
         "Dragon Dance"
@@ -4179,7 +4179,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Substitute",
         "Payback",
-        "Hi Jump Kick",
+        "High Jump Kick",
         "Focus Punch"
       ],
       "nature": "Adamant",
@@ -4443,7 +4443,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Dizzy Punch",
         "Fire Punch",
-        "ThunderPunch",
+        "Thunder Punch",
         "Ice Punch"
       ],
       "nature": "Adamant",
@@ -5179,7 +5179,7 @@ var SETDEX_GEN5_SETS =
         "Head Smash",
         "Earthquake",
         "Brick Break",
-        "ThunderPunch"
+        "Thunder Punch"
       ],
       "nature": "Jolly",
       "item": "Choice Scarf",
@@ -5890,7 +5890,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Will-O-Wisp",
         "Fire Blast",
-        "SolarBeam",
+        "Solar Beam",
         "Sunny Day"
       ],
       "nature": "Hasty",
@@ -6089,7 +6089,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Brick Break",
-        "ThunderPunch",
+        "Thunder Punch",
         "Screech",
         "Odor Sleuth"
       ],
@@ -6520,7 +6520,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Overheat",
         "Dark Pulse",
-        "SolarBeam",
+        "Solar Beam",
         "Sunny Day"
       ],
       "nature": "Timid",
@@ -7000,7 +7000,7 @@ var SETDEX_GEN5_SETS =
         "at": 252
       },
       "moves": [
-        "DynamicPunch",
+        "Dynamic Punch",
         "Payback",
         "Foresight",
         "Wide Guard"
@@ -7032,7 +7032,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "DynamicPunch",
+        "Dynamic Punch",
         "Ice Punch",
         "Rock Slide",
         "Earthquake"
@@ -7167,7 +7167,7 @@ var SETDEX_GEN5_SETS =
         "Leaf Storm",
         "Sludge Bomb",
         "Hyper Beam",
-        "GrassWhistle"
+        "Grass Whistle"
       ],
       "nature": "Timid",
       "item": "White Herb",
@@ -7335,7 +7335,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Rock Slide",
         "Force Palm",
-        "SmellingSalt",
+        "Smelling Salts",
         "Bulk Up"
       ],
       "nature": "Bold",
@@ -8437,7 +8437,7 @@ var SETDEX_GEN5_SETS =
         "Leaf Storm",
         "Psychic",
         "Sludge Bomb",
-        "AncientPower"
+        "Ancient Power"
       ],
       "nature": "Modest",
       "item": "Expert Belt",
@@ -9029,7 +9029,7 @@ var SETDEX_GEN5_SETS =
         "df": 252
       },
       "moves": [
-        "Faint Attack",
+        "Feint Attack",
         "Swagger",
         "Psych Up",
         "Screech"
@@ -9066,7 +9066,7 @@ var SETDEX_GEN5_SETS =
         "X-Scissor",
         "Leaf Blade",
         "Swords Dance",
-        "GrassWhistle"
+        "Grass Whistle"
       ],
       "nature": "Impish",
       "item": "Scope Lens",
@@ -9478,7 +9478,7 @@ var SETDEX_GEN5_SETS =
         "Fake Out",
         "Fling",
         "Acrobatics",
-        "Hi Jump Kick"
+        "High Jump Kick"
       ],
       "nature": "Jolly",
       "item": "King's Rock",
@@ -9493,7 +9493,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Low Kick",
         "Fake Out",
-        "Hi Jump Kick",
+        "High Jump Kick",
         "U-turn"
       ],
       "nature": "Jolly",
@@ -9509,7 +9509,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Feint",
         "Fake Out",
-        "Hi Jump Kick",
+        "High Jump Kick",
         "Wide Guard"
       ],
       "nature": "Impish",
@@ -10247,7 +10247,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Sunny Day",
-        "SolarBeam",
+        "Solar Beam",
         "Synthesis",
         "Wring Out"
       ],
@@ -10733,7 +10733,7 @@ var SETDEX_GEN5_SETS =
         "Toxic",
         "Minimize",
         "Mud Bomb",
-        "Softboiled"
+        "Soft-Boiled"
       ],
       "nature": "Bold",
       "item": "Chople Berry",
@@ -10864,7 +10864,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "ThunderPunch",
+        "Thunder Punch",
         "Fire Punch",
         "Ice Punch",
         "Earthquake"
@@ -10914,7 +10914,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Flare Blitz",
-        "ThunderPunch",
+        "Thunder Punch",
         "Earthquake",
         "Brick Break"
       ],
@@ -11030,7 +11030,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "ExtremeSpeed",
+        "Extreme Speed",
         "Aerial Ace",
         "Psych Up",
         "Brick Break"
@@ -11082,7 +11082,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Fire Spin",
         "Heat Wave",
-        "SolarBeam",
+        "Solar Beam",
         "Whirlwind"
       ],
       "nature": "Modest",
@@ -11147,7 +11147,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Flamethrower",
-        "SolarBeam",
+        "Solar Beam",
         "Incinerate",
         "Sunny Day"
       ],
@@ -11162,7 +11162,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "ExtremeSpeed",
+        "Extreme Speed",
         "Crunch",
         "Overheat",
         "Roar"
@@ -11180,7 +11180,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Overheat",
         "Sunny Day",
-        "SolarBeam",
+        "Solar Beam",
         "Dragon Pulse"
       ],
       "nature": "Timid",
@@ -11197,7 +11197,7 @@ var SETDEX_GEN5_SETS =
         "Close Combat",
         "Flare Blitz",
         "Crunch",
-        "ExtremeSpeed"
+        "Extreme Speed"
       ],
       "nature": "Jolly",
       "item": "Sitrus Berry",
@@ -11231,7 +11231,7 @@ var SETDEX_GEN5_SETS =
         "Earthquake",
         "Earth Power",
         "Endeavor",
-        "AncientPower"
+        "Ancient Power"
       ],
       "nature": "Mild",
       "item": "Enigma Berry",
@@ -11329,7 +11329,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Superpower",
         "Earthquake",
-        "ThunderPunch",
+        "Thunder Punch",
         "Fire Punch"
       ],
       "nature": "Adamant",
@@ -11815,7 +11815,7 @@ var SETDEX_GEN5_SETS =
         "Thunderbolt",
         "Signal Beam",
         "Air Cutter",
-        "AncientPower"
+        "Ancient Power"
       ],
       "nature": "Timid",
       "item": "Magnet",
@@ -11911,7 +11911,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Sunny Day",
-        "SolarBeam",
+        "Solar Beam",
         "Flamethrower",
         "Air Slash"
       ],
@@ -12046,7 +12046,7 @@ var SETDEX_GEN5_SETS =
         "Eruption",
         "Heat Wave",
         "Extrasensory",
-        "SolarBeam"
+        "Solar Beam"
       ],
       "nature": "Timid",
       "item": "Choice Scarf",
@@ -12295,7 +12295,7 @@ var SETDEX_GEN5_SETS =
         "Rock Polish",
         "Earthquake",
         "Iron Head",
-        "ThunderPunch"
+        "Thunder Punch"
       ],
       "nature": "Jolly",
       "item": "King's Rock",
@@ -12838,7 +12838,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Sunny Day",
         "Fire Blast",
-        "SolarBeam",
+        "Solar Beam",
         "Earth Power"
       ],
       "nature": "Modest",
@@ -13071,7 +13071,7 @@ var SETDEX_GEN5_SETS =
         "Super Fang",
         "Crunch",
         "Hypnosis",
-        "Sand-Attack"
+        "Sand Attack"
       ],
       "nature": "Jolly",
       "item": "Cheri Berry"
@@ -13150,7 +13150,7 @@ var SETDEX_GEN5_SETS =
         "Fly",
         "Facade",
         "Swagger",
-        "FeatherDance"
+        "Feather Dance"
       ],
       "nature": "Jolly",
       "item": "Scope Lens"
@@ -13264,7 +13264,7 @@ var SETDEX_GEN5_SETS =
         "Giga Drain",
         "Charm",
         "Leech Seed",
-        "PoisonPowder"
+        "Poison Powder"
       ],
       "nature": "Modest",
       "item": "Big Root"
@@ -13518,7 +13518,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "BubbleBeam",
+        "Bubble Beam",
         "Round",
         "Growl",
         "Aqua Ring"
@@ -13614,7 +13614,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "DoubleSlap",
+        "Double Slap",
         "U-turn",
         "Encore",
         "Tickle"
@@ -13904,7 +13904,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Aerial Ace",
         "Water Pulse",
-        "FeatherDance",
+        "Feather Dance",
         "Defog"
       ],
       "nature": "Serious",
@@ -14350,7 +14350,7 @@ var SETDEX_GEN5_SETS =
         "Bug Bite",
         "Smack Down",
         "Double Team",
-        "Sand-Attack"
+        "Sand Attack"
       ],
       "nature": "Impish",
       "item": "Ring Target"
@@ -14505,8 +14505,8 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Double Kick",
-        "Faint Attack",
-        "Sand-Attack",
+        "Feint Attack",
+        "Sand Attack",
         "Leech Seed"
       ],
       "nature": "Adamant",
@@ -14536,7 +14536,7 @@ var SETDEX_GEN5_SETS =
         "sd": 252
       },
       "moves": [
-        "BubbleBeam",
+        "Bubble Beam",
         "Night Shade",
         "Attract",
         "Flash"
@@ -14600,7 +14600,7 @@ var SETDEX_GEN5_SETS =
         "df": 252
       },
       "moves": [
-        "Faint Attack",
+        "Feint Attack",
         "Metal Claw",
         "Torment",
         "Iron Defense"
@@ -14698,7 +14698,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Bulldoze",
         "Crunch",
-        "Sand-Attack",
+        "Sand Attack",
         "Torment"
       ],
       "nature": "Jolly",
@@ -14777,7 +14777,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Razor Wind",
         "Facade",
-        "FeatherDance",
+        "Feather Dance",
         "Tailwind"
       ],
       "nature": "Impish",
@@ -14921,7 +14921,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Pluck",
-        "Faint Attack",
+        "Feint Attack",
         "Flatter",
         "Tailwind"
       ],
@@ -14986,7 +14986,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Razor Leaf",
         "Bug Bite",
-        "GrassWhistle",
+        "Grass Whistle",
         "String Shot"
       ],
       "nature": "Impish",
@@ -15001,7 +15001,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Razor Leaf",
         "Dream Eater",
-        "GrassWhistle",
+        "Grass Whistle",
         "Protect"
       ],
       "nature": "Impish",
@@ -15017,7 +15017,7 @@ var SETDEX_GEN5_SETS =
       },
       "moves": [
         "Round",
-        "BubbleBeam",
+        "Bubble Beam",
         "Mud Shot",
         "Supersonic"
       ],
@@ -15050,7 +15050,7 @@ var SETDEX_GEN5_SETS =
       "moves": [
         "Smack Down",
         "Headbutt",
-        "Sand-Attack",
+        "Sand Attack",
         "Iron Defense"
       ],
       "nature": "Adamant",
@@ -15173,7 +15173,7 @@ var SETDEX_GEN5_SETS =
         "df": 252
       },
       "moves": [
-        "DynamicPunch",
+        "Dynamic Punch",
         "Poison Jab",
         "Smack Down",
         "Mach Punch"
@@ -15606,7 +15606,7 @@ var SETDEX_GEN5_SETS =
         "sa": 252
       },
       "moves": [
-        "SolarBeam",
+        "Solar Beam",
         "Synthesis",
         "Sunny Day",
         "Cotton Guard"
@@ -15783,7 +15783,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "DoubleSlap",
+        "Double Slap",
         "Dig",
         "U-turn",
         "Aqua Tail"
@@ -15798,7 +15798,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "DoubleSlap",
+        "Double Slap",
         "Bullet Seed",
         "Rock Blast",
         "Sing"
@@ -16072,7 +16072,7 @@ var SETDEX_GEN5_SETS =
         "sp": 252
       },
       "moves": [
-        "SolarBeam",
+        "Solar Beam",
         "Psychic",
         "Shadow Ball",
         "Sunny Day"
