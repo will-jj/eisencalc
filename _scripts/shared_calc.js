@@ -1131,6 +1131,18 @@ function getSelectOptions(arr, sort, defaultIdx) {
 	return r;
 }
 
+$("#maxL").change(function () {
+	if (this.checked) {
+		for (var i = 0; i < 4; i++) {
+			$("#maxL" + (i + 1)).prop("checked", true);
+		}
+	} else {
+		for (var i = 0; i < 4; i++) {
+			$("#maxL" + (i + 1)).prop("checked", false);
+		}
+	}
+});
+
 $(document).ready(function () {
 	if (localStorage.getItem("selectedGen") != null) {
 		switch (localStorage.getItem("selectedGen") + "") {

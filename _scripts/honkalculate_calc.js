@@ -105,7 +105,8 @@ function performCalculations() {
 		var damageResults = calculateMovesOfAttacker(attacker, defender, field);
 		var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
 		var highestDamage = -1;
-		var data = [setOptionsID];
+		var setName = setOptionsID.substring(setOptions[i].id.indexOf("(") + 1, setOptions[i].id.lastIndexOf(")"));
+		var data = [setName];
 		for (var n = 0; n < 4; n++) {
 			result = damageResults[n];
 			attackerMove = attacker.moves[n];
@@ -126,7 +127,7 @@ function performCalculations() {
 				data.push(minPercentage + " - " + maxPercentage + "%");
 				data.push(minPixels + " - " + maxPixels + "px");
 				data.push(attackerMove.bp === 0 ? "nice move" :
-					getKOChanceText(result.damage, attackerMove, defender, field.getSide(~~(mode === "one-vs-all")), attacker.ability === "Bad Dreams", attacker, false, attacker.isVictoryStar, gen));
+					getKOChanceText(result.damage, attackerMove, defender, field.getSide(~~(mode === "one-vs-all")), attacker.ability === "Bad Dreams", attacker, false, attacker.isVictoryStar, gen, false));
 			}
 		}
 		data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
