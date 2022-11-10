@@ -229,7 +229,7 @@ function constructDataTable() {
 				iDataSort: 2
 			}
 		],
-		dom: 'C<&nbsp>frti',
+		dom: 'Cfrti',
 		colVis: {
 			exclude: (gen > 2) ? [0, 1, 2] : (gen === 2) ? [0, 1, 2, 7] : [0, 1, 2, 7, 8],
 			stateChange: function (iColumn, bVisible) {
@@ -317,7 +317,7 @@ $(".set-selector").change(function (e) {
 
 function calcDTDimensions() {
 	$("#holder-2").DataTable({
-		dom: 'C<&nbsp>frti'
+		dom: 'Cfrti'
 	});
 
 	var theadBottomOffset = getBottomOffset($(".sorting"));
