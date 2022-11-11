@@ -1256,14 +1256,6 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 });
 
 var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
-	"Mega Drain": {
-		"bp": 40,
-		"type": "Grass",
-		"category": "Special",
-		"givesHealth": true,
-		"percentHealed": 0.5,
-		"acc": 100
-	},
 	"Aerial Ace": {
 		"bp": 60,
 		"type": "Flying",
@@ -1563,6 +1555,14 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"type": "Psychic",
 		"acc": 100
 	},
+	"Mega Drain": {
+		"bp": 40,
+		"type": "Grass",
+		"category": "Special",
+		"givesHealth": true,
+		"percentHealed": 0.5,
+		"acc": 100
+	},
 	"Memento": {
 		"bp": 0,
 		"type": "Dark"
@@ -1765,6 +1765,12 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"type": "Normal",
 		"category": "Physical",
 		"makesContact": true
+	},
+	"Spit Up": {
+		"bp": 1,
+		"type": "Normal",
+		"category": "Special",
+		"acc": 100
 	},
 	"Snatch": {
 		"bp": 0,
@@ -2290,7 +2296,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 	},
 	"Metal Burst": {
 		"bp": 0,
-		"type": "Steel"
+		"type": "Steel",
+		"category": "Physical"
 	},
 	"Miracle Eye": {
 		"bp": 0,
@@ -3291,6 +3298,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"type": "Electric"
 	},
 	"Electric Terrain": {
+		"bp": 0,
+		"type": "Electric"
+	},
+	"Electrify": {
 		"bp": 0,
 		"type": "Electric"
 	},
