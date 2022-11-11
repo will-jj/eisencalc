@@ -33,7 +33,7 @@ function calculate() {
 	p2info.find(".sp .totalMod").text(p2.stats.sp);
 	var result, minDamage, maxDamage, minPercent, maxPercent, percentText;
 	var highestMaxPercent = -1;
-	var bestResult;
+	var bestResult = $(resultLocations[0][0].move);
 	for (var i = 0; i < 4; i++) {
 		result = damageResults[0][i];
 		minDamage = result.damage[0] * p1.moves[i].hits;
