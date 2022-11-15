@@ -41,6 +41,39 @@ $(".max-level").bind("keyup change", function () {
 	calcStats(poke);
 });
 
+$("#maxL").change(function () {
+	if (this.checked) {
+		for (var i = 0; i < 4; i++) {
+			$("#maxL" + (i + 1)).prop("checked", true);
+		}
+	} else {
+		for (var i = 0; i < 4; i++) {
+			$("#maxL" + (i + 1)).prop("checked", false);
+		}
+	}
+});
+
+$(".tera").bind("keyup change", function () {
+	var pokeInfo = $(this).closest(".poke-info");
+	if ($(this).prop("checked")) {
+		pokeInfo.find(".type1").val(pokeInfo.find(".tera-type").val());
+		pokeInfo.find(".type2").val("(none)");
+	}
+	else {
+		var setName = pokeInfo.find("input.set-selector").val();
+		var dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
+		pokeInfo.find(".type1").val(dexEntry.t1);
+		pokeInfo.find(".type2").val(dexEntry.t2);
+	}
+});
+
+$(".tera-type").bind("keyup change", function () {
+	var pokeInfo = $(this).closest(".poke-info");
+	if (pokeInfo.find(".tera").prop("checked")) {
+		pokeInfo.find(".type1").val($(this).val());
+	}
+});
+
 // auto-calc stats and current HP on change
 $("#autolevel-select").change(function () {
 	$("#p1").find(".level").val($("#autolevel-select").val());
@@ -358,8 +391,12 @@ $(".set-selector, #levelswitch").bind("change click keyup keydown", function () 
 		pokeObj.find(".percent-hp").val(100);
 		pokeObj.find(".status").val("Healthy");
 		$(".status").change();
+		pokeObj.find(".max-level").val(10);
 		pokeObj.find(".max").prop("checked", false);
 		pokeObj.find(".max").change();
+		pokeObj.find(".tera-type").val("Normal");
+		pokeObj.find(".tera").prop("checked", false);
+		pokeObj.find(".tera").change();
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
@@ -649,6 +686,11 @@ function Pokemon(pokeInfo) {
 		this.HPEVs = ~~pokeInfo.find(".hp .evs").val();
 		this.HPIVs = ~~pokeInfo.find(".hp .ivs").val();
 		this.isDynamax = pokeInfo.find(".max").prop("checked");
+		this.isTerastal = pokeInfo.find(".tera").prop("checked");
+		this.teraType = pokeInfo.find(".tera-type").val();
+		var dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
+		this.dexType1 = dexEntry.t1;
+		this.dexType2 = dexEntry.t2;
 		this.rawStats = [];
 		this.boosts = [];
 		this.stats = [];
@@ -681,7 +723,7 @@ function Pokemon(pokeInfo) {
 function getMoveDetails(moveInfo, item, species) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var defaultDetails = moves[moveName];
-	var isZMove = gen >= 7 && gen != 8 && moveInfo.find("input.move-z").prop("checked");
+	var isZMove = gen == 7 && moveInfo.find("input.move-z").prop("checked");
 	var isMax = gen == 8 && moveInfo.find("input.move-max").prop("checked");
 
 	if (isMax) {
@@ -730,9 +772,7 @@ function getMoveDetails(moveInfo, item, species) {
 		if (tempBP == 0) {
 			maxMoveName = "Max Guard";
 			tempType = "Normal";
-		}
-
-		if (species === "Cinderace-Gmax" && tempType === "Fire") {
+		} else if (species === "Cinderace-Gmax" && tempType === "Fire") {
 			tempBP = 160;
 			maxMoveName = "G-Max Fireball";
 		} else if (species === "Inteleon-Gmax" && tempType === "Water") {
@@ -983,18 +1023,18 @@ $(".gen").change(function () {
 		calcStat = CALC_STAT_ADV;
 		localStorage.setItem("selectedGen", 80);
 		break;
-	case 20:
-		pokedex = POKEDEX_SM;
-		setdex = SETDEX_FACTORY;
+	case 9:
+		pokedex = POKEDEX_BDSP;//SV
+		setdex = SETDEX_GEN80;//SV
 		typeChart = TYPE_CHART_XY;
-		moves = MOVES_SM;
-		items = ITEMS_SM;
-		abilities = ABILITIES_SM;
+		moves = MOVES_SV;
+		items = ITEMS_SS;//SV
+		abilities = ABILITIES_SS;//SV
 		STATS = STATS_GSC;
 		calculateAllMoves = CALCULATE_ALL_MOVES_BW;
 		calcHP = CALC_HP_ADV;
 		calcStat = CALC_STAT_ADV;
-		localStorage.setItem("selectedGen", 20);
+		localStorage.setItem("selectedGen", 9);
 	}
 	clearField();
 	$(".gen-specific.g" + gen).show();
@@ -1131,18 +1171,6 @@ function getSelectOptions(arr, sort, defaultIdx) {
 	return r;
 }
 
-$("#maxL").change(function () {
-	if (this.checked) {
-		for (var i = 0; i < 4; i++) {
-			$("#maxL" + (i + 1)).prop("checked", true);
-		}
-	} else {
-		for (var i = 0; i < 4; i++) {
-			$("#maxL" + (i + 1)).prop("checked", false);
-		}
-	}
-});
-
 $(document).ready(function () {
 	if (localStorage.getItem("selectedGen") != null) {
 		switch (localStorage.getItem("selectedGen") + "") {
@@ -1167,33 +1195,23 @@ $(document).ready(function () {
 			$("#gen8").change();
 			break;
 				
-		case "80":
+		case "80": // BDSP
 			$("#gen80").prop("checked", true);
 			$("#gen80").change();
 			break;
-
-		case "20":
-			$("#gen20").prop("checked", true);
-			$("#gen20").change();
-			break;
-
-		case "21":
-			$("#gen21").prop("checked", true);
-			$("#gen21").change();
-			break;
-
-		case "22":
-			$("#gen22").prop("checked", true);
-			$("#gen22").change();
+				
+		case "9":
+			$("#gen9").prop("checked", true);
+			$("#gen9").change();
 			break;
 
 		default:
-			$("#gen80").prop("checked", true);
-			$("#gen80").change();
+			$("#gen9").prop("checked", true);
+			$("#gen9").change();
 		}
 	} else {
-		$("#gen80").prop("checked", true);
-		$("#gen80").change();
+		$("#gen9").prop("checked", true);
+		$("#gen9").change();
 	}
 	for (var n = 1; n < 101; n++) {
 		$("#autolevel-select").append($("<option />").val(n).text(n));

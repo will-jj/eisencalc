@@ -71,6 +71,7 @@ function saveCustom() {
 		var species = "";
 		var item = "";
 		var ability = "";
+		var teraType = "Normal";
 		var level = "50";
 		var EVs = [0, 0, 0, 0, 0, 0];
 		var IVs = [31, 31, 31, 31, 31, 31];
@@ -129,6 +130,9 @@ function saveCustom() {
 			for (var i = 1; i < lines.length; ++i) {
 				if (lines[i].indexOf("Ability") != -1) {
 					ability = lines[i].substring(lines[i].indexOf(" ") + 1).trim();
+				}
+				if (lines[i].indexOf("Tera Type") != -1) {
+					teraType = lines[i].split(":")[1].trim();
 				}
 				if (lines[i].indexOf("Level") != -1) {
 					level = lines[i].split(" ")[1].trim(); //level is sometimes third but uh not always
@@ -245,6 +249,7 @@ function saveCustom() {
 			"ability": ability,
 			"item": item,
 			"moves": moves,
+			"teraType": teraType
 		};
 
 		LGcustomFormat = {
