@@ -1,3 +1,53 @@
+var MEGA_STONE_LOOKUP = {
+	"Mega Venusaur": "Venusaurite",
+	"Mega Charizard X": "Charizardite X",
+	"Mega Charizard Y": "Charizardite Y",
+	"Mega Blastoise": "Blastoisinite",
+	"Mega Alakazam": "Alakazite",
+	"Mega Gengar": "Gengarite",
+	"Mega Kangaskhan": "Kangaskhanite",
+	"Mega Pinsir": "Pinsirite",
+	"Mega Gyarados": "Gyaradosite",
+	"Mega Aerodactyl": "Aerodactylite",
+	"Mega Mewtwo X": "Mewtwonite X",
+	"Mega Mewtwo Y": "Mewtwonite Y",
+	"Mega Ampharos": "Ampharosite",
+	"Mega Scizor": "Scizorite",
+	"Mega Heracross": "Heracronite",
+	"Mega Houndoom": "Houndoominite",
+	"Mega Tyranitar": "Tyranitarite",
+	"Mega Blaziken": "Blazikenite",
+	"Mega Gardevoir": "Gardevoirite",
+	"Mega Mawile": "Mawilite",
+	"Mega Aggron": "Aggronite",
+	"Mega Medicham": "Medichamite",
+	"Mega Manectric": "Manectite",
+	"Mega Banette": "Banettite",
+	"Mega Absol": "Absolite",
+	"Mega Latias": "Latiasite",
+	"Mega Latios": "Latiosite",
+	"Mega Garchomp": "Garchompite",
+	"Mega Lucario": "Lucarionite",
+	"Mega Abomasnow": "Abomasite",
+	"Mega Beedrill": "Beedrillite",
+	"Mega Pidgeot": "Pidgeotite",
+	"Mega Slowbro": "Slowbronite",
+	"Mega Steelix": "Steelixite",
+	"Mega Sceptile": "Sceptilite",
+	"Mega Swampert": "Swampertite",
+	"Mega Sableye": "Sablenite",
+	"Mega Sharpedo": "Sharpedonite",
+	"Mega Camerupt": "Cameruptite",
+	"Mega Altaria": "Altarianite",
+	"Mega Glalie": "Glalitite",
+	"Mega Salamence": "Salamencite",
+	"Mega Metagross": "Metagrossite",
+	"Mega Lopunny": "Lopunnite",
+	"Mega Gallade": "Galladite",
+	"Mega Audino": "Audinite",
+	"Mega Diancie": "Diancite"
+};
+
 function exportToPsFormat(pokeInfo) {
 	var pokemon = new Pokemon(pokeInfo);
 	var finalText = "";
@@ -7,6 +57,10 @@ function exportToPsFormat(pokeInfo) {
 	var name = pokemon.name;
 	if (name.indexOf("Mega ") != -1) {
 		var speciesName = name.substring(0, name.indexOf("Mega") - 1) + name.substring(name.indexOf("Mega") + 4, name.length);
+		if ((speciesName.indexOf(" X") == speciesName.length - 2) || (speciesName.indexOf(" Y") == speciesName.length - 2)) {
+			speciesName = speciesName.substring(0, speciesName.length - 2);
+		}
+		pokemon.item = MEGA_STONE_LOOKUP[name];
 	} else if (name.indexOf("-Blade") != -1) {
 		var speciesName = name.substring(0, name.indexOf("-")) + name.substring(name.indexOf("-") + 6, name.length);
 	} else if (name.indexOf("-Both") != -1) {
