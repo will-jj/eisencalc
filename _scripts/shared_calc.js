@@ -687,7 +687,9 @@ function Pokemon(pokeInfo) {
 		this.HPIVs = ~~pokeInfo.find(".hp .ivs").val();
 		this.isDynamax = pokeInfo.find(".max").prop("checked");
 		this.isTerastal = pokeInfo.find(".tera").prop("checked");
-		this.teraType = pokeInfo.find(".tera-type").val();
+		if (gen === 9) {
+			this.teraType = pokeInfo.find(".tera-type").val();
+		}
 		var dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
 		this.dexType1 = dexEntry.t1;
 		this.dexType2 = dexEntry.t2;

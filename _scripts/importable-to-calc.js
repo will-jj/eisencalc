@@ -71,7 +71,7 @@ function saveCustom() {
 		var species = "";
 		var item = "";
 		var ability = "";
-		var teraType = "Normal";
+		var teraType = "";
 		var level = "50";
 		var EVs = [0, 0, 0, 0, 0, 0];
 		var IVs = [31, 31, 31, 31, 31, 31];
