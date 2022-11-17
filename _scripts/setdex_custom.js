@@ -154,6 +154,10 @@ var savecustom = function () {
 				species = showdownFormes[i][1];
 		}
 
+		if (species.indexOf("-Mega") !== -1) {
+			species = species.substring(0, species.indexOf("-Mega"));
+		}
+
 		if (species.toLowerCase().includes("vivillon")) {
 			species = "Vivillon";
 		}

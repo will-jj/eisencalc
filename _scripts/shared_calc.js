@@ -345,6 +345,18 @@ $(".set-selector, #levelswitch").bind("change click keyup keydown", function () 
 			stickyMoves.clearStickyMove();
 		}
 
+		// If the selected move was on this side, reset it (in a less elegant fashion than sticky move reset)
+		var selectedMove = $("input:radio[name='resultMove']:checked").prop("id");
+		var selectedSide = selectedMove.charAt(selectedMove.length - 2);
+		if (pokeObj.prop("id") === "p1" && selectedSide === "L") {
+			$("#resultMoveL1").prop("checked", true);
+			$("#resultMoveL1").change();
+		}
+		else if (pokeObj.prop("id") === "p2" && selectedSide === "R") {
+			$("#resultMoveR1").prop("checked", true);
+			$("#resultMoveR1").change();
+		}
+
 		pokeObj.find(".type1").val(pokemon.t1);
 		pokeObj.find(".type2").val(pokemon.t2);
 		pokeObj.find(".hp .base").val(pokemon.bs.hp);

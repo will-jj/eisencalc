@@ -32,8 +32,9 @@ function calculate() {
 	p1info.find(".sp .totalMod").text(p1.stats.sp);
 	p2info.find(".sp .totalMod").text(p2.stats.sp);
 	var result, minDamage, maxDamage, minPercent, maxPercent, percentText;
-	var highestMaxPercent = -1;
-	var bestResult = $(resultLocations[0][0].move);
+	// Removed the auto-select highest damage since it's rarely useful for facilities (or any format?)
+	//var highestMaxPercent = -1;
+	//var bestResult = $(resultLocations[0][0].move);
 	for (var i = 0; i < 4; i++) {
 		result = damageResults[0][i];
 		minDamage = result.damage[0] * p1.moves[i].hits;
@@ -101,10 +102,10 @@ function calculate() {
 		}
 		$(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
 		$(resultLocations[0][i].damage).text(minPercent + " - " + maxPercent + "%" + recoveryText + recoilText);
-		if (maxPercent > highestMaxPercent) {
+		/*if (maxPercent > highestMaxPercent) {
 			highestMaxPercent = maxPercent;
 			bestResult = $(resultLocations[0][i].move);
-		}
+		}*/
 
 		result = damageResults[1][i];
 		var recoveryText = "";
@@ -172,25 +173,30 @@ function calculate() {
 		}
 		$(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
 		$(resultLocations[1][i].damage).text(minPercent + " - " + maxPercent + "%" + recoveryText + recoilText);
-		if (maxPercent > highestMaxPercent) {
+		/*if (maxPercent > highestMaxPercent) {
 			highestMaxPercent = maxPercent;
 			bestResult = $(resultLocations[1][i].move);
-		}
+		}*/
 	}
-	if ($(".locked-move").length) {
+	/*if ($(".locked-move").length) {
 		bestResult = $(".locked-move");
 	} else {
 		stickyMoves.setSelectedMove(bestResult.prop("id"));
 	}
 	bestResult.prop("checked", true);
-	bestResult.change();
+	bestResult.change();*/
 	$("#resultHeaderL").text(p1.name + "'s Moves (select one to show detailed results)");
 	$("#resultHeaderR").text(p2.name + "'s Moves (select one to show detailed results)");
+	updateDamageText($("input:radio[name='resultMove']:checked"));
 }
 
 $(".result-move").change(function () {
+	updateDamageText($(this));
+});
+
+function updateDamageText(resultMoveObj) {
 	if (damageResults) {
-		var result = findDamageResult($(this));
+		var result = findDamageResult(resultMoveObj);
 		if (result) {
 			$("#mainResult").html(result.description + ": " + result.damageText + " -- " + result.koChanceText);
 			if (result.parentDamage) {
@@ -201,7 +207,7 @@ $(".result-move").change(function () {
 			}
 		}
 	}
-});
+}
 
 function findDamageResult(resultMoveObj) {
 	var selector = "#" + resultMoveObj.attr("id");
