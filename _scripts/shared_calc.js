@@ -413,6 +413,7 @@ $(".set-selector, #levelswitch").bind("change click keyup keydown", function () 
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			setSelectValueIfValid(abilityObj, set.ability ? set.ability : pokemon.ab, "");
+			setSelectValueIfValid(pokeObj.find(".tera-type"), set.teraType, "Normal");
 			setSelectValueIfValid(itemObj, set.item, "");
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
@@ -431,6 +432,7 @@ $(".set-selector, #levelswitch").bind("change click keyup keydown", function () 
 			}
 			pokeObj.find(".nature").val("Hardy");
 			setSelectValueIfValid(abilityObj, pokemon.ab, "");
+			pokeObj.find(".tera-type").val("Normal");
 			itemObj.val("");
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
@@ -1026,8 +1028,8 @@ $(".gen").change(function () {
 		localStorage.setItem("selectedGen", 80);
 		break;
 	case 9:
-		pokedex = POKEDEX_BDSP;//SV
-		setdex = SETDEX_GEN80;//SV
+		pokedex = POKEDEX_SS;//SV
+		setdex = SETDEX_CUSTOM;//SV
 		typeChart = TYPE_CHART_XY;
 		moves = MOVES_SV;
 		items = ITEMS_SS;//SV
