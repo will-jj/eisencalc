@@ -1040,12 +1040,12 @@ $(".gen").change(function () {
 		localStorage.setItem("selectedGen", 80);
 		break;
 	case 9:
-		pokedex = POKEDEX_SS;//SV
+		pokedex = POKEDEX_SV;
 		setdex = SETDEX_CUSTOM;//SV
 		typeChart = TYPE_CHART_XY;
 		moves = MOVES_SV;
 		items = ITEMS_SS;//SV
-		abilities = ABILITIES_SS;//SV
+		abilities = ABILITIES_SV;
 		STATS = STATS_GSC;
 		calculateAllMoves = CALCULATE_ALL_MOVES_BW;
 		calcHP = CALC_HP_ADV;
