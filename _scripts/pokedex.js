@@ -16357,7 +16357,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 		"w": 240,
 		"ab": "Hadron Engine"
 	},
-}
+});
 
 // Remove Megas for SwSh
 delete POKEDEX_SS["Beedrill"].formes;
