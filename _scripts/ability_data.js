@@ -276,7 +276,35 @@ var ABILITIES_SS = ABILITIES_SM.concat([
 	"Wandering Spirit"
 ]);
 var ABILITIES_SV = ABILITIES_SS.concat([
+	"Anger Shell",
+	"Armor Tail",
+	"Beads of Ruin",
+	"Commander",
+	"Costar",
+	"Cud Chew",
 	"Earth Eater",
+	"Electromorphosis",
+	"Good as Gold",
+	"Guard Dog",
 	"Hadron Engine",
-	"Orichalcum Pulse"
+	"Lingering Aroma",
+	"Mycelium Might",
+	"Opportunist",
+	"Orichalcum Pulse",
+	"Protosynthesis",
+	"Purifying Salt",
+	"Quark Drive",
+	"Rocky Payload",
+	"Seed Sower",
+	"Sharpness",
+	"Supreme Overlord",
+	"Sword of Ruin",
+	"Tablets of Ruin",
+	"Thermal Exchange",
+	"Toxic Debris",
+	"Vessel of Ruin",
+	"Well-Baked Body",
+	"Wind Power",
+	"Wind Rider",
+	"Zero to Hero"
 ]);
