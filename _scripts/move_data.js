@@ -5033,7 +5033,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"category": "Physical",
 		"acc": 100
 	},
-	"Last Out (Doubled)": {
+	"Lash Out (Doubled)": {
 		"bp": 150,
 		"type": "Dark",
 		"category": "Physical",
@@ -5131,6 +5131,16 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"type": "Dragon",
 		"category": "Special",
 		"isSpread": true,
+		"acc": 100
+	}
+});
+
+var MOVES_SV = $.extend(true, {}, MOVES_SS, {
+	"Tera Blast": {
+		"bp": 69,
+		"type": "Normal",
+		"category": "ThisBetterBeSpecialOrIHaveToCodeATinyException",
+		"usesHighestAttackStat": true,
 		"acc": 100
 	}
 });

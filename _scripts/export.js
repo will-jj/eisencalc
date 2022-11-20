@@ -74,6 +74,7 @@ function exportToPsFormat(pokeInfo) {
 	finalText = speciesName + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
 	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
 	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
+	finalText += pokemon.teraType ? "Tera Type: " + pokemon.teraType + "\n" : "";
 	finalText += "EVs: ";
 	var EVs_Array = [];
 	if (pokemon.HPEVs && pokemon.HPEVs > 0) {

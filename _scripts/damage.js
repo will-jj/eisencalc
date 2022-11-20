@@ -93,6 +93,9 @@ function getDamageResult(attacker, defender, move, field) {
 		"defenderName": defender.name,
 		"isDynamax": defender.isDynamax
 	};
+	if (defender.isTerastal) {
+		description.defenderTera = "Tera " + defender.type1;
+	}
 	if (move.bp === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
@@ -156,6 +159,12 @@ function getDamageResult(attacker, defender, move, field) {
 
 	case "Revelation Dance":
 		move.type = attacker.type1;
+		break;
+
+	case "Tera Blast":
+		if (attacker.isTerastal) {
+			move.type = attacker.type1;
+		}
 		break;
 	}
 
@@ -693,7 +702,16 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	// the random factor is applied between the crit mod and the stab mod, so don't apply anything below this until we're inside the loop
 	var stabMod = 0x1000;
-	if (move.type === attacker.type1 || move.type === attacker.type2) {
+	if (attacker.isTerastal) {
+		if (move.type === attacker.type1) {
+			stabMod = (move.type === attacker.dexType1 || move.type === attacker.dexType2) ? 0x2000 : 0x1800;
+			description.attackerTera = "Tera " + attacker.type1;
+		}
+		else if (move.type === attacker.dexType1 || move.type === attacker.dexType2) {
+			stabMod = 0x1800;
+		}
+	}
+	else if (move.type === attacker.type1 || move.type === attacker.type2) {
 		if (attacker.ability === "Adaptability") {
 			stabMod = 0x2000;
 			description.attackerAbility = attacker.ability;
@@ -838,6 +856,7 @@ function buildDescription(description) {
 	if (description.isBurned) {
 		output += "burned ";
 	}
+	output = appendIfSet(output, description.attackerTera);
 	output += description.attackerName + " ";
 	if (description.isHelpingHand) {
 		output += "Helping Hand ";
@@ -878,6 +897,7 @@ function buildDescription(description) {
 	if (description.isDynamax) {
 		output += "Dynamax ";
 	}
+	output = appendIfSet(output, description.defenderTera);
 	output += description.defenderName;
 	if (description.weather) {
 		output += " in " + description.weather;
