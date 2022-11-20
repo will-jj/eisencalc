@@ -16419,7 +16419,12 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sp": 55
 		},
 		"w": 47.4
-	}
+	},
+	"Cresselia": {"bs": {"df": 110, "sd": 120}},
+	"Zacian": {"bs": {"at": 120}},
+	"Zacian-Crowned": {"bs": {"at": 150}},
+	"Zamazenta": {"bs": {"at": 120}},
+	"Zamazenta-Crowned": {"bs": {"at": 120, "df": 140, "sd": 140}}
 });
 
 // Remove Megas for SwSh
