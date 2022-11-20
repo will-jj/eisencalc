@@ -15298,6 +15298,19 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 		},
 		"w": 2.8
 	},
+	"Clodsire": {
+		"t1": "Poison",
+		"t2": "Ground",
+		"bs": {
+			"hp": 130,
+			"at": 75,
+			"df": 60,
+			"sa": 45,
+			"sd": 100,
+			"sp": 20
+		},
+		"w": 223
+	},
 	"Fidough": {
 		"t1": "Fairy",
 		"bs": {
