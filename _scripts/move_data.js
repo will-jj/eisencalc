@@ -5155,7 +5155,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"category": "Special",
 		"acc": 100
 	},
-	"Axe Kick: {
+	"Axe Kick": {
 		"bp": 120,
 		"type": "Fighting",
 		"category": "Physical",
