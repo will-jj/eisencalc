@@ -5402,6 +5402,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 80,
 		"type": "Normal",
 		"category": "Special",
+		"usesHighestAttackStat": true,
 		"acc": 100
 	},
 	"Tidy Up": {
