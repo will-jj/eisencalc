@@ -46,6 +46,7 @@ var MOVES_RBY = {
 		"category": "Special",
 		"hasSecondaryEffect": true,
 		"isSpread": true,
+		"isWind": true,
 		"acc": 70
 	},
 	"Body Slam": {
@@ -262,6 +263,7 @@ var MOVES_RBY = {
 		"bp": 40,
 		"type": "Normal",
 		"category": "Special",
+		"isWind": true,
 		"acc": 100
 	},
 	"Haze": {
@@ -431,6 +433,7 @@ var MOVES_RBY = {
 		"type": "Grass",
 		"category": "Physical",
 		"alwaysCrit": true,
+		"isSlicing": true,
 		"acc": 95
 	},
 	"Razor Wind": {
@@ -514,6 +517,7 @@ var MOVES_RBY = {
 		"category": "Physical",
 		"alwaysCrit": true,
 		"makesContact": true,
+		"isSlicing": true,
 		"acc": 100
 	},
 	"Sleep Powder": {
@@ -849,6 +853,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 40,
 		"type": "Bug",
 		"category": "Physical",
+		"isSlicing": true,
 		"acc": 95
 	},
 	"Future Sight": {
@@ -980,6 +985,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"category": "Special",
 		"hasSecondaryEffect": true,
 		"isSpread": true,
+		"isWind": true,
 		"acc": 95
 	},
 	"Iron Tail": {
@@ -1230,6 +1236,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 40,
 		"type": "Dragon",
 		"category": "Special",
+		"isWind": true,
 		"hasSecondaryEffect": true
 	},
 	"Vital Throw": {
@@ -1261,6 +1268,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"type": "Flying",
 		"category": "Physical",
 		"makesContact": true,
+		"isSlicing": true,
 		"acc": 101
 	},
 	"Air Cutter": {
@@ -1268,6 +1276,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"type": "Flying",
 		"category": "Special",
 		"isSpread": true,
+		"isSlicing": true,
+		"isWind": true,
 		"acc": 95
 	},
 	"Astonish": {
@@ -1471,6 +1481,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"category": "Special",
 		"hasSecondaryEffect": true,
 		"isSpread": true,
+		"isWind": true,
 		"acc": 90
 	},
 	"Helping Hand": {
@@ -1528,6 +1539,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"type": "Grass",
 		"category": "Physical",
 		"makesContact": true,
+		"isSlicing": true,
 		"acc": 100
 	},
 	"Luster Purge": {
@@ -1877,6 +1889,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"type": "Flying",
 		"category": "Special",
 		"hasSecondaryEffect": true,
+		"isSlicing": true,
 		"acc": 95
 	},
 	"Aqua Jet": {
@@ -2001,6 +2014,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"category": "Physical",
 		"makesContact": true,
 		"hasSecondaryEffect": true,
+		"isSlicing": true,
 		"acc": 100
 	},
 	"Crush Grip": {
@@ -2340,6 +2354,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"type": "Dark",
 		"category": "Physical",
 		"makesContact": true,
+		"isSlicing": true,
 		"acc": 100
 	},
 	"Ominous Wind": {
@@ -2403,6 +2418,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"bp": 70,
 		"type": "Psychic",
 		"category": "Physical",
+		"isSlicing": true,
 		"acc": 100
 	},
 	"Psycho Shift": {
@@ -2579,6 +2595,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"type": "Bug",
 		"category": "Physical",
 		"makesContact": true,
+		"isSlicing": true,
 		"acc": 100
 	},
 	"Zap Cannon": {"bp": 120},
@@ -2893,6 +2910,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"type": "Flying",
 		"category": "Special",
 		"hasSecondaryEffect": true,
+		"isWind": true,
 		"acc": 70
 	},
 	"Ice Burn": {
@@ -2995,6 +3013,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"category": "Physical",
 		"makesContact": true,
 		"hasSecondaryEffect": true,
+		"isSlicing": true,
 		"acc": 95
 	},
 	"Reflect Type": {
@@ -3029,6 +3048,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"category": "Physical",
 		"makesContact": true,
 		"ignoresDefenseBoosts": true,
+		"isSlicing": true,
 		"acc": 100
 	},
 	"Sand Tomb": {"bp": 35},
@@ -3310,6 +3330,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 	"Fairy Wind": {
 		"bp": 40,
 		"type": "Fairy",
+		"isWind": true,
 		"category": "Special"
 	},
 	"Fell Stinger": {
@@ -3490,6 +3511,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"bp": 90,
 		"type": "Grass",
 		"category": "Physical",
+		"isWind": true,
 		"isSpread": true
 	},
 	"Parting Shot": {
@@ -4368,6 +4390,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"type": "Grass",
 		"category": "Physical",
 		"makesContact": true,
+		"isSlicing": true,
 		"zp": 190,
 		"acc": 100
 	},
@@ -4747,6 +4770,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 	"Behemoth Blade": {
 		"bp": 100,
 		"type": "Steel",
+		"isSlicing": true,
 		"category": "Physical",
 	},
 	"Behemoth Bash": {
@@ -5139,6 +5163,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 70,
 		"type": "Water",
 		"category": "Physical",
+		"isSlicing": true,
 		"acc": 100
 	},
 	"Aqua Step": {
@@ -5170,6 +5195,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"makesContact": true,
 		"givesHealth": true,
 		"percentHealed": 0.5,
+		"isSlicing": true,
 		"acc": 100
 	},
 	"Blazing Torque": {
@@ -5279,6 +5305,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"category": "Physical",
 		"makesContact": true,
 		"isBullet": true,
+		"isSlicing": true,
 		"acc": 101
 	},
 	"Last Respects": {
@@ -5335,6 +5362,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"isMultiHit": true,
 		"isBullet": true,
 		"makesContact": true,
+		"isSlicing": true,
 		"acc": 90
 	},
 	"Pounce": {
