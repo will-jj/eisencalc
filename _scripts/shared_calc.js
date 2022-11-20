@@ -678,7 +678,7 @@ function Pokemon(pokeInfo) {
 				"category": defaultDetails.category,
 				"isCrit": !!defaultDetails.alwaysCrit,
 				"acc": defaultDetails.acc,
-				"hits": defaultDetails.isMultiHit ? this.ability === "Skill Link" || this.item === "Grip Claw" ? 5 : 3 : defaultDetails.isTwoHit ? 2 : 1,
+				"hits": defaultDetails.isMultiHit ? this.ability === "Skill Link" || this.item === "Grip Claw" ? 5 : 3 : defaultDetails.isTwoHit ? 2 : 1 : defaultDetails.isTripleHit ? 3 : 1,
 				"usedTimes": 1
 			}));
 		}
@@ -829,7 +829,7 @@ function getMoveDetails(moveInfo, item, species) {
 			"category": moveInfo.find(".move-cat").val(),
 			"isCrit": moveInfo.find(".move-crit").prop("checked"),
 			"isMax": isMax,
-			"hits": defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1,
+			"hits": defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1 : defaultDetails.isTripleHit ? 3 : 1,
 			"usedTimes": defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1
 		});
 	}
