@@ -5443,7 +5443,10 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"category": "Physical",
 		"hasSecondaryEffect": true,
 		"acc": 100
-	}
+	},
+	"Grassy Glide": {"bp": 60},
+	"Wicked Blow": {"bp": 75},
+	"Glacial Lance": {"bp": 120}
 });
 
 var MAXMOVES_LOOKUP = {
