@@ -1,8 +1,8 @@
-# BATTLE FACILITIES DAMAGE CALCULATOR // BDSP EDITION
+# BATTLE FACILITIES DAMAGE CALCULATOR // SV EDITION
 
-By [Eisenherz](https://www.smogon.com/forums/members/eisenherz.326390/), based on the BSS damage calculator by cant say ([@jakecantsay](https://twitter.com/jakecantsay)) and [Lego](https://www.smogon.com/forums/members/188833/).
+By [Eisenherz](https://www.smogon.com/forums/members/eisenherz.326390/) & SilverstarStream, based on the BSS damage calculator by cant say ([@jakecantsay](https://twitter.com/jakecantsay)) and [Lego](https://www.smogon.com/forums/members/188833/).
 
-The calculator includes all BDSP Tower / SwSh Tower / Restricted Sparring / Battle Tree / Battle Maison / Battle Subway sets preloaded and has been updated for IoA.
+The calculator includes all BDSP Tower / SwSh Tower / Restricted Sparring / Battle Tree / Battle Maison / Battle Subway sets preloaded and has been updated for SV.
 
 Custom sets can be input within the calculator using the official Pokemon Showdown format.
 
