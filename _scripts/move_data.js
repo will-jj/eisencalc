@@ -5033,7 +5033,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"category": "Physical",
 		"acc": 100
 	},
-	"Lash Out (Doubled)": {
+	"Last Out (Doubled)": {
 		"bp": 150,
 		"type": "Dark",
 		"category": "Physical",
@@ -5134,13 +5134,314 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"acc": 100
 	}
 });
-
 var MOVES_SV = $.extend(true, {}, MOVES_SS, {
-	"Tera Blast": {
-		"bp": 69,
+	"Aqua Cutter": {
+		"bp": 70,
+		"type": "Water",
+		"category": "Physical",
+		"acc": 100
+	},
+	"Aqua Step": {
+		"bp": 80,
+		"type": "Water",
+		"category": "Physical",
+		"makesContact": true,
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Armor Cannon": {
+		"bp": 120,
+		"type": "Fire",
+		"category": "Special",
+		"acc": 100
+	},
+	"Axe Kick: {
+		"bp": 120,
+		"type": "Fighting",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"makesContact": true,
+		"acc": 90,
+	},
+	"Bitter Blade": {
+		"bp": 90,
+		"type": "Fire",
+		"category": "Physical",
+		"makesContact": true,
+		"givesHealth": true,
+		"percentHealed": 0.5,
+		"acc": 100
+	},
+	"Blazing Torque": {
+		"bp": 80,
+		"type": "Fire",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Chilling Water": {
+		"bp": 50,
+		"type": "Water",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Chilly Reception": {
+		"bp": 0,
+		"type": "Ice"
+	},
+	"Collision Course": {
+		"bp": 100,
+		"type": "Fighting",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Combat Torque": {
+		"bp": 100,
+		"type": "Fighting",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Comeuppance": {
+		"bp": 0,
+		"type": "Dark"
+	},
+	"Doodle": {
+		"bp": 0,
+		"type": "Normal"
+	},
+	"Double Shock": {
+		"bp": 120,
+		"type": "Electric",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Electro Drift": {
+		"bp": 100,
+		"type": "Electric",
+		"category": "Special",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Fillet Away": {
+		"bp": 0,
+		"type": "Normal"
+	},
+	"Flower Trick": {
+		"bp": 70,
+		"type": "Grass",
+		"category": "Physical",
+		"alwaysCrit": true,
+		"acc": 101
+	},
+	"Gigaton Hammer": {
+		"bp": 160,
+		"type": "Steel",
+		"category": "Physical",
+		"acc": 100
+	},
+	"Glaive Rush": {
+		"bp": 120,
+		"type": "Dragon",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Hyper Drill": {
+		"bp": 100,
 		"type": "Normal",
-		"category": "ThisBetterBeSpecialOrIHaveToCodeATinyException",
-		"usesHighestAttackStat": true,
+		"category": "Physical",
+		"bypassesProtect": true,
+		"makesContact": true,
+		"acc": 100
+	},
+	"Ice Spinner": {
+		"bp": 80,
+		"type": "Ice",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Jet Punch": {
+		"bp": 60,
+		"type": "Water",
+		"category": "Physical",
+		"makesContact": true,
+		"isPunch": true,
+		"acc": 100
+	},
+	"Kowtow Cleave": {
+		"bp": 85,
+		"type": "Dark",
+		"category": "Physical",
+		"makesContact": true,
+		"isBullet": true,
+		"acc": 101
+	},
+	"Last Respects": {
+		"bp": 50,
+		"type": "Ghost",
+		"category": "Physical",
+		"acc": 100
+	},
+	"Lumina Crash": {
+		"bp": 80,
+		"type": "Psychic",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Magical Torque": {
+		"bp": 100,
+		"type": "Fairy",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Make It Rain": {
+		"bp": 120,
+		"type": "Steel",
+		"category": "Special",
+		"acc": 100
+	},
+	"Mortal Spin": {
+		"bp": 30,
+		"type": "Poison",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"makesContact": true,
+		"acc": 100
+	},
+	"Noxious Torque": {
+		"bp": 100,
+		"type": "Poison",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Order Up": {
+		"bp": 80,
+		"type": "Dragon",
+		"category": "Physical",
+		"acc": 100
+	},
+	"Population Bomb": {
+		"bp": 20,
+		"type": "Normal",
+		"category": "Physical",
+		"isMultiHit": true,
+		"isBullet": true,
+		"makesContact": true,
+		"acc": 90
+	},
+	"Pounce": {
+		"bp": 50,
+		"type": "Bug",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"makesContact": true,
+		"acc": 100
+	},
+	"Rage Fist": {
+		"bp": 50,
+		"type": "Ghost",
+		"category": "Physical",
+		"makesContact": true,
+		"isPunch": true,
+		"acc": 100
+	},
+	"Raging Bull": {
+		"bp": 90,
+		"type": "Normal",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Revival Blessing": {
+		"bp": 0,
+		"type": "Normal"
+	},
+	"Ruination": {
+		"bp": 0,
+		"type": "Dark"
+	},
+	"Salt Cure": {
+		"bp": 40,
+		"type": "Rock",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Shed Tail": {
+		"bp": 0,
+		"type": "Normal"
+	},
+	"Silk Trap": {
+		"bp": 0,
+		"type": "Bug"
+	},
+	"Snowscape": {
+		"bp": 0,
+		"type": "Ice"
+	},
+	"Spicy Extract": {
+		"bp": 0,
+		"type": "Grass"
+	},
+	"Spin Out": {
+		"bp": 100,
+		"type": "Steel",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Tera Blast": {
+		"bp": 80,
+		"type": "Normal",
+		"category": "Special",
+		"acc": 100
+	},
+	"Tidy Up": {
+		"bp": 0,
+		"type": "Normal"
+	},
+	"Torch Song": {
+		"bp": 80,
+		"type": "Fire",
+		"category": "Special",
+		"isSound": true,
+		"acc": 100
+	},
+	"Trailblaze": {
+		"bp": 50,
+		"type": "Grass",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Triple Dive": {
+		"bp": 30,
+		"type": "Water",
+		"category": "Physical",
+		"makesContact": true,
+		"isTripleHit": true,
+		"acc": 95
+	},
+	"Twin Beam": {
+		"bp": 40,
+		"type": "Psychic",
+		"category": "Special",
+		"isTwoHit": true,
+		"acc": 100
+	},
+	"Wicked Torque": {
+		"bp": 80,
+		"type": "Dark",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
 		"acc": 100
 	}
 });
