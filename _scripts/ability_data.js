@@ -275,3 +275,8 @@ var ABILITIES_SS = ABILITIES_SM.concat([
 	"Unseen Fist",
 	"Wandering Spirit"
 ]);
+var ABILITIES_SV = ABILITIES_SS.concat([
+	"Earth Eater",
+	"Hadron Engine",
+	"Orichalcum Pulse"
+]);
