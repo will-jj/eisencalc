@@ -16357,6 +16357,57 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 		"w": 240,
 		"ab": "Hadron Engine"
 	},
+	"Tauros-Paldea": {
+		"t1": "Fighting",
+		"bs": {
+			"hp": 75,
+			"at": 110,
+			"df": 105,
+			"sa": 30,
+			"sd": 70,
+			"sp": 100
+		},
+		"w": 115
+	},
+	"Tauros-Paldea-Aqua": {
+		"t1": "Fighting",
+		"t2": "Water",
+		"bs": {
+			"hp": 75,
+			"at": 110,
+			"df": 105,
+			"sa": 30,
+			"sd": 70,
+			"sp": 100
+		},
+		"w": 110
+	},
+	"Tauros-Paldea-Blaze": {
+		"t1": "Fighting",
+		"t2": "Fire",
+		"bs": {
+			"hp": 75,
+			"at": 110,
+			"df": 105,
+			"sa": 30,
+			"sd": 70,
+			"sp": 100
+		},
+		"w": 85
+	},
+	"Wooper-Paldea": {
+		"t1": "Poison",
+		"t2": "Ground",
+		"bs": {
+			"hp": 55,
+			"at": 45,
+			"df": 45,
+			"sa": 25,
+			"sd": 25,
+			"sp": 15
+		},
+		"w": 11
+	}
 });
 
 // Remove Megas for SwSh
