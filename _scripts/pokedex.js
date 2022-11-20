@@ -16407,6 +16407,18 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sp": 15
 		},
 		"w": 11
+	},
+	"Dudunsparce": {
+		"t1": "Normal",
+		"bs": {
+			"hp": 125,
+			"at": 100,
+			"df": 80,
+			"sa": 85,
+			"sd": 75,
+			"sp": 55
+		},
+		"w": 47.4
 	}
 });
 
