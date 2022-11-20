@@ -15878,8 +15878,8 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 55,
 			"sp": 65
 		},
-		"w": 310
-		"ab": "Earth Eater",
+		"w": 310,
+		"ab": "Earth Eater"
 	},
 	"Glimmet": {
 		"t1": "Rock",
