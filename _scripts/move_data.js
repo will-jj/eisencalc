@@ -5332,6 +5332,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 120,
 		"type": "Steel",
 		"category": "Special",
+		"isSpread": true,
 		"acc": 100
 	},
 	"Mortal Spin": {
