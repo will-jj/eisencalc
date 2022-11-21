@@ -282,6 +282,16 @@ var ITEMS_SS = ITEMS_SM.concat([
 	"Utility Umbrella"
 ]);
 
+var ITEMS_SV = ITEMS_SS.concat([
+	"Booster Energy",
+	"Ability Shield",
+	"Clear Amulet",
+	"Mirror Herb",
+	"Punching Glove",
+	"Covert Cloak",
+	"Loaded Dice"
+]);
+
 function getTechnoBlast(item) {
 	switch (item) {
 	case "Burn Drive":
