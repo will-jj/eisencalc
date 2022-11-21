@@ -16456,10 +16456,10 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 		"t2": "Rock",
 		"bs": {
 			"hp": 70,
-			"at": 135,
+			"at": 130,
 			"df": 95,
 			"sa": 45,
-			"sd": 70,
+			"sd": 75,
 			"sp": 85
 		},
 		"w": 89
