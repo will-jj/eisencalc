@@ -5607,7 +5607,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 65,
 		"type": "Rock",
 		"category": "Physical",
-		"isSlicing": True,
+		"isSlicing": true,
 		"makesContact": true,
 		"acc": 90
 	},
