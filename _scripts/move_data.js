@@ -5449,6 +5449,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"type": "Grass",
 		"category": "Physical",
 		"makesContact": true,
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Triple Dive": {
@@ -5475,7 +5476,173 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 	},
 	"Grassy Glide": {"bp": 60},
 	"Wicked Blow": {"bp": 75},
-	"Glacial Lance": {"bp": 120}
+	"Glacial Lance": {"bp": 120},
+	"Barb Barrage": {
+		"bp": 60,
+		"type": "Poison",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Bitter Malice": {
+		"bp": 75,
+		"type": "Ghost",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Bleakwind Storm": {
+		"bp": 100,
+		"type": "Flying",
+		"category": "Special",
+		"isSpread": true,
+		"isWind": true,
+		"hasSecondaryEffect": true,
+		"acc": 80
+	},
+	"Ceaseless Edge": {
+		"bp": 65,
+		"type": "Dark",
+		"category": "Physical",
+		"isSlicing": true,
+		"makesContact": true,
+		"acc": 100
+	},
+	"Chloroblast": {
+		"bp": 150,
+		"type": "Grass",
+		"category": "Special",
+		"hasRecoil": true,
+		"acc": 95
+	},
+	"Dire Claw": {
+		"bp": 80,
+		"type": "Poison",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"makesContact": true,
+		"acc": 100
+	},
+	"Esper Wing": {
+		"bp": 80,
+		"type": "Psychic",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Headlong Rush": {
+		"bp": 120,
+		"type": "Ground",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Infernal Parade": {
+		"bp": 60,
+		"type": "Ghost",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Lunar Blessing": {
+		"bp": 0,
+		"type": "Psychic"
+	},
+	"Mountain Gale": {
+		"bp": 100,
+		"type": "Ice",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"acc": 85
+	},
+	"Mystical Power": {
+		"bp": 70,
+		"type": "Psychic",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 90
+	},
+	"Power Shift": {
+		"bp": 0,
+		"type": "Normal"
+	},
+	"Psyshield Bash": {
+		"bp": 70,
+		"type": "Psychic",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"makesContact": true,
+		"acc": 90
+	},
+	"Raging Fury": {
+		"bp": 120,
+		"type": "Fire",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Sandsear Storm": {
+		"bp": 100,
+		"type": "Ground",
+		"category": "Special",
+		"isSpread": true,
+		"isWind": true,
+		"hasSecondaryEffect": true,
+		"acc": 80
+	},
+	"Shelter": {
+		"bp": 0,
+		"type": "Steel"
+	},
+	"Springtide Storm": {
+		"bp": 100,
+		"type": "Fairy",
+		"category": "Special",
+		"isSpread": true,
+		"isWind": true,
+		"hasSecondaryEffect": true,
+		"acc": 80
+	},
+	"Stone Axe": {
+		"bp": 65,
+		"type": "Rock",
+		"category": "Physical",
+		"isSlicing": True,
+		"makesContact": true,
+		"acc": 90
+	},
+	"Take Heart": {
+		"bp": 0,
+		"type": "Psychic"
+	},
+	"Triple Arrows": {
+		"bp": 90,
+		"type": "Fighting",
+		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Victory Dance": {
+		"bp": 0,
+		"type": "Fighting"
+	},
+	"Wave Crash": {
+		"bp": 120,
+		"type": "Water",
+		"category": "Physical",
+		"makesContact": true,
+		"hasRecoil": 33,
+		"acc": 100
+	},
+	"Wildbolt Storm": {
+		"bp": 100,
+		"type": "Electric",
+		"category": "Special",
+		"isSpread": true,
+		"isWind": true,
+		"hasSecondaryEffect": true,
+		"acc": 80
+	}
 });
 
 var MAXMOVES_LOOKUP = {
