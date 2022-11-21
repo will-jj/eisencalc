@@ -1073,7 +1073,7 @@ function checkZacianZamazaenta(pokemon) {
 
 function checkIntimidate(source, target) {
 	if (source.ability === "Intimidate") {
-		if (target.ability === "Contrary" || target.ability === "Defiant") {
+		if (target.ability === "Contrary" || target.ability === "Defiant" || target.ability === "Guard Dog") {
 			target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
 		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Inner Focus"].indexOf(target.ability) !== -1) {
 			// no effect
