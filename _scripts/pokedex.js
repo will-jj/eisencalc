@@ -15075,6 +15075,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 70,
 			"sp": 123
 		},
+		"ab": "Overgrow",
 		"w": 31.2
 	},
 	"Fuecoco": {
@@ -15112,6 +15113,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 75,
 			"sp": 66
 		},
+		"ab": "Blaze",
 		"w": 326.5
 	},
 	"Quaxly": {
@@ -15149,6 +15151,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 75,
 			"sp": 85
 		},
+		"ab": "Torrent",
 		"w": 61.9
 	},
 	"Lechonk": {
@@ -15234,6 +15237,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 55,
 			"sp": 92
 		},
+		"ab": "Tinted Lens",
 		"w": 17.5
 	},
 	"Pawmi": {
@@ -15333,6 +15337,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 80,
 			"sp": 95
 		},
+		"ab": "Well-Baked Body",
 		"w": 6.5
 	},
 	"Smoliv": {
@@ -15398,6 +15403,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 90,
 			"sp": 90
 		},
+		"ab": "Defiant",
 		"w": 56
 	},
 	"Nacli": {
@@ -15434,6 +15440,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 90,
 			"sp": 35
 		},
+		"ab": "Purifying Salt",
 		"w": 240
 	},
 	"Charcadet": {
@@ -15637,6 +15644,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 120,
 			"sp": 100
 		},
+		"ab": "Mycelium Might",
 		"w": 58
 	},
 	"Klawf": {
@@ -15674,6 +15682,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 65,
 			"sp": 75
 		},
+		"ab": "Chlorophyll",
 		"w": 15
 	},
 	"Rellor": {
@@ -15762,6 +15771,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 105,
 			"sp": 94
 		},
+		"ab": "Mold Breaker",
 		"w": 112.8
 	},
 	"Wiglett": {
@@ -15786,6 +15796,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 70,
 			"sp": 120
 		},
+		"ab": "Gooey",
 		"w": 5.4
 	},
 	"Bombirdier": {
@@ -15823,6 +15834,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 62,
 			"sp": 100
 		},
+		"ab": "Zero to Hero",
 		"w": 60.2,
 		"formes": [
 			"Palafin",
@@ -15839,6 +15851,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 87,
 			"sp": 100
 		},
+		"ab": "Zero to Hero",
 		"w": 97.4,
 		"isAlternateForme": true
 	},
@@ -15866,6 +15879,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 67,
 			"sp": 90
 		},
+		"ab": "Filter",
 		"w": 120
 	},
 	"Cyclizar": {
@@ -15942,6 +15956,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 97,
 			"sp": 68
 		},
+		"ab": "Fluffy",
 		"w": 15
 	},
 	"Flamigo": {
@@ -16005,6 +16020,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 65,
 			"sp": 70
 		},
+		"ab": "Sharpness",
 		"w": 90
 	},
 	"Dondozo": {
@@ -16043,6 +16059,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 53,
 			"sp": 87
 		},
+		"ab": "Protosynthesis",
 		"w": 320
 	},
 	"Scream Tail": {
@@ -16056,6 +16073,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 115,
 			"sp": 111
 		},
+		"ab": "Protosynthesis",
 		"w": 8
 	},
 	"Brute Bonnet": {
@@ -16069,6 +16087,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 99,
 			"sp": 55
 		},
+		"ab": "Protosynthesis",
 		"w": 21
 	},
 	"Flutter Mane": {
@@ -16082,6 +16101,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 135,
 			"sp": 135
 		},
+		"ab": "Protosynthesis",
 		"w": 4
 	},
 	"Slither Wing": {
@@ -16095,6 +16115,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 105,
 			"sp": 81
 		},
+		"ab": "Protosynthesis",
 		"w": 92
 	},
 	"Sandy Shocks": {
@@ -16108,6 +16129,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 85,
 			"sp": 101
 		},
+		"ab": "Protosynthesis",
 		"w": 60
 	},
 	"Iron Treads": {
@@ -16121,6 +16143,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 70,
 			"sp": 106
 		},
+		"ab": "Quark Drive",
 		"w": 240
 	},
 	"Iron Bundle": {
@@ -16134,6 +16157,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 60,
 			"sp": 136
 		},
+		"ab": "Quark Drive",
 		"w": 11
 	},
 	"Iron Hands": {
@@ -16147,6 +16171,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 68,
 			"sp": 50
 		},
+		"ab": "Quark Drive",
 		"w": 380.7
 	},
 	"Iron Jugulis": {
@@ -16160,6 +16185,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 80,
 			"sp": 108
 		},
+		"ab": "Quark Drive",
 		"w": 111
 	},
 	"Iron Moth": {
@@ -16173,6 +16199,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 110,
 			"sp": 110
 		},
+		"ab": "Quark Drive",
 		"w": 36
 	},
 	"Iron Thorns": {
@@ -16186,6 +16213,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 84,
 			"sp": 72
 		},
+		"ab": "Quark Drive",
 		"w": 303
 	},
 	"Frigibax": {
@@ -16225,6 +16253,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 86,
 			"sp": 87
 		},
+		"ab": "Thermal Exchange",
 		"w": 210
 	},
 	"Gimmighoul": {
@@ -16262,6 +16291,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 91,
 			"sp": 84
 		},
+		"ab": "Good as Gold",
 		"w": 30
 	},
 	"Wo-Chien": {
@@ -16275,6 +16305,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 135,
 			"sp": 70
 		},
+		"ab": "Tablets of Ruin",
 		"w": 74.2
 	},
 	"Chien-Pao": {
@@ -16288,6 +16319,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 65,
 			"sp": 135
 		},
+		"ab": "Sword of Ruin",
 		"w": 152.2
 	},
 	"Ting-Lu": {
@@ -16301,6 +16333,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 80,
 			"sp": 45
 		},
+		"ab": "Vessel of Ruin",
 		"w": 699.7
 	},
 	"Chi-Yu": {
@@ -16314,6 +16347,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 120,
 			"sp": 100
 		},
+		"ab": "Beads of Ruin",
 		"w": 4.9
 	},
 	"Roaring Moon": {
@@ -16327,6 +16361,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 101,
 			"sp": 119
 		},
+		"ab": "Protosynthesis",
 		"w": 380
 	},
 	"Iron Valiant": {
@@ -16340,6 +16375,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 60,
 			"sp": 116
 		},
+		"ab": "Quark Drive",
 		"w": 35
 	},
 	"Koraidon": {
