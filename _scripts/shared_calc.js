@@ -380,14 +380,16 @@ $(".set-selector, #levelswitch").bind("change click keyup keydown", function () 
 
 		// If the selected move was on this side, reset it (in a less elegant fashion than sticky move reset)
 		var selectedMove = $("input:radio[name='resultMove']:checked").prop("id");
-		var selectedSide = selectedMove.charAt(selectedMove.length - 2);
-		if (pokeObj.prop("id") === "p1" && selectedSide === "L") {
-			$("#resultMoveL1").prop("checked", true);
-			$("#resultMoveL1").change();
-		}
-		else if (pokeObj.prop("id") === "p2" && selectedSide === "R") {
-			$("#resultMoveR1").prop("checked", true);
-			$("#resultMoveR1").change();
+		if (selectedMove !== undefined) {
+			var selectedSide = selectedMove.charAt(selectedMove.length - 2);
+			if (pokeObj.prop("id") === "p1" && selectedSide === "L") {
+				$("#resultMoveL1").prop("checked", true);
+				$("#resultMoveL1").change();
+			}
+			else if (pokeObj.prop("id") === "p2" && selectedSide === "R") {
+				$("#resultMoveR1").prop("checked", true);
+				$("#resultMoveR1").change();
+			}
 		}
 
 		pokeObj.find(".type1").val(pokemon.t1);
@@ -1041,7 +1043,7 @@ $(".gen").change(function () {
 		break;
 	case 9:
 		pokedex = POKEDEX_SV;
-		setdex = SETDEX_CUSTOM;
+		setdex = SETDEX_CUSTOM;//SV
 		typeChart = TYPE_CHART_XY;
 		moves = MOVES_SV;
 		items = ITEMS_SV;

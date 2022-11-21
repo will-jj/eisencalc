@@ -63,7 +63,6 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 };
 
 function performCalculations() {
-	console.log("It's honkin' time!");
 	var attacker, defender, setPokemon, setTier;
 	var selectedTier = getSelectedTier(); // selectedTier can be: All, 28, 40, Tower, RS, SM*, DM*.  *Singles and Doubles Master
 	var setOptions = getSetOptions();
@@ -76,6 +75,10 @@ function performCalculations() {
 			continue;
 		}
 		setPokemon = new Pokemon(setOptionsID);
+		/*var setName = setOptionsID.substring(setOptionsID.indexOf("(") + 1, setOptionsID.length - 1);
+		if (!(setName in setdex[setPokemon.name])) {
+			console.log(setName);
+		}*/
 		setTier = setPokemon.tier;
 		if (selectedTier === setTier || selectedTier === "All") { // setPokemon.tier can currently be: 28, 40, Tower, RS, SM, DM, SMDM
 			// let set be calculated
