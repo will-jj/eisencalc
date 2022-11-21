@@ -1041,10 +1041,10 @@ $(".gen").change(function () {
 		break;
 	case 9:
 		pokedex = POKEDEX_SV;
-		setdex = SETDEX_CUSTOM;//SV
+		setdex = SETDEX_CUSTOM;
 		typeChart = TYPE_CHART_XY;
 		moves = MOVES_SV;
-		items = ITEMS_SS;//SV
+		items = ITEMS_SV;
 		abilities = ABILITIES_SV;
 		STATS = STATS_GSC;
 		calculateAllMoves = CALCULATE_ALL_MOVES_BW;
