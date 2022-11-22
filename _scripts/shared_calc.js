@@ -1166,6 +1166,14 @@ function clearField() {
 	$("#evoR").prop("checked", false);
 	$("#faintedL").val(0);
 	$("#faintedR").val(0);
+	$("#ruinTabletsL").prop("checked", false);
+	$("#ruinTabletsR").prop("checked", false);
+	$("#ruinVesselL").prop("checked", false);
+	$("#ruinVesselR").prop("checked", false);
+	$("#ruinSwordL").prop("checked", false);
+	$("#ruinSwordR").prop("checked", false);
+	$("#ruinBeadsL").prop("checked", false);
+	$("#ruinBeadsR").prop("checked", false);
 }
 
 function getSetOptions() {
