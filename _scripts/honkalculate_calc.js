@@ -76,6 +76,7 @@ function performCalculations() {
 		}
 		setPokemon = new Pokemon(setOptionsID);
 		/*var setName = setOptionsID.substring(setOptionsID.indexOf("(") + 1, setOptionsID.length - 1);
+		I guess the check can simply be whether the custom dex has it
 		if (!(setName in setdex[setPokemon.name])) {
 			console.log(setName);
 		}*/

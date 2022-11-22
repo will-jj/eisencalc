@@ -5,7 +5,7 @@ function getKOChanceText(damage, move, defender, field, isBadDreams, attacker, i
 	var moveAccuracy = "";
 	var ignoreAccMods = false;
 	if (move.acc || move.isZ) {
-		if (move.isZ || move.acc === 101 || (move.name === "Blizzard" && field.weather === "Hail") || ((move.name === "Thunder" || move.name === "Hurricane") && field.weather.includes("Rain")) || (["Astonish", "Body Slam", "Dragon Rush", "Extrasensory", "Flying Press", "Heat Crash", "Heavy Slam", "Malicious Moonsault", "Needle Arm", "Phantom Force", "Shadow Force", "Steamroller", "Stomp"].includes(move.name) && isMinimized)) {
+		if (move.isZ || move.acc === 101 || (move.name === "Blizzard" && (field.weather === "Hail" || field.weather === "Snow")) || ((move.name === "Thunder" || move.name === "Hurricane") && field.weather.includes("Rain")) || (["Astonish", "Body Slam", "Dragon Rush", "Extrasensory", "Flying Press", "Heat Crash", "Heavy Slam", "Malicious Moonsault", "Needle Arm", "Phantom Force", "Shadow Force", "Steamroller", "Stomp"].includes(move.name) && isMinimized)) {
 			moveAccuracy = 100;
 			ignoreAccMods = true;
 		}
@@ -136,6 +136,11 @@ function getKOChanceText(damage, move, defender, field, isBadDreams, attacker, i
                 defender.item !== "Safety Goggles") {
 			eot -= Math.floor(defender.maxHP / (defender.isDynamax ? 32 : 16));
 			eotText.push("hail damage");
+		}
+	} else if (field.weather === "Snow") {
+		if (defender.ability === "Ice Body") {
+			eot += Math.floor(defender.maxHP / 16);
+			eotText.push("Ice Body recovery");
 		}
 	}
 	if (defender.item === "Leftovers") {
@@ -458,6 +463,21 @@ function squashMultihit(d, hits) {
 				d[7] + d[7] + d[8] + d[8] + d[8], 5 * d[8], d[8] + d[8] + d[8] + d[9] + d[9], d[8] + d[9] + d[9] + d[9] + d[9],
 				d[9] + d[9] + d[9] + d[9] + d[10], d[9] + d[10] + d[10] + d[10] + d[10], d[10] + d[10] + d[11] + d[11] + d[11], 5 * d[15]
 			];
+		// I'm being really lazy and not including the others at the moment because Population Bomb is an absolute meme sent by GF to mess with calculators
+		case 9:
+			return [
+				9 * d[0], 9 * d[5], 4 * d[5] + 5 * d[6], 3 * d[5] + 6 * d[6],
+				9 * d[6], 5 * d[6] + 4 * d[7], 9 * d[7], 7 * d[7] + 2 * d[8],
+				2 * d[7] + 7 * d[8], 9 * d[8], 4 * d[8] + 5 * d[9], 9 * d[9], 
+				6 * d[9] + 3 * d[10], 5 * d[9] + 4 * d[10], 9 * d[10], 9 * d[15]
+			];
+		case 10:
+			return [
+				10 * d[0], 10 * d[5], 5 * d[5] + 5 * d[6], 3 * d[5] + 7 * d[6],
+				10 * d[6], 6 * d[6] + 4 * d[7], 10 * d[7], 8 * d[7] + 2 * d[8],
+				2 * d[7] + 8 * d[8], 10 * d[8], 4 * d[8] + 6 * d[9], 10 * d[9], 
+				7 * d[9] + 3 * d[10], 5 * d[9] + 5 * d[10], 10 * d[10], 10 * d[15]
+			];
 		default:
 			console.log("Unexpected # of hits: " + hits);
 			return d;
@@ -549,7 +569,7 @@ function getOtherAccMods(move, attacker, defender, field, isVictoryStar) {
 	if (attacker.ability === "Hustle" && move.category === "Physical") {
 		mods *= 0.8;
 	}
-	if ((weather === "Sand" && defender.ability === "Sand Veil") || (weather === "Hail" && defender.ability === "Snow Cloak")) {
+	if ((weather === "Sand" && defender.ability === "Sand Veil") || ((weather === "Hail" || weather === "Snow") && defender.ability === "Snow Cloak")) {
 		mods *= 0.8;
 	}
 	if (defender.ability === "Tangled Feet" && defener.status === "Confused") {

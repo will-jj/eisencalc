@@ -9,6 +9,8 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	checkMinimize(p1, p2);
 	checkSeeds(p1, field);
 	checkSeeds(p2, field);
+	checkAngerShell(p1);
+	checkAngerShell(p2);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
 	p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
 	p1.stats[SP] = getFinalSpeed(p1, field.getWeather());
@@ -25,6 +27,8 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
 	p2.stats[AT] = getModifiedStat(p2.rawStats[AT], p2.boosts[AT]);
 	p2.stats[SA] = getModifiedStat(p2.rawStats[SA], p2.boosts[SA]);
+	checkProtosynthesisQuarkDrive(p1, field.getWeather(), field.terrain);
+	checkProtosynthesisQuarkDrive(p2, field.getWeather(), field.terrain);
 	var side1 = field.getSide(1);
 	var side2 = field.getSide(0);
 	checkInfiltrator(p1, side1);
@@ -47,6 +51,8 @@ function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
 	checkEvo(attacker, defender);
 	//checkMinimize() appears to be intentionally removed
 	checkSeedsHonk(defender, field);
+	checkAngerShell(attacker);
+	checkAngerShell(defender);
 	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());
 	defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
 	defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
@@ -59,6 +65,8 @@ function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
 	attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 	attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 	defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
+	checkProtosynthesisQuarkDrive(attacker, field.getWeather(), field.terrain);
+	checkProtosynthesisQuarkDrive(defender, field.getWeather(), field.terrain);
 	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
 	checkInfiltrator(attacker, defenderSide);
 	var results = [];
@@ -114,7 +122,7 @@ function getDamageResult(attacker, defender, move, field) {
 		move.type = field.weather.indexOf("Sun") > -1 ? "Fire" :
 			field.weather.indexOf("Rain") > -1 ? "Water" :
 				field.weather === "Sand" ? "Rock" :
-					field.weather === "Hail" ? "Ice" :
+					(field.weather === "Hail" || field.weather === "Snow") ? "Ice" :
 						"Normal";
 		description.weather = field.weather;
 		description.moveType = move.type;
@@ -162,9 +170,11 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 
 	case "Tera Blast":
-		if (attacker.isTerastal) {
-			move.type = attacker.type1;
-		}
+		if (attacker.isTerastal) move.type = attacker.type1;
+		break;
+
+	case "Raging Bull":
+		move.type = attacker.type2 ? attacker.type2 : attacker.type1;
 		break;
 	}
 
@@ -204,12 +214,14 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	if (defAbility === "Wonder Guard" && typeEffectiveness <= 1 ||
             move.type === "Grass" && defAbility === "Sap Sipper" ||
-            move.type === "Fire" && defAbility.indexOf("Flash Fire") !== -1 ||
+            move.type === "Fire" && ["Flash Fire", "Well-Baked Body"].indexOf(defAbility) !== -1 ||
             move.type === "Water" && ["Dry Skin", "Storm Drain", "Water Absorb"].indexOf(defAbility) !== -1 ||
             move.type === "Electric" && ["Lightning Rod", "Lightningrod", "Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1 ||
             move.type === "Ground" && !field.isGravity && move.name !== "Thousand Arrows" && defAbility === "Levitate" ||
+            move.type === "Ground" && defAbility === "Earth Eater" ||
             move.isBullet && defAbility === "Bulletproof" ||
-            move.isSound && defAbility === "Soundproof") {
+            move.isSound && defAbility === "Soundproof" ||
+            move.isWind && defAbility === "Wind Rider") {
 		description.defenderAbility = defAbility;
 		return {"damage": [0], "description": buildDescription(description)};
 	}
@@ -295,6 +307,7 @@ function getDamageResult(attacker, defender, move, field) {
     		description.moveBP = basePower;
     		break;
 	case "Hex":
+	case "Infernal Parade":
 		basePower = move.bp * (defender.status !== "Healthy" ? 2 : 1);
 		description.moveBP = basePower;
 		break;
@@ -372,6 +385,10 @@ function getDamageResult(attacker, defender, move, field) {
 		basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
 		description.moveBP = basePower;
 		break;
+	case "Last Respects":
+		basePower = 50 + 50 * field.faintedCount;
+		description.moveBP = basePower;
+		break;
 	default:
 		basePower = move.bp;
 	}
@@ -406,7 +423,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.isPowerSpot = true;
 	}
 
-	if (field.isMinimized && (["Astonish", "Body Slam", "Dragon Rush", "Extrasensory", "FLying Press", "Heat Crash", "Heavy Slam", "Malicious Moonsault", "Needle Arm", "Phantom Force", "Shadow Force", "Steamroller", "Stomp"].includes(move.name))) {
+	if (field.isMinimized && (["Astonish", "Body Slam", "Dragon Rush", "Extrasensory", "Flying Press", "Heat Crash", "Heavy Slam", "Malicious Moonsault", "Needle Arm", "Phantom Force", "Shadow Force", "Steamroller", "Stomp"].includes(move.name))) {
 		bpMods.push(0x2000);
 		description.isMinimized = true;
 	}
@@ -424,15 +441,12 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
-	  if (attacker.ability === "Steely Spirit" && move.type === "Steel") {
-		bpMods.push(0x1800);
-		description.attackerAbility = attacker.ability;
-	}
-	if (attacker.ability === "Transistor" && move.type === "Electric") {
-		bpMods.push(0x1800);
-		description.attackerAbility = attacker.ability;
-	}
-	if (attacker.ability === "Dragon's Maw" && move.type === "Dragon") {
+	if (attacker.ability === "Steelworker" && move.type === "Steel" ||
+		attacker.ability === "Steely Spirit" && move.type === "Steel" ||
+		attacker.ability === "Transistor" && move.type === "Electric" ||
+		attacker.ability === "Dragon's Maw" && move.type === "Dragon" ||
+		attacker.ability === "Rocky Payload" && move.type === "Rock" ||
+		attacker.ability === "Sharpness" && move.isSlicing) {
 		bpMods.push(0x1800);
 		description.attackerAbility = attacker.ability;
 	}
@@ -441,7 +455,8 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x1333);
 		description.attackerItem = attacker.item;
 	} else if (attacker.item === "Muscle Band" && move.category === "Physical" ||
-            attacker.item === "Wise Glasses" && move.category === "Special") {
+            attacker.item === "Wise Glasses" && move.category === "Special" ||
+            attacker.item === "Punching Glove" && move.isPunch) {
 		bpMods.push(0x1199);
 		description.attackerItem = attacker.item;
 	} else if ((attacker.item === "Adamant Orb" && attacker.name === "Dialga" ||
@@ -457,10 +472,10 @@ function getDamageResult(attacker, defender, move, field) {
 
 	if (move.name === "Facade" && ["Burned", "Paralyzed", "Poisoned", "Badly Poisoned"].includes(attacker.status) ||
             move.name === "Brine" && defender.curHP <= defender.maxHP / 2 ||
-            move.name === "Venoshock" && (defender.status === "Poisoned" || defender.status === "Badly Poisoned")) {
+            (move.name === "Venoshock" || move.name === "Barb Barrage") && (defender.status === "Poisoned" || defender.status === "Badly Poisoned")) {
 		bpMods.push(0x2000);
 		description.moveBP = move.bp * 2;
-	} else if ((move.name === "Solar Beam" || move.name == "SolarBeam") && ["Rain", "Sand", "Hail", "Heavy Rain"].includes(field.weather)) {
+	} else if ((move.name === "Solar Beam" || move.name == "SolarBeam") && ["Rain", "Sand", "Hail", "Heavy Rain", "Snow"].includes(field.weather)) {
 		bpMods.push(0x800);
 		description.moveBP = move.bp / 2;
 		description.weather = field.weather;
@@ -524,10 +539,6 @@ function getDamageResult(attacker, defender, move, field) {
 			}
 		}
 	}
-
-	if (move.type === "Steel" && attacker.ability === "Steelworker") {
-		bpMods.push(0x1800);
-	}
 	
 		var terrainMultiplier = [8].includes(gen) ? 0x14CD : 0x1800;
 	if (field.isGravity || attacker.type1 !== "Flying" && attacker.type2 !== "Flying" &&
@@ -577,7 +588,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	var atMods = [];
-	if (defAbility === "Thick Fat" && (move.type === "Fire" || move.type === "Ice") || defAbility === "Water Bubble" && move.type === "Fire") {
+	if (defAbility === "Thick Fat" && (move.type === "Fire" || move.type === "Ice") || defAbility === "Water Bubble" && move.type === "Fire" || defAbility === "Purifying Salt" && move.type === "Ghost") {
 		atMods.push(0x800);
 		description.defenderAbility = defAbility;
 	}
@@ -626,6 +637,20 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerItem = attacker.item;
 	}
 
+	if ((attacker.ability === "Hadron Engine" && field.terrain === "Electric" && move.category === "Special") ||
+		(attacker.ability === "Orichalcum Pulse" && field.weather.indexOf("Sun") > -1 && move.category === "Physical")) {
+		atMods.push(0x14CD); // as of writing, Smogon and just Smogon says 1.3x
+		description.attackerAbility = attacker.ability;
+	}
+	if (attacker.ability === "Supreme Overlord" && field.faintedCount > 0) {
+		atMods.push(0x1000 + 0x199 * field.faintedCount);
+		description.attackerAbility = attacker.ability + " (" + field.faintedCount + " fainted)";
+	}
+	if ((field.isRuinTablets && move.category === "Physical") || (field.isRuinVessel && move.category === "Special")) {
+		atMods.push(0xC00);
+		description.ruinAtk = "Ruin";
+	}
+
 	attack = Math.max(1, pokeRound(attack * chainMods(atMods) / 0x1000));
 
 	////////////////////////////////
@@ -648,7 +673,8 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	// unlike all other defense modifiers, Sandstorm SpD boost gets applied directly
-	if (field.weather === "Sand" && (defender.type1 === "Rock" || defender.type2 === "Rock") && !hitsPhysical) {
+	if ((field.weather === "Sand" && (defender.type1 === "Rock" || defender.type2 === "Rock") && !hitsPhysical) ||
+		(field.weather === "Snow" && (defender.type1 === "Ice" || defender.type2 === "Ice") && hitsPhysical)) {
 		defense = pokeRound(defense * 3 / 2);
 		description.weather = field.weather;
 	}
@@ -669,6 +695,11 @@ function getDamageResult(attacker, defender, move, field) {
             defender.item === "Assault Vest" && !hitsPhysical || defender.item === "Eviolite") {
 		dfMods.push(0x1800);
 		description.defenderItem = defender.item;
+	}
+
+	if ((field.isRuinSword && move.category === "Physical") || (field.isRuinBeads && move.category === "Special")) {
+		dfMods.push(0xC00);
+		description.ruinDef = "Ruin";
 	}
 
 	defense = Math.max(1, pokeRound(defense * chainMods(dfMods) / 0x1000));
@@ -787,6 +818,9 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(0x400);
 		description.isQuarteredByProtect = true;
 	}
+	if (typeEffectiveness > 1 && (move.name === "Collision Course" || move.name === "Electro Drift")) {
+		finalMods.push(0x14CD);
+	}
 	var finalMod = chainMods(finalMods);
 
 	var damage = [], pbDamage = [];
@@ -853,6 +887,7 @@ function buildDescription(description) {
 	output = appendIfSet(output, description.attackEVs);
 	output = appendIfSet(output, description.attackerItem);
 	output = appendIfSet(output, description.attackerAbility);
+	output = appendIfSet(output, description.ruinAtk);
 	if (description.isBurned) {
 		output += "burned ";
 	}
@@ -897,6 +932,7 @@ function buildDescription(description) {
 	if (description.isDynamax) {
 		output += "Dynamax ";
 	}
+	output = appendIfSet(output, description.ruinDef);
 	output = appendIfSet(output, description.defenderTera);
 	output += description.defenderName;
 	if (description.weather) {
@@ -987,7 +1023,7 @@ function getFinalSpeed(pokemon, weather, terrain) {
 	if (pokemon.ability === "Chlorophyll" && weather.indexOf("Sun") > -1 ||
             pokemon.ability === "Sand Rush" && weather === "Sand" ||
             pokemon.ability === "Swift Swim" && weather.indexOf("Rain") > -1 ||
-            pokemon.ability === "Slush Rush" && weather.indexOf("Hail") > -1 ||
+            pokemon.ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
             pokemon.ability === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
 	}
@@ -1016,7 +1052,7 @@ function checkForecast(pokemon, weather) {
 			pokemon.type1 = "Fire";
 		} else if (weather.indexOf("Rain") > -1) {
 			pokemon.type1 = "Water";
-		} else if (weather === "Hail") {
+		} else if (weather === "Hail" || weather === "Snow") {
 			pokemon.type1 = "Ice";
 		} else {
 			pokemon.type1 = "Normal";
@@ -1071,16 +1107,44 @@ function checkZacianZamazaenta(pokemon) {
 	}
 }
 
+function checkAngerShell(pokemon) {
+	if (pokemon.ability === "Anger Shell" && pokemon.curHP <= pokemon.maxHP / 2) {
+		pokemon.boosts[AT] = Math.min(6, pokemon.boosts[AT] + 1);
+		pokemon.boosts[SA] = Math.min(6, pokemon.boosts[SA] + 1);
+		pokemon.boosts[SP] = Math.min(6, pokemon.boosts[SP] + 1);
+		pokemon.boosts[DF] = Math.max(-6, pokemon.boosts[DF] - 1);
+		pokemon.boosts[SD] = Math.max(-6, pokemon.boosts[SD] - 1);
+	}
+}
+
+function checkProtosynthesisQuarkDrive(pokemon, weather, terrain) {
+	if ((pokemon.ability === "Protosynthesis" && (pokemon.item === "Booster Energy" || weather.indexOf("Sun") > -1)) ||
+		(pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric"))) {
+		var highestStat;
+		var highestValue = 0;
+		for (const [key, value] of Object.entries(pokemon.stats)) { // HP is not included as a key
+			if (value > highestValue) {
+				highestStat = key;
+				highestValue = value;
+			}
+		}
+		pokemon.boosts[highestStat] = Math.min(6, pokemon.boosts[highestStat] + 1);
+		pokemon.stats[highestStat] = getModifiedStat(pokemon.rawStats[highestStat], pokemon.boosts[highestStat]);
+	}
+}
+
 function checkIntimidate(source, target) {
 	if (source.ability === "Intimidate") {
 		if (target.ability === "Contrary" || target.ability === "Defiant" || target.ability === "Guard Dog") {
 			target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
-		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Inner Focus"].indexOf(target.ability) !== -1) {
-			// no effect
+		} else if (target.ability === "Competitive") {
+			target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
+		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Inner Focus"].indexOf(target.ability) !== -1 || target.item === "Clear Amulet") {
+			// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
 		} else if (target.ability === "Simple") {
 			target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
-		} else if (target.ability === "Mirror Armor" || target.ability === "Magic Bounce") {
-			source.boosts[AT] = Math.min(6, source.boosts[AT] - 1);
+		} else if (target.ability === "Mirror Armor" && source.item !== "Clear Amulet") {
+			source.boosts[AT] = Math.max(-6, source.boosts[AT] - 1);
 		} else {
 			target.boosts[AT] = Math.max(-6, target.boosts[AT] - 1);
 		}
