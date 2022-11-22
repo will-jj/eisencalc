@@ -244,7 +244,7 @@ var MOVES_RBY = {
 		"type": "Normal",
 		"category": "Physical",
 		"makesContact": true,
-		"isMultiHit": true,
+		"maxMultiHits": 5,
 		"acc": 80
 	},
 	"Glare": {
@@ -403,7 +403,7 @@ var MOVES_RBY = {
 		"bp": 14,
 		"type": "Bug",
 		"category": "Physical",
-		"isMultiHit": true,
+		"maxMultiHits": 5,
 		"acc": 95
 	},
 	"Psybeam": {
@@ -748,7 +748,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 25,
 		"type": "Ground",
 		"category": "Physical",
-		"isMultiHit": true,
+		"maxMultiHits": 5,
 		"acc": 90
 	},
 	"Charm": {
@@ -1340,7 +1340,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"bp": 10,
 		"type": "Grass",
 		"category": "Physical",
-		"isMultiHit": true,
+		"maxMultiHits": 5,
 		"isBullet": true,
 		"acc": 100
 	},
@@ -1512,7 +1512,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"bp": 10,
 		"type": "Ice",
 		"category": "Physical",
-		"isMultiHit": true,
+		"maxMultiHits": 5,
 		"acc": 100
 	},
 	"Imprison": {
@@ -1677,7 +1677,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"bp": 25,
 		"type": "Rock",
 		"category": "Physical",
-		"isMultiHit": true,
+		"maxMultiHits": 5,
 		"acc": 90
 	},
 	"Rock Tomb": {
@@ -3158,7 +3158,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"type": "Normal",
 		"category": "Physical",
 		"makesContact": true,
-		"isMultiHit": true,
+		"maxMultiHits": 5,
 		"acc": 85
 	},
 	"Techno Blast": {
@@ -3240,7 +3240,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"type": "Fighting",
 		"category": "Physical",
 		"makesContact": true,
-		"isMultiHit": true,
+		"maxMultiHits": 5,
 		"acc": 100
 	},
 	"Aromatic Mist": {
@@ -3614,7 +3614,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"bp": 15,
 		"type": "Water",
 		"category": "Physical",
-		"isMultiHit": true,
+		"maxMultiHits": 5,
 		"acc": 100
 	}
 });
@@ -4977,19 +4977,19 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 70,
 		"type": "Fire",
 		"category": "Special",
-		"acc": 100,
+		"acc": 100
 	},
 	"Flip Turn": {
 		"bp": 60,
 		"type": "Water",
 		"category": "Physical",
-		"acc": 100,
+		"acc": 100
 	},
 	"Rising Voltage": {
 		"bp": 70,
 		"type": "Electric",
 		"category": "Special",
-		"acc": 100,
+		"acc": 100
 	},
 	"Grassy Glide": {
 		"bp": 70,
@@ -5002,8 +5002,8 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"type": "Ice",
 		"category": "Physical",
 		"makesContact": true,
-		"isMultiHit": true,
-		"acc": 90,
+		"maxMultiHits": 3,
+		"acc": 90
 	},
 	"Scorching Sands": {
 		"bp": 70,
@@ -5049,7 +5049,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"type": "Dragon",
 		"category": "Physical",
 		"acc": 90,
-		"isMultiHit": true,
+		"maxMultiHits": 5
 	},
 	"Lash Out": {
 		"bp": 75,
@@ -5057,7 +5057,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"category": "Physical",
 		"acc": 100
 	},
-	"Last Out (Doubled)": {
+	"Lash Out (Doubled)": {
 		"bp": 150,
 		"type": "Dark",
 		"category": "Physical",
@@ -5304,7 +5304,6 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"type": "Dark",
 		"category": "Physical",
 		"makesContact": true,
-		"isBullet": true,
 		"isSlicing": true,
 		"acc": 101
 	},
@@ -5360,8 +5359,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 20,
 		"type": "Normal",
 		"category": "Physical",
-		"isMultiHit": true,
-		"isBullet": true,
+		"maxMultiHits": 10,
 		"makesContact": true,
 		"isSlicing": true,
 		"acc": 90
@@ -5458,7 +5456,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"type": "Water",
 		"category": "Physical",
 		"makesContact": true,
-		"isTripleHit": true,
+		"isThreeHit": true,
 		"acc": 95
 	},
 	"Twin Beam": {

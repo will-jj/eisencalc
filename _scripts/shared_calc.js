@@ -200,6 +200,7 @@ $(".ability").bind("keyup change", function () {
 $("#p1 .ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 0);
 	autoSetVicStar(1, "L");
+	autoSetRuin(1, "L");
 });
 
 var lastTerrain = "noterrain";
@@ -232,7 +233,7 @@ function autoSetVicStar(i, side) {
 function autoSetTerrain() {
 	var ability1 = $("#p1 .ability").val();
 	var ability2 = $("#p2 .ability").val();
-	if (ability1 == "Electric Surge" || ability2 == "Electric Surge") {
+	if (ability1 == "Electric Surge" || ability2 == "Electric Surge" || ability1 == "Hadron Engine" || ability2 == "Hadron Engine") {
 		$("input:radio[id='electric']").prop("checked", true);
 		lastTerrain = "electric";
 	} else if (ability1 == "Grassy Surge" || ability2 == "Grassy Surge") {
@@ -260,15 +261,16 @@ function autosetWeather(ability, i) {
 		"Drought": "Sun",
 		"Drizzle": "Rain",
 		"Sand Stream": "Sand",
-		"Snow Warning": "Hail",
+		"Snow Warning": "Snow",
 		"Desolate Land": "Harsh Sun",
 		"Primordial Sea": "Heavy Rain",
-		"Delta Stream": "Strong Winds"
+		"Delta Stream": "Strong Winds",
+		"Orichalcum Pulse": "Sun"
 	};
 	var newWeather;
 
 	if (ability in autoWeatherAbilities) {
-		lastAutoWeather[i] = autoWeatherAbilities[ability];
+		lastAutoWeather[i] = ability === "Snow Warning" && (gen < 9 || gen == 80) ? "Hail" : autoWeatherAbilities[ability];
 		if (currentWeather === "Strong Winds") {
 			if (!(lastAutoWeather.includes("Strong Winds"))) {
 				newWeather = lastAutoWeather[i];
@@ -335,6 +337,30 @@ function autosetStatus(p, item) {
 	}
 }
 
+function autoSetRuin(i, side) {
+	var ability = $("#p" + i + " .ability").val();
+	if (ability === "Tablets of Ruin") {
+		$("input:checkbox[id='ruinTablets" + side + "']").prop("checked", true);
+	} else {
+		$("input:checkbox[id='ruinTablets" + side + "']").prop("checked", false);
+	}
+	if (ability === "Vessel of Ruin") {
+		$("input:checkbox[id='ruinVessel" + side + "']").prop("checked", true);
+	} else {
+		$("input:checkbox[id='ruinVessel" + side + "']").prop("checked", false);
+	}
+	if (ability === "Sword of Ruin") {
+		$("input:checkbox[id='ruinSword" + side + "']").prop("checked", true);
+	} else {
+		$("input:checkbox[id='ruinSword" + side + "']").prop("checked", false);
+	}
+	if (ability === "Beads of Ruin") {
+		$("input:checkbox[id='ruinBeads" + side + "']").prop("checked", true);
+	} else {
+		$("input:checkbox[id='ruinBeads" + side + "']").prop("checked", false);
+	}
+}
+
 $(".status").bind("keyup change", function () {
 	if ($(this).val() === "Badly Poisoned") {
 		$(this).parent().children(".toxic-counter").show();
@@ -351,11 +377,16 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
 	moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
-	if (move.isMultiHit && !move.isMax) {
-		moveGroupObj.children(".move-hits").show();
-		moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find(".ability").val() === "Skill Link" ? 5 : 3);
+	var moveHits = moveGroupObj.children(".move-hits");
+	moveHits.empty();
+	if (move.maxMultiHits && !move.isMax) {
+		for(var i = 2; i <= move.maxMultiHits; i++) {
+			moveHits.append($("<option></option>").attr("value", i).text(i + " hits"));
+		}
+		moveHits.show();
+		moveHits.val($(this).closest(".poke-info").find(".ability").val() === "Skill Link" ? 5 : 3);
 	} else {
-		moveGroupObj.children(".move-hits").hide();
+		moveHits.hide();
 	}
 	moveGroupObj.children(".move-z").prop("checked", false);
 	if (!($(this).closest("poke-info").find(".max").prop("checked"))) {
@@ -380,14 +411,16 @@ $(".set-selector, #levelswitch").bind("change click keyup keydown", function () 
 
 		// If the selected move was on this side, reset it (in a less elegant fashion than sticky move reset)
 		var selectedMove = $("input:radio[name='resultMove']:checked").prop("id");
-		var selectedSide = selectedMove.charAt(selectedMove.length - 2);
-		if (pokeObj.prop("id") === "p1" && selectedSide === "L") {
-			$("#resultMoveL1").prop("checked", true);
-			$("#resultMoveL1").change();
-		}
-		else if (pokeObj.prop("id") === "p2" && selectedSide === "R") {
-			$("#resultMoveR1").prop("checked", true);
-			$("#resultMoveR1").change();
+		if (selectedMove !== undefined) {
+			var selectedSide = selectedMove.charAt(selectedMove.length - 2);
+			if (pokeObj.prop("id") === "p1" && selectedSide === "L") {
+				$("#resultMoveL1").prop("checked", true);
+				$("#resultMoveL1").change();
+			}
+			else if (pokeObj.prop("id") === "p2" && selectedSide === "R") {
+				$("#resultMoveR1").prop("checked", true);
+				$("#resultMoveR1").change();
+			}
 		}
 
 		pokeObj.find(".type1").val(pokemon.t1);
@@ -678,7 +711,7 @@ function Pokemon(pokeInfo) {
 				"category": defaultDetails.category,
 				"isCrit": !!defaultDetails.alwaysCrit,
 				"acc": defaultDetails.acc,
-				"hits": defaultDetails.isMultiHit ? this.ability === "Skill Link" || this.item === "Grip Claw" ? 5 : 3 : defaultDetails.isTwoHit ? 2 : 1,
+				"hits": defaultDetails.maxMultiHits ? this.ability === "Skill Link" || this.item === "Grip Claw" ? 5 : 3 : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 				"usedTimes": 1
 			}));
 		}
@@ -759,7 +792,7 @@ function getMoveDetails(moveInfo, item, species) {
 		var maxMoveName = MAXMOVES_LOOKUP[defaultDetails.type];
 
 		if (moves[maxMoveName].type == "Fighting" || moves[maxMoveName].type == "Poison") {
-			if (exceptions_100_fight.includes(moveName))  tempBP = 100;
+			if (exceptions_100_fight.includes(moveName)) tempBP = 100;
 			else if (exceptions_80_fight.includes(moveName)) tempBP = 80;
 			else if (exceptions_75_fight.includes(moveName)) tempBP = 75;
 			else if (defaultDetails.bp >= 150) tempBP = 100;
@@ -829,7 +862,7 @@ function getMoveDetails(moveInfo, item, species) {
 			"category": moveInfo.find(".move-cat").val(),
 			"isCrit": moveInfo.find(".move-crit").prop("checked"),
 			"isMax": isMax,
-			"hits": defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1,
+			"hits": defaultDetails.maxMultiHits ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 			"usedTimes": defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1
 		});
 	}
@@ -885,6 +918,11 @@ function Field() {
 	var isVictoryStar = [$("#vicStarL").prop("checked"), $("#vicStarR").prop("checked")];
 	var isBusted8 = [$("#busted8L").prop("checked"), $("#busted8R").prop("checked")];
 	var isBusted16 = [$("#busted16L").prop("checked"), $("#busted16R").prop("checked")];
+	var fainted = [$("#faintedR").val(), $("#faintedL").val()]; // affects attacks against opposite side
+	var isRuinTablets = [$("#ruinTabletsL").prop("checked"), $("#ruinTabletsR").prop("checked")];
+	var isRuinVessel = [$("#ruinVesselL").prop("checked"), $("#ruinVesselR").prop("checked")];
+	var isRuinSword = [$("#ruinSwordR").prop("checked"), $("#ruinSwordL").prop("checked")]; // affects attacks against opposite side
+	var isRuinBeads = [$("#ruinBeadsR").prop("checked"), $("#ruinBeadsL").prop("checked")]; // affects attacks against opposite side
 
 	this.getWeather = function () {
 		return weather;
@@ -896,11 +934,16 @@ function Field() {
 		return terrain;
 	};
 	this.getSide = function (i) {
-		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isSeeded[i], isForesight[i], isHelpingHand[i], isMinimized[i], isVictoryStar[i], isFriendGuard[i], isBattery[i], isProtect[i], isPowerSpot[i], isBusted8[i], isBusted16[i]);
+		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isSeeded[i],
+			isForesight[i], isHelpingHand[i], isMinimized[i], isVictoryStar[i], isFriendGuard[i], isBattery[i],
+			isProtect[i], isPowerSpot[i], isBusted8[i], isBusted16[i],
+			fainted[i], isRuinTablets[i], isRuinVessel[i], isRuinSword[i], isRuinBeads[i]);
 	};
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isSeeded, isForesight, isHelpingHand, isMinimized, isVictoryStar, isFriendGuard, isBattery, isProtect, isPowerSpot, isBusted8, isBusted16) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isSeeded, isForesight, isHelpingHand,
+	isMinimized, isVictoryStar, isFriendGuard, isBattery, isProtect, isPowerSpot, isBusted8, isBusted16,
+	faintedCount, isRuinTablets, isRuinVessel, isRuinSword, isRuinBeads) {
 	this.format = format;
 	this.terrain = terrain;
 	this.weather = weather;
@@ -920,6 +963,11 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isPowerSpot = isPowerSpot;
 	this.isBusted8 = isBusted8;
 	this.isBusted16 = isBusted16;
+	this.faintedCount = faintedCount;
+	this.isRuinTablets = isRuinTablets;
+	this.isRuinVessel = isRuinVessel;
+	this.isRuinSword = isRuinSword;
+	this.isRuinBeads = isRuinBeads;
 }
 
 var gen, pokedex, setdex, typeChart, moves, abilities, items, STATS, calculateAllMoves, calcHP, calcStat;
@@ -1041,7 +1089,7 @@ $(".gen").change(function () {
 		break;
 	case 9:
 		pokedex = POKEDEX_SV;
-		setdex = SETDEX_CUSTOM;
+		setdex = SETDEX_CUSTOM;//SV
 		typeChart = TYPE_CHART_XY;
 		moves = MOVES_SV;
 		items = ITEMS_SV;
@@ -1116,6 +1164,16 @@ function clearField() {
 	$("#wpR").prop("checked", false);
 	$("#evoL").prop("checked", false);
 	$("#evoR").prop("checked", false);
+	$("#faintedL").val(0);
+	$("#faintedR").val(0);
+	$("#ruinTabletsL").prop("checked", false);
+	$("#ruinTabletsR").prop("checked", false);
+	$("#ruinVesselL").prop("checked", false);
+	$("#ruinVesselR").prop("checked", false);
+	$("#ruinSwordL").prop("checked", false);
+	$("#ruinSwordR").prop("checked", false);
+	$("#ruinBeadsL").prop("checked", false);
+	$("#ruinBeadsR").prop("checked", false);
 }
 
 function getSetOptions() {

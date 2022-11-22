@@ -418,12 +418,7 @@ title: Battle Facilities Calculator
 				<input class="move-crit calc-trigger btn-input" type="checkbox" id="critL1" /><label class="btn crit-btn" for="critL1" title="Force this attack to be a critical hit?">Crit</label>
 				<input class="move-z calc-trigger btn-input" type="checkbox" id="zL1" /><label class="btn x-btn z-btn gen-specific g7" for="zL1" title="Use the corresponding Z-Move?">Z-Move</label>
 				<input class="move-max calc-trigger btn-input" type="checkbox" id="maxL1" /><label class="btn x-btn gen-specific g8" for="maxL1" title="Use the corresponding Max Move?">Max</label>
-				<select class="move-hits calc-trigger hide">
-					<option value="2">2 hits</option>
-					<option value="3">3 hits</option>
-					<option value="4">4 hits</option>
-					<option value="5">5 hits</option>
-				</select>
+				<select class="move-hits calc-trigger hide"></select>
 			</div>
 			<div class="move2">
 				<select class="move-selector calc-trigger small-select"></select>
@@ -436,12 +431,7 @@ title: Battle Facilities Calculator
 				<input class="move-crit calc-trigger btn-input" type="checkbox" id="critL2" /><label class="btn crit-btn" for="critL2" title="Force this attack to be a critical hit?">Crit</label>
 				<input class="move-z calc-trigger btn-input" type="checkbox" id="zL2" /><label class="btn x-btn z-btn gen-specific g7" for="zL2" title="Use the corresponding Z-Move?">Z-Move</label>
 				<input class="move-max calc-trigger btn-input" type="checkbox" id="maxL2" /><label class="btn x-btn gen-specific g8" for="maxL2" title="Use the corresponding Max Move?">Max</label>
-				<select class="move-hits calc-trigger hide">
-					<option value="2">2 hits</option>
-					<option value="3">3 hits</option>
-					<option value="4">4 hits</option>
-					<option value="5">5 hits</option>
-				</select>
+				<select class="move-hits calc-trigger hide"></select>
 			</div>
 			<div class="move3">
 				<select class="move-selector calc-trigger small-select"></select>
@@ -454,12 +444,7 @@ title: Battle Facilities Calculator
 				<input class="move-crit calc-trigger btn-input" type="checkbox" id="critL3" /><label class="btn crit-btn" for="critL3" title="Force this attack to be a critical hit?">Crit</label>
 				<input class="move-z calc-trigger btn-input" type="checkbox" id="zL3" /><label class="btn x-btn z-btn gen-specific g7" for="zL3" title="Use the corresponding Z-Move?">Z-Move</label>
 				<input class="move-max calc-trigger btn-input" type="checkbox" id="maxL3" /><label class="btn x-btn gen-specific g8" for="maxL3" title="Use the corresponding Max Move?">Max</label>
-				<select class="move-hits calc-trigger hide">
-					<option value="2">2 hits</option>
-					<option value="3">3 hits</option>
-					<option value="4">4 hits</option>
-					<option value="5">5 hits</option>
-				</select>
+				<select class="move-hits calc-trigger hide"></select>
 			</div>
 			<div class="move4">
 				<select class="move-selector calc-trigger small-select"></select>
@@ -472,12 +457,7 @@ title: Battle Facilities Calculator
 				<input class="move-crit calc-trigger btn-input" type="checkbox" id="critL4" /><label class="btn crit-btn" for="critL4" title="Force this attack to be a critical hit?">Crit</label>
 				<input class="move-z calc-trigger btn-input" type="checkbox" id="zL4" /><label class="btn x-btn z-btn gen-specific g7" for="zL4" title="Use the corresponding Z-Move?">Z-Move</label>
 				<input class="move-max calc-trigger btn-input" type="checkbox" id="maxL4" /><label class="btn x-btn gen-specific g8" for="maxL4" title="Use the corresponding Max Move?">Max</label>
-				<select class="move-hits calc-trigger hide">
-					<option value="2">2 hits</option>
-					<option value="3">3 hits</option>
-					<option value="4">4 hits</option>
-					<option value="5">5 hits</option>
-				</select>
+				<select class="move-hits calc-trigger hide"></select>
 			</div>
 
 		</div>
@@ -519,7 +499,8 @@ title: Battle Facilities Calculator
 				<input class="btn-input calc-trigger" type="radio" name="weather" value="Sun" id="sun" /><label class="btn btn-small btn-mid" for="sun">Sun</label>
 				<input class="btn-input calc-trigger" type="radio" name="weather" value="Rain" id="rain" /><label class="btn btn-small btn-mid" for="rain">Rain</label>
 				<input class="btn-input calc-trigger" type="radio" name="weather" value="Sand" id="sand" /><label class="btn btn-small btn-mid" for="sand">Sand</label>
-				<input class="btn-input calc-trigger" type="radio" name="weather" value="Hail" id="hail" /><label class="btn btn-small btn-right" for="hail">Hail</label>
+				<input class="btn-input calc-trigger" type="radio" name="weather" value="Hail" id="hail" /><label class="btn btn-small btn-right gen-specific g3 g4 g5 g6 g7 g8 g80" for="hail">Hail</label>
+				<input class="btn-input calc-trigger" type="radio" name="weather" value="Snow" id="snow" /><label class="btn btn-small btn-right gen-specific g9" for="snow">Snow</label>
 			</div>
 			<div class="gen-specific g6 g7 g8" style="width: 21.1em; margin: 5px auto;" title="Select the current weather condition.">
 				<input class="btn-input calc-trigger" type="radio" name="weather" value="Harsh Sun" id="harsh-sun" /><label class="btn btn-wide btn-left" for="harsh-sun">Harsh Sun</label>
@@ -589,15 +570,33 @@ title: Battle Facilities Calculator
 					<input class="btn-input calc-trigger" type="checkbox" id="reflectR" /><label class="btn btn-left" for="reflectR">Reflect</label>
 					<input class="btn-input calc-trigger" type="checkbox" id="lightScreenR" /><label class="btn btn-xwide btn-right" for="lightScreenR">Light Screen</label>
 				</div>
-				<div class="btn-group">
-					<div class="left" title="Has this Pok&eacute;mon been effected by Leech Seed?">
-						<input class="btn-input calc-trigger" type="checkbox" id="leechSeedL" />
-						<label class="btn btn-wide" for="leechSeedL">Leech Seed</label>
-					</div>
-					<div class="right" title="Has this Pok&eacute;mon been effected by Leech Seed?">
-						<input class="btn-input calc-trigger" type="checkbox" id="leechSeedR" />
-						<label class="btn btn-wide" for="leechSeedR">Leech Seed</label>
-					</div>
+			</div>
+			<div class="btn-group">
+				<div class="left" title="Does this Pokemon have a Ruin ability?">
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinTabletsL" /><label class="btn btn-mid" style="border-top-left-radius:8px" for="ruinTabletsL">Tablets of Ruin</label>
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinVesselL" /><label class="btn btn-mid" style="border-top-right-radius:8px" for="ruinVesselL">Vessel of Ruin</label>
+				</div>
+				<div class="right" title="Does this Pokemon have a Ruin ability?">
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinTabletsR" /><label class="btn btn-mid" style="border-top-left-radius:8px" for="ruinTabletsR">Tablets of Ruin</label>
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinVesselR" /><label class="btn btn-mid" style="border-top-right-radius:8px" for="ruinVesselR">Vessel of Ruin</label>
+				</div>
+			</div>
+			<div class="btn-group">
+				<div class="left" title="Does this Pokemon have a Ruin ability?">
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinSwordL" /><label class="btn btn-mid" style="border-bottom-left-radius:8px" for="ruinSwordL">Sword of Ruin</label>
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinBeadsL" /><label class="btn btn-mid" style="border-bottom-right-radius:8px" for="ruinBeadsL">Beads of Ruin</label>
+				</div>
+				<div class="right" title="Does this Pokemon have a Ruin ability?">
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinSwordR" /><label class="btn btn-mid" style="border-bottom-left-radius:8px" for="ruinSwordR">Sword of Ruin</label>
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinBeadsR" /><label class="btn btn-mid" style="border-bottom-right-radius:8px" for="ruinBeadsR">Beads of Ruin</label>
+				</div>
+			</div>
+			<div class="btn-group">
+				<div class="left" title="Has this Pokemon been affected by Leech Seed?">
+					<input class="btn-input calc-trigger" type="checkbox" id="leechSeedL" /><label class="btn btn-wide" for="leechSeedL">Leech Seed</label>
+				</div>
+				<div class="right" title="Has this Pokemon been affected by Leech Seed?">
+					<input class="btn-input calc-trigger" type="checkbox" id="leechSeedR" /><label class="btn btn-wide" for="leechSeedR">Leech Seed</label>
 				</div>
 			</div>
 			<div class="btn-group gen-specific g8">
@@ -687,6 +686,31 @@ title: Battle Facilities Calculator
 				<div class="right" title="Has this Pokemon had its Weakness Policy activated?">
 					<input class="btn-input calc-trigger" type="checkbox" id="wpR" /><label class="btn btn-xxwide" for="wpR"><img src="../_images/wp.png"><br>Weakness Policy</label>
 				</div>
+			</div>
+			<div class="gen-specific g9">
+				<div class="left" title="How many Pokemon in the party are fainted?">
+                    <select class="calc-trigger" id="faintedL">
+                        <option value=0 selected="selected">0</option>
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                    </select>
+                    <label for="faintedL">Party Fainted</label>
+				</div>
+				<div class="right" title="How many Pokemon in the party are fainted?">
+                    <select class="calc-trigger" id="faintedR">
+                        <option value=0 selected="selected">0</option>
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                    </select>
+                    <label for="faintedR">Party Fainted</label>
+				</div>
+				<div>&nbsp;</div>
 			</div>
 			<div class="btn-group gen-specific g7">
 				<div class="left" title="Has this Pokemon used Extreme Evoboost?">
@@ -1082,12 +1106,7 @@ title: Battle Facilities Calculator
 					<input class="move-crit calc-trigger btn-input" type="checkbox" id="critR1" /><label class="btn crit-btn" for="critR1" title="Force this attack to be a critical hit?">Crit</label>
 					<input class="move-z calc-trigger btn-input" type="checkbox" id="zR1" /><label class="btn x-btn z-btn gen-specific g7" for="zR1" title="Use the corresponding Z-Move?">Z-Move</label>
 					<input class="move-max calc-trigger btn-input" type="checkbox" id="maxR1" /><label class="btn x-btn gen-specific g8" for="maxR1" title="Use the corresponding Max Move?">Max</label>
-					<select class="move-hits calc-trigger hide">
-						<option value="2">2 hits</option>
-						<option value="3">3 hits</option>
-						<option value="4">4 hits</option>
-						<option value="5">5 hits</option>
-					</select>
+					<select class="move-hits calc-trigger hide"></select>
 				</div>
 				<div class="move2">
 					<select class="move-selector calc-trigger small-select"></select>
@@ -1100,12 +1119,7 @@ title: Battle Facilities Calculator
 					<input class="move-crit calc-trigger btn-input" type="checkbox" id="critR2" /><label class="btn crit-btn" for="critR2" title="Force this attack to be a critical hit?">Crit</label>
 					<input class="move-z calc-trigger btn-input" type="checkbox" id="zR2" /><label class="btn x-btn z-btn gen-specific g7" for="zR2" title="Use the corresponding Z-Move?">Z-Move</label>
 					<input class="move-max calc-trigger btn-input" type="checkbox" id="maxR2" /><label class="btn x-btn gen-specific g8" for="maxR2" title="Use the corresponding Max Move?">Max</label>
-					<select class="move-hits calc-trigger hide">
-						<option value="2">2 hits</option>
-						<option value="3">3 hits</option>
-						<option value="4">4 hits</option>
-						<option value="5">5 hits</option>
-					</select>
+					<select class="move-hits calc-trigger hide"></select>
 				</div>
 				<div class="move3">
 					<select class="move-selector calc-trigger small-select"></select>
@@ -1118,12 +1132,7 @@ title: Battle Facilities Calculator
 					<input class="move-crit calc-trigger btn-input" type="checkbox" id="critR3" /><label class="btn crit-btn" for="critR3" title="Force this attack to be a critical hit?">Crit</label>
 					<input class="move-z calc-trigger btn-input" type="checkbox" id="zR3" /><label class="btn x-btn z-btn gen-specific g7" for="zR3" title="Use the corresponding Z-Move?">Z-Move</label>
 					<input class="move-max calc-trigger btn-input" type="checkbox" id="maxR3" /><label class="btn x-btn gen-specific g8" for="maxR3" title="Use the corresponding Max Move?">Max</label>
-					<select class="move-hits calc-trigger hide">
-						<option value="2">2 hits</option>
-						<option value="3">3 hits</option>
-						<option value="4">4 hits</option>
-						<option value="5">5 hits</option>
-					</select>
+					<select class="move-hits calc-trigger hide"></select>
 				</div>
 				<div class="move4">
 					<select class="move-selector calc-trigger small-select"></select>
@@ -1136,12 +1145,7 @@ title: Battle Facilities Calculator
 					<input class="move-crit calc-trigger btn-input" type="checkbox" id="critR4" /><label class="btn crit-btn" for="critR4" title="Force this attack to be a critical hit?">Crit</label>
 					<input class="move-z calc-trigger btn-input" type="checkbox" id="zR4" /><label class="btn x-btn z-btn gen-specific g7" for="zR4" title="Use the corresponding Z-Move?">Z-Move</label>
 					<input class="move-max calc-trigger btn-input" type="checkbox" id="maxR4" /><label class="btn x-btn gen-specific g8" for="maxR4" title="Use the corresponding Max Move?">Max</label>
-					<select class="move-hits calc-trigger hide">
-						<option value="2">2 hits</option>
-						<option value="3">3 hits</option>
-						<option value="4">4 hits</option>
-						<option value="5">5 hits</option>
-					</select>
+					<select class="move-hits calc-trigger hide"></select>
 				</div>
 			</div>
 		</div>
