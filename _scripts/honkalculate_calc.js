@@ -352,6 +352,7 @@ function calcTotalMod() {
             ability === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
 	}
+	// for now mass calc won't account for Proto/Quark speed
 	$(".totalMod").text(speed);
 }
 

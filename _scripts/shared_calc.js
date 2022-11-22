@@ -192,7 +192,7 @@ $(".percent-hp").keyup(function () {
 
 var lastAura = [false, false, false];
 $(".ability").bind("keyup change", function () {
-	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === "Skill Link" ? 5 : 3);
+	autoSetMultiHits($(this).val(), $(this).closest(".poke-info"));
 	autoSetAura();
 	autoSetTerrain();
 });
@@ -361,6 +361,20 @@ function autoSetRuin(i, side) {
 	}
 }
 
+function autoSetMultiHits(ability, pokeInfo) {
+	for (var i = 1; i <= 4; i++) {
+		var moveInfo = pokeInfo.find(".move" + i);
+		var moveName = moveInfo.find("select.move-selector").val();
+		if(moveName === "Population Bomb") {
+			moveInfo.children(".move-hits").val(10);
+		} else if (moveName === "Triple Axel") {
+			moveInfo.children(".move-hits").val(3);
+		} else {
+			moveInfo.children(".move-hits").val(ability === "Skill Link" ? 5 : 3);
+		}
+	}
+}
+
 $(".status").bind("keyup change", function () {
 	if ($(this).val() === "Badly Poisoned") {
 		$(this).parent().children(".toxic-counter").show();
@@ -379,12 +393,13 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
 	var moveHits = moveGroupObj.children(".move-hits");
 	moveHits.empty();
-	if (move.maxMultiHits && !move.isMax) {
-		for(var i = 2; i <= move.maxMultiHits; i++) {
+	var maxMultiHits = move.maxMultiHits;
+	if (maxMultiHits && !move.isMax) {
+		for(var i = 2; i <= maxMultiHits; i++) {
 			moveHits.append($("<option></option>").attr("value", i).text(i + " hits"));
 		}
 		moveHits.show();
-		moveHits.val($(this).closest(".poke-info").find(".ability").val() === "Skill Link" ? 5 : 3);
+		moveHits.val($(this).closest(".poke-info").find(".ability").val() === "Skill Link" || moveName === "Population Bomb" ? maxMultiHits : 3);
 	} else {
 		moveHits.hide();
 	}
@@ -711,7 +726,7 @@ function Pokemon(pokeInfo) {
 				"category": defaultDetails.category,
 				"isCrit": !!defaultDetails.alwaysCrit,
 				"acc": defaultDetails.acc,
-				"hits": defaultDetails.maxMultiHits ? this.ability === "Skill Link" || this.item === "Grip Claw" ? 5 : 3 : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
+				"hits": defaultDetails.maxMultiHits ? (this.ability === "Skill Link" || moveName === "Population Bomb" ? defaultDetails.maxMultiHits : 3) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 				"usedTimes": 1
 			}));
 		}

@@ -13,10 +13,10 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	checkAngerShell(p2);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
 	p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
-	p1.stats[SP] = getFinalSpeed(p1, field.getWeather());
+	p1.stats[SP] = getFinalSpeed(p1, field.getWeather(), field.getTerrain());
 	p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
 	p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
-	p2.stats[SP] = getFinalSpeed(p2, field.getWeather());
+	p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), field.getTerrain());
 	checkIntimidate(p1, p2);
 	checkIntimidate(p2, p1);
 	checkZacianZamazaenta(p1);
@@ -27,8 +27,6 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
 	p2.stats[AT] = getModifiedStat(p2.rawStats[AT], p2.boosts[AT]);
 	p2.stats[SA] = getModifiedStat(p2.rawStats[SA], p2.boosts[SA]);
-	checkProtosynthesisQuarkDrive(p1, field.getWeather(), field.terrain);
-	checkProtosynthesisQuarkDrive(p2, field.getWeather(), field.terrain);
 	var side1 = field.getSide(1);
 	var side2 = field.getSide(0);
 	checkInfiltrator(p1, side1);
@@ -53,10 +51,10 @@ function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
 	checkSeedsHonk(defender, field);
 	checkAngerShell(attacker);
 	checkAngerShell(defender);
-	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());
+	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather(), field.getTerrain());
 	defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
 	defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
-	defender.stats[SP] = getFinalSpeed(defender, field.getWeather());
+	defender.stats[SP] = getFinalSpeed(defender, field.getWeather(), field.getTerrain());
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
 	checkZacianZamazaenta(attacker);
@@ -65,8 +63,6 @@ function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
 	attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 	attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 	defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
-	checkProtosynthesisQuarkDrive(attacker, field.getWeather(), field.terrain);
-	checkProtosynthesisQuarkDrive(defender, field.getWeather(), field.terrain);
 	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
 	checkInfiltrator(attacker, defenderSide);
 	var results = [];
@@ -373,7 +369,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Rising Voltage":
 		basePower = move.bp * (field.terrain === "Electric" && (field.isGravity || (defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
-                defender.item !== "Air Balloon" && defender.ability !== "Levitate")) ? 2 : 1);
+                defender.item !== "Air Balloon" && defAbility !== "Levitate")) ? 2 : 1);
 		description.moveBP = basePower;
 		break;
 	case "Expanding Force":
@@ -456,7 +452,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerItem = attacker.item;
 	} else if (attacker.item === "Muscle Band" && move.category === "Physical" ||
             attacker.item === "Wise Glasses" && move.category === "Special" ||
-            attacker.item === "Punching Glove" && move.isPunch) {
+            attacker.item === "Punching Glove" && move.isPunch && attacker.ability !== "Iron Fist") {
 		bpMods.push(0x1199);
 		description.attackerItem = attacker.item;
 	} else if ((attacker.item === "Adamant Orb" && attacker.name === "Dialga" ||
@@ -516,7 +512,7 @@ function getDamageResult(attacker, defender, move, field) {
 	} else if (attacker.ability === "Tough Claws" && move.makesContact) { //boosts by 1.3x for contact moves, apparently
 		bpMods.push(0x14CD);
 		description.attackerAbility = attacker.ability;
-	} else if (defender.ability === "Fluffy" && move.makesContact) {
+	} else if (defAbility === "Fluffy" && move.makesContact) {
 		bpMods.push(0x800);
 	}
 
@@ -540,7 +536,7 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 	}
 	
-		var terrainMultiplier = [8].includes(gen) ? 0x14CD : 0x1800;
+	var terrainMultiplier = gen >= 8 ? 0x14CD : 0x1800;
 	if (field.isGravity || attacker.type1 !== "Flying" && attacker.type2 !== "Flying" &&
                 attacker.item !== "Air Balloon" && attacker.ability !== "Levitate") {
 		if (field.terrain === "Electric" && move.type === "Electric") {
@@ -565,7 +561,11 @@ function getDamageResult(attacker, defender, move, field) {
 	var attack;
 	var attackSource = move.name === "Foul Play" ? defender : attacker;
 	if (move.usesHighestAttackStat) {
-		move.category = attackSource.stats[AT] >= attackSource.stats[SA] ? "Physical" : "Special";
+		if (move.name === "Tera Blast" && !attacker.isTerastal) {
+			// nothing happens
+		} else {
+			move.category = attackSource.stats[AT] >= attackSource.stats[SA] ? "Physical" : "Special";
+		}
 	}
 	var attackStat = move.name === "Body Press" ? DF : move.category === "Physical" ? AT : SA;
 	description.attackEVs = attacker.evs[attackStat] +
@@ -637,14 +637,18 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerItem = attacker.item;
 	}
 
+	var attackerHighest = checkProtoQuarkHighest(attacker, field.weather, field.terrain);
 	if ((attacker.ability === "Hadron Engine" && field.terrain === "Electric" && move.category === "Special") ||
-		(attacker.ability === "Orichalcum Pulse" && field.weather.indexOf("Sun") > -1 && move.category === "Physical")) {
+		(attacker.ability === "Orichalcum Pulse" && field.weather.indexOf("Sun") > -1 && move.category === "Physical") ||
+		(attackerHighest === "at" && move.category === "Physical") ||
+		(attackerHighest === "sa" && move.category === "Special")) {
 		atMods.push(0x14CD); // as of writing, Smogon and just Smogon says 1.3x
 		description.attackerAbility = attacker.ability;
 	}
-	if (attacker.ability === "Supreme Overlord" && field.faintedCount > 0) {
-		atMods.push(0x1000 + 0x199 * field.faintedCount);
-		description.attackerAbility = attacker.ability + " (" + field.faintedCount + " fainted)";
+	var fainted = parseInt(field.faintedCount);
+	if (attacker.ability === "Supreme Overlord" && fainted > 0) {
+		atMods.push(0x1199 + 0x199 * fainted); // if at least 1 is fainted, then an additional 10% is added
+		description.attackerAbility = attacker.ability + " (1." + (fainted + 1) + "x)";
 	}
 	if ((field.isRuinTablets && move.category === "Physical") || (field.isRuinVessel && move.category === "Special")) {
 		atMods.push(0xC00);
@@ -701,6 +705,11 @@ function getDamageResult(attacker, defender, move, field) {
 		dfMods.push(0xC00);
 		description.ruinDef = "Ruin";
 	}
+	var defenderHighest = checkProtoQuarkHighest(defender, field.weather, field.terrain);
+	if ((defenderHighest === "df" && move.category === "Physical") || (defenderHighest === "sd" && move.category === "Special")) {
+		dfMods.push(0x14CD);
+		description.defenderAbility = defAbility;
+	}
 
 	defense = Math.max(1, pokeRound(defense * chainMods(dfMods) / 0x1000));
 
@@ -721,7 +730,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.weather = field.weather;
 	}
 	if (field.isGravity || defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
-            defender.item !== "Air Balloon" && defender.ability !== "Levitate") {
+            defender.item !== "Air Balloon" && defAbility !== "Levitate") {
 		if (field.terrain === "Misty" && move.type === "Dragon") {
 			baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
 			description.terrain = field.terrain;
@@ -739,7 +748,12 @@ function getDamageResult(attacker, defender, move, field) {
 			description.attackerTera = "Tera " + attacker.type1;
 		}
 		else if (move.type === attacker.dexType1 || move.type === attacker.dexType2) {
-			stabMod = 0x1800;
+			if (attacker.ability === "Adaptability") {
+				stabMod = 0x2000;
+				description.attackerAbility = attacker.ability;
+			} else {
+				stabMod = 0x1800;
+			}
 		}
 	}
 	else if (move.type === attacker.type1 || move.type === attacker.type2) {
@@ -1026,6 +1040,8 @@ function getFinalSpeed(pokemon, weather, terrain) {
             pokemon.ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
             pokemon.ability === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
+	} else if (checkProtoQuarkHighest(pokemon, weather, terrain) === "sp") {
+		speed = Math.floor(speed * 1.5);
 	}
 	return speed;
 }
@@ -1107,6 +1123,32 @@ function checkZacianZamazaenta(pokemon) {
 	}
 }
 
+function checkProtoQuarkHighest(pokemon, weather, terrain) {
+	if ((pokemon.ability === "Protosynthesis" && (pokemon.item === "Booster Energy" || weather.indexOf("Sun") > -1)) ||
+		(pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric"))) {
+		var stats = pokemon.stats;
+		var highestStat = "at";
+		var highestValue = stats.at;
+		if (stats.df > highestValue) {
+			highestStat = "df";
+			highestValue = stats.df;
+		}
+		if (stats.sa > highestValue) {
+			highestStat = "sa";
+			highestValue = stats.sa;
+		}
+		if (stats.sd > highestValue) {
+			highestStat = "sd";
+			highestValue = stats.sd;
+		}
+		if (stats.sp > highestValue) {
+			return "sp";
+		}
+		return highestStat;
+	}
+	return "";
+}
+
 function checkAngerShell(pokemon) {
 	if (pokemon.ability === "Anger Shell" && pokemon.curHP <= pokemon.maxHP / 2) {
 		pokemon.boosts[AT] = Math.min(6, pokemon.boosts[AT] + 1);
@@ -1114,22 +1156,6 @@ function checkAngerShell(pokemon) {
 		pokemon.boosts[SP] = Math.min(6, pokemon.boosts[SP] + 1);
 		pokemon.boosts[DF] = Math.max(-6, pokemon.boosts[DF] - 1);
 		pokemon.boosts[SD] = Math.max(-6, pokemon.boosts[SD] - 1);
-	}
-}
-
-function checkProtosynthesisQuarkDrive(pokemon, weather, terrain) {
-	if ((pokemon.ability === "Protosynthesis" && (pokemon.item === "Booster Energy" || weather.indexOf("Sun") > -1)) ||
-		(pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric"))) {
-		var highestStat;
-		var highestValue = 0;
-		for (const [key, value] of Object.entries(pokemon.stats)) { // HP is not included as a key
-			if (value > highestValue) {
-				highestStat = key;
-				highestValue = value;
-			}
-		}
-		pokemon.boosts[highestStat] = Math.min(6, pokemon.boosts[highestStat] + 1);
-		pokemon.stats[highestStat] = getModifiedStat(pokemon.rawStats[highestStat], pokemon.boosts[highestStat]);
 	}
 }
 
