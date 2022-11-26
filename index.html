@@ -463,7 +463,7 @@ title: Battle Facilities Calculator
 		</div>
 	</div>
 
-	<div class="panel field-info">
+	<div class="panel field-info"><!--Start Field panel-->
 		<div class="panel-heading">
 			<h4 class="panel-title">
 				Field
@@ -571,24 +571,24 @@ title: Battle Facilities Calculator
 					<input class="btn-input calc-trigger" type="checkbox" id="lightScreenR" /><label class="btn btn-xwide btn-right" for="lightScreenR">Light Screen</label>
 				</div>
 			</div>
-			<div class="btn-group">
+			<div class="btn-group gen-specific g9">
 				<div class="left" title="Does this Pokemon have a Ruin ability?">
-					<input class="btn-input calc-trigger" type="checkbox" id="ruinTabletsL" /><label class="btn btn-mid btn-wide" style="border-top-left-radius:8px" for="ruinTabletsL">Tablets (-Atk)</label>
-					<input class="btn-input calc-trigger" type="checkbox" id="ruinVesselL" /><label class="btn btn-mid btn-wide" style="border-top-right-radius:8px" for="ruinVesselL">Vessel (-SpA)</label>
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinTabletsL" /><label class="btn btn-mid" style="border-top-left-radius:8px;width:6.5em" for="ruinTabletsL">Tablets (-Atk)</label>
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinVesselL" /><label class="btn btn-mid" style="border-top-right-radius:8px;width:6.5em" for="ruinVesselL">Vessel (-SpA)</label>
 				</div>
 				<div class="right" title="Does this Pokemon have a Ruin ability?">
-					<input class="btn-input calc-trigger" type="checkbox" id="ruinTabletsR" /><label class="btn btn-mid btn-wide" style="border-top-left-radius:8px" for="ruinTabletsR">Tablets (-Atk)</label>
-					<input class="btn-input calc-trigger" type="checkbox" id="ruinVesselR" /><label class="btn btn-mid btn-wide" style="border-top-right-radius:8px" for="ruinVesselR">Vessel (-SpA)</label>
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinTabletsR" /><label class="btn btn-mid" style="border-top-left-radius:8px;width:6.5em" for="ruinTabletsR">Tablets (-Atk)</label>
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinVesselR" /><label class="btn btn-mid" style="border-top-right-radius:8px;width:6.5em" for="ruinVesselR">Vessel (-SpA)</label>
 				</div>
 			</div>
-			<div class="btn-group">
+			<div class="btn-group gen-specific g9">
 				<div class="left" title="Does this Pokemon have a Ruin ability?">
-					<input class="btn-input calc-trigger" type="checkbox" id="ruinSwordL" /><label class="btn btn-mid btn-wide" style="border-bottom-left-radius:8px" for="ruinSwordL">Sword (-Def)</label>
-					<input class="btn-input calc-trigger" type="checkbox" id="ruinBeadsL" /><label class="btn btn-mid btn-wide" style="border-bottom-right-radius:8px" for="ruinBeadsL">Beads (-SpD)</label>
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinSwordL" /><label class="btn btn-mid" style="border-bottom-left-radius:8px;width:6.5em" for="ruinSwordL">Sword (-Def)</label>
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinBeadsL" /><label class="btn btn-mid" style="border-bottom-right-radius:8px;width:6.5em" for="ruinBeadsL">Beads (-SpD)</label>
 				</div>
 				<div class="right" title="Does this Pokemon have a Ruin ability?">
-					<input class="btn-input calc-trigger" type="checkbox" id="ruinSwordR" /><label class="btn btn-mid btn-wide" style="border-bottom-left-radius:8px" for="ruinSwordR">Sword (-Def)</label>
-					<input class="btn-input calc-trigger" type="checkbox" id="ruinBeadsR" /><label class="btn btn-mid btn-wide" style="border-bottom-right-radius:8px" for="ruinBeadsR">Beads (-SpD)</label>
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinSwordR" /><label class="btn btn-mid" style="border-bottom-left-radius:8px;width:6.5em" for="ruinSwordR">Sword (-Def)</label>
+					<input class="btn-input calc-trigger" type="checkbox" id="ruinBeadsR" /><label class="btn btn-mid" style="border-bottom-right-radius:8px;width:6.5em" for="ruinBeadsR">Beads (-SpD)</label>
 				</div>
 			</div>
 			<div class="btn-group">
@@ -687,6 +687,14 @@ title: Battle Facilities Calculator
 					<input class="btn-input calc-trigger" type="checkbox" id="wpR" /><label class="btn btn-xxwide" for="wpR"><img src="../_images/wp.png"><br>Weakness Policy</label>
 				</div>
 			</div>
+			<div class="btn-group gen-specific g8 g9">
+				<div class="left" title="Has this Pokemon's move been boosted by Steely Spirit?">
+					<input class="btn-input calc-trigger" type="checkbox" id="steelySpiritL" /><label class="btn btn-xxwide" for="steelySpiritL">Steely Spirit</label>
+				</div>
+				<div class="right" title="Has this Pokemon's move been boosted by Steely Spirit?">
+					<input class="btn-input calc-trigger" type="checkbox" id="steelySpiritR" /><label class="btn btn-xxwide" for="steelySpiritR">Steely Spirit</label>
+				</div>
+			</div>
 			<div class="gen-specific g9">
 				<div class="left" title="How many Pokemon in the party are fainted?">
                     <select class="calc-trigger" id="faintedL">
@@ -738,7 +746,7 @@ title: Battle Facilities Calculator
 				<p>You may need to refresh the page after deleting your custom sets. If you encounter a bug, please try deleting your cookies or reporting it!</p>
 			</span>
 		</div>
-	</div>
+	</div><!--End Field panel-->
 	<div class="panel poke-info" id="p2">
 		<div class="panel-heading">
 			<h4 class="panel-title">Pokémon 2</h4>

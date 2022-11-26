@@ -438,13 +438,17 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	if (attacker.ability === "Steelworker" && move.type === "Steel" ||
-		attacker.ability === "Steely Spirit" && move.type === "Steel" ||
 		attacker.ability === "Transistor" && move.type === "Electric" ||
 		attacker.ability === "Dragon's Maw" && move.type === "Dragon" ||
 		attacker.ability === "Rocky Payload" && move.type === "Rock" ||
 		attacker.ability === "Sharpness" && move.isSlicing) {
 		bpMods.push(0x1800);
 		description.attackerAbility = attacker.ability;
+	}
+
+	if (field.isSteelySpirit && move.type === "Steel") {
+		bpMods.push(0x1800);
+		description.isSteelySpirit = true;
 	}
 
 	if (getItemBoostType(attacker.item) === move.type) {
@@ -648,7 +652,7 @@ function getDamageResult(attacker, defender, move, field) {
 	var fainted = parseInt(field.faintedCount);
 	if (attacker.ability === "Supreme Overlord" && fainted > 0) {
 		atMods.push(0x1199 + 0x199 * fainted); // if at least 1 is fainted, then an additional 10% is added
-		description.attackerAbility = attacker.ability + " (1." + (fainted + 1) + "x)";
+		description.attackerAbility = attacker.ability + " (1." + (fainted + 1) + "x Atk)";
 	}
 	if ((field.isRuinTablets && move.category === "Physical") || (field.isRuinVessel && move.category === "Special")) {
 		atMods.push(0xC00);
@@ -719,6 +723,7 @@ function getDamageResult(attacker, defender, move, field) {
 	var baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * basePower * attack / defense) / 50 + 2);
 	if (field.format !== "Singles" && move.isSpread) {
 		baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
+		description.isSpread = true;
 	}
 	if (field.weather.indexOf("Sun") > -1 && move.type === "Fire" || field.weather.indexOf("Rain") > -1 && move.type === "Water") {
 		baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
@@ -916,7 +921,13 @@ function buildDescription(description) {
 	if (description.isBattery) {
 		output += "Battery ";
 	}
+	if (description.isSteelySpirit) {
+		output += "Steely Spirit ";
+	}
 	output += description.moveName + " ";
+	if (description.isSpread) {
+		output += "(spread) ";
+	}
 	if (description.moveBP && description.moveType) {
 		output += "(" + description.moveBP + " BP " + description.moveType + ") ";
 	} else if (description.moveBP) {

@@ -70,16 +70,15 @@ function performCalculations() {
 	var pokeInfo = $("#p1");
 	var counter = 0;
 	for (var i = 0; i < setOptions.length; i++) {
-		var setOptionsID = setOptions[i].id;
+		var setOptionsID = setOptions[i].id; // speciesName (setName)
 		if (!setOptionsID || setOptionsID.indexOf("Blank Set") !== -1) {
 			continue;
 		}
-		setPokemon = new Pokemon(setOptionsID);
-		/*var setName = setOptionsID.substring(setOptionsID.indexOf("(") + 1, setOptionsID.length - 1);
-		I guess the check can simply be whether the custom dex has it
-		if (!(setName in setdex[setPokemon.name])) {
-			console.log(setName);
-		}*/
+		setPokemon = new Pokemon(setOptionsID); 
+		var setName = setOptionsID.substring(setOptionsID.indexOf("(") + 1, setOptionsID.length - 1);
+		if (SETDEX_CUSTOM[setPokemon.name][setName]) {
+			continue;
+		}
 		setTier = setPokemon.tier;
 		if (selectedTier === setTier || selectedTier === "All") { // setPokemon.tier can currently be: 28, 40, Tower, RS, SM, DM, SMDM
 			// let set be calculated

@@ -200,6 +200,7 @@ $(".ability").bind("keyup change", function () {
 $("#p1 .ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 0);
 	autoSetVicStar(1, "L");
+	autoSetSteely(1, "L");
 	autoSetRuin(1, "L");
 });
 
@@ -334,6 +335,15 @@ function autosetStatus(p, item) {
 			$(p + " .status").val(lastManualStatus[p]);
 			$(p + " .status").change();
 		}
+	}
+}
+
+function autoSetSteely(i, side) {
+	var ability = $("#p" + i + " .ability").val();
+	if (ability === "Steely Spirit") {
+		$("input:checkbox[id='steelySpirit" + side + "']").prop("checked", true);
+	} else {
+		$("input:checkbox[id='steelySpirit" + side + "']").prop("checked", false);
 	}
 }
 
@@ -933,6 +943,7 @@ function Field() {
 	var isVictoryStar = [$("#vicStarL").prop("checked"), $("#vicStarR").prop("checked")];
 	var isBusted8 = [$("#busted8L").prop("checked"), $("#busted8R").prop("checked")];
 	var isBusted16 = [$("#busted16L").prop("checked"), $("#busted16R").prop("checked")];
+	var isSteelySpirit = [$("#steelySpiritR").prop("checked"), $("#steelySpiritL").prop("checked")]; // affects attacks against opposite side
 	var fainted = [$("#faintedR").val(), $("#faintedL").val()]; // affects attacks against opposite side
 	var isRuinTablets = [$("#ruinTabletsL").prop("checked"), $("#ruinTabletsR").prop("checked")];
 	var isRuinVessel = [$("#ruinVesselL").prop("checked"), $("#ruinVesselR").prop("checked")];
@@ -951,13 +962,14 @@ function Field() {
 	this.getSide = function (i) {
 		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isSeeded[i],
 			isForesight[i], isHelpingHand[i], isMinimized[i], isVictoryStar[i], isFriendGuard[i], isBattery[i],
-			isProtect[i], isPowerSpot[i], isBusted8[i], isBusted16[i],
+			isProtect[i], isPowerSpot[i], isBusted8[i], isBusted16[i], isSteelySpirit[i],
 			fainted[i], isRuinTablets[i], isRuinVessel[i], isRuinSword[i], isRuinBeads[i]);
 	};
 }
 
 function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isSeeded, isForesight, isHelpingHand,
-	isMinimized, isVictoryStar, isFriendGuard, isBattery, isProtect, isPowerSpot, isBusted8, isBusted16,
+	isMinimized, isVictoryStar, isFriendGuard, isBattery,
+	isProtect, isPowerSpot, isBusted8, isBusted16, isSteelySpirit,
 	faintedCount, isRuinTablets, isRuinVessel, isRuinSword, isRuinBeads) {
 	this.format = format;
 	this.terrain = terrain;
@@ -978,6 +990,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isPowerSpot = isPowerSpot;
 	this.isBusted8 = isBusted8;
 	this.isBusted16 = isBusted16;
+	this.isSteelySpirit = isSteelySpirit;
 	this.faintedCount = faintedCount;
 	this.isRuinTablets = isRuinTablets;
 	this.isRuinVessel = isRuinVessel;
@@ -1179,6 +1192,8 @@ function clearField() {
 	$("#wpR").prop("checked", false);
 	$("#evoL").prop("checked", false);
 	$("#evoR").prop("checked", false);
+	$("#steelySpiritL").prop("checked", false);
+	$("#steelySpiritR").prop("checked", false);
 	$("#faintedL").val(0);
 	$("#faintedR").val(0);
 	$("#ruinTabletsL").prop("checked", false);
