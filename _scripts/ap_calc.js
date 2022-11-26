@@ -1,6 +1,7 @@
 $("#p2 .ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 1);
 	autoSetVicStar(2, "R");
+	autoSetSteely(2, "R");
 	autoSetRuin(2, "R");
 });
 
