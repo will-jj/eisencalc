@@ -456,7 +456,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerItem = attacker.item;
 	} else if (attacker.item === "Muscle Band" && move.category === "Physical" ||
             attacker.item === "Wise Glasses" && move.category === "Special" ||
-            attacker.item === "Punching Glove" && move.isPunch && attacker.ability !== "Iron Fist") {
+            attacker.item === "Punching Glove" && move.isPunch) {
 		bpMods.push(0x1199);
 		description.attackerItem = attacker.item;
 	} else if ((attacker.item === "Adamant Orb" && attacker.name === "Dialga" ||
