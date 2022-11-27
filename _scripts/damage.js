@@ -656,7 +656,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	if ((field.isRuinTablets && move.category === "Physical") || (field.isRuinVessel && move.category === "Special")) {
 		atMods.push(0xC00);
-		description.ruinAtk = "Ruin";
+		description.isRuinAtk = true;
 	}
 
 	attack = Math.max(1, pokeRound(attack * chainMods(atMods) / 0x1000));
@@ -707,7 +707,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	if ((field.isRuinSword && move.category === "Physical") || (field.isRuinBeads && move.category === "Special")) {
 		dfMods.push(0xC00);
-		description.ruinDef = "Ruin";
+		description.isRuinDef = true;
 	}
 	var defenderHighest = checkProtoQuarkHighest(defender, field.weather, field.terrain);
 	if ((defenderHighest === "df" && move.category === "Physical") || (defenderHighest === "sd" && move.category === "Special")) {
@@ -906,7 +906,9 @@ function buildDescription(description) {
 	output = appendIfSet(output, description.attackEVs);
 	output = appendIfSet(output, description.attackerItem);
 	output = appendIfSet(output, description.attackerAbility);
-	output = appendIfSet(output, description.ruinAtk);
+	if (description.isRuinAtk) {
+		output += "Ruin ";
+	}
 	if (description.isBurned) {
 		output += "burned ";
 	}
@@ -925,9 +927,6 @@ function buildDescription(description) {
 		output += "Steely Spirit ";
 	}
 	output += description.moveName + " ";
-	if (description.isSpread) {
-		output += "(spread) ";
-	}
 	if (description.moveBP && description.moveType) {
 		output += "(" + description.moveBP + " BP " + description.moveType + ") ";
 	} else if (description.moveBP) {
@@ -937,6 +936,9 @@ function buildDescription(description) {
 	}
 	if (description.hits) {
 		output += "(" + description.hits + " hits) ";
+	}
+	if (description.isSpread) {
+		output += "(spread) ";
 	}
 	output += "vs. ";
 	if (description.defenseBoost) {
@@ -957,7 +959,9 @@ function buildDescription(description) {
 	if (description.isDynamax) {
 		output += "Dynamax ";
 	}
-	output = appendIfSet(output, description.ruinDef);
+	if (description.isRuinDef) {
+		output += "Ruin ";
+	}
 	output = appendIfSet(output, description.defenderTera);
 	output += description.defenderName;
 	if (description.weather) {
