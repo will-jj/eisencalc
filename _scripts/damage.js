@@ -376,10 +376,8 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Expanding Force":
-		if (field.terrain === "Psychic") {
-			basePower = move.bp * 1.5;
-			move.isSpread = true;
-		}
+		basePower = field.terrain === "Psychic" ? move.bp * 1.5 : move.bp;
+		move.isSpread = field.terrain === "Psychic";
 		description.moveBP = basePower;
 		break;
 	case "Triple Axel":

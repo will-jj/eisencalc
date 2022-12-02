@@ -57,7 +57,7 @@ $(".tera").bind("keyup change", function () {
 	var pokeInfo = $(this).closest(".poke-info");
 	if ($(this).prop("checked")) {
 		pokeInfo.find(".type1").val(pokeInfo.find(".tera-type").val());
-		pokeInfo.find(".type2").val("None");
+		pokeInfo.find(".type2").val("(none)");
 	}
 	else {
 		var setName = pokeInfo.find("input.set-selector").val();
