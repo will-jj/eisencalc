@@ -68,19 +68,25 @@ function performCalculations() {
 	var setOptions = getSetOptions();
 	var dataSet = [];
 	var pokeInfo = $("#p1");
+	var userPoke = new Pokemon(pokeInfo);
+	var startingBoosts = userPoke.boosts;
 	var counter = 0;
 	for (var i = 0; i < setOptions.length; i++) {
 		var setOptionsID = setOptions[i].id; // speciesName (setName)
 		if (!setOptionsID || setOptionsID.indexOf("Blank Set") !== -1) {
 			continue;
 		}
-		setPokemon = new Pokemon(setOptionsID); 
-		var setName = setOptionsID.substring(setOptionsID.indexOf("(") + 1, setOptionsID.length - 1);
-		if (SETDEX_CUSTOM[setPokemon.name][setName]) {
-			continue;
-		}
+		
+		setPokemon = new Pokemon(setOptionsID);
 		setTier = setPokemon.tier;
-		if (selectedTier === setTier || selectedTier === "All") { // setPokemon.tier can currently be: 28, 40, Tower, RS, SM, DM, SMDM
+		if (selectedTier === setTier) { // setPokemon.tier can currently be: 28, 40, Tower, RS, SM, DM, SMDM
+			// let set be calculated
+		}
+		else if (selectedTier === "All") {
+			var customDexSpecies = SETDEX_CUSTOM[setPokemon.name];
+			if ((customDexSpecies !== undefined) && customDexSpecies[setOptionsID.substring(setOptionsID.indexOf("(") + 1, setOptionsID.length - 1)]) {
+				continue;
+			}
 			// let set be calculated
 		}
 		else if (gen == 80 && setTier === "SMDM") {
@@ -93,11 +99,10 @@ function performCalculations() {
 		var field = new Field();
 		if (mode === "one-vs-all") {
 			defender = setPokemon;
-			attacker = new Pokemon(pokeInfo); // look into keeping a single Pokemon(pokeInfo) object in memory, instead of creating a thousand
-			// look into what can modify the Pokemon object
+			attacker = userPoke;
 		} else {
 			attacker = setPokemon;
-			defender = new Pokemon(pokeInfo);
+			defender = userPoke;
 		}
 		if (attacker.ability === "Rivalry") {
 			attacker.gender = "N";
@@ -139,6 +144,8 @@ function performCalculations() {
 		data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
 		dataSet.push(data);
 		counter++;
+		userPoke.boosts = startingBoosts;
+		userPoke.stats = [];
 	}
 	var pokemon = mode === "one-vs-all" ? attacker : defender;
 	table.rows.add(dataSet).draw();
