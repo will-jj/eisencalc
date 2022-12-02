@@ -57,7 +57,7 @@ $(".tera").bind("keyup change", function () {
 	var pokeInfo = $(this).closest(".poke-info");
 	if ($(this).prop("checked")) {
 		pokeInfo.find(".type1").val(pokeInfo.find(".tera-type").val());
-		pokeInfo.find(".type2").val("(none)");
+		pokeInfo.find(".type2").val("None");
 	}
 	else {
 		var setName = pokeInfo.find("input.set-selector").val();
@@ -842,6 +842,15 @@ function getMoveDetails(moveInfo, item, species) {
 		}
 
 		var tempType = defaultDetails.type;
+		var ability = moveInfo.closest(".poke-info").find(".ability").val();
+		// changing the type like this prevents getDamageResult() from applying the -ate boost, which is accurate to the game
+		if (ability === "Pixilate" && tempType === "Normal") {
+			maxMoveName = "Max Starfall";
+			tempType = "Fairy";
+		} else if (ability === "Refrigerate" && tempType === "Normal") {
+			maxMoveName = "Max Hailstorm";
+			tempType = "Ice";
+		}
 
 		if (tempBP == 0) {
 			maxMoveName = "Max Guard";

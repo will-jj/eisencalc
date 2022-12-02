@@ -1,3 +1,4 @@
+// used in primary calc
 function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	checkAirLock(p1, field);
 	checkAirLock(p2, field);
@@ -39,6 +40,7 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	return results;
 }
 
+// used in mass calc
 function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
@@ -82,7 +84,7 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 	}
 	if (field.isProtect) {
-	  isQuarteredByProtect = true;
+		isQuarteredByProtect = true;
 	}
 
 	if (move.isMax) {
@@ -162,7 +164,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 
 	case "Revelation Dance":
-		move.type = attacker.type1;
+		move.type = attacker.type1; // always just takes on the first type, even in tera
 		break;
 
 	case "Tera Blast":
@@ -170,15 +172,15 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 
 	case "Raging Bull":
-		move.type = attacker.type2 ? attacker.type2 : attacker.type1;
+		move.type = attacker.name === "Tauros-Paldea" ? "Fighting" : attacker.name === "Tauros-Paldea-Aqua" ? "Water" : attacker.name === "Tauros-Paldea-Blaze" ? "Fire" : "Normal";
 		break;
 	}
 
-	var isAerilate = attacker.ability === "Aerilate" && move.type === "Normal" && move.name !== "Revelation Dance";
-	var isPixilate = attacker.ability === "Pixilate" && move.type === "Normal" && move.name !== "Revelation Dance";
-	var isRefrigerate = attacker.ability === "Refrigerate" && move.type === "Normal" && move.name !== "Revelation Dance";
-	var isGalvanize = attacker.ability === "Galvanize" && move.type === "Normal" && move.name !== "Revelation Dance";
-	var isNormalize = attacker.ability === "Normalize" && (["Hidden Power", "Weather Ball", "Natural Gift", "Judgment", "Techno Blast", "Revelation Dance", "Multi-Attack"].indexOf(move.name) === -1) && !move.isZ;
+	var isAerilate = attacker.ability === "Aerilate" && move.type === "Normal" && move.name !== "Revelation Dance" && move.name !== "Tera Blast"; // Raging Bull could be here
+	var isPixilate = attacker.ability === "Pixilate" && move.type === "Normal" && move.name !== "Revelation Dance" && move.name !== "Tera Blast";
+	var isRefrigerate = attacker.ability === "Refrigerate" && move.type === "Normal" && move.name !== "Revelation Dance" && move.name !== "Tera Blast";
+	var isGalvanize = attacker.ability === "Galvanize" && move.type === "Normal" && move.name !== "Revelation Dance" && move.name !== "Tera Blast";
+	var isNormalize = attacker.ability === "Normalize" && (["Hidden Power", "Weather Ball", "Natural Gift", "Judgment", "Techno Blast", "Revelation Dance", "Multi-Attack", "Tera Blast"].indexOf(move.name) === -1) && !move.isZ;
 	if (!move.isZ) { //Z-Moves don't receive -ate type changes
 		if (isAerilate) {
 			move.type = "Flying";
@@ -196,6 +198,7 @@ function getDamageResult(attacker, defender, move, field) {
 			description.attackerAbility = attacker.ability;
 		}
 	}
+	// there's still a few questions about how tera interacts with -ate, but leaving it alone for now (how does tera Normal work?)
 
 	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
 	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity) : 1;
@@ -373,8 +376,10 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Expanding Force":
-		basePower = move.bp * (field.terrain === "Psychic" ? 1.5 : 1);
-		move.isSpread = (field.terrain === "Psychic");
+		if (field.terrain === "Psychic") {
+			basePower = move.bp * 1.5;
+			move.isSpread = true;
+		}
 		description.moveBP = basePower;
 		break;
 	case "Triple Axel":
@@ -564,12 +569,8 @@ function getDamageResult(attacker, defender, move, field) {
 	////////////////////////////////
 	var attack;
 	var attackSource = move.name === "Foul Play" ? defender : attacker;
-	if (move.usesHighestAttackStat) {
-		if (move.name === "Tera Blast" && !attacker.isTerastal) {
-			// nothing happens
-		} else {
-			move.category = attackSource.stats[AT] >= attackSource.stats[SA] ? "Physical" : "Special";
-		}
+	if (move.usesHighestAttackStat || (move.name === "Tera Blast" && attacker.isTerastal)) {
+		move.category = attackSource.stats[AT] > attackSource.stats[SA] ? "Physical" : "Special";
 	}
 	var attackStat = move.name === "Body Press" ? DF : move.category === "Physical" ? AT : SA;
 	description.attackEVs = attacker.evs[attackStat] +
@@ -641,11 +642,11 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerItem = attacker.item;
 	}
 
-	var attackerHighest = checkProtoQuarkHighest(attacker, field.weather, field.terrain);
+	var attackerProtoQuark = checkProtoQuarkHighest(attacker, field.weather, field.terrain);
 	if ((attacker.ability === "Hadron Engine" && field.terrain === "Electric" && move.category === "Special") ||
 		(attacker.ability === "Orichalcum Pulse" && field.weather.indexOf("Sun") > -1 && move.category === "Physical") ||
-		(attackerHighest === "at" && move.category === "Physical") ||
-		(attackerHighest === "sa" && move.category === "Special")) {
+		(attackerProtoQuark === "Atk" && move.category === "Physical") ||
+		(attackerProtoQuark === "SpA" && move.category === "Special")) {
 		atMods.push(0x14CD); // as of writing, Smogon and just Smogon says 1.3x
 		description.attackerAbility = attacker.ability;
 	}
@@ -709,8 +710,8 @@ function getDamageResult(attacker, defender, move, field) {
 		dfMods.push(0xC00);
 		description.isRuinDef = true;
 	}
-	var defenderHighest = checkProtoQuarkHighest(defender, field.weather, field.terrain);
-	if ((defenderHighest === "df" && move.category === "Physical") || (defenderHighest === "sd" && move.category === "Special")) {
+	var defenderProtoQuark = checkProtoQuarkHighest(defender, field.weather, field.terrain);
+	if ((defenderProtoQuark === "Def" && move.category === "Physical") || (defenderProtoQuark === "SpD" && move.category === "Special")) {
 		dfMods.push(0x14CD);
 		description.defenderAbility = defAbility;
 	}
@@ -1055,7 +1056,7 @@ function getFinalSpeed(pokemon, weather, terrain) {
             pokemon.ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
             pokemon.ability === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
-	} else if (checkProtoQuarkHighest(pokemon, weather, terrain) === "sp") {
+	} else if (checkProtoQuarkHighest(pokemon, weather, terrain) === "Spe") {
 		speed = Math.floor(speed * 1.5);
 	}
 	return speed;
@@ -1142,22 +1143,22 @@ function checkProtoQuarkHighest(pokemon, weather, terrain) {
 	if ((pokemon.ability === "Protosynthesis" && (pokemon.item === "Booster Energy" || weather.indexOf("Sun") > -1)) ||
 		(pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric"))) {
 		var stats = pokemon.stats;
-		var highestStat = "at";
+		var highestStat = "Atk";
 		var highestValue = stats.at;
 		if (stats.df > highestValue) {
-			highestStat = "df";
+			highestStat = "Def";
 			highestValue = stats.df;
 		}
 		if (stats.sa > highestValue) {
-			highestStat = "sa";
+			highestStat = "SpA";
 			highestValue = stats.sa;
 		}
 		if (stats.sd > highestValue) {
-			highestStat = "sd";
+			highestStat = "SpD";
 			highestValue = stats.sd;
 		}
 		if (stats.sp > highestValue) {
-			return "sp";
+			return "Spe";
 		}
 		return highestStat;
 	}
