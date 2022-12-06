@@ -7,6 +7,7 @@ $("#p2 .ability").bind("keyup change", function () {
 
 $("#p2 .item").bind("keyup change", function () {
 	autosetStatus("#p2", $(this).val());
+	autoSetMultiHits($(this).closest(".poke-info"));
 });
 
 var resultLocations = [[], []];
