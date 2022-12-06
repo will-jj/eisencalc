@@ -2132,6 +2132,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"type": "Normal",
 		"category": "Physical",
 		"bypassesProtect": true,
+		"hasPriority": true,
 		"acc": 100
 	},
 	"Fire Fang": {
@@ -3630,6 +3631,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"bp": 15,
 		"type": "Water",
 		"category": "Physical",
+		"hasPriority": true,
 		"maxMultiHits": 5,
 		"acc": 100
 	}
@@ -5247,7 +5249,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"type": "Water",
 		"category": "Physical",
 		"makesContact": true,
-		"hasSecondaryEffect": true, // No actual effect, but is affected by Sheer Force
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Armor Cannon": {
@@ -5374,7 +5376,8 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"category": "Physical",
 		"makesContact": true,
 		"isPunch": true,
-		"hasSecondaryEffect": true,
+		"hasSecondaryEffect": true, // No actual effect, but is affected by Sheer Force
+		"hasPriority": true,
 		"acc": 100
 	},
 	"Kowtow Cleave": {
