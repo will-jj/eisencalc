@@ -192,7 +192,7 @@ $(".percent-hp").keyup(function () {
 
 var lastAura = [false, false, false];
 $(".ability").bind("keyup change", function () {
-	autoSetMultiHits($(this).val(), $(this).closest(".poke-info"));
+	autoSetMultiHits($(this).closest(".poke-info"));
 	autoSetAura();
 	autoSetTerrain();
 });
@@ -312,6 +312,7 @@ function autosetWeather(ability, i) {
 
 $("#p1 .item").bind("keyup change", function () {
 	autosetStatus("#p1", $(this).val());
+	autoSetMultiHits($(this).closest(".poke-info"));
 });
 
 var lastManualStatus = {"#p1": "Healthy", "#p2": "Healthy"};
@@ -371,7 +372,9 @@ function autoSetRuin(i, side) {
 	}
 }
 
-function autoSetMultiHits(ability, pokeInfo) {
+function autoSetMultiHits(pokeInfo) {
+	var ability = pokeInfo.find(".ability").val();
+	var item = pokeInfo.find(".item").val();
 	for (var i = 1; i <= 4; i++) {
 		var moveInfo = pokeInfo.find(".move" + i);
 		var moveName = moveInfo.find("select.move-selector").val();
@@ -380,7 +383,7 @@ function autoSetMultiHits(ability, pokeInfo) {
 		} else if (moveName === "Triple Axel") {
 			moveInfo.children(".move-hits").val(3);
 		} else {
-			moveInfo.children(".move-hits").val(ability === "Skill Link" ? 5 : 3);
+			moveInfo.children(".move-hits").val(ability === "Skill Link" || item === "Loaded Dice" ? 5 : 3);
 		}
 	}
 }
@@ -409,7 +412,7 @@ $(".move-selector").change(function () {
 			moveHits.append($("<option></option>").attr("value", i).text(i + " hits"));
 		}
 		moveHits.show();
-		moveHits.val($(this).closest(".poke-info").find(".ability").val() === "Skill Link" || moveName === "Population Bomb" ? maxMultiHits : 3);
+		moveHits.val($(this).closest(".poke-info").find(".ability").val() === "Skill Link" || $(this).closest(".poke-info").find(".item").val() === "Loaded Dice" || moveName === "Population Bomb" ? maxMultiHits : 3);
 	} else {
 		moveHits.hide();
 	}
@@ -736,7 +739,7 @@ function Pokemon(pokeInfo) {
 				"category": defaultDetails.category,
 				"isCrit": !!defaultDetails.alwaysCrit,
 				"acc": defaultDetails.acc,
-				"hits": defaultDetails.maxMultiHits ? (this.ability === "Skill Link" || moveName === "Population Bomb" ? defaultDetails.maxMultiHits : 3) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
+				"hits": defaultDetails.maxMultiHits ? (this.ability === "Skill Link" || this.item === "Loaded Dice" || moveName === "Population Bomb" ? defaultDetails.maxMultiHits : 3) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 				"usedTimes": 1
 			}));
 		}

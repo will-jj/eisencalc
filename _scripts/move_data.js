@@ -68,6 +68,7 @@ var MOVES_RBY = {
 		"bp": 65,
 		"type": "Water",
 		"category": "Special",
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Clamp": {
@@ -148,7 +149,8 @@ var MOVES_RBY = {
 		"bp": 60,
 		"type": "Dragon",
 		"category": "Special",
-		"hasSecondaryEffect": true
+		"hasSecondaryEffect": true,
+		"acc": 100
 	},
 	"Dream Eater": {
 		"bp": 100,
@@ -370,6 +372,13 @@ var MOVES_RBY = {
 		"percentHealed": 0.5,
 		"acc": 100
 	},
+	"Mega Kick": {
+		"bp": 120,
+		"type": "Normal",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 75
+	},
 	"Minimize": {
 		"bp": 0,
 		"type": "Normal"
@@ -527,6 +536,7 @@ var MOVES_RBY = {
 	"Sludge": {
 		"bp": 65,
 		"type": "Poison",
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Soft-Boiled": {
@@ -670,12 +680,14 @@ var MOVES_RBY = {
 		"bp": 80,
 		"type": "Normal",
 		"category": "Special",
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Twineedle": {
 		"bp": 25,
 		"type": "Bug",
 		"isTwoHit": true,
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Waterfall": {
@@ -1052,7 +1064,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 20,
 		"type": "Ground",
 		"category": "Special",
-		"hasSecondaryEffect": true
+		"hasSecondaryEffect": true,
+		"acc": 100
 	},
 	"Nightmare": {
 		"bp": 0,
@@ -1063,7 +1076,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"type": "Water",
 		"category": "Special",
 		"acc": 85,
-		"hasSecondaryEffect": true
+		"hasSecondaryEffect": true,
+		"acc": 85
 	},
 	"Pain Split": {
 		"bp": 0,
@@ -1097,6 +1111,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"type": "Normal",
 		"category": "Physical",
 		"makesContact": true,
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Razor Leaf": {"alwaysCrit": false},
@@ -3143,6 +3158,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"bp": 30,
 		"type": "Bug",
 		"category": "Special",
+		"hasSecondaryEffect": true,
 		"isSpread": true,
 		"acc": 100
 	},
@@ -3791,6 +3807,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"category": "Special",
 		"isSound": true,
 		"isSpread": true,
+		"hasSecondaryEffect": true,
 		"isZ": true
 	},
 	"Clear Smog": {"zp": 100},
@@ -4440,6 +4457,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"bp": 175,
 		"type": "Electric",
 		"category": "Special",
+		"hasSecondaryEffect": true,
 		"isZ": true
 	},
 	"Stomp": {"zp": 120},
@@ -4509,6 +4527,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"type": "Dark",
 		"category": "Physical",
 		"makesContact": true,
+		"hasSecondaryEffect": true,
 		"zp": 160,
 		"acc": 100
 	},
@@ -4689,167 +4708,204 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
-	"Mega Kick": {
-		"bp": 120,
-		"acc": 75,
-		"type": "Normal",
-		"category": "Physical",
-		"makesContact": true,
-	},
 	"Heat Crash": {
 		"bp": 1,
 		"acc": 100,
 		"type": "Fire",
 		"category": "Physical",
-		"makesContact": true
+		"makesContact": true,
+		"acc": 100
 	},
 	"Dynamax Cannon": {
 		"bp": 100,
 		"type": "Dragon",
 		"category": "Special",
+		"acc": 100
 	},
 	"Snipe Shot": {
 		"bp": 80,
 		"type": "Water",
 		"category": "Special",
+		"acc": 100
 	},
 	"Jaw Lock": {
 		"bp": 80,
 		"type": "Dark",
 		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
 	},
 	"Dragon Darts": {
 		"bp": 50,
 		"type": "Dragon",
 		"category": "Physical",
-		"isTwoHit": true
+		"isTwoHit": true,
+		"acc": 100
 	},
 	"Bolt Beak": {
 		"bp": 85,
 		"type": "Electric",
 		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
 	},
 	"Bolt Beak (Doubled)": {
 		"bp": 170,
 		"type": "Electric",
 		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
 	},
 	"Fishious Rend": {
 		"bp": 85,
 		"type": "Water",
 		"category": "Physical",
 		"isBite": true,
+		"makesContact": true,
+		"acc": 100
 	},
 	"Fishious Rend (Doubled)": {
 		"bp": 170,
 		"type": "Water",
 		"category": "Physical",
 		"isBite": true,
+		"makesContact": true,
+		"acc": 100
 	},
 	"Body Press": {
 		"bp": 80,
 		"type": "Fighting",
 		"makesContact": true,
 		"category": "Physical",
+		"acc": 100
 	},
 	"Drum Beating": {
 		"bp": 80,
 		"type": "Grass",
 		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"acc": 100
 	},
 	"Snap Trap": {
 		"bp": 35,
 		"type": "Grass",
 		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
 	},
 	"Pyro Ball": {
 		"bp": 120,
 		"type": "Fire",
 		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"acc": 90
 	},
 	"Behemoth Blade": {
 		"bp": 100,
 		"type": "Steel",
 		"isSlicing": true,
 		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
 	},
 	"Behemoth Bash": {
 		"bp": 100,
 		"type": "Steel",
 		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
 	},
 	"Aura Wheel": {
 		"bp": 110,
 		"type": "Electric",
 		"category": "Physical",
-	},
-	"Aura Wheel (Electric)": {
-		"bp": 110,
-		"type": "Electric",
-		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"acc": 100
 	},
 	"Aura Wheel (Dark)": {
 		"bp": 110,
 		"type": "Dark",
 		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"acc": 100
 	},
 	"Breaking Swipe": {
 		"bp": 60,
 		"type": "Dragon",
 		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"makesContact": true,
 		"isSpread": true,
+		"acc": 100
 	},
 	"Branch Poke": {
 		"bp": 40,
 		"type": "Grass",
 		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
 	},
 	"Overdrive": {
 		"bp": 80,
 		"type": "Electric",
 		"category": "Special",
 		"isSound": true,
-		"isSpread": true
+		"isSpread": true,
+		"acc": 100
 	},
 	"Apple Acid": {
 		"bp": 80,
 		"type": "Grass",
 		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 100
 	},
 	"Grav Apple": {
 		"bp": 80,
 		"type": "Grass",
 		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"acc": 100
 	},
 	"Spirit Break": {
 		"bp": 75,
 		"type": "Fairy",
 		"category": "Physical",
+		"hasSecondaryEffect": true,
+		"makesContact": true,
+		"acc": 100
 	},
 	"Strange Steam": {
 		"bp": 90,
 		"type": "Fairy",
 		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 95
 	},
 	"False Surrender": {
 		"bp": 80,
 		"type": "Dark",
 		"category": "Physical",
+		"makesContact": true,
+		"acc": 101
 	},
 	"Meteor Assault": {
 		"bp": 150,
 		"type": "Fighting",
 		"category": "Physical",
+		"acc": 100
 	},
 	"Eternabeam": {
 		"bp": 160,
 		"type": "Dragon",
 		"category": "Special",
+		"acc": 90
 	},
 	"Steel Beam": {
 		"bp": 140,
 		"type": "Steel",
 		"category": "Special",
+		"acc": 95
 	},
 	"Stuff Cheeks": {
 		"bp": 0,
@@ -4964,7 +5020,14 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"acc": 101
 	},
 	"Multi-Attack": {
-		"bp": 120,
+		"bp": 120
+	},
+	"Shell Side Arm": {
+		"bp": 90,
+		"type": "Poison",
+		"category": "Special",
+		"usesHighestAttackStat": true,
+		"acc": 100
 	},
 	"Terrain Pulse": {
 		"bp": 50,
@@ -4977,12 +5040,14 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 70,
 		"type": "Fire",
 		"category": "Special",
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Flip Turn": {
 		"bp": 60,
 		"type": "Water",
 		"category": "Physical",
+		"makesContact": true,
 		"acc": 100
 	},
 	"Rising Voltage": {
@@ -4995,6 +5060,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 70,
 		"type": "Grass",
 		"category": "Physical",
+		"makesContact": true,
 		"acc": 100
 	},
 	"Triple Axel": {
@@ -5016,6 +5082,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 40,
 		"type": "Flying",
 		"category": "Physical",
+		"makesContact": true,
 		"acc": 90,
 		"isTwoHit": true
 	},
@@ -5023,20 +5090,21 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 80,
 		"type": "Psychic",
 		"category": "Special",
-		"acc": 100,
+		"acc": 100
 	},
 	"Skitter Smack": {
 		"bp": 70,
 		"type": "Bug",
 		"category": "Physical",
 		"hasSecondaryEffect": true,
+		"makesContact": true,
 		"acc": 90
 	},
 	"Meteor Beam": {
 		"bp": 120,
 		"type": "Rock",
 		"category": "Special",
-		"acc": 90,
+		"acc": 90
 	},
 	"Poltergeist": {
 		"bp": 110,
@@ -5055,18 +5123,21 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 75,
 		"type": "Dark",
 		"category": "Physical",
+		"makesContact": true,
 		"acc": 100
 	},
 	"Lash Out (Doubled)": {
 		"bp": 150,
 		"type": "Dark",
 		"category": "Physical",
+		"makesContact": true,
 		"acc": 100
 	},
 	"Steel Roller": {
 		"bp": 130,
 		"type": "Steel",
 		"category": "Physical",
+		"makesContact": true,
 		"acc": 100
 	},
 	"Misty Explosion": {
@@ -5080,6 +5151,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 25,
 		"type": "Water",
 		"category": "Physical",
+		"makesContact": true,
 		"acc": 100,
 		"alwaysCrit": true
 	},
@@ -5087,6 +5159,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 80,
 		"type": "Dark",
 		"category": "Physical",
+		"makesContact": true,
 		"acc": 100,
 		"alwaysCrit": true
 	},
@@ -5106,6 +5179,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 80,
 		"type": "Psychic",
 		"category": "Special",
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Freezing Glare": {
@@ -5128,6 +5202,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"type": "Fighting",
 		"category": "Physical",
 		"hasSecondaryEffect": true,
+		"makesContact": true,
 		"acc": 100
 	},
 	"Glacial Lance": {
@@ -5158,6 +5233,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"acc": 100
 	}
 });
+
 var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 	"Aqua Cutter": {
 		"bp": 70,
@@ -5171,7 +5247,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"type": "Water",
 		"category": "Physical",
 		"makesContact": true,
-		"hasSecondaryEffect": true,
+		"hasSecondaryEffect": true, // No actual effect, but is affected by Sheer Force
 		"acc": 100
 	},
 	"Armor Cannon": {
@@ -5232,7 +5308,8 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 	},
 	"Comeuppance": {
 		"bp": 0,
-		"type": "Dark"
+		"type": "Dark",
+		"makesContact": true
 	},
 	"Doodle": {
 		"bp": 0,
@@ -5297,6 +5374,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"category": "Physical",
 		"makesContact": true,
 		"isPunch": true,
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Kowtow Cleave": {
@@ -5353,6 +5431,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 80,
 		"type": "Dragon",
 		"category": "Physical",
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Population Bomb": {
@@ -5399,7 +5478,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 40,
 		"type": "Rock",
 		"category": "Physical",
-		"makesContact": true,
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Shed Tail": {
@@ -5440,6 +5519,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"type": "Fire",
 		"category": "Special",
 		"isSound": true,
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Trailblaze": {
@@ -5504,6 +5584,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"category": "Physical",
 		"isSlicing": true,
 		"makesContact": true,
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Chloroblast": {
@@ -5607,6 +5688,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"category": "Physical",
 		"isSlicing": true,
 		"makesContact": true,
+		"hasSecondaryEffect": true,
 		"acc": 90
 	},
 	"Take Heart": {
