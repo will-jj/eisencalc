@@ -383,7 +383,7 @@ function autoSetMultiHits(pokeInfo) {
 		} else if (moveName === "Triple Axel") {
 			moveInfo.children(".move-hits").val(3);
 		} else {
-			moveInfo.children(".move-hits").val(ability === "Skill Link" || item === "Loaded Dice" ? 5 : 3);
+			moveInfo.children(".move-hits").val(ability === "Skill Link" ? 5 : (item === "Loaded Dice" ? 4 : 3));
 		}
 	}
 }
@@ -412,7 +412,7 @@ $(".move-selector").change(function () {
 			moveHits.append($("<option></option>").attr("value", i).text(i + " hits"));
 		}
 		moveHits.show();
-		moveHits.val($(this).closest(".poke-info").find(".ability").val() === "Skill Link" || $(this).closest(".poke-info").find(".item").val() === "Loaded Dice" || moveName === "Population Bomb" ? maxMultiHits : 3);
+		moveHits.val($(this).closest(".poke-info").find(".ability").val() === "Skill Link" || moveName === "Population Bomb" ? maxMultiHits : ($(this).closest(".poke-info").find(".item").val() === "Loaded Dice" ? 4 : 3));
 	} else {
 		moveHits.hide();
 	}
@@ -739,7 +739,7 @@ function Pokemon(pokeInfo) {
 				"category": defaultDetails.category,
 				"isCrit": !!defaultDetails.alwaysCrit,
 				"acc": defaultDetails.acc,
-				"hits": defaultDetails.maxMultiHits ? (this.ability === "Skill Link" || this.item === "Loaded Dice" || moveName === "Population Bomb" ? defaultDetails.maxMultiHits : 3) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
+				"hits": defaultDetails.maxMultiHits ? (this.ability === "Skill Link" || moveName === "Population Bomb" ? defaultDetails.maxMultiHits : (this.item === "Loaded Dice" ? 4 : 3)) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 				"usedTimes": 1
 			}));
 		}
