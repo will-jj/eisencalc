@@ -206,6 +206,11 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	// there's still a few questions about how tera interacts with -ate, but leaving it alone for now (how does tera Normal work?)
 
+	if ((attacker.ability === "Gale Wings" && move.type === "Flying") ||
+		(move.name === "Grassy Glide" && field.terrain === "Grassy" && isGrounded(attacker, field.isGravity, attacker.ability === "Levitate"))) {
+		move.hasPriority = true;
+	}
+
 	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
 	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
@@ -256,7 +261,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.name === "Steel Roller" && !field.terrain) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if (move.hasPriority || (move.name === "Grassy Glide" && field.terrain === "Grassy Terrain") || (move.type === "Flying" && attacker.ability === "Gale Wings")) {
+	if (move.hasPriority) {
 		if (field.terrain === "Psychic" && isGrounded(defender, field.isGravity, defAbility === "Levitate")) {
 			description.terrain = field.terrain;
 			return {"damage": [0], "description": buildDescription(description)};
@@ -599,6 +604,13 @@ function getDamageResult(attacker, defender, move, field) {
 
 	basePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096));
 	basePower = attacker.isChild ? basePower / (gen >= 7 ? 4 : 2) : basePower;
+	
+	if (attacker.isTerastal && move.type === attacker.type1 && basePower < 60 && !move.hasPriority && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit) {
+		// This effect is probably misplaced but should be close enough for the time being. Waiting on more research
+		basePower = 60; // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9424394
+		description.moveBP = 60;
+
+	}
 
 	////////////////////////////////
 	////////// (SP)ATTACK //////////
