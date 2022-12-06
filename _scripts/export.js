@@ -56,11 +56,19 @@ function exportToPsFormat(pokeInfo) {
 	var evsAlert = false;
 	var name = pokemon.name;
 	if (name.indexOf("Mega ") != -1) {
-		var speciesName = name.substring(0, name.indexOf("Mega") - 1) + name.substring(name.indexOf("Mega") + 4, name.length);
-		if ((speciesName.indexOf(" X") == speciesName.length - 2) || (speciesName.indexOf(" Y") == speciesName.length - 2)) {
-			speciesName = speciesName.substring(0, speciesName.length - 2);
+		var speciesName = name.substring(name.indexOf("Mega ") + 5, name.length);
+		if (speciesName.indexOf(" X") == speciesName.length - 2) {
+			speciesName = speciesName.substring(0, speciesName.length - 2) + "-Mega-X";
 		}
-		pokemon.item = MEGA_STONE_LOOKUP[name];
+		else if (speciesName.indexOf(" Y") == speciesName.length - 2) {
+			speciesName = speciesName.substring(0, speciesName.length - 2) + "-Mega-Y";
+		}
+		else {
+			speciesName += "-Mega";
+		}
+		if (speciesName !== "Rayquaza-Mega") {
+			pokemon.item = MEGA_STONE_LOOKUP[name];
+		}
 	} else if (name.indexOf("-Blade") != -1) {
 		var speciesName = name.substring(0, name.indexOf("-")) + name.substring(name.indexOf("-") + 6, name.length);
 	} else if (name.indexOf("-Both") != -1) {

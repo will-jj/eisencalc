@@ -467,7 +467,7 @@ $(".set-selector, #levelswitch").bind("change click keyup keydown", function () 
 		pokeObj.find(".max-level").val(10);
 		pokeObj.find(".max").prop("checked", false);
 		pokeObj.find(".max").change();
-		pokeObj.find(".tera-type").val("Normal");
+		pokeObj.find(".tera-type").val(pokemon.t1);
 		pokeObj.find(".tera").prop("checked", false);
 		pokeObj.find(".tera").change();
 		var moveObj;
@@ -486,7 +486,7 @@ $(".set-selector, #levelswitch").bind("change click keyup keydown", function () 
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			setSelectValueIfValid(abilityObj, set.ability ? set.ability : pokemon.ab, "");
-			setSelectValueIfValid(pokeObj.find(".tera-type"), set.teraType, "Normal");
+			setSelectValueIfValid(pokeObj.find(".tera-type"), set.teraType, pokemon.t1);
 			setSelectValueIfValid(itemObj, set.item, "");
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
@@ -505,7 +505,7 @@ $(".set-selector, #levelswitch").bind("change click keyup keydown", function () 
 			}
 			pokeObj.find(".nature").val("Hardy");
 			setSelectValueIfValid(abilityObj, pokemon.ab, "");
-			pokeObj.find(".tera-type").val("Normal");
+			pokeObj.find(".tera-type").val(pokemon.t1);
 			itemObj.val("");
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
@@ -539,12 +539,12 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 		if (set.item) {
 		// Repurpose the previous filtering code to provide the "different default" logic
 			if (set.item.includes("ite") && !(set.item.includes("ite Y")) && !(set.item.includes("ite Herb")) ||
-        pokemonName === "Groudon" && set.item.includes("Red Orb") ||
-        pokemonName === "Kyogre" && set.item.includes("Blue Orb") ||
-        pokemonName === "Meloetta" && set.moves.includes("Relic Song") ||
-        pokemonName === "Rayquaza" && set.moves.includes("Dragon Ascent") ||
-        pokemonName === "Necrozma-Dusk Mane" && set.item.includes("Ultranecrozium Z") ||
-        pokemonName === "Necrozma-Dawn Wings" && set.item.includes("Ultranecrozium Z")) {
+				pokemonName === "Groudon" && set.item.includes("Red Orb") ||
+				pokemonName === "Kyogre" && set.item.includes("Blue Orb") ||
+				pokemonName === "Meloetta" && set.moves.includes("Relic Song") ||
+				pokemonName === "Rayquaza" && set.moves.includes("Dragon Ascent") ||
+				pokemonName === "Necrozma-Dusk Mane" && set.item.includes("Ultranecrozium Z") ||
+				pokemonName === "Necrozma-Dawn Wings" && set.item.includes("Ultranecrozium Z")) {
 				defaultForme = 1;
 			} else if (set.item.includes("ite Y")) {
 				defaultForme = 2;
