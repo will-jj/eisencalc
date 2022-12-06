@@ -383,7 +383,7 @@ function autoSetMultiHits(pokeInfo) {
 		} else if (moveName === "Triple Axel") {
 			moveInfo.children(".move-hits").val(3);
 		} else {
-			moveInfo.children(".move-hits").val(ability === "Skill Link" || item === "Loaded Dice" ? 5 : 3);
+			moveInfo.children(".move-hits").val(ability === "Skill Link" ? 5 : (item === "Loaded Dice" ? 4 : 3));
 		}
 	}
 }
@@ -412,7 +412,7 @@ $(".move-selector").change(function () {
 			moveHits.append($("<option></option>").attr("value", i).text(i + " hits"));
 		}
 		moveHits.show();
-		moveHits.val($(this).closest(".poke-info").find(".ability").val() === "Skill Link" || $(this).closest(".poke-info").find(".item").val() === "Loaded Dice" || moveName === "Population Bomb" ? maxMultiHits : 3);
+		moveHits.val($(this).closest(".poke-info").find(".ability").val() === "Skill Link" || moveName === "Population Bomb" ? maxMultiHits : ($(this).closest(".poke-info").find(".item").val() === "Loaded Dice" ? 4 : 3));
 	} else {
 		moveHits.hide();
 	}
@@ -617,19 +617,19 @@ function getTerrainEffects() {
 		var id = $(this).closest(".poke-info").prop("id");
 		var terrainValue = $("input:checkbox[name='terrain']:checked").val();
 		if (terrainValue === "Electric") {
-			$("#" + id).find("[value='Asleep']").prop("disabled", isGrounded($("#" + id)));
+			$("#" + id).find("[value='Asleep']").prop("disabled", isGroundedTerrain($("#" + id)));
 		} else if (terrainValue === "Misty") {
-			$("#" + id).find(".status").prop("disabled", isGrounded($("#" + id)));
+			$("#" + id).find(".status").prop("disabled", isGroundedTerrain($("#" + id)));
 		}
 		break;
 	default:
 		$("input:checkbox[name='terrain']").not(this).prop("checked", false);
 		if ($(this).prop("checked") && $(this).val() === "Electric") {
-			$("#p1").find("[value='Asleep']").prop("disabled", isGrounded($("#p1")));
-			$("#p2").find("[value='Asleep']").prop("disabled", isGrounded($("#p2")));
+			$("#p1").find("[value='Asleep']").prop("disabled", isGroundedTerrain($("#p1")));
+			$("#p2").find("[value='Asleep']").prop("disabled", isGroundedTerrain($("#p2")));
 		} else if ($(this).prop("checked") && $(this).val() === "Misty") {
-			$("#p1").find(".status").prop("disabled", isGrounded($("#p1")));
-			$("#p2").find(".status").prop("disabled", isGrounded($("#p2")));
+			$("#p1").find(".status").prop("disabled", isGroundedTerrain($("#p1")));
+			$("#p2").find(".status").prop("disabled", isGroundedTerrain($("#p2")));
 		} else {
 			$("#p1").find("[value='Asleep']").prop("disabled", false);
 			$("#p1").find(".status").prop("disabled", false);
@@ -640,7 +640,7 @@ function getTerrainEffects() {
 	}
 }
 
-function isGrounded(pokeInfo) {
+function isGroundedTerrain(pokeInfo) {
 	return $("#gravity").prop("checked") || pokeInfo.find(".type1").val() !== "Flying" && pokeInfo.find(".type2").val() !== "Flying" &&
             pokeInfo.find(".ability").val() !== "Levitate" && pokeInfo.find(".item").val() !== "Air Balloon";
 }
@@ -739,7 +739,7 @@ function Pokemon(pokeInfo) {
 				"category": defaultDetails.category,
 				"isCrit": !!defaultDetails.alwaysCrit,
 				"acc": defaultDetails.acc,
-				"hits": defaultDetails.maxMultiHits ? (this.ability === "Skill Link" || this.item === "Loaded Dice" || moveName === "Population Bomb" ? defaultDetails.maxMultiHits : 3) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
+				"hits": defaultDetails.maxMultiHits ? (this.ability === "Skill Link" || moveName === "Population Bomb" ? defaultDetails.maxMultiHits : (this.item === "Loaded Dice" ? 4 : 3)) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 				"usedTimes": 1
 			}));
 		}
