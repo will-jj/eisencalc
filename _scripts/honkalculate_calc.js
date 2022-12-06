@@ -67,12 +67,11 @@ function performCalculations() {
 	var selectedTier = getSelectedTier(); // selectedTier can be: All, 28, 40, Tower, RS, SM*, DM*.  *Singles and Doubles Master
 	var setOptions = getSetOptions();
 	var dataSet = [];
-	var pokeInfo = $("#p1");
-	var userPoke = new Pokemon(pokeInfo);
-	var startingBoosts = userPoke.boosts;
+	var userPoke = new Pokemon($("#p1"));
+	var startingBoosts = [userPoke.boosts.at, userPoke.boosts.df, userPoke.boosts.sa, userPoke.boosts.sd, userPoke.boosts.sp, userPoke.boosts.ac, userPoke.boosts.es];
 	var counter = 0;
 	for (var i = 0; i < setOptions.length; i++) {
-		var setOptionsID = setOptions[i].id; // speciesName (setName)
+		var setOptionsID = setOptions[i].id; // the string is formatted as "speciesName (setName)"
 		if (!setOptionsID || setOptionsID.indexOf("Blank Set") !== -1) {
 			continue;
 		}
@@ -84,7 +83,7 @@ function performCalculations() {
 		}
 		else if (selectedTier === "All") {
 			var customDexSpecies = SETDEX_CUSTOM[setPokemon.name];
-			if ((customDexSpecies !== undefined) && customDexSpecies[setOptionsID.substring(setOptionsID.indexOf("(") + 1, setOptionsID.length - 1)]) {
+			if (customDexSpecies !== undefined && customDexSpecies[setOptionsID.substring(setOptionsID.indexOf("(") + 1, setOptionsID.length - 1)]) {
 				continue;
 			}
 			// let set be calculated
@@ -143,13 +142,21 @@ function performCalculations() {
 		data.push(((mode === "one-vs-all") ? defender.ability : attacker.ability) || "");
 		data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
 		dataSet.push(data);
-		counter++;
-		userPoke.boosts = startingBoosts;
+
+		// fields in the boosts and stats objects should be the only things that get changed in the Pokemon object during mass calc
+		userPoke.boosts.at = startingBoosts[0];
+		userPoke.boosts.df = startingBoosts[1];
+		userPoke.boosts.sa = startingBoosts[2];
+		userPoke.boosts.sd = startingBoosts[3];
+		userPoke.boosts.sp = startingBoosts[4];
+		userPoke.boosts.ac = startingBoosts[5];
+		userPoke.boosts.es = startingBoosts[6];
 		userPoke.stats = [];
+		counter++;
 	}
 	var pokemon = mode === "one-vs-all" ? attacker : defender;
 	table.rows.add(dataSet).draw();
-	console.log("honkalculated " + counter + " sets.");
+	return counter;
 }
 
 function getSelectedTier() {
@@ -264,7 +271,10 @@ function placeBsBtn() {
 	$("#holder-2_wrapper").prepend(honkalculator);
 	$("#honkalculate").click(function () {
 		table.clear();
-		performCalculations();
+		var startTime = performance.now();
+		var setCount = performCalculations();
+		var endTime = performance.now();
+		console.log("honkalculated " + setCount + " sets in " + Math.round(endTime - startTime) + "ms");
 	});
 }
 
@@ -340,17 +350,25 @@ function getBottomOffset(obj) {
 	return obj.offset().top + obj.outerHeight();
 }
 
-function calcTotalMod() {
+function getFinalSpeedHonk(pokemon) {
+	var userPoke = new Pokemon($("#p1"));
 	var speed = getModifiedStat($(".sp .total").text(), $(".sp .boost").val());
 	var item = $(".item").val();
+	var ability = $(".ability").val();
+	var weather = $("input[name=weather]:checked").attr('value');
+	var terrain = $("input[name=terrain]:checked").attr('value');
+	if ((ability === "Protosynthesis" && (item === "Booster Energy" || weather.indexOf("Sun") > -1)) ||
+		(ability === "Quark Drive" && (item === "Booster Energy" || terrain === "Electric"))) {
+		if (speed > getModifiedStat($(".at .total").text(), $(".at .boost").val()) && speed > getModifiedStat($(".df .total").text(), $(".df .boost").val()) &&
+			speed > getModifiedStat($(".sa .total").text(), $(".sa .boost").val()) && speed > getModifiedStat($(".sd .total").text(), $(".sd .boost").val())) {
+			speed = Math.floor(speed * 1.5);
+		}
+	}
 	if (item === "Choice Scarf") {
 		speed = Math.floor(speed * 1.5);
 	} else if (item === "Macho Brace" || item === "Iron Ball") {
 		speed = Math.floor(speed / 2);
 	}
-	var ability = $(".ability").val();
-	var weather = $("input[name=weather]:checked").attr('value');
-	var terrain = $("input[name=terrain]:checked").attr('value');
 	if (ability === "Chlorophyll" && weather.indexOf("Sun") > -1 ||
             ability === "Sand Rush" && weather === "Sand" ||
             ability === "Swift Swim" && weather.indexOf("Rain") > -1 ||
@@ -358,7 +376,6 @@ function calcTotalMod() {
             ability === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
 	}
-	// for now mass calc won't account for Proto/Quark speed
 	$(".totalMod").text(speed);
 }
 
@@ -386,6 +403,6 @@ $(document).ready(function () {
 	constructDataTable();
 	placeBsBtn();
 
-	$(".calc-trigger").bind("change keyup", calcTotalMod);
-	calcTotalMod();
+	$(".calc-trigger").bind("change keyup", getFinalSpeedHonk);
+	getFinalSpeedHonk();
 });
