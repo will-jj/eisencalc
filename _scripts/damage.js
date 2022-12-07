@@ -8,8 +8,8 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	checkKlutz(p2);
 	checkEvo(p1, p2);
 	checkMinimize(p1, p2);
-	checkSeeds(p1, field);
-	checkSeeds(p2, field);
+	checkSeeds(p1, field.getTerrain());
+	checkSeeds(p2, field.getTerrain());
 	checkAngerShell(p1);
 	checkAngerShell(p2);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
@@ -20,10 +20,10 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), field.getTerrain());
 	checkIntimidate(p1, p2);
 	checkIntimidate(p2, p1);
-	checkZacianZamazaenta(p1);
-	checkZacianZamazaenta(p2);
 	//checkDownload(p1, p2);
 	//checkDownload(p2, p1);
+	checkZacianZamazaenta(p1);
+	checkZacianZamazaenta(p2);
 	p1.stats[AT] = getModifiedStat(p1.rawStats[AT], p1.boosts[AT]);
 	p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
 	p2.stats[AT] = getModifiedStat(p2.rawStats[AT], p2.boosts[AT]);
@@ -48,7 +48,8 @@ function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
 	checkKlutz(defender);
 	checkEvo(attacker, defender);
 	//checkMinimize() appears to be intentionally removed
-	checkSeedsHonk(defender, field);
+	checkSeedsHonk(attacker, field.getTerrain());
+	checkSeedsHonk(defender, field.getTerrain());
 	checkAngerShell(attacker);
 	checkAngerShell(defender);
 	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather(), field.getTerrain());
@@ -57,9 +58,9 @@ function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
 	defender.stats[SP] = getFinalSpeed(defender, field.getWeather(), field.getTerrain());
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
+	checkDownload(attacker, defender);
 	checkZacianZamazaenta(attacker);
 	checkZacianZamazaenta(defender);
-	checkDownload(attacker, defender);
 	attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 	attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 	defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
@@ -173,6 +174,12 @@ function getDamageResult(attacker, defender, move, field) {
 		move.type = attacker.type1; // always just takes on the first type, even in tera
 		break;
 
+	case "Meteor Beam":
+		attacker.boosts[SA] = attacker.ability === "Simple" ? Math.min(6, attacker.boosts[SA] + 2) : (attacker.ability === "Contrary" ? Math.max(-6, attacker.boosts[SA] - 1) : Math.min(6, attacker.boosts[SA] + 1));
+		attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
+		// this boost gets reset after attack mods are calc'd
+		break;
+
 	case "Tera Blast":
 		if (attacker.isTerastal) move.type = attacker.type1;
 		break;
@@ -182,11 +189,11 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	}
 
-	var isAerilate = attacker.ability === "Aerilate" && move.type === "Normal" && move.name !== "Revelation Dance" && move.name !== "Tera Blast"; // Raging Bull could be here
-	var isPixilate = attacker.ability === "Pixilate" && move.type === "Normal" && move.name !== "Revelation Dance" && move.name !== "Tera Blast";
-	var isRefrigerate = attacker.ability === "Refrigerate" && move.type === "Normal" && move.name !== "Revelation Dance" && move.name !== "Tera Blast";
-	var isGalvanize = attacker.ability === "Galvanize" && move.type === "Normal" && move.name !== "Revelation Dance" && move.name !== "Tera Blast";
-	var isNormalize = attacker.ability === "Normalize" && (["Hidden Power", "Weather Ball", "Natural Gift", "Judgment", "Techno Blast", "Revelation Dance", "Multi-Attack", "Tera Blast"].indexOf(move.name) === -1) && !move.isZ;
+	var isAerilate = attacker.ability === "Aerilate" && move.type === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal); // Raging Bull could be here
+	var isPixilate = attacker.ability === "Pixilate" && move.type === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal);
+	var isRefrigerate = attacker.ability === "Refrigerate" && move.type === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal);
+	var isGalvanize = attacker.ability === "Galvanize" && move.type === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal);
+	var isNormalize = attacker.ability === "Normalize" && (["Hidden Power", "Weather Ball", "Natural Gift", "Judgment", "Techno Blast", "Revelation Dance", "Multi-Attack"].indexOf(move.name) === -1) && !move.isZ && !(move.name === "Tera Blast" && attacker.isTerastal);
 	if (!move.isZ) { //Z-Moves don't receive -ate type changes
 		if (isAerilate) {
 			move.type = "Flying";
@@ -204,7 +211,6 @@ function getDamageResult(attacker, defender, move, field) {
 			description.attackerAbility = attacker.ability;
 		}
 	}
-	// there's still a few questions about how tera interacts with -ate, but leaving it alone for now (how does tera Normal work?)
 
 	if ((attacker.ability === "Gale Wings" && move.type === "Flying") ||
 		(move.name === "Grassy Glide" && field.terrain === "Grassy" && isGrounded(attacker, field.isGravity, attacker.ability === "Levitate"))) {
@@ -605,11 +611,10 @@ function getDamageResult(attacker, defender, move, field) {
 	basePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096));
 	basePower = attacker.isChild ? basePower / (gen >= 7 ? 4 : 2) : basePower;
 	
-	if (attacker.isTerastal && move.type === attacker.type1 && basePower < 60 && !move.hasPriority && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit) {
-		// This effect is probably misplaced but should be close enough for the time being. Waiting on more research
-		basePower = 60; // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9424394
+	var excludedExceptions = ["Low Kick", "Flail", "Reversal", "Eruption", "Water Spout", "Gyro Ball", "Fling", "Grass Knot", "Crush Grip", "Heavy Slam", "Electro Ball", "Heat Crash", "Dragon Energy"];
+	if (attacker.isTerastal && move.type === attacker.type1 && basePower < 60 && !move.hasPriority && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && !excludedExceptions.includes(move.name)) {
+		basePower = 60; // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9425737
 		description.moveBP = 60;
-
 	}
 
 	////////////////////////////////
@@ -710,6 +715,11 @@ function getDamageResult(attacker, defender, move, field) {
 
 	attack = Math.max(1, pokeRound(attack * chainMods(atMods) / 0x1000));
 
+	if (move.name === "Meteor Beam") {
+		attacker.boosts[SA] = attacker.ability === "Simple" ? (attacker.boosts[SA] - 2) : (attacker.ability === "Contrary" ? (attacker.boosts[SA] + 1) : (attacker.boosts[SA] - 1));
+		attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
+	}
+
 	////////////////////////////////
 	///////// (SP)DEFENSE //////////
 	////////////////////////////////
@@ -797,16 +807,16 @@ function getDamageResult(attacker, defender, move, field) {
 	var stabMod = 0x1000;
 	if (attacker.isTerastal) {
 		if (move.type === attacker.type1) {
-			stabMod = (move.type === attacker.dexType1 || move.type === attacker.dexType2) ? 0x2000 : 0x1800;
+			if (attacker.ability === "Adaptability") {
+				stabMod = (move.type === attacker.dexType1 || move.type === attacker.dexType2) ? 0x2400 : 0x2000;
+				description.attackerAbility = attacker.ability;
+			} else {
+				stabMod = (move.type === attacker.dexType1 || move.type === attacker.dexType2) ? 0x2000 : 0x1800;
+			}
 			description.attackerTera = "Tera " + attacker.type1;
 		}
 		else if (move.type === attacker.dexType1 || move.type === attacker.dexType2) {
-			if (attacker.ability === "Adaptability") {
-				stabMod = 0x2000;
-				description.attackerAbility = attacker.ability;
-			} else {
-				stabMod = 0x1800;
-			}
+			stabMod = 0x1800;
 		}
 	}
 	else if (move.type === attacker.type1 || move.type === attacker.type2) {
@@ -900,7 +910,7 @@ function getDamageResult(attacker, defender, move, field) {
 		child.ability = "";
 		child.isChild = true;
 		if (move.name === "Power-Up Punch") {
-			child.boosts[AT]++;
+			child.boosts[AT] = Math.min(6, child.boosts[AT] + 1);
 			child.stats[AT] = getModifiedStat(child.rawStats[AT], child.boosts[AT]);
 		}
 		childDamage = getDamageResult(child, defender, move, field).damage;
@@ -1113,10 +1123,7 @@ function getFinalSpeed(pokemon, weather, terrain) {
 
 function isGrounded(pokemon, isGravity, isLevitate) {
 	if (pokemon.type1 === "Flying" || pokemon.type2 === "Flying" || pokemon.item === "Air Balloon" || isLevitate) {
-		if (isGravity || pokemon.item === "Iron Ball") {
-			return true;
-		}
-		return false;
+		return (isGravity || pokemon.item === "Iron Ball");
 	}
 	return true;
 }
@@ -1167,26 +1174,26 @@ function checkDownload(source, target) {
 	}
 }
 
-function checkSeeds(pokemon, field) {
-	var terrain = field.getTerrain();
+function checkSeeds(pokemon, terrain) {
+	var ability = pokemon.ability;
 	if ((pokemon.item === "Psychic Seed" && terrain === "Psychic") ||
 		(pokemon.item === "Misty Seed" && terrain === "Misty")) {
-		pokemon.boosts[SD] = Math.min(6, pokemon.boosts[SD] + 1);
+		pokemon.boosts[SD] = ability === "Simple" ? Math.min(6, pokemon.boosts[SD] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[SD] - 1) : Math.min(6, pokemon.boosts[SD] + 1));
 	} else if ((pokemon.item === "Electric Seed" && terrain === "Electric") ||
 			   (pokemon.item === "Grassy Seed" && terrain === "Grassy")) {
-		pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
+		pokemon.boosts[DF] = ability === "Simple" ? Math.min(6, pokemon.boosts[DF] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[DF] - 1) : Math.min(6, pokemon.boosts[DF] + 1));
 	}
 }
 
-function checkSeedsHonk(defender, field) {
+function checkSeedsHonk(pokemon, terrain) {
 	// A Seed can either come into the field that has the matching terrain, or its own Surge ability can proc its own Seed (Pincurchin-RS)
-	var terrain = field.getTerrain();
-	if ((defender.item === "Psychic Seed" && (terrain === "Psychic" || defender.ability === "Psychic Surge")) ||
-		(defender.item === "Misty Seed" && (terrain === "Misty" || defender.ability === "Misty Surge"))) {
-		defender.boosts[SD] = Math.min(6, defender.boosts[SD] + 1);
-	} else if ((defender.item === "Electric Seed" && (terrain === "Electric" || defender.ability === "Electric Surge")) ||
-			   (defender.item === "Grassy Seed" && (terrain === "Grassy" || defender.ability === "Grassy Surge"))) {
-		defender.boosts[DF] = Math.min(6, defender.boosts[DF] + 1);
+	var ability = pokemon.ability;
+	if ((pokemon.item === "Psychic Seed" && (terrain === "Psychic" || ability === "Psychic Surge")) ||
+		(pokemon.item === "Misty Seed" && (terrain === "Misty" || ability === "Misty Surge"))) {
+		pokemon.boosts[SD] = ability === "Simple" ? Math.min(6, pokemon.boosts[SD] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[SD] - 1) : Math.min(6, pokemon.boosts[SD] + 1));
+	} else if ((pokemon.item === "Electric Seed" && (terrain === "Electric" || ability === "Electric Surge")) ||
+		(pokemon.item === "Grassy Seed" && (terrain === "Grassy" || ability === "Grassy Surge"))) {
+		pokemon.boosts[DF] = ability === "Simple" ? Math.min(6, pokemon.boosts[DF] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[DF] - 1) : Math.min(6, pokemon.boosts[DF] + 1));
 	}
 }
 
@@ -1301,16 +1308,6 @@ function checkEvo(p1, p2) {
 		p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 2);
 	}
 }
-
-//function checkDownload(source, target) {
-//	if (source.ability === "Download") {
-//		if (target.stats[SD] <= target.stats[DF]) {
-//			source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
-//		} else {
-//			source.boosts[AT] = Math.min(6, source.boosts[AT] + 1);
-//		}
-//	}
-//}
 
 function countBoosts(boosts) {
 	var sum = 0;

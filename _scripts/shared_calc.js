@@ -703,7 +703,7 @@ function Pokemon(pokeInfo) {
 		} else if (pokemon.bs.hp === 1) {
 			this.maxHP = 1;
 		} else {
-			var HPIVs = 31;
+			var HPIVs = set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : 31;
 			this.maxHP = ~~((pokemon.bs.hp * 2 + HPIVs + ~~(this.HPEVs / 4)) * this.level / 100) + this.level + 10;
 		}
 		this.curHP = this.maxHP;
