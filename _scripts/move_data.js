@@ -5028,7 +5028,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 90,
 		"type": "Poison",
 		"category": "Special",
-		"usesHighestAttackStat": true,
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Terrain Pulse": {
@@ -5264,6 +5264,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"category": "Physical",
 		"hasSecondaryEffect": true,
 		"makesContact": true,
+		"hasRecoil": "crash",
 		"acc": 90,
 	},
 	"Bitter Blade": {

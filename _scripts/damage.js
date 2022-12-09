@@ -97,6 +97,7 @@ function getDamageResult(attacker, defender, move, field) {
 		"defenderName": defender.name,
 		"isDynamax": defender.isDynamax
 	};
+	predictShellSideArm(attacker, defender, move);
 	if (defender.isTerastal) {
 		description.defenderTera = "Tera " + defender.type1;
 	}
@@ -414,6 +415,10 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Last Respects":
 		basePower = 50 + 50 * field.faintedCount;
+		description.moveBP = basePower;
+		break;
+	case "Rage Fist":
+		basePower = move.bp;
 		description.moveBP = basePower;
 		break;
 	default:
@@ -1202,6 +1207,13 @@ function checkZacianZamazaenta(pokemon) {
 		pokemon.boosts[AT] = Math.min(6, pokemon.boosts[AT] + 1);
 	} else if (pokemon.ability === "Dauntless Shield") {
 		pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
+	}
+}
+
+function predictShellSideArm(attacker, defender, move) {
+	if (move.name === "Shell Side Arm" && (attacker.stats[AT] / defender.stats[DF]) > (attacker.stats[SA] / defender.stats[SD])) {
+		move.category = "Physical";
+		move.makesContact = true;
 	}
 }
 
