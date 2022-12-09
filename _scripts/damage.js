@@ -417,6 +417,10 @@ function getDamageResult(attacker, defender, move, field) {
 		basePower = 50 + 50 * field.faintedCount;
 		description.moveBP = basePower;
 		break;
+	case "Rage Fist":
+		basePower = move.bp;
+		description.moveBP = basePower;
+		break;
 	default:
 		basePower = move.bp;
 	}
