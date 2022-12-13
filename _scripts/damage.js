@@ -85,10 +85,11 @@ function getDamageResult(attacker, defender, move, field) {
 		isQuarteredByProtect = true;
 	}
 
+	var attackerItem = attacker.item;
 	if (move.isMax) {
 		moveDescName = move.name + " (" + move.bp + " BP)";
-		if (attacker.item == "Choice Band" || attacker.item == "Choice Specs" || attacker.item == "Choice Scarf") {
-			attacker.item = "";
+		if (attackerItem == "Choice Band" || attackerItem == "Choice Specs" || attackerItem == "Choice Scarf") {
+			attackerItem = "";
 		}
 	}
 	var description = {
@@ -139,29 +140,29 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 
 	case "Judgment":
-		if (attacker.item.indexOf("Plate") !== -1) {
-			move.type = getItemBoostType(attacker.item);
+		if (attackerItem.indexOf("Plate") !== -1) {
+			move.type = getItemBoostType(attackerItem);
 		}
 		break;
 
 	case "Multi-Attack":
-		if (attacker.item.indexOf("Memory") !== -1) {
-			move.type = getMultiAttack(attacker.item);
+		if (attackerItem.indexOf("Memory") !== -1) {
+			move.type = getMultiAttack(attackerItem);
 		}
 		break;
 
 	case "Techno Blast":
-		if (attacker.item.indexOf("Drive") !== -1) {
-			move.type = getTechnoBlast(attacker.item);
+		if (attackerItem.indexOf("Drive") !== -1) {
+			move.type = getTechnoBlast(attackerItem);
 		}
 		break;
 
 	case "Natural Gift":
-		if (attacker.item.indexOf("Berry") !== -1) {
-			var gift = getNaturalGift(attacker.item);
+		if (attackerItem.indexOf("Berry") !== -1) {
+			var gift = getNaturalGift(attackerItem);
 			move.type = gift.t;
 			move.bp = gift.p;
-			description.attackerItem = attacker.item;
+			description.attackerItem = attackerItem;
 			description.moveBP = move.bp;
 			description.moveType = move.type;
 		}
@@ -352,7 +353,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Acrobatics":
-		basePower = attacker.item === "Flying Gem" || attacker.item === "" ? 110 : 55;
+		basePower = attackerItem === "Flying Gem" || attacker.item === "" ? 110 : 55;
 		description.moveBP = basePower;
 		break;
 	case "Wake-Up Slap":
@@ -368,9 +369,9 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Fling":
-		basePower = getFlingPower(attacker.item);
+		basePower = getFlingPower(attackerItem);
 		description.moveBP = basePower;
-		description.attackerItem = attacker.item;
+		description.attackerItem = attackerItem;
 		break;
 	case "Eruption":
 	case "Dragon Energy":
@@ -486,23 +487,24 @@ function getDamageResult(attacker, defender, move, field) {
 		description.isSteelySpirit = true;
 	}
 
-	if (getItemBoostType(attacker.item) === move.type) {
+	if (getItemBoostType(attackerItem) === move.type) {
 		bpMods.push(0x1333);
-		description.attackerItem = attacker.item;
-	} else if (attacker.item === "Muscle Band" && move.category === "Physical" ||
-		attacker.item === "Wise Glasses" && move.category === "Special" ||
-		attacker.item === "Punching Glove" && move.isPunch) {
+		description.attackerItem = attackerItem;
+	} else if (attackerItem === "Muscle Band" && move.category === "Physical" ||
+		attackerItem === "Wise Glasses" && move.category === "Special" ||
+		attackerItem === "Punching Glove" && move.isPunch) {
 		bpMods.push(0x1199);
-		description.attackerItem = attacker.item;
+		description.attackerItem = attackerItem;
 	} else if ((move.type === attacker.type1 || move.type === attacker.type2) && (
-		attacker.item === "Adamant Orb" && attacker.name === "Dialga" ||
-		attacker.item === "Lustrous Orb" && attacker.name === "Palkia" ||
-		attacker.item === "Griseous Orb" && attacker.name === "Giratina-O")) {
+		attackerItem === "Adamant Orb" && attacker.name === "Dialga" ||
+		attackerItem === "Lustrous Orb" && attacker.name === "Palkia" ||
+		attackerItem === "Griseous Orb" && attacker.name === "Giratina-O" ||
+		attackerItem === "Soul Dew" && gen >= 7 && (attacker.name === "Latios" || attacker.name === "Latias"))) {
 		bpMods.push(0x1333);
-		description.attackerItem = attacker.item;
-	} else if (attacker.item === move.type + " Gem") {
+		description.attackerItem = attackerItem;
+	} else if (attackerItem === move.type + " Gem") {
 		bpMods.push(gen >= 6 ? 0x14CD : 0x1800);
-		description.attackerItem = attacker.item;
+		description.attackerItem = attackerItem;
 	}
 
 	if (move.name === "Facade" && ["Burned", "Paralyzed", "Poisoned", "Badly Poisoned"].includes(attacker.status) ||
@@ -695,16 +697,16 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
-	if (attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak" || attacker.name === "Marowak-Alola") && move.category === "Physical" ||
-		attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl" && move.category === "Special" ||
-		attacker.item === "Light Ball" && attacker.name === "Pikachu" && !move.isZ) {
+	if (attackerItem === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak" || attacker.name === "Marowak-Alola") && move.category === "Physical" ||
+		attackerItem === "Deep Sea Tooth" && attacker.name === "Clamperl" && move.category === "Special" ||
+		attackerItem === "Light Ball" && attacker.name === "Pikachu" && !move.isZ) {
 		atMods.push(0x2000);
-		description.attackerItem = attacker.item;
-	} else if (attacker.item === "Soul Dew" && (attacker.name === "Latios" || attacker.name === "Latias") && move.category === "Special" ||
-		attacker.item === "Choice Band" && (move.category === "Physical" || move.name === "Body Press") ||
-		attacker.item === "Choice Specs" && move.category === "Special" && !move.isZ) {
+		description.attackerItem = attackerItem;
+	} else if (attackerItem === "Soul Dew" && gen < 7 && (attacker.name === "Latios" || attacker.name === "Latias") && move.category === "Special" ||
+		attackerItem === "Choice Band" && (move.category === "Physical" || move.name === "Body Press") ||
+		attackerItem === "Choice Specs" && move.category === "Special" && !move.isZ) {
 		atMods.push(0x1800);
-		description.attackerItem = attacker.item;
+		description.attackerItem = attackerItem;
 	}
 	
 	if ((attacker.ability === "Hadron Engine" && field.terrain === "Electric" && move.category === "Special") ||
@@ -768,7 +770,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	if (defender.item === "Deep Sea Scale" && defender.name === "Clamperl" && !hitsPhysical ||
             defender.item === "Metal Powder" && defender.name === "Ditto" ||
-            defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias") && !hitsPhysical ||
+            defender.item === "Soul Dew" && gen < 7 && (defender.name === "Latios" || defender.name === "Latias") && !hitsPhysical ||
             defender.item === "Assault Vest" && !hitsPhysical || defender.item === "Eviolite") {
 		dfMods.push(0x1800);
 		description.defenderItem = defender.item;
@@ -886,17 +888,17 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(0xC00);
 		description.defenderAbility = defAbility;
 	}
-	if (attacker.item === "Expert Belt" && typeEffectiveness > 1 && !move.isZ) {
+	if (attackerItem === "Expert Belt" && typeEffectiveness > 1 && !move.isZ) {
 		finalMods.push(0x1333);
-		description.attackerItem = attacker.item;
-	} else if (attacker.item === "Life Orb" && !move.isZ) {
+		description.attackerItem = attackerItem;
+	} else if (attackerItem === "Life Orb" && !move.isZ) {
 		finalMods.push(0x14CC);
-		description.attackerItem = attacker.item;
+		description.attackerItem = attackerItem;
 	}
-	if (getBerryResistType(defender.item) === move.type && (typeEffectiveness > 1 || move.type === "Normal") &&
+	if (getBerryResistType(attackerItem) === move.type && (typeEffectiveness > 1 || move.type === "Normal") &&
             attacker.ability !== "Unnerve") {
 		finalMods.push(0x800);
-		description.defenderItem = defender.item;
+		description.defenderItem = attackerItem;
 	}
 	if (defAbility === "Fur Coat" && hitsPhysical) {
 		finalMods.push(0x800);
@@ -1113,7 +1115,7 @@ function getModifiedStat(stat, mod) {
 
 function getFinalSpeed(pokemon, weather, terrain) {
 	var speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
-	if (pokemon.item === "Choice Scarf") {
+	if (pokemon.item === "Choice Scarf" && !pokemon.isDynamax) {
 		speed = Math.floor(speed * 1.5);
 	} else if (pokemon.item === "Macho Brace" || pokemon.item === "Iron Ball") {
 		speed = Math.floor(speed / 2);
@@ -1264,7 +1266,7 @@ function checkIntimidate(source, target) {
 			target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
 		} else if (target.ability === "Competitive") {
 			target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
-		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Inner Focus"].indexOf(target.ability) !== -1 || target.item === "Clear Amulet") {
+		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body"].includes(target.ability) || (gen > 7 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(target.ability)) || target.item === "Clear Amulet") {
 			// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
 		} else if (target.ability === "Simple") {
 			target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
