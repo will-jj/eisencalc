@@ -99,6 +99,9 @@ function getDamageResult(attacker, defender, move, field) {
 		"isDynamax": defender.isDynamax
 	};
 	predictShellSideArm(attacker, defender, move);
+	if (attacker.ability === "Long Reach" || attackerItem === "Punching Glove") {
+		move.makesContact = false;
+	}
 	if (defender.isTerastal) {
 		description.defenderTera = "Tera " + defender.type1;
 	}
@@ -553,13 +556,6 @@ function getDamageResult(attacker, defender, move, field) {
 	} else if (attacker.ability === "Tough Claws" && move.makesContact) { //boosts by 1.3x for contact moves, apparently
 		bpMods.push(0x14CD);
 		description.attackerAbility = attacker.ability;
-	} else if (defAbility === "Fluffy" && move.makesContact) {
-		if (attacker.ability !== "Long Reach") {
-			description.attackerAbility = attacker.ability;
-		} else {
-			bpMods.push(0x800);
-			description.defenderAbility = defAbility;
-		}
 	}
 
 	var isAttackerAura = attacker.ability === move.type + " Aura";
@@ -662,10 +658,6 @@ function getDamageResult(attacker, defender, move, field) {
 		defAbility === "Water Bubble" && move.type === "Fire" ||
 		defAbility === "Purifying Salt" && move.type === "Ghost") {
 		atMods.push(0x800);
-		description.defenderAbility = defAbility;
-	}
-	if (defAbility === "Fluffy" && move.type === "Fire") {
-		atMods.push(0x2000);
 		description.defenderAbility = defAbility;
 	}
 
@@ -856,7 +848,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if ((move.name === "Dynamax Cannon" || move.name === "Behemoth Blade" || move.name === "Behemoth Bash") && defender.isDynamax) {
 		finalMods.push(0x2000);
 	}
-	if ((defAbility === "Multiscale" || defAbility == "Shadow Shield") && defender.curHP === defender.maxHP) {
+	if (((defAbility === "Multiscale" || defAbility == "Shadow Shield") && defender.curHP === defender.maxHP) || (defAbility === "Fluffy" && move.makesContact)) {
 		finalMods.push(0x800);
 		description.defenderAbility = defAbility;
 	}
@@ -886,6 +878,10 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	if ((defAbility === "Solid Rock" || defAbility === "Filter" || defAbility === "Prism Armor") && typeEffectiveness > 1) {
 		finalMods.push(0xC00);
+		description.defenderAbility = defAbility;
+	}
+	if (defAbility === "Fluffy" && move.type === "Fire") {
+		finalMods.push(0x2000);
 		description.defenderAbility = defAbility;
 	}
 	if (attackerItem === "Expert Belt" && typeEffectiveness > 1 && !move.isZ) {
