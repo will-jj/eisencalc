@@ -320,7 +320,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Gyro Ball":
-		basePower = Math.min(150, Math.floor(25 * defender.stats[SP] / attacker.stats[SP]));
+		basePower = attacker.stats[SP] === 0 ? 1 : Math.min(150, Math.floor(25 * defender.stats[SP] / attacker.stats[SP]) + 1);
 		description.moveBP = basePower;
 		break;
 	case "Punishment":
@@ -550,7 +550,7 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x1333);
 		description.attackerAbility = attacker.ability;
 	} else if (attacker.ability === "Mega Launcher" && move.isPulse ||
-            attacker.ability === "Strong Jaw" && move.isBite) {
+		attacker.ability === "Strong Jaw" && move.isBite) {
 		bpMods.push(0x1800);
 		description.attackerAbility = attacker.ability;
 	} else if (attacker.ability === "Tough Claws" && move.makesContact) { //boosts by 1.3x for contact moves, apparently
