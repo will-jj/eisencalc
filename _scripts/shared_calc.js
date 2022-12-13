@@ -739,11 +739,12 @@ function Pokemon(pokeInfo) {
 				"category": defaultDetails.category,
 				"isCrit": !!defaultDetails.alwaysCrit,
 				"acc": defaultDetails.acc,
-				"hits": defaultDetails.maxMultiHits ? (this.ability === "Skill Link" || moveName === "Population Bomb" ? defaultDetails.maxMultiHits : (this.item === "Loaded Dice" ? 4 : 3)) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
+				"hits": defaultDetails.maxMultiHits ? (this.ability === "Skill Link" || moveName === "Population Bomb" || moveName === "Triple Axel" ? defaultDetails.maxMultiHits : (this.item === "Loaded Dice" ? 4 : 3)) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 				"usedTimes": 1
 			}));
 		}
-		this.weight = pokemon.weight;
+		this.baseMoveNames = [this.moves[0].name, this.moves[1].name, this.moves[2].name, this.moves[3].name];
+		this.weight = pokemon.w;
 		this.tier = set.tier;
 	} else {
 		var setName = pokeInfo.find("input.set-selector").val();
@@ -784,11 +785,16 @@ function Pokemon(pokeInfo) {
 		this.item = pokeInfo.find(".item").val();
 		this.status = pokeInfo.find(".status").val();
 		this.toxicCounter = this.status === "Badly Poisoned" ? ~~pokeInfo.find(".toxic-counter").val() : 0;
+		var move1 = pokeInfo.find(".move1");
+		var move2 = pokeInfo.find(".move2");
+		var move3 = pokeInfo.find(".move3");
+		var move4 = pokeInfo.find(".move4");
+		this.baseMoveNames = [move1.find("select.move-selector").val(), move2.find("select.move-selector").val(), move3.find("select.move-selector").val(), move4.find("select.move-selector").val()];
 		this.moves = [
-			getMoveDetails(pokeInfo.find(".move1"), this.item, this.name),
-			getMoveDetails(pokeInfo.find(".move2"), this.item, this.name),
-			getMoveDetails(pokeInfo.find(".move3"), this.item, this.name),
-			getMoveDetails(pokeInfo.find(".move4"), this.item, this.name)
+			getMoveDetails(move1, this.item, this.name),
+			getMoveDetails(move2, this.item, this.name),
+			getMoveDetails(move3, this.item, this.name),
+			getMoveDetails(move4, this.item, this.name)
 		];
 		this.weight = +pokeInfo.find(".weight").val();
 	}

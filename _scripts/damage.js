@@ -551,8 +551,13 @@ function getDamageResult(attacker, defender, move, field) {
 	} else if (attacker.ability === "Tough Claws" && move.makesContact) { //boosts by 1.3x for contact moves, apparently
 		bpMods.push(0x14CD);
 		description.attackerAbility = attacker.ability;
-	} else if (defAbility === "Fluffy" && move.makesContact && attacker.ability !== "Long Reach") {
-		bpMods.push(0x800);
+	} else if (defAbility === "Fluffy" && move.makesContact) {
+		if (attacker.ability !== "Long Reach") {
+			description.attackerAbility = attacker.ability;
+		} else {
+			bpMods.push(0x800);
+			description.defenderAbility = defAbility;
+		}
 	}
 
 	var isAttackerAura = attacker.ability === move.type + " Aura";

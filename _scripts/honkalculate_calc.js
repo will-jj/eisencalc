@@ -63,7 +63,7 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 };
 
 function performCalculations() {
-	var attacker, defender, setPokemon, setTier;
+	var attacker, defender, setPoke, setTier;
 	var selectedTier = getSelectedTier(); // selectedTier can be: All, 28, 40, Tower, RS, SM*, DM*.  *Singles and Doubles Master
 	var setOptions = getSetOptions();
 	var dataSet = [];
@@ -76,13 +76,13 @@ function performCalculations() {
 			continue;
 		}
 		
-		setPokemon = new Pokemon(setOptionsID);
-		setTier = setPokemon.tier;
-		if (selectedTier === setTier) { // setPokemon.tier can currently be: 28, 40, Tower, RS, SM, DM, SMDM
+		setPoke = new Pokemon(setOptionsID);
+		setTier = setPoke.tier;
+		if (selectedTier === setTier) { // setPoke.tier can currently be: 28, 40, Tower, RS, SM, DM, SMDM
 			// let set be calculated
 		}
 		else if (selectedTier === "All") {
-			var customDexSpecies = SETDEX_CUSTOM[setPokemon.name];
+			var customDexSpecies = SETDEX_CUSTOM[setPoke.name];
 			if (customDexSpecies !== undefined && customDexSpecies[setOptionsID.substring(setOptionsID.indexOf("(") + 1, setOptionsID.length - 1)]) {
 				continue;
 			}
@@ -97,10 +97,10 @@ function performCalculations() {
 
 		var field = new Field();
 		if (mode === "one-vs-all") {
-			defender = setPokemon;
+			defender = setPoke;
 			attacker = userPoke;
 		} else {
-			attacker = setPokemon;
+			attacker = setPoke;
 			defender = userPoke;
 		}
 		if (attacker.ability === "Rivalry") {
