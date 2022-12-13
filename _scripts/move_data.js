@@ -5863,7 +5863,6 @@ delete MOVES_SV["Sky Drop"];
 delete MOVES_SV["Bestow"];
 delete MOVES_SV["Dual Chop"];
 delete MOVES_SV["Heart Stamp"];
-delete MOVES_SV["Leaf Storm"];
 delete MOVES_SV["Steamroller"];
 delete MOVES_SV["Head Charge"];
 delete MOVES_SV["Gear Grind"];
