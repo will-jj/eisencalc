@@ -65,94 +65,89 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 function performCalculations() {
 	var attacker, defender, setPoke, setTier;
 	var selectedTier = getSelectedTier(); // selectedTier can be: All, 28, 40, Tower, RS, SM*, DM*.  *Singles and Doubles Master
-	var setOptions = getSetOptions();
 	var dataSet = [];
 	var userPoke = new Pokemon($("#p1"));
 	var startingBoosts = [userPoke.boosts.at, userPoke.boosts.df, userPoke.boosts.sa, userPoke.boosts.sd, userPoke.boosts.sp, userPoke.boosts.ac, userPoke.boosts.es];
+	var field = new Field();
+	var startingWeather = field.getWeather();
 	var counter = 0;
-	for (var i = 0; i < setOptions.length; i++) {
-		var setOptionsID = setOptions[i].id; // the string is formatted as "speciesName (setName)"
-		if (!setOptionsID || setOptionsID.indexOf("Blank Set") !== -1) {
-			continue;
-		}
-		
-		setPoke = new Pokemon(setOptionsID);
-		setTier = setPoke.tier;
-		if (selectedTier === setTier) { // setPoke.tier can currently be: 28, 40, Tower, RS, SM, DM, SMDM
-			// let set be calculated
-		}
-		else if (selectedTier === "All") {
-			var customDexSpecies = SETDEX_CUSTOM[setPoke.name];
-			if (customDexSpecies !== undefined && customDexSpecies[setOptionsID.substring(setOptionsID.indexOf("(") + 1, setOptionsID.length - 1)]) {
+	var setSpecies = Object.keys(setdex);
+	for (var i = 0; i < setSpecies.length; i++) {
+		var speciesName = setSpecies[i];
+		var setNames = Object.keys(setdex[speciesName]);
+		var customDexSpecies = SETDEX_CUSTOM[speciesName];
+		for (var j = 0; j < setNames.length; j++) {
+			var setName = setNames[j];
+			if (customDexSpecies !== undefined && customDexSpecies[setName]) {
 				continue;
 			}
-			// let set be calculated
-		}
-		else if (gen == 80 && setTier === "SMDM") {
-			// let set be calculated
-		}
-		else {
-			continue;
-		}
-
-		var field = new Field();
-		if (mode === "one-vs-all") {
-			defender = setPoke;
-			attacker = userPoke;
-		} else {
-			attacker = setPoke;
-			defender = userPoke;
-		}
-		if (attacker.ability === "Rivalry") {
-			attacker.gender = "N";
-		}
-		if (defender.ability === "Rivalry") {
-			defender.gender = "N";
-		}
-		var damageResults = calculateMovesOfAttacker(attacker, defender, field);
-		var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
-		var highestDamage = -1;
-		var setName = setOptionsID.substring(setOptions[i].id.indexOf("(") + 1, setOptions[i].id.lastIndexOf(")"));
-		var data = [setName];
-		for (var n = 0; n < 4; n++) {
-			result = damageResults[n];
-			attackerMove = attacker.moves[n];
-			minDamage = result.damage[0] * attackerMove.hits;
-			maxDamage = result.damage[result.damage.length - 1] * attackerMove.hits;
-			// If any piece of the calculation is a string and not a number ie. Pokemon.level, stats will concatinate into strings, and the below will eval to 0.
-			// I want to be very sure that everything is using the correct types, so I want this behavior. Shoutouts to writing code w/o tests.
-			minPercentage = Math.floor(minDamage * 1000 / defender.maxHP) / 10;
-			maxPercentage = Math.floor(maxDamage * 1000 / defender.maxHP) / 10;
-			minPixels = Math.floor(minDamage * 48 / defender.maxHP);
-			maxPixels = Math.floor(maxDamage * 48 / defender.maxHP);
-			if (maxDamage > highestDamage) {
-				highestDamage = maxDamage;
-				while (data.length > 1) {
-					data.pop();
-				}
-				data.push(attackerMove.name.replace("Hidden Power", "HP"));
-				data.push(minPercentage + " - " + maxPercentage + "%");
-				data.push(minPixels + " - " + maxPixels + "px");
-				data.push(attackerMove.bp === 0 ? "nice move" :
-					getKOChanceText(result.damage, attackerMove, defender, field.getSide(~~(mode === "one-vs-all")), attacker.ability === "Bad Dreams", attacker, false, attacker.isVictoryStar, gen, false));
+			setPoke = new Pokemon(speciesName, setName);
+			setTier = setPoke.tier; // setPoke.tier can currently be: 28, 40, Tower, RS, SM, DM, SMDM
+			if (selectedTier === setTier || selectedTier === "All" || (gen == 80 && setTier === "SMDM")) {
+				// let set be calculated
+			} else {
+				continue;
 			}
-		}
-		data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
-		data.push(((mode === "one-vs-all") ? defender.type2 : attacker.type2) || "");
-		data.push(((mode === "one-vs-all") ? defender.ability : attacker.ability) || "");
-		data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
-		dataSet.push(data);
 
-		// fields in the boosts and stats objects should be the only things that get changed in the Pokemon object during mass calc
-		userPoke.boosts.at = startingBoosts[0];
-		userPoke.boosts.df = startingBoosts[1];
-		userPoke.boosts.sa = startingBoosts[2];
-		userPoke.boosts.sd = startingBoosts[3];
-		userPoke.boosts.sp = startingBoosts[4];
-		userPoke.boosts.ac = startingBoosts[5];
-		userPoke.boosts.es = startingBoosts[6];
-		userPoke.stats = [];
-		counter++;
+			if (mode === "one-vs-all") {
+				defender = setPoke;
+				attacker = userPoke;
+			} else {
+				attacker = setPoke;
+				defender = userPoke;
+			}
+			if (attacker.ability === "Rivalry") {
+				attacker.gender = "N";
+			}
+			if (defender.ability === "Rivalry") {
+				defender.gender = "N";
+			}
+			var damageResults = calculateMovesOfAttacker(attacker, defender, field);
+			var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
+			var highestDamage = -1;
+			var data = [setName];
+			for (var n = 0; n < 4; n++) {
+				result = damageResults[n];
+				attackerMove = attacker.moves[n];
+				minDamage = result.damage[0] * attackerMove.hits;
+				maxDamage = result.damage[result.damage.length - 1] * attackerMove.hits;
+				// If any piece of the calculation is a string and not a number ie. Pokemon.level, stats will concatinate into strings, and the below will eval to 0.
+				// I want to be very sure that everything is using the correct types, so I want this behavior. Shoutouts to writing code w/o tests.
+				minPercentage = Math.floor(minDamage * 1000 / defender.maxHP) / 10;
+				maxPercentage = Math.floor(maxDamage * 1000 / defender.maxHP) / 10;
+				minPixels = Math.floor(minDamage * 48 / defender.maxHP);
+				maxPixels = Math.floor(maxDamage * 48 / defender.maxHP);
+				if (maxDamage > highestDamage) {
+					highestDamage = maxDamage;
+					while (data.length > 1) {
+						data.pop();
+					}
+					data.push(attackerMove.name.replace("Hidden Power", "HP"));
+					data.push(minPercentage + " - " + maxPercentage + "%");
+					data.push(minPixels + " - " + maxPixels + "px");
+					data.push(attackerMove.bp === 0 ? "nice move" :
+						getKOChanceText(result.damage, attackerMove, defender, field.getSide(~~(mode === "one-vs-all")), false, attacker, false, attacker.isVictoryStar, gen, false));
+				}
+			}
+			data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
+			data.push(((mode === "one-vs-all") ? defender.type2 : attacker.type2) || "");
+			data.push(((mode === "one-vs-all") ? defender.ability : attacker.ability) || "");
+			data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
+			dataSet.push(data);
+
+			// fields in the boosts and stats objects should be the only things that get changed in the Pokemon object during mass calc
+			userPoke.boosts.at = startingBoosts[0];
+			userPoke.boosts.df = startingBoosts[1];
+			userPoke.boosts.sa = startingBoosts[2];
+			userPoke.boosts.sd = startingBoosts[3];
+			userPoke.boosts.sp = startingBoosts[4];
+			userPoke.boosts.ac = startingBoosts[5];
+			userPoke.boosts.es = startingBoosts[6];
+			userPoke.stats = [];
+			// the only Field object "property" that can be modified is weather
+			field.setWeather(startingWeather);
+			counter++;
+		}
 	}
 	var pokemon = mode === "one-vs-all" ? attacker : defender;
 	table.rows.add(dataSet).draw();

@@ -679,11 +679,11 @@ var stickyMoves = (function () {
 	};
 })();
 
-function Pokemon(pokeInfo) {
-	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
-		this.name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
-		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
-		var pokemon = pokedex[this.name];
+function Pokemon(pokeInfo, setName) { // if passing a jquery object, just call this with 1 argument
+	if (typeof pokeInfo === "string") {
+		// this branch is used for the mass calc; pokeInfo is species name
+		this.name = pokeInfo;
+		var pokemon = pokedex[pokeInfo];
 		this.type1 = pokemon.t1;
 		this.type2 = pokemon.t2 && typeof pokemon.t2 !== "undefined" ? pokemon.t2 : "";
 		this.rawStats = [];
@@ -971,6 +971,9 @@ function Field() {
 	this.getWeather = function () {
 		return weather;
 	};
+	this.setWeather = function (newWeather) {
+		weather = newWeather;
+	};
 	this.clearWeather = function () {
 		weather = "";
 	};
@@ -1245,7 +1248,6 @@ function getSetOptions() {
 		}
 	}
 	var setOptions = [];
-	var idNum = 0;
 	for (var i = 0; i < pokeNames.length; i++) {
 		var pokeName = pokeNames[i];
 		setOptions.push({
