@@ -24017,8 +24017,7 @@ var SETDEX_GEN8_SETS =
       ],
       "nature": "Timid",
       "item": "Charti Berry",
-      "tier": "Tower",
-      "isGmax": true
+      "tier": "Tower"
     }
   },
   "Silvally": {
