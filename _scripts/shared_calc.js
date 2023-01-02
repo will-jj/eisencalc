@@ -692,7 +692,7 @@ function Pokemon(pokeInfo, setName) { // if passing a jquery object, just call t
 		this.evs = [];
 
 		var set = setdex[this.name][setName];
-		this.isGmax = setName.includes("-Gmax") || pokemon.isGmax || set.isGmax;
+		//this.isGmax = setName.includes("-Gmax") || pokemon.isGmax || set.isGmax;
 		this.level = set.level;
 
 		this.HPEVs = set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0;
@@ -1023,51 +1023,27 @@ var gen, pokedex, setdex, typeChart, moves, abilities, items, STATS, calculateAl
 $(".gen").change(function () {
 	gen = ~~$(this).val();
 	switch (gen) {
-	case 1:
-		pokedex = POKEDEX_RBY;
-		setdex = SETDEX_RBY;
-		typeChart = TYPE_CHART_RBY;
-		moves = MOVES_RBY;
-		items = [];
-		abilities = [];
-		STATS = STATS_RBY;
-		calculateAllMoves = CALCULATE_ALL_MOVES_RBY;
-		calcHP = CALC_HP_RBY;
-		calcStat = CALC_STAT_RBY;
-		break;
-	case 2:
-		pokedex = POKEDEX_GSC;
-		setdex = SETDEX_GSC;
-		typeChart = TYPE_CHART_GSC;
-		moves = MOVES_GSC;
-		items = ITEMS_GSC;
-		abilities = [];
-		STATS = STATS_GSC;
-		calculateAllMoves = CALCULATE_ALL_MOVES_GSC;
-		calcHP = CALC_HP_RBY;
-		calcStat = CALC_STAT_RBY;
-		break;
 	case 3:
 		pokedex = POKEDEX_ADV;
-		setdex = SETDEX_ADV;
+		//setdex = SETDEX_ADV;
 		typeChart = TYPE_CHART_GSC;
 		moves = MOVES_ADV;
 		items = ITEMS_ADV;
 		abilities = ABILITIES_ADV;
 		STATS = STATS_GSC;
-		calculateAllMoves = CALCULATE_ALL_MOVES_ADV;
+		//calculateAllMoves = CALCULATE_ALL_MOVES_ADV;
 		calcHP = CALC_HP_ADV;
 		calcStat = CALC_STAT_ADV;
 		break;
 	case 4:
 		pokedex = POKEDEX_DPP;
-		setdex = SETDEX_DPP;
+		//setdex = SETDEX_DPP;
 		typeChart = TYPE_CHART_GSC;
 		moves = MOVES_DPP;
 		items = ITEMS_DPP;
 		abilities = ABILITIES_DPP;
 		STATS = STATS_GSC;
-		calculateAllMoves = CALCULATE_ALL_MOVES_DPP;
+		//calculateAllMoves = CALCULATE_ALL_MOVES_DPP;
 		calcHP = CALC_HP_ADV;
 		calcStat = CALC_STAT_ADV;
 		break;
@@ -1298,6 +1274,16 @@ function getSelectOptions(arr, sort, defaultIdx) {
 $(document).ready(function () {
 	if (localStorage.getItem("selectedGen") != null) {
 		switch (localStorage.getItem("selectedGen") + "") {
+
+		case "3":
+			$("#gen3").prop("checked", true);
+			$("#gen3").change();
+			break;
+
+		case "4":
+			$("#gen4").prop("checked", true);
+			$("#gen4").change();
+			break;
 
 		case "5":
 			$("#gen5").prop("checked", true);
