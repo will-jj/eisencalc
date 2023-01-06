@@ -13594,6 +13594,29 @@ SETDEX_PHGSS = {
       ],
       "nature": "Bold",
       "item": "Lax Incense"
+    },
+    "Mime Jr. (H146)": {
+      "evs": {
+        "df": 252,
+        "sd": 252
+      },
+      "ivs": {
+        "hp": 26,
+        "at": 26,
+        "df": 26,
+        "sa": 26,
+        "sd": 26,
+        "sp": 26
+      },
+      "moves": [
+        "Psychic",
+        "Facade",
+        "Barrier",
+        "Future Sight"
+      ],
+      "nature": "Calm",
+      "item": "TwistedSpoon",
+      "tier": "Hall"
     }
   },
   "Minun": {
@@ -25789,31 +25812,6 @@ SETDEX_PHGSS = {
       ],
       "nature": "Adamant",
       "item": "Metal Coat",
-      "tier": "Hall"
-    }
-  },
-  "Mime jr.": {
-    "Mime jr. (H146)": {
-      "evs": {
-        "df": 252,
-        "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
-      "moves": [
-        "Psychic",
-        "Facade",
-        "Barrier",
-        "Future Sight"
-      ],
-      "nature": "Calm",
-      "item": "TwistedSpoon",
       "tier": "Hall"
     }
   },

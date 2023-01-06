@@ -1,5 +1,5 @@
 // used in primary calc
-function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
+function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	checkAirLock(p1, field);
 	checkAirLock(p2, field);
 	checkForecast(p1, field.getWeather());
@@ -39,7 +39,7 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 }
 
 // used in mass calc
-function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
+function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
@@ -1098,15 +1098,15 @@ function getMoveEffectiveness(move, type, isGhostRevealed, isGravity) {
 }
 
 function getModifiedStat(stat, mod) {
-  const boostTable = [1, 1.5, 2, 2.5, 3, 3.5, 4];
+	const boostTable = [1, 1.5, 2, 2.5, 3, 3.5, 4];
 
-  if (mod >= 0) {
-    stat = Math.floor(stat * boostTable[mod]);
-  } else {
-    stat = Math.floor(stat / boostTable[-mod]);
-  }
+	if (mod >= 0) {
+		stat = Math.floor(stat * boostTable[mod]);
+	} else {
+		stat = Math.floor(stat / boostTable[-mod]);
+	}
 
-  return stat;
+	return stat;
 }
 
 function getFinalSpeed(pokemon, weather, terrain) {

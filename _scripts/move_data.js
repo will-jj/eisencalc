@@ -379,6 +379,10 @@ var MOVES_RBY = {
 		"makesContact": true,
 		"acc": 75
 	},
+	"Mimic": {
+		"bp": 0,
+		"type": "Normal"
+	},
 	"Minimize": {
 		"bp": 0,
 		"type": "Normal"

@@ -3,10 +3,18 @@ function CALCULATE_ALL_MOVES_ADV(p1, p2, field) {
 	checkAirLock(p2, field);
 	checkForecast(p1, field.getWeather());
 	checkForecast(p2, field.getWeather());
+	//p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
+	//p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
+	p1.stats[SP] = getFinalSpeed(p1, field.getWeather(), field.getTerrain());
+	//p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
+	//p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
+	p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), field.getTerrain());
 	checkIntimidate(p1, p2);
 	checkIntimidate(p2, p1);
-	p1.stats[SP] = getFinalSpeed(p1, field.getWeather());
-	p2.stats[SP] = getFinalSpeed(p2, field.getWeather());
+	//p1.stats[AT] = getModifiedStat(p1.rawStats[AT], p1.boosts[AT]);
+	//p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
+	//p2.stats[AT] = getModifiedStat(p2.rawStats[AT], p2.boosts[AT]);
+	//p2.stats[SA] = getModifiedStat(p2.rawStats[SA], p2.boosts[SA]);
 	var side1 = field.getSide(1);
 	var side2 = field.getSide(0);
 	var results = [[], []];
@@ -22,8 +30,15 @@ function CALCULATE_MOVES_OF_ATTACKER_ADV(attacker, defender, field) {
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
 	checkForecast(defender, field.getWeather());
+	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather(), field.getTerrain());
+	//defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
+	//defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
+	defender.stats[SP] = getFinalSpeed(defender, field.getWeather(), field.getTerrain());
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
+	//attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
+	//attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
+	//defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
 	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
 	var results = [];
 	for (var i = 0; i < 4; i++) {

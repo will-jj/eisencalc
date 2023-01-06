@@ -26,8 +26,8 @@ var damageResults;
 function calculate() {
 	var p1info = $("#p1");
 	var p2info = $("#p2");
-	var p1 = new Pokemon($("#p1"));
-	var p2 = new Pokemon($("#p2"));
+	var p1 = new Pokemon(p1info);
+	var p2 = new Pokemon(p2info);
 	var field = new Field();
 	//optimizeEVs("#p1", p1);
 	//optimizeEVs("#p2", p2);

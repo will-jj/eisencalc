@@ -64,7 +64,7 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 
 function performCalculations() {
 	var attacker, defender, setPoke, setTier;
-	var selectedTier = getSelectedTier(); // selectedTier can be: All, 28, 40, Tower, RS, SM*, DM*.  *Singles and Doubles Master
+	var selectedTier = getSelectedTier(); // selectedTier can be: All, 50, Hall, HallR10 28, 40, Tower, RS, SM, DM.  *SM and DM are Singles and Doubles Master
 	var dataSet = [];
 	var userPoke = new Pokemon($("#p1"));
 	var startingBoosts = [userPoke.boosts.at, userPoke.boosts.df, userPoke.boosts.sa, userPoke.boosts.sd, userPoke.boosts.sp, userPoke.boosts.ac, userPoke.boosts.es];
@@ -82,8 +82,10 @@ function performCalculations() {
 				continue;
 			}
 			setPoke = new Pokemon(speciesName, setName);
-			setTier = setPoke.tier; // setPoke.tier can currently be: 28, 40, Tower, RS, SM, DM, SMDM
-			if (selectedTier === setTier || selectedTier === "All" || (gen == 80 && setTier === "SMDM")) {
+			setTier = setPoke.tier; // setPoke.tier can be: 50, Hall, HallR10 28, 40, Tower, RS, SM, DM, SMDM
+			if (gen == 4 && selectedTier === "All" && setTier && setTier.indexOf("Hall") != -1) {
+				continue;
+			} else if (selectedTier === "All" || (setTier && setTier.indexOf(selectedTier) != -1)) {
 				// let set be calculated
 			} else {
 				continue;
@@ -163,20 +165,14 @@ $(".gen").change(function () {
 	//$(".tiers input").prop("checked", false); // since tiers is a radio button now, don't uncheck it
 	adjustTierBorderRadius();
 	switch (gen) {
-	case 1:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_RBY;
-		break;
-	case 2:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_GSC;
-		break;
 	case 3:
 		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_ADV;
 		break;
 	case 4:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_DPP;
+		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_PTHGSS;
 		break;
 	default:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_BW;
+		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_MODERN;
 		break;
 	}
 	if (gen == 8) {
@@ -198,8 +194,16 @@ function adjustTierBorderRadius() {
 	var roundedRightCorner = {"border-top-right-radius": "8px", "border-bottom-right-radius": "8px"};
 	var squaredLeftCorner = {"border-top-left-radius": 0, "border-bottom-left-radius": 0};
 	var roundedLeftCorner = {"border-top-left-radius": "8px", "border-bottom-left-radius": "8px"};
-	// All and Tower are always left-rounded
-	if (gen == 5) {
+	if (gen == 3) {
+		$("#All").next("label").css(squaredRightCorner);
+		$("#50").next("label").css(roundedRightCorner);
+	}
+	else if (gen == 4) {
+		$("#All").next("label").css(squaredRightCorner);
+		$("#50").next("label").css(squaredRightCorner);
+		$("#HallR10").next("label").css(roundedRightCorner);
+	}
+	else if (gen == 5) {
 		$("#All").next("label").css(squaredRightCorner);
 		$("#28").next("label").css(roundedRightCorner);
 	}
