@@ -74,6 +74,7 @@ var MOVES_RBY = {
 	"Clamp": {
 		"bp": 35,
 		"type": "Water",
+		"category": "Physical",
 		"acc": 85
 	},
 	"Crabhammer": {
@@ -81,7 +82,6 @@ var MOVES_RBY = {
 		"type": "Water",
 		"category": "Physical",
 		"makesContact": true,
-		"alwaysCrit": true,
 		"acc": 90
 	},
 	"Confuse Ray": {
@@ -213,6 +213,7 @@ var MOVES_RBY = {
 	"Fire Spin": {
 		"bp": 15,
 		"type": "Fire",
+		"category": "Special",
 		"acc": 85
 	},
 	"Flamethrower": {
@@ -257,20 +258,25 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Normal"
 	},
+	"Growth": {
+		"bp": 0,
+		"type": "Normal"
+	},
 	"Guillotine": {
 		"bp": 0,
 		"type": "Normal"
 	},
-	"Gust": {
-		"bp": 40,
-		"type": "Normal",
-		"category": "Special",
-		"isWind": true,
-		"acc": 100
-	},
 	"Haze": {
 		"bp": 0,
 		"type": "Ice"
+	},
+	"Headbutt": {
+		"bp": 70,
+		"type": "Normal",
+		"category": "Physical",
+		"makesContact": true,
+		"hasSecondaryEffect": true,
+		"acc": 100
 	},
 	"High Jump Kick": {
 		"bp": 85,
@@ -368,6 +374,7 @@ var MOVES_RBY = {
 	"Mega Drain": {
 		"bp": 40,
 		"type": "Grass",
+		"category": "Special",
 		"givesHealth": true,
 		"percentHealed": 0.5,
 		"acc": 100
@@ -412,12 +419,23 @@ var MOVES_RBY = {
 		"makesContact": true,
 		"acc": 100
 	},
+	"Petal Dance": {
+		"bp": 70,
+		"type": "Grass",
+		"category": "Special",
+		"makesContact": true,
+		"acc": 100
+	},
 	"Pin Missile": {
 		"bp": 14,
 		"type": "Bug",
 		"category": "Physical",
 		"maxMultiHits": 5,
 		"acc": 95
+	},
+	"Poison Powder": {
+		"bp": 0,
+		"type": "Poison"
 	},
 	"Psybeam": {
 		"bp": 65,
@@ -771,7 +789,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 0,
 		"type": "Fairy"
 	},
-		"Conversion 2": {
+	"Conversion 2": {
 		"bp": 0,
 		"type": "Normal"
 	},
@@ -779,7 +797,6 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 0,
 		"type": "Grass"
 	},
-	"Crabhammer": {"alwaysCrit": false},
 	"Cross Chop": {
 		"bp": 100,
 		"type": "Fighting",
@@ -866,7 +883,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"acc": 100
 	},
 	"Fury Cutter": {
-		"bp": 40,
+		"bp": 10,
 		"type": "Bug",
 		"category": "Physical",
 		"isSlicing": true,
@@ -886,13 +903,11 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"percentHealed": 0.5,
 		"acc": 100
 	},
-	"Gust": {"type": "Flying"},
-	"Headbutt": {
-		"bp": 70,
-		"type": "Normal",
-		"category": "Physical",
-		"makesContact": true,
-		"hasSecondaryEffect": true,
+	"Gust": {
+		"bp": 40,
+		"type": "Flying",
+		"category": "Special",
+		"isWind": true,
 		"acc": 100
 	},
 	"Heal Bell": {
@@ -1058,7 +1073,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 	},
 	"Moonlight": {
 		"bp": 0,
-		"type": "Normal"
+		"type": "Fairy"
 	},
 	"Morning Sun": {
 		"bp": 0,
@@ -1082,6 +1097,13 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"acc": 85,
 		"hasSecondaryEffect": true,
 		"acc": 85
+	},
+	"Outrage": {
+		"bp": 90,
+		"type": "Dragon",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
 	},
 	"Pain Split": {
 		"bp": 0,
@@ -1584,14 +1606,6 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 	"Magic Coat": {
 		"bp": 0,
 		"type": "Psychic",
-		"acc": 100
-	},
-	"Mega Drain": {
-		"bp": 40,
-		"type": "Grass",
-		"category": "Special",
-		"givesHealth": true,
-		"percentHealed": 0.5,
 		"acc": 100
 	},
 	"Memento": {
@@ -2384,13 +2398,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
-	"Outrage": {
-		"bp": 120,
-		"type": "Dragon",
-		"category": "Physical",
-		"makesContact": true,
-		"acc": 100
-	},
+	"Outrage": {"bp": 120},
 	"Payback": {
 		"bp": 50,
 		"type": "Dark",
@@ -2398,6 +2406,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"makesContact": true,
 		"acc": 100
 	},
+	"Petal Dance": {"bp": 90},
 	"Pluck": {
 		"bp": 60,
 		"type": "Flying",
@@ -2785,6 +2794,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"category": "Special",
 		"acc": 100
 	},
+	"Fire Spin": {"bp": 35},
 	"Flame Burst": {
 		"bp": 70,
 		"type": "Fire",
@@ -2820,6 +2830,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"alwaysCrit": true,
 		"acc": 90
 	},
+	"Fury Cutter": {"bp": 20},
 	"Fusion Bolt": {
 		"bp": 100,
 		"type": "Electric",
@@ -2986,13 +2997,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"hasSecondaryEffect": true,
 		"acc": 95
 	},
-	"Petal Dance": {
-		"bp": 120,
-		"type": "Grass",
-		"category": "Special",
-		"makesContact": true,
-		"acc": 100
-	},
+	"Petal Dance": {"bp": 120},
 	"Power Split": {
 		"bp": 0,
 		"type": "Psychic"
@@ -3387,6 +3392,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"acc": 100
 	},
 	"Frost Breath": {"bp": 60},
+	"Fury Cutter": {"bp": 40},
 	"Future Sight": {"bp": 120},
 	"Geomancy": {
 		"bp": 0,
@@ -3482,7 +3488,6 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
-	"Moonlight": {"type": "Fairy"},
 	"Muddy Water": {"bp": 90},
 	"Mystical Fire": {
 		"bp": 65,
@@ -4594,115 +4599,6 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	}
 });
 
-var MOVES_LG = $.extend(true, {}, MOVES_SM, {
-	"Double Iron Bash": {
-		"bp": 60,
-		"type": "Steel",
-		"category": "Physical",
-		"isTwoHit": true,
-		"makesContact": true,
-		"isPunch": true,
-		"hasSecondaryEffect": true,
-		"acc": 100
-	},
-	"Baddy Bad": {
-		"bp": 90,
-		"type": "Dark",
-		"category": "Physical",
-		"acc": 100
-	},
-	"Bouncy Bubble": {
-		"bp": 90,
-		"type": "Water",
-		"category": "Special",
-		"givesHealth": true,
-		"percentHealed": 0.5,
-		"acc": 100
-	},
-	"Absorb": {"bp": 40},
-	"Mega Drain": {"bp": 75},
-	"Sky Attack": {"bp": 200},
-	"Solar Beam": {"bp": 200},
-	"Buzzy Buzz": {
-		"bp": 90,
-		"type": "Electric",
-		"category": "Special",
-		"hasSecondaryEffect": true,
-		"acc": 100
-	},
-	"Floaty Fall": {
-		"bp": 90,
-		"type": "Flying",
-		"category": "Physical",
-		"hasSecondaryEffect": true,
-		"makesContact": true,
-		"acc": 95
-	},
-	"Freezy Frost": {
-		"bp": 90,
-		"type": "Ice",
-		"category": "Special",
-		"hasSecondaryEffect": true,
-		"acc": 100
-	},
-	"Glitzy Glow": {
-		"bp": 90,
-		"type": "Psychic",
-		"category": "Special",
-		"hasSecondaryEffect": true,
-		"acc": 100
-	},
-	"Pika Papow": {
-		"bp": 102,
-		"type": "Electric",
-		"category": "Physical",
-		"makesContact": true,
-		"acc": 101
-	},
-	"Sappy Seed": {
-		"bp": 90,
-		"type": "Grass",
-		"category": "Physical",
-		"acc": 100
-	},
-	"Sizzly Slide": {
-		"bp": 90,
-		"type": "Fire",
-		"category": "Physical",
-		"hasSecondaryEffect": true,
-		"makesContact": true,
-		"acc": 100
-	},
-	"Sparkly Swirl": {
-		"bp": 90,
-		"type": "Fairy",
-		"category": "Special",
-		"acc": 100
-	},
-	"Splishy Splash": {
-		"bp": 90,
-		"type": "Water",
-		"category": "Special",
-		"hasSecondaryEffect": true,
-		"acc": 100
-	},
-	"Veevee Volley": {
-		"bp": 102,
-		"type": "Normal",
-		"category": "Physical",
-		"makesContact": true,
-		"acc": 101
-	},
-	"Zippy Zap": {
-		"bp": 50,
-		"type": "Electric",
-		"category": "Physical",
-		"makesContact": true,
-		"alwaysCrit": true,
-		"acc": 100
-	},
-});
-
 var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 	"Double Iron Bash": {
 		"bp": 60,
@@ -5025,9 +4921,8 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"type": "Dark",
 		"acc": 101
 	},
-	"Multi-Attack": {
-		"bp": 120
-	},
+	"Multi-Attack": {"bp": 120},
+	"Rapid Spin": {"bp": 50},
 	"Shell Side Arm": {
 		"bp": 90,
 		"type": "Poison",
