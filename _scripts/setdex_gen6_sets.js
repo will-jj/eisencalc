@@ -1,4 +1,4 @@
-var SETDEX_GEN6_SETS = 
+var SETDEX_GEN6 = 
 {
   "Abomasnow": {
     "Abomasnow-1": {

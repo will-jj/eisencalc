@@ -1,5 +1,5 @@
 // used in primary calc
-function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
+function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	checkAirLock(p1, field);
 	checkAirLock(p2, field);
 	checkForecast(p1, field.getWeather());
@@ -39,7 +39,7 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 }
 
 // used in mass calc
-function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
+function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
@@ -221,6 +221,18 @@ function getDamageResult(attacker, defender, move, field) {
 		(move.name === "Grassy Glide" && field.terrain === "Grassy" && isGrounded(attacker, field.isGravity, attacker.ability === "Levitate"))) {
 		move.hasPriority = true;
 	}
+	var attackerWeight = attacker.weight;
+	var defenderWeight = defender.weight;
+	if (attacker.ability === "Heavy Metal") {
+		attackerWeight *= 2;
+	} else if (attacker.ability === "Light Metal") {
+		attackerWeight = Math.floor(attackerWeight * 5) / 10;
+	}
+	if (defender.ability === "Heavy Metal") {
+		defenderWeight *= 2;
+	} else if (defender.ability === "Light Metal") {
+		defenderWeight = Math.floor(defenderWeight * 5) / 10;
+	}
 
 	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
 	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity) : 1;
@@ -262,7 +274,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	if (move.name === "Sky Drop" &&
         ([defender.type1, defender.type2].indexOf("Flying") !== -1 ||
-            defender.weight >= 200.0 || field.isGravity)) {
+            defenderWeight >= 200.0 || field.isGravity)) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 	if (move.name === "Synchronoise" &&
@@ -296,10 +308,6 @@ function getDamageResult(attacker, defender, move, field) {
 		  return {"damage": [attacker.curHP]};
 	}
 
-	if (move.name === "Surging Strikes") {
-		move.hits = 3;
-	}
-
 	if (move.hits > 1) {
 		description.hits = move.hits;
 	}
@@ -329,7 +337,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Low Kick":
 	case "Grass Knot":
-		var w = defender.weight;
+		var w = defenderWeight;
 		basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
 		description.moveBP = basePower;
 		break;
@@ -346,7 +354,8 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Heavy Slam":
 	case "Heat Crash":
-		var wr = attacker.weight / defender.weight;
+		var wr = attackerWeight / defenderWeight;
+		console.log("ratio: " + wr);
 		basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
 		description.moveBP = basePower;
 		break;
@@ -735,7 +744,7 @@ function getDamageResult(attacker, defender, move, field) {
             toSmogonStat(defenseStat);
 	if (defender.boosts[defenseStat] === 0 || isCritical && defender.boosts[defenseStat] > 0 || move.ignoresDefenseBoosts) {
 		defense = defender.rawStats[defenseStat];
-	} else if (attacker.ability === "Unaware" || move.name === "Darkest Lariat") {
+	} else if (attacker.ability === "Unaware") {
 		defense = defender.rawStats[defenseStat];
 		description.attackerAbility = attacker.ability;
 	} else {
@@ -1098,15 +1107,15 @@ function getMoveEffectiveness(move, type, isGhostRevealed, isGravity) {
 }
 
 function getModifiedStat(stat, mod) {
-  const boostTable = [1, 1.5, 2, 2.5, 3, 3.5, 4];
+	const boostTable = [1, 1.5, 2, 2.5, 3, 3.5, 4];
 
-  if (mod >= 0) {
-    stat = Math.floor(stat * boostTable[mod]);
-  } else {
-    stat = Math.floor(stat / boostTable[-mod]);
-  }
+	if (mod >= 0) {
+		stat = Math.floor(stat * boostTable[mod]);
+	} else {
+		stat = Math.floor(stat / boostTable[-mod]);
+	}
 
-  return stat;
+	return stat;
 }
 
 function getFinalSpeed(pokemon, weather, terrain) {
