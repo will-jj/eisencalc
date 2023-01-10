@@ -3854,6 +3854,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"bp": 85,
 		"type": "Dark",
 		"category": "Physical",
+		"ignoresDefenseBoosts": true,
 		"makesContact": true,
 		"zp": 160,
 		"acc": 100
@@ -5053,6 +5054,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"type": "Water",
 		"category": "Physical",
 		"makesContact": true,
+		"isThreeHit": true,
 		"acc": 100,
 		"alwaysCrit": true
 	},

@@ -308,10 +308,6 @@ function getDamageResult(attacker, defender, move, field) {
 		  return {"damage": [attacker.curHP]};
 	}
 
-	if (move.name === "Surging Strikes") {
-		move.hits = 3;
-	}
-
 	if (move.hits > 1) {
 		description.hits = move.hits;
 	}
@@ -748,7 +744,7 @@ function getDamageResult(attacker, defender, move, field) {
             toSmogonStat(defenseStat);
 	if (defender.boosts[defenseStat] === 0 || isCritical && defender.boosts[defenseStat] > 0 || move.ignoresDefenseBoosts) {
 		defense = defender.rawStats[defenseStat];
-	} else if (attacker.ability === "Unaware" || move.name === "Darkest Lariat") {
+	} else if (attacker.ability === "Unaware") {
 		defense = defender.rawStats[defenseStat];
 		description.attackerAbility = attacker.ability;
 	} else {
