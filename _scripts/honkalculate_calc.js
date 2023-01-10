@@ -82,7 +82,7 @@ function performCalculations() {
 				continue;
 			}
 			setPoke = new Pokemon(speciesName, setName);
-			setTier = setPoke.tier; // setPoke.tier can be: 50, Hall, HallR10 28, 40, Tower, RS, SM, DM, SMDM
+			setTier = setPoke.tier; // setPoke.tier can be: 50, Hall, HallR10 28, 40, Tower, RS, SM, DM, SMDM. The set might also have no tier key.
 			if (gen == 4 && selectedTier === "All" && setTier && setTier.indexOf("Hall") != -1) {
 				continue;
 			} else if (selectedTier === "All" || (setTier && setTier.indexOf(selectedTier) != -1)) {

@@ -1,4 +1,4 @@
-var SETDEX_GEN80_SETS = {
+var SETDEX_GEN80 = {
   "Abomasnow": {
     "Abomasnow-1": {
       "level": 50,

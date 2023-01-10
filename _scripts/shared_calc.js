@@ -1,6 +1,7 @@
 // input field validation
 var bounds = {
-	"level": [0, 100],
+	"level": [1, 100],
+	"autolevel": [1, 100],
 	"base": [1, 255],
 	"evs": [0, 252],
 	"ivs": [0, 31],
@@ -74,11 +75,14 @@ $(".tera-type").bind("keyup change", function () {
 	}
 });
 
-// auto-calc stats and current HP on change
 $("#autolevel-select").change(function () {
-	$("#p1").find(".level").val($("#autolevel-select").val());
-	$("#p2").find(".level").val($("#autolevel-select").val());
-	$(".level").change();
+	// auto-calc stats and current HP on change
+	//$("#p1").find(".level").val($("#autolevel-select").val());
+	//$("#p2").find(".level").val($("#autolevel-select").val());
+	//$(".level").change();
+	if (gen <= 4) {
+		localStorage.setItem("frontierLevel", $("#autolevel-select").val());
+	}
 });
 
 $(".level").bind("keyup change", function () {
@@ -423,112 +427,115 @@ $(".move-selector").change(function () {
 });
 
 // auto-update set details on select
-$(".set-selector, #levelswitch").bind("change click keyup keydown", function () {
+$(".set-selector").bind("change click keyup keydown", function () {
 	var fullSetName = $(this).val();
 	var pokemonName, setName;
 	pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
 	setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 	var pokemon = pokedex[pokemonName];
-	if (pokemon) {
-		var pokeObj = $(this).closest(".poke-info");
-
-		// If the sticky move was on this side, reset it
-		if (stickyMoves.getSelectedSide() === pokeObj.prop("id")) {
-			stickyMoves.clearStickyMove();
-		}
-
-		// If the selected move was on this side, reset it (in a less elegant fashion than sticky move reset)
-		var selectedMove = $("input:radio[name='resultMove']:checked").prop("id");
-		if (selectedMove !== undefined) {
-			var selectedSide = selectedMove.charAt(selectedMove.length - 2);
-			if (pokeObj.prop("id") === "p1" && selectedSide === "L") {
-				$("#resultMoveL1").prop("checked", true);
-				$("#resultMoveL1").change();
-			}
-			else if (pokeObj.prop("id") === "p2" && selectedSide === "R") {
-				$("#resultMoveR1").prop("checked", true);
-				$("#resultMoveR1").change();
-			}
-		}
-
-		pokeObj.find(".type1").val(pokemon.t1);
-		pokeObj.find(".type2").val(pokemon.t2);
-		pokeObj.find(".hp .base").val(pokemon.bs.hp);
-		var i;
-		for (i = 0; i < STATS.length; i++) {
-			pokeObj.find("." + STATS[i] + " .base").val(pokemon.bs[STATS[i]]);
-		}
-		pokeObj.find(".hp").val("calcHP");
-		pokeObj.find(".weight").val(pokemon.w);
-		pokeObj.find(".boost").val(0);
-		pokeObj.find(".percent-hp").val(100);
-		pokeObj.find(".status").val("Healthy");
-		$(".status").change();
-		pokeObj.find(".max-level").val(10);
-		pokeObj.find(".max").prop("checked", false);
-		pokeObj.find(".max").change();
-		pokeObj.find(".tera-type").val(pokemon.t1);
-		pokeObj.find(".tera").prop("checked", false);
-		pokeObj.find(".tera").change();
-		var moveObj;
-		var abilityObj = pokeObj.find(".ability");
-		var itemObj = pokeObj.find(".item");
-		if (pokemonName in setdex && setName in setdex[pokemonName]) {
-			var set = setdex[pokemonName][setName];
-			pokeObj.find(".level").val($("#autolevel-select").val());
-			pokeObj.find(".hp .evs").val(set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0);
-			pokeObj.find(".hp .ivs").val(set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : 31);
-			for (i = 0; i < STATS.length; i++) {
-				pokeObj.find("." + STATS[i] + " .evs").val(set.evs && typeof set.evs[STATS[i]] !== "undefined" ? set.evs[STATS[i]] : 0);
-				pokeObj.find("." + STATS[i] + " .ivs").val(set.ivs && typeof set.ivs[STATS[i]] !== "undefined" ? set.ivs[STATS[i]] : 31);
-			}
-			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
-			setSelectValueIfValid(abilityObj, set.ability ? set.ability : pokemon.ab, "");
-			setSelectValueIfValid(pokeObj.find(".tera-type"), set.teraType, pokemon.t1);
-			setSelectValueIfValid(itemObj, set.item, "");
-			for (i = 0; i < 4; i++) {
-				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
-				setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
-				moveObj.change();
-			}
-		} else {
-			pokeObj.find(".level").val($("#autolevel-select").val());
-			pokeObj.find(".hp .evs").val(0);
-			pokeObj.find(".hp .ivs").val(31);
-			for (i = 0; i < STATS.length; i++) {
-				pokeObj.find("." + STATS[i] + " .evs").val(0);
-				pokeObj.find("." + STATS[i] + " .ivs").val(31);
-			}
-			pokeObj.find(".nature").val("Hardy");
-			setSelectValueIfValid(abilityObj, pokemon.ab, "");
-			pokeObj.find(".tera-type").val(pokemon.t1);
-			itemObj.val("");
-			for (i = 0; i < 4; i++) {
-				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
-				moveObj.val("(No Move)");
-				moveObj.change();
-			}
-		}
-		var formeObj = $(this).siblings().find(".forme").parent();
-		itemObj.prop("disabled", false);
-		if (pokemon.formes) {
-			showFormes(formeObj, setName, pokemonName, pokemon);
-		} else {
-			formeObj.hide();
-		}
-		calcHP(pokeObj);
-		calcStats(pokeObj);
-		calcEvTotal(pokeObj);
-		abilityObj.change();
-		itemObj.change();
+	if (!pokemon) {
+		console.log("error: `" + pokemonName + "` could not be found in pokedex[]");
+		return;
 	}
+	var pokeObj = $(this).closest(".poke-info");
+
+	// If the sticky move was on this side, reset it
+	if (stickyMoves.getSelectedSide() === pokeObj.prop("id")) {
+		stickyMoves.clearStickyMove();
+	}
+
+	// If the selected move was on this side, reset it
+	var selectedMove = $("input:radio[name='resultMove']:checked").prop("id");
+	if (selectedMove !== undefined) {
+		var selectedSide = selectedMove.charAt(selectedMove.length - 2);
+		if (pokeObj.prop("id") === "p1" && selectedSide === "L") {
+			$("#resultMoveL1").prop("checked", true);
+			$("#resultMoveL1").change();
+		}
+		else if (pokeObj.prop("id") === "p2" && selectedSide === "R") {
+			$("#resultMoveR1").prop("checked", true);
+			$("#resultMoveR1").change();
+		}
+	}
+
+	pokeObj.find(".type1").val(pokemon.t1);
+	pokeObj.find(".type2").val(pokemon.t2);
+	pokeObj.find(".hp .base").val(pokemon.bs.hp);
+	var i;
+	for (i = 0; i < STATS.length; i++) {
+		pokeObj.find("." + STATS[i] + " .base").val(pokemon.bs[STATS[i]]);
+	}
+	pokeObj.find(".hp").val("calcHP");
+	pokeObj.find(".weight").val(pokemon.w);
+	pokeObj.find(".boost").val(0);
+	pokeObj.find(".percent-hp").val(100);
+	pokeObj.find(".status").val("Healthy");
+	$(".status").change();
+	pokeObj.find(".max-level").val(10);
+	pokeObj.find(".max").prop("checked", false);
+	pokeObj.find(".max").change();
+	pokeObj.find(".tera-type").val(pokemon.t1);
+	pokeObj.find(".tera").prop("checked", false);
+	pokeObj.find(".tera").change();
+	var moveObj;
+	var abilityObj = pokeObj.find(".ability");
+	var itemObj = pokeObj.find(".item");
+	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
+		var set = setdexAll[pokemonName][setName];
+		pokeObj.find(".level").val(set.level ? set.level : $("#autolevel-select").val());
+		pokeObj.find(".hp .evs").val(set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0);
+		pokeObj.find(".hp .ivs").val(set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : 31);
+		for (i = 0; i < STATS.length; i++) {
+			pokeObj.find("." + STATS[i] + " .evs").val(set.evs && typeof set.evs[STATS[i]] !== "undefined" ? set.evs[STATS[i]] : 0);
+			pokeObj.find("." + STATS[i] + " .ivs").val(set.ivs && typeof set.ivs[STATS[i]] !== "undefined" ? set.ivs[STATS[i]] : 31);
+		}
+		setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
+		setSelectValueIfValid(abilityObj, set.ability ? set.ability : pokemon.ab, "");
+		setSelectValueIfValid(pokeObj.find(".tera-type"), set.teraType, pokemon.t1);
+		setSelectValueIfValid(itemObj, set.item, "");
+		for (i = 0; i < 4; i++) {
+			moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
+			setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
+			moveObj.change();
+		}
+	} else {
+		// Blank set
+		pokeObj.find(".level").val($("#autolevel-select").val());
+		pokeObj.find(".hp .evs").val(0);
+		pokeObj.find(".hp .ivs").val(31);
+		for (i = 0; i < STATS.length; i++) {
+			pokeObj.find("." + STATS[i] + " .evs").val(0);
+			pokeObj.find("." + STATS[i] + " .ivs").val(31);
+		}
+		pokeObj.find(".nature").val("Hardy");
+		setSelectValueIfValid(abilityObj, pokemon.ab, "");
+		pokeObj.find(".tera-type").val(pokemon.t1);
+		itemObj.val("");
+		for (i = 0; i < 4; i++) {
+			moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
+			moveObj.val("(No Move)");
+			moveObj.change();
+		}
+	}
+	var formeObj = $(this).siblings().find(".forme").parent();
+	itemObj.prop("disabled", false);
+	if (pokemon.formes) {
+		showFormes(formeObj, setName, pokemonName, pokemon);
+	} else {
+		formeObj.hide();
+	}
+	calcHP(pokeObj);
+	calcStats(pokeObj);
+	calcEvTotal(pokeObj);
+	abilityObj.change();
+	itemObj.change();
 });
 
 function showFormes(formeObj, setName, pokemonName, pokemon) {
 	var defaultForme = 0;
 
 	if (setName !== "Blank Set") {
-		var set = setdex[pokemonName][setName];
+		var set = setdexAll[pokemonName][setName];
 
 		if (set.isGmax) defaultForme = 1;
 
@@ -578,8 +585,8 @@ $(".forme").change(function () {
 
 	if (abilities.includes(altForme.ab)) {
 		container.find(".ability").val(altForme.ab);
-	} else if (setName !== "Blank Set" && abilities.includes(setdex[pokemonName][setName].ability)) {
-		container.find(".ability").val(setdex[pokemonName][setName].ability);
+	} else if (setName !== "Blank Set" && abilities.includes(setdexAll[pokemonName][setName].ability)) {
+		container.find(".ability").val(setdexAll[pokemonName][setName].ability);
 	} else {
 		container.find(".ability").val("");
 	}
@@ -689,7 +696,13 @@ function Pokemon(pokeInfo, setName) { // if passing a jquery object, just call t
 
 		var set = setdex[this.name][setName];
 		//this.isGmax = setName.includes("-Gmax") || pokemon.isGmax || set.isGmax;
-		this.level = set.level ? set.level : 50;
+		if (set.level) {
+			this.level = set.level;
+		} else if (gen == 3 || gen == 4) {
+			this.level = parseInt($("#autolevel-select").val());
+		} else {
+			this.level = 50;
+		}
 
 		this.HPEVs = set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0;
 		if (gen < 3) {
@@ -1010,7 +1023,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isRuinBeads = isRuinBeads;
 }
 
-var gen, pokedex, setdex, typeChart, moves, abilities, items, calculateAllMoves;
+var gen, pokedex, setdex, setdexAll, typeChart, moves, abilities, items, calculateAllMoves;
 var STATS = STATS_GSC;
 var calcHP = CALC_HP_ADV;
 var calcStat = CALC_STAT_ADV;
@@ -1019,7 +1032,7 @@ $(".gen").change(function () {
 	switch (gen) {
 	case 3:
 		pokedex = POKEDEX_ADV;
-		setdex = SETDEX_ADV;
+		setdex = SETDEX_EM;
 		typeChart = TYPE_CHART_GSC;
 		moves = MOVES_ADV;
 		items = ITEMS_ADV;
@@ -1097,6 +1110,13 @@ $(".gen").change(function () {
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
 		localStorage.setItem("selectedGen", 9);
 	}
+	setdexAll = joinDexes([setdex, SETDEX_CUSTOM]);
+	if (gen <= 4) {
+		var storedLevel = localStorage.getItem("frontierLevel");
+		$("#autolevel-select").val(storedLevel ? storedLevel : 50);
+	} else {
+		$("#autolevel-select").val(50);
+	}
 	clearField();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
@@ -1110,9 +1130,24 @@ $(".gen").change(function () {
 	var itemOptions = getSelectOptions(items, true);
 	$("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
 
-	$(".set-selector").val(getSetOptions()[1].id); // skip over the unselectable species name and load the first set
+	$(".set-selector").val(getSetOptions()[1].id); // load the first set after the unselectable species name
 	$(".set-selector").change();
 });
+
+function joinDexes(components) {
+	var joinedDex = {};
+	for (var i = 0; i < components.length; i++) {
+		var sourceDex = components[i];
+		if (sourceDex) {
+			for (var p in sourceDex) {
+				if (sourceDex.hasOwnProperty(p)) {
+					joinedDex[p] = $.extend(joinedDex[p], sourceDex[p]);
+				}
+			}
+		}
+	}
+	return joinedDex;
+}
 
 function clearField() {
 	if (localStorage.getItem("selectedFormat") != null) {
@@ -1202,8 +1237,8 @@ function getSetOptions() {
 			"pokemon": pokeName,
 			"text": pokeName
 		});
-		if (pokeName in setdex) {
-			var setNames = Object.keys(setdex[pokeName]);
+		if (pokeName in setdexAll) {
+			var setNames = Object.keys(setdexAll[pokeName]);
 			for (var j = 0; j < setNames.length; j++) {
 				var setName = setNames[j];
 				setOptions.push({
@@ -1295,9 +1330,6 @@ $(document).ready(function () {
 		$("#gen9").prop("checked", true);
 		$("#gen9").change();
 	}
-	for (var n = 1; n < 101; n++) {
-		$("#autolevel-select").append($("<option />").val(n).text(n));
-	}
 	$(".terrain-trigger").bind("change keyup", getTerrainEffects);
 	//$(".calc-trigger").bind("change keyup", calculate);
 	$(".set-selector").select2({
@@ -1331,7 +1363,7 @@ $(document).ready(function () {
 			return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().includes(" " + term.toUpperCase());
 		}
 	});
-	$(".set-selector").val(getSetOptions()[1].id); // skip over the unselectable species name and load the first set
+	$(".set-selector").val(getSetOptions()[1].id); // load the first set after the unselectable species name
 	$(".set-selector").change();
 });
 

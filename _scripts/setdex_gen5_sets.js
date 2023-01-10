@@ -1,4 +1,4 @@
-var SETDEX_GEN5_SETS = 
+var SETDEX_GEN5 = 
 {
   "Venusaur": {
     "Venusaur-1 (209)": {

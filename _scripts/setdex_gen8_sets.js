@@ -1,4 +1,4 @@
-var SETDEX_GEN8_SETS = 
+var SETDEX_GEN8 = 
 {
   "Rillaboom": {
     "Rillaboom-1": {
