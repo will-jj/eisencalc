@@ -221,6 +221,18 @@ function getDamageResult(attacker, defender, move, field) {
 		(move.name === "Grassy Glide" && field.terrain === "Grassy" && isGrounded(attacker, field.isGravity, attacker.ability === "Levitate"))) {
 		move.hasPriority = true;
 	}
+	var attackerWeight = attacker.weight;
+	var defenderWeight = defender.weight;
+	if (attacker.ability === "Heavy Metal") {
+		attackerWeight *= 2;
+	} else if (attacker.ability === "Light Metal") {
+		attackerWeight = Math.floor(attackerWeight * 5) / 10;
+	}
+	if (defender.ability === "Heavy Metal") {
+		defenderWeight *= 2;
+	} else if (defender.ability === "Light Metal") {
+		defenderWeight = Math.floor(defenderWeight * 5) / 10;
+	}
 
 	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
 	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity) : 1;
@@ -262,7 +274,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	if (move.name === "Sky Drop" &&
         ([defender.type1, defender.type2].indexOf("Flying") !== -1 ||
-            defender.weight >= 200.0 || field.isGravity)) {
+            defenderWeight >= 200.0 || field.isGravity)) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 	if (move.name === "Synchronoise" &&
@@ -329,7 +341,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Low Kick":
 	case "Grass Knot":
-		var w = defender.weight;
+		var w = defenderWeight;
 		basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
 		description.moveBP = basePower;
 		break;
@@ -346,7 +358,8 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Heavy Slam":
 	case "Heat Crash":
-		var wr = attacker.weight / defender.weight;
+		var wr = attackerWeight / defenderWeight;
+		console.log("ratio: " + wr);
 		basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
 		description.moveBP = basePower;
 		break;
