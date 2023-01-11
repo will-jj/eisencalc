@@ -77,12 +77,12 @@ $(".tera-type").bind("keyup change", function () {
 
 $("#autolevel-select").change(function () {
 	// auto-calc stats and current HP on change
-	//$("#p1").find(".level").val($("#autolevel-select").val());
-	//$("#p2").find(".level").val($("#autolevel-select").val());
-	//$(".level").change();
-	if (gen <= 4) {
+	$("#p1").find(".level").val($("#autolevel-select").val());
+	$("#p2").find(".level").val($("#autolevel-select").val());
+	$(".level").change();
+	/*if (gen <= 4) {
 		localStorage.setItem("frontierLevel", $("#autolevel-select").val());
-	}
+	}*/
 });
 
 $(".level").bind("keyup change", function () {
