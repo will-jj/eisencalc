@@ -81,7 +81,7 @@ function exportToPsFormat(pokeInfo) {
 
 	finalText = speciesName + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
 	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
-	finalText += pokemon.level !== 50 ? "Level: " + pokemon.level + "\n" : "";
+	finalText += pokemon.level !== 50 || gen == 3 || gen == 4 ? "Level: " + pokemon.level + "\n" : "";
 	finalText += pokemon.teraType ? "Tera Type: " + pokemon.teraType + "\n" : "";
 	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
 	finalText += "EVs: ";

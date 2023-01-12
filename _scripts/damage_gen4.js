@@ -360,6 +360,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 
 	if (field.format !== "Singles" && move.isSpread) {
 		baseDamage = Math.floor(baseDamage * 3 / 4);
+		description.isSpread = true;
 	}
 
 	if ((field.weather === "Sun" && move.type === "Fire") || (field.weather === "Rain" && move.type === "Water")) {

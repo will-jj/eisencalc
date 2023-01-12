@@ -103,7 +103,7 @@ function getDamageResult(attacker, defender, move, field) {
 		move.makesContact = false;
 	}
 	if (defender.isTerastal) {
-		description.defenderTera = "Tera " + defender.type1;
+		description.defenderTera = defender.type1;
 	}
 	if (move.bp === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
@@ -826,7 +826,7 @@ function getDamageResult(attacker, defender, move, field) {
 			} else {
 				stabMod = (move.type === attacker.dexType1 || move.type === attacker.dexType2) ? 0x2000 : 0x1800;
 			}
-			description.attackerTera = "Tera " + attacker.type1;
+			description.attackerTera = attacker.type1;
 		}
 		else if (move.type === attacker.dexType1 || move.type === attacker.dexType2) {
 			stabMod = 0x1800;
@@ -988,7 +988,9 @@ function buildDescription(description) {
 	if (description.isBurned) {
 		output += "burned ";
 	}
-	output = appendIfSet(output, description.attackerTera);
+	if (description.attackerTera) {
+		output += "Tera " + description.attackerTera + " ";
+	}
 	output += description.attackerName + " ";
 	if (description.isHelpingHand) {
 		output += "Helping Hand ";
@@ -1038,7 +1040,9 @@ function buildDescription(description) {
 	if (description.isRuinDef) {
 		output += "Ruin ";
 	}
-	output = appendIfSet(output, description.defenderTera);
+	if (description.defenderTera) {
+		output += "Tera " + description.defenderTera + " ";
+	}
 	output += description.defenderName;
 	if (description.weather) {
 		output += " in " + description.weather;
