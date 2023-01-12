@@ -102,6 +102,10 @@ $("#autolevel").change(function () {
 	localStorage.setItem("autolevelGen" + gen, level);
 });
 
+$("#format").change(function () {
+	localStorage.setItem("selectedFormat", $("input:radio[name='format']:checked").val().toLowerCase());
+});
+
 $(".level").bind("keyup change", function () {
 	var poke = $(this).closest(".poke-info");
 	calcHP(poke);
@@ -956,8 +960,6 @@ function getZMoveName(moveName, moveType, item) {
 }
 
 function Field() {
-	var format = $("input:radio[name='format']:checked").val();
-	localStorage.setItem("selectedFormat", format.toLowerCase());
 	var isGravity = $("#gravity").prop("checked");
 	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
 	var isProtect = [$("#protectL").prop("checked"), $("#protectR").prop("checked")];
@@ -1122,13 +1124,6 @@ $(".gen").change(function () {
 		localStorage.setItem("selectedGen", 9);
 	}
 	setdexAll = joinDexes([setdex, SETDEX_CUSTOM]);
-	var storedLevel = localStorage.getItem("autolevelGen" + gen);
-	storedLevel = storedLevel ? storedLevel : 50;
-	if (gen == 3 || gen == 4) {
-		$("#autolevel-box").val(storedLevel);
-	} else {
-		$("input:radio[id='autolevel" + storedLevel + "']").prop("checked", true);
-	}
 	clearField();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
@@ -1162,6 +1157,12 @@ function joinDexes(components) {
 }
 
 function clearField() {
+	var storedLevel = localStorage.getItem("autolevelGen" + gen) ? localStorage.getItem("autolevelGen" + gen) : 50;
+	if (gen == 3 || gen == 4) {
+		$("#autolevel-box").val(storedLevel);
+	} else {
+		$("input:radio[id='autolevel" + storedLevel + "']").prop("checked", true);
+	}
 	if (localStorage.getItem("selectedFormat") != null) {
 		switch (localStorage.getItem("selectedFormat") + "") {
 
@@ -1176,6 +1177,8 @@ function clearField() {
 		default:
 			$("#doubles").prop("checked", true);
 		}
+	} else if (gen == 3 || gen == 4) {
+		$("#singles").prop("checked", true);
 	} else {
 		$("#doubles").prop("checked", true);
 	}
