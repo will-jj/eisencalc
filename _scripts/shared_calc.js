@@ -1,7 +1,7 @@
 // input field validation
 var bounds = {
 	"level": [1, 100],
-	"autolevel": [1, 100],
+	"autolevel-box": [1, 100],
 	"base": [1, 255],
 	"evs": [0, 252],
 	"ivs": [0, 31],
@@ -75,14 +75,31 @@ $(".tera-type").bind("keyup change", function () {
 	}
 });
 
-$("#autolevel-select").change(function () {
+$("#autolevel").change(function () {
 	// auto-calc stats and current HP on change
-	$("#p1").find(".level").val($("#autolevel-select").val());
-	$("#p2").find(".level").val($("#autolevel-select").val());
+	var level = $(gen == 3 || gen == 4 ? "#autolevel-box" : "input:radio[name='autolevel-btn']:checked").val();
+	var p1 = $("#p1");
+	var p2 = $("#p2");
+	if (gen == 4) {
+		// for gen 4 only, due to Hall mechanics, changes to the autolevel should not affect the pokemon if it's a custom set
+		var p1Name = p1.find("input.set-selector").val(); // speciesName (setName)
+		var speciesSets = setdex[p1Name.substring(0, p1Name.indexOf(" ("))];
+		if (speciesSets && speciesSets[p1Name.substring(p1Name.indexOf('(') + 1, p1Name.length - 1)]) {
+			p1.find(".level").val(level);
+		}
+		var p2Name = p2.find("input.set-selector").val();
+		if (p2Name) {
+			speciesSets = setdex[p2Name.substring(0, p2Name.indexOf(" ("))];
+			if (speciesSets && speciesSets[p2Name.substring(p2Name.indexOf('(') + 1, p2Name.length - 1)]) {
+				p2.find(".level").val(level);
+			}
+		}
+	} else {
+		p1.find(".level").val(level);
+		p2.find(".level").val(level);
+	}
 	$(".level").change();
-	/*if (gen <= 4) {
-		localStorage.setItem("frontierLevel", $("#autolevel-select").val());
-	}*/
+	localStorage.setItem("autolevelGen" + gen, level);
 });
 
 $(".level").bind("keyup change", function () {
@@ -482,7 +499,7 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	var itemObj = pokeObj.find(".item");
 	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
 		var set = setdexAll[pokemonName][setName];
-		pokeObj.find(".level").val(set.level ? set.level : $("#autolevel-select").val());
+		pokeObj.find(".level").val(set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50));
 		pokeObj.find(".hp .evs").val(set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0);
 		pokeObj.find(".hp .ivs").val(set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : 31);
 		for (i = 0; i < STATS.length; i++) {
@@ -500,7 +517,7 @@ $(".set-selector").bind("change click keyup keydown", function () {
 		}
 	} else {
 		// Blank set
-		pokeObj.find(".level").val($("#autolevel-select").val());
+		pokeObj.find(".level").val(localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50);
 		pokeObj.find(".hp .evs").val(0);
 		pokeObj.find(".hp .ivs").val(31);
 		for (i = 0; i < STATS.length; i++) {
@@ -696,13 +713,7 @@ function Pokemon(pokeInfo, setName) { // if passing a jquery object, just call t
 
 		var set = setdex[this.name][setName];
 		//this.isGmax = setName.includes("-Gmax") || pokemon.isGmax || set.isGmax;
-		if (set.level) {
-			this.level = set.level;
-		} else if (gen == 3 || gen == 4) {
-			this.level = parseInt($("#autolevel-select").val());
-		} else {
-			this.level = 50;
-		}
+		this.level = set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50);
 
 		this.HPEVs = set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0;
 		if (gen < 3) {
@@ -1111,11 +1122,12 @@ $(".gen").change(function () {
 		localStorage.setItem("selectedGen", 9);
 	}
 	setdexAll = joinDexes([setdex, SETDEX_CUSTOM]);
-	if (gen <= 4) {
-		var storedLevel = localStorage.getItem("frontierLevel");
-		$("#autolevel-select").val(storedLevel ? storedLevel : 50);
+	var storedLevel = localStorage.getItem("autolevelGen" + gen);
+	storedLevel = storedLevel ? storedLevel : 50;
+	if (gen == 3 || gen == 4) {
+		$("#autolevel-box").val(storedLevel);
 	} else {
-		$("#autolevel-select").val(50);
+		$("input:radio[id='autolevel" + storedLevel + "']").prop("checked", true);
 	}
 	clearField();
 	$(".gen-specific.g" + gen).show();
