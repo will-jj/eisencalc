@@ -61,7 +61,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Abomasnow (H371)": {
+    "Abomasnow-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -146,7 +146,7 @@ SETDEX_PHGSS = {
       "item": "Choice Band",
       "tier": "50"
     },
-    "Absol (H349)": {
+    "Absol-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -231,7 +231,7 @@ SETDEX_PHGSS = {
       "item": "Choice Band",
       "tier": "50"
     },
-    "Aerodactyl (H396)": {
+    "Aerodactyl-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -316,7 +316,7 @@ SETDEX_PHGSS = {
       "item": "Focus Sash",
       "tier": "50"
     },
-    "Aggron (H429)": {
+    "Aggron-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -355,7 +355,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Silk Scarf"
     },
-    "Aipom (H200)": {
+    "Aipom-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -440,7 +440,7 @@ SETDEX_PHGSS = {
       "item": "Expert Belt",
       "tier": "50"
     },
-    "Alakazam (H281)": {
+    "Alakazam-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -525,7 +525,7 @@ SETDEX_PHGSS = {
       "item": "White Herb",
       "tier": "50"
     },
-    "Altaria (H336)": {
+    "Altaria-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -610,7 +610,7 @@ SETDEX_PHGSS = {
       "item": "Life Orb",
       "tier": "50"
     },
-    "Ambipom (H361)": {
+    "Ambipom-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -695,7 +695,7 @@ SETDEX_PHGSS = {
       "item": "Zoom Lens",
       "tier": "50"
     },
-    "Ampharos (H406)": {
+    "Ampharos-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -734,7 +734,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Metronome"
     },
-    "Anorith (H244)": {
+    "Anorith-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -788,7 +788,7 @@ SETDEX_PHGSS = {
       "item": "Payapa Berry",
       "tier": "50"
     },
-    "Arbok (H162)": {
+    "Arbok-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -873,7 +873,7 @@ SETDEX_PHGSS = {
       "item": "Focus Band",
       "tier": "50"
     },
-    "Arcanine (H379)": {
+    "Arcanine-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -912,7 +912,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "SilverPowder"
     },
-    "Ariados (H194)": {
+    "Ariados-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -997,7 +997,7 @@ SETDEX_PHGSS = {
       "item": "Life Orb",
       "tier": "50"
     },
-    "Armaldo (H344)": {
+    "Armaldo-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -1036,7 +1036,7 @@ SETDEX_PHGSS = {
       "nature": "Impish",
       "item": "Metal Coat"
     },
-    "Aron (H106)": {
+    "Aron-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -1121,7 +1121,7 @@ SETDEX_PHGSS = {
       "item": "Charti Berry",
       "tier": "50"
     },
-    "Articuno (H398)": {
+    "Articuno-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -1160,7 +1160,7 @@ SETDEX_PHGSS = {
       "nature": "Quiet",
       "item": "Pecha Berry"
     },
-    "Azumarill (H197)": {
+    "Azumarill-H": {
       "evs": {
         "hp": 252,
         "sd": 252
@@ -1199,7 +1199,7 @@ SETDEX_PHGSS = {
       "nature": "Naughty",
       "item": "Dragon Fang"
     },
-    "Bagon (H126)": {
+    "Bagon-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -1238,7 +1238,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Twisted Spoon"
     },
-    "Baltoy (H118)": {
+    "Baltoy-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -1292,7 +1292,7 @@ SETDEX_PHGSS = {
       "item": "Colbur Berry",
       "tier": "50"
     },
-    "Banette (H346)": {
+    "Banette-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -1377,7 +1377,7 @@ SETDEX_PHGSS = {
       "item": "Focus Sash",
       "tier": "50"
     },
-    "Bastiodon (H356)": {
+    "Bastiodon-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -1432,7 +1432,7 @@ SETDEX_PHGSS = {
       "item": "Chesto Berry",
       "tier": "50"
     },
-    "Bayleef (H189)": {
+    "Bayleef-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -1471,7 +1471,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "SilverPowder"
     },
-    "Beautifly (H221)": {
+    "Beautifly-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -1510,7 +1510,7 @@ SETDEX_PHGSS = {
       "nature": "Jolly",
       "item": "Scope Lens"
     },
-    "Beedrill (H159)": {
+    "Beedrill-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -1564,7 +1564,7 @@ SETDEX_PHGSS = {
       "item": "Brightpowder",
       "tier": "50"
     },
-    "Bellossom (H309)": {
+    "Bellossom-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -1618,7 +1618,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Bibarel (H255)": {
+    "Bibarel-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -1657,7 +1657,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Silk Scarf"
     },
-    "Bidoof (H132)": {
+    "Bidoof-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -1743,7 +1743,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Blastoise (H376)": {
+    "Blastoise-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -1828,7 +1828,7 @@ SETDEX_PHGSS = {
       "item": "White Herb",
       "tier": "50"
     },
-    "Blaziken (H425)": {
+    "Blaziken-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -1913,7 +1913,7 @@ SETDEX_PHGSS = {
       "item": "Leftovers",
       "tier": "50"
     },
-    "Blissey (H419)": {
+    "Blissey-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -1952,7 +1952,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Rock Incense"
     },
-    "Bonsly (H145)": {
+    "Bonsly-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -2037,7 +2037,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Breloom (H324)": {
+    "Breloom-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -2122,7 +2122,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Bronzong (H449)": {
+    "Bronzong-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -2161,7 +2161,7 @@ SETDEX_PHGSS = {
       "nature": "Brave",
       "item": "Odd Incense"
     },
-    "Bronzor (H144)": {
+    "Bronzor-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -2200,7 +2200,7 @@ SETDEX_PHGSS = {
       "nature": "Calm",
       "item": "Big Root"
     },
-    "Budew (H135)": {
+    "Budew-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -2239,7 +2239,7 @@ SETDEX_PHGSS = {
       "nature": "Jolly",
       "item": "Wave Incense"
     },
-    "Buizel (H138)": {
+    "Buizel-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -2278,7 +2278,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Brightpowder"
     },
-    "Bulbasaur (H1)": {
+    "Bulbasaur-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -2317,7 +2317,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Black Belt"
     },
-    "Buneary (H264)": {
+    "Buneary-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -2356,7 +2356,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Sitrus Berry"
     },
-    "Burmy (H136)": {
+    "Burmy-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -2395,7 +2395,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Pecha Berry"
     },
-    "Butterfree (H158)": {
+    "Butterfree-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -2434,7 +2434,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Aspear Berry"
     },
-    "Cacnea (H114)": {
+    "Cacnea-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -2488,7 +2488,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Cacturne (H335)": {
+    "Cacturne-H": {
       "evs": {
         "at": 252,
         "sd": 252
@@ -2542,7 +2542,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Camerupt (H332)": {
+    "Camerupt-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -2596,7 +2596,7 @@ SETDEX_PHGSS = {
       "item": "Occa Berry",
       "tier": "50"
     },
-    "Carnivine (H369)": {
+    "Carnivine-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -2635,7 +2635,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Cheri Berry"
     },
-    "Carvanha (H110)": {
+    "Carvanha-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -2674,7 +2674,7 @@ SETDEX_PHGSS = {
       "nature": "Timid",
       "item": "Persim Berry"
     },
-    "Castform (H245)": {
+    "Castform-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -2728,7 +2728,7 @@ SETDEX_PHGSS = {
       "item": "Lucky Punch",
       "tier": "50"
     },
-    "Chansey (H295)": {
+    "Chansey-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -2813,7 +2813,7 @@ SETDEX_PHGSS = {
       "item": "Brightpowder",
       "tier": "50"
     },
-    "Charizard (H476)": {
+    "Charizard-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -2852,7 +2852,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Scope Lens"
     },
-    "Charmander (H2)": {
+    "Charmander-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -2906,7 +2906,7 @@ SETDEX_PHGSS = {
       "item": "Razor Claw",
       "tier": "50"
     },
-    "Charmeleon (H156)": {
+    "Charmeleon-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -2945,7 +2945,7 @@ SETDEX_PHGSS = {
       "nature": "Calm",
       "item": "Persim Berry"
     },
-    "Chatot (H265)": {
+    "Chatot-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -2999,7 +2999,7 @@ SETDEX_PHGSS = {
       "item": "Power Herb",
       "tier": "50"
     },
-    "Cherrim (H359)": {
+    "Cherrim-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -3038,7 +3038,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Rose Incense"
     },
-    "Cherubi (H139)": {
+    "Cherubi-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -3077,7 +3077,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Lax Incense"
     },
-    "Chikorita (H51)": {
+    "Chikorita-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -3116,7 +3116,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Passho Berry"
     },
-    "Chimchar (H129)": {
+    "Chimchar-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -3170,7 +3170,7 @@ SETDEX_PHGSS = {
       "item": "Twisted Spoon",
       "tier": "50"
     },
-    "Chimecho (H246)": {
+    "Chimecho-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -3209,7 +3209,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Magnet"
     },
-    "Chinchou (H58)": {
+    "Chinchou-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -3248,7 +3248,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Twisted Spoon"
     },
-    "Chingling (H142)": {
+    "Chingling-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -3287,7 +3287,7 @@ SETDEX_PHGSS = {
       "nature": "Bold",
       "item": "DeepSeaScale"
     },
-    "Clamperl (H248)": {
+    "Clamperl-H": {
       "evs": {
         "hp": 252,
         "sd": 252
@@ -3372,7 +3372,7 @@ SETDEX_PHGSS = {
       "item": "Lax Incense",
       "tier": "50"
     },
-    "Claydol (H432)": {
+    "Claydol-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -3425,7 +3425,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Focus Band"
     },
-    "Clefable (H275)": {
+    "Clefable-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -3464,7 +3464,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Brightpowder"
     },
-    "Clefairy (H16)": {
+    "Clefairy-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -3518,7 +3518,7 @@ SETDEX_PHGSS = {
       "item": "Leftovers",
       "tier": "50"
     },
-    "Cloyster (H385)": {
+    "Cloyster-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -3558,7 +3558,7 @@ SETDEX_PHGSS = {
       "nature": "Serious",
       "item": "SilverPowder"
     },
-    "Combee (H137)": {
+    "Combee-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -3612,7 +3612,7 @@ SETDEX_PHGSS = {
       "item": "Scope Lens",
       "tier": "50"
     },
-    "Combusken (H217)": {
+    "Combusken-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -3651,7 +3651,7 @@ SETDEX_PHGSS = {
       "nature": "Brave",
       "item": "Pecha Berry"
     },
-    "Corphish (H117)": {
+    "Corphish-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -3690,7 +3690,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Focus Band"
     },
-    "Corsola (H212)": {
+    "Corsola-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -3779,7 +3779,7 @@ SETDEX_PHGSS = {
       "item": "Leftovers",
       "tier": "50"
     },
-    "Cradily (H343)": {
+    "Cradily-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -3818,7 +3818,7 @@ SETDEX_PHGSS = {
       "nature": "Careful",
       "item": "Rock Incense"
     },
-    "Cranidos (H258)": {
+    "Cranidos-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -3872,7 +3872,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Crawdaunt (H342)": {
+    "Crawdaunt-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -3959,7 +3959,7 @@ SETDEX_PHGSS = {
       "item": "Leftovers",
       "tier": "50"
     },
-    "Cresselia (H435)": {
+    "Cresselia-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -3998,7 +3998,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Black Sludge"
     },
-    "Croagunk (H152)": {
+    "Croagunk-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -4083,7 +4083,7 @@ SETDEX_PHGSS = {
       "item": "Razor Claw",
       "tier": "50"
     },
-    "Crobat (H405)": {
+    "Crobat-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -4137,7 +4137,7 @@ SETDEX_PHGSS = {
       "item": "Focus Band",
       "tier": "50"
     },
-    "Croconaw (H191)": {
+    "Croconaw-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -4176,7 +4176,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Soft Sand"
     },
-    "Cubone (H44)": {
+    "Cubone-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -4215,7 +4215,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Quick Claw"
     },
-    "Cyndaquil (H52)": {
+    "Cyndaquil-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -4254,7 +4254,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Sitrus Berry"
     },
-    "Delcatty (H230)": {
+    "Delcatty-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -4293,7 +4293,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "NeverMeltIce"
     },
-    "Delibird (H76)": {
+    "Delibird-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -4379,7 +4379,7 @@ SETDEX_PHGSS = {
       "item": "Chesto Berry",
       "tier": "50"
     },
-    "Dewgong (H287)": {
+    "Dewgong-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -4433,7 +4433,7 @@ SETDEX_PHGSS = {
       "item": "King's Rock",
       "tier": "50"
     },
-    "Dodrio (H286)": {
+    "Dodrio-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -4472,7 +4472,7 @@ SETDEX_PHGSS = {
       "nature": "Jolly",
       "item": "Liechi Berry"
     },
-    "Doduo (H35)": {
+    "Doduo-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -4557,7 +4557,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Donphan (H417)": {
+    "Donphan-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -4611,7 +4611,7 @@ SETDEX_PHGSS = {
       "item": "Haban Berry",
       "tier": "50"
     },
-    "Dragonair (H188)": {
+    "Dragonair-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -4696,7 +4696,7 @@ SETDEX_PHGSS = {
       "item": "Choice Band",
       "tier": "50"
     },
-    "Dragonite (H401)": {
+    "Dragonite-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -4781,7 +4781,7 @@ SETDEX_PHGSS = {
       "item": "Razor Claw",
       "tier": "50"
     },
-    "Drapion (H453)": {
+    "Drapion-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -4820,7 +4820,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Cheri Berry"
     },
-    "Dratini (H50)": {
+    "Dratini-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -4905,7 +4905,7 @@ SETDEX_PHGSS = {
       "item": "Lax Incense",
       "tier": "50"
     },
-    "Drifblim (H362)": {
+    "Drifblim-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -4944,7 +4944,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Petaya Berry"
     },
-    "Drifloon (H263)": {
+    "Drifloon-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -4983,7 +4983,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Rawst Berry"
     },
-    "Drowzee (H40)": {
+    "Drowzee-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -5068,7 +5068,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Dugtrio (H168)": {
+    "Dugtrio-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -5107,7 +5107,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Razor Claw"
     },
-    "Dunsparce (H207)": {
+    "Dunsparce-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -5162,7 +5162,7 @@ SETDEX_PHGSS = {
       "item": "Colbur Berry",
       "tier": "50"
     },
-    "Dusclops (H347)": {
+    "Dusclops-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -5247,7 +5247,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Dusknoir (H470)": {
+    "Dusknoir-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -5286,7 +5286,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Spell Tag"
     },
-    "Duskull (H121)": {
+    "Duskull-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -5325,7 +5325,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "SilverPowder"
     },
-    "Dustox (H222)": {
+    "Dustox-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -5364,7 +5364,7 @@ SETDEX_PHGSS = {
       "nature": "Jolly",
       "item": "Salac Berry"
     },
-    "Eevee (H49)": {
+    "Eevee-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -5418,7 +5418,7 @@ SETDEX_PHGSS = {
       "item": "Brightpowder",
       "tier": "50"
     },
-    "Electabuzz (H301)": {
+    "Electabuzz-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -5503,7 +5503,7 @@ SETDEX_PHGSS = {
       "item": "Shuca Berry",
       "tier": "50"
     },
-    "Electivire (H459)": {
+    "Electivire-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -5588,7 +5588,7 @@ SETDEX_PHGSS = {
       "item": "Focus Sash",
       "tier": "50"
     },
-    "Electrode (H290)": {
+    "Electrode-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -5627,7 +5627,7 @@ SETDEX_PHGSS = {
       "nature": "Jolly",
       "item": "Cheri Berry"
     },
-    "Elekid (H213)": {
+    "Elekid-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -5712,7 +5712,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Empoleon (H445)": {
+    "Empoleon-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -5797,7 +5797,7 @@ SETDEX_PHGSS = {
       "item": "Shuca Berry",
       "tier": "50"
     },
-    "Entei (H421)": {
+    "Entei-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -5882,7 +5882,7 @@ SETDEX_PHGSS = {
       "item": "Wise Glasses",
       "tier": "50"
     },
-    "Espeon (H408)": {
+    "Espeon-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -5921,7 +5921,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Odd Incense"
     },
-    "Exeggcute (H43)": {
+    "Exeggcute-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -6006,7 +6006,7 @@ SETDEX_PHGSS = {
       "item": "Expert Belt",
       "tier": "50"
     },
-    "Exeggutor (H387)": {
+    "Exeggutor-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -6091,7 +6091,7 @@ SETDEX_PHGSS = {
       "item": "White Herb",
       "tier": "50"
     },
-    "Exploud (H327)": {
+    "Exploud-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -6130,7 +6130,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Stick"
     },
-    "Farfetch'd (H176)": {
+    "Farfetch'd-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -6184,7 +6184,7 @@ SETDEX_PHGSS = {
       "item": "Cheri Berry",
       "tier": "50"
     },
-    "Fearow (H375)": {
+    "Fearow-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -6269,7 +6269,7 @@ SETDEX_PHGSS = {
       "item": "Lum Berry",
       "tier": "50"
     },
-    "Feraligatr (H404)": {
+    "Feraligatr-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -6308,7 +6308,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Wave Incense"
     },
-    "Finneon (H153)": {
+    "Finneon-H": {
       "evs": {
         "hp": 252,
         "sd": 252
@@ -6347,7 +6347,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Light Clay"
     },
-    "Flaaffy (H196)": {
+    "Flaaffy-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -6432,7 +6432,7 @@ SETDEX_PHGSS = {
       "item": "White Herb",
       "tier": "50"
     },
-    "Flareon (H395)": {
+    "Flareon-H": {
       "evs": {
         "sa": 252
       },
@@ -6516,7 +6516,7 @@ SETDEX_PHGSS = {
       "item": "Razor Fang",
       "tier": "50"
     },
-    "Floatzel (H358)": {
+    "Floatzel-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -6601,7 +6601,7 @@ SETDEX_PHGSS = {
       "item": "Lum Berry",
       "tier": "50"
     },
-    "Flygon (H431)": {
+    "Flygon-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -6686,7 +6686,7 @@ SETDEX_PHGSS = {
       "item": "Lax Incense",
       "tier": "50"
     },
-    "Forretress (H313)": {
+    "Forretress-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -6771,7 +6771,7 @@ SETDEX_PHGSS = {
       "item": "Lax Incense",
       "tier": "50"
     },
-    "Froslass (H372)": {
+    "Froslass-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -6825,7 +6825,7 @@ SETDEX_PHGSS = {
       "item": "Choice Band",
       "tier": "50"
     },
-    "Furret (H192)": {
+    "Furret-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -6879,7 +6879,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Gabite (H266)": {
+    "Gabite-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -6964,7 +6964,7 @@ SETDEX_PHGSS = {
       "item": "Scope Lens",
       "tier": "50"
     },
-    "Gallade (H468)": {
+    "Gallade-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -7049,7 +7049,7 @@ SETDEX_PHGSS = {
       "item": "Persim Berry",
       "tier": "50"
     },
-    "Garchomp (H450)": {
+    "Garchomp-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -7134,7 +7134,7 @@ SETDEX_PHGSS = {
       "item": "Wise Glasses",
       "tier": "50"
     },
-    "Gardevoir (H427)": {
+    "Gardevoir-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -7219,7 +7219,7 @@ SETDEX_PHGSS = {
       "item": "Wise Glasses",
       "tier": "50"
     },
-    "Gastrodon (H360)": {
+    "Gastrodon-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -7304,7 +7304,7 @@ SETDEX_PHGSS = {
       "item": "Lum Berry",
       "tier": "50"
     },
-    "Gengar (H386)": {
+    "Gengar-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -7343,7 +7343,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Focus Band"
     },
-    "Geodude (H32)": {
+    "Geodude-H": {
       "evs": {
         "at": 252,
         "sd": 252
@@ -7382,7 +7382,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Soft Sand"
     },
-    "Gible (H148)": {
+    "Gible-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -7436,7 +7436,7 @@ SETDEX_PHGSS = {
       "item": "Razor Claw",
       "tier": "50"
     },
-    "Girafarig (H312)": {
+    "Girafarig-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -7521,7 +7521,7 @@ SETDEX_PHGSS = {
       "item": "Wise Glasses",
       "tier": "50"
     },
-    "Glaceon (H464)": {
+    "Glaceon-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -7607,7 +7607,7 @@ SETDEX_PHGSS = {
       "item": "Lax Incense",
       "tier": "50"
     },
-    "Glalie (H350)": {
+    "Glalie-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -7646,7 +7646,7 @@ SETDEX_PHGSS = {
       "nature": "Jolly",
       "item": "Razor Claw"
     },
-    "Glameow (H141)": {
+    "Glameow-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -7700,7 +7700,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Gligar (H208)": {
+    "Gligar-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -7785,7 +7785,7 @@ SETDEX_PHGSS = {
       "item": "Expert Belt",
       "tier": "50"
     },
-    "Gliscor (H465)": {
+    "Gliscor-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -7824,7 +7824,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Miracle Seed"
     },
-    "Gloom (H166)": {
+    "Gloom-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -7878,7 +7878,7 @@ SETDEX_PHGSS = {
       "item": "Black Sludge",
       "tier": "50"
     },
-    "Golbat (H276)": {
+    "Golbat-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -7917,7 +7917,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Petaya Berry"
     },
-    "Goldeen (H46)": {
+    "Goldeen-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -8002,7 +8002,7 @@ SETDEX_PHGSS = {
       "item": "Wacan Berry",
       "tier": "50"
     },
-    "Golduck (H378)": {
+    "Golduck-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -8087,7 +8087,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Golem (H283)": {
+    "Golem-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -8141,7 +8141,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Gorebyss (H352)": {
+    "Gorebyss-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -8226,7 +8226,7 @@ SETDEX_PHGSS = {
       "item": "Life Orb",
       "tier": "50"
     },
-    "Granbull (H314)": {
+    "Granbull-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -8265,7 +8265,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Focus Band"
     },
-    "Graveler (H174)": {
+    "Graveler-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -8304,7 +8304,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Black Sludge"
     },
-    "Grimer (H37)": {
+    "Grimer-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -8358,7 +8358,7 @@ SETDEX_PHGSS = {
       "item": "Occa Berry",
       "tier": "50"
     },
-    "Grotle (H251)": {
+    "Grotle-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -8412,7 +8412,7 @@ SETDEX_PHGSS = {
       "item": "Coba Berry",
       "tier": "50"
     },
-    "Grovyle (H216)": {
+    "Grovyle-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -8451,7 +8451,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Charcoal"
     },
-    "Growlithe (H169)": {
+    "Growlithe-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -8505,7 +8505,7 @@ SETDEX_PHGSS = {
       "item": "Colbur Berry",
       "tier": "50"
     },
-    "Grumpig (H334)": {
+    "Grumpig-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -8590,7 +8590,7 @@ SETDEX_PHGSS = {
       "item": "Chesto Berry",
       "tier": "50"
     },
-    "Gyarados (H391)": {
+    "Gyarados-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -8629,7 +8629,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Sitrus Berry"
     },
-    "Happiny (H147)": {
+    "Happiny-H": {
       "evs": {
         "hp": 252,
         "df": 252
@@ -8714,7 +8714,7 @@ SETDEX_PHGSS = {
       "item": "Scope Lens",
       "tier": "50"
     },
-    "Hariyama (H328)": {
+    "Hariyama-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -8753,7 +8753,7 @@ SETDEX_PHGSS = {
       "nature": "Timid",
       "item": "Persim Berry"
     },
-    "Haunter (H177)": {
+    "Haunter-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -8838,7 +8838,7 @@ SETDEX_PHGSS = {
       "item": "Focus Sash",
       "tier": "50"
     },
-    "Heatran (H474)": {
+    "Heatran-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -8923,7 +8923,7 @@ SETDEX_PHGSS = {
       "item": "Salac Berry",
       "tier": "50"
     },
-    "Heracross (H413)": {
+    "Heracross-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -8962,7 +8962,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Chesto Berry"
     },
-    "Hippopotas (H150)": {
+    "Hippopotas-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -9047,7 +9047,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Hippowdon (H452)": {
+    "Hippowdon-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -9102,7 +9102,7 @@ SETDEX_PHGSS = {
       "item": "King's Rock",
       "tier": "50"
     },
-    "Hitmonchan (H292)": {
+    "Hitmonchan-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -9157,7 +9157,7 @@ SETDEX_PHGSS = {
       "item": "Salac Berry",
       "tier": "50"
     },
-    "Hitmonlee (H291)": {
+    "Hitmonlee-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -9211,7 +9211,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Hitmontop (H320)": {
+    "Hitmontop-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -9296,7 +9296,7 @@ SETDEX_PHGSS = {
       "item": "Scope Lens",
       "tier": "50"
     },
-    "Honchkrow (H448)": {
+    "Honchkrow-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -9381,7 +9381,7 @@ SETDEX_PHGSS = {
       "item": "White Herb",
       "tier": "50"
     },
-    "Houndoom (H415)": {
+    "Houndoom-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -9420,7 +9420,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Charcoal"
     },
-    "Houndour (H77)": {
+    "Houndour-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -9474,7 +9474,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Huntail (H351)": {
+    "Huntail-H": {
       "evs": {
         "at": 252,
         "sd": 252
@@ -9559,7 +9559,7 @@ SETDEX_PHGSS = {
       "item": "Choice Specs",
       "tier": "50"
     },
-    "Hypno (H288)": {
+    "Hypno-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -9598,7 +9598,7 @@ SETDEX_PHGSS = {
       "nature": "Timid",
       "item": "Petaya Berry"
     },
-    "Illumise (H238)": {
+    "Illumise-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -9683,7 +9683,7 @@ SETDEX_PHGSS = {
       "item": "King's Rock",
       "tier": "50"
     },
-    "Infernape (H444)": {
+    "Infernape-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -9737,7 +9737,7 @@ SETDEX_PHGSS = {
       "item": "Big Root",
       "tier": "50"
     },
-    "Ivysaur (H155)": {
+    "Ivysaur-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -9822,7 +9822,7 @@ SETDEX_PHGSS = {
       "item": "Razor Fang",
       "tier": "50"
     },
-    "Jolteon (H394)": {
+    "Jolteon-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -9876,7 +9876,7 @@ SETDEX_PHGSS = {
       "item": "Sitrus Berry",
       "tier": "50"
     },
-    "Jumpluff (H310)": {
+    "Jumpluff-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -9961,7 +9961,7 @@ SETDEX_PHGSS = {
       "item": "Choice Specs",
       "tier": "50"
     },
-    "Jynx (H300)": {
+    "Jynx-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -10000,7 +10000,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Liechi Berry"
     },
-    "Kabuto (H187)": {
+    "Kabuto-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -10054,7 +10054,7 @@ SETDEX_PHGSS = {
       "item": "Razor Claw",
       "tier": "50"
     },
-    "Kabutops (H305)": {
+    "Kabutops-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -10108,7 +10108,7 @@ SETDEX_PHGSS = {
       "item": "Cheri Berry",
       "tier": "50"
     },
-    "Kadabra (H171)": {
+    "Kadabra-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -10193,7 +10193,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Kangaskhan (H296)": {
+    "Kangaskhan-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -10247,7 +10247,7 @@ SETDEX_PHGSS = {
       "item": "Choice Scarf",
       "tier": "50"
     },
-    "Kecleon (H345)": {
+    "Kecleon-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -10332,7 +10332,7 @@ SETDEX_PHGSS = {
       "item": "Wide Lens",
       "tier": "50"
     },
-    "Kingdra (H416)": {
+    "Kingdra-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -10386,7 +10386,7 @@ SETDEX_PHGSS = {
       "item": "Salac Berry",
       "tier": "50"
     },
-    "Kingler (H289)": {
+    "Kingler-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -10425,7 +10425,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Poison Barb"
     },
-    "Koffing (H181)": {
+    "Koffing-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -10464,7 +10464,7 @@ SETDEX_PHGSS = {
       "nature": "Quiet",
       "item": "Pecha Berry"
     },
-    "Krabby (H41)": {
+    "Krabby-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -10504,7 +10504,7 @@ SETDEX_PHGSS = {
       "nature": "Relaxed",
       "item": "Liechi Berry"
     },
-    "Kricketot (H133)": {
+    "Kricketot-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -10543,7 +10543,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Metronome"
     },
-    "Kricketune (H256)": {
+    "Kricketune-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -10597,7 +10597,7 @@ SETDEX_PHGSS = {
       "item": "Sitrus Berry",
       "tier": "50"
     },
-    "Lairon (H233)": {
+    "Lairon-H": {
       "evs": {
         "hp": 252,
         "df": 252
@@ -10682,7 +10682,7 @@ SETDEX_PHGSS = {
       "item": "Expert Belt",
       "tier": "50"
     },
-    "Lanturn (H307)": {
+    "Lanturn-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -10767,7 +10767,7 @@ SETDEX_PHGSS = {
       "item": "Brightpowder",
       "tier": "50"
     },
-    "Lapras (H392)": {
+    "Lapras-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -10806,7 +10806,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Liechi Berry"
     },
-    "Larvitar (H82)": {
+    "Larvitar-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -10891,7 +10891,7 @@ SETDEX_PHGSS = {
       "item": "White Herb",
       "tier": "50"
     },
-    "Latias (H441)": {
+    "Latias-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -10976,7 +10976,7 @@ SETDEX_PHGSS = {
       "item": "White Herb",
       "tier": "50"
     },
-    "Latios (H442)": {
+    "Latios-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -11061,7 +11061,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Leafeon (H463)": {
+    "Leafeon-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -11100,7 +11100,7 @@ SETDEX_PHGSS = {
       "nature": "Timid",
       "item": "Razor Claw"
     },
-    "Ledian (H193)": {
+    "Ledian-H": {
       "evs": {
         "hp": 252,
         "sp": 252
@@ -11185,7 +11185,7 @@ SETDEX_PHGSS = {
       "item": "Lax Incense",
       "tier": "50"
     },
-    "Lickilicky (H456)": {
+    "Lickilicky-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -11225,7 +11225,7 @@ SETDEX_PHGSS = {
       "item": "Chesto Berry",
       "tier": "50"
     },
-    "Lickitung (H180)": {
+    "Lickitung-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -11265,7 +11265,7 @@ SETDEX_PHGSS = {
       "nature": "Calm",
       "item": "Lax Incense"
     },
-    "Lileep (H243)": {
+    "Lileep-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -11319,7 +11319,7 @@ SETDEX_PHGSS = {
       "item": "Choice Scarf",
       "tier": "50"
     },
-    "Linoone (H220)": {
+    "Linoone-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -11358,7 +11358,7 @@ SETDEX_PHGSS = {
       "nature": "Quiet",
       "item": "Damp Rock"
     },
-    "Lombre (H223)": {
+    "Lombre-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -11443,7 +11443,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Lopunny (H363)": {
+    "Lopunny-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -11482,7 +11482,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Persim Berry"
     },
-    "Loudred (H228)": {
+    "Loudred-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -11567,7 +11567,7 @@ SETDEX_PHGSS = {
       "item": "Expert Belt",
       "tier": "50"
     },
-    "Lucario (H451)": {
+    "Lucario-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -11653,7 +11653,7 @@ SETDEX_PHGSS = {
       "item": "Lum Berry",
       "tier": "50"
     },
-    "Ludicolo (H322)": {
+    "Ludicolo-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -11707,7 +11707,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Lumineon (H370)": {
+    "Lumineon-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -11761,7 +11761,7 @@ SETDEX_PHGSS = {
       "item": "Passho Berry",
       "tier": "50"
     },
-    "Lunatone (H339)": {
+    "Lunatone-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -11800,7 +11800,7 @@ SETDEX_PHGSS = {
       "nature": "Timid",
       "item": "Damp Rock"
     },
-    "Luvdisc (H125)": {
+    "Luvdisc-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -11854,7 +11854,7 @@ SETDEX_PHGSS = {
       "item": "Petaya Berry",
       "tier": "50"
     },
-    "Luxio (H257)": {
+    "Luxio-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -11939,7 +11939,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Luxray (H446)": {
+    "Luxray-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -12024,7 +12024,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Machamp (H381)": {
+    "Machamp-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -12078,7 +12078,7 @@ SETDEX_PHGSS = {
       "item": "Scope Lens",
       "tier": "50"
     },
-    "Machoke (H172)": {
+    "Machoke-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -12117,7 +12117,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Scope Lens"
     },
-    "Machop (H29)": {
+    "Machop-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -12156,7 +12156,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Pecha Berry"
     },
-    "Magby (H214)": {
+    "Magby-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -12210,7 +12210,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Magcargo (H211)": {
+    "Magcargo-H": {
       "evs": {
         "hp": 252,
         "sd": 252
@@ -12264,7 +12264,7 @@ SETDEX_PHGSS = {
       "item": "Lax Incense",
       "tier": "50"
     },
-    "Magmar (H302)": {
+    "Magmar-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -12349,7 +12349,7 @@ SETDEX_PHGSS = {
       "item": "White Herb",
       "tier": "50"
     },
-    "Magmortar (H460)": {
+    "Magmortar-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -12388,7 +12388,7 @@ SETDEX_PHGSS = {
       "nature": "Bold",
       "item": "Rawst Berry"
     },
-    "Magnemite (H34)": {
+    "Magnemite-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -12442,7 +12442,7 @@ SETDEX_PHGSS = {
       "item": "Shuca Berry",
       "tier": "50"
     },
-    "Magneton (H285)": {
+    "Magneton-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -12527,7 +12527,7 @@ SETDEX_PHGSS = {
       "item": "Brightpowder",
       "tier": "50"
     },
-    "Magnezone (H455)": {
+    "Magnezone-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -12612,7 +12612,7 @@ SETDEX_PHGSS = {
       "item": "Life Orb",
       "tier": "50"
     },
-    "Mamoswine (H466)": {
+    "Mamoswine-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -12697,7 +12697,7 @@ SETDEX_PHGSS = {
       "item": "Brightpowder",
       "tier": "50"
     },
-    "Manectric (H329)": {
+    "Manectric-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -12751,7 +12751,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Mantine (H317)": {
+    "Mantine-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -12790,7 +12790,7 @@ SETDEX_PHGSS = {
       "nature": "Hardy",
       "item": "Mystic Water"
     },
-    "Mantyke (H268)": {
+    "Mantyke-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -12875,7 +12875,7 @@ SETDEX_PHGSS = {
       "item": "Thick Club",
       "tier": "50"
     },
-    "Marowak (H179)": {
+    "Marowak-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -12929,7 +12929,7 @@ SETDEX_PHGSS = {
       "item": "Persim Berry",
       "tier": "50"
     },
-    "Marshtomp (H218)": {
+    "Marshtomp-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -12983,7 +12983,7 @@ SETDEX_PHGSS = {
       "item": "Petaya Berry",
       "tier": "50"
     },
-    "Masquerain (H227)": {
+    "Masquerain-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -13022,7 +13022,7 @@ SETDEX_PHGSS = {
       "nature": "Impish",
       "item": "Brightpowder"
     },
-    "Mawile (H232)": {
+    "Mawile-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -13107,7 +13107,7 @@ SETDEX_PHGSS = {
       "item": "Scope Lens",
       "tier": "50"
     },
-    "Medicham (H234)": {
+    "Medicham-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -13193,7 +13193,7 @@ SETDEX_PHGSS = {
       "item": "Lax Incense",
       "tier": "50"
     },
-    "Meganium (H402)": {
+    "Meganium-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -13278,7 +13278,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Metagross (H437)": {
+    "Metagross-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -13332,7 +13332,7 @@ SETDEX_PHGSS = {
       "item": "Shuca Berry",
       "tier": "50"
     },
-    "Metang (H250)": {
+    "Metang-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -13386,7 +13386,7 @@ SETDEX_PHGSS = {
       "item": "Chople Berry",
       "tier": "50"
     },
-    "Mightyena (H219)": {
+    "Mightyena-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -13471,7 +13471,7 @@ SETDEX_PHGSS = {
       "item": "Lum Berry",
       "tier": "50"
     },
-    "Milotic (H433)": {
+    "Milotic-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -13526,7 +13526,7 @@ SETDEX_PHGSS = {
       "item": "Salac Berry",
       "tier": "50"
     },
-    "Miltank-3 (675)": {
+    "Miltank-3 (539)": {
       "evs": {
         "at": 252,
         "df": 252
@@ -13556,7 +13556,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Miltank (H321)": {
+    "Miltank-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -13595,7 +13595,7 @@ SETDEX_PHGSS = {
       "nature": "Bold",
       "item": "Lax Incense"
     },
-    "Mime Jr. (H146)": {
+    "Mime Jr.-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -13634,7 +13634,7 @@ SETDEX_PHGSS = {
       "nature": "Timid",
       "item": "Salac Berry"
     },
-    "Minun (H236)": {
+    "Minun-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -13688,7 +13688,7 @@ SETDEX_PHGSS = {
       "item": "Kasib Berry",
       "tier": "50"
     },
-    "Misdreavus (H205)": {
+    "Misdreavus-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -13728,7 +13728,7 @@ SETDEX_PHGSS = {
       "item": "Kasib Berry",
       "tier": "50"
     },
-    "Mismagius-2 (549)": {
+    "Mismagius-2 ( )": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -13773,7 +13773,7 @@ SETDEX_PHGSS = {
       "item": "Focus Sash",
       "tier": "50"
     },
-    "Mismagius (H364)": {
+    "Mismagius-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -13858,7 +13858,7 @@ SETDEX_PHGSS = {
       "item": "White Herb",
       "tier": "50"
     },
-    "Moltres (H400)": {
+    "Moltres-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -13912,7 +13912,7 @@ SETDEX_PHGSS = {
       "item": "Scope Lens",
       "tier": "50"
     },
-    "Monferno (H252)": {
+    "Monferno-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -13966,7 +13966,7 @@ SETDEX_PHGSS = {
       "item": "Coba Berry",
       "tier": "50"
     },
-    "Mothim (H261)": {
+    "Mothim-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -14051,7 +14051,7 @@ SETDEX_PHGSS = {
       "item": "Choice Specs",
       "tier": "50"
     },
-    "Mr. Mime (H299)": {
+    "Mr. Mime-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -14090,7 +14090,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Mystic Water"
     },
-    "Mudkip (H85)": {
+    "Mudkip-H": {
       "evs": {
         "at": 252,
         "sd": 252
@@ -14175,7 +14175,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Muk (H384)": {
+    "Muk-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -14214,7 +14214,7 @@ SETDEX_PHGSS = {
       "nature": "Relaxed",
       "item": "Sitrus Berry"
     },
-    "Munchlax (H267)": {
+    "Munchlax-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -14253,7 +14253,7 @@ SETDEX_PHGSS = {
       "nature": "Jolly",
       "item": "BlackGlasses"
     },
-    "Murkrow (H204)": {
+    "Murkrow-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -14292,7 +14292,7 @@ SETDEX_PHGSS = {
       "nature": "Timid",
       "item": "Twisted Spoon"
     },
-    "Natu (H63)": {
+    "Natu-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -14378,7 +14378,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Nidoking (H274)": {
+    "Nidoking-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -14463,7 +14463,7 @@ SETDEX_PHGSS = {
       "item": "Razor Claw",
       "tier": "50"
     },
-    "Nidoqueen (H273)": {
+    "Nidoqueen-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -14502,7 +14502,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Poison Barb"
     },
-    "Nidorina (H163)": {
+    "Nidorina-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -14541,7 +14541,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Focus Band"
     },
-    "Nidorino (H164)": {
+    "Nidorino-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -14626,7 +14626,7 @@ SETDEX_PHGSS = {
       "item": "Passho Berry",
       "tier": "50"
     },
-    "Ninetales (H377)": {
+    "Ninetales-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -14680,7 +14680,7 @@ SETDEX_PHGSS = {
       "item": "Razor Fang",
       "tier": "50"
     },
-    "Ninjask (H326)": {
+    "Ninjask-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -14734,7 +14734,7 @@ SETDEX_PHGSS = {
       "item": "Persim Berry",
       "tier": "50"
     },
-    "Noctowl (H306)": {
+    "Noctowl-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -14773,7 +14773,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Hard Stone"
     },
-    "Nosepass (H229)": {
+    "Nosepass-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -14812,7 +14812,7 @@ SETDEX_PHGSS = {
       "nature": "Serious",
       "item": "Lax Incense"
     },
-    "Numel (H111)": {
+    "Numel-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -14851,7 +14851,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Aspear Berry"
     },
-    "Nuzleaf (H224)": {
+    "Nuzleaf-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -14905,7 +14905,7 @@ SETDEX_PHGSS = {
       "item": "Life Orb",
       "tier": "50"
     },
-    "Octillery (H316)": {
+    "Octillery-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -14944,7 +14944,7 @@ SETDEX_PHGSS = {
       "nature": "Bold",
       "item": "Rose Incense"
     },
-    "Oddish (H20)": {
+    "Oddish-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -14983,7 +14983,7 @@ SETDEX_PHGSS = {
       "nature": "Bold",
       "item": "Pecha Berry"
     },
-    "Omanyte (H186)": {
+    "Omanyte-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -15037,7 +15037,7 @@ SETDEX_PHGSS = {
       "item": "Sitrus Berry",
       "tier": "50"
     },
-    "Omastar (H304)": {
+    "Omastar-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -15076,7 +15076,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Hard Stone"
     },
-    "Onix (H178)": {
+    "Onix-H": {
       "evs": {
         "hp": 252,
         "df": 252
@@ -15115,7 +15115,7 @@ SETDEX_PHGSS = {
       "nature": "Jolly",
       "item": "Magnet"
     },
-    "Pachirisu (H262)": {
+    "Pachirisu-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -15154,7 +15154,7 @@ SETDEX_PHGSS = {
       "nature": "Jolly",
       "item": "Aspear Berry"
     },
-    "Parasect (H167)": {
+    "Parasect-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -15208,7 +15208,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Pelipper (H226)": {
+    "Pelipper-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -15262,7 +15262,7 @@ SETDEX_PHGSS = {
       "item": "Razor Claw",
       "tier": "50"
     },
-    "Persian (H279)": {
+    "Persian-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -15301,7 +15301,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Metronome"
     },
-    "Phanpy (H78)": {
+    "Phanpy-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -15355,7 +15355,7 @@ SETDEX_PHGSS = {
       "item": "Razor Claw",
       "tier": "50"
     },
-    "Pidgeot (H374)": {
+    "Pidgeot-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -15394,7 +15394,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Rawst Berry"
     },
-    "Pidgeotto (H160)": {
+    "Pidgeotto-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -15433,7 +15433,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Sitrus Berry"
     },
-    "Pikachu (H12)": {
+    "Pikachu-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -15487,7 +15487,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Piloswine (H315)": {
+    "Piloswine-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -15572,7 +15572,7 @@ SETDEX_PHGSS = {
       "item": "Scope Lens",
       "tier": "50"
     },
-    "Pinsir (H390)": {
+    "Pinsir-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -15611,7 +15611,7 @@ SETDEX_PHGSS = {
       "nature": "Bashful",
       "item": "Rindo Berry"
     },
-    "Piplup (H130)": {
+    "Piplup-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -15650,7 +15650,7 @@ SETDEX_PHGSS = {
       "nature": "Timid",
       "item": "Petaya Berry"
     },
-    "Plusle (H235)": {
+    "Plusle-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -15735,7 +15735,7 @@ SETDEX_PHGSS = {
       "item": "Wacan Berry",
       "tier": "50"
     },
-    "Politoed (H407)": {
+    "Politoed-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -15774,7 +15774,7 @@ SETDEX_PHGSS = {
       "nature": "Quirky",
       "item": "Liechi Berry"
     },
-    "Poliwhirl (H170)": {
+    "Poliwhirl-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -15859,7 +15859,7 @@ SETDEX_PHGSS = {
       "item": "Expert Belt",
       "tier": "50"
     },
-    "Poliwrath (H380)": {
+    "Poliwrath-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -15898,7 +15898,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Chesto Berry"
     },
-    "Ponyta (H175)": {
+    "Ponyta-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -15937,7 +15937,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Persim Berry"
     },
-    "Porygon (H185)": {
+    "Porygon-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -16022,7 +16022,7 @@ SETDEX_PHGSS = {
       "item": "Lum Berry",
       "tier": "50"
     },
-    "Porygon2 (H418)": {
+    "Porygon2-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -16107,7 +16107,7 @@ SETDEX_PHGSS = {
       "item": "Expert Belt",
       "tier": "50"
     },
-    "Porygon-Z (H467)": {
+    "Porygon-Z-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -16161,7 +16161,7 @@ SETDEX_PHGSS = {
       "item": "Expert Belt",
       "tier": "50"
     },
-    "Primeape (H280)": {
+    "Primeape-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -16215,7 +16215,7 @@ SETDEX_PHGSS = {
       "item": "Focus Band",
       "tier": "50"
     },
-    "Prinplup (H253)": {
+    "Prinplup-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -16300,7 +16300,7 @@ SETDEX_PHGSS = {
       "item": "Life Orb",
       "tier": "50"
     },
-    "Probopass (H469)": {
+    "Probopass-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -16339,7 +16339,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Chesto Berry"
     },
-    "Psyduck (H25)": {
+    "Psyduck-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -16393,7 +16393,7 @@ SETDEX_PHGSS = {
       "item": "Soft Sand",
       "tier": "50"
     },
-    "Pupitar (H215)": {
+    "Pupitar-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -16447,7 +16447,7 @@ SETDEX_PHGSS = {
       "item": "Liechi Berry",
       "tier": "50"
     },
-    "Purugly (H365)": {
+    "Purugly-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -16533,7 +16533,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Quagsire (H203)": {
+    "Quagsire-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -16587,7 +16587,7 @@ SETDEX_PHGSS = {
       "item": "Focus Band",
       "tier": "50"
     },
-    "Quilava (H190)": {
+    "Quilava-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -16641,7 +16641,7 @@ SETDEX_PHGSS = {
       "item": "Focus Band",
       "tier": "50"
     },
-    "Qwilfish (H209)": {
+    "Qwilfish-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -16726,7 +16726,7 @@ SETDEX_PHGSS = {
       "item": "Brightpowder",
       "tier": "50"
     },
-    "Raichu (H271)": {
+    "Raichu-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -16811,7 +16811,7 @@ SETDEX_PHGSS = {
       "item": "Shuca Berry",
       "tier": "50"
     },
-    "Raikou (H420)": {
+    "Raikou-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -16896,7 +16896,7 @@ SETDEX_PHGSS = {
       "item": "Choice Scarf",
       "tier": "50"
     },
-    "Rampardos (H355)": {
+    "Rampardos-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -16981,7 +16981,7 @@ SETDEX_PHGSS = {
       "item": "Chesto Berry",
       "tier": "50"
     },
-    "Rapidash (H383)": {
+    "Rapidash-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -17036,7 +17036,7 @@ SETDEX_PHGSS = {
       "item": "Chople Berry",
       "tier": "50"
     },
-    "Raticate (H161)": {
+    "Raticate-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -17121,7 +17121,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Regice (H439)": {
+    "Regice-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -17208,7 +17208,7 @@ SETDEX_PHGSS = {
       "item": "Brightpowder",
       "tier": "50"
     },
-    "Regigigas (H477)": {
+    "Regigigas-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -17293,7 +17293,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Regirock (H438)": {
+    "Regirock-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -17380,7 +17380,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Registeel (H440)": {
+    "Registeel-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -17434,7 +17434,7 @@ SETDEX_PHGSS = {
       "item": "Chesto Berry",
       "tier": "50"
     },
-    "Relicanth (H353)": {
+    "Relicanth-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -17473,7 +17473,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Petaya Berry"
     },
-    "Remoraid (H75)": {
+    "Remoraid-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -17558,7 +17558,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Rhydon (H294)": {
+    "Rhydon-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -17598,7 +17598,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Persim Berry"
     },
-    "Rhyhorn (H182)": {
+    "Rhyhorn-H": {
       "evs": {
         "hp": 252,
         "df": 252
@@ -17683,7 +17683,7 @@ SETDEX_PHGSS = {
       "item": "Choice Band",
       "tier": "50"
     },
-    "Rhyperior (H457)": {
+    "Rhyperior-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -17722,7 +17722,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Expert Belt"
     },
-    "Riolu (H149)": {
+    "Riolu-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -17761,7 +17761,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Black Sludge"
     },
-    "Roselia (H239)": {
+    "Roselia-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -17846,7 +17846,7 @@ SETDEX_PHGSS = {
       "item": "White Herb",
       "tier": "50"
     },
-    "Roserade (H447)": {
+    "Roserade-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -17900,7 +17900,7 @@ SETDEX_PHGSS = {
       "item": "Magnet",
       "tier": "50"
     },
-    "Rotom (H373)": {
+    "Rotom-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -17939,7 +17939,7 @@ SETDEX_PHGSS = {
       "nature": "Impish",
       "item": "BlackGlasses"
     },
-    "Sableye (H231)": {
+    "Sableye-H": {
       "evs": {
         "at": 252,
         "sd": 252
@@ -18024,7 +18024,7 @@ SETDEX_PHGSS = {
       "item": "Lum Berry",
       "tier": "50"
     },
-    "Salamence (H436)": {
+    "Salamence-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -18063,7 +18063,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Soft Sand"
     },
-    "Sandshrew (H13)": {
+    "Sandshrew-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -18117,7 +18117,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Sandslash (H272)": {
+    "Sandslash-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -18202,7 +18202,7 @@ SETDEX_PHGSS = {
       "item": "Occa Berry",
       "tier": "50"
     },
-    "Sceptile (H424)": {
+    "Sceptile-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -18287,7 +18287,7 @@ SETDEX_PHGSS = {
       "item": "Occa Berry",
       "tier": "50"
     },
-    "Scizor (H411)": {
+    "Scizor-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -18341,7 +18341,7 @@ SETDEX_PHGSS = {
       "item": "Brightpowder",
       "tier": "50"
     },
-    "Scyther (H389)": {
+    "Scyther-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -18395,7 +18395,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Seadra (H297)": {
+    "Seadra-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -18449,7 +18449,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Seaking (H298)": {
+    "Seaking-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -18503,7 +18503,7 @@ SETDEX_PHGSS = {
       "item": "Chesto Berry",
       "tier": "50"
     },
-    "Sealeo (H247)": {
+    "Sealeo-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -18542,7 +18542,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Aspear Berry"
     },
-    "Seel (H36)": {
+    "Seel-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -18596,7 +18596,7 @@ SETDEX_PHGSS = {
       "item": "Black Sludge",
       "tier": "50"
     },
-    "Seviper (H338)": {
+    "Seviper-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -18650,7 +18650,7 @@ SETDEX_PHGSS = {
       "item": "Wacan Berry",
       "tier": "50"
     },
-    "Sharpedo (H331)": {
+    "Sharpedo-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -18689,7 +18689,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Lax Incense"
     },
-    "Shedinja (H101)": {
+    "Shedinja-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -18743,7 +18743,7 @@ SETDEX_PHGSS = {
       "item": "Focus Band",
       "tier": "50"
     },
-    "Shelgon (H249)": {
+    "Shelgon-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -18782,7 +18782,7 @@ SETDEX_PHGSS = {
       "nature": "Bold",
       "item": "Lax Incense"
     },
-    "Shellos (H140)": {
+    "Shellos-H": {
       "evs": {
         "hp": 252,
         "sd": 252
@@ -18821,7 +18821,7 @@ SETDEX_PHGSS = {
       "nature": "Sassy",
       "item": "Focus Band"
     },
-    "Shieldon (H259)": {
+    "Shieldon-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -18907,7 +18907,7 @@ SETDEX_PHGSS = {
       "item": "Cheri Berry",
       "tier": "50"
     },
-    "Shiftry (H323)": {
+    "Shiftry-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -18946,7 +18946,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "King's Rock"
     },
-    "Shinx (H134)": {
+    "Shinx-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -19035,7 +19035,7 @@ SETDEX_PHGSS = {
       "item": "Leftovers",
       "tier": "50"
     },
-    "Shuckle (H412)": {
+    "Shuckle-H": {
       "evs": {
         "hp": 252,
         "sd": 252
@@ -19074,7 +19074,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Spell Tag"
     },
-    "Shuppet (H120)": {
+    "Shuppet-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -19160,7 +19160,7 @@ SETDEX_PHGSS = {
       "item": "Life Orb",
       "tier": "50"
     },
-    "Skarmory (H318)": {
+    "Skarmory-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -19199,7 +19199,7 @@ SETDEX_PHGSS = {
       "nature": "Hardy",
       "item": "Big Root"
     },
-    "Skiploom (H199)": {
+    "Skiploom-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -19238,7 +19238,7 @@ SETDEX_PHGSS = {
       "nature": "Impish",
       "item": "Poison Barb"
     },
-    "Skorupi (H151)": {
+    "Skorupi-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -19323,7 +19323,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Skuntank (H366)": {
+    "Skuntank-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -19408,7 +19408,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Slaking (H428)": {
+    "Slaking-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -19493,7 +19493,7 @@ SETDEX_PHGSS = {
       "item": "Leftovers",
       "tier": "50"
     },
-    "Slowbro (H284)": {
+    "Slowbro-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -19579,7 +19579,7 @@ SETDEX_PHGSS = {
       "item": "Wise Glasses",
       "tier": "50"
     },
-    "Slowking (H311)": {
+    "Slowking-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -19618,7 +19618,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Cheri Berry"
     },
-    "Slowpoke (H33)": {
+    "Slowpoke-H": {
       "evs": {
         "at": 252,
         "sd": 252
@@ -19657,7 +19657,7 @@ SETDEX_PHGSS = {
       "nature": "Mild",
       "item": "Brightpowder"
     },
-    "Smoochum (H81)": {
+    "Smoochum-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -19711,7 +19711,7 @@ SETDEX_PHGSS = {
       "item": "King's Rock",
       "tier": "50"
     },
-    "Sneasel (H210)": {
+    "Sneasel-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -19796,7 +19796,7 @@ SETDEX_PHGSS = {
       "item": "Life Orb",
       "tier": "50"
     },
-    "Snorlax (H397)": {
+    "Snorlax-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -19835,7 +19835,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "King's Rock"
     },
-    "Snorunt (H123)": {
+    "Snorunt-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -19874,7 +19874,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "NeverMeltIce"
     },
-    "Snover (H154)": {
+    "Snover-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -19913,7 +19913,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Razor Claw"
     },
-    "Snubbull (H71)": {
+    "Snubbull-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -19967,7 +19967,7 @@ SETDEX_PHGSS = {
       "item": "Passho Berry",
       "tier": "50"
     },
-    "Solrock (H340)": {
+    "Solrock-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -20006,7 +20006,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Silk Scarf"
     },
-    "Spinda (H241)": {
+    "Spinda-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -20045,7 +20045,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Sitrus Berry"
     },
-    "Spoink (H112)": {
+    "Spoink-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -20084,7 +20084,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Sea Incense"
     },
-    "Squirtle (H3)": {
+    "Squirtle-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -20138,7 +20138,7 @@ SETDEX_PHGSS = {
       "item": "Chople Berry",
       "tier": "50"
     },
-    "Stantler (H319)": {
+    "Stantler-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -20223,7 +20223,7 @@ SETDEX_PHGSS = {
       "item": "Choice Band",
       "tier": "50"
     },
-    "Staraptor (H354)": {
+    "Staraptor-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -20262,7 +20262,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Sharp Beak"
     },
-    "Staravia (H254)": {
+    "Staravia-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -20301,7 +20301,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Sharp Beak"
     },
-    "Starly (H131)": {
+    "Starly-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -20386,7 +20386,7 @@ SETDEX_PHGSS = {
       "item": "Expert Belt",
       "tier": "50"
     },
-    "Starmie (H388)": {
+    "Starmie-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -20425,7 +20425,7 @@ SETDEX_PHGSS = {
       "nature": "Timid",
       "item": "Cheri Berry"
     },
-    "Staryu (H184)": {
+    "Staryu-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -20510,7 +20510,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Steelix (H410)": {
+    "Steelix-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -20549,7 +20549,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "BlackGlasses"
     },
-    "Stunky (H143)": {
+    "Stunky-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -20603,7 +20603,7 @@ SETDEX_PHGSS = {
       "item": "Life Orb",
       "tier": "50"
     },
-    "Sudowoodo (H198)": {
+    "Sudowoodo-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -20688,7 +20688,7 @@ SETDEX_PHGSS = {
       "item": "Wacan Berry",
       "tier": "50"
     },
-    "Suicune (H422)": {
+    "Suicune-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -20742,7 +20742,7 @@ SETDEX_PHGSS = {
       "item": "Sitrus Berry",
       "tier": "50"
     },
-    "Sunflora (H201)": {
+    "Sunflora-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -20781,7 +20781,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Mental Herb"
     },
-    "Swablu (H115)": {
+    "Swablu-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -20836,7 +20836,7 @@ SETDEX_PHGSS = {
       "item": "Black Sludge",
       "tier": "50"
     },
-    "Swalot (H330)": {
+    "Swalot-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -20921,7 +20921,7 @@ SETDEX_PHGSS = {
       "item": "Rindo Berry",
       "tier": "50"
     },
-    "Swampert (H426)": {
+    "Swampert-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -20975,7 +20975,7 @@ SETDEX_PHGSS = {
       "item": "Toxic Orb",
       "tier": "50"
     },
-    "Swellow (H225)": {
+    "Swellow-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -21029,7 +21029,7 @@ SETDEX_PHGSS = {
       "item": "Pecha Berry",
       "tier": "50"
     },
-    "Tangela (H183)": {
+    "Tangela-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -21115,7 +21115,7 @@ SETDEX_PHGSS = {
       "item": "Lax Incense",
       "tier": "50"
     },
-    "Tangrowth (H458)": {
+    "Tangrowth-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -21200,7 +21200,7 @@ SETDEX_PHGSS = {
       "item": "Choice Band",
       "tier": "50"
     },
-    "Tauros (H303)": {
+    "Tauros-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -21239,7 +21239,7 @@ SETDEX_PHGSS = {
       "nature": "Impish",
       "item": "Chesto Berry"
     },
-    "Teddiursa (H72)": {
+    "Teddiursa-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -21278,7 +21278,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Cheri Berry"
     },
-    "Tentacool (H31)": {
+    "Tentacool-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -21363,7 +21363,7 @@ SETDEX_PHGSS = {
       "item": "Scope Lens",
       "tier": "50"
     },
-    "Tentacruel (H382)": {
+    "Tentacruel-H": {
       "evs": {
         "at": 252,
         "sd": 252
@@ -21448,7 +21448,7 @@ SETDEX_PHGSS = {
       "item": "Expert Belt",
       "tier": "50"
     },
-    "Togekiss (H461)": {
+    "Togekiss-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -21487,7 +21487,7 @@ SETDEX_PHGSS = {
       "nature": "Calm",
       "item": "Chesto Berry"
     },
-    "Togetic (H195)": {
+    "Togetic-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -21526,7 +21526,7 @@ SETDEX_PHGSS = {
       "nature": "Hardy",
       "item": "Charcoal"
     },
-    "Torchic (H84)": {
+    "Torchic-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -21580,7 +21580,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Torkoal (H333)": {
+    "Torkoal-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -21666,7 +21666,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Torterra (H443)": {
+    "Torterra-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -21705,7 +21705,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Razor Claw"
     },
-    "Totodile (H53)": {
+    "Totodile-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -21790,7 +21790,7 @@ SETDEX_PHGSS = {
       "item": "Razor Claw",
       "tier": "50"
     },
-    "Toxicroak (H368)": {
+    "Toxicroak-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -21829,7 +21829,7 @@ SETDEX_PHGSS = {
       "nature": "Timid",
       "item": "Miracle Seed"
     },
-    "Treecko (H83)": {
+    "Treecko-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -21883,7 +21883,7 @@ SETDEX_PHGSS = {
       "item": "Occa Berry",
       "tier": "50"
     },
-    "Tropius (H348)": {
+    "Tropius-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -21922,7 +21922,7 @@ SETDEX_PHGSS = {
       "nature": "Adamant",
       "item": "Occa Berry"
     },
-    "Turtwig (H128)": {
+    "Turtwig-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -22007,7 +22007,7 @@ SETDEX_PHGSS = {
       "item": "White Herb",
       "tier": "50"
     },
-    "Typhlosion (H403)": {
+    "Typhlosion-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -22092,7 +22092,7 @@ SETDEX_PHGSS = {
       "item": "Chople Berry",
       "tier": "50"
     },
-    "Tyranitar (H423)": {
+    "Tyranitar-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -22177,7 +22177,7 @@ SETDEX_PHGSS = {
       "item": "Brightpowder",
       "tier": "50"
     },
-    "Umbreon (H409)": {
+    "Umbreon-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -22262,7 +22262,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Ursaring (H414)": {
+    "Ursaring-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -22347,7 +22347,7 @@ SETDEX_PHGSS = {
       "item": "Expert Belt",
       "tier": "50"
     },
-    "Vaporeon (H393)": {
+    "Vaporeon-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -22401,7 +22401,7 @@ SETDEX_PHGSS = {
       "item": "SilverPowder",
       "tier": "50"
     },
-    "Venomoth (H278)": {
+    "Venomoth-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -22440,7 +22440,7 @@ SETDEX_PHGSS = {
       "nature": "Relaxed",
       "item": "SilverPowder"
     },
-    "Venonat (H22)": {
+    "Venonat-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -22526,7 +22526,7 @@ SETDEX_PHGSS = {
       "item": "Wise Glasses",
       "tier": "50"
     },
-    "Venusaur (H475)": {
+    "Venusaur-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -22612,7 +22612,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Vespiquen (H357)": {
+    "Vespiquen-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -22651,7 +22651,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Aspear Berry"
     },
-    "Vibrava (H242)": {
+    "Vibrava-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -22736,7 +22736,7 @@ SETDEX_PHGSS = {
       "item": "Focus Band",
       "tier": "50"
     },
-    "Victreebel (H282)": {
+    "Victreebel-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -22790,7 +22790,7 @@ SETDEX_PHGSS = {
       "item": "Salac Berry",
       "tier": "50"
     },
-    "Vigoroth (H325)": {
+    "Vigoroth-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -22876,7 +22876,7 @@ SETDEX_PHGSS = {
       "item": "Wise Glasses",
       "tier": "50"
     },
-    "Vileplume (H277)": {
+    "Vileplume-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -22915,7 +22915,7 @@ SETDEX_PHGSS = {
       "nature": "Jolly",
       "item": "Liechi Berry"
     },
-    "Volbeat (H237)": {
+    "Volbeat-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -22954,7 +22954,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Petaya Berry"
     },
-    "Voltorb (H42)": {
+    "Voltorb-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -22993,7 +22993,7 @@ SETDEX_PHGSS = {
       "nature": "Calm",
       "item": "Brightpowder"
     },
-    "Vulpix (H17)": {
+    "Vulpix-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -23032,7 +23032,7 @@ SETDEX_PHGSS = {
       "nature": "Modest",
       "item": "Sea Incense"
     },
-    "Wailmer (H240)": {
+    "Wailmer-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -23118,7 +23118,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Wailord (H430)": {
+    "Wailord-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -23203,7 +23203,7 @@ SETDEX_PHGSS = {
       "item": "Leftovers",
       "tier": "50"
     },
-    "Walrein (H434)": {
+    "Walrein-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -23257,7 +23257,7 @@ SETDEX_PHGSS = {
       "item": "Shell Bell",
       "tier": "50"
     },
-    "Wartortle (H157)": {
+    "Wartortle-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -23342,7 +23342,7 @@ SETDEX_PHGSS = {
       "item": "Razor Claw",
       "tier": "50"
     },
-    "Weavile (H454)": {
+    "Weavile-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -23381,7 +23381,7 @@ SETDEX_PHGSS = {
       "nature": "Quiet",
       "item": "Scope Lens"
     },
-    "Weepinbell (H173)": {
+    "Weepinbell-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -23466,7 +23466,7 @@ SETDEX_PHGSS = {
       "item": "Quick Claw",
       "tier": "50"
     },
-    "Weezing (H293)": {
+    "Weezing-H": {
       "evs": {
         "hp": 252,
         "sd": 252
@@ -23551,7 +23551,7 @@ SETDEX_PHGSS = {
       "item": "Muscle Band",
       "tier": "50"
     },
-    "Whiscash (H341)": {
+    "Whiscash-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -23605,7 +23605,7 @@ SETDEX_PHGSS = {
       "item": "Sitrus Berry",
       "tier": "50"
     },
-    "Wigglytuff (H165)": {
+    "Wigglytuff-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -23645,7 +23645,7 @@ SETDEX_PHGSS = {
       "nature": "Jolly",
       "item": "Focus Band"
     },
-    "Wobbuffet (H206)": {
+    "Wobbuffet-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -23699,7 +23699,7 @@ SETDEX_PHGSS = {
       "item": "Coba Berry",
       "tier": "50"
     },
-    "Wormadam (H260)": {
+    "Wormadam-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -23753,7 +23753,7 @@ SETDEX_PHGSS = {
       "item": "Colbur Berry",
       "tier": "50"
     },
-    "Xatu (H308)": {
+    "Xatu-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -23792,7 +23792,7 @@ SETDEX_PHGSS = {
       "nature": "Timid",
       "item": "Lax Incense"
     },
-    "Yanma (H202)": {
+    "Yanma-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -23877,7 +23877,7 @@ SETDEX_PHGSS = {
       "item": "Wise Glasses",
       "tier": "50"
     },
-    "Yanmega (H462)": {
+    "Yanmega-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -23931,7 +23931,7 @@ SETDEX_PHGSS = {
       "item": "Razor Claw",
       "tier": "50"
     },
-    "Zangoose (H337)": {
+    "Zangoose-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24016,7 +24016,7 @@ SETDEX_PHGSS = {
       "item": "Brightpowder",
       "tier": "50"
     },
-    "Zapdos (H399)": {
+    "Zapdos-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -24041,7 +24041,7 @@ SETDEX_PHGSS = {
     }
   },
   "Caterpie": {
-    "Caterpie (H4)": {
+    "Caterpie-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24066,7 +24066,7 @@ SETDEX_PHGSS = {
     }
   },
   "Metapod": {
-    "Metapod (H5)": {
+    "Metapod-H": {
       "evs": {
         "hp": 252,
         "df": 252
@@ -24091,7 +24091,7 @@ SETDEX_PHGSS = {
     }
   },
   "Weedle": {
-    "Weedle (H6)": {
+    "Weedle-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24116,7 +24116,7 @@ SETDEX_PHGSS = {
     }
   },
   "Kakuna": {
-    "Kakuna (H7)": {
+    "Kakuna-H": {
       "evs": {
         "hp": 252,
         "df": 252
@@ -24141,7 +24141,7 @@ SETDEX_PHGSS = {
     }
   },
   "Pidgey": {
-    "Pidgey (H8)": {
+    "Pidgey-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -24166,7 +24166,7 @@ SETDEX_PHGSS = {
     }
   },
   "Rattata": {
-    "Rattata (H9)": {
+    "Rattata-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24191,7 +24191,7 @@ SETDEX_PHGSS = {
     }
   },
   "Spearow": {
-    "Spearow (H10)": {
+    "Spearow-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24216,7 +24216,7 @@ SETDEX_PHGSS = {
     }
   },
   "Ekans": {
-    "Ekans (H11)": {
+    "Ekans-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24241,7 +24241,7 @@ SETDEX_PHGSS = {
     }
   },
   "Nidoran-F": {
-    "Nidoran-F (H14)": {
+    "Nidoran-F-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -24266,7 +24266,7 @@ SETDEX_PHGSS = {
     }
   },
   "Nidoran-M": {
-    "Nidoran-M (H15)": {
+    "Nidoran-M-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -24291,7 +24291,7 @@ SETDEX_PHGSS = {
     }
   },
   "Jigglypuff": {
-    "Jigglypuff (H18)": {
+    "Jigglypuff-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -24316,7 +24316,7 @@ SETDEX_PHGSS = {
     }
   },
   "Zubat": {
-    "Zubat (H19)": {
+    "Zubat-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -24341,7 +24341,7 @@ SETDEX_PHGSS = {
     }
   },
   "Paras": {
-    "Paras (H21)": {
+    "Paras-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -24366,7 +24366,7 @@ SETDEX_PHGSS = {
     }
   },
   "Diglett": {
-    "Diglett (H23)": {
+    "Diglett-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24391,7 +24391,7 @@ SETDEX_PHGSS = {
     }
   },
   "Meowth": {
-    "Meowth (H24)": {
+    "Meowth-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24416,7 +24416,7 @@ SETDEX_PHGSS = {
     }
   },
   "Mankey": {
-    "Mankey (H26)": {
+    "Mankey-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24441,7 +24441,7 @@ SETDEX_PHGSS = {
     }
   },
   "Poliwag": {
-    "Poliwag (H27)": {
+    "Poliwag-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24466,7 +24466,7 @@ SETDEX_PHGSS = {
     }
   },
   "Abra": {
-    "Abra (H28)": {
+    "Abra-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -24491,7 +24491,7 @@ SETDEX_PHGSS = {
     }
   },
   "Bellsprout": {
-    "Bellsprout (H30)": {
+    "Bellsprout-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -24516,7 +24516,7 @@ SETDEX_PHGSS = {
     }
   },
   "Shellder": {
-    "Shellder (H38)": {
+    "Shellder-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -24541,7 +24541,7 @@ SETDEX_PHGSS = {
     }
   },
   "Gastly": {
-    "Gastly (H39)": {
+    "Gastly-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24566,7 +24566,7 @@ SETDEX_PHGSS = {
     }
   },
   "Horsea": {
-    "Horsea (H45)": {
+    "Horsea-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24591,7 +24591,7 @@ SETDEX_PHGSS = {
     }
   },
   "Magikarp": {
-    "Magikarp (H47)": {
+    "Magikarp-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24616,7 +24616,7 @@ SETDEX_PHGSS = {
     }
   },
   "Ditto": {
-    "Ditto (H48)": {
+    "Ditto-H": {
       "evs": {
         "hp": 252,
         "sp": 252
@@ -24641,7 +24641,7 @@ SETDEX_PHGSS = {
     }
   },
   "Sentret": {
-    "Sentret (H54)": {
+    "Sentret-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -24666,7 +24666,7 @@ SETDEX_PHGSS = {
     }
   },
   "Hoothoot": {
-    "Hoothoot (H55)": {
+    "Hoothoot-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -24691,7 +24691,7 @@ SETDEX_PHGSS = {
     }
   },
   "Ledyba": {
-    "Ledyba (H56)": {
+    "Ledyba-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -24716,7 +24716,7 @@ SETDEX_PHGSS = {
     }
   },
   "Spinarak": {
-    "Spinarak (H57)": {
+    "Spinarak-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24741,7 +24741,7 @@ SETDEX_PHGSS = {
     }
   },
   "Pichu": {
-    "Pichu (H59)": {
+    "Pichu-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -24766,7 +24766,7 @@ SETDEX_PHGSS = {
     }
   },
   "Cleffa": {
-    "Cleffa (H60)": {
+    "Cleffa-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -24791,7 +24791,7 @@ SETDEX_PHGSS = {
     }
   },
   "Igglybuff": {
-    "Igglybuff (H61)": {
+    "Igglybuff-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24816,7 +24816,7 @@ SETDEX_PHGSS = {
     }
   },
   "Togepi": {
-    "Togepi (H62)": {
+    "Togepi-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24841,7 +24841,7 @@ SETDEX_PHGSS = {
     }
   },
   "Mareep": {
-    "Mareep (H64)": {
+    "Mareep-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -24866,7 +24866,7 @@ SETDEX_PHGSS = {
     }
   },
   "Marill": {
-    "Marill (H65)": {
+    "Marill-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24891,7 +24891,7 @@ SETDEX_PHGSS = {
     }
   },
   "Hoppip": {
-    "Hoppip (H66)": {
+    "Hoppip-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24916,7 +24916,7 @@ SETDEX_PHGSS = {
     }
   },
   "Sunkern": {
-    "Sunkern (H67)": {
+    "Sunkern-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -24941,7 +24941,7 @@ SETDEX_PHGSS = {
     }
   },
   "Wooper": {
-    "Wooper (H68)": {
+    "Wooper-H": {
       "evs": {
         "at": 252,
         "sd": 252
@@ -24966,7 +24966,7 @@ SETDEX_PHGSS = {
     }
   },
   "Unown": {
-    "Unown (H69)": {
+    "Unown-H": {
       "evs": {
         "hp": 252,
         "sp": 252
@@ -24991,7 +24991,7 @@ SETDEX_PHGSS = {
     }
   },
   "Pineco": {
-    "Pineco (H70)": {
+    "Pineco-H": {
       "evs": {
         "at": 252,
         "df": 252
@@ -25016,7 +25016,7 @@ SETDEX_PHGSS = {
     }
   },
   "Slugma": {
-    "Slugma (H73)": {
+    "Slugma-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -25041,7 +25041,7 @@ SETDEX_PHGSS = {
     }
   },
   "Swinub": {
-    "Swinub (H74)": {
+    "Swinub-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -25066,7 +25066,7 @@ SETDEX_PHGSS = {
     }
   },
   "Smeargle": {
-    "Smeargle (H79)": {
+    "Smeargle-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -25091,7 +25091,7 @@ SETDEX_PHGSS = {
     }
   },
   "Tyrogue": {
-    "Tyrogue (H80)": {
+    "Tyrogue-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -25116,7 +25116,7 @@ SETDEX_PHGSS = {
     }
   },
   "Poochyena": {
-    "Poochyena (H86)": {
+    "Poochyena-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -25141,7 +25141,7 @@ SETDEX_PHGSS = {
     }
   },
   "Zigzagoon": {
-    "Zigzagoon (H87)": {
+    "Zigzagoon-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -25166,7 +25166,7 @@ SETDEX_PHGSS = {
     }
   },
   "Wurmple": {
-    "Wurmple (H88)": {
+    "Wurmple-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -25191,7 +25191,7 @@ SETDEX_PHGSS = {
     }
   },
   "Silcoon": {
-    "Silcoon (H89)": {
+    "Silcoon-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -25216,7 +25216,7 @@ SETDEX_PHGSS = {
     }
   },
   "Cascoon": {
-    "Cascoon (H90)": {
+    "Cascoon-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -25241,7 +25241,7 @@ SETDEX_PHGSS = {
     }
   },
   "Lotad": {
-    "Lotad (H91)": {
+    "Lotad-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -25266,7 +25266,7 @@ SETDEX_PHGSS = {
     }
   },
   "Seedot": {
-    "Seedot (H92)": {
+    "Seedot-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -25291,7 +25291,7 @@ SETDEX_PHGSS = {
     }
   },
   "Taillow": {
-    "Taillow (H93)": {
+    "Taillow-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -25316,7 +25316,7 @@ SETDEX_PHGSS = {
     }
   },
   "Wingull": {
-    "Wingull (H94)": {
+    "Wingull-H": {
       "evs": {
         "hp": 252,
         "sp": 252
@@ -25341,7 +25341,7 @@ SETDEX_PHGSS = {
     }
   },
   "Ralts": {
-    "Ralts (H95)": {
+    "Ralts-H": {
       "evs": {
         "sa": 252,
         "sd": 252
@@ -25366,7 +25366,7 @@ SETDEX_PHGSS = {
     }
   },
   "Kirlia": {
-    "Kirlia (H96)": {
+    "Kirlia-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -25391,7 +25391,7 @@ SETDEX_PHGSS = {
     }
   },
   "Surskit": {
-    "Surskit (H97)": {
+    "Surskit-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -25416,7 +25416,7 @@ SETDEX_PHGSS = {
     }
   },
   "Shroomish": {
-    "Shroomish (H98)": {
+    "Shroomish-H": {
       "evs": {
         "df": 252,
         "sa": 252
@@ -25441,7 +25441,7 @@ SETDEX_PHGSS = {
     }
   },
   "Slakoth": {
-    "Slakoth (H99)": {
+    "Slakoth-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -25466,7 +25466,7 @@ SETDEX_PHGSS = {
     }
   },
   "Nincada": {
-    "Nincada (H100)": {
+    "Nincada-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -25491,7 +25491,7 @@ SETDEX_PHGSS = {
     }
   },
   "Whismur": {
-    "Whismur (H102)": {
+    "Whismur-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -25516,7 +25516,7 @@ SETDEX_PHGSS = {
     }
   },
   "Makuhita": {
-    "Makuhita (H103)": {
+    "Makuhita-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -25541,7 +25541,7 @@ SETDEX_PHGSS = {
     }
   },
   "Azurill": {
-    "Azurill (H104)": {
+    "Azurill-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -25566,7 +25566,7 @@ SETDEX_PHGSS = {
     }
   },
   "Skitty": {
-    "Skitty (H105)": {
+    "Skitty-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -25591,7 +25591,7 @@ SETDEX_PHGSS = {
     }
   },
   "Meditite": {
-    "Meditite (H107)": {
+    "Meditite-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -25616,7 +25616,7 @@ SETDEX_PHGSS = {
     }
   },
   "Electrike": {
-    "Electrike (H108)": {
+    "Electrike-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -25641,7 +25641,7 @@ SETDEX_PHGSS = {
     }
   },
   "Gulpin": {
-    "Gulpin (H109)": {
+    "Gulpin-H": {
       "evs": {
         "hp": 252,
         "at": 252
@@ -25666,7 +25666,7 @@ SETDEX_PHGSS = {
     }
   },
   "Trapinch": {
-    "Trapinch (H113)": {
+    "Trapinch-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -25691,7 +25691,7 @@ SETDEX_PHGSS = {
     }
   },
   "Barboach": {
-    "Barboach (H116)": {
+    "Barboach-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -25716,7 +25716,7 @@ SETDEX_PHGSS = {
     }
   },
   "Feebas": {
-    "Feebas (H119)": {
+    "Feebas-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -25741,7 +25741,7 @@ SETDEX_PHGSS = {
     }
   },
   "Wynaut": {
-    "Wynaut (H122)": {
+    "Wynaut-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -25766,7 +25766,7 @@ SETDEX_PHGSS = {
     }
   },
   "Spheal": {
-    "Spheal (H124)": {
+    "Spheal-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -25791,7 +25791,7 @@ SETDEX_PHGSS = {
     }
   },
   "Beldum": {
-    "Beldum (H127)": {
+    "Beldum-H": {
       "evs": {
         "at": 252,
         "sp": 252
@@ -25816,7 +25816,7 @@ SETDEX_PHGSS = {
     }
   },
   "Wormadam-G": {
-    "Wormadam-G (H269)": {
+    "Wormadam-G-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -25841,7 +25841,7 @@ SETDEX_PHGSS = {
     }
   },
   "Wormadam-S": {
-    "Wormadam-S (H270)": {
+    "Wormadam-S-H": {
       "evs": {
         "at": 252,
         "sa": 252
@@ -25866,7 +25866,7 @@ SETDEX_PHGSS = {
     }
   },
   "Spiritomb": {
-    "Spiritomb (H367)": {
+    "Spiritomb-H": {
       "evs": {
         "hp": 252,
         "sa": 252
@@ -25891,7 +25891,7 @@ SETDEX_PHGSS = {
     }
   },
   "Uxie": {
-    "Uxie (H471)": {
+    "Uxie-H": {
       "evs": {
         "df": 252,
         "sd": 252
@@ -25916,7 +25916,7 @@ SETDEX_PHGSS = {
     }
   },
   "Mesprit": {
-    "Mesprit (H472)": {
+    "Mesprit-H": {
       "evs": {
         "sa": 252,
         "sp": 252
@@ -25941,7 +25941,7 @@ SETDEX_PHGSS = {
     }
   },
   "Azelf": {
-    "Azelf (H473)": {
+    "Azelf-H": {
       "evs": {
         "at": 252,
         "sp": 252
