@@ -960,6 +960,7 @@ function getZMoveName(moveName, moveType, item) {
 }
 
 function Field() {
+	var format = localStorage.getItem("selectedFormat") ? localStorage.getItem("selectedFormat") : (gen == 3 || gen == 4 ? "singles" : "doubles");
 	var isGravity = $("#gravity").prop("checked");
 	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
 	var isProtect = [$("#protectL").prop("checked"), $("#protectR").prop("checked")];
