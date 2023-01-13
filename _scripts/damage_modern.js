@@ -793,7 +793,7 @@ function getDamageResult(attacker, defender, move, field) {
 	//////////// DAMAGE ////////////
 	////////////////////////////////
 	var baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * basePower * attack / defense) / 50 + 2);
-	if (field.format === "doubles" && move.isSpread) {
+	if ((field.format === "Doubles" || field.format === "doubles") && move.isSpread) {
 		baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
 		description.isSpread = true;
 	}
