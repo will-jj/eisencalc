@@ -960,7 +960,7 @@ function getZMoveName(moveName, moveType, item) {
 }
 
 function Field() {
-	var format = $("input:radio[name='format']:checked").val().toLowerCase()
+	var format = $("input:radio[name='format']:checked").val().toLowerCase();
 	var isGravity = $("#gravity").prop("checked");
 	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
 	var isProtect = [$("#protectL").prop("checked"), $("#protectR").prop("checked")];
