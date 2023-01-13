@@ -204,7 +204,7 @@ function getDamageResultADV(attacker, defender, move, field) {
 		}
 	}
 
-	if (field.format !== "Singles" && move.isSpread && (move.name !== "Explosion" && move.name !== "Self-Destruct" && move.name !== "Earthquake" && move.name !== "Magnitude")) {
+	if ((field.format === "Doubles" || field.format === "doubles") && move.isSpread && (move.name !== "Explosion" && move.name !== "Self-Destruct" && move.name !== "Earthquake" && move.name !== "Magnitude")) {
 		// weird gen 3 spread damage mechanics
 		baseDamage = Math.floor(baseDamage / 2);
 		description.isSpread = true;
