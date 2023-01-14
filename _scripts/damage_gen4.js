@@ -164,7 +164,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		break;
 	case "Gyro Ball":
 		move.bp = attacker.stats[SP] === 0 ? 1 : Math.min(150, Math.floor(25 * defender.stats[SP] / attacker.stats[SP]) + 1);
-		description.moveBP = basePower;
+		description.moveBP = move.bp;
 		break;
 	case "Payback":
 		if (turnOrder !== "FIRST") {
