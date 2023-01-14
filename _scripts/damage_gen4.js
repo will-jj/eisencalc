@@ -30,8 +30,8 @@ function CALCULATE_MOVES_OF_ATTACKER_PTHGSS(attacker, defender, field) {
 	checkKlutz(defender);
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
-	p1.stats[SP] = getFinalSpeed(p1, field.getWeather());
-	p2.stats[SP] = getFinalSpeed(p2, field.getWeather());
+	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather(), field.getTerrain());
+	defender.stats[SP] = getFinalSpeed(defender, field.getWeather(), field.getTerrain());
 	checkDownload(attacker, defender);
 	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
 	var results = [];
