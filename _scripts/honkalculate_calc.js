@@ -62,9 +62,72 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 	return parseInt(b) - parseInt(a);
 };
 
+function MassPokemon(speciesName, setName) {
+	this.name = speciesName;
+	var pokemon = pokedex[speciesName];
+	this.type1 = pokemon.t1;
+	this.type2 = pokemon.t2 && typeof pokemon.t2 !== "undefined" ? pokemon.t2 : "";
+	this.rawStats = [];
+	this.boosts = [];
+	this.stats = [];
+	this.evs = [];
+
+	var set = setdex[this.name][setName];
+	//this.isGmax = setName.includes("-Gmax") || pokemon.isGmax || set.isGmax;
+	this.level = set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50);
+
+	this.HPEVs = set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0;
+	if (pokemon.bs.hp === 1) {
+		this.maxHP = 1;
+	} else {
+		var HPIVs = set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : 31;
+		// ~~ is used as a faster Math.floor() for positive numbers and fails on negative ones
+		this.maxHP = ~~((pokemon.bs.hp * 2 + HPIVs + ~~(this.HPEVs / 4)) * this.level / 100) + this.level + 10;
+	}
+	this.curHP = this.maxHP;
+	this.nature = set.nature;
+	for (var i = 0; i < STATS.length; i++) {
+		var stat = STATS[i];
+		this.boosts[stat] = 0;
+		this.evs[stat] = set.evs && typeof set.evs[stat] !== "undefined" ? set.evs[stat] : 0;
+		var ivs = set.ivs && typeof set.ivs[stat] !== "undefined" ? set.ivs[stat] : 31;
+		var natureMods = NATURES[this.nature];
+		var nature = natureMods[0] === stat ? 1.1 : natureMods[1] === stat ? 0.9 : 1;
+		this.rawStats[stat] = ~~((~~((pokemon.bs[stat] * 2 + ivs + ~~(this.evs[stat] / 4)) * this.level / 100) + 5) * nature);
+	}
+
+	this.ability = set.ability && typeof set.ability !== "undefined" ? set.ability :
+		pokemon.ab && typeof pokemon.ab !== "undefined" ? pokemon.ab : "";
+	this.item = set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || !(set.item.includes("ite"))) ? set.item : "";
+	this.status = "Healthy";
+	this.toxicCounter = 0;
+	this.moves = [];
+	for (var i = 0; i < 4; i++) {
+		var moveName = set.moves[i];
+		var defaultDetails = moves[moveName] || moves["(No Move)"];
+		this.moves.push($.extend({}, defaultDetails, {
+			"name": defaultDetails.bp === 0 ? "(No Move)" : moveName,
+			"bp": defaultDetails.bp,
+			"type": defaultDetails.type,
+			"category": defaultDetails.category,
+			"isCrit": !!defaultDetails.alwaysCrit,
+			"acc": defaultDetails.acc,
+			"hits": defaultDetails.maxMultiHits ? (this.ability === "Skill Link" || moveName === "Population Bomb" || moveName === "Triple Axel" ? defaultDetails.maxMultiHits : (this.item === "Loaded Dice" ? 4 : 3)) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
+			"usedTimes": 1
+		}));
+	}
+	this.baseMoveNames = [this.moves[0].name, this.moves[1].name, this.moves[2].name, this.moves[3].name];
+	this.weight = pokemon.w;
+	this.tier = set.tier;
+
+	this.hasType = function (type) {
+		return this.type1 === type || this.type2 === type;
+	};
+}
+
 function performCalculations() {
 	var attacker, defender, setPoke, setTier;
-	var selectedTier = getSelectedTier(); // selectedTier can be: All, 50, Hall, HallR10 28, 40, Tower, RS, SM, DM.  *SM and DM are Singles and Doubles Master
+	var selectedTier = getSelectedTier(); // selectedTier can be: All, threshold, Hall, HallR10, Tower, RS, SM, DM.  *SM and DM are Singles and Doubles Master
 	var dataSet = [];
 	var userPoke = new Pokemon($("#p1"));
 	var startingBoosts = [userPoke.boosts.at, userPoke.boosts.df, userPoke.boosts.sa, userPoke.boosts.sd, userPoke.boosts.sp, userPoke.boosts.ac, userPoke.boosts.es];
@@ -75,17 +138,13 @@ function performCalculations() {
 	for (var i = 0; i < setSpecies.length; i++) {
 		var speciesName = setSpecies[i];
 		var setNames = Object.keys(setdex[speciesName]);
-		var customDexSpecies = SETDEX_CUSTOM[speciesName];
 		for (var j = 0; j < setNames.length; j++) {
 			var setName = setNames[j];
-			if (customDexSpecies !== undefined && customDexSpecies[setName]) {
-				continue;
-			}
-			setPoke = new Pokemon(speciesName, setName);
-			setTier = setPoke.tier; // setPoke.tier can be: 50, Hall, HallR10 28, 40, Tower, RS, SM, DM, SMDM. The set might also have no tier key.
+			setPoke = new MassPokemon(speciesName, setName);
+			setTier = setPoke.tier; // setPoke.tier can be: 50, Hall, HallR10, 28, 40, Tower, RS, SM, DM, SMDM. A set might not have a tier key.
 			if (gen == 4 && selectedTier === "All" && setTier && setTier.indexOf("Hall") != -1) {
 				continue;
-			} else if (selectedTier === "All" || (setTier && setTier.indexOf(selectedTier) != -1)) {
+			} else if (selectedTier === "All" || (setTier && setTier.indexOf(selectedTier) != -1) || (selectedTier == "threshold" && parseInt(setTier))) {
 				// let set be calculated
 			} else {
 				continue;
@@ -167,9 +226,23 @@ $(".gen").change(function () {
 	switch (gen) {
 	case 3:
 		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_ADV;
+		$("#threshold").next("label").text("50+");
 		break;
 	case 4:
 		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_PTHGSS;
+		$("#threshold").next("label").text("50+");
+		break;
+	case 5:
+		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_MODERN;
+		$("#threshold").next("label").text("28+");
+		break;
+	case 6:
+		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_MODERN;
+		$("#threshold").next("label").text("40+");
+		break;
+	case 7:
+		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_MODERN;
+		$("#threshold").next("label").text("40+");
 		break;
 	default:
 		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_MODERN;
@@ -196,20 +269,20 @@ function adjustTierBorderRadius() {
 	var roundedLeftCorner = {"border-top-left-radius": "8px", "border-bottom-left-radius": "8px"};
 	if (gen == 3) {
 		$("#All").next("label").css(squaredRightCorner);
-		$("#50").next("label").css(roundedRightCorner);
+		$("#threshold").next("label").css(roundedRightCorner);
 	}
 	else if (gen == 4) {
 		$("#All").next("label").css(squaredRightCorner);
-		$("#50").next("label").css(squaredRightCorner);
+		$("#threshold").next("label").css(squaredRightCorner);
 		$("#HallR10").next("label").css(roundedRightCorner);
 	}
 	else if (gen == 5) {
 		$("#All").next("label").css(squaredRightCorner);
-		$("#28").next("label").css(roundedRightCorner);
+		$("#threshold").next("label").css(roundedRightCorner);
 	}
 	else if (gen == 6 || gen == 7) {
 		$("#All").next("label").css(squaredRightCorner);
-		$("#40").next("label").css(roundedRightCorner);
+		$("#threshold").next("label").css(roundedRightCorner);
 	}
 	else if (gen == 8) {
 		$("#Tower").next("label").css(roundedLeftCorner);
@@ -350,7 +423,6 @@ function getBottomOffset(obj) {
 }
 
 function getFinalSpeedHonk(pokemon) {
-	var userPoke = new Pokemon($("#p1"));
 	var speed = getModifiedStat($(".sp .total").text(), $(".sp .boost").val());
 	var item = $(".item").val();
 	var ability = $(".ability").val();

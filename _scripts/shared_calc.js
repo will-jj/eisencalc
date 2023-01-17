@@ -703,127 +703,60 @@ var stickyMoves = (function () {
 	};
 })();
 
-function Pokemon(pokeInfo, setName) { // if passing a jquery object, just call this with 1 argument
-	if (typeof pokeInfo === "string") {
-		// this branch is used for the mass calc; pokeInfo is species name
-		this.name = pokeInfo;
-		var pokemon = pokedex[pokeInfo];
-		this.type1 = pokemon.t1;
-		this.type2 = pokemon.t2 && typeof pokemon.t2 !== "undefined" ? pokemon.t2 : "";
-		this.rawStats = [];
-		this.boosts = [];
-		this.stats = [];
-		this.evs = [];
-
-		var set = setdex[this.name][setName];
-		//this.isGmax = setName.includes("-Gmax") || pokemon.isGmax || set.isGmax;
-		this.level = set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50);
-
-		this.HPEVs = set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0;
-		if (gen < 3) {
-			var HPDVs = 15;
-			// ~~ is used as a faster Math.floor() for positive numbers and fails on negative ones
-			this.maxHP = ~~(((pokemon.bs.hp + HPDVs) * 2 + 63) * this.level / 100) + this.level + 10;
-		} else if (pokemon.bs.hp === 1) {
-			this.maxHP = 1;
-		} else {
-			var HPIVs = set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : 31;
-			this.maxHP = ~~((pokemon.bs.hp * 2 + HPIVs + ~~(this.HPEVs / 4)) * this.level / 100) + this.level + 10;
-		}
-		this.curHP = this.maxHP;
-		this.nature = set.nature;
-		for (var i = 0; i < STATS.length; i++) {
-			var stat = STATS[i];
-			this.boosts[stat] = 0;
-			this.evs[stat] = set.evs && typeof set.evs[stat] !== "undefined" ? set.evs[stat] : 0;
-			if (gen < 3) {
-				var dvs = 15;
-				this.rawStats[stat] = ~~(((pokemon.bs[stat] + dvs) * 2 + 63) * this.level / 100) + 5;
-			} else {
-				var ivs = set.ivs && typeof set.ivs[stat] !== "undefined" ? set.ivs[stat] : 31;
-				var natureMods = NATURES[this.nature];
-				var nature = natureMods[0] === stat ? 1.1 : natureMods[1] === stat ? 0.9 : 1;
-				this.rawStats[stat] = ~~((~~((pokemon.bs[stat] * 2 + ivs + ~~(this.evs[stat] / 4)) * this.level / 100) + 5) * nature);
-			}
-		}
-
-		this.ability = set.ability && typeof set.ability !== "undefined" ? set.ability :
-			pokemon.ab && typeof pokemon.ab !== "undefined" ? pokemon.ab : "";
-		this.item = set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || !(set.item.includes("ite"))) ? set.item : "";
-		this.status = "Healthy";
-		this.toxicCounter = 0;
-		this.moves = [];
-		for (var i = 0; i < 4; i++) {
-			var moveName = set.moves[i];
-			var defaultDetails = moves[moveName] || moves["(No Move)"];
-			this.moves.push($.extend({}, defaultDetails, {
-				"name": defaultDetails.bp === 0 ? "(No Move)" : moveName,
-				"bp": defaultDetails.bp,
-				"type": defaultDetails.type,
-				"category": defaultDetails.category,
-				"isCrit": !!defaultDetails.alwaysCrit,
-				"acc": defaultDetails.acc,
-				"hits": defaultDetails.maxMultiHits ? (this.ability === "Skill Link" || moveName === "Population Bomb" || moveName === "Triple Axel" ? defaultDetails.maxMultiHits : (this.item === "Loaded Dice" ? 4 : 3)) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
-				"usedTimes": 1
-			}));
-		}
-		this.baseMoveNames = [this.moves[0].name, this.moves[1].name, this.moves[2].name, this.moves[3].name];
-		this.weight = pokemon.w;
-		this.tier = set.tier;
+function Pokemon(pokeInfo, setName) {
+	// pokeInfo is a jquery object
+	var setName = pokeInfo.find("input.set-selector").val();
+	if (setName.indexOf("(") === -1) {
+		this.name = setName;
 	} else {
-		// pokeInfo is a jquery object
-		var setName = pokeInfo.find("input.set-selector").val();
-		if (setName.indexOf("(") === -1) {
-			this.name = setName;
-		} else {
-			var pokemonName = setName.substring(0, setName.indexOf(" ("));
-			this.name = pokedex[pokemonName].formes ? pokeInfo.find(".forme").val() : pokemonName;
-		}
-		this.type1 = pokeInfo.find(".type1").val();
-		this.type2 = pokeInfo.find(".type2").val();
-		// ~~ is used as a faster Math.floor() for positive numbers and fails on negative ones
-		this.level = ~~pokeInfo.find(".level").val();
-		this.maxHP = ~~pokeInfo.find(".hp .total").text();
-		this.curHP = ~~pokeInfo.find(".current-hp").val();
-		this.HPEVs = ~~pokeInfo.find(".hp .evs").val();
-		this.HPIVs = ~~pokeInfo.find(".hp .ivs").val();
-		this.isDynamax = pokeInfo.find(".max").prop("checked");
-		this.isTerastal = pokeInfo.find(".tera").prop("checked");
-		if (gen === 9) {
-			this.teraType = pokeInfo.find(".tera-type").val();
-		}
-		var dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
-		this.dexType1 = dexEntry.t1;
-		this.dexType2 = dexEntry.t2;
-		this.rawStats = [];
-		this.boosts = [];
-		this.stats = [];
-		this.evs = [];
-		this.ivs = [];
-		for (var i = 0; i < STATS.length; i++) {
-			this.rawStats[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .total").text();
-			this.boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
-			this.evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
-			this.ivs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .ivs").val();
-		}
-		this.nature = pokeInfo.find(".nature").val();
-		this.ability = pokeInfo.find(".ability").val();
-		this.item = pokeInfo.find(".item").val();
-		this.status = pokeInfo.find(".status").val();
-		this.toxicCounter = this.status === "Badly Poisoned" ? ~~pokeInfo.find(".toxic-counter").val() : 0;
-		var move1 = pokeInfo.find(".move1");
-		var move2 = pokeInfo.find(".move2");
-		var move3 = pokeInfo.find(".move3");
-		var move4 = pokeInfo.find(".move4");
-		this.baseMoveNames = [move1.find("select.move-selector").val(), move2.find("select.move-selector").val(), move3.find("select.move-selector").val(), move4.find("select.move-selector").val()];
-		this.moves = [
-			getMoveDetails(move1, this.item, this.name),
-			getMoveDetails(move2, this.item, this.name),
-			getMoveDetails(move3, this.item, this.name),
-			getMoveDetails(move4, this.item, this.name)
-		];
-		this.weight = +pokeInfo.find(".weight").val();
+		var pokemonName = setName.substring(0, setName.indexOf(" ("));
+		this.name = pokedex[pokemonName].formes ? pokeInfo.find(".forme").val() : pokemonName;
 	}
+	this.type1 = pokeInfo.find(".type1").val();
+	this.type2 = pokeInfo.find(".type2").val();
+	// ~~ is used as a faster Math.floor() for positive numbers and fails on negative ones
+	this.level = ~~pokeInfo.find(".level").val();
+	this.maxHP = ~~pokeInfo.find(".hp .total").text();
+	this.curHP = ~~pokeInfo.find(".current-hp").val();
+	this.HPEVs = ~~pokeInfo.find(".hp .evs").val();
+	this.HPIVs = ~~pokeInfo.find(".hp .ivs").val();
+	this.isDynamax = pokeInfo.find(".max").prop("checked");
+	this.isTerastal = pokeInfo.find(".tera").prop("checked");
+	if (gen === 9) {
+		this.teraType = pokeInfo.find(".tera-type").val();
+	}
+	var dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
+	this.dexType1 = dexEntry.t1;
+	this.dexType2 = dexEntry.t2;
+	this.rawStats = [];
+	this.boosts = [];
+	this.stats = [];
+	this.evs = [];
+	this.ivs = [];
+	for (var i = 0; i < STATS.length; i++) {
+		this.rawStats[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .total").text();
+		this.boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
+		this.evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
+		this.ivs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .ivs").val();
+	}
+	this.nature = pokeInfo.find(".nature").val();
+	this.ability = pokeInfo.find(".ability").val();
+	this.item = pokeInfo.find(".item").val();
+	this.status = pokeInfo.find(".status").val();
+	this.toxicCounter = this.status === "Badly Poisoned" ? ~~pokeInfo.find(".toxic-counter").val() : 0;
+	var move1 = pokeInfo.find(".move1");
+	var move2 = pokeInfo.find(".move2");
+	var move3 = pokeInfo.find(".move3");
+	var move4 = pokeInfo.find(".move4");
+	this.baseMoveNames = [move1.find("select.move-selector").val(), move2.find("select.move-selector").val(), move3.find("select.move-selector").val(), move4.find("select.move-selector").val()];
+	this.moves = [
+		getMoveDetails(move1, this.item, this.name),
+		getMoveDetails(move2, this.item, this.name),
+		getMoveDetails(move3, this.item, this.name),
+		getMoveDetails(move4, this.item, this.name)
+	];
+	this.weight = +pokeInfo.find(".weight").val();
+
 	this.hasType = function (type) {
 		return this.type1 === type || this.type2 === type;
 	};
@@ -970,7 +903,6 @@ function Field() {
 	var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
 	var isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
 	var isSeeded = [$("#leechSeedL").prop("checked"), $("#leechSeedR").prop("checked")];
-	var isForesight = [$("#foresightL").prop("checked"), $("#foresightR").prop("checked")];
 	var isHelpingHand = [$("#helpingHandR").prop("checked"), $("#helpingHandL").prop("checked")]; // affects attacks against opposite side
 	var isPowerSpot = [$("#powerSpotR").prop("checked"), $("#powerSpotL").prop("checked")]; // affects attacks against opposite side
 	var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
@@ -999,15 +931,17 @@ function Field() {
 		return terrain;
 	};
 	this.getSide = function (i) {
-		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isSeeded[i],
-			isForesight[i], isHelpingHand[i], isMinimized[i], isVictoryStar[i], isFriendGuard[i], isBattery[i],
-			isProtect[i], isPowerSpot[i], isBusted8[i], isBusted16[i], isSteelySpirit[i],
+		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isSeeded[i], isHelpingHand[i], isMinimized[i],
+			isVictoryStar[i], isFriendGuard[i],
+			isBattery[i], isProtect[i],
+			isPowerSpot[i], isBusted8[i], isBusted16[i], isSteelySpirit[i],
 			fainted[i], isRuinTablets[i], isRuinVessel[i], isRuinSword[i], isRuinBeads[i]);
 	};
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isSeeded, isForesight, isHelpingHand,
-	isMinimized, isVictoryStar, isFriendGuard, isBattery, isProtect,
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isSeeded, isHelpingHand, isMinimized,
+	isVictoryStar, isFriendGuard,
+	isBattery, isProtect,
 	isPowerSpot, isBusted8, isBusted16, isSteelySpirit,
 	faintedCount, isRuinTablets, isRuinVessel, isRuinSword, isRuinBeads) {
 	this.format = format;
@@ -1019,7 +953,6 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isReflect = isReflect;
 	this.isLightScreen = isLightScreen;
 	this.isSeeded = isSeeded;
-	this.isForesight = isForesight;
 	this.isHelpingHand = isHelpingHand;
 	this.isMinimized = isMinimized;
 	this.isVictoryStar = isVictoryStar;
@@ -1198,8 +1131,6 @@ function clearField() {
 	$("#lightScreenR").prop("checked", false);
 	$("#leechSeedL").prop("checked", false);
 	$("#leechSeedR").prop("checked", false);
-	$("#foresightL").prop("checked", false);
-	$("#foresightR").prop("checked", false);
 	$("#helpingHandL").prop("checked", false);
 	$("#helpingHandR").prop("checked", false);
 	$("#powerSpotL").prop("checked", false);

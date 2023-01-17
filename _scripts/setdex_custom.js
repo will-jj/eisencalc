@@ -117,7 +117,6 @@ var savecustom = function () {
 		var teraType = "";
 		var level = "50";
 		var EVs = [0, 0, 0, 0, 0, 0];
-		var AVs = [0, 0, 0, 0, 0, 0];
 		var IVs = [31, 31, 31, 31, 31, 31];
 		var nature = "Serious";
 		var moves = [];
@@ -191,27 +190,21 @@ var savecustom = function () {
 						evListElements = evList[j].split(" ");
 						if (evListElements[1] == "HP") {
 							EVs[0] = parseInt(evListElements[0]);
-							AVs[0] = parseInt(evListElements[0]);
 						}	else {
 							if (evListElements[1] == "Atk") {
 								EVs[1] = parseInt(evListElements[0]);
-								AVs[1] = parseInt(evListElements[0]);
 							} else {
 								if (evListElements[1] == "Def") {
 									EVs[2] = parseInt(evListElements[0]);
-									AVs[2] = parseInt(evListElements[0]);
 								} else {
 									if (evListElements[1] == "SpA") {
 										EVs[3] = parseInt(evListElements[0]);
-										AVs[3] = parseInt(evListElements[0]);
 									} else {
 										if (evListElements[1] == "SpD") {
 											EVs[4] = parseInt(evListElements[0]);
-											AVs[4] = parseInt(evListElements[0]);
 										} else {
 											if (evListElements[1] == "Spe") {
 												EVs[5] = parseInt(evListElements[0]);
-												AVs[5] = parseInt(evListElements[0]);
 											}
 										}
 									}
@@ -299,14 +292,6 @@ var savecustom = function () {
 				"sa": EVs[3],
 				"sd": EVs[4],
 				"sp": EVs[5],
-			},
-			"avs": {
-				"hp": AVs[0],
-				"at": AVs[1],
-				"df": AVs[2],
-				"sa": AVs[3],
-				"sd": AVs[4],
-				"sp": AVs[5],
 			},
 			"ivs": {
 				"hp": IVs[0],

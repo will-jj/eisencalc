@@ -100,8 +100,8 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
-	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity) : 1;
+	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy", field.isGravity);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy", field.isGravity) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
@@ -362,7 +362,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		}
 	}
 
-	if ((field.format === "Doubles" || field.format === "doubles") && move.isSpread) {
+	if (field.format === "doubles" && move.isSpread) {
 		baseDamage = Math.floor(baseDamage * 3 / 4);
 		description.isSpread = true;
 	}
