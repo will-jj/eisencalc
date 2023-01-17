@@ -58,8 +58,8 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.moveBP = move.bp;
 	}
 
-	var typeEffect1 = getMoveEffectiveness(move, defender.type1, field.isForesight);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, field.isForesight) : 1;
+	var typeEffect1 = getMoveEffectiveness(move, defender.type1);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
@@ -204,7 +204,7 @@ function getDamageResultADV(attacker, defender, move, field) {
 		}
 	}
 
-	if ((field.format === "Doubles" || field.format === "doubles") && move.isSpread && (move.name !== "Explosion" && move.name !== "Self-Destruct" && move.name !== "Earthquake" && move.name !== "Magnitude")) {
+	if (field.format === "doubles" && move.isSpread && (move.name !== "Explosion" && move.name !== "Self-Destruct" && move.name !== "Earthquake" && move.name !== "Magnitude")) {
 		// weird gen 3 spread damage mechanics
 		baseDamage = Math.floor(baseDamage / 2);
 		description.isSpread = true;

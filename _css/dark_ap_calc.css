@@ -279,6 +279,11 @@ select.toxic-counter {
   font-size: 0.8em;
 }
 
+.field-info .format-btn {
+  width: 2em;
+  padding: 3px 4px;
+}
+
 .hide {
   display: none;
 }

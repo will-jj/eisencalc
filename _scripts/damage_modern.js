@@ -198,7 +198,7 @@ function getDamageResult(attacker, defender, move, field) {
 	var isPixilate = attacker.ability === "Pixilate" && move.type === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal);
 	var isRefrigerate = attacker.ability === "Refrigerate" && move.type === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal);
 	var isGalvanize = attacker.ability === "Galvanize" && move.type === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal);
-	var isNormalize = attacker.ability === "Normalize" && (["Hidden Power", "Weather Ball", "Natural Gift", "Judgment", "Techno Blast", "Revelation Dance", "Multi-Attack"].indexOf(move.name) === -1) && !move.isZ && !(move.name === "Tera Blast" && attacker.isTerastal);
+	var isNormalize = attacker.ability === "Normalize" && (["Hidden Power", "Weather Ball", "Natural Gift", "Judgment", "Techno Blast", "Revelation Dance", "Multi-Attack", "Terrain Pulse"].indexOf(move.name) === -1) && !move.isZ && !(move.name === "Tera Blast" && attacker.isTerastal);
 	if (!move.isZ) { //Z-Moves don't receive -ate type changes
 		if (isAerilate) {
 			move.type = "Flying";
@@ -208,7 +208,7 @@ function getDamageResult(attacker, defender, move, field) {
 			move.type = "Ice";
 		} else if (isGalvanize) {
 			move.type = "Electric";
-		} else if (attacker.ability === "Normalize") {
+		} else if (isNormalize) {
 			move.type = "Normal";
 			description.attackerAbility = attacker.ability;
 		} else if (attacker.ability === "Liquid Voice" && move.isSound) {
@@ -234,8 +234,8 @@ function getDamageResult(attacker, defender, move, field) {
 		defenderWeight = Math.floor(defenderWeight * 5) / 10;
 	}
 
-	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity) : 1;
+	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy", field.isGravity);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy", field.isGravity) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
@@ -247,7 +247,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	if (defAbility === "Wonder Guard" && typeEffectiveness <= 1 ||
             move.type === "Grass" && defAbility === "Sap Sipper" ||
-            move.type === "Fire" && ["Flash Fire", "Well-Baked Body"].indexOf(defAbility) !== -1 ||
+            move.type === "Fire" && ["Flash Fire", "Flash Fire (activated)", "Well-Baked Body"].indexOf(defAbility) !== -1 ||
             move.type === "Water" && ["Dry Skin", "Storm Drain", "Water Absorb"].indexOf(defAbility) !== -1 ||
             move.type === "Electric" && ["Lightning Rod", "Lightningrod", "Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1 ||
             move.type === "Ground" && move.name !== "Thousand Arrows" && defAbility === "Levitate" && !isGrounded(defender, field.isGravity, true) ||
@@ -355,7 +355,6 @@ function getDamageResult(attacker, defender, move, field) {
 	case "Heavy Slam":
 	case "Heat Crash":
 		var wr = attackerWeight / defenderWeight;
-		console.log("ratio: " + wr);
 		basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
 		description.moveBP = basePower;
 		break;
@@ -793,7 +792,7 @@ function getDamageResult(attacker, defender, move, field) {
 	//////////// DAMAGE ////////////
 	////////////////////////////////
 	var baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * basePower * attack / defense) / 50 + 2);
-	if ((field.format === "Doubles" || field.format === "doubles") && move.isSpread) {
+	if (field.format === "doubles" && move.isSpread) {
 		baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
 		description.isSpread = true;
 	}
