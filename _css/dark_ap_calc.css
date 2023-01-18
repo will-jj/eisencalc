@@ -305,6 +305,13 @@ select.toxic-counter {
 
 /* Auto Level Box */
 #autolevel {
+  float: left;
+  text-decoration: none;
+  display: inline;
+}
+
+/* Auto IVs Box */
+#autoivs {
   float: right;
   text-decoration: none;
   display: inline;

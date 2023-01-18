@@ -902,7 +902,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (getBerryResistType(defender.item) === move.type && (typeEffectiveness > 1 || move.type === "Normal") &&
             attacker.ability !== "Unnerve") {
 		finalMods.push(0x800);
-		description.defenderItem = attackerItem;
+		description.defenderItem = defender.item;
 	}
 	if (defAbility === "Fur Coat" && hitsPhysical) {
 		finalMods.push(0x800);
