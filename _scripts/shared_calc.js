@@ -2,6 +2,7 @@
 var bounds = {
 	"level": [1, 100],
 	"autolevel-box": [1, 100],
+	"autoivs-box": [0, 31],
 	"base": [1, 255],
 	"evs": [0, 252],
 	"ivs": [0, 31],
@@ -77,7 +78,7 @@ $(".tera-type").bind("keyup change", function () {
 
 $("#autolevel").change(function () {
 	// auto-calc stats and current HP on change
-	var level = $(gen == 3 || gen == 4 ? "#autolevel-box" : "input:radio[name='autolevel-btn']:checked").val();
+	var autoLevel = $(gen == 3 || gen == 4 ? "#autolevel-box" : "input:radio[name='autolevel-btn']:checked").val();
 	var p1 = $("#p1");
 	var p2 = $("#p2");
 	if (gen == 4) {
@@ -85,21 +86,50 @@ $("#autolevel").change(function () {
 		var p1Name = p1.find("input.set-selector").val(); // speciesName (setName)
 		var speciesSets = setdex[p1Name.substring(0, p1Name.indexOf(" ("))];
 		if (speciesSets && speciesSets[p1Name.substring(p1Name.indexOf('(') + 1, p1Name.length - 1)]) {
-			p1.find(".level").val(level);
+			p1.find(".level").val(autoLevel);
 		}
 		var p2Name = p2.find("input.set-selector").val();
 		if (p2Name) {
 			speciesSets = setdex[p2Name.substring(0, p2Name.indexOf(" ("))];
 			if (speciesSets && speciesSets[p2Name.substring(p2Name.indexOf('(') + 1, p2Name.length - 1)]) {
-				p2.find(".level").val(level);
+				p2.find(".level").val(autoLevel);
 			}
 		}
 	} else {
-		p1.find(".level").val(level);
-		p2.find(".level").val(level);
+		p1.find(".level").val(autoLevel);
+		p2.find(".level").val(autoLevel);
 	}
 	$(".level").change();
-	localStorage.setItem("autolevelGen" + gen, level);
+	localStorage.setItem("autolevelGen" + gen, autoLevel);
+});
+
+$("#autoivs").change(function () {
+	var autoIVs = gen == 4 ? $("#autoivs-box").val() : $('#autoivs-select').find(":selected").val();
+	var p1 = $("#p1");
+	var p2 = $("#p2");
+
+	var p1Name = p1.find("input.set-selector").val(); // speciesName (setName)
+	var speciesSets = setdex[p1Name.substring(0, p1Name.indexOf(" ("))];
+	if (speciesSets && speciesSets[p1Name.substring(p1Name.indexOf('(') + 1, p1Name.length - 1)]) {
+		p1.find(".hp .ivs").val(autoIVs);
+		for (i = 0; i < STATS.length; i++) {
+			p1.find("." + STATS[i] + " .ivs").val(autoIVs);
+		}
+		calcHP(p1);
+		calcStats(p1);
+	}
+	var p2Name = p2.find("input.set-selector").val();
+	if (p2Name) { // because no p2 in mass calc
+		speciesSets = setdex[p2Name.substring(0, p2Name.indexOf(" ("))];
+		if (speciesSets && speciesSets[p2Name.substring(p2Name.indexOf('(') + 1, p2Name.length - 1)]) {
+			p2.find(".hp .ivs").val(autoIVs);
+			for (i = 0; i < STATS.length; i++) {
+				p2.find("." + STATS[i] + " .ivs").val(autoIVs);
+			}
+			calcHP(p2);
+			calcStats(p2);
+		}
+	}
 });
 
 $("#format").change(function () {
@@ -135,48 +165,6 @@ $(".sp .base, .sp .evs, .sp .ivs, .current-happiness").bind("keyup keydown click
 $(".evs").bind("keyup keydown click change", function () {
 	calcEvTotal($(this).closest(".poke-info"));
 });
-$(".sl .base").keyup(function () {
-	calcStat($(this).closest(".poke-info"), "sl");
-});
-$(".at .dvs").keyup(function () {
-	var poke = $(this).closest(".poke-info");
-	calcStat(poke, "at");
-	poke.find(".hp .dvs").val(getHPDVs(poke));
-	calcHP(poke);
-});
-$(".df .dvs").keyup(function () {
-	var poke = $(this).closest(".poke-info");
-	calcStat(poke, "df");
-	poke.find(".hp .dvs").val(getHPDVs(poke));
-	calcHP(poke);
-});
-$(".sa .dvs").keyup(function () {
-	var poke = $(this).closest(".poke-info");
-	calcStat(poke, "sa");
-	poke.find(".sd .dvs").val($(this).val());
-	calcStat(poke, "sd");
-	poke.find(".hp .dvs").val(getHPDVs(poke));
-	calcHP(poke);
-});
-$(".sp .dvs").keyup(function () {
-	var poke = $(this).closest(".poke-info");
-	calcStat(poke, "sp");
-	poke.find(".hp .dvs").val(getHPDVs(poke));
-	calcHP(poke);
-});
-$(".sl .dvs").keyup(function () {
-	var poke = $(this).closest(".poke-info");
-	calcStat(poke, "sl");
-	poke.find(".hp .dvs").val(getHPDVs(poke));
-	calcHP(poke);
-});
-
-function getHPDVs(poke) {
-	return ~~poke.find(".at .dvs").val() % 2 * 8 +
-            ~~poke.find(".df .dvs").val() % 2 * 4 +
-            ~~poke.find(gen === 1 ? ".sl .dvs" : ".sa .dvs").val() % 2 * 2 +
-            ~~poke.find(".sp .dvs").val() % 2;
-}
 
 function calcStats(poke) {
 	for (var i = 0; i < STATS.length; i++) {
@@ -504,11 +492,12 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
 		var set = setdexAll[pokemonName][setName];
 		pokeObj.find(".level").val(set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50));
+		var autoIVs = gen == 4 ? $("#autoivs-box").val() : $('#autoivs-select').find(":selected").val();
 		pokeObj.find(".hp .evs").val(set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0);
-		pokeObj.find(".hp .ivs").val(set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : 31);
+		pokeObj.find(".hp .ivs").val(set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : (autoIVs ? parseInt(autoIVs) : 31));
 		for (i = 0; i < STATS.length; i++) {
 			pokeObj.find("." + STATS[i] + " .evs").val(set.evs && typeof set.evs[STATS[i]] !== "undefined" ? set.evs[STATS[i]] : 0);
-			pokeObj.find("." + STATS[i] + " .ivs").val(set.ivs && typeof set.ivs[STATS[i]] !== "undefined" ? set.ivs[STATS[i]] : 31);
+			pokeObj.find("." + STATS[i] + " .ivs").val(set.ivs && typeof set.ivs[STATS[i]] !== "undefined" ? set.ivs[STATS[i]] : (autoIVs ? parseInt(autoIVs) : 31));
 		}
 		setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 		setSelectValueIfValid(abilityObj, set.ability ? set.ability : pokemon.ab, "");
@@ -703,7 +692,7 @@ var stickyMoves = (function () {
 	};
 })();
 
-function Pokemon(pokeInfo, setName) {
+function Pokemon(pokeInfo) {
 	// pokeInfo is a jquery object
 	var setName = pokeInfo.find("input.set-selector").val();
 	if (setName.indexOf("(") === -1) {
@@ -970,6 +959,9 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isRuinBeads = isRuinBeads;
 }
 
+const IVS_GEN3 = [31, 21, 18, 15, 12, 9, 6, 3];
+const IVS_OTHER = [31, 27, 23, 19];
+
 var gen, pokedex, setdex, setdexAll, typeChart, moves, abilities, items, calculateAllMoves;
 var STATS = STATS_GSC;
 var calcHP = CALC_HP_ADV;
@@ -985,7 +977,8 @@ $(".gen").change(function () {
 		items = ITEMS_ADV;
 		abilities = ABILITIES_ADV;
 		calculateAllMoves = CALCULATE_ALL_MOVES_ADV;
-		localStorage.setItem("selectedGen", 3);
+		var ivOptions = getSelectOptions(IVS_GEN3);
+		$("#autoivs-select").find("option").remove().end().append(ivOptions);
 		break;
 	case 4:
 		pokedex = POKEDEX_DPP;
@@ -995,7 +988,6 @@ $(".gen").change(function () {
 		items = ITEMS_DPP;
 		abilities = ABILITIES_DPP;
 		calculateAllMoves = CALCULATE_ALL_MOVES_PTHGSS;
-		localStorage.setItem("selectedGen", 4);
 		break;
 	case 5:
 		pokedex = POKEDEX_BW;
@@ -1005,7 +997,8 @@ $(".gen").change(function () {
 		items = ITEMS_BW;
 		abilities = ABILITIES_BW;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		localStorage.setItem("selectedGen", 5);
+		var ivOptions = getSelectOptions(IVS_OTHER);
+		$("#autoivs-select").find("option").remove().end().append(ivOptions);
 		break;
 	case 6:
 		pokedex = POKEDEX_XY;
@@ -1015,7 +1008,8 @@ $(".gen").change(function () {
 		items = ITEMS_XY;
 		abilities = ABILITIES_XY;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		localStorage.setItem("selectedGen", 6);
+		var ivOptions = getSelectOptions(IVS_OTHER);
+		$("#autoivs-select").find("option").remove().end().append(ivOptions);
 		break;
 	case 7:
 		pokedex = POKEDEX_SM;
@@ -1025,7 +1019,8 @@ $(".gen").change(function () {
 		items = ITEMS_SM;
 		abilities = ABILITIES_SM;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		localStorage.setItem("selectedGen", 7);
+		var ivOptions = getSelectOptions(IVS_OTHER);
+		$("#autoivs-select").find("option").remove().end().append(ivOptions);
 		break;
 	case 8:
 		pokedex = POKEDEX_SS;
@@ -1035,7 +1030,6 @@ $(".gen").change(function () {
 		items = ITEMS_SS;
 		abilities = ABILITIES_SS;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		localStorage.setItem("selectedGen", 8);
 		break;
 	case 80:
 		pokedex = POKEDEX_BDSP;
@@ -1045,7 +1039,6 @@ $(".gen").change(function () {
 		items = ITEMS_SS;
 		abilities = ABILITIES_SS;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		localStorage.setItem("selectedGen", 80);
 		break;
 	case 9:
 		pokedex = POKEDEX_SV;
@@ -1055,8 +1048,9 @@ $(".gen").change(function () {
 		items = ITEMS_SV;
 		abilities = ABILITIES_SV;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		localStorage.setItem("selectedGen", 9);
 	}
+	localStorage.setItem("selectedGen", gen);
+	$("#autolevel-title").text((gen == 4 ? "AI " : "") + "Auto-Level to:");
 	setdexAll = joinDexes([setdex, SETDEX_CUSTOM]);
 	clearField();
 	$(".gen-specific.g" + gen).show();

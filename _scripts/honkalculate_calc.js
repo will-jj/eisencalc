@@ -77,10 +77,11 @@ function MassPokemon(speciesName, setName) {
 	this.level = set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50);
 
 	this.HPEVs = set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0;
+	var autoIVs = gen == 4 ? $("#autoivs-box").val() : $('#autoivs-select').find(":selected").val();
 	if (pokemon.bs.hp === 1) {
 		this.maxHP = 1;
 	} else {
-		var HPIVs = set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : 31;
+		var HPIVs = set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : (autoIVs ? parseInt(autoIVs) : 31);
 		// ~~ is used as a faster Math.floor() for positive numbers and fails on negative ones
 		this.maxHP = ~~((pokemon.bs.hp * 2 + HPIVs + ~~(this.HPEVs / 4)) * this.level / 100) + this.level + 10;
 	}
@@ -90,7 +91,7 @@ function MassPokemon(speciesName, setName) {
 		var stat = STATS[i];
 		this.boosts[stat] = 0;
 		this.evs[stat] = set.evs && typeof set.evs[stat] !== "undefined" ? set.evs[stat] : 0;
-		var ivs = set.ivs && typeof set.ivs[stat] !== "undefined" ? set.ivs[stat] : 31;
+		var ivs = set.ivs && typeof set.ivs[stat] !== "undefined" ? set.ivs[stat] : (autoIVs ? parseInt(autoIVs) : 31);
 		var natureMods = NATURES[this.nature];
 		var nature = natureMods[0] === stat ? 1.1 : natureMods[1] === stat ? 0.9 : 1;
 		this.rawStats[stat] = ~~((~~((pokemon.bs[stat] * 2 + ivs + ~~(this.evs[stat] / 4)) * this.level / 100) + 5) * nature);

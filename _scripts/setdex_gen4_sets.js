@@ -66,14 +66,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Wood Hammer",
         "Avalanche",
@@ -150,14 +142,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Psycho Cut",
@@ -236,14 +220,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Stone Edge",
         "Aerial Ace",
@@ -321,14 +297,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Stone Edge",
         "Iron Tail",
@@ -359,14 +327,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Frustration",
@@ -445,14 +405,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psychic",
         "Focus Blast",
@@ -529,14 +481,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Dragon Pulse",
@@ -615,14 +559,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Double Hit",
         "Shock Wave",
@@ -700,14 +636,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Light Screen",
         "Rest",
@@ -738,14 +666,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "X-Scissor",
@@ -792,14 +712,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Glare",
@@ -878,14 +790,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Extreme Speed",
         "Flare Blitz",
@@ -916,14 +820,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Poison Jab",
@@ -1002,14 +898,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "X-Scissor",
         "Stone Edge",
@@ -1040,14 +928,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Iron Head",
@@ -1126,14 +1006,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Blizzard",
         "Air Cutter",
@@ -1164,14 +1036,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Water Pulse",
@@ -1204,14 +1068,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Headbutt",
         "Dragon Dance",
@@ -1242,14 +1098,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Earth Power",
@@ -1296,14 +1144,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Shadow Claw",
@@ -1382,14 +1222,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Metal Burst",
         "Blizzard",
@@ -1437,14 +1269,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Body Slam",
         "Reflect",
@@ -1476,14 +1300,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Stun Spore",
         "Bug Buzz",
@@ -1514,14 +1330,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Poison Jab",
@@ -1569,14 +1377,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Leaf Blade",
         "Drain Punch",
@@ -1623,14 +1423,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Super Fang",
         "Waterfall",
@@ -1661,14 +1453,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Hyper Fang",
@@ -1748,14 +1532,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Yawn",
         "Hydro Cannon",
@@ -1832,14 +1608,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Blaze Kick",
@@ -1918,14 +1686,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Return",
         "Soft-Boiled",
@@ -1956,14 +1716,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Double-Edge",
@@ -2042,14 +1794,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Sky Uppercut",
         "Seed Bomb",
@@ -2127,14 +1871,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Extrasensory",
         "Flash Cannon",
@@ -2165,14 +1901,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Flash Cannon",
@@ -2205,14 +1933,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Razor Leaf",
         "Sludge Bomb",
@@ -2243,14 +1963,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Aqua Jet",
@@ -2283,14 +1995,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Energy Ball",
         "Sludge Bomb",
@@ -2321,14 +2025,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Dizzy Punch",
@@ -2361,14 +2057,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Tackle",
         "Bug Bite",
@@ -2400,14 +2088,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Silver Wind",
         "Sleep Powder",
@@ -2438,14 +2118,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Needle Arm",
@@ -2493,14 +2165,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Sucker Punch",
         "Needle Arm",
@@ -2546,14 +2210,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Eruption",
@@ -2601,14 +2257,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Power Whip",
         "Crunch",
@@ -2640,14 +2288,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Crunch",
         "Aqua Jet",
@@ -2678,14 +2318,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Weather Ball",
@@ -2732,14 +2364,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Blizzard",
@@ -2818,14 +2442,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Will-O-Wisp",
         "Air Slash",
@@ -2856,14 +2472,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Slash",
@@ -2911,14 +2519,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Will-O-Wisp",
         "Flare Blitz",
@@ -2949,14 +2549,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Hyper Voice",
@@ -3004,14 +2596,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Sunny Day",
         "Solar Beam",
@@ -3042,14 +2626,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Razor Leaf",
@@ -3082,14 +2658,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Energy Ball",
         "Return",
@@ -3120,14 +2688,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Rock Climb",
@@ -3175,14 +2735,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psychic",
         "Calm Mind",
@@ -3213,14 +2765,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Discharge",
@@ -3253,14 +2797,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psychic",
         "Growl",
@@ -3291,14 +2827,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Mud Sport",
@@ -3377,14 +2905,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Earth Power",
         "Psychic",
@@ -3430,14 +2950,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Return",
         "Ice Punch",
@@ -3468,14 +2980,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Return",
@@ -3523,14 +3027,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Ice Beam",
         "Iron Defense",
@@ -3562,14 +3058,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Bug Bite",
@@ -3617,14 +3105,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Sky Uppercut",
         "Fire Punch",
@@ -3656,14 +3136,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Crabhammer",
         "Swords Dance",
@@ -3694,14 +3166,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Power Gem",
@@ -3784,14 +3248,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Ancient Power",
         "Giga Drain",
@@ -3822,14 +3278,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Head Smash",
@@ -3876,14 +3324,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Crunch",
@@ -3964,14 +3404,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psychic",
         "Psycho Cut",
@@ -4002,14 +3434,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Nasty Plot",
@@ -4088,14 +3512,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Brave Bird",
         "Cross Poison",
@@ -4142,14 +3558,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Aqua Tail",
         "Mud Sport",
@@ -4180,14 +3588,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Bonemerang",
@@ -4220,14 +3620,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Overheat",
         "Quick Attack",
@@ -4259,14 +3651,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Foresight",
         "Mud-Slap",
@@ -4297,14 +3681,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Ice Shard",
@@ -4384,14 +3760,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Signal Beam",
         "Ice Beam",
@@ -4438,14 +3806,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Drill Peck",
         "Rest",
@@ -4476,14 +3836,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Drill Peck",
@@ -4562,14 +3914,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Earthquake",
         "Giga Impact",
@@ -4615,14 +3959,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Thunder Wave",
@@ -4701,14 +4037,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Roost",
         "Outrage",
@@ -4786,14 +4114,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Cross Poison",
         "Night Slash",
@@ -4824,14 +4144,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Dragon Rush",
@@ -4910,14 +4222,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Shadow Ball",
         "Psychic",
@@ -4949,14 +4253,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Ominous Wind",
         "Air Cutter",
@@ -4987,14 +4283,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Frustration",
@@ -5073,14 +4361,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Earthquake",
         "Slash",
@@ -5111,14 +4391,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Ancient Power",
@@ -5166,14 +4438,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "at": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Shadow Punch",
@@ -5252,14 +4516,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Rest",
         "Curse",
@@ -5290,14 +4546,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Frustration",
@@ -5330,14 +4578,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Toxic",
         "Sludge Bomb",
@@ -5368,14 +4608,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Return",
@@ -5422,14 +4654,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Thunder Punch",
@@ -5508,14 +4732,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Thunder Punch",
         "Giga Impact",
@@ -5593,14 +4809,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Swift",
         "Thunderbolt",
@@ -5631,14 +4839,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Thunder Punch",
@@ -5717,14 +4917,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Flash Cannon",
         "Hydro Pump",
@@ -5801,14 +4993,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Eruption",
@@ -5887,14 +5071,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psychic",
         "Swift",
@@ -5925,14 +5101,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Leaf Storm",
@@ -6011,14 +5179,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Wood Hammer",
         "Zen Headbutt",
@@ -6096,14 +5256,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Hyper Voice",
         "Water Pulse",
@@ -6134,14 +5286,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Slash",
@@ -6188,14 +5332,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Drill Peck",
@@ -6274,14 +5410,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Aqua Tail",
         "Slash",
@@ -6313,14 +5441,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Aqua Ring",
         "Brine",
@@ -6351,14 +5471,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Thunder",
@@ -6435,14 +5547,6 @@ SETDEX_PHGSS = {
     "Flareon-H": {
       "evs": {
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Lava Plume",
@@ -6521,14 +5625,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Waterfall",
         "Crunch",
@@ -6605,14 +5701,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Earth Power",
@@ -6691,14 +5779,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Gyro Ball",
         "Payback",
@@ -6776,14 +5856,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Hail",
         "Blizzard",
@@ -6830,14 +5902,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Hyper Voice",
         "Mud-Slap",
@@ -6883,14 +5947,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Sandstorm",
@@ -6969,14 +6025,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psycho Cut",
         "Close Combat",
@@ -7053,14 +6101,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Outrage",
@@ -7139,14 +6179,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psychic",
         "Trick",
@@ -7223,14 +6255,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Muddy Water",
@@ -7309,14 +6333,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Shadow Ball",
         "Sludge Bomb",
@@ -7348,14 +6364,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Stone Edge",
         "Dig",
@@ -7386,14 +6394,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Dragon Claw",
@@ -7440,14 +6440,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Crunch",
@@ -7525,14 +6517,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Hail",
@@ -7612,14 +6596,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Ice Beam",
         "Dark Pulse",
@@ -7650,14 +6626,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Slash",
@@ -7704,14 +6672,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Sandstorm",
@@ -7790,14 +6750,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Earthquake",
         "Sandstorm",
@@ -7828,14 +6780,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Poison Powder",
@@ -7883,14 +6827,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Sludge Bomb",
         "Ominous Wind",
@@ -7921,14 +6857,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Waterfall",
@@ -8007,14 +6935,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Brine",
         "Aqua Jet",
@@ -8092,14 +7012,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Stone Edge",
         "Earth Power",
@@ -8145,14 +7057,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Psychic",
@@ -8231,14 +7135,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Return",
         "Crunch",
@@ -8270,14 +7166,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dig",
         "Stone Edge",
@@ -8308,14 +7196,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "at": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Gunk Shot",
@@ -8363,14 +7243,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Leaf Storm",
         "Body Slam",
@@ -8417,14 +7289,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Leaf Blade",
         "Crush Claw",
@@ -8455,14 +7319,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Flare Blitz",
@@ -8509,14 +7365,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Psychic",
@@ -8595,14 +7443,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Bounce",
         "Waterfall",
@@ -8633,14 +7473,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Return",
@@ -8719,14 +7551,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Vital Throw",
         "Payback",
@@ -8757,14 +7581,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Shadow Ball",
@@ -8843,14 +7659,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Magma Storm",
         "Flash Cannon",
@@ -8928,14 +7736,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Megahorn",
         "Close Combat",
@@ -8966,14 +7766,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Sand Tomb",
@@ -9052,14 +7844,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Double-Edge",
         "Earthquake",
@@ -9106,14 +7890,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Sky Uppercut",
@@ -9162,14 +7938,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Endure",
         "Reversal",
@@ -9215,14 +7983,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Triple Kick",
@@ -9301,14 +8061,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dark Pulse",
         "Night Slash",
@@ -9386,14 +8138,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dark Pulse",
         "Flamethrower",
@@ -9424,14 +8168,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Dark Pulse",
@@ -9478,14 +8214,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Aqua Tail",
@@ -9564,14 +8292,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Hypnosis",
         "Focus Blast",
@@ -9602,14 +8322,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Bug Buzz",
@@ -9688,14 +8400,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Close Combat",
         "Flare Blitz",
@@ -9741,14 +8445,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Sludge Bomb",
@@ -9827,14 +8523,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Discharge",
         "Quick Attack",
@@ -9880,14 +8568,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Seed Bomb",
@@ -9966,14 +8646,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Lovely Kiss",
         "Blizzard",
@@ -10004,14 +8676,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Waterfall",
@@ -10059,14 +8723,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Night Slash",
         "Waterfall",
@@ -10112,14 +8768,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Psychic",
@@ -10198,14 +8846,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dizzy Punch",
         "Outrage",
@@ -10251,14 +8891,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Dizzy Punch",
@@ -10337,14 +8969,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dragon Pulse",
         "Hydro Pump",
@@ -10391,14 +9015,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Crabhammer",
         "X-Scissor",
@@ -10430,14 +9046,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Smog",
         "Sludge Bomb",
@@ -10468,14 +9076,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Crabhammer",
@@ -10509,14 +9109,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Bug Bite",
         "Bide",
@@ -10547,14 +9139,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "X-Scissor",
@@ -10601,14 +9185,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Metal Burst",
@@ -10687,14 +9263,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Discharge",
         "Brine",
@@ -10772,14 +9340,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Blizzard",
         "Surf",
@@ -10810,14 +9370,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Stone Edge",
@@ -10896,14 +9448,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Mist Ball",
         "Dragon Pulse",
@@ -10980,14 +9524,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Luster Purge",
@@ -11066,14 +9602,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Quick Attack",
         "Leaf Blade",
@@ -11104,14 +9632,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Bug Buzz",
@@ -11190,14 +9710,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Thunder Punch",
         "Ice Punch",
@@ -11230,14 +9742,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Body Slam",
         "Power Whip",
@@ -11269,14 +9773,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Giga Drain",
@@ -11324,14 +9820,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Slash",
         "Gunk Shot",
@@ -11362,14 +9850,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Rain Dance",
@@ -11448,14 +9928,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Switcheroo",
         "Dizzy Punch",
@@ -11486,14 +9958,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Hyper Voice",
@@ -11571,14 +10035,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Aura Sphere",
@@ -11658,14 +10114,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Giga Drain",
         "Water Pulse",
@@ -11711,14 +10159,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Silver Wind",
@@ -11766,14 +10206,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psychic",
         "Ancient Power",
@@ -11804,14 +10236,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Aqua Ring",
@@ -11858,14 +10282,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Thunder Fang",
@@ -11944,14 +10360,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Spark",
         "Thunderbolt",
@@ -12029,14 +10437,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dynamic Punch",
         "Vacuum Wave",
@@ -12083,14 +10483,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Cross Chop",
         "Fire Punch",
@@ -12122,14 +10514,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dynamic Punch",
         "Foresight",
@@ -12160,14 +10544,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Fire Punch",
@@ -12215,14 +10591,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Ancient Power",
         "Light Screen",
@@ -12268,14 +10636,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Fire Punch",
@@ -12354,14 +10714,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Fire Blast",
         "Hyper Beam",
@@ -12392,14 +10744,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Flash Cannon",
@@ -12446,14 +10790,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Tri Attack",
@@ -12532,14 +10868,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Flash Cannon",
         "Tri Attack",
@@ -12616,14 +10944,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Blizzard",
@@ -12702,14 +11022,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Thunder",
         "Flamethrower",
@@ -12756,14 +11068,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Signal Beam",
         "Earthquake",
@@ -12794,14 +11098,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Bounce",
@@ -12880,14 +11176,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Bone Rush",
         "Swords Dance",
@@ -12933,14 +11221,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Muddy Water",
@@ -12988,14 +11268,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Air Slash",
         "Bug Buzz",
@@ -13026,14 +11298,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Iron Head",
@@ -13111,14 +11375,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Psycho Cut",
@@ -13198,14 +11454,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Energy Ball",
         "Magical Leaf",
@@ -13283,14 +11531,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Meteor Mash",
         "Zen Headbutt",
@@ -13337,14 +11577,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Flash Cannon",
         "Psychic",
@@ -13390,14 +11622,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Crunch",
@@ -13476,14 +11700,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Rest",
         "Sleep Talk",
@@ -13561,14 +11777,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Body Slam",
         "Zen Headbutt",
@@ -13600,14 +11808,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psychic",
         "Facade",
@@ -13638,14 +11838,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Fake Tears",
@@ -13692,14 +11884,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Shadow Ball",
@@ -13778,14 +11962,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Shadow Ball",
         "Energy Ball",
@@ -13863,14 +12039,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Fire Blast",
         "Air Cutter",
@@ -13917,14 +12085,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Flare Blitz",
         "Close Combat",
@@ -13970,14 +12130,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Silver Wind",
@@ -14056,14 +12208,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Power Swap",
         "Fire Punch",
@@ -14094,14 +12238,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Waterfall",
@@ -14180,14 +12316,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Gunk Shot",
         "Frustration",
@@ -14218,14 +12346,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Body Slam",
@@ -14258,14 +12378,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Confuse Ray",
         "Psycho Shift",
@@ -14296,14 +12408,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Psychic",
@@ -14383,14 +12487,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dig",
         "Poison Jab",
@@ -14468,14 +12564,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Earth Power",
         "Sludge Bomb",
@@ -14507,14 +12595,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Poison Fang",
         "Attract",
@@ -14545,14 +12625,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Poison Jab",
@@ -14631,14 +12703,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Will-O-Wisp",
         "Confuse Ray",
@@ -14684,14 +12748,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "X-Scissor",
@@ -14739,14 +12795,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Extrasensory",
         "Air Slash",
@@ -14777,14 +12825,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Stone Edge",
@@ -14817,14 +12857,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Heat Wave",
         "Earth Power",
@@ -14855,14 +12887,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Dark Pulse",
@@ -14910,14 +12934,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Octazooka",
         "Gunk Shot",
@@ -14949,14 +12965,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Petal Dance",
         "Razor Leaf",
@@ -14987,14 +12995,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Ancient Power",
@@ -15042,14 +13042,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Ancient Power",
         "Hydro Pump",
@@ -15080,14 +13072,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Stone Edge",
@@ -15120,14 +13104,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Super Fang",
         "Swift",
@@ -15158,14 +13134,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "X-Scissor",
@@ -15213,14 +13181,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Air Slash",
         "Water Pulse",
@@ -15267,14 +13227,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Power Gem",
         "Water Pulse",
@@ -15305,14 +13257,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Earthquake",
@@ -15360,14 +13304,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Ominous Wind",
         "Heat Wave",
@@ -15399,14 +13335,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Quick Attack",
         "Sand Attack",
@@ -15437,14 +13365,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Thunderbolt",
@@ -15491,14 +13411,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Ice Fang",
@@ -15577,14 +13489,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "X-Scissor",
         "Giga Impact",
@@ -15616,14 +13520,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Hydro Pump",
         "Growl",
@@ -15654,14 +13550,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Nasty Plot",
@@ -15740,14 +13628,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Hyper Voice",
         "Surf",
@@ -15778,14 +13658,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Waterfall",
@@ -15864,14 +13736,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Focus Blast",
         "Surf",
@@ -15903,14 +13767,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Tail Whip",
         "Flare Blitz",
@@ -15941,14 +13797,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Tri Attack",
@@ -16027,14 +13875,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Tri Attack",
         "Return",
@@ -16112,14 +13952,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Tri Attack",
         "Dark Pulse",
@@ -16166,14 +13998,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Cross Chop",
         "Gunk Shot",
@@ -16219,14 +14043,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Swagger",
@@ -16305,14 +14121,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Flash Cannon",
         "Power Gem",
@@ -16343,14 +14151,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Hydro Pump",
@@ -16398,14 +14198,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Stone Edge",
         "Dig",
@@ -16451,14 +14243,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Body Slam",
@@ -16538,14 +14322,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Earth Power",
         "Muddy Water",
@@ -16592,14 +14368,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Will-O-Wisp",
         "Eruption",
@@ -16645,14 +14413,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Poison Jab",
@@ -16731,14 +14491,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Thunder Punch",
         "Brick Break",
@@ -16815,14 +14567,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Thunder",
@@ -16901,14 +14645,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Head Smash",
         "Zen Headbutt",
@@ -16986,14 +14722,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Flare Blitz",
         "Quick Attack",
@@ -17040,14 +14768,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Super Fang",
@@ -17125,14 +14845,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Blizzard",
@@ -17213,14 +14925,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Zen Headbutt",
         "Confuse Ray",
@@ -17297,14 +15001,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Stone Edge",
@@ -17385,14 +15081,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Iron Head",
         "Flash Cannon",
@@ -17439,14 +15127,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Head Smash",
         "Aqua Tail",
@@ -17477,14 +15157,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Octazooka",
@@ -17563,14 +15235,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dig",
         "Stone Edge",
@@ -17602,14 +15266,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Stone Edge",
@@ -17688,14 +15344,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Rock Wrecker",
         "Earth Power",
@@ -17727,14 +15375,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Quick Attack",
         "Low Kick",
@@ -17765,14 +15405,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Synthesis",
@@ -17851,14 +15483,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Weather Ball",
         "Leaf Storm",
@@ -17905,14 +15529,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Shadow Ball",
         "Thunderbolt",
@@ -17943,14 +15559,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Shadow Claw",
@@ -18029,14 +15637,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dragon Claw",
         "Aerial Ace",
@@ -18067,14 +15667,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Dig",
@@ -18121,14 +15713,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Sandstorm",
@@ -18207,14 +15791,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Leaf Blade",
         "Quick Attack",
@@ -18292,14 +15868,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Swords Dance",
         "X-Scissor",
@@ -18345,14 +15913,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "X-Scissor",
@@ -18400,14 +15960,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dragon Pulse",
         "Hydro Pump",
@@ -18453,14 +16005,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Megahorn",
@@ -18508,14 +16052,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Blizzard",
         "Waterfall",
@@ -18546,14 +16082,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Waterfall",
@@ -18601,14 +16129,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Poison Fang",
         "Night Slash",
@@ -18655,14 +16175,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Crunch",
         "Waterfall",
@@ -18693,14 +16205,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "X-Scissor",
@@ -18748,14 +16252,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dragon Rush",
         "Double-Edge",
@@ -18787,14 +16283,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Brine",
         "Facade",
@@ -18825,14 +16313,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Metal Burst",
@@ -18912,14 +16392,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Leaf Storm",
         "Extrasensory",
@@ -18950,14 +16422,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Quick Attack",
@@ -19040,14 +16504,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Bug Bite",
         "Rollout",
@@ -19078,14 +16534,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Shadow Sneak",
@@ -19165,14 +16613,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Rock Slide",
         "Night Slash",
@@ -19204,14 +16644,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Bounce",
         "Poison Powder",
@@ -19242,14 +16674,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Cross Poison",
@@ -19328,14 +16752,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Flamethrower",
         "Poison Jab",
@@ -19413,14 +16829,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Encore",
         "Counter",
@@ -19497,14 +16905,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Water Pulse",
@@ -19584,14 +16984,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psychic",
         "Water Pulse",
@@ -19623,14 +17015,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Zen Headbutt",
         "Aqua Tail",
@@ -19661,14 +17045,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Blizzard",
@@ -19715,14 +17091,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Ice Shard",
@@ -19801,14 +17169,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Crunch",
         "Giga Impact",
@@ -19839,14 +17199,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Avalanche",
@@ -19879,14 +17231,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Wood Hammer",
         "Avalanche",
@@ -19917,14 +17261,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Return",
@@ -19972,14 +17308,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Stone Edge",
         "Zen Headbutt",
@@ -20010,14 +17338,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Teeter Dance",
@@ -20050,14 +17370,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Extrasensory",
         "Psywave",
@@ -20088,14 +17400,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "at": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Facade",
@@ -20142,14 +17446,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Extrasensory",
@@ -20228,14 +17524,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Brave Bird",
         "Close Combat",
@@ -20267,14 +17555,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Brave Bird",
         "Facade",
@@ -20305,14 +17585,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Brave Bird",
@@ -20391,14 +17663,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Hydro Pump",
         "Psychic",
@@ -20429,14 +17693,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Water Pulse",
@@ -20515,14 +17771,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Gyro Ball",
         "Dig",
@@ -20553,14 +17801,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Sludge Bomb",
@@ -20607,14 +17847,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Double-Edge",
@@ -20693,14 +17925,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Mirror Coat",
         "Facade",
@@ -20747,14 +17971,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Sunny Day",
         "Solar Beam",
@@ -20785,14 +18001,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Aerial Ace",
@@ -20840,14 +18048,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "at": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Toxic",
@@ -20926,14 +18126,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Muddy Water",
         "Mud Bomb",
@@ -20980,14 +18172,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Double Team",
         "Roost",
@@ -21033,14 +18217,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Giga Drain",
@@ -21120,14 +18296,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Wring Out",
         "Grass Knot",
@@ -21205,14 +18373,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Frustration",
         "Iron Tail",
@@ -21244,14 +18404,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Charm",
         "Slash",
@@ -21282,14 +18434,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Waterfall",
@@ -21368,14 +18512,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Waterfall",
         "Poison Jab",
@@ -21453,14 +18589,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Air Slash",
         "Aura Sphere",
@@ -21492,14 +18620,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Return",
         "Aerial Ace",
@@ -21530,14 +18650,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Flamethrower",
@@ -21584,14 +18696,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Overheat",
@@ -21671,14 +18775,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Wood Hammer",
         "Mud-Slap",
@@ -21709,14 +18805,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Aqua Tail",
@@ -21795,14 +18883,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Poison Jab",
         "Revenge",
@@ -21833,14 +18913,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Leaf Storm",
@@ -21888,14 +18960,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Leaf Storm",
         "Air Slash",
@@ -21926,14 +18990,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "at": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Seed Bomb",
@@ -22012,14 +19068,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Eruption",
         "Quick Attack",
@@ -22096,14 +19144,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Stone Edge",
@@ -22182,14 +19222,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Facade",
         "Sucker Punch",
@@ -22266,14 +19298,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Frustration",
@@ -22352,14 +19376,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Surf",
         "Quick Attack",
@@ -22406,14 +19422,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Bug Buzz",
         "Psychic",
@@ -22444,14 +19452,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Signal Beam",
@@ -22531,14 +19531,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Toxic",
         "Frenzy Plant",
@@ -22617,14 +19609,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Power Gem",
         "Attack Order",
@@ -22655,14 +19639,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Outrage",
@@ -22741,14 +19717,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Leaf Storm",
         "Grass Knot",
@@ -22794,14 +19762,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Slash",
@@ -22881,14 +19841,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Sludge Bomb",
         "Solar Beam",
@@ -22919,14 +19871,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Bug Buzz",
@@ -22959,14 +19903,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Thunderbolt",
         "Swift",
@@ -22998,14 +19934,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Fire Blast",
         "Quick Attack",
@@ -23036,14 +19964,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Water Spout",
@@ -23123,14 +20043,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Water Spout",
         "Sleep Talk",
@@ -23208,14 +20120,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Blizzard",
         "Dive",
@@ -23261,14 +20165,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Water Pulse",
@@ -23347,14 +20243,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Night Slash",
         "Ice Punch",
@@ -23385,14 +20273,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Poison Powder",
@@ -23471,14 +20351,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Toxic",
         "Dark Pulse",
@@ -23556,14 +20428,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Earth Power",
         "Water Pulse",
@@ -23610,14 +20474,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Sing",
         "Hyper Voice",
@@ -23649,14 +20505,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Counter",
@@ -23704,14 +20552,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Leaf Storm",
         "Razor Leaf",
@@ -23758,14 +20598,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psychic",
         "Air Cutter",
@@ -23796,14 +20628,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Bug Buzz",
@@ -23882,14 +20706,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Bug Buzz",
         "Air Slash",
@@ -23935,14 +20751,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Crush Claw",
@@ -24021,14 +20829,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Thunder",
         "Air Cutter",
@@ -24045,14 +20845,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Tackle",
@@ -24071,14 +20863,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Tackle",
         "String Shot",
@@ -24095,14 +20879,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Poison Sting",
@@ -24121,14 +20897,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "df": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Poison Sting",
         "String Shot",
@@ -24145,14 +20913,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Quick Attack",
@@ -24171,14 +20931,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Hyper Fang",
         "Endeavor",
@@ -24195,14 +20947,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Drill Peck",
@@ -24221,14 +20965,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Gunk Shot",
         "Screech",
@@ -24245,14 +20981,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Sludge Bomb",
@@ -24271,14 +20999,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Poison Jab",
         "Amnesia",
@@ -24295,14 +21015,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Hyper Voice",
@@ -24321,14 +21033,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Poison Fang",
         "Air Slash",
@@ -24345,14 +21049,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "at": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "X-Scissor",
@@ -24371,14 +21067,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Earthquake",
         "Slash",
@@ -24395,14 +21083,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Slash",
@@ -24421,14 +21101,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Cross Chop",
         "Screech",
@@ -24445,14 +21117,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Waterfall",
@@ -24471,14 +21135,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psychic",
         "Facade",
@@ -24495,14 +21151,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Razor Leaf",
@@ -24521,14 +21169,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Clamp",
         "Brine",
@@ -24545,14 +21185,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Shadow Ball",
@@ -24571,14 +21203,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Waterfall",
         "Rain Dance",
@@ -24595,14 +21219,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Tackle",
@@ -24621,14 +21237,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Transform",
         "",
@@ -24645,14 +21253,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Hyper Voice",
@@ -24671,14 +21271,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Swift",
         "Air Slash",
@@ -24695,14 +21287,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Bug Buzz",
@@ -24721,14 +21305,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Pin Missile",
         "Poison Jab",
@@ -24745,14 +21321,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Nasty Plot",
@@ -24771,14 +21339,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Return",
         "Magical Leaf",
@@ -24795,14 +21355,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Return",
@@ -24821,14 +21373,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Return",
         "Zen Headbutt",
@@ -24845,14 +21389,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Thunder",
@@ -24871,14 +21407,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Aqua Tail",
         "Bubble Beam",
@@ -24895,14 +21423,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Seed Bomb",
@@ -24921,14 +21441,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Seed Bomb",
         "Sunny Day",
@@ -24945,14 +21457,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Aqua Tail",
@@ -24971,14 +21475,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Hidden Power",
         "",
@@ -24995,14 +21491,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "df": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Pin Missile",
@@ -25021,14 +21509,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Heat Wave",
         "Acid Armor",
@@ -25045,14 +21525,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Blizzard",
@@ -25071,14 +21543,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Hyper Voice",
         "Dragon Pulse",
@@ -25095,14 +21559,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Mach Punch",
@@ -25121,14 +21577,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Crunch",
         "Dark Pulse",
@@ -25145,14 +21593,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Mud-Slap",
@@ -25171,14 +21611,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Tackle",
         "String Shot",
@@ -25195,14 +21627,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Tackle",
@@ -25221,14 +21645,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Tackle",
         "String Shot",
@@ -25245,14 +21661,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Energy Ball",
@@ -25271,14 +21679,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sd": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Seed Bomb",
         "Nasty Plot",
@@ -25295,14 +21695,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Brave Bird",
@@ -25321,14 +21713,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Brine",
         "Air Slash",
@@ -25345,14 +21729,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Psychic",
@@ -25371,14 +21747,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Psychic",
         "Facade",
@@ -25395,14 +21763,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Signal Beam",
@@ -25421,14 +21781,6 @@ SETDEX_PHGSS = {
         "df": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Seed Bomb",
         "Headbutt",
@@ -25445,14 +21797,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Facade",
@@ -25471,14 +21815,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "X-Scissor",
         "Dig",
@@ -25495,14 +21831,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Hyper Voice",
@@ -25521,14 +21849,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "at": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Close Combat",
         "Foresight",
@@ -25545,14 +21865,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Waterfall",
@@ -25571,14 +21883,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Return",
         "Iron Tail",
@@ -25595,14 +21899,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Vacuum Wave",
@@ -25621,14 +21917,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Thunder",
         "Swift",
@@ -25645,14 +21933,6 @@ SETDEX_PHGSS = {
       "evs": {
         "hp": 252,
         "at": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Gunk Shot",
@@ -25671,14 +21951,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Earthquake",
         "Quick Attack",
@@ -25695,14 +21967,6 @@ SETDEX_PHGSS = {
       "evs": {
         "sa": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Earth Power",
@@ -25721,14 +21985,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Waterfall",
         "Facade",
@@ -25745,14 +22001,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Counter",
@@ -25771,14 +22019,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Blizzard",
         "Ice Ball",
@@ -25795,14 +22035,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Iron Head",
@@ -25821,14 +22053,6 @@ SETDEX_PHGSS = {
         "at": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dig",
         "Bug Bite",
@@ -25845,14 +22069,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sa": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Iron Head",
@@ -25871,14 +22087,6 @@ SETDEX_PHGSS = {
         "hp": 252,
         "sa": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Dark Pulse",
         "Ominous Wind",
@@ -25895,14 +22103,6 @@ SETDEX_PHGSS = {
       "evs": {
         "df": 252,
         "sd": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Extrasensory",
@@ -25921,14 +22121,6 @@ SETDEX_PHGSS = {
         "sa": 252,
         "sp": 252
       },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
-      },
       "moves": [
         "Extrasensory",
         "Light Screen",
@@ -25945,14 +22137,6 @@ SETDEX_PHGSS = {
       "evs": {
         "at": 252,
         "sp": 252
-      },
-      "ivs": {
-        "hp": 26,
-        "at": 26,
-        "df": 26,
-        "sa": 26,
-        "sd": 26,
-        "sp": 26
       },
       "moves": [
         "Zen Headbutt",
