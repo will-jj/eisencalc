@@ -2852,6 +2852,28 @@ var SETDEX_GEN80 = {
       "level": 50,
       "evs": {
         "hp": 108,
+        "at": 108
+      },
+      "ivs": {
+        "df": 0,
+        "sa": 0,
+        "sd": 0,
+        "sp": 0
+      },
+      "moves": [
+        "Fire Fang",
+        "Brick Break",
+        "Smokescreen",
+        "Scary Face"
+      ],
+      "nature": "Adamant",
+      "ability": "Blaze",
+      "item": "Scope Lens"
+    },
+    "Charmander-2": {
+      "level": 50,
+      "evs": {
+        "hp": 108,
         "sa": 108
       },
       "ivs": {
@@ -6907,7 +6929,7 @@ var SETDEX_GEN80 = {
         "Psychic",
         "Dazzling Gleam",
         "Thunderbolt",
-        "Icy Wind"
+        "Moonblast"
       ],
       "nature": "Modest",
       "ability": "Telepathy",
@@ -10206,6 +10228,28 @@ var SETDEX_GEN80 = {
         "Bite"
       ],
       "nature": "Jolly",
+      "ability": "Guts",
+      "item": "Persim Berry"
+    },
+    "Larvitar-2": {
+      "level": 50,
+      "evs": {
+        "at": 108,
+        "sp": 108
+      },
+      "ivs": {
+        "hp": 0,
+        "df": 0,
+        "sa": 0,
+        "sd": 0
+      },
+      "moves": [
+        "Thrash",
+        "Rock Slide",
+        "Dig",
+        "Bite"
+      ],
+      "nature": "Naughty",
       "ability": "Guts",
       "item": "Persim Berry"
     }
