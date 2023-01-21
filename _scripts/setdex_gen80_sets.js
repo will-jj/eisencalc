@@ -11593,6 +11593,30 @@ var SETDEX_GEN80 = {
       "item": "Rawst Berry"
     }
   },
+    "Magneton": {
+    "Magneton-1": {
+      "level": 50,
+      "evs": {
+        "hp": 148,
+        "sa": 148,
+        "sp": 148
+      },
+      "ivs": {
+        "at": 10,
+        "df": 10,
+        "sd": 10
+      },
+      "moves": [
+        "Shock Wave",
+        "Volt Switch",
+        "Thunder Wave",
+        "Flash Cannon"
+      ],
+      "nature": "Modest",
+      "ability": "Sturdy",
+      "item": "Choice Specs"
+    }
+  },
   "Magnezone": {
     "Magnezone-1": {
       "level": 50,
