@@ -289,7 +289,8 @@ function getDamageResult(attacker, defender, move, field) {
 			return {"damage": [0], "description": buildDescription(description)};
 		}
 	}
-	if (field.isProtect && !move.isZ && !move.isMax) {
+	let bypassProtect = ["Doom Desire", "Feint", "Future Sight", "Hyperspace Fury", "Hyperspace Hole", "Phantom Force", "Shadow Force", "Hyper Drill"].includes(move.name) || (attacker.ability === "Unseen Fist" && move.makesContact);
+	if (field.isProtect && !move.isZ && !move.isMax && !bypassProtect) {
 		description.defenderAbility = "Protecting";
 		return {"damage": [0], "description": buildDescription(description)};
 	}
@@ -921,7 +922,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	var finalMod = chainMods(finalMods);
 
-	if (field.isProtect) {
+	if (field.isProtect && !bypassProtect) {
 		finalMod = pokeRound(finalMod * 0x400 / 0x1000);
 		description.isQuarteredByProtect = true;
 	}
