@@ -558,6 +558,12 @@ function prependSpeciesAbilities(abilityList, pokeObjID, abilityObj) {
 		} else {
 			p2AbilityCount = abilityList.length;
 		}
+	} else {
+		if (pokeObjID === "p1") {
+			p1AbilityCount = 0;
+		} else {
+			p2AbilityCount = 0;
+		}
 	}
 }
 
