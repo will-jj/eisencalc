@@ -5722,7 +5722,7 @@ SETDEX_PHGSS = {
       "moves": [
         "Gyro Ball",
         "Bug Bite",
-        "Revenge",
+        "Revenge (Doubled)",
         "Counter"
       ],
       "nature": "Brave",
@@ -7507,7 +7507,7 @@ SETDEX_PHGSS = {
         "at": 252
       },
       "moves": [
-        "Revenge",
+        "Revenge (Doubled)",
         "Payback",
         "Fling",
         "Fake Out"
@@ -10393,7 +10393,7 @@ SETDEX_PHGSS = {
         "sd": 252
       },
       "moves": [
-        "Revenge",
+        "Revenge (Doubled)",
         "Earthquake",
         "Payback",
         "Counter"
@@ -10441,7 +10441,7 @@ SETDEX_PHGSS = {
         "Dynamic Punch",
         "Vacuum Wave",
         "Foresight",
-        "Revenge"
+        "Revenge (Doubled)"
       ],
       "nature": "Brave",
       "item": "Focus Band",
@@ -13446,7 +13446,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "X-Scissor",
-        "Revenge",
+        "Revenge (Doubled)",
         "Flail",
         "Endure"
       ],
@@ -14402,7 +14402,7 @@ SETDEX_PHGSS = {
       "moves": [
         "Aqua Tail",
         "Poison Jab",
-        "Revenge",
+        "Revenge (Doubled)",
         "Destiny Bond"
       ],
       "nature": "Adamant",
@@ -18885,7 +18885,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "Poison Jab",
-        "Revenge",
+        "Revenge (Doubled)",
         "Bullet Punch",
         "X-Scissor"
       ],

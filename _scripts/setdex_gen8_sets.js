@@ -5552,7 +5552,7 @@ var SETDEX_GEN8 =
       "moves": [
         "Payback",
         "Protect",
-        "Revenge",
+        "Revenge (Doubled)",
         "Avalanche"
       ],
       "nature": "Brave",
@@ -7882,7 +7882,7 @@ var SETDEX_GEN8 =
         "sp": 16
       },
       "moves": [
-        "Revenge",
+        "Revenge (Doubled)",
         "Payback",
         "Counter",
         "Bullet Punch"
@@ -12400,7 +12400,7 @@ var SETDEX_GEN8 =
         "sp": 16
       },
       "moves": [
-        "Revenge",
+        "Revenge (Doubled)",
         "Iron Defense",
         "Protect",
         "Poison Jab"
@@ -12496,7 +12496,7 @@ var SETDEX_GEN8 =
         "sp": 27
       },
       "moves": [
-        "Revenge",
+        "Revenge (Doubled)",
         "Iron Defense",
         "Protect",
         "Poison Jab"
@@ -13767,7 +13767,7 @@ var SETDEX_GEN8 =
       },
       "moves": [
         "Shadow Ball",
-        "Revenge",
+        "Revenge (Doubled)",
         "Stone Edge",
         "Leech Life"
       ],
@@ -14282,7 +14282,7 @@ var SETDEX_GEN8 =
       "moves": [
         "Rest",
         "Sleep Talk",
-        "Revenge",
+        "Revenge (Doubled)",
         "Payback"
       ],
       "nature": "Careful",
@@ -20187,7 +20187,7 @@ var SETDEX_GEN8 =
         "Bulk Up",
         "Drain Punch",
         "Protect",
-        "Revenge"
+        "Revenge (Doubled)"
       ],
       "nature": "Careful",
       "item": "Leftovers",
@@ -20429,7 +20429,7 @@ var SETDEX_GEN8 =
       },
       "moves": [
         "First Impression",
-        "Revenge",
+        "Revenge (Doubled)",
         "Payback",
         "Counter"
       ],
@@ -25553,7 +25553,7 @@ var SETDEX_GEN8 =
       },
       "moves": [
         "Head Charge",
-        "Revenge",
+        "Revenge (Doubled)",
         "Earthquake",
         "Giga Impact"
       ],

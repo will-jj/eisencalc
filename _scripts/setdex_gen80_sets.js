@@ -2611,7 +2611,7 @@ var SETDEX_GEN80 = {
         "Seed Bomb",
         "Sucker Punch",
         "Poison Jab",
-        "Revenge"
+        "Revenge (Doubled)"
       ],
       "nature": "Jolly",
       "ability": "Water Absorb",
@@ -11426,7 +11426,7 @@ var SETDEX_GEN80 = {
       },
       "moves": [
         "Seismic Toss",
-        "Revenge",
+        "Revenge (Doubled)",
         "Rock Tomb",
         "Scary Face"
       ],

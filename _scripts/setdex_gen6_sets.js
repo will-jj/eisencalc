@@ -1518,7 +1518,7 @@ var SETDEX_GEN6 =
       },
       "moves": [
         "Pursuit",
-        "Revenge",
+        "Revenge (Doubled)",
         "Retaliate",
         "Swagger"
       ],
@@ -12145,7 +12145,7 @@ var SETDEX_GEN6 =
         "df": 252
       },
       "moves": [
-        "Revenge",
+        "Revenge (Doubled)",
         "Storm Throw",
         "Protect",
         "Seismic Toss"

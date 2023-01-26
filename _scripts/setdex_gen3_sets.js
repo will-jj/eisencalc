@@ -1348,7 +1348,7 @@ SETDEX_EM = {
       },
       "moves": [
         "Seismic Toss",
-        "Revenge",
+        "Revenge (Doubled)",
         "Rock Tomb",
         "Scary Face"
       ],
@@ -4173,7 +4173,7 @@ SETDEX_EM = {
         "sd": 255
       },
       "moves": [
-        "Revenge",
+        "Revenge (Doubled)",
         "Sludge Bomb",
         "Shadow Ball",
         "Destiny Bond"
@@ -5830,7 +5830,7 @@ SETDEX_EM = {
         "Submission",
         "Focus Energy",
         "Swords Dance",
-        "Revenge"
+        "Revenge (Doubled)"
       ],
       "nature": "Naughty",
       "item": "Black Belt"
@@ -9958,7 +9958,7 @@ SETDEX_EM = {
         "at": 255
       },
       "moves": [
-        "Revenge",
+        "Revenge (Doubled)",
         "Rock Slide",
         "Facade",
         "Counter"
