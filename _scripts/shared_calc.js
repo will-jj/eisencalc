@@ -447,9 +447,10 @@ $(".set-selector").bind("change click keyup keydown", function () {
 		return;
 	}
 	var pokeObj = $(this).closest(".poke-info");
+	let pokeObjID = pokeObj.prop("id");
 
 	// If the sticky move was on this side, reset it
-	if (stickyMoves.getSelectedSide() === pokeObj.prop("id")) {
+	if (stickyMoves.getSelectedSide() === pokeObjID) {
 		stickyMoves.clearStickyMove();
 	}
 
@@ -457,11 +458,11 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	var selectedMove = $("input:radio[name='resultMove']:checked").prop("id");
 	if (selectedMove !== undefined) {
 		var selectedSide = selectedMove.charAt(selectedMove.length - 2);
-		if (pokeObj.prop("id") === "p1" && selectedSide === "L") {
+		if (pokeObjID === "p1" && selectedSide === "L") {
 			$("#resultMoveL1").prop("checked", true);
 			$("#resultMoveL1").change();
 		}
-		else if (pokeObj.prop("id") === "p2" && selectedSide === "R") {
+		else if (pokeObjID === "p2" && selectedSide === "R") {
 			$("#resultMoveR1").prop("checked", true);
 			$("#resultMoveR1").change();
 		}
@@ -488,6 +489,8 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	pokeObj.find(".tera").change();
 	var moveObj;
 	var abilityObj = pokeObj.find(".ability");
+	var abilityList = pokemon.abilities;
+	prependSpeciesAbilities(abilityList, pokeObjID, abilityObj);
 	var itemObj = pokeObj.find(".item");
 	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
 		var set = setdexAll[pokemonName][setName];
@@ -500,7 +503,7 @@ $(".set-selector").bind("change click keyup keydown", function () {
 			pokeObj.find("." + STATS[i] + " .ivs").val(set.ivs && typeof set.ivs[STATS[i]] !== "undefined" ? set.ivs[STATS[i]] : (autoIVs ? parseInt(autoIVs) : 31));
 		}
 		setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
-		setSelectValueIfValid(abilityObj, set.ability ? set.ability : pokemon.ab, "");
+		setSelectValueIfValid(abilityObj, set.ability ? set.ability : (abilityList && abilityList.length == 1 ? abilityList[0] : pokemon.ab), "");
 		setSelectValueIfValid(pokeObj.find(".tera-type"), set.teraType, pokemon.t1);
 		setSelectValueIfValid(itemObj, set.item, "");
 		for (i = 0; i < 4; i++) {
@@ -518,7 +521,7 @@ $(".set-selector").bind("change click keyup keydown", function () {
 			pokeObj.find("." + STATS[i] + " .ivs").val(31);
 		}
 		pokeObj.find(".nature").val("Hardy");
-		setSelectValueIfValid(abilityObj, pokemon.ab, "");
+		setSelectValueIfValid(abilityObj, abilityList && abilityList.length == 1 ? abilityList[0] : pokemon.ab, "");
 		pokeObj.find(".tera-type").val(pokemon.t1);
 		itemObj.val("");
 		for (i = 0; i < 4; i++) {
@@ -540,6 +543,23 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	abilityObj.change();
 	itemObj.change();
 });
+
+var p1AbilityCount = 0;
+var p2AbilityCount = 0;
+function prependSpeciesAbilities(abilityList, pokeObjID, abilityObj) {
+	for (let i = pokeObjID === "p1" ? p1AbilityCount : p2AbilityCount; i > 0; i--) {
+		abilityObj.children("option").eq(1).remove();
+	}
+	if (abilityList) {
+		let abListObj = abilityObj.children("option");
+		abilityList.forEach(ab => abListObj.eq(1).before($('<option></option>').val(ab).text(ab)));
+		if (pokeObjID === "p1") {
+			p1AbilityCount = abilityList.length;
+		} else {
+			p2AbilityCount = abilityList.length;
+		}
+	}
+}
 
 function showFormes(formeObj, setName, pokemonName, pokemon) {
 	var defaultForme = 0;
@@ -593,7 +613,12 @@ $(".forme").change(function () {
 		baseStat.keyup();
 	}
 
-	if (abilities.includes(altForme.ab)) {
+	var abilityList = altForme.abilities;
+	prependSpeciesAbilities(abilityList, container.parent().parent().prop("id"), container.find(".ability"));
+
+	if (abilityList && abilityList.length == 1) {
+		container.find(".ability").val(abilityList[0]);
+	} else if (abilities.includes(altForme.ab)) {
 		container.find(".ability").val(altForme.ab);
 	} else if (setName !== "Blank Set" && abilities.includes(setdexAll[pokemonName][setName].ability)) {
 		container.find(".ability").val(setdexAll[pokemonName][setName].ability);
@@ -1061,7 +1086,9 @@ $(".gen").change(function () {
 	var moveOptions = getSelectOptions(Object.keys(moves), true);
 	$("select.move-selector").find("option").remove().end().append(moveOptions);
 	var abilityOptions = getSelectOptions(abilities, true);
-	$("select.ability").find("option").remove().end().append("<option value=\"\">(other)</option>" + abilityOptions);
+	$("select.ability").find("option").remove().end().append("<option value=\"\">(other)</option><option disabled>--</option>" + abilityOptions);
+	p1AbilityCount = 0;
+	p2AbilityCount = 0;
 	var itemOptions = getSelectOptions(items, true);
 	$("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
 
@@ -1304,8 +1331,8 @@ $(document).ready(function () {
 			return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().includes(" " + term.toUpperCase());
 		}
 	});
-	$(".set-selector").val(getSetOptions()[1].id); // load the first set after the unselectable species name
-	$(".set-selector").change();
+	//$(".set-selector").val(getSetOptions()[1].id); // load the first set after the unselectable species name
+	//$(".set-selector").change();
 });
 
 var linkExtension = '.html';
