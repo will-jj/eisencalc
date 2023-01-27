@@ -2500,7 +2500,7 @@ var SETDEX_GEN5 =
         "df": 252
       },
       "moves": [
-        "Revenge",
+        "Revenge (Doubled)",
         "Storm Throw",
         "Protect",
         "Seismic Toss"
@@ -9668,7 +9668,7 @@ var SETDEX_GEN5 =
       },
       "moves": [
         "Pursuit",
-        "Revenge",
+        "Revenge (Doubled)",
         "Retaliate",
         "Swagger"
       ],
@@ -9718,7 +9718,7 @@ var SETDEX_GEN5 =
         "Head Charge",
         "Bulldoze",
         "Stone Edge",
-        "Revenge"
+        "Revenge (Doubled)"
       ],
       "nature": "Adamant",
       "item": "Rocky Helmet"
@@ -14125,7 +14125,7 @@ var SETDEX_GEN5 =
       "moves": [
         "Razor Shell",
         "Aqua Jet",
-        "Revenge",
+        "Revenge (Doubled)",
         "Tail Whip"
       ],
       "nature": "Adamant",

@@ -926,7 +926,7 @@ function Field() {
 	var isHelpingHand = [$("#helpingHandR").prop("checked"), $("#helpingHandL").prop("checked")]; // affects attacks against opposite side
 	var isPowerSpot = [$("#powerSpotR").prop("checked"), $("#powerSpotL").prop("checked")]; // affects attacks against opposite side
 	var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
-	var isBattery = [$("#batteryR").prop("checked"), $("#batteryL").prop("checked")];
+	var isBattery = [$("#batteryR").prop("checked"), $("#batteryL").prop("checked")]; // affects attacks against opposite side
 	var isMinimized = [$("#minimL").prop("checked"), $("#minimR").prop("checked")];
 	var isVictoryStar = [$("#vicStarL").prop("checked"), $("#vicStarR").prop("checked")];
 	var isBusted8 = [$("#busted8L").prop("checked"), $("#busted8R").prop("checked")];
@@ -1002,7 +1002,7 @@ $(".gen").change(function () {
 	switch (gen) {
 	case 3:
 		pokedex = POKEDEX_ADV;
-		setdex = SETDEX_EM;
+		setdex = joinDexes([SETDEX_EM, SETDEX_EM_OPEN_LVL]);
 		typeChart = TYPE_CHART_GSC;
 		moves = MOVES_ADV;
 		items = ITEMS_ADV;
@@ -1164,6 +1164,8 @@ function clearField() {
 	$("#powerSpotR").prop("checked", false);
 	$("#friendGuardL").prop("checked", false);
 	$("#friendGuardR").prop("checked", false);
+	$("#batteryL").prop("checked", false);
+	$("#batteryR").prop("checked", false);
 	$("#clangL").prop("checked", false);
 	$("#clangR").prop("checked", false);
 	$("#wpL").prop("checked", false);

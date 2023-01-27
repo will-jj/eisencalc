@@ -1700,6 +1700,13 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"type": "Normal"
 	},
 	"Revenge": {
+		"bp": 60,
+		"type": "Fighting",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Revenge (Doubled)": {
 		"bp": 120,
 		"type": "Fighting",
 		"category": "Physical",
@@ -4303,6 +4310,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"acc": 100
 	},
 	"Revenge": {"zp": 120},
+	"Revenge (Doubled)": {"zp": 120},
 	"Reversal": {"zp": 160},
 	"Roar of Time": {"zp": 200},
 	"Rock Blast": {"isBullet": true, "zp": 140},
@@ -5711,6 +5719,7 @@ delete MOVES_SV["Nature Power"];
 delete MOVES_SV["Assist"];
 delete MOVES_SV["Magic Coat"];
 delete MOVES_SV["Revenge"];
+delete MOVES_SV["Revenge (Doubled)"];
 delete MOVES_SV["Refresh"];
 delete MOVES_SV["Grudge"];
 delete MOVES_SV["Snatch"];
@@ -5858,9 +5867,9 @@ delete MOVES_SV["Double Iron Bash"];
 delete MOVES_SV["Max Guard"];
 delete MOVES_SV["Octolock"];
 delete MOVES_SV["Bolt Beak"];
-delete MOVES_SV["Bolt Beak (doubled)"];
+delete MOVES_SV["Bolt Beak (Doubled)"];
 delete MOVES_SV["Fishious Rend"];
-delete MOVES_SV["Fishious Rend (doubled)"];
+delete MOVES_SV["Fishious Rend (Doubled)"];
 delete MOVES_SV["Max Flare"];
 delete MOVES_SV["Max Flutterby"];
 delete MOVES_SV["Max Lightning"];

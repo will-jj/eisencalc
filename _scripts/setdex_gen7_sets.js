@@ -1962,7 +1962,7 @@ var SETDEX_GEN7 =
       },
       "moves": [
         "Pursuit",
-        "Revenge",
+        "Revenge (Doubled)",
         "Head Charge",
         "Swagger"
       ],
@@ -13898,7 +13898,7 @@ var SETDEX_GEN7 =
         "df": 252
       },
       "moves": [
-        "Revenge",
+        "Revenge (Doubled)",
         "Storm Throw",
         "Protect",
         "Seismic Toss"
