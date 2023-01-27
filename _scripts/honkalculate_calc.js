@@ -135,7 +135,7 @@ function performCalculations() {
 	var field = new Field();
 	var startingWeather = field.getWeather();
 	var counter = 0;
-	var setSpecies = Object.keys(setdex);
+	var setSpecies = Object.keys((gen == 3 && $("#autolevel-box").val() == 50) ? SETDEX_EM : setdex);
 	for (var i = 0; i < setSpecies.length; i++) {
 		var speciesName = setSpecies[i];
 		var setNames = Object.keys(setdex[speciesName]);

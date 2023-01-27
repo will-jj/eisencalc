@@ -1002,7 +1002,7 @@ $(".gen").change(function () {
 	switch (gen) {
 	case 3:
 		pokedex = POKEDEX_ADV;
-		setdex = SETDEX_EM;
+		setdex = joinDexes([SETDEX_EM, SETDEX_EM_OPEN_LVL]);
 		typeChart = TYPE_CHART_GSC;
 		moves = MOVES_ADV;
 		items = ITEMS_ADV;
