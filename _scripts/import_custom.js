@@ -1,34 +1,77 @@
 var SETDEX_CUSTOM = {};
-
 var showdownFormes = [["Kyurem-White", "Kyurem-W"],
 	["Kyurem-Black", "Kyurem-B"],
-	["Rotom-Wash", "Rotom-W"],
-	["Rotom-Heat", "Rotom-H"],
-	["Rotom-Frost", "Rotom-F"],
-	["Rotom-Mow", "Rotom-C"],
-	["Rotom-Fan", "Rotom-S"],
 	["Giratina-Origin", "Giratina-O"],
 	["Landorus-Therian", "Landorus-T"],
 	["Thundurus-Therian", "Thundurus-T"],
 	["Tornadus-Therian", "Tornadus-T"],
 	["Floette-Eternal", "Floette-E"],
-	["Pumpkaboo", "Pumpkaboo-Average"],
-	["Gourgeist", "Gourgeist-Average"],
 	["Wormadam-Sandy", "Wormadam-G"],
 	["Wormadam-Trash", "Wormadam-S"],
 	["Groudon-Primal", "Groudon"],
 	["Kyogre-Primal", "Kyogre"],
 	["Necrozma-Dusk-Mane", "Necrozma-Dusk Mane"],
 	["Necrozma-Dawn-Wings", "Necrozma-Dawn Wings"]];
+if (localStorage.getItem("custom") != null) {
+	var SETDEX_CUSTOM = JSON.parse(localStorage.getItem("custom"));
+}
+var deletecustom = function () {
+	if (confirm("Are you sure you want to delete all your custom sets?")) {
+		SETDEX_CUSTOM = {};
+		localStorage.removeItem("custom");
+		setdexAll = setdex;
+		alert("Custom sets deleted!");
+	}
+};
 
-function saveCustom() {
+function migrateOldSets() {
+	if (confirm("This will run a script that will attempt to migrate your old custom sets from cookies to localStorage. It may take some time and will not always work, and there is a small chance it will erase your current custom sets. Would you like to proceed?")) {
+		if (readCookie("custom") != null) {
+			var oldData = JSON.parse(readCookie("custom"));
+			for (var i = 0; i < Object.keys(oldData).length; i++) {
+				var species = (Object.keys(oldData)[i]);
+				if (SETDEX_CUSTOM[species] == null) SETDEX_CUSTOM[species] = {};
+				var setName = (Object.keys(oldData[species]));
+				for (var j = 0; j < setName.length; j++) {
+					SETDEX_CUSTOM[species][setName] = oldData[species][setName];
+				}
+			}
+			localStorage.setItem("custom", JSON.stringify(SETDEX_CUSTOM));
+			eraseCookie("custom");
+			if (!alert("Success! Refreshing the page...")) {window.location.reload();}
+		} else {
+			alert("Aborted, no old custom set cookies found.");
+		}
+	}
+}
+
+function createCookie(name, value, days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+		var expires = "; expires=" + date.toGMTString();
+	} else var expires = "";
+	document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(";");
+	for (var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == " ") c = c.substring(1, c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name, "", -1);
+}
+
+var savecustom = function () {
 	//first, to parse it all from the PS format
 	var string = document.getElementById("customMon").value;
-	if (string.length === 0) {
-		document.getElementById("customMonOut").innerHTML = "Input Error - No input.";
-		console.log("Error! No input.");
-		return;
-	}
 	var importArray = string.split("\n");
 	var splitArr = ["0"];
 	var monArr = [];
@@ -63,9 +106,9 @@ function saveCustom() {
 	console.log(finalArr);
 
 	for (var x = 0; x < finalArr.length; x++) {
-		var spreadName = "";
-		if (spreadName === "") {
-			spreadName = "SET NAME";
+		var spreadName = document.getElementById("spreadName").value;
+		if (spreadName == "") {
+			spreadName = "My Custom Set";
 		}
 		var lines = finalArr[x];
 		var species = "";
@@ -77,8 +120,7 @@ function saveCustom() {
 		var IVs = [31, 31, 31, 31, 31, 31];
 		var nature = "Serious";
 		var moves = [];
-		var LG = $("#LG").prop("checked");
-		var lgMega = false;
+		var isGmax = false;
 
 		/*    Pokemon Showdown Export Format
 		0    Nickname (Species) @ Item
@@ -111,21 +153,25 @@ function saveCustom() {
 			if (species == showdownFormes[i][0])
 				species = showdownFormes[i][1];
 		}
+
 		if (species.indexOf("-Mega") !== -1) {
-			species = species.slice(0, species.indexOf("-Mega"));
+			species = species.substring(0, species.indexOf("-Mega"));
 		}
 
-		if (species.length < 2) {
-			document.getElementById("Output").innerHTML = "Input Error - Invalid input. \nPlease ensure the set is pasted above in the PS! importable format.";
-			console.log("Error! Invalid input.");
-			return;
+		if (species.toLowerCase().includes("vivillon")) {
+			species = "Vivillon";
+		}
+		if (species.toLowerCase().includes("furfrou")) {
+			species = "Furfrou";
+		}
+
+		if (species.includes("-Gmax")) {
+			species = species.substring(0, species.length - 5);
+			isGmax = true;
 		}
 
 		if (lines[0].indexOf("@") != -1)
 			item = lines[0].substring(lines[0].indexOf("@") + 1).trim(); //item is always after @
-		if (LG && item.indexOf("ite") != -1 && item != "Eviolite" && item != "White Herb") {
-			lgMega = true;
-		}
 		if (lines.length > 1) {
 			for (var i = 1; i < lines.length; ++i) {
 				if (lines[i].indexOf("Ability") != -1) {
@@ -142,20 +188,30 @@ function saveCustom() {
 					for (var j = 0; j < evList.length; ++j) {
 						evList[j] = evList[j].trim();
 						evListElements = evList[j].split(" ");
-						if (evListElements[1] == "HP")
+						if (evListElements[1] == "HP") {
 							EVs[0] = parseInt(evListElements[0]);
-						else if (evListElements[1] == "Atk")
-							EVs[1] = parseInt(evListElements[0]);
-						else if (evListElements[1] == "Def")
-							EVs[2] = parseInt(evListElements[0]);
-						else if (evListElements[1] == "SpA")
-							EVs[3] = parseInt(evListElements[0]);
-						else if (evListElements[1] == "SpD")
-							EVs[4] = parseInt(evListElements[0]);
-						else if (evListElements[1] == "Spe")
-							EVs[5] = parseInt(evListElements[0]);
+						}	else {
+							if (evListElements[1] == "Atk") {
+								EVs[1] = parseInt(evListElements[0]);
+							} else {
+								if (evListElements[1] == "Def") {
+									EVs[2] = parseInt(evListElements[0]);
+								} else {
+									if (evListElements[1] == "SpA") {
+										EVs[3] = parseInt(evListElements[0]);
+									} else {
+										if (evListElements[1] == "SpD") {
+											EVs[4] = parseInt(evListElements[0]);
+										} else {
+											if (evListElements[1] == "Spe") {
+												EVs[5] = parseInt(evListElements[0]);
+											}
+										}
+									}
+								}
+							}
+						}
 					}
-
 				}
 				if (lines[i].indexOf("IVs") != -1) { //if EVs are in this line
 					ivList = lines[i].split(":")[1].split("/"); //splitting it into a list of " # Stat "
@@ -216,16 +272,13 @@ function saveCustom() {
 		  }
 		  */
 		var rejectSet = false;
-		var dispErrMsg = false;
 		if (ability === "Parental Bond" && moves.indexOf("Power-Up Punch") > -1 && moves.indexOf("Power-Up Punch") < 3) {
 			rejectSet = true;
-			dispErrMsg = true;
 		}
 		if (species.indexOf("Kangaskhan") != -1 && moves.indexOf("Power-Up Punch") > -1 && moves.indexOf("Power-Up Punch") < 3) {
 			rejectSet = true;
-			dispErrMsg = true;
 		}
-		if (dispErrMsg === true) alert("Please ensure that " + species + "'s Power-up Punch is in the 4th moveslot, otherwise you may experience some errors in calcs!");
+		if (rejectSet) alert("Please ensure that Power-up Punch is in the 4th moveslot, otherwise you may experience some errors in calcs!");
 
 		customFormat = {
 			"level": level,
@@ -249,74 +302,30 @@ function saveCustom() {
 			"ability": ability,
 			"item": item,
 			"moves": moves,
+			"isGmax": isGmax,
 			"teraType": teraType
 		};
-
-		LGcustomFormat = {
-			"level": level,
-			"avs": {
-				"hp": EVs[0],
-				"at": EVs[1],
-				"df": EVs[2],
-				"sa": EVs[3],
-				"sd": EVs[4],
-				"sp": EVs[5],
-			},
-			"ivs": {
-				"hp": IVs[0],
-				"at": IVs[1],
-				"df": IVs[2],
-				"sa": IVs[3],
-				"sd": IVs[4],
-				"sp": IVs[5],
-			},
-			"nature": nature,
-			"moves": moves,
-		};
-
-		LGMegaCustomFormat = {
-			"level": level,
-			"avs": {
-				"hp": EVs[0],
-				"at": EVs[1],
-				"df": EVs[2],
-				"sa": EVs[3],
-				"sd": EVs[4],
-				"sp": EVs[5],
-			},
-			"ivs": {
-				"hp": IVs[0],
-				"at": IVs[1],
-				"df": IVs[2],
-				"sa": IVs[3],
-				"sd": IVs[4],
-				"sp": IVs[5],
-			},
-			"nature": nature,
-			"item": item,
-			"moves": moves,
-		};
-
-		if (rejectSet === true) {
+		if (rejectSet) {
 			alert("Set not saved: " + species);
 		} else {
-			if (SETDEX_CUSTOM[species] == null)
+			if (SETDEX_CUSTOM[species] == null) {
 				SETDEX_CUSTOM[species] = {};
-			if (!LG) {
-				SETDEX_CUSTOM[species][spreadName] = customFormat;
-			} else {
-				if (!lgMega) {
-					SETDEX_CUSTOM[species][spreadName] = LGcustomFormat;
-				} else {
-					SETDEX_CUSTOM[species][spreadName] = LGMegaCustomFormat;
-				}
 			}
-
-			$("#customMonOut").val(JSON.stringify(SETDEX_CUSTOM, null, 2));
-			if (rejectSet)
-				alert("Set not saved: " + species);
-			else
-				alert("Set saved: " + species);
+			SETDEX_CUSTOM[species][spreadName] = customFormat;
+			localStorage.setItem("custom", JSON.stringify(SETDEX_CUSTOM));
+			if (setdexAll[species] == null) {
+				setdexAll[species] = {};
+			}
+			setdexAll[species][spreadName] = customFormat;
+			alert("Set saved: " + species);
 		}
 	}
-}
+	// due to updating the dexes, refreshing shouldn't be necessary
+	//alert("Please refresh your page to get your custom sets to show up!");
+};
+
+$("document").ready(function () {
+	if (readCookie("custom") == null) {
+		$("#migrate").css("display", "none");
+	}
+});

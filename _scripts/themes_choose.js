@@ -1,5 +1,5 @@
 var changetheme = function () {
-	switch ($("#theme").val()) {
+	/*switch ($("#theme").val()) {
 	case "aegislash":
 		$("#select2css")[0].href = "_css/select2.css";
 		$("#nbcalccss")[0].href = "_css/nb_calc.css";
@@ -7,12 +7,12 @@ var changetheme = function () {
 		$("#midimg")[0].src = "_images/aegi trozei.png";
 		localStorage.setItem("selectedTheme", $("#theme").val());
 		break;
-	case "dark":
+	case "dark":*/
 		$("#select2css")[0].href = "_css/select2.css";
 		$("#nbcalccss")[0].href = "_css/dark_nb_calc.css";
 		$("#apcalccss")[0].href = "_css/dark_ap_calc.css";
 		$("#midimg")[0].src = "_images/tower.png";
-		localStorage.setItem("selectedTheme", $("#theme").val());
+		/*localStorage.setItem("selectedTheme", $("#theme").val());
 		break;
 	case "legacy":
 		$("#select2css")[0].href = "_css/select2.css";
@@ -41,5 +41,5 @@ var changetheme = function () {
 		$("#apcalccss")[0].href = "_css/dark_ap_calc.css";
 		$("#midimg")[0].src = "_images/tower.png";
 		localStorage.setItem("selectedTheme", $("#theme").val());
-	}
+	}*/
 };
