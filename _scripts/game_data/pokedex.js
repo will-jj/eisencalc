@@ -12287,6 +12287,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 	"Zygarde": {"formes": ["Zygarde", "Zygarde-Complete", "Zygarde-10%"]},
 
 	//abilities
+	"Gengar": {"ab": "Cursed Body"},
 	"Pelipper": {"bs": {"sa": 95}, "ab": "Drizzle"},
 	"Torkoal": {"ab": "Drought"},
 
@@ -14400,8 +14401,6 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 	},
 
 });
-
-POKEDEX_SM["Gengar"].ab = "Cursed Body";
 
 POKEDEX_SM["Gengar"].abilities[0] = "Cursed Body";
 POKEDEX_SM["Raikou"].abilities[1] = "Inner Focus";
@@ -18052,6 +18051,34 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 		},
 		"w": 37,
 		"abilities": ["Overgrow", "Scrappy"]
+	},
+	"Dialga-O": {
+		"t1": "Steel",
+		"t2": "Dragon",
+		"bs": {
+			"hp": 100,
+			"at": 100,
+			"df": 120,
+			"sa": 150,
+			"sd": 120,
+			"sp": 90
+		},
+		"w": 850.0,
+		"abilities": ["Pressure", "Telepathy"]
+	},
+	"Palkia-O": {
+		"t1": "Water",
+		"t2": "Dragon",
+		"bs": {
+			"hp": 90,
+			"at": 100,
+			"df": 100,
+			"sa": 150,
+			"sd": 120,
+			"sp": 120
+		},
+		"w": 660.0,
+		"abilities": ["Pressure", "Telepathy"]
 	}
 });
 
