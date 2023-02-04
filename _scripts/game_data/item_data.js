@@ -118,6 +118,7 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	"Rowap Berry",
 	"Salac Berry",
 	"Sea Incense",
+	"Shed Shell",
 	"Shuca Berry",
 	"Sky Plate",
 	"Smooth Rock",
