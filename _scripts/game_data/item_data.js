@@ -30,6 +30,7 @@ var ITEMS_GSC = [
 
 var ITEMS_ADV = ITEMS_GSC.concat([
 	"Bright Powder",
+	"Chesto Berry",
 	"Choice Band",
 	"DeepSeaScale",
 	"DeepSeaTooth",
@@ -60,7 +61,6 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	"Big Root",
 	"Black Sludge",
 	"Charti Berry",
-	"Chesto Berry",
 	"Chilan Berry",
 	"Choice Scarf",
 	"Choice Specs",
