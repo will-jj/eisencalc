@@ -2694,7 +2694,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"category": "Physical",
 		"hasSecondaryEffect": true,
 		"isSpread": true,
-		"acc": 90
+		"acc": 100
 	},
 	"Bullet Seed": {"bp": 25},
 	"Chip Away": {
