@@ -20,6 +20,7 @@ var ITEMS_GSC = [
 	"Poison Barb",
 	"Polkadot Bow",
 	"Sharp Beak",
+	"Shell Bell",
 	"SilverPowder",
 	"Soft Sand",
 	"Spell Tag",
