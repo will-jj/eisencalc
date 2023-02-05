@@ -31,7 +31,7 @@ var ITEMS_GSC = [
 var ITEMS_ADV = ITEMS_GSC.concat([
 	"Apicot Berry",
 	"Aspear Berry",
-	"Bright Powder",
+	"BrightPowder",
 	"Cheri Berry",
 	"Chesto Berry",
 	"Choice Band",
