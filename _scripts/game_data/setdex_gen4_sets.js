@@ -352,7 +352,7 @@ SETDEX_PHGSS = {
         "Future Sight"
       ],
       "nature": "Timid",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Alakazam-2 (537)": {
@@ -459,7 +459,7 @@ SETDEX_PHGSS = {
         "Dragon Dance"
       ],
       "nature": "Adamant",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Altaria-4 (812)": {
@@ -1369,7 +1369,7 @@ SETDEX_PHGSS = {
         "Synthesis"
       ],
       "nature": "Modest",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Bellossom-H": {
@@ -1571,7 +1571,7 @@ SETDEX_PHGSS = {
         "Sunny Day"
       ],
       "nature": "Timid",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Blaziken-3 (630)": {
@@ -1663,7 +1663,7 @@ SETDEX_PHGSS = {
         "Calm Mind"
       ],
       "nature": "Modest",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Blissey-4 (883)": {
@@ -1988,7 +1988,7 @@ SETDEX_PHGSS = {
         "Sweet Scent"
       ],
       "nature": "Modest",
-      "item": "Brightpowder"
+      "item": "BrightPowder"
     },
     "Bulbasaur-H": {
       "evs": {
@@ -2434,7 +2434,7 @@ SETDEX_PHGSS = {
         "Ancient Power"
       ],
       "nature": "Timid",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Charizard-H": {
@@ -2974,7 +2974,7 @@ SETDEX_PHGSS = {
         "Sing"
       ],
       "nature": "Adamant",
-      "item": "Brightpowder"
+      "item": "BrightPowder"
     },
     "Clefairy-H": {
       "evs": {
@@ -4647,7 +4647,7 @@ SETDEX_PHGSS = {
         "Thunder Wave"
       ],
       "nature": "Modest",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Electabuzz-H": {
@@ -4771,7 +4771,7 @@ SETDEX_PHGSS = {
         "Swagger"
       ],
       "nature": "Timid",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Electrode-3 (658)": {
@@ -5033,7 +5033,7 @@ SETDEX_PHGSS = {
         "Attract"
       ],
       "nature": "Timid",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Espeon-3 (727)": {
@@ -5126,7 +5126,7 @@ SETDEX_PHGSS = {
         "Sunny Day"
       ],
       "nature": "Modest",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Exeggutor-2 (585)": {
@@ -5987,7 +5987,7 @@ SETDEX_PHGSS = {
         "Ice Punch"
       ],
       "nature": "Jolly",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Gallade-3 (720)": {
@@ -6049,7 +6049,7 @@ SETDEX_PHGSS = {
         "Sandstorm"
       ],
       "nature": "Jolly",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Garchomp-2 (621)": {
@@ -6156,7 +6156,7 @@ SETDEX_PHGSS = {
         "Focus Blast"
       ],
       "nature": "Modest",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Gardevoir-4 (855)": {
@@ -7636,7 +7636,7 @@ SETDEX_PHGSS = {
         "Dark Pulse"
       ],
       "nature": "Modest",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Heatran-4 (948)": {
@@ -8377,7 +8377,7 @@ SETDEX_PHGSS = {
         "Sunny Day"
       ],
       "nature": "Modest",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Infernape-4 (769)": {
@@ -9332,7 +9332,7 @@ SETDEX_PHGSS = {
         "Thunderbolt"
       ],
       "nature": "Modest",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Lapras-H": {
@@ -9425,7 +9425,7 @@ SETDEX_PHGSS = {
         "Shadow Ball"
       ],
       "nature": "Timid",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Latias-4 (946)": {
@@ -9502,7 +9502,7 @@ SETDEX_PHGSS = {
         "Energy Ball"
       ],
       "nature": "Timid",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Latios-4 (947)": {
@@ -9564,7 +9564,7 @@ SETDEX_PHGSS = {
         "Grass Whistle"
       ],
       "nature": "Jolly",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Leafeon-3 (729)": {
@@ -9890,7 +9890,7 @@ SETDEX_PHGSS = {
         "Thunder Wave"
       ],
       "nature": "Jolly",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Lopunny-3 (663)": {
@@ -9983,7 +9983,7 @@ SETDEX_PHGSS = {
         "Roar"
       ],
       "nature": "Modest",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Lucario-2 (595)": {
@@ -10860,7 +10860,7 @@ SETDEX_PHGSS = {
         "Signal Beam"
       ],
       "nature": "Modest",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Magnezone-H": {
@@ -11014,7 +11014,7 @@ SETDEX_PHGSS = {
         "Swift"
       ],
       "nature": "Timid",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Manectric-H": {
@@ -11292,7 +11292,7 @@ SETDEX_PHGSS = {
         "Iron Defense"
       ],
       "nature": "Impish",
-      "item": "Brightpowder"
+      "item": "BrightPowder"
     },
     "Mawile-H": {
       "evs": {
@@ -11478,7 +11478,7 @@ SETDEX_PHGSS = {
         "Light Screen"
       ],
       "nature": "Adamant",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Metagross-2 (620)": {
@@ -12449,7 +12449,7 @@ SETDEX_PHGSS = {
         "Substitute"
       ],
       "nature": "Careful",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Nidoking-3 (680)": {
@@ -12650,7 +12650,7 @@ SETDEX_PHGSS = {
         "Sunny Day"
       ],
       "nature": "Timid",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Ninetales-2 (570)": {
@@ -14483,7 +14483,7 @@ SETDEX_PHGSS = {
         "Thunder Wave"
       ],
       "nature": "Adamant",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Raichu-H": {
@@ -14699,7 +14699,7 @@ SETDEX_PHGSS = {
         "Horn Drill"
       ],
       "nature": "Adamant",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Rapidash-4 (825)": {
@@ -14917,7 +14917,7 @@ SETDEX_PHGSS = {
         "Drain Punch"
       ],
       "nature": "Adamant",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Regigigas-H": {
@@ -15815,7 +15815,7 @@ SETDEX_PHGSS = {
         "Baton Pass"
       ],
       "nature": "Impish",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Scizor-2 (559)": {
@@ -15906,7 +15906,7 @@ SETDEX_PHGSS = {
         "Swords Dance"
       ],
       "nature": "Adamant",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Scyther-H": {
@@ -17039,7 +17039,7 @@ SETDEX_PHGSS = {
         "Sweet Kiss"
       ],
       "nature": "Mild",
-      "item": "Brightpowder"
+      "item": "BrightPowder"
     },
     "Smoochum-H": {
       "evs": {
@@ -19214,7 +19214,7 @@ SETDEX_PHGSS = {
         "Moonlight"
       ],
       "nature": "Impish",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Umbreon-H": {
@@ -19323,7 +19323,7 @@ SETDEX_PHGSS = {
         "Baton Pass"
       ],
       "nature": "Modest",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Vaporeon-2 (588)": {
@@ -19927,7 +19927,7 @@ SETDEX_PHGSS = {
         "Confuse Ray"
       ],
       "nature": "Calm",
-      "item": "Brightpowder"
+      "item": "BrightPowder"
     },
     "Vulpix-H": {
       "evs": {
@@ -20205,7 +20205,7 @@ SETDEX_PHGSS = {
         "Hail"
       ],
       "nature": "Jolly",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Weavile-3 (712)": {
@@ -20821,7 +20821,7 @@ SETDEX_PHGSS = {
         "Signal Beam"
       ],
       "nature": "Modest",
-      "item": "Brightpowder",
+      "item": "BrightPowder",
       "tier": "50"
     },
     "Zapdos-H": {
