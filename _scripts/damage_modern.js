@@ -222,11 +222,17 @@ function getDamageResult(attacker, defender, move, field) {
 	if (attacker.ability === "Heavy Metal") {
 		attackerWeight *= 2;
 	} else if (attacker.ability === "Light Metal") {
+		attackerWeight = Math.floor(attackerWeight * 5) / 10; // weight values are truncated to the tenth's place (increments of 0.1)
+	}
+	if (attackerItem === "Float Stone") {
 		attackerWeight = Math.floor(attackerWeight * 5) / 10;
 	}
 	if (defender.ability === "Heavy Metal") {
 		defenderWeight *= 2;
 	} else if (defender.ability === "Light Metal") {
+		defenderWeight = Math.floor(defenderWeight * 5) / 10;
+	}
+	if (defender.item === "Float Stone") {
 		defenderWeight = Math.floor(defenderWeight * 5) / 10;
 	}
 
@@ -338,16 +344,15 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Low Kick":
 	case "Grass Knot":
-		var w = defenderWeight;
-		basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+		basePower = defenderWeight >= 200 ? 120 : defenderWeight >= 100 ? 100 : defenderWeight >= 50 ? 80 : defenderWeight >= 25 ? 60 : defenderWeight >= 10 ? 40 : 20;
 		description.moveBP = basePower;
 		break;
 	case "Crush Grip":
  	case "Wring Out":
-    		basePower = 100 * Math.floor((defender.curHP * 4096) / defender.maxHP);
-    		basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
-    		description.moveBP = basePower;
-    		break;
+		basePower = 100 * Math.floor((defender.curHP * 4096) / defender.maxHP);
+		basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
+		description.moveBP = basePower;
+		break;
 	case "Hex":
 	case "Infernal Parade":
 		basePower = move.bp * (defender.status !== "Healthy" ? 2 : 1);
