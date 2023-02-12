@@ -132,6 +132,12 @@ function performCalculations() {
 	var dataSet = [];
 	var userPoke = new Pokemon($("#p1"));
 	var startingBoosts = [userPoke.boosts.at, userPoke.boosts.df, userPoke.boosts.sa, userPoke.boosts.sd, userPoke.boosts.sp, userPoke.boosts.ac, userPoke.boosts.es];
+	var startingMoveTypes = [userPoke.moves[0].type, userPoke.moves[1].type, userPoke.moves[2].type, userPoke.moves[3].type];
+	if (mode === "one-vs-all") {
+		attacker = userPoke;
+	} else {
+		defender = userPoke;
+	}
 	var field = new Field();
 	var startingWeather = field.getWeather();
 	var counter = 0;
@@ -153,10 +159,8 @@ function performCalculations() {
 
 			if (mode === "one-vs-all") {
 				defender = setPoke;
-				attacker = userPoke;
 			} else {
 				attacker = setPoke;
-				defender = userPoke;
 			}
 			if (attacker.ability === "Rivalry") {
 				attacker.gender = "N";
@@ -206,6 +210,11 @@ function performCalculations() {
 			userPoke.boosts.ac = startingBoosts[5];
 			userPoke.boosts.es = startingBoosts[6];
 			userPoke.stats = [];
+			// reset changed move properties
+			userPoke.moves[0].type = startingMoveTypes[0];
+			userPoke.moves[1].type = startingMoveTypes[1];
+			userPoke.moves[2].type = startingMoveTypes[2];
+			userPoke.moves[3].type = startingMoveTypes[3];
 			// the only Field object "property" that can be modified is weather
 			field.setWeather(startingWeather);
 			counter++;

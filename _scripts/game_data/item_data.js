@@ -129,6 +129,7 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	"Smooth Rock",
 	"Splash Plate",
 	"Spooky Plate",
+	"Sticky Barb",
 	"Stone Plate",
 	"Tanga Berry",
 	"Toxic Orb",

@@ -57,15 +57,7 @@ function getKOChanceText(damage, move, defender, field, isBadDreams, attacker, i
 		return includeAcc ? ("guaranteed OHKO" + (move.acc ? " (" + (100 * (moveAccuracy / 100)).toFixed(2) + "% after accuracy)" : "")) : "guaranteed OHKO";
 	} else if (damage.length === 256 && hasSitrus && damage[0] >= defender.curHP + Math.floor(defender.maxHP / 4)) {
 		return includeAcc ? ("guaranteed OHKO" + (move.acc ? " (" + (100 * (moveAccuracy / 100)).toFixed(2) + "% after accuracy)" : "")) : "guaranteed OHKO";
-	} else if (damage.length === 256 && hasFigy && damage[0] >= defender.curHP + Math.floor(defender.maxHP / (gen === 8 ? 3 : 2))) {
-		return includeAcc ? ("guaranteed OHKO" + (move.acc ? " (" + (100 * (moveAccuracy / 100)).toFixed(2) + "% after accuracy)" : "")) : "guaranteed OHKO";
-	} else if (damage.length === 256 && hasIapapa && damage[0] >= defender.curHP + Math.floor(defender.maxHP / (gen === 8 ? 3 : 2))) {
-		return includeAcc ? ("guaranteed OHKO" + (move.acc ? " (" + (100 * (moveAccuracy / 100)).toFixed(2) + "% after accuracy)" : "")) : "guaranteed OHKO";
-	} else if (damage.length === 256 && hasWiki && damage[0] >= defender.curHP + Math.floor(defender.maxHP / (gen === 8 ? 3 : 2))) {
-		return includeAcc ? ("guaranteed OHKO" + (move.acc ? " (" + (100 * (moveAccuracy / 100)).toFixed(2) + "% after accuracy)" : "")) : "guaranteed OHKO";
-	} else if (damage.length === 256 && hasAguav && damage[0] >= defender.curHP + Math.floor(defender.maxHP / (gen === 8 ? 3 : 2))) {
-		return includeAcc ? ("guaranteed OHKO" + (move.acc ? " (" + (100 * (moveAccuracy / 100)).toFixed(2) + "% after accuracy)" : "")) : "guaranteed OHKO";
-	} else if (damage.length === 256 && hasMago && damage[0] >= defender.curHP + Math.floor(defender.maxHP / (gen === 8 ? 3 : 2))) {
+	} else if (damage.length === 256 && (hasFigy || hasIapapa || hasWiki || hasAguav || hasMago) && damage[0] >= defender.curHP + Math.floor(defender.maxHP / (gen === 8 ? 3 : 2))) {
 		return includeAcc ? ("guaranteed OHKO" + (move.acc ? " (" + (100 * (moveAccuracy / 100)).toFixed(2) + "% after accuracy)" : "")) : "guaranteed OHKO";
 	}
 
@@ -271,8 +263,9 @@ function getKOChanceText(damage, move, defender, field, isBadDreams, attacker, i
 		} else if (c > 0) {
 			var pct = Math.round(c * 1000) / 10;
 			var chance = pct ? qualifier + pct : "Miniscule";
+			var chanceAcc = (chance * (Math.pow(moveAccuracy / 100, i) * 100) / 100);
 			if (includeAcc) {
-				return chance + "% chance to " + i + "HKO" + afterText + (move.acc ? " (" + (chance * (Math.pow(moveAccuracy / 100, i) * 100) / 100).toFixed(2) + "% chance to " + i + "HKO after accuracy)" : "");
+				return chance + "% chance to " + i + "HKO" + afterText + (move.acc ? " (" + (chanceAcc ? chanceAcc.toFixed(2) : "Miniscule") + "% chance to " + i + "HKO after accuracy)" : "");
 			}
 			else {
 				return chance + "% chance to " + i + "HKO";
