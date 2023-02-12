@@ -133,6 +133,8 @@ function performCalculations() {
 	var userPoke = new Pokemon($("#p1"));
 	var startingBoosts = [userPoke.boosts.at, userPoke.boosts.df, userPoke.boosts.sa, userPoke.boosts.sd, userPoke.boosts.sp, userPoke.boosts.ac, userPoke.boosts.es];
 	var startingMoveTypes = [userPoke.moves[0].type, userPoke.moves[1].type, userPoke.moves[2].type, userPoke.moves[3].type];
+	var startingMoveCategory = [userPoke.moves[0].category, userPoke.moves[1].category, userPoke.moves[2].category, userPoke.moves[3].category];
+	var startingMoveContact = [userPoke.moves[0].makesContact, userPoke.moves[1].makesContact, userPoke.moves[2].makesContact, userPoke.moves[3].makesContact];
 	if (mode === "one-vs-all") {
 		attacker = userPoke;
 	} else {
@@ -172,7 +174,7 @@ function performCalculations() {
 			var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
 			var highestDamage = -1;
 			var data = [setName];
-			for (var n = 0; n < 4; n++) {
+			for (let n = 0; n < 4; n++) {
 				result = damageResults[n];
 				attackerMove = attacker.moves[n];
 				minDamage = result.damage[0] * attackerMove.hits;
@@ -211,10 +213,12 @@ function performCalculations() {
 			userPoke.boosts.es = startingBoosts[6];
 			userPoke.stats = [];
 			// reset changed move properties
-			userPoke.moves[0].type = startingMoveTypes[0];
-			userPoke.moves[1].type = startingMoveTypes[1];
-			userPoke.moves[2].type = startingMoveTypes[2];
-			userPoke.moves[3].type = startingMoveTypes[3];
+			for (let n = 0; n < 4; n++) {
+				var move = userPoke.moves[n];
+				move.type = startingMoveTypes[n];
+				move.category = startingMoveCategory[n];
+				move.makesContact = startingMoveContact[n];
+			}
 			// the only Field object "property" that can be modified is weather
 			field.setWeather(startingWeather);
 			counter++;

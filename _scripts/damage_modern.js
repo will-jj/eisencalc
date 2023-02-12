@@ -74,11 +74,9 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 
 function getDamageResult(attacker, defender, move, field) {
 	var moveDescName = move.name;
-	if (move.isZ) {
-		if (move.name === "Nature Power") {
-			move.zp = field.terrain === "Electric" || field.terrain === "Grassy" || field.terrain === "Psychic" || field.terrain === "Misty" ? 175 : 160;
-			move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : move.type = field.terrain === "Psychic" ? "Psychic" : "Normal";
-		}
+	if (move.isZ && move.name === "Nature Power") {
+		move.zp = field.terrain === "Electric" || field.terrain === "Grassy" || field.terrain === "Psychic" || field.terrain === "Misty" ? 175 : 160;
+		move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : field.terrain === "Psychic" ? "Psychic" : "Normal";
 	}
 
 	var attackerItem = attacker.item;
@@ -94,10 +92,6 @@ function getDamageResult(attacker, defender, move, field) {
 		"defenderName": defender.name,
 		"isDynamax": defender.isDynamax
 	};
-	predictShellSideArm(attacker, defender, move);
-	if (attacker.ability === "Long Reach" || attackerItem === "Punching Glove") {
-		move.makesContact = false;
-	}
 	if (defender.isTerastal) {
 		description.defenderTera = defender.type1;
 	}
@@ -135,7 +129,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 
 	case "Terrain Pulse":
-		move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : move.type = field.terrain === "Psychic" ? "Psychic" : "Normal";
+		move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : field.terrain === "Psychic" ? "Psychic" : "Normal";
 		break;
 
 	case "Judgment":
@@ -168,7 +162,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 
 	case "Nature Power":
-		move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : move.type = field.terrain === "Psychic" ? "Psychic" : "Normal";
+		move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : field.terrain === "Psychic" ? "Psychic" : "Normal";
 		break;
 
 	case "Revelation Dance":
@@ -213,9 +207,14 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 	}
 
+	predictShellSideArm(attacker, defender, move);
+	if (attacker.ability === "Long Reach" || attackerItem === "Punching Glove") {
+		move.makesContact = false;
+	}
+	var hasPriority = move.hasPriority;
 	if ((attacker.ability === "Gale Wings" && move.type === "Flying") ||
 		(move.name === "Grassy Glide" && field.terrain === "Grassy" && isGrounded(attacker, field.isGravity, attacker.ability === "Levitate"))) {
-		move.hasPriority = true;
+		hasPriority = true;
 	}
 	var attackerWeight = attacker.weight;
 	var defenderWeight = defender.weight;
@@ -227,6 +226,9 @@ function getDamageResult(attacker, defender, move, field) {
 	if (attackerItem === "Float Stone") {
 		attackerWeight = Math.floor(attackerWeight * 5) / 10;
 	}
+	if (attackerWeight < 0.1) {
+		attackerWeight = 0.1;
+	}
 	if (defender.ability === "Heavy Metal") {
 		defenderWeight *= 2;
 	} else if (defender.ability === "Light Metal") {
@@ -234,6 +236,9 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	if (defender.item === "Float Stone") {
 		defenderWeight = Math.floor(defenderWeight * 5) / 10;
+	}
+	if (defenderWeight < 0.1) {
+		defenderWeight = 0.1;
 	}
 
 	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy", field.isGravity);
@@ -255,15 +260,15 @@ function getDamageResult(attacker, defender, move, field) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 	if (defAbility === "Wonder Guard" && typeEffectiveness <= 1 ||
-            move.type === "Grass" && defAbility === "Sap Sipper" ||
-            move.type === "Fire" && ["Flash Fire", "Flash Fire (activated)", "Well-Baked Body"].indexOf(defAbility) !== -1 ||
-            move.type === "Water" && ["Dry Skin", "Storm Drain", "Water Absorb"].indexOf(defAbility) !== -1 ||
-            move.type === "Electric" && ["Lightning Rod", "Lightningrod", "Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1 ||
-            move.type === "Ground" && move.name !== "Thousand Arrows" && defAbility === "Levitate" && !isGrounded(defender, field.isGravity, true) ||
-            move.type === "Ground" && defAbility === "Earth Eater" ||
-            move.isBullet && defAbility === "Bulletproof" ||
-            move.isSound && defAbility === "Soundproof" ||
-            move.isWind && defAbility === "Wind Rider") {
+		move.type === "Grass" && defAbility === "Sap Sipper" ||
+		move.type === "Fire" && ["Flash Fire", "Flash Fire (activated)", "Well-Baked Body"].indexOf(defAbility) !== -1 ||
+		move.type === "Water" && ["Dry Skin", "Storm Drain", "Water Absorb"].indexOf(defAbility) !== -1 ||
+		move.type === "Electric" && ["Lightning Rod", "Lightningrod", "Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1 ||
+		move.type === "Ground" && move.name !== "Thousand Arrows" && defAbility === "Levitate" && !isGrounded(defender, field.isGravity, true) ||
+		move.type === "Ground" && defAbility === "Earth Eater" ||
+		move.isBullet && defAbility === "Bulletproof" ||
+		move.isSound && defAbility === "Soundproof" ||
+		move.isWind && defAbility === "Wind Rider") {
 		description.defenderAbility = defAbility;
 		return {"damage": [0], "description": buildDescription(description)};
 	}
@@ -286,7 +291,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.name === "Steel Roller" && !field.terrain) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if (move.hasPriority) {
+	if (hasPriority) {
 		if (field.terrain === "Psychic" && isGrounded(defender, field.isGravity, defAbility === "Levitate")) {
 			description.terrain = field.terrain;
 			return {"damage": [0], "description": buildDescription(description)};
@@ -419,7 +424,6 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Expanding Force":
 		basePower = field.terrain === "Psychic" ? move.bp * 1.5 : move.bp;
-		move.isSpread = field.terrain === "Psychic";
 		description.moveBP = basePower;
 		break;
 	case "Triple Axel":
@@ -613,8 +617,8 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x800);
 		description.terrain = field.terrain;
 	}
-	var terrainMultiplier = gen >= 8 ? 0x14CD : 0x1800;
 	if (isGrounded(attacker, field.isGravity, attacker.ability === "Levitate")) {
+		var terrainMultiplier = gen >= 8 ? 0x14CD : 0x1800;
 		if (field.terrain === "Electric" && move.type === "Electric") {
 			bpMods.push(terrainMultiplier);
 			description.terrain = field.terrain;
@@ -631,7 +635,7 @@ function getDamageResult(attacker, defender, move, field) {
 	basePower = attacker.isChild ? basePower / (gen >= 7 ? 4 : 2) : basePower;
 	
 	var excludedExceptions = ["Low Kick", "Flail", "Reversal", "Eruption", "Water Spout", "Gyro Ball", "Fling", "Grass Knot", "Crush Grip", "Heavy Slam", "Electro Ball", "Heat Crash", "Dragon Energy"];
-	if (attacker.isTerastal && move.type === attacker.type1 && basePower < 60 && !move.hasPriority && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && !excludedExceptions.includes(move.name)) {
+	if (attacker.isTerastal && move.type === attacker.type1 && basePower < 60 && !hasPriority && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && !excludedExceptions.includes(move.name)) {
 		basePower = 60; // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9425737
 		description.moveBP = 60;
 	}
@@ -817,7 +821,7 @@ function getDamageResult(attacker, defender, move, field) {
 	//////////// DAMAGE ////////////
 	////////////////////////////////
 	var baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * basePower * attack / defense) / 50 + 2);
-	if (field.format === "doubles" && move.isSpread) {
+	if (field.format === "doubles" && (move.isSpread || (move.name === "Expanding Force" && field.terrain === "Psychic"))) {
 		baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
 		description.isSpread = true;
 	}

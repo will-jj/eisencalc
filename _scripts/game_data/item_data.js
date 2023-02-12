@@ -218,6 +218,8 @@ ITEMS_XY.splice(ITEMS_XY.indexOf("Water Gem"), 1);
 ITEMS_XY.splice(ITEMS_XY.indexOf("Soul Dew"), 1);
 
 var ITEMS_SM = ITEMS_XY.concat([
+	"Adrenaline Orb",
+	"Protective Pads",
 	"Terrain Extender",
 	"Figy Berry",
 	"Iapapa Berry",
