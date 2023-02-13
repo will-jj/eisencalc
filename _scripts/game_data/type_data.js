@@ -15,7 +15,10 @@ var TYPE_CHART_RBY = {
 		"Fighting": 1,
 		"Psychic": 1,
 		"Ghost": 1,
-		"Dragon": 1
+		"Dragon": 1,
+		"Dark": 1,
+		"Steel": 1,
+		"Fairy": 1
 	},
 	"Normal": {
 		"category": "Physical",
