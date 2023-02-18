@@ -1974,6 +1974,13 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"acc": 101
 	},
 	"Avalanche": {
+		"bp": 60,
+		"type": "Ice",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Avalanche (doubled)": {
 		"bp": 120,
 		"type": "Ice",
 		"category": "Physical",
