@@ -1980,7 +1980,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"makesContact": true,
 		"acc": 100
 	},
-	"Avalanche (doubled)": {
+	"Avalanche (Doubled)": {
 		"bp": 120,
 		"type": "Ice",
 		"category": "Physical",
@@ -3739,6 +3739,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"type": "Ice"
 	},
 	"Avalanche": {"zp": 120},
+	"Avalanche (Doubled)": {"zp": 120},
 	"Baneful Bunker": {
 		"bp": 0,
 		"type": "Poison"

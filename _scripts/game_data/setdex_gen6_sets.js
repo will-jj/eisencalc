@@ -299,7 +299,7 @@ var SETDEX_GEN6 =
       "moves": [
         "Iron Tail",
         "Dragon Rush",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Stone Edge"
       ],
       "nature": "Adamant",
@@ -976,7 +976,7 @@ var SETDEX_GEN6 =
         "df": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Confide",
         "Protect",
         "Toxic"
@@ -1025,7 +1025,7 @@ var SETDEX_GEN6 =
       },
       "moves": [
         "Stone Edge",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Gyro Ball",
         "Earthquake"
       ],
@@ -1174,7 +1174,7 @@ var SETDEX_GEN6 =
       "moves": [
         "Shadow Claw",
         "Stone Edge",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Bulk Up"
       ],
       "nature": "Brave",
@@ -1205,7 +1205,7 @@ var SETDEX_GEN6 =
       },
       "moves": [
         "Swords Dance",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Rock Slide",
         "Brick Break"
       ],
@@ -1337,7 +1337,7 @@ var SETDEX_GEN6 =
         "Fake Out",
         "Earthquake",
         "Aqua Tail",
-        "Avalanche"
+        "Avalanche (Doubled)"
       ],
       "nature": "Adamant",
       "item": "Leftovers",
@@ -5579,7 +5579,7 @@ var SETDEX_GEN6 =
       },
       "moves": [
         "Double-Edge",
-        "Eathquake",
+        "Earthquake",
         "Wild Charge",
         "Outrage"
       ],
@@ -10142,7 +10142,7 @@ var SETDEX_GEN6 =
       },
       "moves": [
         "Horn Drill",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Payback",
         "Counter"
       ],
@@ -11701,7 +11701,7 @@ var SETDEX_GEN6 =
       },
       "moves": [
         "Earthquake",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Waterfall",
         "Stone Edge"
       ],
@@ -12993,7 +12993,7 @@ var SETDEX_GEN6 =
         "at": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Ice Shard",
         "Natural Gift",
         "Giga Impact"
@@ -13538,7 +13538,7 @@ var SETDEX_GEN6 =
       },
       "moves": [
         "Waterfall",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Aqua Ring",
         "Curse"
       ],

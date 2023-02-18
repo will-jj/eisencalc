@@ -36,7 +36,7 @@ var SETDEX_GEN80 = {
         "Wood Hammer",
         "Ingrain",
         "Substitute",
-        "Avalanche"
+        "Avalanche (Doubled)"
       ],
       "nature": "Adamant",
       "ability": "Snow Warning",
@@ -422,7 +422,7 @@ var SETDEX_GEN80 = {
       },
       "moves": [
         "Stone Edge",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Payback",
         "Earthquake"
       ],
@@ -5498,7 +5498,7 @@ var SETDEX_GEN80 = {
       "moves": [
         "Waterfall",
         "Aqua Jet",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Earthquake"
       ],
       "nature": "Adamant",
@@ -5923,7 +5923,7 @@ var SETDEX_GEN80 = {
       "moves": [
         "Giga Impact",
         "Earthquake",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Crunch"
       ],
       "nature": "Careful",
@@ -7426,7 +7426,7 @@ var SETDEX_GEN80 = {
       "moves": [
         "Hyper Beam",
         "Mirror Coat",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Freeze-Dry"
       ],
       "nature": "Naughty",
@@ -11784,7 +11784,7 @@ var SETDEX_GEN80 = {
       "moves": [
         "Fissure",
         "Double Team",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Earthquake"
       ],
       "nature": "Careful",
@@ -13197,7 +13197,7 @@ var SETDEX_GEN80 = {
       "moves": [
         "Rock Slide",
         "Dig",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Waterfall"
       ],
       "nature": "Adamant",
@@ -13501,7 +13501,7 @@ var SETDEX_GEN80 = {
       "ivs": {},
       "moves": [
         "Stone Edge",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Iron Tail",
         "Aerial Ace"
       ],
@@ -16205,7 +16205,7 @@ var SETDEX_GEN80 = {
         "Rock Blast",
         "Fire Fang",
         "Earthquake",
-        "Avalanche"
+        "Avalanche (Doubled)"
       ],
       "nature": "Brave",
       "ability": "Lightning Rod",
@@ -16315,7 +16315,7 @@ var SETDEX_GEN80 = {
         "Stone Edge",
         "Megahorn",
         "Dragon Rush",
-        "Avalanche"
+        "Avalanche (Doubled)"
       ],
       "nature": "Impish",
       "ability": "Solid Rock",
@@ -19496,7 +19496,7 @@ var SETDEX_GEN80 = {
       "moves": [
         "Ancient Power",
         "Muddy Water",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Focus Blast"
       ],
       "nature": "Sassy",
@@ -19579,7 +19579,7 @@ var SETDEX_GEN80 = {
         "Earthquake",
         "Waterfall",
         "Rock Tomb",
-        "Avalanche"
+        "Avalanche (Doubled)"
       ],
       "nature": "Adamant",
       "ability": "Torrent",
@@ -21710,7 +21710,7 @@ var SETDEX_GEN80 = {
         "Defense Curl",
         "Rollout",
         "Waterfall",
-        "Avalanche"
+        "Avalanche (Doubled)"
       ],
       "nature": "Adamant",
       "ability": "Pressure",

@@ -180,7 +180,7 @@ var SETDEX_GEN5 =
         "Fake Out",
         "Earthquake",
         "Aqua Tail",
-        "Avalanche"
+        "Avalanche (Doubled)"
       ],
       "nature": "Adamant",
       "item": "Leftovers",
@@ -579,7 +579,7 @@ var SETDEX_GEN5 =
       },
       "moves": [
         "Earthquake",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Waterfall",
         "Stone Edge"
       ],
@@ -6636,7 +6636,7 @@ var SETDEX_GEN5 =
       },
       "moves": [
         "Waterfall",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Aqua Ring",
         "Curse"
       ],
@@ -9557,7 +9557,7 @@ var SETDEX_GEN5 =
       "moves": [
         "Shadow Claw",
         "Stone Edge",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Bulk Up"
       ],
       "nature": "Brave",
@@ -9588,7 +9588,7 @@ var SETDEX_GEN5 =
       },
       "moves": [
         "Swords Dance",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Rock Slide",
         "Brick Break"
       ],
@@ -9634,7 +9634,7 @@ var SETDEX_GEN5 =
         "at": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Dive",
         "Superpower",
         "Sheer Cold"
@@ -9781,7 +9781,7 @@ var SETDEX_GEN5 =
       "moves": [
         "Iron Tail",
         "Dragon Rush",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Aerial Ace"
       ],
       "nature": "Adamant",
@@ -10180,7 +10180,7 @@ var SETDEX_GEN5 =
       },
       "moves": [
         "Horn Drill",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Payback",
         "Counter"
       ],
@@ -10363,7 +10363,7 @@ var SETDEX_GEN5 =
         "at": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Ice Shard",
         "Natural Gift",
         "Giga Impact"
@@ -14010,7 +14010,7 @@ var SETDEX_GEN5 =
         "at": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Shadow Claw",
         "Aerial Ace",
         "Slash"

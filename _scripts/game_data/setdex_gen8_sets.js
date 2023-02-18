@@ -3963,7 +3963,7 @@ var SETDEX_GEN8 =
       },
       "moves": [
         "Sheer Cold",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Explosion",
         "Ice Shard"
       ],
@@ -4109,7 +4109,7 @@ var SETDEX_GEN8 =
       },
       "moves": [
         "High Horsepower",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Curse",
         "Body Press"
       ],
@@ -5162,7 +5162,7 @@ var SETDEX_GEN8 =
       "moves": [
         "Seed Bomb",
         "Ice Shard",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Protect"
       ],
       "nature": "Brave",
@@ -5553,7 +5553,7 @@ var SETDEX_GEN8 =
         "Payback",
         "Protect",
         "Revenge (Doubled)",
-        "Avalanche"
+        "Avalanche (Doubled)"
       ],
       "nature": "Brave",
       "item": "Focus Sash",
@@ -15234,7 +15234,7 @@ var SETDEX_GEN8 =
       "moves": [
         "Earthquake",
         "Stone Edge",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Hammer Arm"
       ],
       "nature": "Brave",
@@ -15298,7 +15298,7 @@ var SETDEX_GEN8 =
       "moves": [
         "Earthquake",
         "Stone Edge",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Hammer Arm"
       ],
       "nature": "Brave",
@@ -16078,7 +16078,7 @@ var SETDEX_GEN8 =
       "moves": [
         "Yawn",
         "Focus Punch",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Aqua Jet"
       ],
       "nature": "Brave",
@@ -21574,7 +21574,7 @@ var SETDEX_GEN8 =
         "sp": 16
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "High Horsepower",
         "Hail",
         "Aurora Veil"
@@ -21598,7 +21598,7 @@ var SETDEX_GEN8 =
         "sp": 19
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "High Horsepower",
         "Body Press",
         "Curse"
@@ -21622,7 +21622,7 @@ var SETDEX_GEN8 =
         "sp": 23
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "High Horsepower",
         "Gyro Ball",
         "Mirror Coat"
@@ -21646,7 +21646,7 @@ var SETDEX_GEN8 =
         "sp": 27
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "High Horsepower",
         "Gyro Ball",
         "Stone Edge"
@@ -21821,7 +21821,7 @@ var SETDEX_GEN8 =
         "Perish Song",
         "Protect",
         "Whirlpool",
-        "Avalanche"
+        "Avalanche (Doubled)"
       ],
       "nature": "Relaxed",
       "item": "Sitrus Berry",
@@ -22961,7 +22961,7 @@ var SETDEX_GEN8 =
       },
       "moves": [
         "Payback",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Rest",
         "Sleep Talk"
       ],
