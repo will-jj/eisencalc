@@ -1171,7 +1171,7 @@ var SETDEX_GEN7 =
         "df": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Confide",
         "Protect",
         "Toxic"
@@ -1218,7 +1218,7 @@ var SETDEX_GEN7 =
       },
       "moves": [
         "Stone Edge",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Gyro Ball",
         "Earthquake"
       ],
@@ -1494,7 +1494,7 @@ var SETDEX_GEN7 =
       "moves": [
         "Shadow Claw",
         "Stone Edge",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Bulk Up"
       ],
       "nature": "Brave",
@@ -1524,7 +1524,7 @@ var SETDEX_GEN7 =
       },
       "moves": [
         "Swords Dance",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Rock Slide",
         "Brick Break"
       ],
@@ -8656,7 +8656,7 @@ var SETDEX_GEN7 =
       "moves": [
         "Hail",
         "Earthquake",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Fissure"
       ],
       "nature": "Adamant",
@@ -15131,7 +15131,7 @@ var SETDEX_GEN7 =
         "at": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Ice Shard",
         "Natural Gift",
         "Giga Impact"

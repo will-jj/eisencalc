@@ -53,7 +53,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "Wood Hammer",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Earthquake",
         "Rock Slide"
       ],
@@ -68,7 +68,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "Wood Hammer",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Brick Break",
         "Iron Tail"
       ],
@@ -270,7 +270,7 @@ SETDEX_PHGSS = {
       "moves": [
         "Iron Tail",
         "Dragon Rush",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Aerial Ace"
       ],
       "nature": "Adamant",
@@ -962,7 +962,7 @@ SETDEX_PHGSS = {
         "df": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Aerial Ace",
         "Facade",
         "Reflect"
@@ -1210,7 +1210,7 @@ SETDEX_PHGSS = {
       "moves": [
         "Metal Burst",
         "Stone Edge",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Curse"
       ],
       "nature": "Adamant",
@@ -1505,7 +1505,7 @@ SETDEX_PHGSS = {
       "moves": [
         "Aqua Tail",
         "Earthquake",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Zen Headbutt"
       ],
       "nature": "Adamant",
@@ -3013,7 +3013,7 @@ SETDEX_PHGSS = {
         "df": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Dive",
         "Toxic",
         "Protect"
@@ -3701,7 +3701,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "Waterfall",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Headbutt",
         "Fake Out"
       ],
@@ -5229,7 +5229,7 @@ SETDEX_PHGSS = {
       "moves": [
         "Facade",
         "Earthquake",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Crunch"
       ],
       "nature": "Adamant",
@@ -6537,7 +6537,7 @@ SETDEX_PHGSS = {
         "sd": 168
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Payback",
         "Gyro Ball",
         "Ice Shard"
@@ -9282,7 +9282,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "Aqua Tail",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Ice Shard",
         "Curse"
       ],
@@ -10901,7 +10901,7 @@ SETDEX_PHGSS = {
         "at": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Earthquake",
         "Iron Head",
         "Curse"
@@ -14603,7 +14603,7 @@ SETDEX_PHGSS = {
       "moves": [
         "Stone Edge",
         "Payback",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Fling"
       ],
       "nature": "Brave",
@@ -14648,7 +14648,7 @@ SETDEX_PHGSS = {
       "moves": [
         "Head Smash",
         "Zen Headbutt",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Fire Punch"
       ],
       "nature": "Adamant",
@@ -14802,7 +14802,7 @@ SETDEX_PHGSS = {
         "df": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Hammer Arm",
         "Double Team",
         "Curse"
@@ -14848,7 +14848,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "Blizzard",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Hyper Beam",
         "Thunder Wave"
       ],
@@ -15209,7 +15209,7 @@ SETDEX_PHGSS = {
         "Outrage",
         "Hammer Arm",
         "Shadow Claw",
-        "Avalanche"
+        "Avalanche (Doubled)"
       ],
       "nature": "Brave",
       "item": "Persim Berry",
@@ -15316,7 +15316,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "Horn Drill",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Payback",
         "Counter"
       ],
@@ -16865,7 +16865,7 @@ SETDEX_PHGSS = {
         "Zen Headbutt",
         "Aqua Tail",
         "Earthquake",
-        "Avalanche"
+        "Avalanche (Doubled)"
       ],
       "nature": "Adamant",
       "item": "Expert Belt",
@@ -17201,7 +17201,7 @@ SETDEX_PHGSS = {
         "df": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Ice Shard",
         "Frustration",
         "Hail"
@@ -17233,7 +17233,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "Wood Hammer",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Ingrain",
         "Giga Drain"
       ],
@@ -18114,7 +18114,7 @@ SETDEX_PHGSS = {
       "moves": [
         "Earthquake",
         "Aqua Tail",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Mirror Coat"
       ],
       "nature": "Adamant",
@@ -19088,7 +19088,7 @@ SETDEX_PHGSS = {
       "moves": [
         "Rock Slide",
         "Payback",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Curse"
       ],
       "nature": "Brave",
@@ -19242,7 +19242,7 @@ SETDEX_PHGSS = {
       "moves": [
         "Slash",
         "Payback",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Counter"
       ],
       "nature": "Brave",
@@ -20015,7 +20015,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "Waterfall",
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Earthquake",
         "Curse"
       ],
@@ -20076,7 +20076,7 @@ SETDEX_PHGSS = {
         "at": 252
       },
       "moves": [
-        "Avalanche",
+        "Avalanche (Doubled)",
         "Earthquake",
         "Crunch",
         "Curse"
