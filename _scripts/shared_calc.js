@@ -883,6 +883,7 @@ function getMoveDetails(moveInfo, item, species) {
 			"type": moveInfo.find(".move-type").val(),
 			"category": moveInfo.find(".move-cat").val(),
 			"isCrit": moveInfo.find(".move-crit").prop("checked"),
+			"isZ": moveName === "Nature Power" && isZMove,
 			"isMax": isMax,
 			"hits": defaultDetails.maxMultiHits ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 			"usedTimes": defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1
