@@ -443,8 +443,8 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Triple Axel":
-		basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
-		description.moveBP = basePower;
+		basePower = move.bp;
+		description.moveBP = move.hits == 3 ? "20, 40, 60" : (move.hits == 2 ? "20, 40" : basePower);
 		break;
 	case "Last Respects":
 		basePower = 50 + 50 * field.faintedCount;
@@ -641,12 +641,12 @@ function getDamageResult(attacker, defender, move, field) {
 		description.terrain = field.terrain;
 	}
 
-	basePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096));
-	basePower = attacker.isChild ? basePower / (gen >= 7 ? 4 : 2) : basePower;
+	finalBasePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096));
+	finalBasePower = attacker.isChild ? finalBasePower / (gen >= 7 ? 4 : 2) : finalBasePower;
 	
 	var excludedExceptions = ["Low Kick", "Flail", "Reversal", "Eruption", "Water Spout", "Gyro Ball", "Fling", "Grass Knot", "Crush Grip", "Heavy Slam", "Electro Ball", "Heat Crash", "Dragon Energy"];
-	if (attacker.isTerastal && move.type === attacker.type1 && basePower < 60 && !hasPriority && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && !excludedExceptions.includes(move.name)) {
-		basePower = 60; // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9425737
+	if (attacker.isTerastal && move.type === attacker.type1 && finalBasePower < 60 && !hasPriority && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && !excludedExceptions.includes(move.name)) {
+		finalBasePower = 60; // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9425737
 		description.moveBP = 60;
 	}
 
@@ -830,7 +830,7 @@ function getDamageResult(attacker, defender, move, field) {
 	////////////////////////////////
 	//////////// DAMAGE ////////////
 	////////////////////////////////
-	var baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * basePower * attack / defense) / 50 + 2);
+	var baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * finalBasePower * attack / defense) / 50 + 2);
 	if (field.format === "doubles" && (move.isSpread || (move.name === "Expanding Force" && field.terrain === "Psychic" && attackerGrounded))) {
 		baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
 		description.isSpread = true;
@@ -947,7 +947,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	var damage = [], pbDamage = [];
-	var child, childDamage, j;
+	var child, childDamage;
 	if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
 		child = JSON.parse(JSON.stringify(attacker));
 		child.rawStats = attacker.rawStats;
@@ -965,7 +965,7 @@ function getDamageResult(attacker, defender, move, field) {
 			child.stats[AT] = getModifiedStat(child.rawStats[AT], child.boosts[AT]);
 		}
 	}
-	for (var i = 0; i < 16; i++) {
+	for (let i = 0; i < 16; i++) {
 		damage[i] = Math.floor(baseDamage * (85 + i) / 100);
 		damage[i] = pokeRound(damage[i] * stabMod / 0x1000);
 		damage[i] = Math.floor(damage[i] * typeEffectiveness);
@@ -978,8 +978,25 @@ function getDamageResult(attacker, defender, move, field) {
 			description.isZeroVsDynamax = true;
 		}
 		if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
-			for (j = 0; j < 16; j++) {
+			for (let j = 0; j < 16; j++) {
 				pbDamage[16 * i + j] = damage[i] + childDamage[j];
+			}
+		}
+	}
+	if (move.name === "Triple Axel") {
+		for (let h = 1; h < move.hits; h++) {
+			finalBasePower = Math.max(1, pokeRound((basePower * (h + 1) * chainMods(bpMods)) / 4096));
+			baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * finalBasePower * attack / defense) / 50 + 2);
+			let tempDamage;
+			for (let i = 0; i < 16; i++) {
+				// simply add every ith result to damage[i]
+				tempDamage = Math.floor(baseDamage * (85 + i) / 100);
+				tempDamage = pokeRound(tempDamage * stabMod / 0x1000);
+				tempDamage = Math.floor(tempDamage * typeEffectiveness);
+				if (applyBurn) {
+					tempDamage = Math.floor(tempDamage / 2);
+				}
+				damage[i] += Math.max(1, pokeRound(tempDamage * finalMod / 0x1000) % 65536);
 			}
 		}
 	}
