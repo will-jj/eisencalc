@@ -798,12 +798,12 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	var defenderProtoQuark = checkProtoQuarkHighest(defender, field.weather, field.terrain);
-	if ((defenderProtoQuark === "Def" && move.category === "Physical") || (defenderProtoQuark === "SpD" && move.category === "Special")) {
+	if ((defenderProtoQuark === "Def" && hitsPhysical) || (defenderProtoQuark === "SpD" && !hitsPhysical)) {
 		dfMods.push(0x14CD);
 		description.defenderAbility = defAbility;
 	}
 
-	if ((field.isRuinSword && move.category === "Physical") || (field.isRuinBeads && move.category === "Special")) {
+	if ((field.isRuinSword && hitsPhysical) || (field.isRuinBeads && !hitsPhysical)) {
 		dfMods.push(0xC00);
 		description.isRuinDef = true;
 	}
