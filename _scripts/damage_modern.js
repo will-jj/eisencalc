@@ -180,7 +180,6 @@ function getDamageResult(attacker, defender, move, field) {
 	case "Tera Blast":
 		if (attacker.isTerastal) {
 			move.type = attacker.type1;
-			description.moveType = move.type;
 		}
 		break;
 
