@@ -177,8 +177,8 @@ function performCalculations() {
 			for (let n = 0; n < 4; n++) {
 				result = damageResults[n];
 				attackerMove = attacker.moves[n];
-				minDamage = result.damage[0] * attackerMove.hits;
-				maxDamage = result.damage[result.damage.length - 1] * attackerMove.hits;
+				minDamage = result.damage[0] * (attackerMove.name === "Triple Axel" ? 1 : attackerMove.hits); // Triple Axel already handles its extra hit(s) in the damage script
+				maxDamage = result.damage[result.damage.length - 1] * (attackerMove.name === "Triple Axel" ? 1 : attackerMove.hits);
 				// If any piece of the calculation is a string and not a number ie. Pokemon.level, stats will concatinate into strings, and the below will eval to 0.
 				// I want to be very sure that everything is using the correct types, so I want this behavior. Shoutouts to writing code w/o tests.
 				minPercentage = Math.floor(minDamage * 1000 / defender.maxHP) / 10;

@@ -785,8 +785,8 @@ function Pokemon(pokeInfo) {
 function getMoveDetails(moveInfo, item, species) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var defaultDetails = moves[moveName];
-	var isZMove = gen == 7 && moveInfo.find("input.move-z").prop("checked");
-	var isMax = gen == 8 && moveInfo.find("input.move-max").prop("checked");
+	var isZMove = gen == 7 && moveInfo.find("input.move-z").prop("checked") && moveName !== "Struggle";
+	var isMax = gen == 8 && moveInfo.find("input.move-max").prop("checked") && moveName !== "Struggle";
 
 	if (isMax) {
 		var exceptions_100_fight = ["Low Kick", "Reversal", "Final Gambit"];
@@ -883,6 +883,7 @@ function getMoveDetails(moveInfo, item, species) {
 			"type": moveInfo.find(".move-type").val(),
 			"category": moveInfo.find(".move-cat").val(),
 			"isCrit": moveInfo.find(".move-crit").prop("checked"),
+			"isZ": moveName === "Nature Power" && isZMove,
 			"isMax": isMax,
 			"hits": defaultDetails.maxMultiHits ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 			"usedTimes": defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1

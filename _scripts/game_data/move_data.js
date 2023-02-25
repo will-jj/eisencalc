@@ -138,7 +138,7 @@ var MOVES_RBY = {
 		"type": "Normal",
 		"category": "Physical",
 		"makesContact": true,
-		"hasRecoil": 25,
+		"hasRecoil": 1/4,
 		"acc": 100
 	},
 	"Double Team": {
@@ -157,7 +157,7 @@ var MOVES_RBY = {
 		"type": "Psychic",
 		"category": "Special",
 		"givesHealth": true,
-		"percentHealed": 0.5,
+		"percentHealed": 1/2,
 		"acc": 0x1000
 	},
 	"Drill Peck": {
@@ -345,7 +345,7 @@ var MOVES_RBY = {
 		"category": "Physical",
 		"makesContact": true,
 		"givesHealth": true,
-		"percentHealed": 0.5,
+		"percentHealed": 1/2,
 		"acc": 100
 	},
 	"Leech Seed": {
@@ -376,7 +376,7 @@ var MOVES_RBY = {
 		"type": "Grass",
 		"category": "Special",
 		"givesHealth": true,
-		"percentHealed": 0.5,
+		"percentHealed": 1/2,
 		"acc": 100
 	},
 	"Mega Kick": {
@@ -592,7 +592,7 @@ var MOVES_RBY = {
 		"bp": 50,
 		"type": "Normal",
 		"category": "Physical",
-		"hasRecoil": 50,
+		"hasRecoil": 1/2,
 		"acc": 101
 	},
 	"Stun Spore": {
@@ -604,7 +604,7 @@ var MOVES_RBY = {
 		"type": "Fighting",
 		"category": "Physical",
 		"makesContact": true,
-		"hasRecoil": 25,
+		"hasRecoil": 1/4,
 		"acc": 80
 	},
 	"Substitute": {
@@ -651,8 +651,8 @@ var MOVES_RBY = {
 		"type": "Normal",
 		"category": "Physical",
 		"makesContact": true,
-		"hasRecoil": 25,
-		"acc": 90
+		"hasRecoil": 1/4,
+		"acc": 85
 	},
 	"Thrash": {
 		"bp": 90,
@@ -901,7 +901,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"type": "Grass",
 		"category": "Special",
 		"givesHealth": true,
-		"percentHealed": 0.5,
+		"percentHealed": 1/2,
 		"acc": 100
 	},
 	"Gust": {
@@ -1249,7 +1249,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"hasSecondaryEffect": true,
 		"acc": 90
 	},
-	"Struggle": {"type": "None", "hasRecoil": 25},
+	"Struggle": {"type": "None", "hasRecoil": 1/4},
 	"Sunny Day": {
 		"bp": 0,
 		"type": "Fire"
@@ -1437,7 +1437,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"bp": 0,
 		"type": "Dragon"
 	},
-	"Double-Edge": {"hasRecoil": 33},
+	"Double-Edge": {"hasRecoil": 1/3},
 	"Endeavor": {
 		"bp": 1,
 		"type": "Normal",
@@ -1881,7 +1881,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"category": "Physical",
 		"makesContact": true,
 		"hasSecondaryEffect": true,
-		"hasRecoil": 33,
+		"hasRecoil": 1/3,
 		"acc": 100
 	},
 	"Water Pulse": {
@@ -1992,7 +1992,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"type": "Flying",
 		"category": "Physical",
 		"makesContact": true,
-		"hasRecoil": 33,
+		"hasRecoil": 1/3,
 		"acc": 100
 	},
 	"Brine": {
@@ -2138,7 +2138,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"makesContact": true,
 		"isPunch": true,
 		"givesHealth": true,
-		"percentHealed": 0.5,
+		"percentHealed": 1/2,
 		"acc": 100
 	},
 	"Earth Power": {
@@ -2183,7 +2183,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"category": "Physical",
 		"makesContact": true,
 		"hasSecondaryEffect": true,
-		"hasRecoil": 33,
+		"hasRecoil": 1/3,
 		"acc": 100
 	},
 	"Flash Cannon": {
@@ -2266,7 +2266,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"type": "Rock",
 		"category": "Physical",
 		"makesContact": true,
-		"hasRecoil": 50,
+		"hasRecoil": 1/2,
 		"acc": 80
 	},
 	"Heal Order": {
@@ -2620,7 +2620,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"type": "Grass",
 		"category": "Physical",
 		"makesContact": true,
-		"hasRecoil": 33,
+		"hasRecoil": 1/3,
 		"acc": 100
 	},
 	"Worry Seed": {
@@ -2915,7 +2915,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"type": "Normal",
 		"category": "Physical",
 		"makesContact": true,
-		"hasRecoil": 25,
+		"hasRecoil": 1/4,
 		"acc": 100
 	},
 	"Heat Crash": {
@@ -2948,7 +2948,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"category": "Physical",
 		"makesContact": true,
 		"givesHealth": true,
-		"percentHealed": 0.5,
+		"percentHealed": 1/2,
 		"acc": 100
 	},
 	"Hurricane": {
@@ -3261,7 +3261,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"type": "Electric",
 		"category": "Physical",
 		"makesContact": true,
-		"hasRecoil": 25,
+		"hasRecoil": 1/4,
 		"acc": 100
 	},
 	"Wonder Room": {
@@ -3351,7 +3351,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"category": "Special",
 		"makesContact": true,
 		"givesHealth": true,
-		"percentHealed": 0.75,
+		"percentHealed": 3/4,
 		"acc": 100
 	},
 	"Eerie Impulse": {
@@ -3478,7 +3478,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"bp": 140,
 		"type": "Fairy",
 		"category": "Special",
-		"hasRecoil": 50,
+		"hasRecoil": 1/2,
 		"acc": 100
 	},
 	"Low Sweep": {"bp": 65},
@@ -3528,7 +3528,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"type": "Flying",
 		"category": "Special",
 		"givesHealth": true,
-		"percentHealed": 0.75,
+		"percentHealed": 3/4,
 		"acc": 100
 	},
 	"Origin Pulse": {
@@ -3545,7 +3545,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"type": "Electric",
 		"category": "Special",
 		"givesHealth": true,
-		"percentHealed": 0.5,
+		"percentHealed": 1/2,
 		"acc": 100
 	},
 	"Petal Blizzard": {
@@ -5191,7 +5191,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"category": "Physical",
 		"makesContact": true,
 		"givesHealth": true,
-		"percentHealed": 0.5,
+		"percentHealed": 1/2,
 		"isSlicing": true,
 		"acc": 100
 	},
@@ -5633,7 +5633,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"type": "Water",
 		"category": "Physical",
 		"makesContact": true,
-		"hasRecoil": 33,
+		"hasRecoil": 1/3,
 		"acc": 100
 	},
 	"Wildbolt Storm": {
