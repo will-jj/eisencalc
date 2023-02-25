@@ -34,155 +34,13 @@ function calculate() {
 	damageResults = calculateAllMoves(p1, p2, field);
 	p1info.find(".sp .totalMod").text(p1.stats.sp);
 	p2info.find(".sp .totalMod").text(p2.stats.sp);
-	var result, minDamage, maxDamage, minPercent, maxPercent, percentText;
 	// Removed the auto-select highest damage since it's rarely useful for facilities (or any format?)
 	//var highestMaxPercent = -1;
 	//var bestResult = $(resultLocations[0][0].move);
 	let p1Move, p2Move;
 	for (var i = 0; i < 4; i++) {
-		result = damageResults[0][i];
-		p1Move = p1.moves[i];
-		minDamage = result.damage[0] * (p1Move.name === "Triple Axel" ? 1 : p1Move.hits); // Triple Axel already handles its extra hit(s) in the damage script
-		maxDamage = result.damage[result.damage.length - 1] * (p1Move.name === "Triple Axel" ? 1 : p1Move.hits);
-		minPercent = Math.floor(minDamage * 1000 / p2.maxHP) / 10;
-		maxPercent = Math.floor(maxDamage * 1000 / p2.maxHP) / 10;
-		result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
-		result.koChanceText = p1Move.bp === 0 ? "nice move" :
-			getKOChanceText(result.damage, p1Move, p2, field.getSide(1), p1.ability === "Bad Dreams", p1, p2.isMinimized, p1.isVictoryStar, gen, true);
-		if (p1Move.isMLG && p1.level >= p2.level) {
-			result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=iD92h-M474g'>it's a one-hit KO!</a>"; //dank memes
-		}
-		var recoveryText = "";
-		if (p1Move.givesHealth) {
-			var minHealthRecovered = "%" === "%" ? Math.floor(minDamage * p1Move.percentHealed * 1000 / p1.maxHP) /
-                10 : Math.floor(minDamage * p1Move.percentHealed * 48 / p1.maxHP);
-			var maxHealthRecovered = "%" === "%" ? Math.floor(maxDamage * p1Move.percentHealed * 1000 / p1.maxHP) /
-                10 : Math.floor(maxDamage * p1Move.percentHealed * 48 / p1.maxHP);
-			if (minHealthRecovered > 100 && "%" === "%") {
-				minHealthRecovered = Math.floor(p2.maxHP * p1Move.percentHealed * 1000 / p1.maxHP) / 10;
-				maxHealthRecovered = Math.floor(p2.maxHP * p1Move.percentHealed * 1000 / p1.maxHP) / 10;
-			} else if ("%" !== "%" && minHealthRecovered > 48) {
-				minHealthRecovered = Math.floor(p2.maxHP * p1Move.percentHealed * 48 / p1.maxHP);
-				maxHealthRecovered = Math.floor(p2.maxHP * p1Move.percentHealed * 48 / p1.maxHP);
-			}
-			recoveryText = " (recovers between " + minHealthRecovered + "%" + " and " + maxHealthRecovered + "%" + ")";
-		}
-		var recoilText = "";
-		if (typeof p1Move.hasRecoil === "number") {
-			var damageOverflow = minDamage > p2.curHP || maxDamage > p2.curHP;
-			var minRecoilDamage = "%" === "%" ? Math.floor(Math.min(minDamage, p2.curHP) * p1Move.hasRecoil * 10 / p1.maxHP) / 10 :
-				Math.floor(Math.min(minDamage, p2.curHP) * p1Move.hasRecoil * 0.48 / p1.maxHP);
-			var maxRecoilDamage = "%" === "%" ? Math.floor(Math.min(maxDamage, p2.curHP) * p1Move.hasRecoil * 10 / p1.maxHP) / 10 :
-				Math.floor(Math.min(maxDamage, p2.curHP) * p1Move.hasRecoil * 0.48 / p1.maxHP);
-			if (damageOverflow) {
-				minRecoilDamage = "%" === "%" ? Math.floor(p2.curHP * p1Move.hasRecoil * 10 / p1.maxHP) / 10 :
-					Math.floor(p2.maxHP * p1Move.hasRecoil * 0.48 / p1.maxHP);
-				maxRecoilDamage = "%" === "%" ? Math.floor(p2.curHP * p1Move.hasRecoil * 10 / p1.maxHP) / 10 :
-					Math.floor(p2.curHP * p1Move.hasRecoil * 0.48 / p1.maxHP);
-			}
-			recoilText = " (" + minRecoilDamage + " - " + maxRecoilDamage + "%" + " recoil damage)";
-		} else if (p1Move.hasRecoil === "crash") {
-			var genMultiplier = gen === 2 ? 12.5 : gen >= 3 ? 50 : 1;
-			var gen4CrashDamage = Math.floor(p2.maxHP * 0.5 / p1.maxHP * 100);
-			var minRecoilDamage = "%" === "%" ? Math.floor(Math.min(minDamage, p2.maxHP) * genMultiplier * 10 / p1.maxHP) / 10 :
-			   Math.floor(Math.min(minDamage, p2.maxHP) * genMultiplier * 0.48 / p1.maxHP);
-			var maxRecoilDamage = "%" === "%" ? Math.floor(Math.min(maxDamage, p2.maxHP) * genMultiplier * 10 / p1.maxHP) / 10 :
-				Math.floor(Math.min(maxDamage, p2.maxHP) * genMultiplier * 0.48 / p1.maxHP);
-			if (damageOverflow && gen !== 2) {
-				minRecoilDamage = "%" === "%" ? Math.floor(p2.curHP * genMultiplier * 10 / p1.maxHP) / 10 :
-					Math.floor(p2.curHP * genMultiplier * 0.48 / p1.maxHP);
-				maxRecoilDamage = "%" === "%" ? Math.floor(p2.maxHP * genMultiplier * 10 / p1.maxHP) / 10 :
-					Math.floor(Math.min(p2.maxHP, p1.maxHP) * genMultiplier * 0.48);
-			}
-			recoilText = gen === 1 ? " (1hp damage on miss)" :
-				gen === 2 ? (p2.type1 === "Ghost" || p2.type2 === "Ghost") ? " (no crash damage on Ghost types)" : " (" + minRecoilDamage + " - " + maxRecoilDamage + "%" + " crash damage on miss)" :
-					gen === 3 ? (p2.type1 === "Ghost" || p2.type2 === "Ghost") ? " (no crash damage on Ghost types)" : " (" + minRecoilDamage + " - " + maxRecoilDamage + "%" + " crash damage on miss)" :
-						gen === 4 ? (p2.type1 === "Ghost" || p2.type2 === "Ghost") ? " (" + gen4CrashDamage + "% crash damage)" : " (" + minRecoilDamage + " - " + maxRecoilDamage + "%" + " crash damage on miss)" :
-							gen > 4 ? " (50% crash damage)" :
-								"";
-		} else if (p1Move.hasRecoil === "Struggle") {
-			recoilText = " (25% struggle damage)";
-		} else if (p1Move.hasRecoil) {
-			recoilText = " (50% recoil damage)";
-		}
-		$(resultLocations[0][i].move + " + label").text(p1Move.name.replace("Hidden Power", "HP"));
-		$(resultLocations[0][i].damage).text(minPercent + " - " + maxPercent + "%" + recoveryText + recoilText);
-		/*if (maxPercent > highestMaxPercent) {
-			highestMaxPercent = maxPercent;
-			bestResult = $(resultLocations[0][i].move);
-		}*/
-
-		result = damageResults[1][i];
-		var recoveryText = "";
-		p2Move = p2.moves[i];
-		minDamage = result.damage[0] * (p2Move.name === "Triple Axel" ? 1 : p2Move.hits);
-		maxDamage = result.damage[result.damage.length - 1] * (p2Move.name === "Triple Axel" ? 1 : p2Move.hits);
-		minPercent = Math.floor(minDamage * 1000 / p1.maxHP) / 10;
-		maxPercent = Math.floor(maxDamage * 1000 / p1.maxHP) / 10;
-		result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
-		result.koChanceText = p2Move.bp === 0 ? "nice move" :
-			getKOChanceText(result.damage, p2Move, p1, field.getSide(0), p2.ability === "Bad Dreams", p2, p1.isMinimized, p2.isVictoryStar, gen, true);
-		if (p2Move.isMLG) {
-			result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=iD92h-M474g'>it's a one-hit KO!</a>";
-		}
-		if (p2Move.givesHealth) {
-			var minHealthRecovered = "%" === "%" ? Math.floor(minDamage * p2Move.percentHealed * 1000 / p2.maxHP) /
-                10 : Math.floor(minDamage * p2Move.percentHealed * 48 / p2.maxHP);
-			var maxHealthRecovered = "%" === "%" ? Math.floor(maxDamage * p2Move.percentHealed * 1000 / p2.maxHP) /
-                10 : Math.floor(maxDamage * p2Move.percentHealed * 48 / p2.maxHP);
-			if (minHealthRecovered > 100 && "%" === "%") {
-				minHealthRecovered = Math.floor(p1.maxHP * p2Move.percentHealed * 1000 / p2.maxHP) / 10;
-				maxHealthRecovered = Math.floor(p1.maxHP * p2Move.percentHealed * 1000 / p2.maxHP) / 10;
-			} else if ("%" !== "%" && minHealthRecovered > 48) {
-				minHealthRecovered = Math.floor(p1.maxHP * p2Move.percentHealed * 48 / p2.maxHP);
-				maxHealthRecovered = Math.floor(p1.maxHP * p2Move.percentHealed * 48 / p2.maxHP);
-			}
-			recoveryText = " (recovers between " + minHealthRecovered + "%" + " and " + maxHealthRecovered + "%" + ")";
-		}
-		var recoilText = "";
-		if (typeof p2Move.hasRecoil === "number") {
-			var damageOverflow = minDamage > p1.curHP || maxDamage > p1.curHP;
-			var minRecoilDamage = "%" === "%" ? Math.floor(Math.min(minDamage, p1.curHP) * p2Move.hasRecoil * 10 / p2.maxHP) / 10 :
-				Math.floor(Math.min(minDamage, p1.curHP) * p2Move.hasRecoil * 0.48 / p2.maxHP);
-			var maxRecoilDamage = "%" === "%" ? Math.floor(Math.min(maxDamage, p1.maxHP) * p2Move.hasRecoil * 10 / p2.maxHP) / 10 :
-				Math.floor(Math.min(maxDamage, p1.curHP) * p2Move.hasRecoil * 0.48 / p2.maxHP);
-			if (damageOverflow) {
-				minRecoilDamage = "%" === "%" ? Math.floor(Math.min(p1.maxHP * p2Move.hasRecoil) * 10 / p2.maxHP) / 10 :
-					Math.floor(p1.maxHP * p2Move.recoilPercentage * 0.48 / p1.maxHP);
-				maxRecoilDamage = "%" === "%" ? Math.floor(Math.min(p1.maxHP, p2Move.hasRecoil) * 10 / p2.maxHP) / 10 :
-					Math.floor(Math.min(p1.maxHP, p2Move.hasRecoil) * 0.48 / p2.maxHP);
-			}
-			recoilText = " (" + minRecoilDamage + " - " + maxRecoilDamage + "%" + " recoil damage)";
-		} else if (p2Move.hasRecoil === "crash") {
-			var genMultiplier = gen === 2 ? 12.5 : gen >= 3 ? 50 : 1;
-			var gen4CrashDamage = Math.floor(p2.maxHP * 0.5 / p1.maxHP * 100);
-			var minRecoilDamage = "%" === "%" ? Math.floor(Math.min(minDamage, p1.maxHP) * genMultiplier * 10 / p2.maxHP) / 10 :
-				Math.floor(Math.min(minDamage, p1.maxHP) * 0.48 / p2.maxHP);
-			var maxRecoilDamage = "%" === "%" ? Math.floor(Math.min(maxDamage, p1.maxHP) * genMultiplier * 10 / p2.maxHP) / 10 :
-				Math.floor(Math.min(maxDamage, p1.maxHP) * 0.48 / p2.maxHP);
-			if (damageOverflow && gen !== 2) {
-				minRecoilDamage = "%" === "%" ? Math.floor(Math.min(p1.maxHP, genMultiplier) * 10 / p2.maxHP) / 10 :
-					Math.floor(Math.min(p1.maxHP, p1.maxHP) * genMultiplier * 0.48);
-				maxRecoilDamage = "%" === "%" ? Math.floor(Math.min(p1.maxHP, genMultiplier) * 10 / p2.maxHP) / 10 :
-					Math.floor(Math.min(p1.maxHP, p2.maxHP) * genMultiplier * 0.48);
-			}
-			recoilText = gen === 1 ? " (1hp damage on miss)" :
-				gen === 2 ? (p1.type1 === "Ghost" || p1.type2 === "Ghost") ? " (no crash damage on Ghost types)" : " (" + minRecoilDamage + " - " + maxRecoilDamage + "%" + " crash damage on miss)" :
-					gen === 3 ? (p1.type1 === "Ghost" || p1.type2 === "Ghost") ? " (no crash damage on Ghost types)" : " (" + minRecoilDamage + " - " + maxRecoilDamage + "%" + " crash damage on miss)" :
-						gen === 4 ? (p1.type1 === "Ghost" || p1.type2 === "Ghost") ? " (" + gen4CrashDamage + "% crash damage)" : " (" + minRecoilDamage + " - " + maxRecoilDamage + "%" + " crash damage on miss)" :
-							gen > 4 ? " (50% crash damage)" :
-								"";
-		} else if (p2Move.hasRecoil === "Struggle") {
-			recoilText = " (25% struggle damage)";
-		} else if (p2Move.hasRecoil) {
-			recoilText = " (50% recoil damage)";
-		}
-		$(resultLocations[1][i].move + " + label").text(p2Move.name.replace("Hidden Power", "HP"));
-		$(resultLocations[1][i].damage).text(minPercent + " - " + maxPercent + "%" + recoveryText + recoilText);
-		/*if (maxPercent > highestMaxPercent) {
-			highestMaxPercent = maxPercent;
-			bestResult = $(resultLocations[1][i].move);
-		}*/
+		setDamageText(damageResults[0][i], p1, p2, p1.moves[i], field.getSide(0), resultLocations[0][i]);
+		setDamageText(damageResults[1][i], p2, p1, p2.moves[i], field.getSide(1), resultLocations[1][i]);
 	}
 	/*if ($(".locked-move").length) {
 		bestResult = $(".locked-move");
@@ -200,11 +58,111 @@ $(".result-move").change(function () {
 	updateDamageText($(this));
 });
 
+function setDamageText(result, attacker, defender, move, fieldSide, resultLocation) {
+	let minDamage = result.damage[0] * (move.name === "Triple Axel" ? 1 : move.hits);
+	let maxDamage = result.damage[result.damage.length - 1] * (move.name === "Triple Axel" ? 1 : move.hits);
+	let minPercent = Math.round(minDamage * 1000 / defender.maxHP) / 10;
+	let maxPercent = Math.round(maxDamage * 1000 / defender.maxHP) / 10;
+	result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
+	result.koChanceText = move.bp === 0 ? "nice move" :
+		getKOChanceText(result.damage, move, defender, fieldSide, attacker.ability === "Bad Dreams", attacker, defender.isMinimized, attacker.isVictoryStar, gen, true);
+	if (move.isMLG) {
+		result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=iD92h-M474g'>it's a one-hit KO!</a>";
+	}
+	setupRecoilRecoveryText(result, attacker, defender, move, minDamage, maxDamage);
+	let recoilRecovery = "";
+	// intentionally does not display both recoil and recovery text on the same line
+	if (result.recoilPercent) {
+		recoilRecovery = " (" + result.recoilPercent + "% " + result.recoilType + " damage)";
+	} else if (result.recoveryPercent) {
+		recoilRecovery = " (recovers " + result.recoveryPercent + "%)";
+	}
+	$(resultLocation.move + " + label").text(move.name.replace("Hidden Power", "HP"));
+	$(resultLocation.damage).text(minPercent + " - " + maxPercent + "%" + recoilRecovery);
+	/*if (maxPercent > highestMaxPercent) {
+		highestMaxPercent = maxPercent;
+		bestResult = $(resultLocations[1][i].move);
+	}*/
+}
+
+function setupRecoilRecoveryText(result, attacker, defender, move, minDamage, maxDamage) {
+	let minRecoilDamage, maxRecoilDamage;
+	if (typeof move.hasRecoil === "number") {
+		result.recoilType = "recoil";
+		minRecoilDamage = Math.floor(Math.min(minDamage, defender.curHP) * move.hasRecoil);
+		maxRecoilDamage = Math.floor(Math.min(maxDamage, defender.curHP) * move.hasRecoil);
+		result.recoilRange = minRecoilDamage;
+		result.recoilPercent = Math.round(minRecoilDamage * 1000 / attacker.maxHP) / 10;
+		if (minRecoilDamage != maxRecoilDamage) {
+			result.recoilRange += "-" + maxRecoilDamage;
+			result.recoilPercent += " - " + (Math.round(maxRecoilDamage * 1000 / attacker.maxHP) / 10);
+		}
+	} else if (move.hasRecoil === "crash") {
+		result.recoilType = "potential crash";
+		if (gen == 3) {
+			minRecoilDamage = Math.floor(Math.min(minDamage, defender.curHP) / 2);
+			maxRecoilDamage = Math.floor(Math.min(maxDamage, defender.curHP) / 2);
+			result.recoilRange = minRecoilDamage;
+			result.recoilPercent = Math.round(minRecoilDamage * 1000 / attacker.maxHP) / 10;
+			if (minRecoilDamage != maxRecoilDamage) {
+				result.recoilRange += "-" + maxRecoilDamage;
+				result.recoilPercent += " - " + (Math.round(maxRecoilDamage * 1000 / attacker.maxHP) / 10);
+			}
+		} else {
+			minRecoilDamage = Math.floor((gen == 4 ? defender.maxHP : attacker.maxHP) / 2);
+			result.recoilRange = minRecoilDamage;
+			result.recoilPercent = gen == 4 ? (Math.round(minRecoilDamage * 1000 / attacker.maxHP) / 10) : 50;
+		}
+	} else if (move.hasRecoil === "Struggle") {
+		result.recoilType = move.hasRecoil;
+		result.recoilRange = gen == 4 ? Math.floor(attacker.maxHP / 4) : Math.round(attacker.maxHP / 4);
+		result.recoilPercent = 25;
+	} else if (move.hasRecoil) {
+		result.recoilType = "recoil";
+		result.recoilRange = Math.ceil(attacker.maxHP / 2);
+		result.recoilPercent = 50;
+	}
+
+	let minHealthRecovered = 0;
+	let maxHealthRecovered = 0;
+	if (move.givesHealth) {
+		let healingMultiplier = move.percentHealed * (attacker.item === "Big Root" ? 1.3 : 1);
+		minHealthRecovered += Math.floor(Math.min(minDamage, defender.curHP) * healingMultiplier);
+		maxHealthRecovered += Math.floor(Math.min(maxDamage, defender.curHP) * healingMultiplier);
+		if (defender.ability === "Liquid Ooze") {
+			result.recoilType = defender.ability;
+			result.recoilRange = minHealthRecovered;
+			result.recoilPercent = Math.round(minHealthRecovered * 1000 / attacker.maxHP) / 10;
+			if (minHealthRecovered != maxHealthRecovered) {
+				result.recoilRange += "-" + maxHealthRecovered;
+				result.recoilPercent += " - " + (Math.round(maxHealthRecovered * 1000 / attacker.maxHP) / 10);
+			}
+			minHealthRecovered = 0;
+			maxHealthRecovered = 0;
+		}
+	}
+	if ((attacker.item === "Shell Bell" && !["Future Sight", "Doom Desire"].includes(move.name)) ||
+		(gen == 3 && defender.item === "Shell Bell" && attacker.item === "" && ["Thief", "Covet"].includes(move.name))) {
+		minHealthRecovered += Math.floor(Math.min(minDamage, defender.curHP) / 8);
+		maxHealthRecovered += Math.floor(Math.min(maxDamage, defender.curHP) / 8);
+	}
+	if (minHealthRecovered) {
+		result.recoveryRange = minHealthRecovered;
+		result.recoveryPercent = Math.round(minHealthRecovered * 1000 / attacker.maxHP) / 10;
+		if (minHealthRecovered != maxHealthRecovered) {
+			result.recoveryRange += "-" + maxHealthRecovered;
+			result.recoveryPercent += " - " + Math.round(maxHealthRecovered * 1000 / attacker.maxHP) / 10;
+		}
+	}
+}
+
 function updateDamageText(resultMoveObj) {
 	if (damageResults) {
 		var result = findDamageResult(resultMoveObj);
 		if (result) {
-			$("#mainResult").html(result.description + ": " + result.damageText + " -- " + result.koChanceText);
+			let recoilText = result.recoilRange ? ("; " + result.recoilType + " damage: " + result.recoilRange + " (" + result.recoilPercent + "%)") : "";
+			let recoveryText = result.recoveryRange ? ("; recovers " + result.recoveryRange + " (" + result.recoveryPercent + "%)") : "";
+			$("#mainResult").html(result.description + ": " + result.damageText + recoilText + recoveryText + " -- " + result.koChanceText);
 			if (result.parentDamage) {
 				$("#damageValues").text("(First hit: " + result.parentDamage.join(", ") +
                     "; Second hit: " + result.childDamage.join(", ") + ")");

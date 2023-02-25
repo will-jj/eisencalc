@@ -980,6 +980,7 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 	}
 	if (move.name === "Triple Axel") {
+		// normally damage get multiplied by the number of hits right before being displayed to the player. Triple Axel has an exception.
 		for (let h = 1; h < move.hits; h++) {
 			finalBasePower = Math.max(1, pokeRound((basePower * (h + 1) * chainMods(bpMods)) / 4096));
 			baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * finalBasePower * attack / defense) / 50 + 2);
