@@ -453,6 +453,10 @@ function getDamageResult(attacker, defender, move, field) {
 		basePower = move.bp;
 		description.moveBP = basePower;
 		break;
+	case "Psyblade":
+		basePower = move.bp * (field.terrain === "Electric" && defenderGrounded ? 1.5 : 1);
+		description.moveBP = basePower;
+		break;
 	default:
 		basePower = move.bp;
 	}
