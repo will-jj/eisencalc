@@ -5644,6 +5644,19 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"isWind": true,
 		"hasSecondaryEffect": true,
 		"acc": 80
+	},
+	"Psyblade": {
+		"bp": 80,
+		"type": "Psychic",
+		"category": "Physical",
+		"makesContact": true,
+		"acc": 100
+	},
+	"Hydro Steam": {
+		"bp": 80,
+		"type": "Water",
+		"category": "Special",
+		"acc": 100
 	}
 });
 
