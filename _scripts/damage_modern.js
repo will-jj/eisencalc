@@ -457,6 +457,10 @@ function getDamageResult(attacker, defender, move, field) {
 		basePower = move.bp * (field.terrain === "Electric" && defenderGrounded ? 1.5 : 1);
 		description.moveBP = basePower;
 		break;
+	case "Hydro Steam":
+		basePower = move.bp * (field.weather === "Sun" ? 1.5 : 1);
+		description.moveBP = basePower;
+		break;
 	default:
 		basePower = move.bp;
 	}
@@ -837,7 +841,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (field.weather.indexOf("Sun") > -1 && move.type === "Fire" || field.weather.indexOf("Rain") > -1 && move.type === "Water") {
 		baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
 		description.weather = field.weather;
-	} else if (field.weather === "Sun" && move.type === "Water" || field.weather === "Rain" && move.type === "Fire" ||
+	} else if (field.weather === "Sun" && (move.type === "Water" && move.name !== "Hydro Steam") || field.weather === "Rain" && move.type === "Fire" ||
                field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&
                typeChart[move.type]["Flying"] > 1) {
 		baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
