@@ -18092,7 +18092,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sp": 104
 		},
 		"ab": "Quark Drive",
-		"w": 1,
+		"w": 125,
 		"abilities": ["Quark Drive"]
 	},
 	"Walking Wake": {
@@ -18107,7 +18107,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sp": 109
 		},
 		"ab": "Protosynthesis",
-		"w": 1,
+		"w": 280,
 		"abilities": ["Protosynthesis"]
 	}
 });
