@@ -18079,6 +18079,36 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 		},
 		"w": 660.0,
 		"abilities": ["Pressure", "Telepathy"]
+	},
+	"Iron Leaves": {
+		"t1": "Grass",
+		"t2": "Psychic",
+		"bs": {
+			"hp": 90,
+			"at": 130,
+			"df": 88,
+			"sa": 70,
+			"sd": 108,
+			"sp": 104
+		},
+		"ab": "Quark Drive",
+		"w": 1,
+		"abilities": ["Quark Drive"]
+	},
+	"Walking Wake": {
+		"t1": "Water",
+		"t2": "Dragon",
+		"bs": {
+			"hp": 99,
+			"at": 83,
+			"df": 91,
+			"sa": 125,
+			"sd": 83,
+			"sp": 109
+		},
+		"ab": "Protosynthesis",
+		"w": 1,
+		"abilities": ["Protosynthesis"]
 	}
 });
 
