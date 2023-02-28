@@ -454,7 +454,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Psyblade":
-		basePower = move.bp * (field.terrain === "Electric" && defenderGrounded ? 1.5 : 1);
+		basePower = move.bp * (field.terrain === "Electric" && attackerGrounded ? 1.5 : 1);
 		description.moveBP = basePower;
 		break;
 	case "Hydro Steam":
