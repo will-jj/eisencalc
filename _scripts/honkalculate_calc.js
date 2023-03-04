@@ -436,7 +436,7 @@ function getBottomOffset(obj) {
 	return obj.offset().top + obj.outerHeight();
 }
 
-function getFinalSpeedHonk(pokemon) {
+function getFinalSpeedHonk() {
 	var speed = getModifiedStat($(".sp .total").text(), $(".sp .boost").val());
 	var item = $(".item").val();
 	var ability = $(".ability").val();
@@ -454,11 +454,11 @@ function getFinalSpeedHonk(pokemon) {
 	} else if (item === "Macho Brace" || item === "Iron Ball") {
 		speed = Math.floor(speed / 2);
 	}
-	if (ability === "Chlorophyll" && weather.indexOf("Sun") > -1 ||
-            ability === "Sand Rush" && weather === "Sand" ||
-            ability === "Swift Swim" && weather.indexOf("Rain") > -1 ||
-            ability === "Slush Rush" && weather.indexOf("Hail") > -1 ||
-            ability === "Surge Surfer" && terrain === "Electric") {
+	if (ability === "Chlorophyll" && weather.indexOf("Sun") > -1 && item !== "Utility Umbrella" ||
+		ability === "Sand Rush" && weather === "Sand" ||
+		ability === "Swift Swim" && weather.indexOf("Rain") > -1 && item !== "Utility Umbrella" ||
+		ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
+		ability === "Surge Surfer" && terrain === "Electric" && ) {
 		speed *= 2;
 	}
 	$(".totalMod").text(speed);
