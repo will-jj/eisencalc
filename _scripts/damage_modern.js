@@ -115,13 +115,15 @@ function getDamageResult(attacker, defender, move, field) {
 
 	switch (move.name) {
 	case "Weather Ball":
-		move.type = field.weather.indexOf("Sun") > -1 ? "Fire" :
-			field.weather.indexOf("Rain") > -1 ? "Water" :
-				field.weather === "Sand" ? "Rock" :
-					(field.weather === "Hail" || field.weather === "Snow") ? "Ice" :
-						"Normal";
-		description.weather = field.weather;
-		description.moveType = move.type;
+		if (attackerItem !== "Utility Umbrella") {
+			move.type = field.weather.indexOf("Sun") > -1 ? "Fire" :
+				field.weather.indexOf("Rain") > -1 ? "Water" :
+					field.weather === "Sand" ? "Rock" :
+						(field.weather === "Hail" || field.weather === "Snow") ? "Ice" :
+							"Normal";
+			description.weather = field.weather;
+			description.moveType = move.type;
+		}
 		break;
 
 	case "Terrain Pulse":
@@ -390,7 +392,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Weather Ball":
-		basePower = field.weather !== "" ? 100 : 50;
+		basePower = (field.weather !== "" && attackerItem !== "Utility Umbrella") ? 100 : 50;
 		description.moveBP = basePower;
 		break;
 	case "Terrain Pulse":
@@ -455,10 +457,6 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Psyblade":
 		basePower = move.bp * (field.terrain === "Electric" && attackerGrounded ? 1.5 : 1);
-		description.moveBP = basePower;
-		break;
-	case "Hydro Steam":
-		basePower = move.bp * (field.weather === "Sun" ? 1.5 : 1);
 		description.moveBP = basePower;
 		break;
 	default:
@@ -597,7 +595,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerItem = attackerItem;
 	}
 
-	if ((move.name === "Solar Beam" || move.name == "SolarBeam") && ["Rain", "Sand", "Hail", "Heavy Rain", "Snow"].includes(field.weather)) {
+	if ((move.name === "Solar Beam" || move.name == "SolarBeam") && ["Rain", "Sand", "Hail", "Heavy Rain", "Snow"].includes(field.weather) && attackerItem !== "Utility Umbrella") {
 		bpMods.push(0x800);
 		description.moveBP = move.bp / 2;
 		description.weather = field.weather;
@@ -730,7 +728,8 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
-	if ((field.isRuinTablets && move.category === "Physical") || (field.isRuinVessel && move.category === "Special")) {
+	if ((field.isRuinTablets && move.category === "Physical" && attacker.ability !== "Tablets of Ruin") ||
+		(field.isRuinVessel && move.category === "Special" && attacker.ability !== "Vessel of Ruin")) {
 		atMods.push(0xC00);
 		description.isRuinAtk = true;
 	}
@@ -810,7 +809,8 @@ function getDamageResult(attacker, defender, move, field) {
 		description.defenderAbility = defAbility;
 	}
 
-	if ((field.isRuinSword && hitsPhysical) || (field.isRuinBeads && !hitsPhysical)) {
+	if ((field.isRuinSword && hitsPhysical && defAbility !== "Sword of Ruin") ||
+		(field.isRuinBeads && !hitsPhysical && defAbility !== "Beads of Ruin")) {
 		dfMods.push(0xC00);
 		description.isRuinDef = true;
 	}
@@ -838,15 +838,34 @@ function getDamageResult(attacker, defender, move, field) {
 		baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
 		description.isSpread = true;
 	}
-	if (field.weather.indexOf("Sun") > -1 && move.type === "Fire" || field.weather.indexOf("Rain") > -1 && move.type === "Water") {
-		baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
+	let weatherMod = 0x1000;
+	if (move.name === "Hydro Steam" && field.weather === "Sun") {
+		// For readability, Hydro Steam is its own section https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9527435
+		if (attackerItem === "Utility Umbrella") {
+			if (defender.item === "Utility Umbrella") {
+				weatherMod = 0x1000;
+			} else {
+				weatherMod = 0x800;
+				description.attackerItem = attackerItem;
+				description.weather = field.weather;
+			}
+		} else {
+			weatherMod = 0x1800;
+			description.weather = field.weather;
+		}
+	} else if (defender.item !== "Utility Umbrella" && (
+		field.weather.indexOf("Sun") > -1 && move.type === "Fire" ||
+		field.weather.indexOf("Rain") > -1 && move.type === "Water")) {
+		weatherMod = 0x1800;
 		description.weather = field.weather;
-	} else if (field.weather === "Sun" && (move.type === "Water" && move.name !== "Hydro Steam") || field.weather === "Rain" && move.type === "Fire" ||
-               field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&
-               typeChart[move.type]["Flying"] > 1) {
-		baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
+	} else if (defender.item !== "Utility Umbrella" && (
+		field.weather === "Sun" && move.type === "Water" ||
+		field.weather === "Rain" && move.type === "Fire" ||
+		field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") && typeChart[move.type]["Flying"] > 1)) {
+		weatherMod = 0x800;
 		description.weather = field.weather;
 	}
+	baseDamage = pokeRound(baseDamage * weatherMod / 0x1000);
 	if (isCritical) {
 		baseDamage = Math.floor(baseDamage * (gen >= 6 ? 1.5 : 2));
 		description.isCritical = isCritical;
@@ -1179,11 +1198,11 @@ function getFinalSpeed(pokemon, weather, terrain) {
 		speed = Math.floor(speed / 2);
 	}
 	
-	if (pokemon.ability === "Chlorophyll" && weather.indexOf("Sun") > -1 ||
-            pokemon.ability === "Sand Rush" && weather === "Sand" ||
-            pokemon.ability === "Swift Swim" && weather.indexOf("Rain") > -1 ||
-            pokemon.ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
-            pokemon.ability === "Surge Surfer" && terrain === "Electric") {
+	if (pokemon.ability === "Chlorophyll" && weather.indexOf("Sun") > -1 && pokemon.item !== "Utility Umbrella" ||
+		pokemon.ability === "Sand Rush" && weather === "Sand" ||
+		pokemon.ability === "Swift Swim" && weather.indexOf("Rain") > -1 && pokemon.item !== "Utility Umbrella" ||
+		pokemon.ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
+		pokemon.ability === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
 	} else if (checkProtoQuarkHighest(pokemon, weather, terrain) === "Spe") {
 		speed = Math.floor(speed * 1.5);
