@@ -728,7 +728,8 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
-	if ((field.isRuinTablets && move.category === "Physical") || (field.isRuinVessel && move.category === "Special")) {
+	if ((field.isRuinTablets && move.category === "Physical" && attacker.ability !== "Tablets of Ruin") ||
+		(field.isRuinVessel && move.category === "Special" && attacker.ability !== "Vessel of Ruin")) {
 		atMods.push(0xC00);
 		description.isRuinAtk = true;
 	}
@@ -808,7 +809,8 @@ function getDamageResult(attacker, defender, move, field) {
 		description.defenderAbility = defAbility;
 	}
 
-	if ((field.isRuinSword && hitsPhysical) || (field.isRuinBeads && !hitsPhysical)) {
+	if ((field.isRuinSword && hitsPhysical && defAbility !== "Sword of Ruin") ||
+		(field.isRuinBeads && !hitsPhysical && defAbility !== "Beads of Ruin")) {
 		dfMods.push(0xC00);
 		description.isRuinDef = true;
 	}
