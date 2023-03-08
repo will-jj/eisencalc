@@ -458,7 +458,7 @@ function getFinalSpeedHonk() {
 		ability === "Sand Rush" && weather === "Sand" ||
 		ability === "Swift Swim" && weather.indexOf("Rain") > -1 && item !== "Utility Umbrella" ||
 		ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
-		ability === "Surge Surfer" && terrain === "Electric" && ) {
+		ability === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
 	}
 	$(".totalMod").text(speed);
