@@ -59,13 +59,13 @@ $(".tera").bind("keyup change", function () {
 	var pokeInfo = $(this).closest(".poke-info");
 	if ($(this).prop("checked")) {
 		pokeInfo.find(".type1").val(pokeInfo.find(".tera-type").val());
-		pokeInfo.find(".type2").val("(none)");
+		pokeInfo.find(".type2").val("");
 	}
 	else {
 		var setName = pokeInfo.find("input.set-selector").val();
 		var dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
 		pokeInfo.find(".type1").val(dexEntry.t1);
-		pokeInfo.find(".type2").val(dexEntry.t2);
+		pokeInfo.find(".type2").val(dexEntry.t2 !== undefined ? dexEntry.t2 : "");
 	}
 });
 
@@ -469,7 +469,7 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	}
 
 	pokeObj.find(".type1").val(pokemon.t1);
-	pokeObj.find(".type2").val(pokemon.t2);
+	pokeObj.find(".type2").val(pokemon.t2 !== undefined ? pokemon.t2 : "");
 	pokeObj.find(".hp .base").val(pokemon.bs.hp);
 	var i;
 	for (i = 0; i < STATS.length; i++) {
@@ -608,7 +608,7 @@ $(".forme").change(function () {
 		setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 
 	$(this).parent().siblings().find(".type1").val(altForme.t1);
-	$(this).parent().siblings().find(".type2").val(typeof altForme.t2 != "undefined" ? altForme.t2 : "");
+	$(this).parent().siblings().find(".type2").val(altForme.t2 !== undefined ? altForme.t2 : "");
 	$(this).parent().siblings().find(".weight").val(altForme.w);
 
 	for (var i = 0; i < STATS.length; i++) {
@@ -1087,9 +1087,10 @@ $(".gen").change(function () {
 	clearField();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
-	var typeOptions = getSelectOptions(Object.keys(typeChart));
-	$("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
+	let typeOptions = getSelectOptions(Object.keys(typeChart));
+	$("select.type1" + (gen == 9 ? ", select.tera-type" : "")).find("option").remove().end().append(typeOptions);
 	$("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
+	$("select.move-type").find("option").remove().end().append("<option value=\"None\">None</option>" + typeOptions);
 	var moveOptions = getSelectOptions(Object.keys(moves), true);
 	$("select.move-selector").find("option").remove().end().append(moveOptions);
 	var abilityOptions = getSelectOptions(abilities, true);

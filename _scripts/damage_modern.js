@@ -1165,7 +1165,12 @@ function chainMods(mods) {
 }
 
 function getMoveEffectiveness(move, type, isGhostRevealed, isGravity) {
-	if (isGhostRevealed && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
+	if (!move.type) {
+		console.log(move.name + " does not have a type field.");
+		return 0;
+	} else if (move.type === "None") {
+		return 1;
+	} else if (isGhostRevealed && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
 		return 1;
 	} else if (isGravity && type === "Flying" && move.type === "Ground") {
 		return 1;

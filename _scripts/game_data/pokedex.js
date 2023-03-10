@@ -15684,23 +15684,7 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SM, {
 			"sp": 97
 		},
 		"w": 3,
-		"abilities": ["Hunger Switch"],
-		"formes": ["Morpeko", "Morpeko-Hangry"]
-	},
-	"Morpeko-Hangry": {
-		"t1": "Electric",
-		"t2": "Dark",
-		"bs": {
-			"hp": 58,
-			"at": 95,
-			"df": 58,
-			"sa": 70,
-			"sd": 58,
-			"sp": 97
-		},
-		"w": 3,
-		"abilities": ["Hunger Switch"],
-		"isAlternateForme": true
+		"abilities": ["Hunger Switch"]
 	},
 	"Cufant": {
 		"t1": "Steel",

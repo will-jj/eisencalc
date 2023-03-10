@@ -5650,6 +5650,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"type": "Psychic",
 		"category": "Physical",
 		"makesContact": true,
+		"isSlicing": true,
 		"acc": 100
 	},
 	"Hydro Steam": {
