@@ -4197,6 +4197,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	},
 	"Mystical Fire": {"bp": 75, "zp": 140},
 	"Natural Gift": {"zp": 160},
+	"Nature Power": {"zp": 160},
 	"Nature's Madness": {
 		"bp": 1,
 		"type": "Fairy",
