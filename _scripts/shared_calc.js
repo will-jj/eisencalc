@@ -573,19 +573,19 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 	if (setName !== "Blank Set") {
 		var set = setdexAll[pokemonName][setName];
 
-		if (set.isGmax) defaultForme = 1;
+		if (set.forme) {
+			defaultForme = pokedex[pokemonName].formes.indexOf(set.forme);
+		}
 
+		if (set.isGmax) {
+			defaultForme = 1;
+		}
+
+		// This code needs to stay intact for old saved Mega sets that don't have the forme field
 		if (set.item) {
-		// Repurpose the previous filtering code to provide the "different default" logic
-			if (set.item.includes("ite") && !(set.item.includes("ite Y")) && !(set.item.includes("ite Herb")) ||
-				pokemonName === "Groudon" && set.item.includes("Red Orb") ||
-				pokemonName === "Kyogre" && set.item.includes("Blue Orb") ||
-				pokemonName === "Meloetta" && set.moves.includes("Relic Song") ||
-				pokemonName === "Rayquaza" && set.moves.includes("Dragon Ascent") ||
-				pokemonName === "Necrozma-Dusk Mane" && set.item.includes("Ultranecrozium Z") ||
-				pokemonName === "Necrozma-Dawn Wings" && set.item.includes("Ultranecrozium Z")) {
+			if (set.item.endsWith("ite") || set.item.endsWith("ite X")) {
 				defaultForme = 1;
-			} else if (set.item.includes("ite Y")) {
+			} else if (set.item.endsWith("ite Y")) {
 				defaultForme = 2;
 			}
 		}
@@ -1221,7 +1221,7 @@ function getSetOptions() {
 	pokeNames = Object.keys(pokedex);
 	index = pokeNames.length;
 	while (index--) {
-		if (pokedex[pokeNames[index]].isAlternateForme) {
+		if (pokedex[pokeNames[index]].hasBaseForme) {
 			pokeNames.splice(index, 1);
 		}
 	}
