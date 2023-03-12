@@ -62,8 +62,9 @@ $(".tera").bind("keyup change", function () {
 		pokeInfo.find(".type2").val("");
 	}
 	else {
-		var setName = pokeInfo.find("input.set-selector").val();
-		var dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
+		let setName = pokeInfo.find("input.set-selector").val();
+		let formeName = pokeInfo.find(".forme").val();
+		let dexEntry = pokedex[formeName ? formeName : setName.substring(0, setName.indexOf(" ("))];
 		pokeInfo.find(".type1").val(dexEntry.t1);
 		pokeInfo.find(".type2").val(dexEntry.t2 !== undefined ? dexEntry.t2 : "");
 	}
@@ -607,8 +608,10 @@ $(".forme").change(function () {
 		pokemonName = fullSetName.substring(0, fullSetName.indexOf(" (")),
 		setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 
-	$(this).parent().siblings().find(".type1").val(altForme.t1);
-	$(this).parent().siblings().find(".type2").val(altForme.t2 !== undefined ? altForme.t2 : "");
+	if (!$(this).closest(".poke-info").find(".tera").prop("checked")) {
+		$(this).parent().siblings().find(".type1").val(altForme.t1);
+		$(this).parent().siblings().find(".type2").val(altForme.t2 !== undefined ? altForme.t2 : "");
+	}
 	$(this).parent().siblings().find(".weight").val(altForme.w);
 
 	for (var i = 0; i < STATS.length; i++) {
