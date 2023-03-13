@@ -1,4 +1,25 @@
 var TYPE_CHART_RBY = {
+	"None": {
+		"category": "Physical",
+		"Normal": 1,
+		"Grass": 1,
+		"Fire": 1,
+		"Water": 1,
+		"Electric": 1,
+		"Ice": 1,
+		"Flying": 1,
+		"Bug": 1,
+		"Poison": 1,
+		"Ground": 1,
+		"Rock": 1,
+		"Fighting": 1,
+		"Psychic": 1,
+		"Ghost": 1,
+		"Dragon": 1,
+		"Dark": 1,
+		"Steel": 1,
+		"Fairy": 1
+	},
 	"Normal": {
 		"category": "Physical",
 		"Normal": 1,
@@ -453,7 +474,7 @@ var TYPE_CHART_XY = $.extend(true, {}, TYPE_CHART_GSC, {
 	}
 });
 
-/*var TYPE_CHART_INVERSE = {
+var TYPE_CHART_INVERSE = {
 	"Normal": {
 		"Normal": 1,
 		"Grass": 1,
@@ -814,4 +835,4 @@ var TYPE_CHART_XY = $.extend(true, {}, TYPE_CHART_GSC, {
 		"Steel": 2,
 		"Fairy": 1
 	}
-};*/
+};

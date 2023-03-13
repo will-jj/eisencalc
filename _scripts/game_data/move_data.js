@@ -4197,7 +4197,6 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	},
 	"Mystical Fire": {"bp": 75, "zp": 140},
 	"Natural Gift": {"zp": 160},
-	"Nature Power": {"zp": 160},
 	"Nature's Madness": {
 		"bp": 1,
 		"type": "Fairy",
@@ -5651,7 +5650,6 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"type": "Psychic",
 		"category": "Physical",
 		"makesContact": true,
-		"isSlicing": true,
 		"acc": 100
 	},
 	"Hydro Steam": {

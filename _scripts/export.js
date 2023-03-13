@@ -69,6 +69,12 @@ function exportToPsFormat(pokeInfo) {
 		if (speciesName !== "Rayquaza-Mega") {
 			pokemon.item = MEGA_STONE_LOOKUP[name];
 		}
+	} else if (name.indexOf("-Blade") != -1) {
+		var speciesName = name.substring(0, name.indexOf("-")) + name.substring(name.indexOf("-") + 6, name.length);
+	} else if (name.indexOf("-Both") != -1) {
+		var speciesName = name.substring(0, name.indexOf("-")) + name.substring(name.indexOf("-") + 5, name.length);
+	} else if (name.indexOf("Primal ") != -1) {
+		var speciesName = name.substring(0, name.indexOf("Primal") - 1) + name.substring(name.indexOf("Primal") + 6, name.length);
 	} else {
 		var speciesName = name;
 	}

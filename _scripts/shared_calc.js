@@ -59,14 +59,13 @@ $(".tera").bind("keyup change", function () {
 	var pokeInfo = $(this).closest(".poke-info");
 	if ($(this).prop("checked")) {
 		pokeInfo.find(".type1").val(pokeInfo.find(".tera-type").val());
-		pokeInfo.find(".type2").val("");
+		pokeInfo.find(".type2").val("(none)");
 	}
 	else {
-		let setName = pokeInfo.find("input.set-selector").val();
-		let formeName = pokeInfo.find(".forme").val();
-		let dexEntry = pokedex[formeName ? formeName : setName.substring(0, setName.indexOf(" ("))];
+		var setName = pokeInfo.find("input.set-selector").val();
+		var dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
 		pokeInfo.find(".type1").val(dexEntry.t1);
-		pokeInfo.find(".type2").val(dexEntry.t2 !== undefined ? dexEntry.t2 : "");
+		pokeInfo.find(".type2").val(dexEntry.t2);
 	}
 });
 
@@ -470,7 +469,7 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	}
 
 	pokeObj.find(".type1").val(pokemon.t1);
-	pokeObj.find(".type2").val(pokemon.t2 !== undefined ? pokemon.t2 : "");
+	pokeObj.find(".type2").val(pokemon.t2);
 	pokeObj.find(".hp .base").val(pokemon.bs.hp);
 	var i;
 	for (i = 0; i < STATS.length; i++) {
@@ -574,19 +573,19 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 	if (setName !== "Blank Set") {
 		var set = setdexAll[pokemonName][setName];
 
-		if (set.forme) {
-			defaultForme = pokedex[pokemonName].formes.indexOf(set.forme);
-		}
+		if (set.isGmax) defaultForme = 1;
 
-		if (set.isGmax) {
-			defaultForme = 1;
-		}
-
-		// This code needs to stay intact for old saved Mega sets that don't have the forme field
 		if (set.item) {
-			if (set.item.endsWith("ite") || set.item.endsWith("ite X")) {
+		// Repurpose the previous filtering code to provide the "different default" logic
+			if (set.item.includes("ite") && !(set.item.includes("ite Y")) && !(set.item.includes("ite Herb")) ||
+				pokemonName === "Groudon" && set.item.includes("Red Orb") ||
+				pokemonName === "Kyogre" && set.item.includes("Blue Orb") ||
+				pokemonName === "Meloetta" && set.moves.includes("Relic Song") ||
+				pokemonName === "Rayquaza" && set.moves.includes("Dragon Ascent") ||
+				pokemonName === "Necrozma-Dusk Mane" && set.item.includes("Ultranecrozium Z") ||
+				pokemonName === "Necrozma-Dawn Wings" && set.item.includes("Ultranecrozium Z")) {
 				defaultForme = 1;
-			} else if (set.item.endsWith("ite Y")) {
+			} else if (set.item.includes("ite Y")) {
 				defaultForme = 2;
 			}
 		}
@@ -608,10 +607,8 @@ $(".forme").change(function () {
 		pokemonName = fullSetName.substring(0, fullSetName.indexOf(" (")),
 		setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 
-	if (!$(this).closest(".poke-info").find(".tera").prop("checked")) {
-		$(this).parent().siblings().find(".type1").val(altForme.t1);
-		$(this).parent().siblings().find(".type2").val(altForme.t2 !== undefined ? altForme.t2 : "");
-	}
+	$(this).parent().siblings().find(".type1").val(altForme.t1);
+	$(this).parent().siblings().find(".type2").val(typeof altForme.t2 != "undefined" ? altForme.t2 : "");
 	$(this).parent().siblings().find(".weight").val(altForme.w);
 
 	for (var i = 0; i < STATS.length; i++) {
@@ -662,7 +659,7 @@ function getTerrainEffects() {
 	case "ability":
 	case "item":
 		var id = $(this).closest(".poke-info").prop("id");
-		let terrainValue = $("input:checkbox[name='terrain']:checked").val();
+		var terrainValue = $("input:checkbox[name='terrain']:checked").val();
 		if (terrainValue === "Electric") {
 			$("#" + id).find("[value='Asleep']").prop("disabled", isGroundedTerrain($("#" + id)));
 		} else if (terrainValue === "Misty") {
@@ -786,21 +783,20 @@ function Pokemon(pokeInfo) {
 }
 
 function getMoveDetails(moveInfo, item, species) {
-	let moveName = moveInfo.find("select.move-selector").val();
-	let defaultDetails = moves[moveName];
-	let isZMove = gen == 7 && moveInfo.find("input.move-z").prop("checked") && moveName !== "Struggle";
-	let isMax = gen == 8 && moveInfo.find("input.move-max").prop("checked") && moveName !== "Struggle";
+	var moveName = moveInfo.find("select.move-selector").val();
+	var defaultDetails = moves[moveName];
+	var isZMove = gen == 7 && moveInfo.find("input.move-z").prop("checked") && moveName !== "Struggle";
+	var isMax = gen == 8 && moveInfo.find("input.move-max").prop("checked") && moveName !== "Struggle";
 
 	if (isMax) {
 		var exceptions_100_fight = ["Low Kick", "Reversal", "Final Gambit"];
 		var exceptions_80_fight = ["Double Kick", "Triple Kick"];
 		var exceptions_75_fight = ["Counter", "Seismic Toss"];
 		var exceptions_140 = ["Triple Axel", "Crush Grip", "Wring Out", "Magnitude", "Double Iron Bash", "Rising Voltage"];
-		var exceptions_130 = ["Lash Out (Doubled)", "Scale Shot", "Dual Wingbeat", "Terrain Pulse", "Bolt Beak (Doubled)", "Fishious Rend (Doubled)", "Pin Missile", "Power Trip", "Punishment", "Dragon Darts", "Dual Chop", "Electro Ball", "Heat Crash",
+		var exceptions_130 = ["Scale Shot", "Dual Wingbeat", "Terrain Pulse", "Bolt Beak (Doubled)", "Fishious Rend (Doubled)", "Pin Missile", "Power Trip", "Punishment", "Dragon Darts", "Dual Chop", "Electro Ball", "Heat Crash",
 			"Bullet Seed", "Grass Knot", "Bonemerang", "Bone Rush", "Fissure", "Icicle Spear", "Sheer Cold", "Weather Ball", "Tail Slap", "Guillotine", "Horn Drill",
 			"Flail", "Return", "Frustration", "Endeavor", "Natural Gift", "Trump Card", "Stored Power", "Rock Blast", "Gear Grind", "Gyro Ball", "Heavy Slam"];
 		var exceptions_120 = ["Double Hit", "Spike Cannon"];
-		var exceptions_110 = ["Avalanche (Doubled)", "Revenge (Doubled)"];
 		var exceptions_100 = ["Twineedle", "Beat Up", "Fling", "Dragon Rage", "Nature\'s Madness", "Night Shade", "Comet Punch", "Fury Swipes", "Sonic Boom", "Bide",
 			"Super Fang", "Present", "Spit Up", "Psywave", "Mirror Coat", "Metal Burst"];
 
@@ -823,7 +819,6 @@ function getMoveDetails(moveInfo, item, species) {
 			if (exceptions_140.includes(moveName)) tempBP = 140;
 			else if (exceptions_130.includes(moveName)) tempBP = 130;
 			else if (exceptions_120.includes(moveName)) tempBP = 120;
-			else if (exceptions_110.includes(moveName)) tempBP = 110;
 			else if (exceptions_100.includes(moveName)) tempBP = 100;
 			else if (defaultDetails.bp >= 150) tempBP = 150;
 			else if (defaultDetails.bp >= 110) tempBP = 140;
@@ -873,17 +868,10 @@ function getMoveDetails(moveInfo, item, species) {
 
 	// If z-move is checked but there isn't a corresponding z-move, use the original move
 	if (isZMove && "zp" in defaultDetails) {
-		if (moveName === "Nature Power") {
-			let terrainValue = $("input:radio[name='terrain']:checked").val();
-			var zMoveName = ZMOVES_TYPING[terrainValue === "Electric" ? "Electric" : terrainValue === "Grassy" ? "Grass" : terrainValue === "Misty" ? "Fairy" : terrainValue === "Psychic" ? "Psychic" : defaultDetails.type];
-			var zp = terrainValue ? 175 : defaultDetails.zp;
-		} else {
-			var zMoveName = getZMoveName(moveName, defaultDetails.type, item);
-			var zp = moves[zMoveName].bp === 1 ? defaultDetails.zp : moves[zMoveName].bp;
-		}
+		var zMoveName = getZMoveName(moveName, defaultDetails.type, item);
 		return $.extend({}, moves[zMoveName], {
 			"name": zMoveName,
-			"bp": zp,
+			"bp": moves[zMoveName].bp === 1 ? defaultDetails.zp : moves[zMoveName].bp,
 			"category": defaultDetails.category,
 			"isCrit": moveInfo.find(".move-crit").prop("checked"),
 			"hits": 1
@@ -895,6 +883,7 @@ function getMoveDetails(moveInfo, item, species) {
 			"type": moveInfo.find(".move-type").val(),
 			"category": moveInfo.find(".move-cat").val(),
 			"isCrit": moveInfo.find(".move-crit").prop("checked"),
+			"isZ": moveName === "Nature Power" && isZMove,
 			"isMax": isMax,
 			"hits": defaultDetails.maxMultiHits ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 			"usedTimes": defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1
@@ -903,45 +892,25 @@ function getMoveDetails(moveInfo, item, species) {
 }
 
 function getZMoveName(moveName, moveType, item) {
-	if (moveName.includes("Hidden Power")) { // Hidden Power will become Breakneck Blitz
-		return  "Breakneck Blitz";
-	} else if (moveName === "Clanging Scales" && item === "Kommonium Z") {
-		return "Clangorous Soulblaze";
-	} else if (moveName === "Darkest Lariat" && item === "Incinium Z") {
-		return "Malicious Moonsault";
-	} else if (moveName === "Giga Impact" && item === "Snorlium Z") {
-		return "Pulverizing Pancake";
-	} else if (moveName === "Moongeist Beam" && item === "Lunalium Z") {
-		return "Menacing Moonraze Maelstrom";
-	} else if (moveName === "Photon Geyser" && item === "Ultranecrozium Z") {
-		return "Light That Burns the Sky";
-	} else if (moveName === "Play Rough" && item === "Mimikium Z") {
-		return "Let\'s Snuggle Forever";
-	} else if (moveName === "Psychic" && item === "Mewnium Z") {
-		return "Genesis Supernova";
-	} else if (moveName === "Sparkling Aria" && item === "Primarium Z") {
-		return "Oceanic Operetta";
-	} else if (moveName === "Spectral Thief" && item === "Marshadium Z") {
-		return "Soul-Stealing 7-Star Strike";
-	} else if (moveName === "Spirit Shackle" && item === "Decidium Z") {
-		return "Sinister Arrow Raid";
-	} else if (moveName === "Stone Edge" && item === "Lycanium Z") {
-		return "Splintered Stormshards";
-	} else if (moveName === "Sunsteel Strike" && item === "Solganium Z") {
-		return "Searing Sunraze Smash";
-	} else if (moveName === "Thunderbolt" && item === "Aloraichium Z") {
-		return "Stoked Sparksurfer";
-	} else if (moveName === "Thunderbolt" && item === "Pikashunium Z") {
-		return "10,000,000 Volt Thunderbolt";
-	} else if (moveName === "Volt Tackle" && item === "Pikanium Z") {
-		return "Catastropika";
-	} else if (moveName === "Nature\'s Madness" && item === "Tapunium Z") {
-		return "Guardian of Alola";
-	} else if (moveName === "Spectral Thief" && item === "Marshadium Z") {
-		return "Soul-Stealing 7-Star Strike";
-	} else {
-		return ZMOVES_TYPING[moveType];
-	}
+	return moveName.includes("Hidden Power") ? "Breakneck Blitz" : // Hidden Power will become Breakneck Blitz
+		moveName === "Clanging Scales" && item === "Kommonium Z" ? "Clangorous Soulblaze" :
+			moveName === "Darkest Lariat" && item === "Incinium Z" ? "Malicious Moonsault" :
+				moveName === "Giga Impact" && item === "Snorlium Z" ? "Pulverizing Pancake" :
+					moveName === "Moongeist Beam" && item === "Lunalium Z" ? "Menacing Moonraze Maelstrom" :
+						moveName === "Photon Geyser" && item === "Ultranecrozium Z" ? "Light That Burns the Sky" :
+							moveName === "Play Rough" && item === "Mimikium Z" ? "Let\'s Snuggle Forever" :
+								moveName === "Psychic" && item === "Mewnium Z" ? "Genesis Supernova" :
+									moveName === "Sparkling Aria" && item === "Primarium Z" ? "Oceanic Operetta" :
+										moveName === "Spectral Thief" && item === "Marshadium Z" ? "Soul-Stealing 7-Star Strike" :
+											moveName === "Spirit Shackle" && item === "Decidium Z" ? "Sinister Arrow Raid" :
+												moveName === "Stone Edge" && item === "Lycanium Z" ? "Splintered Stormshards" :
+													moveName === "Sunsteel Strike" && item === "Solganium Z" ? "Searing Sunraze Smash" :
+														moveName === "Thunderbolt" && item === "Aloraichium Z" ? "Stoked Sparksurfer" :
+															moveName === "Thunderbolt" && item === "Pikashunium Z" ? "10,000,000 Volt Thunderbolt" :
+																moveName === "Volt Tackle" && item === "Pikanium Z" ? "Catastropika" :
+																	moveName === "Nature\'s Madness" && item === "Tapunium Z" ? "Guardian of Alola" :
+																		moveName === "Spectral Thief" && item === "Marshadium Z" ? "Soul-Stealing 7-Star Strike" :
+																			ZMOVES_TYPING[moveType];
 }
 
 function Field() {
@@ -951,7 +920,7 @@ function Field() {
 	var isProtect = [$("#protectL").prop("checked"), $("#protectR").prop("checked")];
 	var weather = $("input:radio[name='weather']:checked").val();
 	var spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
-	var terrain = $("input:radio[name='terrain']:checked").val();
+	var terrain = $("input:radio[name='terrain']:checked").val() ? $("input:radio[name='terrain']:checked").val() : "";
 	var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
 	var isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
 	var isSeeded = [$("#leechSeedL").prop("checked"), $("#leechSeedR").prop("checked")];
@@ -1118,10 +1087,9 @@ $(".gen").change(function () {
 	clearField();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
-	let typeOptions = getSelectOptions(Object.keys(typeChart));
-	$("select.type1" + (gen == 9 ? ", select.tera-type" : "")).find("option").remove().end().append(typeOptions);
+	var typeOptions = getSelectOptions(Object.keys(typeChart));
+	$("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
 	$("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
-	$("select.move-type").find("option").remove().end().append("<option value=\"None\">None</option>" + typeOptions);
 	var moveOptions = getSelectOptions(Object.keys(moves), true);
 	$("select.move-selector").find("option").remove().end().append(moveOptions);
 	var abilityOptions = getSelectOptions(abilities, true);
@@ -1224,7 +1192,7 @@ function getSetOptions() {
 	pokeNames = Object.keys(pokedex);
 	index = pokeNames.length;
 	while (index--) {
-		if (pokedex[pokeNames[index]].hasBaseForme) {
+		if (pokedex[pokeNames[index]].isAlternateForme) {
 			pokeNames.splice(index, 1);
 		}
 	}
