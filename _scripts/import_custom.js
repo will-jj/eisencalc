@@ -1,17 +1,20 @@
 var SETDEX_CUSTOM = {};
-var showdownFormes = [["Kyurem-White", "Kyurem-W"],
-	["Kyurem-Black", "Kyurem-B"],
-	["Giratina-Origin", "Giratina-O"],
-	["Landorus-Therian", "Landorus-T"],
-	["Thundurus-Therian", "Thundurus-T"],
-	["Tornadus-Therian", "Tornadus-T"],
-	["Floette-Eternal", "Floette-E"],
-	["Wormadam-Sandy", "Wormadam-G"],
-	["Wormadam-Trash", "Wormadam-S"],
-	["Groudon-Primal", "Groudon"],
-	["Kyogre-Primal", "Kyogre"],
-	["Necrozma-Dusk-Mane", "Necrozma-Dusk Mane"],
-	["Necrozma-Dawn-Wings", "Necrozma-Dawn Wings"]];
+var showdownFormes = {
+	"Kyurem-White": "Kyurem-W",
+	"Kyurem-Black": "Kyurem-B",
+	"Giratina-Origin": "Giratina-O",
+	"Landorus-Therian": "Landorus-T",
+	"Thundurus-Therian": "Thundurus-T",
+	"Tornadus-Therian": "Tornadus-T",
+	"Floette-Eternal": "Floette-E",
+	"Wormadam-Sandy": "Wormadam-G",
+	"Wormadam-Trash": "Wormadam-S",
+	"Groudon-Primal": "Primal Groudon",
+	"Kyogre-Primal": "Primal Kyogre",
+	"Necrozma-Dusk-Mane": "Necrozma-Dusk Mane",
+	"Necrozma-Dawn-Wings": "Necrozma-Dawn Wings",
+	"Necrozma-Ultra": "Ultra Necrozma"
+};
 if (localStorage.getItem("custom") != null) {
 	var SETDEX_CUSTOM = JSON.parse(localStorage.getItem("custom"));
 }
@@ -112,6 +115,7 @@ var savecustom = function () {
 		}
 		var lines = finalArr[x];
 		var species = "";
+		var forme = "";
 		var item = "";
 		var ability = "";
 		var teraType = "";
@@ -147,11 +151,11 @@ var savecustom = function () {
 			firstParenth = lines[0].lastIndexOf("(");
 			lastParenth = lines[0].lastIndexOf(")");
 			species = lines[0].substring(firstParenth + 1, lastParenth).trim();
-		} else
+		} else {
 			species = lines[0].split("@")[0].trim(); //species is always first
-		for (var i = 0; i < showdownFormes.length; ++i) {
-			if (species == showdownFormes[i][0])
-				species = showdownFormes[i][1];
+		}
+		if (showdownFormes[species]) {
+			species = showdownFormes[species];
 		}
 
 		if (species.indexOf("-Mega") !== -1) {
@@ -168,6 +172,18 @@ var savecustom = function () {
 		if (species.includes("-Gmax")) {
 			species = species.substring(0, species.length - 5);
 			isGmax = true;
+		}
+
+		let dexEntry = pokedex[species];
+		if (!dexEntry) {
+			alert("Error: could not parse " + species + " as a valid species in the current Pokedex.");
+			alert('Set not saved: "' + species + '"');
+			return;
+		}
+		let baseForme = dexEntry.hasBaseForme;
+		if (baseForme) {
+			forme = species;
+			species = baseForme;
 		}
 
 		if (lines[0].indexOf("@") != -1)
@@ -271,17 +287,21 @@ var savecustom = function () {
 		    }
 		  }
 		  */
-		var rejectSet = false;
-		if (ability === "Parental Bond" && moves.indexOf("Power-Up Punch") > -1 && moves.indexOf("Power-Up Punch") < 3) {
+		let rejectSet = false;
+		if (!pokedex[species]) {
 			rejectSet = true;
-		}
-		if (species.indexOf("Kangaskhan") != -1 && moves.indexOf("Power-Up Punch") > -1 && moves.indexOf("Power-Up Punch") < 3) {
+			alert("Error: something unexpected happened when parsing " + species + " as a species. Please contact Silver or Eisen.");
+		} else if (pokedex[species].hasBaseForme) {
 			rejectSet = true;
+			alert("Error: recognized " + species + " as an alternate forme, but did not parse it properly. Please contact Silver or Eisen.");
+		} else if ((ability === "Parental Bond" || species.includes("Kangaskhan")) && moves.indexOf("Power-Up Punch") > -1 && moves.indexOf("Power-Up Punch") < 3) {
+			rejectSet = true;
+			alert("Please ensure that Power-up Punch is in the 4th moveslot, otherwise you may experience some errors in calcs!");
 		}
-		if (rejectSet) alert("Please ensure that Power-up Punch is in the 4th moveslot, otherwise you may experience some errors in calcs!");
 
 		customFormat = {
 			"level": level,
+			"forme": forme,
 			"evs": {
 				"hp": EVs[0],
 				"at": EVs[1],
@@ -306,19 +326,20 @@ var savecustom = function () {
 			"teraType": teraType
 		};
 		if (rejectSet) {
-			alert("Set not saved: " + species);
-		} else {
-			if (SETDEX_CUSTOM[species] == null) {
-				SETDEX_CUSTOM[species] = {};
-			}
-			SETDEX_CUSTOM[species][spreadName] = customFormat;
-			localStorage.setItem("custom", JSON.stringify(SETDEX_CUSTOM));
-			if (setdexAll[species] == null) {
-				setdexAll[species] = {};
-			}
-			setdexAll[species][spreadName] = customFormat;
-			alert("Set saved: " + species);
+			alert('Set not saved: "' + species + '"');
+			return;
 		}
+
+		if (SETDEX_CUSTOM[species] == null) {
+			SETDEX_CUSTOM[species] = {};
+		}
+		SETDEX_CUSTOM[species][spreadName] = customFormat;
+		localStorage.setItem("custom", JSON.stringify(SETDEX_CUSTOM));
+		if (setdexAll[species] == null) {
+			setdexAll[species] = {};
+		}
+		setdexAll[species][spreadName] = customFormat;
+		alert("Set saved: " + (forme ? forme : species));
 	}
 	// due to updating the dexes, refreshing shouldn't be necessary
 	//alert("Please refresh your page to get your custom sets to show up!");

@@ -108,7 +108,7 @@ function getDamageResultADV(attacker, defender, move, field) {
 		basePower = move.bp;
 	}
 
-	var isPhysical = typeChart[move.type].category === "Physical";
+	var isPhysical = move.type === "None" || typeChart[move.type].category === "Physical";
 	var attackStat = isPhysical ? AT : SA;
 	description.attackEVs = attacker.evs[attackStat] +
             (NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +

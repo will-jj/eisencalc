@@ -417,15 +417,8 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Nature Power":
-		if (move.isZ) {
-			move.zp = field.terrain === "Electric" || field.terrain === "Grassy" || field.terrain === "Psychic" || field.terrain === "Misty" ? 175 : 160;
-			description.moveType = ZMOVES_TYPING[move.type];
-			basePower = move.zp;
-			description.moveBP = basePower;
-		} else {
-			basePower = field.terrain === "Electric" || field.terrain === "Grassy" || field.terrain === "Psychic" ? 90 : field.terrain === "Misty" ? 95 : 80;
-			description.moveBP = basePower;
-		}
+		basePower = field.terrain === "Electric" || field.terrain === "Grassy" || field.terrain === "Psychic" ? 90 : field.terrain === "Misty" ? 95 : move.bp;
+		description.moveBP = basePower;
 		break;
 	case "Water Shuriken":
 		basePower = (attacker.name === "Ash-Greninja" && attacker.ability === "Battle Bond") ? 20 : 15;
@@ -465,7 +458,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	if (["Breakneck Blitz", "Bloom Doom", "Inferno Overdrive", "Hydro Vortex", "Gigavolt Havoc", "Subzero Slammer", "Supersonic Skystrike",
 		"Savage Spin-Out", "Acid Downpour", "Tectonic Rage", "Continental Crush", "All-Out Pummeling", "Shattered Psyche", "Never-Ending Nightmare",
-		"Devastating Drake", "Black Hole Eclipse", "Corkscrew Crash", "Twinkle Tackle"].indexOf(move.name) !== -1) {
+		"Devastating Drake", "Black Hole Eclipse", "Corkscrew Crash", "Twinkle Tackle"].includes(move.name)) {
 		// show z-move power in description
 		description.moveBP = move.bp;
 	}
@@ -1165,7 +1158,12 @@ function chainMods(mods) {
 }
 
 function getMoveEffectiveness(move, type, isGhostRevealed, isGravity) {
-	if (isGhostRevealed && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
+	if (!move.type) {
+		console.log(move.name + " does not have a type field.");
+		return 0;
+	} else if (move.type === "None") {
+		return 1;
+	} else if (isGhostRevealed && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
 		return 1;
 	} else if (isGravity && type === "Flying" && move.type === "Ground") {
 		return 1;

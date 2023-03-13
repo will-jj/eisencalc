@@ -281,20 +281,12 @@ function adjustTierBorderRadius() {
 	var roundedRightCorner = {"border-top-right-radius": "8px", "border-bottom-right-radius": "8px"};
 	var squaredLeftCorner = {"border-top-left-radius": 0, "border-bottom-left-radius": 0};
 	var roundedLeftCorner = {"border-top-left-radius": "8px", "border-bottom-left-radius": "8px"};
-	if (gen == 3) {
-		$("#All").next("label").css(squaredRightCorner);
-		$("#threshold").next("label").css(roundedRightCorner);
-	}
-	else if (gen == 4) {
+	if (gen == 4) {
 		$("#All").next("label").css(squaredRightCorner);
 		$("#threshold").next("label").css(squaredRightCorner);
 		$("#HallR10").next("label").css(roundedRightCorner);
 	}
-	else if (gen == 5) {
-		$("#All").next("label").css(squaredRightCorner);
-		$("#threshold").next("label").css(roundedRightCorner);
-	}
-	else if (gen == 6 || gen == 7) {
+	else if (gen == 3 || gen == 5 || gen == 6 || gen == 7) {
 		$("#All").next("label").css(squaredRightCorner);
 		$("#threshold").next("label").css(roundedRightCorner);
 	}
