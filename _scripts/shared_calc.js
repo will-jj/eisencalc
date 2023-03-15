@@ -488,10 +488,9 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	$(".status").change();
 	pokeObj.find(".max-level").val(10);
 	pokeObj.find(".max").prop("checked", false);
-	pokeObj.find(".max").change();
 	pokeObj.find(".tera-type").val(pokemon.t1);
 	pokeObj.find(".tera").prop("checked", false);
-	pokeObj.find(".tera").change();
+	//.change() for max and tera is below
 	var moveObj;
 	var abilityObj = pokeObj.find(".ability");
 	var abilityList = pokemon.abilities;
@@ -516,6 +515,11 @@ $(".set-selector").bind("change click keyup keydown", function () {
 			setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
 			moveObj.change();
 		}
+		if (set.startDmax) {
+			pokeObj.find(".max").prop("checked", true);
+		} else if (set.startTera) {
+			pokeObj.find(".tera").prop("checked", true);
+		}
 	} else {
 		// Blank set
 		pokeObj.find(".level").val(localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50);
@@ -535,6 +539,8 @@ $(".set-selector").bind("change click keyup keydown", function () {
 			moveObj.change();
 		}
 	}
+	pokeObj.find(".max").change();
+	pokeObj.find(".tera").change();
 	var formeObj = $(this).siblings().find(".forme").parent();
 	itemObj.prop("disabled", false);
 	if (pokemon.formes) {
@@ -1044,8 +1050,7 @@ $(".gen").change(function () {
 		items = ITEMS_ADV;
 		abilities = ABILITIES_ADV;
 		calculateAllMoves = CALCULATE_ALL_MOVES_ADV;
-		var ivOptions = getSelectOptions(IVS_GEN3);
-		$("#autoivs-select").find("option").remove().end().append(ivOptions);
+		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_GEN3));
 		break;
 	case 4:
 		pokedex = POKEDEX_DPP;
@@ -1064,8 +1069,7 @@ $(".gen").change(function () {
 		items = ITEMS_BW;
 		abilities = ABILITIES_BW;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		var ivOptions = getSelectOptions(IVS_OTHER);
-		$("#autoivs-select").find("option").remove().end().append(ivOptions);
+		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
 		break;
 	case 6:
 		pokedex = POKEDEX_XY;
@@ -1075,8 +1079,7 @@ $(".gen").change(function () {
 		items = ITEMS_XY;
 		abilities = ABILITIES_XY;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		var ivOptions = getSelectOptions(IVS_OTHER);
-		$("#autoivs-select").find("option").remove().end().append(ivOptions);
+		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
 		break;
 	case 7:
 		pokedex = POKEDEX_SM;
@@ -1086,8 +1089,7 @@ $(".gen").change(function () {
 		items = ITEMS_SM;
 		abilities = ABILITIES_SM;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		var ivOptions = getSelectOptions(IVS_OTHER);
-		$("#autoivs-select").find("option").remove().end().append(ivOptions);
+		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
 		break;
 	case 8:
 		pokedex = POKEDEX_SS;
@@ -1097,6 +1099,8 @@ $(".gen").change(function () {
 		items = ITEMS_SS;
 		abilities = ABILITIES_SS;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
+		$("#startGimmick-label").text("Start Dynamaxed");
+		$("#startGimmick-label").prop("title", "This custom set starts Dynamaxed when loaded");
 		break;
 	case 80:
 		pokedex = POKEDEX_BDSP;
@@ -1115,6 +1119,8 @@ $(".gen").change(function () {
 		items = ITEMS_SV;
 		abilities = ABILITIES_SV;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
+		$("#startGimmick-label").text("Start Terastallized");
+		$("#startGimmick-label").prop("title", "This custom set starts Terastallized when loaded");
 	}
 	localStorage.setItem("selectedGen", gen);
 	$("#autolevel-title").text((gen == 4 ? "AI " : "") + "Auto-Level to:");
@@ -1221,6 +1227,8 @@ function clearField() {
 	$("#ruinSwordR").prop("checked", false);
 	$("#ruinBeadsL").prop("checked", false);
 	$("#ruinBeadsR").prop("checked", false);
+
+	$("#startGimmick").prop("checked", false);
 }
 
 function getSetOptions() {

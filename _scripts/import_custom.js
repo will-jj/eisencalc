@@ -323,7 +323,9 @@ var savecustom = function () {
 			"item": item,
 			"moves": moves,
 			"isGmax": isGmax,
-			"teraType": teraType
+			"teraType": teraType,
+			"startDmax": gen == 8 && $("#startGimmick").prop("checked"),
+			"startTera": gen == 9 && $("#startGimmick").prop("checked")
 		};
 		if (rejectSet) {
 			alert('Set not saved: "' + species + '"');
