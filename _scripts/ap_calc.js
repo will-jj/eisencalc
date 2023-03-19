@@ -88,9 +88,11 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 function setupRecoilRecoveryText(result, attacker, defender, move, minDamage, maxDamage) {
 	let minRecoilDamage, maxRecoilDamage;
 	if (typeof move.hasRecoil === "number") {
+		// percentage-based recoil and healing use normal rounding for their final value.
 		result.recoilType = "recoil";
-		minRecoilDamage = Math.floor(Math.min(minDamage, defender.curHP) * move.hasRecoil);
-		maxRecoilDamage = Math.floor(Math.min(maxDamage, defender.curHP) * move.hasRecoil);
+		// Parental Bond adds the damage values into a total and then applies the recoil value, so this is fine
+		minRecoilDamage = Math.round(Math.min(minDamage, defender.curHP) * move.hasRecoil);
+		maxRecoilDamage = Math.round(Math.min(maxDamage, defender.curHP) * move.hasRecoil);
 		result.recoilRange = minRecoilDamage;
 		result.recoilPercent = Math.round(minRecoilDamage * 1000 / attacker.maxHP) / 10;
 		if (minRecoilDamage != maxRecoilDamage) {
@@ -125,10 +127,60 @@ function setupRecoilRecoveryText(result, attacker, defender, move, minDamage, ma
 
 	let minHealthRecovered = 0;
 	let maxHealthRecovered = 0;
-	if (move.givesHealth) {
+	if (move.percentHealed) {
 		let healingMultiplier = move.percentHealed * (attacker.item === "Big Root" ? 1.3 : 1);
-		minHealthRecovered += Math.floor(Math.min(minDamage, defender.curHP) * healingMultiplier);
-		maxHealthRecovered += Math.floor(Math.min(maxDamage, defender.curHP) * healingMultiplier);
+		if (result.childDamage) {
+			// unnecessarily messy solution just to account for Parental Bond healing after each hit
+			let minParentDamage = result.parentDamage[0];
+			let maxParentDamage = result.parentDamage[result.parentDamage.length - 1];
+			let minChildDamage = result.childDamage[0];
+			let maxChildDamage = result.childDamage[result.childDamage.length - 1];
+			// get min recovery
+			if (maxParentDamage >= defender.curHP) {
+				// edge case where the parent hit can fully KO the defender
+				minHealthRecovered = Math.round(defender.curHP * healingMultiplier);
+			} else {
+				minHealthRecovered = Math.round(minParentDamage * healingMultiplier) + Math.round(Math.min(minChildDamage, defender.curHP - minParentDamage) * healingMultiplier);
+			}
+			// get max recovery
+			if (defender.curHP % 2 == 1) {
+				maxHealthRecovered = Math.round(Math.min(maxParentDamage, defender.curHP) * healingMultiplier);
+				if (maxParentDamage < defender.curHP) {
+					maxHealthRecovered = Math.round(Math.min(maxChildDamage, defender.curHP - maxParentDamage) * healingMultiplier);
+				}
+			} else if (maxParentDamage >= defender.curHP) {
+				maxHealthRecovered = Math.round(defender.curHP * healingMultiplier);
+				for (let i = result.parentDamage.length - 1; i >= 0; i--) {
+					if (result.parentDamage[i] == defender.curHP - 1) {
+						maxHealthRecovered++;
+						break;
+					}
+				}
+			} else {
+				// edge case where hitting optimal damage rolls to KO an even-HP defender maximizes recovery due to recovery values using normal rounding
+				let i = result.parentDamage.length - 1;
+				let highestOddParent = result.parentDamage[i];
+				for (i--; highestOddParent % 2 == 0 && i >= 0; i--) {
+					highestOddParent = result.parentDamage[i];
+				}
+				i = result.childDamage.length - 1;
+				let highestOddChild = result.childDamage[i];
+				for (i--; highestOddChild % 2 == 0 && i >= 0; i--) {
+					highestOddChild = result.childDamage[i];
+				}
+
+				if (highestOddParent + highestOddChild >= defender.curHP) {
+					maxHealthRecovered = Math.round(defender.curHP * healingMultiplier) + 1;
+				} else {
+					maxHealthRecovered = Math.round(Math.min(maxParentDamage, defender.curHP) * healingMultiplier) +
+					Math.round(Math.min(maxChildDamage, defender.curHP - maxParentDamage) * healingMultiplier);
+				}
+			}
+		} else {
+			minHealthRecovered = Math.round(Math.min(minDamage, defender.curHP) * healingMultiplier);
+			maxHealthRecovered = Math.round(Math.min(maxDamage, defender.curHP) * healingMultiplier);
+		}
+
 		if (defender.ability === "Liquid Ooze") {
 			result.recoilType = defender.ability;
 			result.recoilRange = minHealthRecovered;

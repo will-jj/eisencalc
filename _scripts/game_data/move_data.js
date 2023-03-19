@@ -156,7 +156,6 @@ var MOVES_RBY = {
 		"bp": 100,
 		"type": "Psychic",
 		"category": "Special",
-		"givesHealth": true,
 		"percentHealed": 1/2,
 		"acc": 0x1000
 	},
@@ -344,7 +343,6 @@ var MOVES_RBY = {
 		"type": "Bug",
 		"category": "Physical",
 		"makesContact": true,
-		"givesHealth": true,
 		"percentHealed": 1/2,
 		"acc": 100
 	},
@@ -375,7 +373,6 @@ var MOVES_RBY = {
 		"bp": 40,
 		"type": "Grass",
 		"category": "Special",
-		"givesHealth": true,
 		"percentHealed": 1/2,
 		"acc": 100
 	},
@@ -900,7 +897,6 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 60,
 		"type": "Grass",
 		"category": "Special",
-		"givesHealth": true,
 		"percentHealed": 1/2,
 		"acc": 100
 	},
@@ -2137,7 +2133,6 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"category": "Physical",
 		"makesContact": true,
 		"isPunch": true,
-		"givesHealth": true,
 		"percentHealed": 1/2,
 		"acc": 100
 	},
@@ -2947,7 +2942,6 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"type": "Grass",
 		"category": "Physical",
 		"makesContact": true,
-		"givesHealth": true,
 		"percentHealed": 1/2,
 		"acc": 100
 	},
@@ -3350,7 +3344,6 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"type": "Fairy",
 		"category": "Special",
 		"makesContact": true,
-		"givesHealth": true,
 		"percentHealed": 3/4,
 		"acc": 100
 	},
@@ -3527,7 +3520,6 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"bp": 80,
 		"type": "Flying",
 		"category": "Special",
-		"givesHealth": true,
 		"percentHealed": 3/4,
 		"acc": 100
 	},
@@ -3544,7 +3536,6 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"bp": 50,
 		"type": "Electric",
 		"category": "Special",
-		"givesHealth": true,
 		"percentHealed": 1/2,
 		"acc": 100
 	},
@@ -5191,7 +5182,6 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"type": "Fire",
 		"category": "Physical",
 		"makesContact": true,
-		"givesHealth": true,
 		"percentHealed": 1/2,
 		"isSlicing": true,
 		"acc": 100

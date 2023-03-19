@@ -515,9 +515,9 @@ $(".set-selector").bind("change click keyup keydown", function () {
 			setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
 			moveObj.change();
 		}
-		if (set.startDmax) {
+		if (set.startDmax && gen == 8) {
 			pokeObj.find(".max").prop("checked", true);
-		} else if (set.startTera) {
+		} else if (set.startTera && gen == 9) {
 			pokeObj.find(".tera").prop("checked", true);
 		}
 	} else {

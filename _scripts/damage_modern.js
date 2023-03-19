@@ -225,33 +225,11 @@ function getDamageResult(attacker, defender, move, field) {
 		(move.name === "Grassy Glide" && field.terrain === "Grassy" && attackerGrounded)) {
 		hasPriority = true;
 	}
-	var attackerWeight = attacker.weight;
-	var defenderWeight = defender.weight;
-	if (attacker.ability === "Heavy Metal") {
-		attackerWeight *= 2;
-	} else if (attacker.ability === "Light Metal") {
-		attackerWeight = Math.floor(attackerWeight * 5) / 10; // weight values are truncated to the tenth's place (increments of 0.1)
-	}
-	if (attackerItem === "Float Stone") {
-		attackerWeight = Math.floor(attackerWeight * 5) / 10;
-	}
-	if (attackerWeight < 0.1) {
-		attackerWeight = 0.1;
-	}
-	if (defender.ability === "Heavy Metal") {
-		defenderWeight *= 2;
-	} else if (defender.ability === "Light Metal") {
-		defenderWeight = Math.floor(defenderWeight * 5) / 10;
-	}
-	if (defender.item === "Float Stone") {
-		defenderWeight = Math.floor(defenderWeight * 5) / 10;
-	}
-	if (defenderWeight < 0.1) {
-		defenderWeight = 0.1;
-	}
+	var attackerWeight = getModdedWeight(attacker, attacker.ability);
+	var defenderWeight = getModdedWeight(defender, defAbility);
 
-	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy", field.isGravity);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy", field.isGravity) : 1;
+	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy", field.isGravity, field.weather === "Strong Winds", description);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy", field.isGravity, field.weather === "Strong Winds", description) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
@@ -636,7 +614,6 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	finalBasePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096));
-	finalBasePower = attacker.isChild ? finalBasePower / (gen >= 7 ? 4 : 2) : finalBasePower;
 	
 	var excludedExceptions = ["Low Kick", "Flail", "Reversal", "Eruption", "Water Spout", "Gyro Ball", "Fling", "Grass Knot", "Crush Grip", "Heavy Slam", "Electro Ball", "Heat Crash", "Dragon Energy"];
 	if (attacker.isTerastal && move.type === attacker.type1 && finalBasePower < 60 && !hasPriority && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && !excludedExceptions.includes(move.name)) {
@@ -831,6 +808,9 @@ function getDamageResult(attacker, defender, move, field) {
 		baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
 		description.isSpread = true;
 	}
+	if (attacker.isChild) { // Parental Bond
+		baseDamage = pokeRound(baseDamage * (gen == 6 ? 0x800 : 0x400) / 0x1000);
+	}
 	let weatherMod = 0x1000;
 	if (move.name === "Hydro Steam" && field.weather === "Sun") {
 		// For readability, Hydro Steam is its own section https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9527435
@@ -853,8 +833,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.weather = field.weather;
 	} else if (defender.item !== "Utility Umbrella" && (
 		field.weather === "Sun" && move.type === "Water" ||
-		field.weather === "Rain" && move.type === "Fire" ||
-		field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") && typeChart[move.type]["Flying"] > 1)) {
+		field.weather === "Rain" && move.type === "Fire")) {
 		weatherMod = 0x800;
 		description.weather = field.weather;
 	}
@@ -999,7 +978,7 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 	}
 	if (move.name === "Triple Axel") {
-		// normally damage get multiplied by the number of hits right before being displayed to the player. Triple Axel has an exception.
+		// normally damage gets multiplied by the number of hits right before being displayed to the calc user. Triple Axel has an exception.
 		for (let h = 1; h < move.hits; h++) {
 			finalBasePower = Math.max(1, pokeRound((basePower * (h + 1) * chainMods(bpMods)) / 4096));
 			baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * finalBasePower * attack / defense) / 50 + 2);
@@ -1157,7 +1136,7 @@ function chainMods(mods) {
 	return M;
 }
 
-function getMoveEffectiveness(move, type, isGhostRevealed, isGravity) {
+function getMoveEffectiveness(move, type, isGhostRevealed, isGravity, isStrongWinds, description) {
 	if (!move.type) {
 		console.log(move.name + " does not have a type field.");
 		return 0;
@@ -1166,6 +1145,9 @@ function getMoveEffectiveness(move, type, isGhostRevealed, isGravity) {
 	} else if (isGhostRevealed && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
 		return 1;
 	} else if (isGravity && type === "Flying" && move.type === "Ground") {
+		return 1;
+	} else if (isStrongWinds && type === "Flying" && (move.type === "Electric" || move.type === "Ice" || move.type === "Rock")) {
+		description.weather = "Strong Winds";
 		return 1;
 	} else if (move.name === "Freeze-Dry" && type === "Water") {
 		return 2;
@@ -1213,6 +1195,19 @@ function isGrounded(pokemon, isGravity, isLevitate) {
 		return (isGravity || pokemon.item === "Iron Ball");
 	}
 	return true;
+}
+
+function getModdedWeight(pokemon, ability) {
+	let weight = pokemon.weight;
+	if (ability === "Heavy Metal") {
+		weight *= 2;
+	} else if (ability === "Light Metal") {
+		weight = Math.floor(weight * 5) / 10; // weight values are truncated to the tenth's place (increments of 0.1)
+	}
+	if (pokemon.item === "Float Stone") {
+		weight = Math.floor(weight * 5) / 10;
+	}
+	return weight < 0.1 ? 0.1 : weight;
 }
 
 function checkAirLock(pokemon, field) {
