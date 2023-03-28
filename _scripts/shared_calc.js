@@ -330,7 +330,7 @@ function autosetWeather(ability, i) {
 
 $("#p1 .item").bind("keyup change", function () {
 	autosetStatus("#p1", $(this).val());
-	autoSetMultiHits($(this).closest(".poke-info"));
+	autoSetMultiHits($("#p1"));
 });
 
 var lastManualStatus = {"#p1": "Healthy", "#p2": "Healthy"};
@@ -396,7 +396,7 @@ function autoSetMultiHits(pokeInfo) {
 	for (var i = 1; i <= 4; i++) {
 		var moveInfo = pokeInfo.find(".move" + i);
 		var moveName = moveInfo.find("select.move-selector").val();
-		if(moveName === "Population Bomb") {
+		if (moveName === "Population Bomb") {
 			moveInfo.children(".move-hits").val(10);
 		} else if (moveName === "Triple Axel") {
 			moveInfo.children(".move-hits").val(3);
@@ -418,10 +418,15 @@ $(".move-selector").change(function () {
 	var moveName = $(this).val();
 	var move = moves[moveName] || moves["(No Move)"];
 	var moveGroupObj = $(this).parent();
+	let pokeInfo = $(this).closest(".poke-info");
+	let ability = pokeInfo.find(".ability").val();
 	moveGroupObj.children(".move-bp").val(move.bp);
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
-	moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
+	if (pokeInfo.prop("id")[1] == "1") {
+		let forceCrit = move.alwaysCrit || (ability === "Merciless" && move.category && $("#p2").find(".status").val().endsWith("Poisoned"));
+		moveGroupObj.children(".move-crit").prop("checked", forceCrit);
+	}
 	var moveHits = moveGroupObj.children(".move-hits");
 	moveHits.empty();
 	var maxMultiHits = move.maxMultiHits;
@@ -430,7 +435,7 @@ $(".move-selector").change(function () {
 			moveHits.append($("<option></option>").attr("value", i).text(i + " hits"));
 		}
 		moveHits.show();
-		moveHits.val($(this).closest(".poke-info").find(".ability").val() === "Skill Link" || moveName === "Population Bomb" ? maxMultiHits : ($(this).closest(".poke-info").find(".item").val() === "Loaded Dice" ? 4 : 3));
+		moveHits.val(ability === "Skill Link" || moveName === "Population Bomb" ? maxMultiHits : (pokeInfo.find(".item").val() === "Loaded Dice" ? 4 : 3));
 	} else {
 		moveHits.hide();
 	}
@@ -1039,6 +1044,7 @@ var gen, pokedex, setdex, setdexAll, typeChart, moves, abilities, items, calcula
 var STATS = STATS_GSC;
 var calcHP = CALC_HP_ADV;
 var calcStat = CALC_STAT_ADV;
+var smogonLink = "https://www.smogon.com/forums/threads/swsh-battle-facilities-discussion-records.3656190/";
 $(".gen").change(function () {
 	gen = ~~$(this).val();
 	switch (gen) {
@@ -1051,6 +1057,7 @@ $(".gen").change(function () {
 		abilities = ABILITIES_ADV;
 		calculateAllMoves = CALCULATE_ALL_MOVES_ADV;
 		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_GEN3));
+		smogonLink = "https://www.smogon.com/forums/threads/gen-iii-battle-frontier-discussion-and-records.3648697/";
 		break;
 	case 4:
 		pokedex = POKEDEX_DPP;
@@ -1060,6 +1067,7 @@ $(".gen").change(function () {
 		items = ITEMS_DPP;
 		abilities = ABILITIES_DPP;
 		calculateAllMoves = CALCULATE_ALL_MOVES_PTHGSS;
+		smogonLink = "https://www.smogon.com/forums/threads/4th-generation-battle-facilities-discussion-and-records.3663294/";
 		break;
 	case 5:
 		pokedex = POKEDEX_BW;
@@ -1070,6 +1078,7 @@ $(".gen").change(function () {
 		abilities = ABILITIES_BW;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
 		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
+		smogonLink = "https://www.smogon.com/forums/threads/black-white-battle-subway-records-now-with-gen-4-records.102593/";
 		break;
 	case 6:
 		pokedex = POKEDEX_XY;
@@ -1080,6 +1089,7 @@ $(".gen").change(function () {
 		abilities = ABILITIES_XY;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
 		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
+		smogonLink = "https://www.smogon.com/forums/threads/battle-maison-discussion-records.3492706/";
 		break;
 	case 7:
 		pokedex = POKEDEX_SM;
@@ -1090,6 +1100,7 @@ $(".gen").change(function () {
 		abilities = ABILITIES_SM;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
 		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
+		smogonLink = "https://www.smogon.com/forums/threads/battle-tree-discussion-and-records.3587215/";
 		break;
 	case 8:
 		pokedex = POKEDEX_SS;
@@ -1099,6 +1110,7 @@ $(".gen").change(function () {
 		items = ITEMS_SS;
 		abilities = ABILITIES_SS;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
+		smogonLink = "https://www.smogon.com/forums/threads/swsh-battle-facilities-discussion-records.3656190/";
 		$("#startGimmick-label").text("Start Dynamaxed");
 		$("#startGimmick-label").prop("title", "This custom set starts Dynamaxed when loaded");
 		break;
@@ -1110,6 +1122,7 @@ $(".gen").change(function () {
 		items = ITEMS_SS;
 		abilities = ABILITIES_SS;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
+		smogonLink = "https://www.smogon.com/forums/threads/bdsp-battle-tower-discussion-records.3693739/";
 		break;
 	case 9:
 		pokedex = POKEDEX_SV;
@@ -1125,6 +1138,7 @@ $(".gen").change(function () {
 	localStorage.setItem("selectedGen", gen);
 	$("#autolevel-title").text((gen == 4 ? "AI " : "") + "Auto-Level to:");
 	setdexAll = joinDexes([setdex, SETDEX_CUSTOM]);
+	$("#midimg").parent().prop("href", smogonLink);
 	clearField();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
