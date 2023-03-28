@@ -1,14 +1,37 @@
+$("#p1 .ability").bind("keyup change", function () {
+	autoSetCrits($("#p1"), 1);
+});
+
+$("#p1 .status").bind("keyup change", function () {
+	autoSetCrits($("#p2"), 2);
+});
+
 $("#p2 .ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 1);
 	autoSetVicStar(2, "R");
 	autoSetSteely(2, "R");
 	autoSetRuin(2, "R");
+	autoSetCrits($("#p2"), 2);
 });
 
 $("#p2 .item").bind("keyup change", function () {
 	autosetStatus("#p2", $(this).val());
-	autoSetMultiHits($(this).closest(".poke-info"));
+	autoSetMultiHits($("#p2"));
 });
+
+$("#p2 .status").bind("keyup change", function () {
+	autoSetCrits($("#p1"), 1);
+});
+
+function autoSetCrits(pokeInfo, i) {
+	let merciless = pokeInfo.find(".ability").val() === "Merciless" && $("#p" + (i === 1 ? "2" : "1")).find(".status").val().includes("Poisoned");
+	for (let i = 1; i <= 4; i++) {
+		let moveInfo = pokeInfo.find(".move" + i);
+		let moveName = moveInfo.find("select.move-selector").val();
+		let move = moves[moveName] || moves["(No Move)"];
+		moveInfo.children(".move-crit").prop("checked", move.alwaysCrit || (merciless && move.category));
+	}
+}
 
 var resultLocations = [[], []];
 for (var i = 0; i < 4; i++) {
@@ -249,8 +272,7 @@ $(document).ready(function () {
 /*  EV OPTIMIZER  */
 /******************/
 
-function optimizeEVs(side, mon) {
-	/*
+/*function optimizeEVs(side, mon) {
 	//log(mon.rawStats)
 	var basehp = ~~$(side).find(".hp .base").val();
 	var baseat = ~~$(side).find(".at .base").val();
@@ -294,8 +316,7 @@ function optimizeEVs(side, mon) {
 	console.log(sa);
 	console.log(sd);
 	console.log(sp);
-	*/
-}
+}*/
 
 $("#maxR").change(function () {
 	if (this.checked) {

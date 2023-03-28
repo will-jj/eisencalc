@@ -330,7 +330,7 @@ function autosetWeather(ability, i) {
 
 $("#p1 .item").bind("keyup change", function () {
 	autosetStatus("#p1", $(this).val());
-	autoSetMultiHits($(this).closest(".poke-info"));
+	autoSetMultiHits($("#p1"));
 });
 
 var lastManualStatus = {"#p1": "Healthy", "#p2": "Healthy"};
@@ -396,7 +396,7 @@ function autoSetMultiHits(pokeInfo) {
 	for (var i = 1; i <= 4; i++) {
 		var moveInfo = pokeInfo.find(".move" + i);
 		var moveName = moveInfo.find("select.move-selector").val();
-		if(moveName === "Population Bomb") {
+		if (moveName === "Population Bomb") {
 			moveInfo.children(".move-hits").val(10);
 		} else if (moveName === "Triple Axel") {
 			moveInfo.children(".move-hits").val(3);
@@ -418,10 +418,15 @@ $(".move-selector").change(function () {
 	var moveName = $(this).val();
 	var move = moves[moveName] || moves["(No Move)"];
 	var moveGroupObj = $(this).parent();
+	let pokeInfo = $(this).closest(".poke-info");
+	let ability = pokeInfo.find(".ability").val();
 	moveGroupObj.children(".move-bp").val(move.bp);
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
-	moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
+	if (pokeInfo.prop("id")[1] == "1") {
+		let forceCrit = move.alwaysCrit || (ability === "Merciless" && move.category && $("#p2").find(".status").val().endsWith("Poisoned"));
+		moveGroupObj.children(".move-crit").prop("checked", forceCrit);
+	}
 	var moveHits = moveGroupObj.children(".move-hits");
 	moveHits.empty();
 	var maxMultiHits = move.maxMultiHits;
@@ -430,7 +435,7 @@ $(".move-selector").change(function () {
 			moveHits.append($("<option></option>").attr("value", i).text(i + " hits"));
 		}
 		moveHits.show();
-		moveHits.val($(this).closest(".poke-info").find(".ability").val() === "Skill Link" || moveName === "Population Bomb" ? maxMultiHits : ($(this).closest(".poke-info").find(".item").val() === "Loaded Dice" ? 4 : 3));
+		moveHits.val(ability === "Skill Link" || moveName === "Population Bomb" ? maxMultiHits : (pokeInfo.find(".item").val() === "Loaded Dice" ? 4 : 3));
 	} else {
 		moveHits.hide();
 	}
