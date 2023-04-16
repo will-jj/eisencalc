@@ -504,12 +504,12 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
 		var set = setdexAll[pokemonName][setName];
 		pokeObj.find(".level").val(set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50));
-		var autoIVs = gen == 4 ? $("#autoivs-box").val() : $('#autoivs-select').find(":selected").val();
+		var autoIVs = gen == 4 ? parseInt($("#autoivs-box").val()) : (gen <= 7 ? parseInt($('#autoivs-select').find(":selected").val()) : 31);
 		pokeObj.find(".hp .evs").val(set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0);
-		pokeObj.find(".hp .ivs").val(set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : (autoIVs ? parseInt(autoIVs) : 31));
+		pokeObj.find(".hp .ivs").val(set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : autoIVs);
 		for (i = 0; i < STATS.length; i++) {
 			pokeObj.find("." + STATS[i] + " .evs").val(set.evs && typeof set.evs[STATS[i]] !== "undefined" ? set.evs[STATS[i]] : 0);
-			pokeObj.find("." + STATS[i] + " .ivs").val(set.ivs && typeof set.ivs[STATS[i]] !== "undefined" ? set.ivs[STATS[i]] : (autoIVs ? parseInt(autoIVs) : 31));
+			pokeObj.find("." + STATS[i] + " .ivs").val(set.ivs && typeof set.ivs[STATS[i]] !== "undefined" ? set.ivs[STATS[i]] : autoIVs);
 		}
 		setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 		setSelectValueIfValid(abilityObj, set.ability ? set.ability : (abilityList && abilityList.length == 1 ? abilityList[0] : pokemon.ab), "");
@@ -599,7 +599,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 
 		// This code needs to stay intact for old saved Mega sets that don't have the forme field
 		if (set.item) {
-			if (set.item.endsWith("ite") || set.item.endsWith("ite X")) {
+			if (set.item !== "Eviolite" && (set.item.endsWith("ite") || set.item.endsWith("ite X"))) {
 				defaultForme = 1;
 			} else if (set.item.endsWith("ite Y")) {
 				defaultForme = 2;
@@ -743,61 +743,71 @@ var stickyMoves = (function () {
 
 function Pokemon(pokeInfo) {
 	// pokeInfo is a jquery object
-	var setName = pokeInfo.find("input.set-selector").val();
-	if (setName.indexOf("(") === -1) {
-		this.name = setName;
-	} else {
-		var pokemonName = setName.substring(0, setName.indexOf(" ("));
-		this.name = pokedex[pokemonName].formes ? pokeInfo.find(".forme").val() : pokemonName;
-	}
-	this.type1 = pokeInfo.find(".type1").val();
-	this.type2 = pokeInfo.find(".type2").val();
-	// ~~ is used as a faster Math.floor() for positive numbers and fails on negative ones
-	this.level = ~~pokeInfo.find(".level").val();
-	this.maxHP = ~~pokeInfo.find(".hp .total").text();
-	this.curHP = ~~pokeInfo.find(".current-hp").val();
-	this.HPEVs = ~~pokeInfo.find(".hp .evs").val();
-	this.HPIVs = ~~pokeInfo.find(".hp .ivs").val();
-	this.isDynamax = pokeInfo.find(".max").prop("checked");
-	this.isTerastal = pokeInfo.find(".tera").prop("checked");
-	if (gen === 9) {
-		this.teraType = pokeInfo.find(".tera-type").val();
-	}
-	var dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
-	this.dexType1 = dexEntry.t1;
-	this.dexType2 = dexEntry.t2;
-	this.rawStats = [];
-	this.boosts = [];
-	this.stats = [];
-	this.evs = [];
-	this.ivs = [];
-	for (var i = 0; i < STATS.length; i++) {
-		this.rawStats[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .total").text();
-		this.boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
-		this.evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
-		this.ivs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .ivs").val();
-	}
-	this.nature = pokeInfo.find(".nature").val();
-	this.ability = pokeInfo.find(".ability").val();
-	this.item = pokeInfo.find(".item").val();
-	this.status = pokeInfo.find(".status").val();
-	this.toxicCounter = this.status === "Badly Poisoned" ? ~~pokeInfo.find(".toxic-counter").val() : 0;
-	var move1 = pokeInfo.find(".move1");
-	var move2 = pokeInfo.find(".move2");
-	var move3 = pokeInfo.find(".move3");
-	var move4 = pokeInfo.find(".move4");
-	this.baseMoveNames = [move1.find("select.move-selector").val(), move2.find("select.move-selector").val(), move3.find("select.move-selector").val(), move4.find("select.move-selector").val()];
-	this.moves = [
-		getMoveDetails(move1, this.item, this.name),
-		getMoveDetails(move2, this.item, this.name),
-		getMoveDetails(move3, this.item, this.name),
-		getMoveDetails(move4, this.item, this.name)
-	];
-	this.weight = +pokeInfo.find(".weight").val();
-
-	this.hasType = function (type) {
-		return this.type1 === type || this.type2 === type;
+	let setName = pokeInfo.find("input.set-selector").val();
+	let dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
+	let poke = {
+		"type1": pokeInfo.find(".type1").val(),
+		"type2": pokeInfo.find(".type2").val(),
+		// ~~ is used as a faster Math.floor() for positive numbers
+		"level": ~~pokeInfo.find(".level").val(),
+		"maxHP": ~~pokeInfo.find(".hp .total").text(),
+		"curHP": ~~pokeInfo.find(".current-hp").val(),
+		"HPEVs": ~~pokeInfo.find(".hp .evs").val(),
+		"HPIVs": ~~pokeInfo.find(".hp .ivs").val(),
+		"isDynamax": pokeInfo.find(".max").prop("checked"),
+		"isTerastal": pokeInfo.find(".tera").prop("checked"),
+		"dexType1":  dexEntry.t1,
+		"dexType2":  dexEntry.t2,
+		"rawStats": [],
+		"boosts": [],
+		"stats": [],
+		"evs": [],
+		"ivs": [],
+		"nature": pokeInfo.find(".nature").val(),
+		"ability": pokeInfo.find(".ability").val(),
+		"item": pokeInfo.find(".item").val(),
+		"status": pokeInfo.find(".status").val(),
+		"toxicCounter": pokeInfo.find(".status").val() === "Badly Poisoned" ? ~~pokeInfo.find(".toxic-counter").val() : 0,
+		"weight": +pokeInfo.find(".weight").val(),
+		"hasType": function (type) { return this.type1 === type || this.type2 === type; }
 	};
+	// name
+	if (setName.includes("(")) {
+		poke.name = setName;
+	} else {
+		let pokemonName = setName.substring(0, setName.indexOf(" ("));
+		poke.name = pokedex[pokemonName].formes ? pokeInfo.find(".forme").val() : pokemonName;
+	}
+	// teraType
+	if (gen === 9) {
+		poke.teraType = pokeInfo.find(".tera-type").val();
+	}
+	// populate rawStats, boosts, evs, and ivs
+	STATS.forEach(stat => {
+		poke.rawStats[stat] = ~~pokeInfo.find("." + stat + " .total").text();
+		poke.boosts[stat] = ~~pokeInfo.find("." + stat + " .boost").val();
+		poke.evs[stat] = ~~pokeInfo.find("." + stat + " .evs").val();
+		poke.ivs[stat] = ~~pokeInfo.find("." + stat + " .ivs").val();
+	});
+	// moves and baseMoveNames
+	let move1 = pokeInfo.find(".move1");
+	let move2 = pokeInfo.find(".move2");
+	let move3 = pokeInfo.find(".move3");
+	let move4 = pokeInfo.find(".move4");
+	poke.baseMoveNames = [
+		move1.find("select.move-selector").val(),
+		move2.find("select.move-selector").val(),
+		move3.find("select.move-selector").val(),
+		move4.find("select.move-selector").val()
+	];
+	poke.moves = [
+		getMoveDetails(move1, poke.item, poke.name),
+		getMoveDetails(move2, poke.item, poke.name),
+		getMoveDetails(move3, poke.item, poke.name),
+		getMoveDetails(move4, poke.item, poke.name)
+	];
+
+	return poke;
 }
 
 function getMoveDetails(moveInfo, item, species) {
@@ -1044,7 +1054,7 @@ var gen, pokedex, setdex, setdexAll, typeChart, moves, abilities, items, calcula
 var STATS = STATS_GSC;
 var calcHP = CALC_HP_ADV;
 var calcStat = CALC_STAT_ADV;
-var smogonLink = "https://www.smogon.com/forums/threads/swsh-battle-facilities-discussion-records.3656190/";
+var forumLink = "https://www.smogon.com/forums/forums/battle-facilities.697/";
 $(".gen").change(function () {
 	gen = ~~$(this).val();
 	switch (gen) {
@@ -1057,7 +1067,7 @@ $(".gen").change(function () {
 		abilities = ABILITIES_ADV;
 		calculateAllMoves = CALCULATE_ALL_MOVES_ADV;
 		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_GEN3));
-		smogonLink = "https://www.smogon.com/forums/threads/gen-iii-battle-frontier-discussion-and-records.3648697/";
+		forumLink = "https://www.smogon.com/forums/threads/gen-iii-battle-frontier-discussion-and-records.3648697/";
 		break;
 	case 4:
 		pokedex = POKEDEX_DPP;
@@ -1067,7 +1077,7 @@ $(".gen").change(function () {
 		items = ITEMS_DPP;
 		abilities = ABILITIES_DPP;
 		calculateAllMoves = CALCULATE_ALL_MOVES_PTHGSS;
-		smogonLink = "https://www.smogon.com/forums/threads/4th-generation-battle-facilities-discussion-and-records.3663294/";
+		forumLink = "https://www.smogon.com/forums/threads/4th-generation-battle-facilities-discussion-and-records.3663294/";
 		break;
 	case 5:
 		pokedex = POKEDEX_BW;
@@ -1078,7 +1088,7 @@ $(".gen").change(function () {
 		abilities = ABILITIES_BW;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
 		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
-		smogonLink = "https://www.smogon.com/forums/threads/black-white-battle-subway-records-now-with-gen-4-records.102593/";
+		forumLink = "https://www.smogon.com/forums/threads/black-white-battle-subway-records-now-with-gen-4-records.102593/";
 		break;
 	case 6:
 		pokedex = POKEDEX_XY;
@@ -1089,7 +1099,7 @@ $(".gen").change(function () {
 		abilities = ABILITIES_XY;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
 		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
-		smogonLink = "https://www.smogon.com/forums/threads/battle-maison-discussion-records.3492706/";
+		forumLink = "https://www.smogon.com/forums/threads/battle-maison-discussion-records.3492706/";
 		break;
 	case 7:
 		pokedex = POKEDEX_SM;
@@ -1100,7 +1110,7 @@ $(".gen").change(function () {
 		abilities = ABILITIES_SM;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
 		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
-		smogonLink = "https://www.smogon.com/forums/threads/battle-tree-discussion-and-records.3587215/";
+		forumLink = "https://www.smogon.com/forums/threads/battle-tree-discussion-and-records.3587215/";
 		break;
 	case 8:
 		pokedex = POKEDEX_SS;
@@ -1110,7 +1120,7 @@ $(".gen").change(function () {
 		items = ITEMS_SS;
 		abilities = ABILITIES_SS;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		smogonLink = "https://www.smogon.com/forums/threads/swsh-battle-facilities-discussion-records.3656190/";
+		forumLink = "https://www.smogon.com/forums/threads/swsh-battle-facilities-discussion-records.3656190/";
 		$("#startGimmick-label").text("Start Dynamaxed");
 		$("#startGimmick-label").prop("title", "This custom set starts Dynamaxed when loaded");
 		break;
@@ -1122,7 +1132,7 @@ $(".gen").change(function () {
 		items = ITEMS_SS;
 		abilities = ABILITIES_SS;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		smogonLink = "https://www.smogon.com/forums/threads/bdsp-battle-tower-discussion-records.3693739/";
+		forumLink = "https://www.smogon.com/forums/threads/bdsp-battle-tower-discussion-records.3693739/";
 		break;
 	case 9:
 		pokedex = POKEDEX_SV;
@@ -1138,7 +1148,7 @@ $(".gen").change(function () {
 	localStorage.setItem("selectedGen", gen);
 	$("#autolevel-title").text((gen == 4 ? "AI " : "") + "Auto-Level to:");
 	setdexAll = joinDexes([setdex, SETDEX_CUSTOM]);
-	$("#midimg").parent().prop("href", smogonLink);
+	$("#midimg").parent().prop("href", forumLink);
 	clearField();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
