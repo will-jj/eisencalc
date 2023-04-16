@@ -743,62 +743,71 @@ var stickyMoves = (function () {
 
 function Pokemon(pokeInfo) {
 	// pokeInfo is a jquery object
-	var setName = pokeInfo.find("input.set-selector").val();
-	if (setName.indexOf("(") === -1) {
-		this.name = setName;
-	} else {
-		var pokemonName = setName.substring(0, setName.indexOf(" ("));
-		this.name = pokedex[pokemonName].formes ? pokeInfo.find(".forme").val() : pokemonName;
-	}
-	this.type1 = pokeInfo.find(".type1").val();
-	this.type2 = pokeInfo.find(".type2").val();
-	// ~~ is used as a faster Math.floor() for positive numbers
-	this.level = ~~pokeInfo.find(".level").val();
-	this.maxHP = ~~pokeInfo.find(".hp .total").text();
-	this.curHP = ~~pokeInfo.find(".current-hp").val();
-	this.HPEVs = ~~pokeInfo.find(".hp .evs").val();
-	this.HPIVs = ~~pokeInfo.find(".hp .ivs").val();
-	this.isDynamax = pokeInfo.find(".max").prop("checked");
-	this.isTerastal = pokeInfo.find(".tera").prop("checked");
-	if (gen === 9) {
-		this.teraType = pokeInfo.find(".tera-type").val();
-	}
-	var dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
-	this.dexType1 = dexEntry.t1;
-	this.dexType2 = dexEntry.t2;
-	this.rawStats = [];
-	this.boosts = [];
-	this.startingBoosts = [];
-	this.stats = [];
-	this.evs = [];
-	this.ivs = [];
-	for (var i = 0; i < STATS.length; i++) {
-		this.rawStats[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .total").text();
-		this.boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
-		this.evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
-		this.ivs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .ivs").val();
-	}
-	this.nature = pokeInfo.find(".nature").val();
-	this.ability = pokeInfo.find(".ability").val();
-	this.item = pokeInfo.find(".item").val();
-	this.status = pokeInfo.find(".status").val();
-	this.toxicCounter = this.status === "Badly Poisoned" ? ~~pokeInfo.find(".toxic-counter").val() : 0;
-	var move1 = pokeInfo.find(".move1");
-	var move2 = pokeInfo.find(".move2");
-	var move3 = pokeInfo.find(".move3");
-	var move4 = pokeInfo.find(".move4");
-	this.baseMoveNames = [move1.find("select.move-selector").val(), move2.find("select.move-selector").val(), move3.find("select.move-selector").val(), move4.find("select.move-selector").val()];
-	this.moves = [
-		getMoveDetails(move1, this.item, this.name),
-		getMoveDetails(move2, this.item, this.name),
-		getMoveDetails(move3, this.item, this.name),
-		getMoveDetails(move4, this.item, this.name)
-	];
-	this.weight = +pokeInfo.find(".weight").val();
-
-	this.hasType = function (type) {
-		return this.type1 === type || this.type2 === type;
+	let setName = pokeInfo.find("input.set-selector").val();
+	let dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
+	let poke = {
+		"type1": pokeInfo.find(".type1").val(),
+		"type2": pokeInfo.find(".type2").val(),
+		// ~~ is used as a faster Math.floor() for positive numbers
+		"level": ~~pokeInfo.find(".level").val(),
+		"maxHP": ~~pokeInfo.find(".hp .total").text(),
+		"curHP": ~~pokeInfo.find(".current-hp").val(),
+		"HPEVs": ~~pokeInfo.find(".hp .evs").val(),
+		"HPIVs": ~~pokeInfo.find(".hp .ivs").val(),
+		"isDynamax": pokeInfo.find(".max").prop("checked"),
+		"isTerastal": pokeInfo.find(".tera").prop("checked"),
+		"dexType1":  dexEntry.t1,
+		"dexType2":  dexEntry.t2,
+		"rawStats": [],
+		"boosts": [],
+		"stats": [],
+		"evs": [],
+		"ivs": [],
+		"nature": pokeInfo.find(".nature").val(),
+		"ability": pokeInfo.find(".ability").val(),
+		"item": pokeInfo.find(".item").val(),
+		"status": pokeInfo.find(".status").val(),
+		"toxicCounter": pokeInfo.find(".status").val() === "Badly Poisoned" ? ~~pokeInfo.find(".toxic-counter").val() : 0,
+		"weight": +pokeInfo.find(".weight").val(),
+		"hasType": function (type) { return this.type1 === type || this.type2 === type; }
 	};
+	// name
+	if (setName.includes("(")) {
+		poke.name = setName;
+	} else {
+		let pokemonName = setName.substring(0, setName.indexOf(" ("));
+		poke.name = pokedex[pokemonName].formes ? pokeInfo.find(".forme").val() : pokemonName;
+	}
+	// teraType
+	if (gen === 9) {
+		poke.teraType = pokeInfo.find(".tera-type").val();
+	}
+	// populate rawStats, boosts, evs, and ivs
+	STATS.forEach(stat => {
+		poke.rawStats[stat] = ~~pokeInfo.find("." + stat + " .total").text();
+		poke.boosts[stat] = ~~pokeInfo.find("." + stat + " .boost").val();
+		poke.evs[stat] = ~~pokeInfo.find("." + stat + " .evs").val();
+		poke.ivs[stat] = ~~pokeInfo.find("." + stat + " .ivs").val();
+	});
+	// moves and baseMoveNames
+	let move1 = pokeInfo.find(".move1");
+	let move2 = pokeInfo.find(".move2");
+	let move3 = pokeInfo.find(".move3");
+	let move4 = pokeInfo.find(".move4");
+	poke.baseMoveNames = [
+		move1.find("select.move-selector").val(),
+		move2.find("select.move-selector").val(),
+		move3.find("select.move-selector").val(),
+		move4.find("select.move-selector").val()
+	];
+	poke.moves = [
+		getMoveDetails(move1, poke.item, poke.name),
+		getMoveDetails(move2, poke.item, poke.name),
+		getMoveDetails(move3, poke.item, poke.name),
+		getMoveDetails(move4, poke.item, poke.name)
+	];
+
+	return poke;
 }
 
 function getMoveDetails(moveInfo, item, species) {

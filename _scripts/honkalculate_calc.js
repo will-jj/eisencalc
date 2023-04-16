@@ -63,72 +63,71 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 };
 
 function MassPokemon(speciesName, setName) {
-	this.name = speciesName;
-	var pokemon = pokedex[speciesName];
-	this.type1 = pokemon.t1;
-	this.type2 = pokemon.t2 && typeof pokemon.t2 !== "undefined" ? pokemon.t2 : "";
-	this.rawStats = [];
-	this.boosts = [];
-	this.stats = [];
-	this.evs = [];
-
-	var set = setdex[this.name][setName];
-	//this.isGmax = setName.includes("-Gmax") || pokemon.isGmax || set.isGmax;
-	this.level = set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50);
-
-	this.HPEVs = set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0;
-	var autoIVs = gen == 4 ? $("#autoivs-box").val() : $('#autoivs-select').find(":selected").val();
+	let massPoke = {
+		"name": speciesName,
+		"setName": setName,
+		"type1": pokemon.t1,
+		"type2": pokemon.t2 && typeof pokemon.t2 !== "undefined" ? pokemon.t2 : "",
+		"rawStats": [],
+		"boosts": [],
+		"stats": [],
+		"evs": [],
+		"level": set.level ? set.level : (autoLevel ? autoLevel : 50),
+		"HPEVs": set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0,
+		"nature": set.nature,
+		"ability": set.ability && typeof set.ability !== "undefined" ? set.ability :
+		(pokemon.ab && typeof pokemon.ab !== "undefined" ? pokemon.ab : ""),
+		"item": set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || !set.item.endsWith("ite")) ? set.item : "",
+		"status": "Healthy",
+		"toxicCounter": 0,
+		"moves": [],
+		//"baseMoveNames" goes unused by MassPokemon
+		"weight": pokemon.w,
+		"tier": set.tier,
+		"hasType": function (type) { return this.type1 === type || this.type2 === type; },
+		"revertStats": function () {
+			Object.keys(this.boosts).forEach(stat => { this.boosts[stat] = 0; });
+			this.stats = [];
+		}
+	};
+	// maxHP
+	let autoIVs = gen == 4 ? parseInt($("#autoivs-box").val()) : (gen <= 7 ? parseInt($('#autoivs-select').find(":selected").val()) : 31);
 	if (pokemon.bs.hp === 1) {
-		this.maxHP = 1;
+		massPoke.maxHP = 1;
 	} else {
-		var HPIVs = set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : (autoIVs ? parseInt(autoIVs) : 31);
-		// ~~ is used as a faster Math.floor() for positive numbers and fails on negative ones
-		this.maxHP = ~~((pokemon.bs.hp * 2 + HPIVs + ~~(this.HPEVs / 4)) * this.level / 100) + this.level + 10;
+		let HPIVs = set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : autoIVs;
+		// ~~ is used as a faster Math.floor() for positive numbers
+		massPoke.maxHP = ~~((pokemon.bs.hp * 2 + HPIVs + ~~(massPoke.HPEVs / 4)) * massPoke.level / 100) + massPoke.level + 10;
 	}
-	this.curHP = this.maxHP;
-	this.nature = set.nature;
-	for (var i = 0; i < STATS.length; i++) {
-		var stat = STATS[i];
-		this.boosts[stat] = 0;
-		this.evs[stat] = set.evs && typeof set.evs[stat] !== "undefined" ? set.evs[stat] : 0;
-		var ivs = set.ivs && typeof set.ivs[stat] !== "undefined" ? set.ivs[stat] : (autoIVs ? parseInt(autoIVs) : 31);
-		var natureMods = NATURES[this.nature];
-		var nature = natureMods[0] === stat ? 1.1 : natureMods[1] === stat ? 0.9 : 1;
-		this.rawStats[stat] = ~~((~~((pokemon.bs[stat] * 2 + ivs + ~~(this.evs[stat] / 4)) * this.level / 100) + 5) * nature);
+	// curHP
+	massPoke.curHP = massPoke.maxHP;
+	// stats
+	for (let n = 0; n < STATS.length; n++) {
+		let stat = STATS[n];
+		massPoke.boosts[stat] = 0;
+		massPoke.evs[stat] = set.evs && typeof set.evs[stat] !== "undefined" ? set.evs[stat] : 0;
+		let ivs = set.ivs && typeof set.ivs[stat] !== "undefined" ? set.ivs[stat] : autoIVs;
+		let natureMods = NATURES[massPoke.nature];
+		let nature = natureMods[0] === stat ? 1.1 : natureMods[1] === stat ? 0.9 : 1;
+		massPoke.rawStats[stat] = ~~((~~((pokemon.bs[stat] * 2 + ivs + ~~(massPoke.evs[stat] / 4)) * massPoke.level / 100) + 5) * nature);
 	}
-
-	this.ability = set.ability && typeof set.ability !== "undefined" ? set.ability :
-		pokemon.ab && typeof pokemon.ab !== "undefined" ? pokemon.ab : "";
-	this.item = set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || !(set.item.includes("ite"))) ? set.item : "";
-	this.status = "Healthy";
-	this.toxicCounter = 0;
-	this.moves = [];
-	for (var i = 0; i < 4; i++) {
-		var moveName = set.moves[i];
-		var defaultDetails = moves[moveName] || moves["(No Move)"];
-		this.moves.push($.extend({}, defaultDetails, {
+	// moves
+	for (let n = 0; n < 4; n++) {
+		let moveName = set.moves[n];
+		let defaultDetails = moves[moveName] || moves["(No Move)"];
+		massPoke.moves.push($.extend({}, defaultDetails, {
 			"name": defaultDetails.bp === 0 ? "(No Move)" : moveName,
 			"bp": defaultDetails.bp,
 			"type": defaultDetails.type,
 			"category": defaultDetails.category,
 			"isCrit": !!defaultDetails.alwaysCrit,
 			"acc": defaultDetails.acc,
-			"hits": defaultDetails.maxMultiHits ? (this.ability === "Skill Link" || moveName === "Population Bomb" || moveName === "Triple Axel" ? defaultDetails.maxMultiHits : (this.item === "Loaded Dice" ? 4 : 3)) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
+			"hits": defaultDetails.maxMultiHits ? (massPoke.ability === "Skill Link" || moveName === "Population Bomb" || moveName === "Triple Axel" ? defaultDetails.maxMultiHits : (massPoke.item === "Loaded Dice" ? 4 : 3)) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 			"usedTimes": 1
 		}));
 	}
-	this.baseMoveNames = [this.moves[0].name, this.moves[1].name, this.moves[2].name, this.moves[3].name];
-	this.weight = pokemon.w;
-	this.tier = set.tier;
 
-	this.hasType = function (type) {
-		return this.type1 === type || this.type2 === type;
-	};
-
-	this.revertStats = function () {
-		Object.keys(this.boosts).forEach(stat => { this.boosts[stat] = 0; });
-		this.stats = [];
-	};
+	return massPoke;
 }
 
 function performCalculations() {
@@ -136,6 +135,7 @@ function performCalculations() {
 	var selectedTier = getSelectedTier(); // selectedTier can be: All, threshold, Hall, HallR10, Tower, RS, SM, DM.  *SM and DM are Singles and Doubles Master
 	var dataSet = [];
 	var userPoke = new Pokemon($("#p1"));
+	userPoke.startingBoosts = [];
 	STATS.forEach(stat => { userPoke.startingBoosts[stat] = userPoke.boosts[stat]; });
 	userPoke.revertStats = function () {
 		Object.keys(this.boosts).forEach(stat => { this.boosts[stat] = this.startingBoosts[stat] });
@@ -273,9 +273,7 @@ $(".gen").change(function () {
 		let setNames = Object.keys(setdex[speciesName]);
 		for (let j = 0; j < setNames.length; j++) {
 			let setName = setNames[j];
-			let setMon = new MassPokemon(speciesName, setName);
-			setMon.setName = setName;
-			setsArray.push(setMon);
+			setsArray.push(MassPokemon(speciesName, setName));
 		}
 	}
 });
