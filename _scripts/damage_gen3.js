@@ -45,31 +45,33 @@ function getDamageResultADV(attacker, defender, move, field) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 
+	let moveType = move.type;
+
 	var isCritical = move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defender.ability) === -1;
 
 	if (move.name === "Weather Ball") {
-		move.type = field.weather === "Sun" ? "Fire" :
+		moveType = field.weather === "Sun" ? "Fire" :
 			field.weather === "Rain" ? "Water" :
 				field.weather === "Sand" ? "Rock" :
 					field.weather === "Hail" ? "Ice" :
 						"Normal";
 		description.weather = field.weather;
-		description.moveType = move.type;
+		description.moveType = moveType;
 		description.moveBP = move.bp;
 	}
 
-	var typeEffect1 = getMoveEffectiveness(move, defender.type1);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2) : 1;
+	var typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, moveType, defender.type2) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 
-	if ((defender.ability.indexOf("Flash Fire") !== -1 && move.type === "Fire") ||
-            (defender.ability === "Levitate" && move.type === "Ground") ||
-            (defender.ability === "Volt Absorb" && move.type === "Electric") ||
-            (defender.ability === "Water Absorb" && move.type === "Water") ||
+	if ((defender.ability.indexOf("Flash Fire") !== -1 && moveType === "Fire") ||
+            (defender.ability === "Levitate" && moveType === "Ground") ||
+            (defender.ability === "Volt Absorb" && moveType === "Electric") ||
+            (defender.ability === "Water Absorb" && moveType === "Water") ||
             (defender.ability === "Wonder Guard" && typeEffectiveness <= 1) ||
             (defender.ability === "Soundproof" && move.isSound)) {
 		description.defenderAbility = defender.ability;
@@ -108,7 +110,7 @@ function getDamageResultADV(attacker, defender, move, field) {
 		basePower = move.bp;
 	}
 
-	var isPhysical = move.type === "None" || typeChart[move.type].category === "Physical";
+	var isPhysical = moveType === "None" || typeChart[moveType].category === "Physical";
 	var attackStat = isPhysical ? AT : SA;
 	description.attackEVs = attacker.evs[attackStat] +
             (NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +
@@ -125,10 +127,10 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
-	if (attacker.item !== "Sea Incense" && getItemBoostType(attacker.item) === move.type) {
+	if (attacker.item !== "Sea Incense" && getItemBoostType(attacker.item) === moveType) {
 		at = Math.floor(at * 1.1);
 		description.attackerItem = attacker.item;
-	} else if (attacker.item === "Sea Incense" && move.type === "Water") {
+	} else if (attacker.item === "Sea Incense" && moveType === "Water") {
 		at = Math.floor(at * 1.05);
 		description.attackerItem = attacker.item;
 	} else if ((isPhysical && attacker.item === "Choice Band") ||
@@ -151,7 +153,7 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.defenderItem = defender.item;
 	}
 
-	if (defender.ability === "Thick Fat" && (move.type === "Fire" || move.type === "Ice")) {
+	if (defender.ability === "Thick Fat" && (moveType === "Fire" || moveType === "Ice")) {
 		at = Math.floor(at / 2);
 		description.defenderAbility = defender.ability;
 	} else if (isPhysical && defender.ability === "Marvel Scale" && defender.status !== "Healthy") {
@@ -163,10 +165,10 @@ function getDamageResultADV(attacker, defender, move, field) {
 		at = Math.floor(at * 1.5);
 		description.attackerAbility = attacker.ability;
 	} else if (attacker.curHP <= attacker.maxHP / 3 &&
-            ((attacker.ability === "Overgrow" && move.type === "Grass") ||
-            (attacker.ability === "Blaze" && move.type === "Fire") ||
-            (attacker.ability === "Torrent" && move.type === "Water") ||
-            (attacker.ability === "Swarm" && move.type === "Bug"))) {
+            ((attacker.ability === "Overgrow" && moveType === "Grass") ||
+            (attacker.ability === "Blaze" && moveType === "Fire") ||
+            (attacker.ability === "Torrent" && moveType === "Water") ||
+            (attacker.ability === "Swarm" && moveType === "Bug"))) {
 		basePower = Math.floor(basePower * 1.5);
 		description.attackerAbility = attacker.ability;
 	}
@@ -210,16 +212,16 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.isSpread = true;
 	}
 
-	if ((field.weather === "Sun" && move.type === "Fire") || (field.weather === "Rain" && move.type === "Water")) {
+	if ((field.weather === "Sun" && moveType === "Fire") || (field.weather === "Rain" && moveType === "Water")) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.weather = field.weather;
-	} else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") ||
+	} else if ((field.weather === "Sun" && moveType === "Water") || (field.weather === "Rain" && moveType === "Fire") ||
             (move.name === "Solar Beam" && ["Rain", "Sand", "Hail"].indexOf(field.weather) !== -1)) {
 		baseDamage = Math.floor(baseDamage / 2);
 		description.weather = field.weather;
 	}
 
-	if (attacker.ability === "Flash Fire (activated)" && move.type === "Fire") {
+	if (attacker.ability === "Flash Fire (activated)" && moveType === "Fire") {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.attackerAbility = "Flash Fire";
 	}
@@ -241,7 +243,7 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.isHelpingHand = true;
 	}
 
-	if (move.type === attacker.type1 || move.type === attacker.type2) {
+	if (attacker.hasType(moveType)) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 	}
 

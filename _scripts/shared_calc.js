@@ -504,12 +504,12 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
 		var set = setdexAll[pokemonName][setName];
 		pokeObj.find(".level").val(set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50));
-		var autoIVs = gen == 4 ? $("#autoivs-box").val() : $('#autoivs-select').find(":selected").val();
+		var autoIVs = gen == 4 ? parseInt($("#autoivs-box").val()) : (gen <= 7 ? parseInt($('#autoivs-select').find(":selected").val()) : 31);
 		pokeObj.find(".hp .evs").val(set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0);
-		pokeObj.find(".hp .ivs").val(set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : (autoIVs ? parseInt(autoIVs) : 31));
+		pokeObj.find(".hp .ivs").val(set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : autoIVs);
 		for (i = 0; i < STATS.length; i++) {
 			pokeObj.find("." + STATS[i] + " .evs").val(set.evs && typeof set.evs[STATS[i]] !== "undefined" ? set.evs[STATS[i]] : 0);
-			pokeObj.find("." + STATS[i] + " .ivs").val(set.ivs && typeof set.ivs[STATS[i]] !== "undefined" ? set.ivs[STATS[i]] : (autoIVs ? parseInt(autoIVs) : 31));
+			pokeObj.find("." + STATS[i] + " .ivs").val(set.ivs && typeof set.ivs[STATS[i]] !== "undefined" ? set.ivs[STATS[i]] : autoIVs);
 		}
 		setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 		setSelectValueIfValid(abilityObj, set.ability ? set.ability : (abilityList && abilityList.length == 1 ? abilityList[0] : pokemon.ab), "");
@@ -599,7 +599,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 
 		// This code needs to stay intact for old saved Mega sets that don't have the forme field
 		if (set.item) {
-			if (set.item.endsWith("ite") || set.item.endsWith("ite X")) {
+			if (set.item !== "Eviolite" && (set.item.endsWith("ite") || set.item.endsWith("ite X"))) {
 				defaultForme = 1;
 			} else if (set.item.endsWith("ite Y")) {
 				defaultForme = 2;
@@ -752,7 +752,7 @@ function Pokemon(pokeInfo) {
 	}
 	this.type1 = pokeInfo.find(".type1").val();
 	this.type2 = pokeInfo.find(".type2").val();
-	// ~~ is used as a faster Math.floor() for positive numbers and fails on negative ones
+	// ~~ is used as a faster Math.floor() for positive numbers
 	this.level = ~~pokeInfo.find(".level").val();
 	this.maxHP = ~~pokeInfo.find(".hp .total").text();
 	this.curHP = ~~pokeInfo.find(".current-hp").val();
@@ -768,6 +768,7 @@ function Pokemon(pokeInfo) {
 	this.dexType2 = dexEntry.t2;
 	this.rawStats = [];
 	this.boosts = [];
+	this.startingBoosts = [];
 	this.stats = [];
 	this.evs = [];
 	this.ivs = [];
@@ -1044,7 +1045,7 @@ var gen, pokedex, setdex, setdexAll, typeChart, moves, abilities, items, calcula
 var STATS = STATS_GSC;
 var calcHP = CALC_HP_ADV;
 var calcStat = CALC_STAT_ADV;
-var smogonLink = "https://www.smogon.com/forums/threads/swsh-battle-facilities-discussion-records.3656190/";
+var forumLink = "https://www.smogon.com/forums/forums/battle-facilities.697/";
 $(".gen").change(function () {
 	gen = ~~$(this).val();
 	switch (gen) {
@@ -1057,7 +1058,7 @@ $(".gen").change(function () {
 		abilities = ABILITIES_ADV;
 		calculateAllMoves = CALCULATE_ALL_MOVES_ADV;
 		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_GEN3));
-		smogonLink = "https://www.smogon.com/forums/threads/gen-iii-battle-frontier-discussion-and-records.3648697/";
+		forumLink = "https://www.smogon.com/forums/threads/gen-iii-battle-frontier-discussion-and-records.3648697/";
 		break;
 	case 4:
 		pokedex = POKEDEX_DPP;
@@ -1067,7 +1068,7 @@ $(".gen").change(function () {
 		items = ITEMS_DPP;
 		abilities = ABILITIES_DPP;
 		calculateAllMoves = CALCULATE_ALL_MOVES_PTHGSS;
-		smogonLink = "https://www.smogon.com/forums/threads/4th-generation-battle-facilities-discussion-and-records.3663294/";
+		forumLink = "https://www.smogon.com/forums/threads/4th-generation-battle-facilities-discussion-and-records.3663294/";
 		break;
 	case 5:
 		pokedex = POKEDEX_BW;
@@ -1078,7 +1079,7 @@ $(".gen").change(function () {
 		abilities = ABILITIES_BW;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
 		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
-		smogonLink = "https://www.smogon.com/forums/threads/black-white-battle-subway-records-now-with-gen-4-records.102593/";
+		forumLink = "https://www.smogon.com/forums/threads/black-white-battle-subway-records-now-with-gen-4-records.102593/";
 		break;
 	case 6:
 		pokedex = POKEDEX_XY;
@@ -1089,7 +1090,7 @@ $(".gen").change(function () {
 		abilities = ABILITIES_XY;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
 		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
-		smogonLink = "https://www.smogon.com/forums/threads/battle-maison-discussion-records.3492706/";
+		forumLink = "https://www.smogon.com/forums/threads/battle-maison-discussion-records.3492706/";
 		break;
 	case 7:
 		pokedex = POKEDEX_SM;
@@ -1100,7 +1101,7 @@ $(".gen").change(function () {
 		abilities = ABILITIES_SM;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
 		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
-		smogonLink = "https://www.smogon.com/forums/threads/battle-tree-discussion-and-records.3587215/";
+		forumLink = "https://www.smogon.com/forums/threads/battle-tree-discussion-and-records.3587215/";
 		break;
 	case 8:
 		pokedex = POKEDEX_SS;
@@ -1110,7 +1111,7 @@ $(".gen").change(function () {
 		items = ITEMS_SS;
 		abilities = ABILITIES_SS;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		smogonLink = "https://www.smogon.com/forums/threads/swsh-battle-facilities-discussion-records.3656190/";
+		forumLink = "https://www.smogon.com/forums/threads/swsh-battle-facilities-discussion-records.3656190/";
 		$("#startGimmick-label").text("Start Dynamaxed");
 		$("#startGimmick-label").prop("title", "This custom set starts Dynamaxed when loaded");
 		break;
@@ -1122,7 +1123,7 @@ $(".gen").change(function () {
 		items = ITEMS_SS;
 		abilities = ABILITIES_SS;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		smogonLink = "https://www.smogon.com/forums/threads/bdsp-battle-tower-discussion-records.3693739/";
+		forumLink = "https://www.smogon.com/forums/threads/bdsp-battle-tower-discussion-records.3693739/";
 		break;
 	case 9:
 		pokedex = POKEDEX_SV;
@@ -1138,7 +1139,7 @@ $(".gen").change(function () {
 	localStorage.setItem("selectedGen", gen);
 	$("#autolevel-title").text((gen == 4 ? "AI " : "") + "Auto-Level to:");
 	setdexAll = joinDexes([setdex, SETDEX_CUSTOM]);
-	$("#midimg").parent().prop("href", smogonLink);
+	$("#midimg").parent().prop("href", forumLink);
 	clearField();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();

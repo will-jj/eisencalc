@@ -124,6 +124,11 @@ function MassPokemon(speciesName, setName) {
 	this.hasType = function (type) {
 		return this.type1 === type || this.type2 === type;
 	};
+
+	this.revertStats = function () {
+		Object.keys(this.boosts).forEach(stat => { this.boosts[stat] = 0; });
+		this.stats = [];
+	};
 }
 
 function performCalculations() {
@@ -131,10 +136,11 @@ function performCalculations() {
 	var selectedTier = getSelectedTier(); // selectedTier can be: All, threshold, Hall, HallR10, Tower, RS, SM, DM.  *SM and DM are Singles and Doubles Master
 	var dataSet = [];
 	var userPoke = new Pokemon($("#p1"));
-	var startingBoosts = [userPoke.boosts.at, userPoke.boosts.df, userPoke.boosts.sa, userPoke.boosts.sd, userPoke.boosts.sp, userPoke.boosts.ac, userPoke.boosts.es];
-	var startingMoveTypes = [userPoke.moves[0].type, userPoke.moves[1].type, userPoke.moves[2].type, userPoke.moves[3].type];
-	var startingMoveCategory = [userPoke.moves[0].category, userPoke.moves[1].category, userPoke.moves[2].category, userPoke.moves[3].category];
-	var startingMoveContact = [userPoke.moves[0].makesContact, userPoke.moves[1].makesContact, userPoke.moves[2].makesContact, userPoke.moves[3].makesContact];
+	STATS.forEach(stat => { userPoke.startingBoosts[stat] = userPoke.boosts[stat]; });
+	userPoke.revertStats = function () {
+		Object.keys(this.boosts).forEach(stat => { this.boosts[stat] = this.startingBoosts[stat] });
+		this.stats = [];
+	};
 	if (mode === "one-vs-all") {
 		attacker = userPoke;
 	} else {
@@ -181,8 +187,8 @@ function performCalculations() {
 				maxDamage = result.damage[result.damage.length - 1] * (attackerMove.name === "Triple Axel" ? 1 : attackerMove.hits);
 				// If any piece of the calculation is a string and not a number ie. Pokemon.level, stats will concatinate into strings, and the below will eval to 0.
 				// I want to be very sure that everything is using the correct types, so I want this behavior. Shoutouts to writing code w/o tests.
-				minPercentage = Math.floor(minDamage * 1000 / defender.maxHP) / 10;
-				maxPercentage = Math.floor(maxDamage * 1000 / defender.maxHP) / 10;
+				minPercentage = Math.round(minDamage * 1000 / defender.maxHP) / 10;
+				maxPercentage = Math.round(maxDamage * 1000 / defender.maxHP) / 10;
 				minPixels = Math.floor(minDamage * 48 / defender.maxHP);
 				maxPixels = Math.floor(maxDamage * 48 / defender.maxHP);
 				if (maxDamage > highestDamage) {
@@ -204,21 +210,8 @@ function performCalculations() {
 			dataSet.push(data);
 
 			// fields in the boosts and stats objects should be the only things that get changed in the Pokemon object during mass calc
-			userPoke.boosts.at = startingBoosts[0];
-			userPoke.boosts.df = startingBoosts[1];
-			userPoke.boosts.sa = startingBoosts[2];
-			userPoke.boosts.sd = startingBoosts[3];
-			userPoke.boosts.sp = startingBoosts[4];
-			userPoke.boosts.ac = startingBoosts[5];
-			userPoke.boosts.es = startingBoosts[6];
-			userPoke.stats = [];
-			// reset changed move properties
-			for (let n = 0; n < 4; n++) {
-				var move = userPoke.moves[n];
-				move.type = startingMoveTypes[n];
-				move.category = startingMoveCategory[n];
-				move.makesContact = startingMoveContact[n];
-			}
+			attacker.revertStats();
+			defender.revertStats();
 			// the only Field object "property" that can be modified is weather
 			field.setWeather(startingWeather);
 			counter++;
