@@ -1136,7 +1136,7 @@ $(".gen").change(function () {
 		break;
 	case 9:
 		pokedex = POKEDEX_SV;
-		setdex = SETDEX_CUSTOM;//SV
+		setdex = [];//SV
 		typeChart = TYPE_CHART_XY;
 		moves = MOVES_SV;
 		items = ITEMS_SV;

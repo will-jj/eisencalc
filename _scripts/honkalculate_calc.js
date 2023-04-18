@@ -63,6 +63,8 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 };
 
 function MassPokemon(speciesName, setName) {
+	let pokemon = pokedex[speciesName];
+	let set = setdex[speciesName][setName];
 	let massPoke = {
 		"name": speciesName,
 		"setName": setName,
