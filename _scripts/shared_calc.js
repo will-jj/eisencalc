@@ -772,7 +772,7 @@ function Pokemon(pokeInfo) {
 		"hasType": function (type) { return this.type1 === type || this.type2 === type; }
 	};
 	// name
-	if (setName.includes("(")) {
+	if (!setName.includes("(")) {
 		poke.name = setName;
 	} else {
 		let pokemonName = setName.substring(0, setName.indexOf(" ("));
