@@ -62,7 +62,7 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 	return parseInt(b) - parseInt(a);
 };
 
-function MassPokemon(speciesName, setName) {
+function MassPokemon(speciesName, setName, autoLevel) {
 	let pokemon = pokedex[speciesName];
 	let set = setdex[speciesName][setName];
 	let massPoke = {
@@ -267,7 +267,7 @@ $(".gen").change(function () {
 	}
 
 	// set up the list of MassPokemon
-	let autoLevel = localStorage.getItem("autolevelGen" + gen);
+	let autoLevel = parseInt(localStorage.getItem("autolevelGen" + gen));
 	let setSpecies = Object.keys(gen == 3 && $("#autolevel-box").val() == 50 ? SETDEX_EM : setdex);
 	setsArray = [];
 	for (let i = 0; i < setSpecies.length; i++) {
@@ -275,7 +275,7 @@ $(".gen").change(function () {
 		let setNames = Object.keys(setdex[speciesName]);
 		for (let j = 0; j < setNames.length; j++) {
 			let setName = setNames[j];
-			setsArray.push(MassPokemon(speciesName, setName));
+			setsArray.push(MassPokemon(speciesName, setName, autoLevel));
 		}
 	}
 });
