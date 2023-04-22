@@ -231,13 +231,15 @@ function setupRecoilRecoveryText(result, attacker, defender, move, minDamage, ma
 	}
 }
 
+var mainResult = "";
 function updateDamageText(resultMoveObj) {
 	if (damageResults) {
 		var result = findDamageResult(resultMoveObj);
 		if (result) {
 			let recoilText = result.recoilRange ? ("; " + result.recoilType + " damage: " + result.recoilRange + " (" + result.recoilPercent + "%)") : "";
 			let recoveryText = result.recoveryRange ? ("; recovers " + result.recoveryRange + " (" + result.recoveryPercent + "%)") : "";
-			$("#mainResult").html(result.description + ": " + result.damageText + recoilText + recoveryText + " -- " + result.koChanceText);
+			mainResult = result.description + ": " + result.damageText + recoilText + recoveryText;
+			$("#mainResult").html(mainResult + " -- " + result.koChanceText);
 			if (result.parentDamage) {
 				$("#damageValues").text("(First hit: " + result.parentDamage.join(", ") +
                     "; Second hit: " + result.childDamage.join(", ") + ")");
@@ -328,4 +330,9 @@ $("#maxR").change(function () {
 			$("#maxR" + (i + 1)).prop("checked", false);
 		}
 	}
+});
+
+// Click-to-copy function (thanks DimK19, this is an excellent idea)
+$("#mainResult").click(function () {
+	navigator.clipboard.writeText(mainResult);
 });
