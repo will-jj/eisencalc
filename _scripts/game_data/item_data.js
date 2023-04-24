@@ -118,6 +118,7 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	"Odd Incense",
 	"Passho Berry",
 	"Payapa Berry",
+	"Razor Claw",
 	"Razor Fang",
 	"Rindo Berry",
 	"Rock Incense",

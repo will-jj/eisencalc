@@ -972,14 +972,14 @@ function getZMoveName(moveName, moveType, item) {
 function Field() {
 	var format = $("input:radio[name='format']:checked").val().toLowerCase();
 	var isGravity = $("#gravity").prop("checked");
-	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
+	var isSR = [$("#srR").prop("checked"), $("#srL").prop("checked")]; // affects attacks against opposite side
 	var isProtect = [$("#protectL").prop("checked"), $("#protectR").prop("checked")];
 	var weather = $("input:radio[name='weather']:checked").val();
-	var spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
+	var spikes = [~~$("input:radio[name='spikesR']:checked").val(), ~~$("input:radio[name='spikesL']:checked").val()]; // affects attacks against opposite side
 	var terrain = $("input:radio[name='terrain']:checked").val();
 	var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
 	var isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
-	var isSeeded = [$("#leechSeedL").prop("checked"), $("#leechSeedR").prop("checked")];
+	var isSeeded = [$("#leechSeedR").prop("checked"), $("#leechSeedL").prop("checked")]; // affects attacks against opposite side
 	var isHelpingHand = [$("#helpingHandR").prop("checked"), $("#helpingHandL").prop("checked")]; // affects attacks against opposite side
 	var isPowerSpot = [$("#powerSpotR").prop("checked"), $("#powerSpotL").prop("checked")]; // affects attacks against opposite side
 	var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];

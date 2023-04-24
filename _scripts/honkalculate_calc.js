@@ -196,8 +196,8 @@ function performCalculations() {
 				data.push(attackerMove.name.replace("Hidden Power", "HP"));
 				data.push(minPercentage + " - " + maxPercentage + "%");
 				data.push(minPixels + " - " + maxPixels + "px");
-				data.push(attackerMove.bp === 0 ? "nice move" :
-					getKOChanceText(result.damage, attackerMove, defender, field.getSide(~~(mode === "one-vs-all")), false, attacker, false, attacker.isVictoryStar, gen, false));
+				setKOChanceText(result, attackerMove, attacker, defender, field.getSide(~~(mode === "one-vs-all")));
+				data.push(attackerMove.bp === 0 ? "nice move" : result.koChanceText);
 			}
 		}
 		data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);

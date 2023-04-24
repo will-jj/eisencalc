@@ -275,8 +275,7 @@ function getDamageResult(attacker, defender, move, field) {
         (defender.hasType("Flying") || defenderWeight >= 200.0 || field.isGravity)) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if (move.name === "Synchronoise" &&
-            [defender.type1, defender.type2].indexOf(attacker.type1) === -1 && [defender.type1, defender.type2].indexOf(attacker.type2) === -1) {
+	if (move.name === "Synchronoise" && !attacker.hasType(defender.type1) && !attacker.hasType(defender.type2)) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 	if (move.name === "Steel Roller" && !field.terrain) {
