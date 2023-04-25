@@ -972,10 +972,11 @@ function getZMoveName(moveName, moveType, item) {
 function Field() {
 	var format = $("input:radio[name='format']:checked").val().toLowerCase();
 	var isGravity = $("#gravity").prop("checked");
-	var isSR = [$("#srR").prop("checked"), $("#srL").prop("checked")]; // affects attacks against opposite side
+	// isSR (stealth rocks), spikes, and Busted are all in the correct order. They are only used by ko_chance, and the defender's side is passed to it
+	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
 	var isProtect = [$("#protectL").prop("checked"), $("#protectR").prop("checked")];
 	var weather = $("input:radio[name='weather']:checked").val();
-	var spikes = [~~$("input:radio[name='spikesR']:checked").val(), ~~$("input:radio[name='spikesL']:checked").val()]; // affects attacks against opposite side
+	var spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
 	var terrain = $("input:radio[name='terrain']:checked").val();
 	var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
 	var isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
