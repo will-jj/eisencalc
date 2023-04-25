@@ -419,7 +419,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Triple Axel":
 		basePower = move.bp;
-		description.moveBP = move.hits == 3 ? "20, 40, 60" : (move.hits == 2 ? "20, 40" : basePower);
+		description.moveBP = move.hits == 3 ? (basePower + ", " + (basePower * 2) + ", " + (basePower * 3)) : (move.hits == 2 ? (basePower + ", " + (basePower * 2)) : basePower);
 		break;
 	case "Last Respects":
 		basePower = 50 + 50 * field.faintedCount;
@@ -877,10 +877,20 @@ function getDamageResult(attacker, defender, move, field) {
 	var finalMods = [];
 	var ignoresScreens = isCritical || ["Brick Break", "Psychic Fangs", "Raging Bull"].includes(move.name) || attacker.ability === "Infiltrator";
 	if (field.isReflect && moveCategory === "Physical" && !ignoresScreens) {
-		finalMods.push(field.format !== "Singles" ? 0xA8F : 0x800);
+		if (field.format === "singles") {
+			finalMods.push(0x800);
+		} else {
+			finalMods.push(0xA8F);
+			description.isDoublesScreen = true;
+		}
 		description.isReflect = true;
 	} else if (field.isLightScreen && moveCategory === "Special" && !ignoresScreens) {
-		finalMods.push(field.format !== "Singles" ? 0xA8F : 0x800);
+		if (field.format === "singles") {
+			finalMods.push(0x800);
+		} else {
+			finalMods.push(0xA8F);
+			description.isDoublesScreen = true;
+		}
 		description.isLightScreen = true;
 	}
 	if (attacker.ability === "Neuroforce" && typeEffectiveness > 1) {
@@ -945,7 +955,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	var damage = [], pbDamage = [];
 	var child, childDamage;
-	if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
+	if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
 		child = JSON.parse(JSON.stringify(attacker));
 		child.rawStats = attacker.rawStats;
 		child.stats = attacker.stats;
@@ -974,7 +984,7 @@ function getDamageResult(attacker, defender, move, field) {
 			damage[i] = 0;
 			description.isZeroVsDynamax = true;
 		}
-		if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
+		if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
 			for (let j = 0; j < 16; j++) {
 				pbDamage[16 * i + j] = damage[i] + childDamage[j];
 			}
@@ -1092,7 +1102,9 @@ function buildDescription(description) {
 	} else if (description.terrain) {
 		output += " in " + description.terrain + " Terrain";
 	}
-	if (description.isReflect) {
+	if (description.isDoublesScreen) {
+		output += " through Doubles " + (description.isReflect ? "Reflect" : "Light Screen");
+	} else if (description.isReflect) {
 		output += " through Reflect";
 	} else if (description.isLightScreen) {
 		output += " through Light Screen";
