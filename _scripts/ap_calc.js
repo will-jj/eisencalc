@@ -265,6 +265,8 @@ function updateDamageText(resultMoveObj) {
 			} else {
 				$("#damageValues").text("(" + result.damage.join(", ") + ")");
 			}
+		} else {
+			mainResult = "problem with mainResult";
 		}
 	}
 }
