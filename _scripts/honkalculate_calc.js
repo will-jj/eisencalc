@@ -197,7 +197,11 @@ function performCalculations() {
 				data.push(minPercentage + " - " + maxPercentage + "%");
 				data.push(minPixels + " - " + maxPixels + "px");
 				setKOChanceText(result, attackerMove, attacker, defender, field.getSide(~~(mode === "one-vs-all")));
-				data.push(attackerMove.bp === 0 ? "nice move" : result.koChanceText);
+				if (attackerMove.bp === 0) {
+					data.push("nice move");
+				} else {
+					data.push(result.koChanceText ? result.koChanceText : "Did not get koChanceText");
+				}
 			}
 		}
 		data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);

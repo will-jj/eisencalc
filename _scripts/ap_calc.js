@@ -255,8 +255,8 @@ function updateDamageText(resultMoveObj) {
 		if (result) {
 			let recoilText = result.recoilRange ? ("; " + result.recoilType + " damage: " + result.recoilRange + " (" + result.recoilPercent + "%)") : "";
 			let recoveryText = result.recoveryRange ? ("; recovers " + result.recoveryRange + " (" + result.recoveryPercent + "%)") : "";
-			mainResult = result.description + ": " + result.damageText + recoilText + recoveryText +
-				" -- " + result.koChanceText + (result.afterText ? result.afterText : "");
+			let koChanceText = result.koChanceText ? (result.koChanceText + (result.afterText ? result.afterText : "")) : "Did not get koChanceText";
+			mainResult = result.description + ": " + result.damageText + recoilText + recoveryText + " -- " + koChanceText;
 			$("#mainResult").html(mainResult);
 			$("#afterAcc").html(result.afterAccText ? result.afterAccText : "");
 			if (result.parentDamage) {
