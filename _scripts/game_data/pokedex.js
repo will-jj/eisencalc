@@ -7851,7 +7851,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sp": 95
 		},
 		"w": 92.9,
-		"abilities": ["Gorilla Tactics", "Zen Mode"],
+		"abilities": ["Sheer Force", "Zen Mode"],
 		"formes": [ "Darmanitan", "Darmanitan-Zen"]
 	},
 	"Darmanitan-Zen": {
