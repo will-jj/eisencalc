@@ -119,7 +119,10 @@ var savecustom = function () {
 		var item = "";
 		var ability = "";
 		var teraType = "";
-		var level = "50";
+		var level = localStorage.getItem("autolevelGen" + gen);
+		if (!level) {
+			level = "50";
+		}
 		var EVs = [0, 0, 0, 0, 0, 0];
 		var IVs = [31, 31, 31, 31, 31, 31];
 		var nature = "Serious";
