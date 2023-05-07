@@ -150,7 +150,6 @@ function performCalculations() {
 	}
 	var field = new Field();
 	var startingWeather = field.getWeather();
-	var counter = 0;
 	for (let i = 0; i < setsArray.length; i++) {
 		setPoke = setsArray[i];
 		setTier = setPoke.tier; // setPoke.tier can be: 50, Hall, HallR10, 28, 40, Tower, RS, SM, DM, SMDM. A set might not have a tier key.
@@ -186,8 +185,6 @@ function performCalculations() {
 			// I want to be very sure that everything is using the correct types, so I want this behavior. Shoutouts to writing code w/o tests.
 			minPercentage = Math.round(minDamage * 1000 / defender.maxHP) / 10;
 			maxPercentage = Math.round(maxDamage * 1000 / defender.maxHP) / 10;
-			minPixels = Math.floor(minDamage * 48 / defender.maxHP);
-			maxPixels = Math.floor(maxDamage * 48 / defender.maxHP);
 			if (maxDamage > highestDamage) {
 				highestDamage = maxDamage;
 				while (data.length > 1) {
@@ -195,7 +192,6 @@ function performCalculations() {
 				}
 				data.push(attackerMove.name.replace("Hidden Power", "HP"));
 				data.push(minPercentage + " - " + maxPercentage + "%");
-				data.push(minPixels + " - " + maxPixels + "px");
 				setKOChanceText(result, attackerMove, attacker, defender, field.getSide(~~(mode === "one-vs-all")));
 				if (attackerMove.bp === 0) {
 					data.push("nice move");
@@ -206,8 +202,6 @@ function performCalculations() {
 		}
 		data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
 		data.push(((mode === "one-vs-all") ? defender.type2 : attacker.type2) || "");
-		data.push(((mode === "one-vs-all") ? defender.ability : attacker.ability) || "");
-		data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
 		dataSet.push(data);
 
 		// fields in the boosts and stats objects should be the only things that get changed in the Pokemon object during mass calc
@@ -215,11 +209,10 @@ function performCalculations() {
 		defender.revertStats();
 		// the only Field object "property" that can be modified is weather
 		field.setWeather(startingWeather);
-		counter++;
 	}
 	var pokemon = mode === "one-vs-all" ? attacker : defender;
 	table.rows.add(dataSet).draw();
-	return counter;
+	return dataSet.length;
 }
 
 function getSelectedTier() {
@@ -317,8 +310,8 @@ function constructDataTable() {
 	table = $("#holder-2").DataTable({
 		destroy: true,
 		columnDefs: [
-			{
-				targets: [3, 5, 6, 7, 8],
+			{ // remove the type columns
+				targets: [4, 5],
 				visible: false,
 				searchable: false
 			},
@@ -326,16 +319,13 @@ function constructDataTable() {
 				targets: [2],
 				type: 'damage100'
 			},
-			{
+			{ // Sort KO Chance by damage% instead
 				targets: [3],
-				type: 'damage48'
-			},
-			{targets: [4],
 				iDataSort: 2
 			}
 		],
 		dom: 'frti',
-		colVis: {
+		/*colVis: { The options that allows selection of which columns to include in the table
 			exclude: (gen > 2) ? [0, 1, 2] : (gen === 2) ? [0, 1, 2, 7] : [0, 1, 2, 7, 8],
 			stateChange: function (iColumn, bVisible) {
 				var column = table.settings()[0].aoColumns[iColumn];
@@ -344,7 +334,7 @@ function constructDataTable() {
 					table.rows().invalidate();
 				}
 			}
-		},
+		},*/
 		paging: false,
 		scrollX: Math.floor(dtWidth / 100) * 100, // round down to nearest hundred
 		scrollY: dtHeight,
