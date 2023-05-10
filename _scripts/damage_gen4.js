@@ -48,6 +48,9 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		"defenderName": defender.name
 	};
 
+	if (killsShedinja(attacker, defender, move)) {
+		return {"damage": [1], "description": buildDescription(description)};
+	}
 	if (move.bp === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
@@ -106,7 +109,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	if (typeEffectiveness === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1) ||
+	if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1 && !["Struggle", "Beat Up", "Future Sight", "Doom Desire", "Fire Fang"].includes(move.name)) ||
             (moveType === "Fire" && defAbility.indexOf("Flash Fire") !== -1) ||
             (moveType === "Water" && ["Dry Skin", "Water Absorb"].indexOf(defAbility) !== -1) ||
             (moveType === "Electric" && ["Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1) ||

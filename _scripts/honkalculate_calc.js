@@ -118,7 +118,7 @@ function MassPokemon(speciesName, setName, autoLevel) {
 		let moveName = set.moves[n];
 		let defaultDetails = moves[moveName] || moves["(No Move)"];
 		massPoke.moves.push($.extend({}, defaultDetails, {
-			"name": defaultDetails.bp === 0 ? "(No Move)" : moveName,
+			"name": moveName,
 			"bp": defaultDetails.bp,
 			"type": defaultDetails.type,
 			"category": defaultDetails.category,
@@ -190,7 +190,7 @@ function performCalculations() {
 				while (data.length > 1) {
 					data.pop();
 				}
-				data.push(attackerMove.name.replace("Hidden Power", "HP"));
+				data.push(highestDamage <= 0 ? "(No Move)" : attackerMove.name.replace("Hidden Power", "HP"));
 				data.push(minPercentage + " - " + maxPercentage + "%");
 				setKOChanceText(result, attackerMove, attacker, defender, field.getSide(~~(mode === "one-vs-all")));
 				if (attackerMove.bp === 0) {

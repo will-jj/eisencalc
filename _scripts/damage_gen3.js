@@ -41,6 +41,9 @@ function getDamageResultADV(attacker, defender, move, field) {
 		"defenderName": defender.name
 	};
 
+	if (killsShedinja(attacker, defender, move)) {
+		return {"damage": [1], "description": buildDescription(description)};
+	}
 	if (move.bp === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
@@ -72,7 +75,7 @@ function getDamageResultADV(attacker, defender, move, field) {
             (defender.ability === "Levitate" && moveType === "Ground") ||
             (defender.ability === "Volt Absorb" && moveType === "Electric") ||
             (defender.ability === "Water Absorb" && moveType === "Water") ||
-            (defender.ability === "Wonder Guard" && typeEffectiveness <= 1) ||
+            (defender.ability === "Wonder Guard" && typeEffectiveness <= 1 && !["Struggle", "Beat Up", "Future Sight", "Doom Desire"].includes(move.name)) ||
             (defender.ability === "Soundproof" && move.isSound)) {
 		description.defenderAbility = defender.ability;
 		return {"damage": [0], "description": buildDescription(description)};

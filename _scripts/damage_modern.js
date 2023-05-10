@@ -84,14 +84,6 @@ function getDamageResult(attacker, defender, move, field) {
 		"defenderName": defender.name,
 		"isDynamax": defender.isDynamax
 	};
-	if (defender.isTerastal) {
-		description.defenderTera = defender.type1;
-	}
-	if (move.bp === 0) {
-		return {"damage": [0], "description": buildDescription(description)};
-	}
-
-	let moveType = move.type;
 
 	let defAbility = defender.ability;
 	if (defAbility !== "Shadow Shield") {
@@ -110,6 +102,19 @@ function getDamageResult(attacker, defender, move, field) {
 			}
 		}
 	}
+
+	if (killsShedinja(attacker, defender, move)) {
+		return {"damage": [1], "description": buildDescription(description)};
+	}
+	if (move.bp === 0) {
+		return {"damage": [0], "description": buildDescription(description)};
+	}
+	
+	if (defender.isTerastal) {
+		description.defenderTera = defender.type1;
+	}
+
+	let moveType = move.type;
 
 	var isCritical = move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1;
 
@@ -251,7 +256,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (typeEffectiveness === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if (defAbility === "Wonder Guard" && typeEffectiveness <= 1 ||
+	if (defAbility === "Wonder Guard" && typeEffectiveness <= 1 && move.name !== "Struggle" ||
 		moveType === "Grass" && defAbility === "Sap Sipper" ||
 		moveType === "Fire" && ["Flash Fire", "Flash Fire (activated)", "Well-Baked Body"].indexOf(defAbility) !== -1 ||
 		moveType === "Water" && ["Dry Skin", "Storm Drain", "Water Absorb"].indexOf(defAbility) !== -1 ||
@@ -1223,6 +1228,21 @@ function getModdedWeight(pokemon, ability) {
 		weight = Math.floor(weight * 5) / 10;
 	}
 	return weight < 0.1 ? 0.1 : weight;
+}
+
+function killsShedinja(attacker, defender, move) {
+	// This is meant to at-a-glance highlight moves that are fatal to Shedinja and allow the mass calc to better capture Shedinja's defensive profile.
+	if (defender.ability === "Wonder Guard" && defender.curHP == 1) {
+		let weather = defender.item !== "Safety Goggles" && ((move.name === "Sandstorm" && !defender.hasType("Rock")) || (move.name === "Hail" && !defender.hasType("Ice")));
+		// akin to Sash, status berries should not be accounted for
+		let poison = defender.status === "Healthy" && ["Toxic", "Poison Gas", "Poison Powder", "Toxic Thread"].includes(move.name) && ((!defender.hasType("Poison") && !defender.hasType("Steel")) || attacker.ability === "Corrosion");
+		let burn = move.name === "Will-O-Wisp" && !defender.hasType("Fire");
+		let dangerItem = ["Flame Orb", "Toxic Orb", "Sticky Barb"].includes(attacker.item) && (["Trick", "Switcheroo"].includes(move.name) || (move.name === "Bestow" && defender.item === ""));
+		if (weather || poison || burn || dangerItem) {
+			return true;
+		}
+	}
+	return false;
 }
 
 function checkAirLock(pokemon, field) {
