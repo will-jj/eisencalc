@@ -558,11 +558,10 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x1199); // confirmed to be 0x1199 from gens 5-9 by https://www.smogon.com/bw/articles/bw_complete_damage_formula and OZY's Twitter
 		description.attackerItem = attacker.item;
 	} else if (attacker.item === "Punching Glove" && move.isPunch) {
-		// It seems to be an ever-so-slightly-different multiplier from Band/Glasses https://twitter.com/OZY_Project97/status/1604385021439094784
-		bpMods.push(0x119A);
+		bpMods.push(0x119A); // it seems to be an ever-so-slightly-different multiplier from Band/Glasses https://twitter.com/OZY_Project97/status/1604385021439094784
 		description.attackerItem = attacker.item;
 	} else if ((getItemBoostType(attacker.item) === moveType) ||
-		(attacker.hasType(moveType) && ( // this probably no longer works correctly under Terastallization; can check dex types instead
+		((attacker.dexType1 === moveType || attacker.dexType2 === moveType) && (
 		attacker.item === "Adamant Orb" && attacker.name === "Dialga" ||
 		attacker.item === "Lustrous Orb" && attacker.name === "Palkia" ||
 		attacker.item === "Griseous Orb" && attacker.name === "Giratina-O" ||
