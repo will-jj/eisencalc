@@ -7,7 +7,8 @@ function setKOChanceText(result, move, attacker, defender, field) {
 	var moveAccuracy = "";
 	var ignoreAccMods = false;
 	if (move.acc || move.isZ) {
-		if (move.isZ || move.acc === 101 || (move.name === "Blizzard" && (field.weather === "Hail" || field.weather === "Snow")) || ((move.name === "Thunder" || move.name === "Hurricane") && field.weather.includes("Rain")) ||
+		// all genie sig moves have perfect acc in rain, except the pink one's.
+		if (move.isZ || move.acc === 101 || (move.name === "Blizzard" && (field.weather === "Hail" || field.weather === "Snow")) || (["Thunder", "Hurricane", "Bleakwind Storm", "Sandsear Storm", "Wildbolt Storm"].includes(move.name) && field.weather.includes("Rain")) ||
 			(["Astonish", "Body Slam", "Dragon Rush", "Extrasensory", "Flying Press", "Heat Crash", "Heavy Slam", "Malicious Moonsault", "Needle Arm", "Phantom Force", "Shadow Force", "Steamroller", "Stomp"].includes(move.name) && defender.isMinimized)) {
 			moveAccuracy = 100;
 			ignoreAccMods = true;

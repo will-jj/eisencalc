@@ -15,7 +15,7 @@ function CALC_HP_ADV(poke) {
 		total = Math.floor((base * 2 + ivs + Math.floor(evs / 4)) * level / 100) + level + 10;
 	}
 
-	if (poke.find(".max").prop("checked")) {
+	if (poke.find(".max").prop("checked") && total > 1) {
 		var dmaxLevel = poke.find(".max-level").val();
 		total = Math.floor(total * (1.5 + (dmaxLevel * 0.05)));
 	}

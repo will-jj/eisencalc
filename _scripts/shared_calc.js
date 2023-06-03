@@ -584,21 +584,17 @@ function prependSpeciesAbilities(abilityList, pokeObjID, abilityObj) {
 }
 
 function showFormes(formeObj, setName, pokemonName, pokemon) {
-	var defaultForme = 0;
+	let defaultForme = 0;
 
 	if (setName !== "Blank Set") {
-		var set = setdexAll[pokemonName][setName];
-
+		let set = setdexAll[pokemonName][setName];
 		if (set.forme) {
 			defaultForme = pokedex[pokemonName].formes.indexOf(set.forme);
-		}
-
-		if (set.isGmax) {
+		} else if (set.isGmax) {
 			defaultForme = 1;
 		}
-
-		// This code needs to stay intact for old saved Mega sets that don't have the forme field
-		if (set.item) {
+		else if (set.item) {
+			// This code needs to stay intact for old saved Mega sets that don't have the forme field
 			if (set.item !== "Eviolite" && (set.item.endsWith("ite") || set.item.endsWith("ite X"))) {
 				defaultForme = 1;
 			} else if (set.item.endsWith("ite Y")) {
@@ -607,7 +603,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 		}
 	}
 
-	var formeOptions = getSelectOptions(pokemon.formes, false, defaultForme);
+	let formeOptions = getSelectOptions(pokemon.formes, false, defaultForme);
 	formeObj.children("select").find("option").remove().end().append(formeOptions).change();
 	formeObj.show();
 }

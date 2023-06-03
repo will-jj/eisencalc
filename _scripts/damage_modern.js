@@ -179,7 +179,8 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 
 	case "Meteor Beam":
-		attacker.boosts[SA] = attacker.ability === "Simple" ? Math.min(6, attacker.boosts[SA] + 2) : (attacker.ability === "Contrary" ? Math.max(-6, attacker.boosts[SA] - 1) : Math.min(6, attacker.boosts[SA] + 1));
+		var originalSABoost = attacker.boosts[SA];
+		attacker.boosts[SA] = attacker.ability === "Simple" ? Math.min(6, attacker.boosts[SA] + 2) : (attacker.ability === "Contrary" && attacker.item !== "White Herb" ? Math.max(-6, attacker.boosts[SA] - 1) : Math.min(6, attacker.boosts[SA] + 1));
 		attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 		// this boost gets reset after attack mods are calc'd
 		break;
@@ -534,7 +535,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	// The location of Technician changed betweens gens 7 and 8 https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8433978
-	if (gen < 8 && attacker.ability === "Technician" && pokeRound((basePower * chainMods(bpMods)) / 4096) <= 60) {
+	if (gen <= 7 && attacker.ability === "Technician" && pokeRound((basePower * chainMods(bpMods)) / 4096) <= 60) {
 		bpMods.push(0x1800);
 		description.attackerAbility = attacker.ability;
 	}
@@ -558,11 +559,10 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x1199); // confirmed to be 0x1199 from gens 5-9 by https://www.smogon.com/bw/articles/bw_complete_damage_formula and OZY's Twitter
 		description.attackerItem = attacker.item;
 	} else if (attacker.item === "Punching Glove" && move.isPunch) {
-		// It seems to be an ever-so-slightly-different multiplier from Band/Glasses https://twitter.com/OZY_Project97/status/1604385021439094784
-		bpMods.push(0x119A);
+		bpMods.push(0x119A); // it seems to be an ever-so-slightly-different multiplier from Band/Glasses https://twitter.com/OZY_Project97/status/1604385021439094784
 		description.attackerItem = attacker.item;
 	} else if ((getItemBoostType(attacker.item) === moveType) ||
-		(attacker.hasType(moveType) && ( // this probably no longer works correctly under Terastallization; can check dex types instead
+		((attacker.dexType1 === moveType || attacker.dexType2 === moveType) && (
 		attacker.item === "Adamant Orb" && attacker.name === "Dialga" ||
 		attacker.item === "Lustrous Orb" && attacker.name === "Palkia" ||
 		attacker.item === "Griseous Orb" && attacker.name === "Giratina-O" ||
@@ -719,7 +719,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.defenderAbility = defAbility;
 	}
 
-	if (attacker.item === "Soul Dew" && gen < 7 && (attacker.name === "Latios" || attacker.name === "Latias") && moveCategory === "Special" ||
+	if (attacker.item === "Soul Dew" && gen <= 6 && (attacker.name === "Latios" || attacker.name === "Latias") && moveCategory === "Special" ||
 		attacker.item === "Choice Band" && (moveCategory === "Physical" || move.name === "Body Press") && !move.isZ && !attacker.isDynamax ||
 		attacker.item === "Choice Specs" && moveCategory === "Special" && !move.isZ && !attacker.isDynamax) {
 		atMods.push(0x1800);
@@ -733,8 +733,9 @@ function getDamageResult(attacker, defender, move, field) {
 
 	attack = Math.max(1, pokeRound(attack * chainMods(atMods) / 0x1000));
 
+	// reset the SpA boost from Meteor Beam so it doesn't affect other moves
 	if (move.name === "Meteor Beam") {
-		attacker.boosts[SA] = attacker.ability === "Simple" ? (attacker.boosts[SA] - 2) : (attacker.ability === "Contrary" ? (attacker.boosts[SA] + 1) : (attacker.boosts[SA] - 1));
+		attacker.boosts[SA] = originalSABoost;
 		attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 	}
 
@@ -793,7 +794,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.isRuinDef = true;
 	}
 
-	if (defender.item === "Soul Dew" && gen < 7 && (defender.name === "Latios" || defender.name === "Latias") && !hitsPhysical ||
+	if (defender.item === "Soul Dew" && gen <= 6 && (defender.name === "Latios" || defender.name === "Latias") && !hitsPhysical ||
 		defender.item === "Assault Vest" && !hitsPhysical ||
 		defender.item === "Eviolite") {
 		dfMods.push(0x1800);
@@ -1232,15 +1233,21 @@ function getModdedWeight(pokemon, ability) {
 
 function killsShedinja(attacker, defender, move) {
 	// This is meant to at-a-glance highlight moves that are fatal to Shedinja and allow the mass calc to better capture Shedinja's defensive profile.
+	// sorry for the mess of conditionals
 	if (defender.ability === "Wonder Guard" && defender.curHP == 1) {
-		let weather = defender.item !== "Safety Goggles" && ((move.name === "Sandstorm" && !defender.hasType("Rock")) || (move.name === "Hail" && !defender.hasType("Ice")));
+		let poisonable = defender.status === "Healthy" && !defender.hasType("Poison") && !defender.hasType("Steel");
+		let burnable = defender.status === "Healthy" && !defender.hasType("Fire");
+
+		let weather = defender.item !== "Safety Goggles" &&
+		((move.name === "Sandstorm" && (!defender.hasType("Rock") && !defender.hasType("Steel") && !defender.hasType("Ground"))) || (move.name === "Hail" && !defender.hasType("Ice")));
 		// akin to Sash, status berries should not be accounted for
-		let poison = defender.status === "Healthy" && ["Toxic", "Poison Gas", "Poison Powder", "Toxic Thread"].includes(move.name) && ((!defender.hasType("Poison") && !defender.hasType("Steel")) || attacker.ability === "Corrosion");
-		let burn = move.name === "Will-O-Wisp" && !defender.hasType("Fire");
-		let dangerItem = ["Flame Orb", "Toxic Orb", "Sticky Barb"].includes(attacker.item) && (["Trick", "Switcheroo"].includes(move.name) || (move.name === "Bestow" && defender.item === ""));
-		if (weather || poison || burn || dangerItem) {
-			return true;
-		}
+		let poison = ["Toxic", "Poison Gas", "Poison Powder", "Toxic Thread"].includes(move.name) && (poisonable || (attacker.ability === "Corrosion" && defender.status === "Healthy"));
+		let burn = move.name === "Will-O-Wisp" && burnable;
+		let dangerItem = (["Trick", "Switcheroo"].includes(move.name) || (move.name === "Bestow" && defender.item === "")) &&
+		(attacker.item === "Sticky Barb" || (attacker.item === "Toxic Orb" && poisonable) || (attacker.item === "Flame Orb" && burnable));
+		let confusion = ["Confuse Ray", "Flatter", "Supersonic", "Swagger", "Sweet Kiss", "Teeter Dance"].includes(move.name);
+		let otherPassive = (move.name === "Leech Seed" && !defender.hasType("Grass")) || (move.name === "Curse" && attacker.hasType("Ghost"));
+		return weather || poison || burn || dangerItem || confusion || otherPassive;
 	}
 	return false;
 }
@@ -1371,15 +1378,17 @@ function checkAngerShell(pokemon) {
 function checkIntimidate(source, target) {
 	if (source.ability === "Intimidate") {
 		if (target.ability === "Contrary" || target.ability === "Defiant" || target.ability === "Guard Dog") {
+			// the net result will still be +1 for something Defiant with White Herb
 			target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
 		} else if (target.ability === "Competitive") {
 			target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
-		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body"].includes(target.ability) || (gen > 7 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(target.ability)) || target.item === "Clear Amulet") {
+		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(target.ability) ||
+			(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(target.ability)) ||
+			["Clear Amulet", "White Herb"].includes(target.item)) {
 			// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
+			// Mirror Armor does not reflect the stat drop to the source to simplify things for the calc user
 		} else if (target.ability === "Simple") {
 			target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
-		} else if (target.ability === "Mirror Armor" && source.item !== "Clear Amulet") {
-			source.boosts[AT] = Math.max(-6, source.boosts[AT] - 1);
 		} else {
 			target.boosts[AT] = Math.max(-6, target.boosts[AT] - 1);
 		}
