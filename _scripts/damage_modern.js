@@ -567,7 +567,7 @@ function getDamageResult(attacker, defender, move, field) {
 		attacker.item === "Adamant Crystal" && attacker.name === "Dialga-O" ||
 		attacker.item === "Lustrous Orb" && attacker.name === "Palkia" ||
 		attacker.item === "Lustrous Globe" && attacker.name === "Palkia-O" ||
-		(gen <= 8 || gen == 80) && attacker.item === "Griseous Orb" && attacker.name === "Giratina-O" || //this is horrible, thanks GF
+		(gen <= 8 || gen == 80) && attacker.item === "Griseous Orb" && attacker.name === "Giratina-O" || // thanks GF, this is horrible
 		gen >= 9 && gen != 80 && attacker.item === "Griseous Orb" && attacker.name === "Giratina" ||
 		attacker.item === "Griseous Core" && attacker.name === "Giratina-O" ||
 		attacker.item === "Soul Dew" && gen >= 7 && (attacker.name === "Latios" || attacker.name === "Latias")))) {
@@ -579,7 +579,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	if (["Solar Beam", "SolarBeam", "Solar Blade"].includes(move.name) && ["Rain", "Sand", "Hail", "Heavy Rain", "Snow"].includes(field.weather)) {
-		// Solar B power is still halved in other weathers regardless of Utility Umbrella https://github.com/smogon/pokemon-showdown/pull/6180
+		// Solar B power is still halved in bad weather regardless of Utility Umbrella https://github.com/smogon/pokemon-showdown/pull/6180
 		bpMods.push(0x800);
 		description.moveBP = move.bp / 2;
 		description.weather = field.weather;
