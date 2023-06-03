@@ -561,11 +561,15 @@ function getDamageResult(attacker, defender, move, field) {
 	} else if (attacker.item === "Punching Glove" && move.isPunch) {
 		bpMods.push(0x119A); // it seems to be an ever-so-slightly-different multiplier from Band/Glasses https://twitter.com/OZY_Project97/status/1604385021439094784
 		description.attackerItem = attacker.item;
-	} else if ((getItemBoostType(attacker.item) === moveType) ||
+	} else if (getItemBoostType(attacker.item) === moveType ||
 		((attacker.dexType1 === moveType || attacker.dexType2 === moveType) && (
 		attacker.item === "Adamant Orb" && attacker.name === "Dialga" ||
+		attacker.item === "Adamant Crystal" && attacker.name === "Dialga-O" ||
 		attacker.item === "Lustrous Orb" && attacker.name === "Palkia" ||
-		attacker.item === "Griseous Orb" && attacker.name === "Giratina-O" ||
+		attacker.item === "Lustrous Globe" && attacker.name === "Palkia-O" ||
+		(gen <= 8 || gen == 80) && attacker.item === "Griseous Orb" && attacker.name === "Giratina-O" || //this is horrible, thanks GF
+		gen >= 9 && gen != 80 && attacker.item === "Griseous Orb" && attacker.name === "Giratina" ||
+		attacker.item === "Griseous Core" && attacker.name === "Giratina-O" ||
 		attacker.item === "Soul Dew" && gen >= 7 && (attacker.name === "Latios" || attacker.name === "Latias")))) {
 		bpMods.push(0x1333);
 		description.attackerItem = attacker.item;
@@ -580,17 +584,16 @@ function getDamageResult(attacker, defender, move, field) {
 		description.weather = field.weather;
 	}
 
-	if (gen >= 6 && gen != 8 && move.name === "Knock Off" && !((defender.item === "") ||
-		(defender.name === "Giratina-O" && defender.item === "Griseous Orb") ||
-		(defender.item.includes("Memory")) ||
-		(defender.name.includes("Arceus") && defender.item.includes("Plate")) ||
-		(defender.item.includes(" Z")))) {
-		bpMods.push(0x1800);
-		description.moveBP = move.bp * 1.5;
-	} else if (gen === 8 && move.name === "Knock Off" && !((defender.item === "") ||
-		(defender.name === "Giratina-O" && defender.item === "Griseous Orb") ||
-		(defender.item.includes("Memory")) ||
-		(defender.item.includes(" Z")))) {
+	if (move.name === "Knock Off" && !(defender.item === "" ||
+		attacker.item === "Lustrous Globe" && attacker.name === "Palkia-O" ||
+		attacker.item === "Adamant Crystal" && attacker.name === "Dialga-O" ||
+		defender.item === "Griseous Orb" && (gen <= 8 || gen == 80) && defender.name === "Giratina-O" ||
+		defender.item === "Griseous Core" && defender.name === "Giratina-O" ||
+		defender.item.endsWith("Plate") && defender.name.startsWith("Arceus") ||
+		defender.item.endsWith("Memory") && defender.name.startsWith("Silvally") ||
+		defender.item.endsWith(" Z") ||
+		defender.item === "Booster Energy" && (defender.ability === "Protosynthesis" || defender.ability === "Quark Drive"))) {
+		// Mega Stones, Red/Blue Orbs, and Rusted items are already accounted for by the fact that they don't exist as items
 		bpMods.push(0x1800);
 		description.moveBP = move.bp * 1.5;
 	}
