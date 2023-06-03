@@ -1231,15 +1231,21 @@ function getModdedWeight(pokemon, ability) {
 
 function killsShedinja(attacker, defender, move) {
 	// This is meant to at-a-glance highlight moves that are fatal to Shedinja and allow the mass calc to better capture Shedinja's defensive profile.
+	// sorry for the mess of conditionals
 	if (defender.ability === "Wonder Guard" && defender.curHP == 1) {
-		let weather = defender.item !== "Safety Goggles" && ((move.name === "Sandstorm" && !defender.hasType("Rock")) || (move.name === "Hail" && !defender.hasType("Ice")));
+		let poisonable = defender.status === "Healthy" && !defender.hasType("Poison") && !defender.hasType("Steel");
+		let burnable = defender.status === "Healthy" && !defender.hasType("Fire");
+
+		let weather = defender.item !== "Safety Goggles" &&
+		((move.name === "Sandstorm" && (!defender.hasType("Rock") && !defender.hasType("Steel") && !defender.hasType("Ground"))) || (move.name === "Hail" && !defender.hasType("Ice")));
 		// akin to Sash, status berries should not be accounted for
-		let poison = defender.status === "Healthy" && ["Toxic", "Poison Gas", "Poison Powder", "Toxic Thread"].includes(move.name) && ((!defender.hasType("Poison") && !defender.hasType("Steel")) || attacker.ability === "Corrosion");
-		let burn = move.name === "Will-O-Wisp" && !defender.hasType("Fire");
-		let dangerItem = ["Flame Orb", "Toxic Orb", "Sticky Barb"].includes(attacker.item) && (["Trick", "Switcheroo"].includes(move.name) || (move.name === "Bestow" && defender.item === ""));
-		if (weather || poison || burn || dangerItem) {
-			return true;
-		}
+		let poison = ["Toxic", "Poison Gas", "Poison Powder", "Toxic Thread"].includes(move.name) && (poisonable || (attacker.ability === "Corrosion" && defender.status === "Healthy"));
+		let burn = move.name === "Will-O-Wisp" && burnable;
+		let dangerItem = (["Trick", "Switcheroo"].includes(move.name) || (move.name === "Bestow" && defender.item === "")) &&
+		(attacker.item === "Sticky Barb" || (attacker.item === "Toxic Orb" && poisonable) || (attacker.item === "Flame Orb" && burnable));
+		let confusion = ["Confuse Ray", "Flatter", "Supersonic", "Swagger", "Sweet Kiss", "Teeter Dance"].includes(move.name);
+		let otherPassive = (move.name === "Leech Seed" && !defender.hasType("Grass")) || (move.name === "Curse" && attacker.hasType("Ghost"));
+		return weather || poison || burn || dangerItem || confusion || otherPassive;
 	}
 	return false;
 }
