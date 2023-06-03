@@ -179,7 +179,8 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 
 	case "Meteor Beam":
-		attacker.boosts[SA] = attacker.ability === "Simple" ? Math.min(6, attacker.boosts[SA] + 2) : (attacker.ability === "Contrary" ? Math.max(-6, attacker.boosts[SA] - 1) : Math.min(6, attacker.boosts[SA] + 1));
+		var originalSABoost = attacker.boosts[SA];
+		attacker.boosts[SA] = attacker.ability === "Simple" ? Math.min(6, attacker.boosts[SA] + 2) : (attacker.ability === "Contrary" && attacker.item !== "White Herb" ? Math.max(-6, attacker.boosts[SA] - 1) : Math.min(6, attacker.boosts[SA] + 1));
 		attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 		// this boost gets reset after attack mods are calc'd
 		break;
@@ -534,7 +535,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	// The location of Technician changed betweens gens 7 and 8 https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8433978
-	if (gen < 8 && attacker.ability === "Technician" && pokeRound((basePower * chainMods(bpMods)) / 4096) <= 60) {
+	if (gen <= 7 && attacker.ability === "Technician" && pokeRound((basePower * chainMods(bpMods)) / 4096) <= 60) {
 		bpMods.push(0x1800);
 		description.attackerAbility = attacker.ability;
 	}
@@ -718,7 +719,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.defenderAbility = defAbility;
 	}
 
-	if (attacker.item === "Soul Dew" && gen < 7 && (attacker.name === "Latios" || attacker.name === "Latias") && moveCategory === "Special" ||
+	if (attacker.item === "Soul Dew" && gen <= 6 && (attacker.name === "Latios" || attacker.name === "Latias") && moveCategory === "Special" ||
 		attacker.item === "Choice Band" && (moveCategory === "Physical" || move.name === "Body Press") && !move.isZ && !attacker.isDynamax ||
 		attacker.item === "Choice Specs" && moveCategory === "Special" && !move.isZ && !attacker.isDynamax) {
 		atMods.push(0x1800);
@@ -732,8 +733,9 @@ function getDamageResult(attacker, defender, move, field) {
 
 	attack = Math.max(1, pokeRound(attack * chainMods(atMods) / 0x1000));
 
+	// reset the SpA boost from Meteor Beam so it doesn't affect other moves
 	if (move.name === "Meteor Beam") {
-		attacker.boosts[SA] = attacker.ability === "Simple" ? (attacker.boosts[SA] - 2) : (attacker.ability === "Contrary" ? (attacker.boosts[SA] + 1) : (attacker.boosts[SA] - 1));
+		attacker.boosts[SA] = originalSABoost;
 		attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 	}
 
@@ -792,7 +794,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.isRuinDef = true;
 	}
 
-	if (defender.item === "Soul Dew" && gen < 7 && (defender.name === "Latios" || defender.name === "Latias") && !hitsPhysical ||
+	if (defender.item === "Soul Dew" && gen <= 6 && (defender.name === "Latios" || defender.name === "Latias") && !hitsPhysical ||
 		defender.item === "Assault Vest" && !hitsPhysical ||
 		defender.item === "Eviolite") {
 		dfMods.push(0x1800);
@@ -1376,15 +1378,17 @@ function checkAngerShell(pokemon) {
 function checkIntimidate(source, target) {
 	if (source.ability === "Intimidate") {
 		if (target.ability === "Contrary" || target.ability === "Defiant" || target.ability === "Guard Dog") {
+			// the net result will still be +1 for something Defiant with White Herb
 			target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
 		} else if (target.ability === "Competitive") {
 			target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
-		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body"].includes(target.ability) || (gen > 7 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(target.ability)) || target.item === "Clear Amulet") {
+		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(target.ability) ||
+			(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(target.ability)) ||
+			["Clear Amulet", "White Herb"].includes(target.item)) {
 			// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
+			// Mirror Armor does not reflect the stat drop to the source to simplify things for the calc user
 		} else if (target.ability === "Simple") {
 			target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
-		} else if (target.ability === "Mirror Armor" && source.item !== "Clear Amulet") {
-			source.boosts[AT] = Math.max(-6, source.boosts[AT] - 1);
 		} else {
 			target.boosts[AT] = Math.max(-6, target.boosts[AT] - 1);
 		}
