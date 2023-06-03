@@ -286,8 +286,6 @@ var ITEMS_SS = ITEMS_SM.concat([
 	"Heavy-Duty Boots",
 	"Leek",
 	"Room Service",
-	"Rusted Shield",
-	"Rusted Sword",
 	"Throat Spray",
 	"Utility Umbrella"
 ]);
@@ -299,7 +297,10 @@ var ITEMS_SV = ITEMS_SS.concat([
 	"Mirror Herb",
 	"Punching Glove",
 	"Covert Cloak",
-	"Loaded Dice"
+	"Loaded Dice",
+	"Griseous Core",
+	"Adamant Crystal",
+	"Lustrous Globe"
 ]);
 
 function getTechnoBlast(item) {
