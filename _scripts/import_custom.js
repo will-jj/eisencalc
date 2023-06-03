@@ -142,7 +142,6 @@ var savecustom = function () {
 		9    - Move Name
 		    */
 
-		//geting rid of gender identities (lel)
 		if (lines[0].indexOf("(M)") != -1) {
 			lines[0] = lines[0].substring(0, lines[0].indexOf("(M)") - 1) +
 		        lines[0].substring(lines[0].indexOf("(M)") + 3, lines[0].length);
@@ -157,12 +156,28 @@ var savecustom = function () {
 		} else {
 			species = lines[0].split("@")[0].trim(); //species is always first
 		}
+
+		// How formes are handled:
+		// Most Pokemon that have formes don't actually use the calc's forme system. Instead they are easier to handle because they're simply listed as separate species.
+		// Search for hasBaseForme in the pokedex to see what actually uses the forme system.
+
+		// If something has a base forme, species is set to the hasBaseForme in the forme's pokedex object.
+		// This means that species will always be the simplest string: the name of the base species. Both for Pokemon the use the forme system and don't.
+		// If something has a base forme, forme is set to the full string: "speciesName-formeSuffix". The way the forme object is named in the pokedex.
+		// The set gets saved in localStorage custom with key species (which is hasBaseForme). Get the imported set object with SETDEX_CUSTOM[hasBaseForme][spreadName].
+		// When the calc loads the set, if the custom set's forme is not "", then forme is used to load the correct pokedex object.
+
+		// Megas have changed in how they are handled. Previously they only stored their base species name and mega stone item.
+		// They would load as Mega if the item was their mega stone. The forme loading code still accommodates old Mega sets that were made before this forme import logic.
+		// Currently each of the following Showdown format lines will load as Mega when imported: "baseSpecies-Mega @ Speciesite", "baseSpecies-Mega", "baseSpecies @ Speciesite"
+
 		if (showdownFormes[species]) {
 			species = showdownFormes[species];
 		}
 
-		if (species.indexOf("-Mega") !== -1) {
-			species = species.substring(0, species.indexOf("-Mega"));
+		if (species.endsWith("-Mega")) {
+			species = "Mega " + species.substring(0, species.lastIndexOf("-Mega"));
+			item = "";
 		}
 
 		if (species.toLowerCase().includes("vivillon")) {
@@ -173,7 +188,7 @@ var savecustom = function () {
 		}
 
 		if (species.includes("-Gmax")) {
-			species = species.substring(0, species.length - 5);
+			species = species.substring(0, species.lastIndexOf("-Gmax"));
 			isGmax = true;
 		}
 
@@ -265,41 +280,22 @@ var savecustom = function () {
 			}
 		}
 
-		//now, to save it
-		/* Sample Calculator Format:
-		  "Yanmega": {
-		    "Common Showdown": {
-		      "level": 50,
-		      "evs": {
-		        "hp": 0,
-		        "at": 0,
-		        "df": 0,
-		        "sa": 252,
-		        "sd": 4,
-		        "sp": 252
-		      },
-		      "nature": "Modest",
-		      "ability": "",
-		      "item": "",
-		      "moves": [
-		        "Air Slash",
-		        "Bug Buzz",
-		        "Giga Drain",
-		        "Hidden Power Ice"
-		      ]
-		    }
-		  }
-		  */
 		let rejectSet = false;
 		if (!pokedex[species]) {
 			rejectSet = true;
-			alert("Error: something unexpected happened when parsing " + species + " as a species. Please contact Silver or Eisen.");
+			alert("Error: something unexpected happened when parsing " + species + " as a species. Please contact Silver or Eisen with a screenshot including this popup and the calc.");
 		} else if (pokedex[species].hasBaseForme) {
+			// This error might pop up if the pokedex has a chain of hasBaseForme longer than 2.
 			rejectSet = true;
-			alert("Error: recognized " + species + " as an alternate forme, but did not parse it properly. Please contact Silver or Eisen.");
-		} else if ((ability === "Parental Bond" || species.includes("Kangaskhan")) && moves.indexOf("Power-Up Punch") > -1 && moves.indexOf("Power-Up Punch") < 3) {
+			alert("Error: recognized " + species + " as an alternate forme, but did not parse it properly. Please contact Silver or Eisen with a screenshot including this popup and the calc.");
+		} else if (ability === "Parental Bond" && moves.indexOf("Power-Up Punch") > -1 && moves.indexOf("Power-Up Punch") < 3) {
+			// This should have been fixed by the tweaks to optimize the mass calc, but I'm leaving this intact until it's tested further.
 			rejectSet = true;
 			alert("Please ensure that Power-up Punch is in the 4th moveslot, otherwise you may experience some errors in calcs!");
+		}
+		if (rejectSet) {
+			alert('Set not saved: "' + species + '"');
+			return;
 		}
 
 		customFormat = {
@@ -330,10 +326,6 @@ var savecustom = function () {
 			"startDmax": gen == 8 && $("#startGimmick").prop("checked"),
 			"startTera": gen == 9 && $("#startGimmick").prop("checked")
 		};
-		if (rejectSet) {
-			alert('Set not saved: "' + species + '"');
-			return;
-		}
 
 		if (SETDEX_CUSTOM[species] == null) {
 			SETDEX_CUSTOM[species] = {};
