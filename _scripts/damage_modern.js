@@ -681,7 +681,7 @@ function getDamageResult(attacker, defender, move, field) {
 		attacker.ability === "Swarm" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Bug" ||
 		attacker.ability === "Steelworker" && moveType === "Steel" ||
 		attacker.ability === "Gorilla Tactics" && moveCategory === "Physical" && !attacker.isDynamax ||
-		attacker.ability === "Transistor" && moveType === "Electric" ||
+		attacker.ability === "Transistor" && gen <= 8 && moveType === "Electric" ||
 		attacker.ability === "Dragon's Maw" && moveType === "Dragon" ||
 		attacker.ability === "Rocky Payload" && moveType === "Rock" ||
 		attacker.ability === "Sharpness" && move.isSlicing) {
@@ -705,8 +705,9 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	var attackerProtoQuark = checkProtoQuarkHighest(attacker, field.weather, field.terrain);
 	if ((attackerProtoQuark === "Atk" && moveCategory === "Physical") ||
-		(attackerProtoQuark === "SpA" && moveCategory === "Special")) {
-		atMods.push(0x14CD); // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9423025
+		(attackerProtoQuark === "SpA" && moveCategory === "Special") || // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9423025
+		attacker.ability === "Transistor" && gen >= 9 && moveType === "Electric") { // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9647211
+		atMods.push(0x14CD);
 		description.attackerAbility = attacker.ability;
 	}
 
