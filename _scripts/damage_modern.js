@@ -578,8 +578,9 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerItem = attacker.item;
 	}
 
-	if (["Solar Beam", "SolarBeam", "Solar Blade"].includes(move.name) && ["Rain", "Sand", "Hail", "Heavy Rain", "Snow"].includes(field.weather)) {
-		// Solar B power is still halved in bad weather regardless of Utility Umbrella https://github.com/smogon/pokemon-showdown/pull/6180
+	if (["Solar Beam", "SolarBeam", "Solar Blade"].includes(move.name) &&
+		(["Sand", "Hail", "Snow"].includes(field.weather) || (field.weather.endsWith("Rain") && attacker.item !== "Utility Umbrella"))) {
+		// Solar B power is still halved in non-rain bad weather regardless of Utility Umbrella https://github.com/smogon/pokemon-showdown/pull/6180
 		bpMods.push(0x800);
 		description.moveBP = move.bp / 2;
 		description.weather = field.weather;
