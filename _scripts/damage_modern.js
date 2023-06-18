@@ -973,6 +973,7 @@ function getDamageResult(attacker, defender, move, field) {
 		child.stats = attacker.stats;
 		child.ability = "";
 		child.isChild = true;
+		child.hasType = attacker.hasType;
 		if (move.name === "Power-Up Punch") {
 			child.boosts[AT] = Math.min(6, child.boosts[AT] + 1);
 			child.stats[AT] = getModifiedStat(child.rawStats[AT], child.boosts[AT]);
