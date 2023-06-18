@@ -228,7 +228,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
             (attacker.ability === "Blaze" && moveType === "Fire") ||
             (attacker.ability === "Torrent" && moveType === "Water") ||
             (attacker.ability === "Swarm" && moveType === "Bug"))) ||
-            (attacker.ability === "Technician" && basePower <= 60)) {
+            (attacker.ability === "Technician" && basePower <= 60 && move.name !== "Struggle")) {
 		basePower = Math.floor(basePower * 1.5);
 		description.attackerAbility = attacker.ability;
 	}
