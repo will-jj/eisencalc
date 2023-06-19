@@ -88,15 +88,17 @@ function getDamageResult(attacker, defender, move, field) {
 	let defAbility = defender.ability;
 	if (defAbility !== "Shadow Shield") {
 		if (["Mold Breaker", "Teravolt", "Turboblaze"].includes(attacker.ability)) {
-			description.attackerAbility = attacker.ability;
+			// since Mold Breaker and Ability Shield don't actually change damage, I would prefer that they don't print in the description
+			// a reason to revert this change and  print Mold Breaker would be to better highlight to users when an ability is being negated
+			//description.attackerAbility = attacker.ability;
 			if (defender.item === "Ability Shield") {
-				description.defenderItem = defender.item;
+				//description.defenderItem = defender.item;
 			} else {
 				defAbility = "";
 			}
 		} else if (["Moongeist Beam", "Sunsteel Strike", "Searing Sunraze Smash", "Menacing Moonraze Maelstrom", "Light That Burns the Sky", "G-Max Drum Solo", "G-Max Hydrosnipe", "G-Max Fireball"].includes(move.name)) {
 			if (defender.item === "Ability Shield") {
-				description.defenderItem = defender.item;
+				//description.defenderItem = defender.item;
 			} else {
 				defAbility = "";
 			}
