@@ -249,6 +249,11 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.moveBP = move.bp * 2;
 	}
 
+	if (field.isCharge && moveType === "Electric") {
+		baseDamage *= 2;
+		description.isCharge = true;
+	}
+
 	if (field.isHelpingHand) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.isHelpingHand = true;

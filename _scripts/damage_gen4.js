@@ -219,6 +219,11 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.attackerItem = attacker.item;
 	}
 
+	if (field.isCharge && moveType === "Electric") {
+		basePower *= 2;
+		description.isCharge = true;
+	}
+
 	if ((attacker.ability === "Reckless" && move.hasRecoil) ||
             (attacker.ability === "Iron Fist" && move.isPunch)) {
 		basePower = Math.floor(basePower * 1.2);
