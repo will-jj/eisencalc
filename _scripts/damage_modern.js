@@ -14,20 +14,21 @@ function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	checkAngerShell(p2);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
 	p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
-	p1.stats[SP] = getFinalSpeed(p1, field.getWeather(), field.getTerrain());
 	p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
 	p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
-	p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), field.getTerrain());
 	checkIntimidate(p1, p2);
 	checkIntimidate(p2, p1);
 	//checkDownload(p1, p2);
 	//checkDownload(p2, p1);
 	checkZacianZamazaenta(p1);
 	checkZacianZamazaenta(p2);
+	// So that ProtoQuark is correctly calculated, all stats must be calculated, and getFinalSpeed must be called last.
 	p1.stats[AT] = getModifiedStat(p1.rawStats[AT], p1.boosts[AT]);
 	p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
+	p1.stats[SP] = getFinalSpeed(p1, field.getWeather(), field.getTerrain());
 	p2.stats[AT] = getModifiedStat(p2.rawStats[AT], p2.boosts[AT]);
 	p2.stats[SA] = getModifiedStat(p2.rawStats[SA], p2.boosts[SA]);
+	p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), field.getTerrain());
 	var side1 = field.getSide(1);
 	var side2 = field.getSide(0);
 	var results = [[], []];
@@ -52,18 +53,22 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	checkSeedsHonk(defender, field.getTerrain());
 	checkAngerShell(attacker);
 	checkAngerShell(defender);
-	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather(), field.getTerrain());
+	attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF]);
+	attacker.stats[SD] = getModifiedStat(attacker.rawStats[SD], attacker.boosts[SD]);
 	defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
 	defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
-	defender.stats[SP] = getFinalSpeed(defender, field.getWeather(), field.getTerrain());
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
 	checkDownload(attacker, defender);
 	checkZacianZamazaenta(attacker);
 	checkZacianZamazaenta(defender);
+	// So that ProtoQuark is correctly calculated, all stats must be calculated, and getFinalSpeed must be called last.
 	attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 	attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
+	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather(), field.getTerrain());
 	defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
+	defender.stats[SA] = getModifiedStat(defender.rawStats[SA], defender.boosts[SA]);
+	defender.stats[SP] = getFinalSpeed(defender, field.getWeather(), field.getTerrain());
 	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
 	var results = [];
 	for (var i = 0; i < 4; i++) {
@@ -706,9 +711,9 @@ function getDamageResult(attacker, defender, move, field) {
 		atMods.push(0x1555); // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9423025
 		description.attackerAbility = attacker.ability;
 	}
-	var attackerProtoQuark = checkProtoQuarkHighest(attacker, field.weather, field.terrain);
-	if ((attackerProtoQuark === "Atk" && moveCategory === "Physical") ||
-		(attackerProtoQuark === "SpA" && moveCategory === "Special") || // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9423025
+	let attackerProtoQuark = checkProtoQuarkHighest(attacker, field.weather, field.terrain);
+	if ((attackerProtoQuark === AT && moveCategory === "Physical") ||
+		(attackerProtoQuark === SA && moveCategory === "Special") || // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9423025
 		attacker.ability === "Transistor" && gen >= 9 && moveType === "Electric") { // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9647211
 		atMods.push(0x14CD);
 		description.attackerAbility = attacker.ability;
@@ -790,8 +795,8 @@ function getDamageResult(attacker, defender, move, field) {
 		description.defenderAbility = defAbility;
 	}
 
-	var defenderProtoQuark = checkProtoQuarkHighest(defender, field.weather, field.terrain);
-	if ((defenderProtoQuark === "Def" && hitsPhysical) || (defenderProtoQuark === "SpD" && !hitsPhysical)) {
+	let defenderProtoQuark = checkProtoQuarkHighest(defender, field.weather, field.terrain);
+	if ((defenderProtoQuark === DF && hitsPhysical) || (defenderProtoQuark === SD && !hitsPhysical)) {
 		dfMods.push(0x14CD);
 		description.defenderAbility = defAbility;
 	}
@@ -1201,7 +1206,8 @@ function getModifiedStat(stat, mod) {
 }
 
 function getFinalSpeed(pokemon, weather, terrain) {
-	var speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
+	let speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
+	pokemon.stats[SP] = speed; // this is for ProtoQuark calculation. it should not include item
 	if (pokemon.item === "Choice Scarf" && !pokemon.isDynamax) {
 		speed = Math.floor(speed * 1.5);
 	} else if (pokemon.item === "Macho Brace" || pokemon.item === "Iron Ball") {
@@ -1214,17 +1220,17 @@ function getFinalSpeed(pokemon, weather, terrain) {
 		pokemon.ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
 		pokemon.ability === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
-	} else if (checkProtoQuarkHighest(pokemon, weather, terrain) === "Spe") {
+	} else if (checkProtoQuarkHighest(pokemon, weather, terrain) === SP) {
 		speed = Math.floor(speed * 1.5);
 	}
 	return speed;
 }
 
 function isGrounded(pokemon, isGravity, isLevitate) {
-	if (pokemon.hasType("Flying") || pokemon.item === "Air Balloon" || isLevitate) {
-		return (isGravity || pokemon.item === "Iron Ball");
+	if (isGravity || pokemon.item === "Iron Ball") {
+		return true;
 	}
-	return true;
+	return !(pokemon.hasType("Flying") || pokemon.item === "Air Balloon" || isLevitate);
 }
 
 function getModdedWeight(pokemon, ability) {
@@ -1351,23 +1357,23 @@ function isShellSideArmPhysical(attacker, defender, move) {
 function checkProtoQuarkHighest(pokemon, weather, terrain) {
 	if ((pokemon.ability === "Protosynthesis" && (pokemon.item === "Booster Energy" || weather.indexOf("Sun") > -1)) ||
 		(pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric"))) {
-		var stats = pokemon.stats;
-		var highestStat = "Atk";
-		var highestValue = stats.at;
+		let stats = pokemon.stats;
+		let highestStat = AT;
+		let highestValue = stats[AT];
 		if (stats.df > highestValue) {
-			highestStat = "Def";
-			highestValue = stats.df;
+			highestStat = DF;
+			highestValue = stats[DF];
 		}
 		if (stats.sa > highestValue) {
-			highestStat = "SpA";
-			highestValue = stats.sa;
+			highestStat = SA;
+			highestValue = stats[SA];
 		}
 		if (stats.sd > highestValue) {
-			highestStat = "SpD";
-			highestValue = stats.sd;
+			highestStat = SD;
+			highestValue = stats[SD];
 		}
 		if (stats.sp > highestValue) {
-			return "Spe";
+			return SP;
 		}
 		return highestStat;
 	}
