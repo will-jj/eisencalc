@@ -612,6 +612,15 @@ function getDamageResult(attacker, defender, move, field) {
 		description.isHelpingHand = true;
 	}
 
+	if (field.isCharge && moveType === "Electric") {
+		bpMods.push(0x2000);
+		if (["Electromorphosis", "Wind Power"].includes(attacker.ability)) {
+			description.attackerAbility = attacker.ability;
+		} else {
+			description.isCharge = true;
+		}
+	}
+
 	if (move.name === "Facade" && ["Burned", "Paralyzed", "Poisoned", "Badly Poisoned"].includes(attacker.status) ||
 		move.name === "Brine" && defender.curHP <= defender.maxHP / 2 ||
 		(move.name === "Venoshock" || move.name === "Barb Barrage") && (defender.status === "Poisoned" || defender.status === "Badly Poisoned")) {
@@ -1067,6 +1076,9 @@ function buildDescription(description) {
 	output += description.attackerName + " ";
 	if (description.isHelpingHand) {
 		output += "Helping Hand ";
+	}
+	if (description.isCharge) {
+		output += "Charge ";
 	}
 	if (description.isPowerSpot) {
 		output += "Power Spot ";
