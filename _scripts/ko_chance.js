@@ -2,7 +2,8 @@ function setKOChanceText(result, move, attacker, defender, field) {
 //getKOChanceText(damage, move, defender, field, isBadDreams, attacker, isMinimized, isVictoryStar, gen, includeAcc)
 	damage = result.damage;
 	if (isNaN(damage[0])) {
-		return "something broke; please tell Silver or Eisen";
+		result.koChanceText = "something broke; please tell Silver or Eisen";
+		return;
 	}
 	var moveAccuracy = "";
 	var ignoreAccMods = false;
