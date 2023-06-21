@@ -44,10 +44,13 @@ function setKOChanceText(result, move, attacker, defender, field) {
 	if (damage[damage.length - 1] === 0) {
 		if (field.weather === "Harsh Sun" && move.type === "Water") {
 			result.koChanceText = "the Water-Type attack evaporated in the harsh sunlight";
+			return;
 		} else if (field.weather === "Heavy Rain" && move.type === "Fire") {
 			result.koChanceText = "the Fire-Type attack fizzled out in the heavy rain";
+			return;
 		}
 		result.koChanceText = "aim for the horn next time";
+		return;
 	}
 	var hasSitrus = defender.item === "Sitrus Berry";
 	var hasFigy = defender.item === "Figy Berry";
