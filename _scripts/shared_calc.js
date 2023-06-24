@@ -966,32 +966,35 @@ function getZMoveName(moveName, moveType, item) {
 }
 
 function Field() {
-	var format = $("input:radio[name='format']:checked").val().toLowerCase();
-	var isGravity = $("#gravity").prop("checked");
+	let format = $("input:radio[name='format']:checked").val().toLowerCase();
+	let terrain = $("input:radio[name='terrain']:checked").val();
+	let weather = $("input:radio[name='weather']:checked").val();
+	let isAuraFairy = $("#fairy-aura").prop("checked");
+	let isAuraDark = $("#dark-aura").prop("checked");
+	let isAuraBreak = $("#aura-break").prop("checked");
+	let isGravity = $("#gravity").prop("checked");
 	// isSR (stealth rocks), spikes, and Busted are all in the correct order. They are only used by ko_chance, and the defender's side is passed to it
-	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
-	var isProtect = [$("#protectL").prop("checked"), $("#protectR").prop("checked")];
-	var weather = $("input:radio[name='weather']:checked").val();
-	var spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
-	var terrain = $("input:radio[name='terrain']:checked").val();
-	var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
-	var isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
-	var isSeeded = [$("#leechSeedR").prop("checked"), $("#leechSeedL").prop("checked")]; // affects attacks against opposite side
-	var isHelpingHand = [$("#helpingHandR").prop("checked"), $("#helpingHandL").prop("checked")]; // affects attacks against opposite side
-	var isCharge = [$("#chargeR").prop("checked"), $("#chargeL").prop("checked")]; // affects attacks against opposite side
-	var isPowerSpot = [$("#powerSpotR").prop("checked"), $("#powerSpotL").prop("checked")]; // affects attacks against opposite side
-	var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
-	var isBattery = [$("#batteryR").prop("checked"), $("#batteryL").prop("checked")]; // affects attacks against opposite side
-	var isMinimized = [$("#minimL").prop("checked"), $("#minimR").prop("checked")];
-	var isVictoryStar = [$("#vicStarL").prop("checked"), $("#vicStarR").prop("checked")];
-	var isBusted8 = [$("#busted8L").prop("checked"), $("#busted8R").prop("checked")];
-	var isBusted16 = [$("#busted16L").prop("checked"), $("#busted16R").prop("checked")];
-	var isSteelySpirit = [$("#steelySpiritR").prop("checked"), $("#steelySpiritL").prop("checked")]; // affects attacks against opposite side
-	var fainted = [$("#faintedR").val(), $("#faintedL").val()]; // affects attacks against opposite side
-	var isRuinTablets = [$("#ruinTabletsL").prop("checked"), $("#ruinTabletsR").prop("checked")];
-	var isRuinVessel = [$("#ruinVesselL").prop("checked"), $("#ruinVesselR").prop("checked")];
-	var isRuinSword = [$("#ruinSwordR").prop("checked"), $("#ruinSwordL").prop("checked")]; // affects attacks against opposite side
-	var isRuinBeads = [$("#ruinBeadsR").prop("checked"), $("#ruinBeadsL").prop("checked")]; // affects attacks against opposite side
+	let isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
+	let isProtect = [$("#protectL").prop("checked"), $("#protectR").prop("checked")];
+	let spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
+	let isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
+	let isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
+	let isSeeded = [$("#leechSeedR").prop("checked"), $("#leechSeedL").prop("checked")]; // affects attacks against opposite side
+	let isHelpingHand = [$("#helpingHandR").prop("checked"), $("#helpingHandL").prop("checked")]; // affects attacks against opposite side
+	let isCharge = [$("#chargeR").prop("checked"), $("#chargeL").prop("checked")]; // affects attacks against opposite side
+	let isPowerSpot = [$("#powerSpotR").prop("checked"), $("#powerSpotL").prop("checked")]; // affects attacks against opposite side
+	let isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
+	let isBattery = [$("#batteryR").prop("checked"), $("#batteryL").prop("checked")]; // affects attacks against opposite side
+	let isMinimized = [$("#minimL").prop("checked"), $("#minimR").prop("checked")];
+	let isVictoryStar = [$("#vicStarL").prop("checked"), $("#vicStarR").prop("checked")];
+	let isBusted8 = [$("#busted8L").prop("checked"), $("#busted8R").prop("checked")];
+	let isBusted16 = [$("#busted16L").prop("checked"), $("#busted16R").prop("checked")];
+	let isSteelySpirit = [$("#steelySpiritR").prop("checked"), $("#steelySpiritL").prop("checked")]; // affects attacks against opposite side
+	let fainted = [$("#faintedR").val(), $("#faintedL").val()]; // affects attacks against opposite side
+	let isRuinTablets = [$("#ruinTabletsL").prop("checked"), $("#ruinTabletsR").prop("checked")];
+	let isRuinVessel = [$("#ruinVesselL").prop("checked"), $("#ruinVesselR").prop("checked")];
+	let isRuinSword = [$("#ruinSwordR").prop("checked"), $("#ruinSwordL").prop("checked")]; // affects attacks against opposite side
+	let isRuinBeads = [$("#ruinBeadsR").prop("checked"), $("#ruinBeadsL").prop("checked")]; // affects attacks against opposite side
 
 	this.getWeather = function () {
 		return weather;
@@ -1006,7 +1009,8 @@ function Field() {
 		return terrain;
 	};
 	this.getSide = function (i) {
-		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isSeeded[i], isHelpingHand[i], isCharge[i], isMinimized[i],
+		return new Side(format, terrain, weather, isAuraFairy, isAuraDark, isAuraBreak, isGravity,
+			isSR[i], spikes[i], isReflect[i], isLightScreen[i], isSeeded[i], isHelpingHand[i], isCharge[i], isMinimized[i],
 			isVictoryStar[i], isFriendGuard[i],
 			isBattery[i], isProtect[i],
 			isPowerSpot[i], isBusted8[i], isBusted16[i], isSteelySpirit[i],
@@ -1014,7 +1018,8 @@ function Field() {
 	};
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isSeeded, isHelpingHand, isCharge, isMinimized,
+function Side(format, terrain, weather, isAuraFairy, isAuraDark, isAuraBreak, isGravity,
+	isSR, spikes, isReflect, isLightScreen, isSeeded, isHelpingHand, isCharge, isMinimized,
 	isVictoryStar, isFriendGuard,
 	isBattery, isProtect,
 	isPowerSpot, isBusted8, isBusted16, isSteelySpirit,
@@ -1022,6 +1027,9 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.format = format;
 	this.terrain = terrain;
 	this.weather = weather;
+	this.isAuraFairy = isAuraFairy;
+	this.isAuraDark = isAuraDark;
+	this.isAuraBreak = isAuraBreak;
 	this.isGravity = isGravity;
 	this.isSR = isSR;
 	this.spikes = spikes;
