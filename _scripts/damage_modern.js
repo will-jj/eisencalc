@@ -952,8 +952,7 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(0x14CC);
 		description.attackerItem = attacker.item;
 	}
-	if (getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") &&
-		attacker.ability !== "Unnerve") {
+	if (getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") && !["Unnerve", "As One"].includes(attacker.ability)) {
 		finalMods.push(0x800);
 		description.defenderItem = defender.item;
 	}
