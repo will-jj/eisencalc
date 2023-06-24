@@ -542,11 +542,8 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	// The location of Technician changed betweens gens 7 and 8 https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8433978
-	if (gen <= 7 && attacker.ability === "Technician" && pokeRound((basePower * chainMods(bpMods)) / 4096) <= 60) {
-		bpMods.push(0x1800);
-		description.attackerAbility = attacker.ability;
-	}
-	if (attacker.ability === "Flare Boost" && attacker.status === "Burned" && moveCategory === "Special" ||
+	if (gen <= 7 && attacker.ability === "Technician" && basePower <= 60 ||
+		attacker.ability === "Flare Boost" && attacker.status === "Burned" && moveCategory === "Special" ||
 		attacker.ability === "Toxic Boost" && (attacker.status === "Poisoned" || attacker.status === "Badly Poisoned") && moveCategory === "Physical" ||
 		attacker.ability === "Strong Jaw" && move.isBite ||
 		attacker.ability === "Mega Launcher" && move.isPulse) {
