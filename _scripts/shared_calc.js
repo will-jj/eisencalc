@@ -584,28 +584,28 @@ function prependSpeciesAbilities(abilityList, pokeObjID, abilityObj) {
 }
 
 function showFormes(formeObj, setName, pokemonName, pokemon) {
-	let defaultForme = 0;
-
-	if (setName !== "Blank Set") {
-		let set = setdexAll[pokemonName][setName];
-		if (set.forme) {
-			defaultForme = pokedex[pokemonName].formes.indexOf(set.forme);
-		} else if (set.isGmax) {
-			defaultForme = 1;
-		}
-		else if (set.item) {
-			// This code needs to stay intact for old saved Mega sets that don't have the forme field
-			if (set.item !== "Eviolite" && (set.item.endsWith("ite") || set.item.endsWith("ite X"))) {
-				defaultForme = 1;
-			} else if (set.item.endsWith("ite Y")) {
-				defaultForme = 2;
-			}
-		}
-	}
-
-	let formeOptions = getSelectOptions(pokemon.formes, false, defaultForme);
+	let formeOptions = getSelectOptions(pokemon.formes, false, getFormeNum(setName, pokemonName));
 	formeObj.children("select").find("option").remove().end().append(formeOptions).change();
 	formeObj.show();
+}
+
+function getFormeNum(setName, pokemonName) {
+	if (setName === "Blank Set") {
+		return 0;
+	}
+	let set = setdexAll[pokemonName][setName];
+	if (set.forme) {
+		return pokedex[pokemonName].formes.indexOf(set.forme);
+	} else if (set.isGmax) {
+		return 1;
+	} else if (set.item) {
+		if (set.item !== "Eviolite" && (set.item.endsWith("ite") || set.item.endsWith("ite X"))) {
+			return 1;
+		} else if (set.item.endsWith("ite Y")) {
+			return 2;
+		}
+	}
+	return 0;
 }
 
 function setSelectValueIfValid(select, value, fallback) {

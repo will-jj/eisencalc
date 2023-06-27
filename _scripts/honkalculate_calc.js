@@ -65,6 +65,10 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 function MassPokemon(speciesName, setName, autoLevel) {
 	let pokemon = pokedex[speciesName];
 	let set = setdex[speciesName][setName];
+	let formeNum = getFormeNum(setName, speciesName);
+	if (formeNum != 0) {
+		pokemon = pokedex[pokemon.formes[formeNum]];
+	}
 	let massPoke = {
 		"name": speciesName,
 		"setName": setName,
@@ -79,7 +83,8 @@ function MassPokemon(speciesName, setName, autoLevel) {
 		"nature": set.nature,
 		"ability": set.ability && typeof set.ability !== "undefined" ? set.ability :
 		(pokemon.ab && typeof pokemon.ab !== "undefined" ? pokemon.ab : ""),
-		"item": set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || !set.item.endsWith("ite")) ? set.item : "",
+		"item": set.item && typeof set.item !== "undefined" &&
+		(set.item === "Eviolite" || !(set.item.endsWith("ite") && set.item.endsWith("ite X") && set.item.endsWith("ite Y"))) ? set.item : "",
 		"status": "Healthy",
 		"toxicCounter": 0,
 		"moves": [],
