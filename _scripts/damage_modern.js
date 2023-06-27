@@ -94,7 +94,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (defAbility !== "Shadow Shield") {
 		if (["Mold Breaker", "Teravolt", "Turboblaze"].includes(attacker.ability)) {
 			// since Mold Breaker and Ability Shield don't actually change damage, I would prefer that they don't print in the description
-			// a reason to revert this change and  print Mold Breaker would be to better highlight to users when an ability is being negated
+			// a reason to revert this change and print Mold Breaker would be to better highlight to users when an ability is being negated
 			//description.attackerAbility = attacker.ability;
 			if (defender.item === "Ability Shield") {
 				//description.defenderItem = defender.item;
@@ -469,14 +469,13 @@ function getDamageResult(attacker, defender, move, field) {
 		description.isSteelySpirit = true;
 	}
 
-	var isAttackerAura = attacker.ability === moveType + " Aura";
-	var isDefenderAura = defAbility === moveType + " Aura";
-	var auraActive = $("input:checkbox[id='" + moveType.toLowerCase() + "-aura']:checked").val() != undefined;
-	var auraBreak = $("input:checkbox[id='aura-break']:checked").val() != undefined;
-	if (auraActive && auraBreak) {
+	// Do not apply Aura Break if the attacker has a Mold Breaker and the defender has the ability
+	// defAbility is made empty if the attacker has a Mold Breaker, and defender.ability should retain the defender's base ability
+	let isAuraActive = (field.isAuraFairy && moveType === "Fairy") || (field.isAuraDark && moveType === "Dark");
+	if (isAuraActive && field.isAuraBreak && !(defAbility === "" && defender.ability === "Aura Break")) {
 		bpMods.push(0x0C00);
-		description.attackerAbility = attacker.ability;
-		description.defenderAbility = defAbility;
+		description.aura = "Aura Break";
+		isAuraActive = false; // Done this way so that a Mold Breaker attacker still receives an Aura boost against an Aura Break defender
 	}
 
 	if ((attacker.ability === "Reckless" && (typeof move.hasRecoil === "number" || move.hasRecoil === "crash")) ||
@@ -531,22 +530,16 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability + " (" + multiplier + "x BP)";
 	}
 
-	if (auraActive && !auraBreak) {
+	// Do not apply the Aura boost if the attacker has a Mold Breaker and the defender is providing the Aura https://bulbapedia.bulbagarden.net/wiki/Mold_Breaker_(Ability)#Generation_VIII_onward
+	// defAbility is made empty if the attacker has a Mold Breaker, and defender.ability should retain the defender's base ability
+	if (isAuraActive && !(gen <= 7 && defAbility === "" && defender.ability === moveType + " Aura")) {
 		bpMods.push(0x1548);
-		if (isAttackerAura) {
-			description.attackerAbility = attacker.ability;
-		}
-		if (isDefenderAura) {
-			description.defenderAbility = defAbility;
-		}
+		description.aura = moveType + " Aura";
 	}
 
 	// The location of Technician changed betweens gens 7 and 8 https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8433978
-	if (gen <= 7 && attacker.ability === "Technician" && pokeRound((basePower * chainMods(bpMods)) / 4096) <= 60) {
-		bpMods.push(0x1800);
-		description.attackerAbility = attacker.ability;
-	}
-	if (attacker.ability === "Flare Boost" && attacker.status === "Burned" && moveCategory === "Special" ||
+	if (gen <= 7 && attacker.ability === "Technician" && basePower <= 60 ||
+		attacker.ability === "Flare Boost" && attacker.status === "Burned" && moveCategory === "Special" ||
 		attacker.ability === "Toxic Boost" && (attacker.status === "Poisoned" || attacker.status === "Badly Poisoned") && moveCategory === "Physical" ||
 		attacker.ability === "Strong Jaw" && move.isBite ||
 		attacker.ability === "Mega Launcher" && move.isPulse) {
@@ -959,8 +952,7 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(0x14CC);
 		description.attackerItem = attacker.item;
 	}
-	if (getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") &&
-		attacker.ability !== "Unnerve") {
+	if (getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") && !["Unnerve", "As One"].includes(attacker.ability)) {
 		finalMods.push(0x800);
 		description.defenderItem = defender.item;
 	}
@@ -1089,6 +1081,7 @@ function buildDescription(description) {
 	if (description.isSteelySpirit) {
 		output += "Steely Spirit ";
 	}
+	output = appendIfSet(output, description.aura);
 	output += description.moveName + " ";
 	if (description.moveBP && description.moveType) {
 		output += "(" + description.moveBP + " BP " + description.moveType + ") ";
