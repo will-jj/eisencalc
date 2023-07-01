@@ -209,6 +209,7 @@ $(".percent-hp").keyup(function () {
 });
 
 var lastAura = [false, false, false];
+var isNeutralizingGas = false;
 $(".ability").bind("keyup change", function () {
 	autoSetMultiHits($(this).closest(".poke-info"));
 	autoSetAura();
@@ -228,26 +229,22 @@ var lastAutoWeather = ["", ""];
 function autoSetAura() {
 	var ability1 = $("#p1 .ability").val();
 	var ability2 = $("#p2 .ability").val();
-	if (ability1 == "Fairy Aura" || ability2 == "Fairy Aura")
+	if (!isNeutralizingGas && (ability1 == "Fairy Aura" || ability2 == "Fairy Aura"))
 		$("input:checkbox[id='fairy-aura']").prop("checked", true);
 	else
 		$("input:checkbox[id='fairy-aura']").prop("checked", lastAura[0]);
-	if (ability1 == "Dark Aura" || ability2 == "Dark Aura")
+	if (!isNeutralizingGas && (ability1 == "Dark Aura" || ability2 == "Dark Aura"))
 		$("input:checkbox[id='dark-aura']").prop("checked", true);
 	else
 		$("input:checkbox[id='dark-aura']").prop("checked", lastAura[1]);
-	if (ability1 == "Aura Break" || ability2 == "Aura Break")
+	if (!isNeutralizingGas && (ability1 == "Aura Break" || ability2 == "Aura Break"))
 		$("input:checkbox[id='aura-break']").prop("checked", true);
 	else
 		$("input:checkbox[id='aura-break']").prop("checked", lastAura[2]);
 }
 function autoSetVicStar(i, side) {
 	var ability = $("#p" + i + " .ability").val();
-	if (ability === "Victory Star") {
-		$("input:checkbox[id='vicStar" + side + "']").prop("checked", true);
-	} else {
-		$("input:checkbox[id='vicStar" + side + "']").prop("checked", false);
-	}
+	$("input:checkbox[id='vicStar" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Victory Star"));
 }
 function autoSetTerrain() {
 	var ability1 = $("#p1 .ability").val();
@@ -359,35 +356,15 @@ function autosetStatus(p, item) {
 
 function autoSetSteely(i, side) {
 	var ability = $("#p" + i + " .ability").val();
-	if (ability === "Steely Spirit") {
-		$("input:checkbox[id='steelySpirit" + side + "']").prop("checked", true);
-	} else {
-		$("input:checkbox[id='steelySpirit" + side + "']").prop("checked", false);
-	}
+	$("input:checkbox[id='steelySpirit" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Steely Spirit"));
 }
 
 function autoSetRuin(i, side) {
 	var ability = $("#p" + i + " .ability").val();
-	if (ability === "Tablets of Ruin") {
-		$("input:checkbox[id='ruinTablets" + side + "']").prop("checked", true);
-	} else {
-		$("input:checkbox[id='ruinTablets" + side + "']").prop("checked", false);
-	}
-	if (ability === "Vessel of Ruin") {
-		$("input:checkbox[id='ruinVessel" + side + "']").prop("checked", true);
-	} else {
-		$("input:checkbox[id='ruinVessel" + side + "']").prop("checked", false);
-	}
-	if (ability === "Sword of Ruin") {
-		$("input:checkbox[id='ruinSword" + side + "']").prop("checked", true);
-	} else {
-		$("input:checkbox[id='ruinSword" + side + "']").prop("checked", false);
-	}
-	if (ability === "Beads of Ruin") {
-		$("input:checkbox[id='ruinBeads" + side + "']").prop("checked", true);
-	} else {
-		$("input:checkbox[id='ruinBeads" + side + "']").prop("checked", false);
-	}
+	$("input:checkbox[id='ruinTablets" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Tablets of Ruin"));
+	$("input:checkbox[id='ruinVessel" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Vessel of Ruin"));
+	$("input:checkbox[id='ruinSword" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Sword of Ruin"));
+	$("input:checkbox[id='ruinBeads" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Beads of Ruin"));
 }
 
 function autoSetMultiHits(pokeInfo) {
@@ -424,7 +401,7 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
 	if (pokeInfo.prop("id")[1] == "1") {
-		let forceCrit = move.alwaysCrit || (ability === "Merciless" && move.category && $("#p2").find(".status").val().endsWith("Poisoned"));
+		let forceCrit = move.alwaysCrit || (!isNeutralizingGas && ability === "Merciless" && move.category && $("#p2").find(".status").val().endsWith("Poisoned"));
 		moveGroupObj.children(".move-crit").prop("checked", forceCrit);
 	}
 	var moveHits = moveGroupObj.children(".move-hits");
@@ -765,7 +742,10 @@ function Pokemon(pokeInfo) {
 		"status": pokeInfo.find(".status").val(),
 		"toxicCounter": pokeInfo.find(".status").val() === "Badly Poisoned" ? ~~pokeInfo.find(".toxic-counter").val() : 0,
 		"weight": +pokeInfo.find(".weight").val(),
-		"hasType": function (type) { return this.type1 === type || this.type2 === type; }
+		"hasType": function (type) { return this.type1 === type || this.type2 === type; },
+		// Reset this mon's current ability subject to Neutralizing Gas
+		// This is designed to be called once before calcs and after calcing each move as defender
+		"resetCurAbility": function () { this.curAbility = (isNeutralizingGas && this.item !== "Ability Shield") ? "" : this.ability }
 	};
 	// name
 	if (!setName.includes("(")) {
@@ -774,6 +754,9 @@ function Pokemon(pokeInfo) {
 		let pokemonName = setName.substring(0, setName.indexOf(" ("));
 		poke.name = pokedex[pokemonName].formes ? pokeInfo.find(".forme").val() : pokemonName;
 	}
+	// .ability is the mon's ability and should never be overwritten
+	// .curAbility represents the ability after negation through Neutralizing Gas or a Mold Breaker ability or move
+	poke.resetCurAbility();
 	// teraType
 	if (gen === 9) {
 		poke.teraType = pokeInfo.find(".tera-type").val();
@@ -858,10 +841,10 @@ function getMoveDetails(moveInfo, item, species) {
 		var tempType = defaultDetails.type;
 		var ability = moveInfo.closest(".poke-info").find(".ability").val();
 		// changing the type like this prevents getDamageResult() from applying the -ate boost, which is accurate to the game
-		if (ability === "Pixilate" && tempType === "Normal") {
+		if (!isNeutralizingGas && ability === "Pixilate" && tempType === "Normal") {
 			maxMoveName = "Max Starfall";
 			tempType = "Fairy";
-		} else if (ability === "Refrigerate" && tempType === "Normal") {
+		} else if (!isNeutralizingGas && ability === "Refrigerate" && tempType === "Normal") {
 			maxMoveName = "Max Hailstorm";
 			tempType = "Ice";
 		}

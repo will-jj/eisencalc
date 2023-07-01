@@ -34,7 +34,9 @@ function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
 		results[0][i] = getDamageResult(p1, p2, p1.moves[i], side1);
+		p2.resetCurAbility();
 		results[1][i] = getDamageResult(p2, p1, p2.moves[i], side2);
+		p1.resetCurAbility();
 	}
 	return results;
 }
@@ -48,7 +50,6 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	checkKlutz(attacker);
 	checkKlutz(defender);
 	checkEvo(attacker, defender);
-	//checkMinimize() appears to be intentionally removed
 	checkSeedsHonk(attacker, field.getTerrain());
 	checkSeedsHonk(defender, field.getTerrain());
 	checkAngerShell(attacker);
@@ -73,6 +74,7 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	var results = [];
 	for (var i = 0; i < 4; i++) {
 		results[i] = getDamageResult(attacker, defender, attacker.moves[i], defenderSide);
+		defender.resetCurAbility();
 	}
 	return results;
 }
@@ -90,24 +92,12 @@ function getDamageResult(attacker, defender, move, field) {
 		"isDynamax": defender.isDynamax
 	};
 
-	let defAbility = defender.ability;
-	if (defAbility !== "Shadow Shield") {
-		if (["Mold Breaker", "Teravolt", "Turboblaze"].includes(attacker.ability)) {
-			// since Mold Breaker and Ability Shield don't actually change damage, I would prefer that they don't print in the description
-			// a reason to revert this change and print Mold Breaker would be to better highlight to users when an ability is being negated
-			//description.attackerAbility = attacker.ability;
-			if (defender.item === "Ability Shield") {
-				//description.defenderItem = defender.item;
-			} else {
-				defAbility = "";
-			}
-		} else if (["Moongeist Beam", "Sunsteel Strike", "Searing Sunraze Smash", "Menacing Moonraze Maelstrom", "Light That Burns the Sky", "G-Max Drum Solo", "G-Max Hydrosnipe", "G-Max Fireball"].includes(move.name)) {
-			if (defender.item === "Ability Shield") {
-				//description.defenderItem = defender.item;
-			} else {
-				defAbility = "";
-			}
-		}
+	if (defender.item !== "Ability Shield" && (
+		["Mold Breaker", "Teravolt", "Turboblaze"].includes(attacker.curAbility) ||
+		["Moongeist Beam", "Sunsteel Strike", "Searing Sunraze Smash", "Menacing Moonraze Maelstrom", "Light That Burns the Sky", "G-Max Drum Solo", "G-Max Hydrosnipe", "G-Max Fireball"].includes(move.name))) {
+		// since Mold Breaker and Ability Shield don't actually change damage, I would prefer that they don't print in the description
+		// a reason to revert this change and print Mold Breaker would be to better highlight to users when an ability is being negated
+		defender.curAbility = "";
 	}
 
 	if (killsShedinja(attacker, defender, move)) {
@@ -123,7 +113,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	let moveType = move.type;
 
-	var isCritical = move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1;
+	var isCritical = move.isCrit && !["Battle Armor", "Shell Armor"].includes(defender.curAbility);
 
 	switch (move.name) {
 	case "Weather Ball":
@@ -187,7 +177,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	case "Meteor Beam":
 		var originalSABoost = attacker.boosts[SA];
-		attacker.boosts[SA] = attacker.ability === "Simple" ? Math.min(6, attacker.boosts[SA] + 2) : (attacker.ability === "Contrary" && attacker.item !== "White Herb" ? Math.max(-6, attacker.boosts[SA] - 1) : Math.min(6, attacker.boosts[SA] + 1));
+		attacker.boosts[SA] = attacker.curAbility === "Simple" ? Math.min(6, attacker.boosts[SA] + 2) : (attacker.curAbility === "Contrary" && attacker.item !== "White Herb" ? Math.max(-6, attacker.boosts[SA] - 1) : Math.min(6, attacker.boosts[SA] + 1));
 		attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 		// this boost gets reset after attack mods are calc'd
 		break;
@@ -204,11 +194,11 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	}
 
-	var isAerilate = attacker.ability === "Aerilate" && moveType === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal); // Raging Bull could be here
-	var isPixilate = attacker.ability === "Pixilate" && moveType === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal);
-	var isRefrigerate = attacker.ability === "Refrigerate" && moveType === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal);
-	var isGalvanize = attacker.ability === "Galvanize" && moveType === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal);
-	var isNormalize = attacker.ability === "Normalize" && (["Hidden Power", "Weather Ball", "Natural Gift", "Judgment", "Techno Blast", "Revelation Dance", "Multi-Attack", "Terrain Pulse"].indexOf(move.name) === -1) && !move.isZ && !(move.name === "Tera Blast" && attacker.isTerastal);
+	var isAerilate = attacker.curAbility === "Aerilate" && moveType === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal); // Raging Bull could be here
+	var isPixilate = attacker.curAbility === "Pixilate" && moveType === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal);
+	var isRefrigerate = attacker.curAbility === "Refrigerate" && moveType === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal);
+	var isGalvanize = attacker.curAbility === "Galvanize" && moveType === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal);
+	var isNormalize = attacker.curAbility === "Normalize" && (["Hidden Power", "Weather Ball", "Natural Gift", "Judgment", "Techno Blast", "Revelation Dance", "Multi-Attack", "Terrain Pulse"].indexOf(move.name) === -1) && !move.isZ && !(move.name === "Tera Blast" && attacker.isTerastal);
 	if (!move.isZ) { //Z-Moves don't receive -ate type changes
 		if (isAerilate) {
 			moveType = "Flying";
@@ -220,34 +210,34 @@ function getDamageResult(attacker, defender, move, field) {
 			moveType = "Electric";
 		} else if (isNormalize) {
 			moveType = "Normal";
-			description.attackerAbility = attacker.ability;
-		} else if (attacker.ability === "Liquid Voice" && move.isSound) {
+			description.attackerAbility = attacker.curAbility;
+		} else if (attacker.curAbility === "Liquid Voice" && move.isSound) {
 			moveType = "Water";
-			description.attackerAbility = attacker.ability;
+			description.attackerAbility = attacker.curAbility;
 		}
 	}
 
-	var attackerGrounded = isGrounded(attacker, field.isGravity, attacker.ability === "Levitate");
-	var defenderGrounded = isGrounded(defender, field.isGravity, defAbility === "Levitate");
+	var attackerGrounded = isGrounded(attacker, field);
+	var defenderGrounded = isGrounded(defender, field);
 	let moveCategory = move.category;
 	let makesContact = move.makesContact;
 	if (isShellSideArmPhysical(attacker, defender, move)) {
 		moveCategory = "Physical";
 		makesContact = true;
 	}
-	if (attacker.ability === "Long Reach" || attacker.item === "Punching Glove") {
+	if (attacker.curAbility === "Long Reach" || attacker.item === "Punching Glove") {
 		makesContact = false;
 	}
 	var hasPriority = move.hasPriority;
-	if ((attacker.ability === "Gale Wings" && moveType === "Flying") ||
+	if ((attacker.curAbility === "Gale Wings" && moveType === "Flying") ||
 		(move.name === "Grassy Glide" && field.terrain === "Grassy" && attackerGrounded)) {
 		hasPriority = true;
 	}
-	var attackerWeight = getModdedWeight(attacker, attacker.ability);
-	var defenderWeight = getModdedWeight(defender, defAbility);
+	var attackerWeight = getModdedWeight(attacker);
+	var defenderWeight = getModdedWeight(defender);
 
-	var typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1, attacker.ability === "Scrappy", field.isGravity, field.weather === "Strong Winds", description);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, moveType, defender.type2, attacker.ability === "Scrappy", field.isGravity, field.weather === "Strong Winds", description) : 1;
+	var typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1, attacker.curAbility === "Scrappy", field, field.weather === "Strong Winds", description);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, moveType, defender.type2, attacker.curAbility === "Scrappy", field, field.weather === "Strong Winds", description) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
@@ -264,17 +254,17 @@ function getDamageResult(attacker, defender, move, field) {
 	if (typeEffectiveness === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if (defAbility === "Wonder Guard" && typeEffectiveness <= 1 && move.name !== "Struggle" ||
-		moveType === "Grass" && defAbility === "Sap Sipper" ||
-		moveType === "Fire" && ["Flash Fire", "Flash Fire (activated)", "Well-Baked Body"].indexOf(defAbility) !== -1 ||
-		moveType === "Water" && ["Dry Skin", "Storm Drain", "Water Absorb"].indexOf(defAbility) !== -1 ||
-		moveType === "Electric" && ["Lightning Rod", "Lightningrod", "Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1 ||
-		moveType === "Ground" && move.name !== "Thousand Arrows" && defAbility === "Levitate" && !defenderGrounded ||
-		moveType === "Ground" && defAbility === "Earth Eater" ||
-		move.isBullet && defAbility === "Bulletproof" ||
-		move.isSound && defAbility === "Soundproof" ||
-		move.isWind && defAbility === "Wind Rider") {
-		description.defenderAbility = defAbility;
+	if (defender.curAbility === "Wonder Guard" && typeEffectiveness <= 1 && move.name !== "Struggle" ||
+		moveType === "Grass" && defender.curAbility === "Sap Sipper" ||
+		moveType === "Fire" && ["Flash Fire", "Flash Fire (activated)", "Well-Baked Body"].indexOf(defender.curAbility) !== -1 ||
+		moveType === "Water" && ["Dry Skin", "Storm Drain", "Water Absorb"].indexOf(defender.curAbility) !== -1 ||
+		moveType === "Electric" && ["Lightning Rod", "Lightningrod", "Motor Drive", "Volt Absorb"].indexOf(defender.curAbility) !== -1 ||
+		moveType === "Ground" && move.name !== "Thousand Arrows" && defender.curAbility === "Levitate" && !defenderGrounded ||
+		moveType === "Ground" && defender.curAbility === "Earth Eater" ||
+		move.isBullet && defender.curAbility === "Bulletproof" ||
+		move.isSound && defender.curAbility === "Soundproof" ||
+		move.isWind && defender.curAbility === "Wind Rider") {
+		description.defenderAbility = defender.curAbility;
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 	if (moveType === "Ground" && move.name !== "Thousand Arrows" && defender.item === "Air Balloon" && !defenderGrounded) {
@@ -298,12 +288,12 @@ function getDamageResult(attacker, defender, move, field) {
 		if (field.terrain === "Psychic" && defenderGrounded) {
 			description.terrain = field.terrain;
 			return {"damage": [0], "description": buildDescription(description)};
-		} else if (["Dazzling", "Queenly Majesty", "Armor Tail"].includes(defAbility)) {
-			description.defenderAbility = defAbility;
+		} else if (["Dazzling", "Queenly Majesty", "Armor Tail"].includes(defender.curAbility)) {
+			description.defenderAbility = defender.curAbility;
 			return {"damage": [0], "description": buildDescription(description)};
 		}
 	}
-	let bypassProtect = ["Doom Desire", "Feint", "Future Sight", "Hyperspace Fury", "Hyperspace Hole", "Phantom Force", "Shadow Force", "Hyper Drill"].includes(move.name) || (attacker.ability === "Unseen Fist" && makesContact);
+	let bypassProtect = ["Doom Desire", "Feint", "Future Sight", "Hyperspace Fury", "Hyperspace Hole", "Phantom Force", "Shadow Force", "Hyper Drill"].includes(move.name) || (attacker.curAbility === "Unseen Fist" && makesContact);
 	if (field.isProtect && !move.isZ && !move.isMax && !bypassProtect) {
 		description.defenderAbility = "Protecting";
 		return {"damage": [0], "description": buildDescription(description)};
@@ -313,7 +303,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	if (["Seismic Toss", "Night Shade"].indexOf(move.name) !== -1) {
 		var lv = attacker.level;
-		if (attacker.ability === "Parental Bond") {
+		if (attacker.curAbility === "Parental Bond") {
 			lv *= 2;
 		}
 		return {"damage": [lv], "description": buildDescription(description)};
@@ -459,9 +449,9 @@ function getDamageResult(attacker, defender, move, field) {
 
 	var bpMods = [];
 	// The location of Technician changed betweens gens 7 and 8 https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8433978
-	if (gen >= 8 && attacker.ability === "Technician" && basePower <= 60) {
+	if (gen >= 8 && attacker.curAbility === "Technician" && basePower <= 60) {
 		bpMods.push(0x1800);
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 	}
 
 	if (field.isSteelySpirit && moveType === "Steel") {
@@ -470,19 +460,19 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	// Do not apply Aura Break if the attacker has a Mold Breaker and the defender has the ability
-	// defAbility is made empty if the attacker has a Mold Breaker, and defender.ability should retain the defender's base ability
+	// curAbility is made empty if the attacker has a Mold Breaker, and defender.ability should retain the defender's base ability
 	let isAuraActive = (field.isAuraFairy && moveType === "Fairy") || (field.isAuraDark && moveType === "Dark");
-	if (isAuraActive && field.isAuraBreak && !(defAbility === "" && defender.ability === "Aura Break")) {
+	if (isAuraActive && field.isAuraBreak && !(defender.curAbility === "" && defender.ability === "Aura Break")) {
 		bpMods.push(0x0C00);
 		description.aura = "Aura Break";
 		isAuraActive = false; // Done this way so that a Mold Breaker attacker still receives an Aura boost against an Aura Break defender
 	}
 
-	if ((attacker.ability === "Reckless" && (typeof move.hasRecoil === "number" || move.hasRecoil === "crash")) ||
-		attacker.ability === "Iron Fist" && move.isPunch ||
+	if ((attacker.curAbility === "Reckless" && (typeof move.hasRecoil === "number" || move.hasRecoil === "crash")) ||
+		attacker.curAbility === "Iron Fist" && move.isPunch ||
 		gen >= 7 && !move.isZ && (isAerilate || isPixilate || isRefrigerate || isNormalize || isGalvanize)) {
 		bpMods.push(0x1333);
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 	}
 
 	if (field.isBattery && moveCategory === "Special") {
@@ -493,21 +483,21 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x14CD);
 		description.isPowerSpot = true;
 	}
-	if (attacker.ability === "Sheer Force" && move.hasSecondaryEffect ||
-		attacker.ability === "Analytic" && turnOrder !== "FIRST" ||
-		attacker.ability === "Tough Claws" && makesContact ||
+	if (attacker.curAbility === "Sheer Force" && move.hasSecondaryEffect ||
+		attacker.curAbility === "Analytic" && turnOrder !== "FIRST" ||
+		attacker.curAbility === "Tough Claws" && makesContact ||
 		gen == 6 && (isAerilate || isPixilate || isRefrigerate) ||
-		attacker.ability == "Punk Rock" && move.isSound) {
+		attacker.curAbility === "Punk Rock" && move.isSound) {
 		bpMods.push(0x14CD);
-		description.attackerAbility = attacker.ability;
-	} else if (attacker.ability === "Sand Force" && field.weather === "Sand" && ["Rock", "Ground", "Steel"].indexOf(moveType) !== -1) {
+		description.attackerAbility = attacker.curAbility;
+	} else if (attacker.curAbility === "Sand Force" && field.weather === "Sand" && ["Rock", "Ground", "Steel"].indexOf(moveType) !== -1) {
 		bpMods.push(0x14CD);
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 		description.weather = field.weather;
 	}
 
 	var fainted = parseInt(field.faintedCount);
-	if (attacker.ability === "Supreme Overlord" && fainted > 0) {
+	if (attacker.curAbility === "Supreme Overlord" && fainted > 0) {
 		// modifies the base power https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9421520
 		var multiplier;
 		switch (fainted) {
@@ -527,32 +517,32 @@ function getDamageResult(attacker, defender, move, field) {
 				multiplier = 1.5;
 		}
 		bpMods.push(Math.ceil(0x1000 * multiplier));
-		description.attackerAbility = attacker.ability + " (" + multiplier + "x BP)";
+		description.attackerAbility = attacker.curAbility + " (" + multiplier + "x BP)";
 	}
 
 	// Do not apply the Aura boost if the attacker has a Mold Breaker and the defender is providing the Aura https://bulbapedia.bulbagarden.net/wiki/Mold_Breaker_(Ability)#Generation_VIII_onward
-	// defAbility is made empty if the attacker has a Mold Breaker, and defender.ability should retain the defender's base ability
-	if (isAuraActive && !(gen <= 7 && defAbility === "" && defender.ability === moveType + " Aura")) {
+	// curAbility is made empty if the attacker has a Mold Breaker, and defender.ability should retain the defender's base ability
+	if (isAuraActive && !(gen <= 7 && defender.curAbility === "" && defender.ability === moveType + " Aura")) {
 		bpMods.push(0x1548);
 		description.aura = moveType + " Aura";
 	}
 
 	// The location of Technician changed betweens gens 7 and 8 https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8433978
-	if (gen <= 7 && attacker.ability === "Technician" && basePower <= 60 ||
-		attacker.ability === "Flare Boost" && attacker.status === "Burned" && moveCategory === "Special" ||
-		attacker.ability === "Toxic Boost" && (attacker.status === "Poisoned" || attacker.status === "Badly Poisoned") && moveCategory === "Physical" ||
-		attacker.ability === "Strong Jaw" && move.isBite ||
-		attacker.ability === "Mega Launcher" && move.isPulse) {
+	if (gen <= 7 && attacker.curAbility === "Technician" && basePower <= 60 ||
+		attacker.curAbility === "Flare Boost" && attacker.status === "Burned" && moveCategory === "Special" ||
+		attacker.curAbility === "Toxic Boost" && (attacker.status === "Poisoned" || attacker.status === "Badly Poisoned") && moveCategory === "Physical" ||
+		attacker.curAbility === "Strong Jaw" && move.isBite ||
+		attacker.curAbility === "Mega Launcher" && move.isPulse) {
 		bpMods.push(0x1800);
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 	}
 
-	if (defAbility === "Heatproof" && moveType === "Fire") {
+	if (defender.curAbility === "Heatproof" && moveType === "Fire") {
 		bpMods.push(0x800);
-		description.defenderAbility = defAbility;
-	} else if (defAbility === "Dry Skin" && moveType === "Fire") {
+		description.defenderAbility = defender.curAbility;
+	} else if (defender.curAbility === "Dry Skin" && moveType === "Fire") {
 		bpMods.push(0x1400);
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.curAbility;
 	}
 	if (attacker.item === "Muscle Band" && moveCategory === "Physical" ||
 		attacker.item === "Wise Glasses" && moveCategory === "Special") {
@@ -657,81 +647,83 @@ function getDamageResult(attacker, defender, move, field) {
             toSmogonStat(attackStat);
 	if (attackSource.boosts[attackStat] === 0 || isCritical && attackSource.boosts[attackStat] < 0) {
 		attack = attackSource.rawStats[attackStat];
-	} else if (defAbility === "Unaware") {
+	} else if (defender.curAbility === "Unaware") {
 		attack = attackSource.rawStats[attackStat];
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.curAbility;
 	} else {
 		attack = attackSource.stats[attackStat];
 		description.attackBoost = attackSource.boosts[attackStat];
 	}
 
 	// unlike all other attack modifiers, Hustle gets applied directly
-	if (attacker.ability === "Hustle" && moveCategory === "Physical") {
+	if (attacker.curAbility === "Hustle" && moveCategory === "Physical") {
 		attack = pokeRound(attack * 3 / 2);
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 	}
 
 	var atMods = [];
- 	if (attacker.ability === "Defeatist" && attacker.curHP <= attacker.maxHP / 2 ||
-		attacker.ability === "Slow Start" && moveCategory === "Physical") {
+	if (attacker.curAbility === "Defeatist" && attacker.curHP <= attacker.maxHP / 2 ||
+		attacker.curAbility === "Slow Start" && moveCategory === "Physical") {
 		atMods.push(0x800);
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 	}
 
-	if (attacker.ability === "Flower Gift" && field.weather.indexOf("Sun") > -1 && moveCategory === "Physical" ||
-		attacker.ability === "Solar Power" && field.weather.indexOf("Sun") > -1 && moveCategory === "Special") {
+	if (attacker.curAbility === "Flower Gift" && field.weather.indexOf("Sun") > -1 && moveCategory === "Physical" ||
+		attacker.curAbility === "Solar Power" && field.weather.indexOf("Sun") > -1 && moveCategory === "Special") {
 		atMods.push(0x1800);
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 		description.weather = field.weather;
 	} 
-	if (attacker.ability === "Guts" && attacker.status !== "Healthy" && moveCategory === "Physical" ||
-		attacker.ability === "Overgrow" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Grass" ||
-		attacker.ability === "Blaze" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Fire" ||
-		attacker.ability === "Torrent" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Water" ||
-		attacker.ability === "Swarm" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Bug" ||
-		attacker.ability === "Steelworker" && moveType === "Steel" ||
-		attacker.ability === "Gorilla Tactics" && moveCategory === "Physical" && !attacker.isDynamax ||
-		attacker.ability === "Transistor" && gen <= 8 && moveType === "Electric" ||
-		attacker.ability === "Dragon's Maw" && moveType === "Dragon" ||
-		attacker.ability === "Rocky Payload" && moveType === "Rock" ||
-		attacker.ability === "Sharpness" && move.isSlicing) {
+	if (attacker.curAbility === "Guts" && attacker.status !== "Healthy" && moveCategory === "Physical" ||
+		attacker.curAbility === "Overgrow" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Grass" ||
+		attacker.curAbility === "Blaze" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Fire" ||
+		attacker.curAbility === "Torrent" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Water" ||
+		attacker.curAbility === "Swarm" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Bug" ||
+		attacker.curAbility === "Steelworker" && moveType === "Steel" ||
+		attacker.curAbility === "Gorilla Tactics" && moveCategory === "Physical" && !attacker.isDynamax ||
+		attacker.curAbility === "Transistor" && gen <= 8 && moveType === "Electric" ||
+		attacker.curAbility === "Dragon's Maw" && moveType === "Dragon" ||
+		attacker.curAbility === "Rocky Payload" && moveType === "Rock" ||
+		attacker.curAbility === "Sharpness" && move.isSlicing) {
 		atMods.push(0x1800);
-		description.attackerAbility = attacker.ability;
-	} else if (attacker.ability === "Flash Fire (activated)" && moveType === "Fire") {
+		description.attackerAbility = attacker.curAbility;
+	} else if (attacker.curAbility === "Flash Fire (activated)" && moveType === "Fire") {
 		atMods.push(0x1800);
 		description.attackerAbility = "Flash Fire";
 	}
 
-	if (attacker.ability === "Water Bubble" && moveType === "Water" ||
-		(attacker.ability === "Huge Power" || attacker.ability === "Pure Power") && moveCategory === "Physical") {
+	if (attacker.curAbility === "Water Bubble" && moveType === "Water" ||
+		(attacker.curAbility === "Huge Power" || attacker.curAbility === "Pure Power") && moveCategory === "Physical") {
 		atMods.push(0x2000);
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 	}
 
-	if ((attacker.ability === "Hadron Engine" && field.terrain === "Electric" && moveCategory === "Special") ||
-		(attacker.ability === "Orichalcum Pulse" && field.weather.indexOf("Sun") > -1 && moveCategory === "Physical")) {
+	if ((attacker.curAbility === "Hadron Engine" && field.terrain === "Electric" && moveCategory === "Special") ||
+		(attacker.curAbility === "Orichalcum Pulse" && field.weather.endsWith("Sun") && moveCategory === "Physical")) {
 		atMods.push(0x1555); // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9423025
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 	}
 	let attackerProtoQuark = checkProtoQuarkHighest(attacker, field.weather, field.terrain);
-	if ((attackerProtoQuark === AT && moveCategory === "Physical") ||
-		(attackerProtoQuark === SA && moveCategory === "Special") || // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9423025
-		attacker.ability === "Transistor" && gen >= 9 && moveType === "Electric") { // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9647211
-		atMods.push(0x14CD);
-		description.attackerAbility = attacker.ability;
+	if ((attackerProtoQuark === AT && moveCategory === "Physical") || (attackerProtoQuark === SA && moveCategory === "Special")) {
+		atMods.push(0x14CD); // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9423025
+		description.attackerAbility = attacker.ability; // use base ability for ProtoQuark
+	}
+	if (attacker.curAbility === "Transistor" && gen >= 9 && moveType === "Electric") {
+		atMods.push(0x14CD); // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9647211
+		description.attackerAbility = attacker.curAbility;
 	}
 
-	if ((field.isRuinTablets && moveCategory === "Physical" && attacker.ability !== "Tablets of Ruin") ||
-		(field.isRuinVessel && moveCategory === "Special" && attacker.ability !== "Vessel of Ruin")) {
+	if ((field.isRuinTablets && moveCategory === "Physical" && attacker.curAbility !== "Tablets of Ruin") ||
+		(field.isRuinVessel && moveCategory === "Special" && attacker.curAbility !== "Vessel of Ruin")) {
 		atMods.push(0xC00);
 		description.isRuinAtk = true;
 	}
 
-	if (defAbility === "Thick Fat" && (moveType === "Fire" || moveType === "Ice") ||
-		defAbility === "Water Bubble" && moveType === "Fire" ||
-		defAbility === "Purifying Salt" && moveType === "Ghost") {
+	if (defender.curAbility === "Thick Fat" && (moveType === "Fire" || moveType === "Ice") ||
+		defender.curAbility === "Water Bubble" && moveType === "Fire" ||
+		defender.curAbility === "Purifying Salt" && moveType === "Ghost") {
 		atMods.push(0x800);
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.curAbility;
 	}
 
 	if (attacker.item === "Soul Dew" && gen <= 6 && (attacker.name === "Latios" || attacker.name === "Latias") && moveCategory === "Special" ||
@@ -765,9 +757,9 @@ function getDamageResult(attacker, defender, move, field) {
             toSmogonStat(defenseStat);
 	if (defender.boosts[defenseStat] === 0 || isCritical && defender.boosts[defenseStat] > 0 || move.ignoresDefenseBoosts) {
 		defense = defender.rawStats[defenseStat];
-	} else if (attacker.ability === "Unaware") {
+	} else if (attacker.curAbility === "Unaware") {
 		defense = defender.rawStats[defenseStat];
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 	} else {
 		defense = defender.stats[defenseStat];
 		description.defenseBoost = defender.boosts[defenseStat];
@@ -781,30 +773,30 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	var dfMods = [];
-	if (defAbility === "Flower Gift" && field.weather.indexOf("Sun") > -1 && !hitsPhysical) {
+	if (defender.curAbility === "Flower Gift" && field.weather.indexOf("Sun") > -1 && !hitsPhysical) {
 		dfMods.push(0x1800);
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.curAbility;
 		description.weather = field.weather;
 	}
-	if (defAbility === "Marvel Scale" && defender.status !== "Healthy" && hitsPhysical ||
-		defAbility === "Grass Pelt" && field.terrain === "Grassy" && hitsPhysical) {
+	if (defender.curAbility === "Marvel Scale" && defender.status !== "Healthy" && hitsPhysical ||
+		defender.curAbility === "Grass Pelt" && field.terrain === "Grassy" && hitsPhysical) {
 		dfMods.push(0x1800);
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.curAbility;
 	}
 
-	if (defAbility === "Fur Coat" && hitsPhysical) {
+	if (defender.curAbility === "Fur Coat" && hitsPhysical) {
 		dfMods.push(0x2000);
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.curAbility;
 	}
 
 	let defenderProtoQuark = checkProtoQuarkHighest(defender, field.weather, field.terrain);
 	if ((defenderProtoQuark === DF && hitsPhysical) || (defenderProtoQuark === SD && !hitsPhysical)) {
 		dfMods.push(0x14CD);
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.ability; // use base ability for ProtoQuark
 	}
 
-	if ((field.isRuinSword && hitsPhysical && defAbility !== "Sword of Ruin") ||
-		(field.isRuinBeads && !hitsPhysical && defAbility !== "Beads of Ruin")) {
+	if ((field.isRuinSword && hitsPhysical && defender.curAbility !== "Sword of Ruin") ||
+		(field.isRuinBeads && !hitsPhysical && defender.curAbility !== "Beads of Ruin")) {
 		dfMods.push(0xC00);
 		description.isRuinDef = true;
 	}
@@ -863,16 +855,16 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	baseDamage = pokeRound(baseDamage * weatherMod / 0x1000);
 	if (isCritical) {
-		baseDamage = Math.floor(baseDamage * (gen >= 6 ? 1.5 : 2));
+		baseDamage = Math.floor(baseDamage * (gen >= 6 ? 3 : 4) / 2);
 		description.isCritical = isCritical;
 	}
 	// the random factor is applied between the crit mod and the stab mod, so don't apply anything below this until we're inside the loop
 	var stabMod = 0x1000;
 	if (attacker.isTerastal) {
 		if (moveType === attacker.type1) {
-			if (attacker.ability === "Adaptability") {
+			if (attacker.curAbility === "Adaptability") {
 				stabMod = (moveType === attacker.dexType1 || moveType === attacker.dexType2) ? 0x2400 : 0x2000;
-				description.attackerAbility = attacker.ability;
+				description.attackerAbility = attacker.curAbility;
 			} else {
 				stabMod = (moveType === attacker.dexType1 || moveType === attacker.dexType2) ? 0x2000 : 0x1800;
 			}
@@ -883,20 +875,20 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 	}
 	else if (attacker.hasType(moveType)) {
-		if (attacker.ability === "Adaptability") {
+		if (attacker.curAbility === "Adaptability") {
 			stabMod = 0x2000;
-			description.attackerAbility = attacker.ability;
+			description.attackerAbility = attacker.curAbility;
 		} else {
 			stabMod = 0x1800;
 		}
-	} else if (attacker.ability === "Protean" || attacker.ability == "Libero") {
+	} else if (attacker.curAbility === "Protean" || attacker.curAbility == "Libero") {
 		stabMod = 0x1800;
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 	}
-	var applyBurn = attacker.status === "Burned" && moveCategory === "Physical" && attacker.ability !== "Guts" && !move.ignoresBurn;
+	var applyBurn = attacker.status === "Burned" && moveCategory === "Physical" && attacker.curAbility !== "Guts" && !move.ignoresBurn;
 	description.isBurned = applyBurn;
 	var finalMods = [];
-	var ignoresScreens = isCritical || ["Brick Break", "Psychic Fangs", "Raging Bull"].includes(move.name) || attacker.ability === "Infiltrator";
+	var ignoresScreens = isCritical || ["Brick Break", "Psychic Fangs", "Raging Bull"].includes(move.name) || attacker.curAbility === "Infiltrator";
 	if (field.isReflect && moveCategory === "Physical" && !ignoresScreens) {
 		if (field.format === "singles") {
 			finalMods.push(0x800);
@@ -914,36 +906,36 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 		description.isLightScreen = true;
 	}
-	if (attacker.ability === "Neuroforce" && typeEffectiveness > 1) {
+	if (attacker.curAbility === "Neuroforce" && typeEffectiveness > 1) {
 		finalMods.push(0x1400);
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 	}
-	if (attacker.ability === "Sniper" && isCritical) {
+	if (attacker.curAbility === "Sniper" && isCritical) {
 		finalMods.push(0x1800);
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 	}
-	if (attacker.ability === "Tinted Lens" && typeEffectiveness < 1) {
+	if (attacker.curAbility === "Tinted Lens" && typeEffectiveness < 1) {
 		finalMods.push(0x2000);
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 	}
-	if (((defAbility === "Multiscale" || defAbility == "Shadow Shield") && defender.curHP === defender.maxHP) ||
-		defAbility === "Fluffy" && makesContact ||
-		defAbility === "Punk Rock" && move.isSound ||
-		defAbility === "Ice Scales" && moveCategory === "Special") {
+	if (((defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP) ||
+		defender.curAbility === "Fluffy" && makesContact ||
+		defender.curAbility === "Punk Rock" && move.isSound ||
+		defender.curAbility === "Ice Scales" && moveCategory === "Special") {
 		finalMods.push(0x800);
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.ability; // print base ability for Shadow Shield
 	}
 	if (field.isFriendGuard) {
 		finalMods.push(0xC00);
 		description.isFriendGuard = true;
 	}
-	if ((defAbility === "Solid Rock" || defAbility === "Filter" || defAbility === "Prism Armor") && typeEffectiveness > 1) {
+	if ((defender.curAbility === "Solid Rock" || defender.curAbility === "Filter" || (defender.ability === "Prism Armor" && !isNeutralizingGas)) && typeEffectiveness > 1) {
 		finalMods.push(0xC00);
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.ability; // print base ability for Prism Armor
 	}
-	if (defAbility === "Fluffy" && moveType === "Fire") {
+	if (defender.curAbility === "Fluffy" && moveType === "Fire") {
 		finalMods.push(0x2000);
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.curAbility;
 	}
 	if (attacker.item === "Expert Belt" && typeEffectiveness > 1 && !move.isZ) {
 		finalMods.push(0x1333);
@@ -952,7 +944,7 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(0x14CC);
 		description.attackerItem = attacker.item;
 	}
-	if (getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") && !["Unnerve", "As One"].includes(attacker.ability)) {
+	if (getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") && attacker.curAbility !== "Unnerve" && attacker.ability !== "As One") {
 		finalMods.push(0x800);
 		description.defenderItem = defender.item;
 	}
@@ -975,11 +967,12 @@ function getDamageResult(attacker, defender, move, field) {
 
 	var damage = [], pbDamage = [];
 	var child, childDamage;
-	if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
+	if (attacker.curAbility === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
 		child = JSON.parse(JSON.stringify(attacker));
 		child.rawStats = attacker.rawStats;
 		child.stats = attacker.stats;
 		child.ability = "";
+		child.curAbility = "";
 		child.isChild = true;
 		child.hasType = attacker.hasType;
 		if (move.name === "Power-Up Punch") {
@@ -987,7 +980,7 @@ function getDamageResult(attacker, defender, move, field) {
 			child.stats[AT] = getModifiedStat(child.rawStats[AT], child.boosts[AT]);
 		}
 		childDamage = getDamageResult(child, defender, move, field).damage;
-		description.attackerAbility = attacker.ability;
+		description.attackerAbility = attacker.curAbility;
 		if (move.name === "Power-Up Punch") {
 			child.boosts[AT]--;
 			child.stats[AT] = getModifiedStat(child.rawStats[AT], child.boosts[AT]);
@@ -1005,7 +998,7 @@ function getDamageResult(attacker, defender, move, field) {
 			damage[i] = 0;
 			description.isZeroVsDynamax = true;
 		}
-		if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
+		if (attacker.curAbility === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
 			for (let j = 0; j < 16; j++) {
 				pbDamage[16 * i + j] = damage[i] + childDamage[j];
 			}
@@ -1176,7 +1169,7 @@ function chainMods(mods) {
 	return M;
 }
 
-function getMoveEffectiveness(move, moveType, defType, isGhostRevealed, isGravity, isStrongWinds, description) {
+function getMoveEffectiveness(move, moveType, defType, isGhostRevealed, field, isStrongWinds, description) {
 	if (!moveType) {
 		console.log(move.name + " does not have a type field.");
 		return 0;
@@ -1184,7 +1177,7 @@ function getMoveEffectiveness(move, moveType, defType, isGhostRevealed, isGravit
 		return 1;
 	} else if (isGhostRevealed && defType === "Ghost" && (moveType === "Normal" || moveType === "Fighting")) {
 		return 1;
-	} else if (isGravity && defType === "Flying" && moveType === "Ground") {
+	} else if (field.isGravity && defType === "Flying" && moveType === "Ground") {
 		return 1;
 	} else if (isStrongWinds && defType === "Flying" && (moveType === "Electric" || moveType === "Ice" || moveType === "Rock")) {
 		description.weather = "Strong Winds";
@@ -1219,11 +1212,11 @@ function getFinalSpeed(pokemon, weather, terrain) {
 		speed = Math.floor(speed / 2);
 	}
 	
-	if (pokemon.ability === "Chlorophyll" && weather.indexOf("Sun") > -1 && pokemon.item !== "Utility Umbrella" ||
-		pokemon.ability === "Sand Rush" && weather === "Sand" ||
-		pokemon.ability === "Swift Swim" && weather.indexOf("Rain") > -1 && pokemon.item !== "Utility Umbrella" ||
-		pokemon.ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
-		pokemon.ability === "Surge Surfer" && terrain === "Electric") {
+	if (pokemon.curAbility === "Chlorophyll" && weather.indexOf("Sun") > -1 && pokemon.item !== "Utility Umbrella" ||
+		pokemon.curAbility === "Sand Rush" && weather === "Sand" ||
+		pokemon.curAbility === "Swift Swim" && weather.indexOf("Rain") > -1 && pokemon.item !== "Utility Umbrella" ||
+		pokemon.curAbility === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
+		pokemon.curAbility === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
 	} else if (checkProtoQuarkHighest(pokemon, weather, terrain) === SP) {
 		speed = Math.floor(speed * 1.5);
@@ -1231,18 +1224,18 @@ function getFinalSpeed(pokemon, weather, terrain) {
 	return speed;
 }
 
-function isGrounded(pokemon, isGravity, isLevitate) {
-	if (isGravity || pokemon.item === "Iron Ball") {
+function isGrounded(pokemon, field) {
+	if (field.isGravity || pokemon.item === "Iron Ball") {
 		return true;
 	}
-	return !(pokemon.hasType("Flying") || pokemon.item === "Air Balloon" || isLevitate);
+	return !(pokemon.hasType("Flying") || pokemon.item === "Air Balloon" || pokemon.curAbility === "Levitate");
 }
 
-function getModdedWeight(pokemon, ability) {
+function getModdedWeight(pokemon) {
 	let weight = pokemon.weight;
-	if (ability === "Heavy Metal") {
+	if (pokemon.curAbility === "Heavy Metal") {
 		weight *= 2;
-	} else if (ability === "Light Metal") {
+	} else if (pokemon.curAbility === "Light Metal") {
 		weight = Math.floor(weight * 5) / 10; // weight values are truncated to the tenth's place (increments of 0.1)
 	}
 	if (pokemon.item === "Float Stone") {
@@ -1254,14 +1247,14 @@ function getModdedWeight(pokemon, ability) {
 function killsShedinja(attacker, defender, move) {
 	// This is meant to at-a-glance highlight moves that are fatal to Shedinja and allow the mass calc to better capture Shedinja's defensive profile.
 	// sorry for the mess of conditionals
-	if (defender.ability === "Wonder Guard" && defender.curHP == 1) {
+	if (defender.curAbility === "Wonder Guard" && defender.curHP == 1) {
 		let poisonable = defender.status === "Healthy" && !defender.hasType("Poison") && !defender.hasType("Steel");
 		let burnable = defender.status === "Healthy" && !defender.hasType("Fire");
 
 		let weather = defender.item !== "Safety Goggles" &&
 		((move.name === "Sandstorm" && (!defender.hasType("Rock") && !defender.hasType("Steel") && !defender.hasType("Ground"))) || (move.name === "Hail" && !defender.hasType("Ice")));
 		// akin to Sash, status berries should not be accounted for
-		let poison = ["Toxic", "Poison Gas", "Poison Powder", "Toxic Thread"].includes(move.name) && (poisonable || (attacker.ability === "Corrosion" && defender.status === "Healthy"));
+		let poison = ["Toxic", "Poison Gas", "Poison Powder", "Toxic Thread"].includes(move.name) && (poisonable || (attacker.curAbility === "Corrosion" && defender.status === "Healthy"));
 		let burn = move.name === "Will-O-Wisp" && burnable;
 		let dangerItem = (["Trick", "Switcheroo"].includes(move.name) || (move.name === "Bestow" && defender.item === "")) &&
 		(attacker.item === "Sticky Barb" || (attacker.item === "Toxic Orb" && poisonable) || (attacker.item === "Flame Orb" && burnable));
@@ -1273,7 +1266,7 @@ function killsShedinja(attacker, defender, move) {
 }
 
 function checkAirLock(pokemon, field) {
-	if (pokemon.ability === "Air Lock" || pokemon.ability === "Cloud Nine") {
+	if (pokemon.curAbility === "Air Lock" || pokemon.curAbility === "Cloud Nine") {
 		field.clearWeather();
 	}
 }
@@ -1289,7 +1282,7 @@ function checkParentalBondPuP(pokemon) {
 }
 
 function checkForecast(pokemon, weather) {
-	if (pokemon.ability === "Forecast" && pokemon.name === "Castform") {
+	if (pokemon.curAbility === "Forecast" && pokemon.name === "Castform") {
 		if (weather.indexOf("Sun") > -1) {
 			pokemon.type1 = "Fire";
 		} else if (weather.indexOf("Rain") > -1) {
@@ -1303,13 +1296,13 @@ function checkForecast(pokemon, weather) {
 	}
 }
 function checkKlutz(pokemon) {
-	if (pokemon.ability === "Klutz") {
-		pokemon.item = "";
+	if (pokemon.curAbility === "Klutz" && pokemon.item) {
+		pokemon.item = "Klutz"; // don't let it be the empty string for Knock Off
 	}
 }
 
 function checkDownload(source, target) {
-	if (source.ability === "Download") {
+	if (source.curAbility === "Download") {
 		if (target.stats[SD] <= target.stats[DF]) {
 			source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
 		} else {
@@ -1319,19 +1312,17 @@ function checkDownload(source, target) {
 }
 
 function checkSeeds(pokemon, terrain) {
-	var ability = pokemon.ability;
-	if ((pokemon.item === "Psychic Seed" && terrain === "Psychic") ||
-		(pokemon.item === "Misty Seed" && terrain === "Misty")) {
+	let ability = pokemon.curAbility;
+	if ((pokemon.item === "Psychic Seed" && terrain === "Psychic") || (pokemon.item === "Misty Seed" && terrain === "Misty")) {
 		pokemon.boosts[SD] = ability === "Simple" ? Math.min(6, pokemon.boosts[SD] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[SD] - 1) : Math.min(6, pokemon.boosts[SD] + 1));
-	} else if ((pokemon.item === "Electric Seed" && terrain === "Electric") ||
-			   (pokemon.item === "Grassy Seed" && terrain === "Grassy")) {
+	} else if ((pokemon.item === "Electric Seed" && terrain === "Electric") || (pokemon.item === "Grassy Seed" && terrain === "Grassy")) {
 		pokemon.boosts[DF] = ability === "Simple" ? Math.min(6, pokemon.boosts[DF] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[DF] - 1) : Math.min(6, pokemon.boosts[DF] + 1));
 	}
 }
 
 function checkSeedsHonk(pokemon, terrain) {
 	// A Seed can either come into the field that has the matching terrain, or its own Surge ability can proc its own Seed (Pincurchin-RS)
-	var ability = pokemon.ability;
+	var ability = pokemon.curAbility;
 	if ((pokemon.item === "Psychic Seed" && (terrain === "Psychic" || ability === "Psychic Surge")) ||
 		(pokemon.item === "Misty Seed" && (terrain === "Misty" || ability === "Misty Surge"))) {
 		pokemon.boosts[SD] = ability === "Simple" ? Math.min(6, pokemon.boosts[SD] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[SD] - 1) : Math.min(6, pokemon.boosts[SD] + 1));
@@ -1342,9 +1333,9 @@ function checkSeedsHonk(pokemon, terrain) {
 }
 
 function checkZacianZamazaenta(pokemon) {
-	if (pokemon.ability === "Intrepid Sword") {
+	if (pokemon.curAbility === "Intrepid Sword") {
 		pokemon.boosts[AT] = Math.min(6, pokemon.boosts[AT] + 1);
-	} else if (pokemon.ability === "Dauntless Shield") {
+	} else if (pokemon.curAbility === "Dauntless Shield") {
 		pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
 	}
 }
@@ -1360,6 +1351,7 @@ function isShellSideArmPhysical(attacker, defender, move) {
 }
 
 function checkProtoQuarkHighest(pokemon, weather, terrain) {
+	// Neither Mold Breaker nor Gastro Acid ignore ProtoQuark. Assume that ProtoQuark can't be negated
 	if ((pokemon.ability === "Protosynthesis" && (pokemon.item === "Booster Energy" || weather.indexOf("Sun") > -1)) ||
 		(pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric"))) {
 		let stats = pokemon.stats;
@@ -1386,7 +1378,7 @@ function checkProtoQuarkHighest(pokemon, weather, terrain) {
 }
 
 function checkAngerShell(pokemon) {
-	if (pokemon.ability === "Anger Shell" && pokemon.curHP <= pokemon.maxHP / 2) {
+	if (pokemon.curAbility === "Anger Shell" && pokemon.curHP <= pokemon.maxHP / 2) {
 		pokemon.boosts[AT] = Math.min(6, pokemon.boosts[AT] + 1);
 		pokemon.boosts[SA] = Math.min(6, pokemon.boosts[SA] + 1);
 		pokemon.boosts[SP] = Math.min(6, pokemon.boosts[SP] + 1);
@@ -1396,18 +1388,19 @@ function checkAngerShell(pokemon) {
 }
 
 function checkIntimidate(source, target) {
-	if (source.ability === "Intimidate") {
-		if (target.ability === "Contrary" || target.ability === "Defiant" || target.ability === "Guard Dog") {
+	if (source.curAbility === "Intimidate") {
+		let targetAbility = target.curAbility;
+		if (targetAbility === "Contrary" || targetAbility === "Defiant" || targetAbility === "Guard Dog") {
 			// the net result will still be +1 for something Defiant with White Herb
 			target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
-		} else if (target.ability === "Competitive") {
+		} else if (targetAbility === "Competitive") {
 			target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
-		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(target.ability) ||
-			(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(target.ability)) ||
+		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(targetAbility) ||
+			(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility)) ||
 			["Clear Amulet", "White Herb"].includes(target.item)) {
 			// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
 			// Mirror Armor does not reflect the stat drop to the source to simplify things for the calc user
-		} else if (target.ability === "Simple") {
+		} else if (targetAbility === "Simple") {
 			target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
 		} else {
 			target.boosts[AT] = Math.max(-6, target.boosts[AT] - 1);
