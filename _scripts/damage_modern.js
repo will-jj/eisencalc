@@ -107,7 +107,7 @@ function getDamageResult(attacker, defender, move, field) {
 		defender.curAbility = "";
 	}
 
-	if (killsShedinja(attacker, defender, move)) {
+	if (killsShedinja(attacker, defender, move, field)) {
 		return {"damage": [1], "description": buildDescription(description)};
 	}
 	if (move.bp === 0) {
@@ -1279,25 +1279,26 @@ function getModdedWeight(pokemon) {
 	return Math.max(weight, 0.1);
 }
 
-function killsShedinja(attacker, defender, move) {
+function killsShedinja(attacker, defender, move, field = {}) {
 	// This is meant to at-a-glance highlight moves that are fatal to Shedinja and allow the mass calc to better capture Shedinja's defensive profile.
 	// sorry for the mess of conditionals
-	if (defender.curAbility === "Wonder Guard" && defender.curHP == 1) {
-		let poisonable = defender.status === "Healthy" && !defender.hasType("Poison") && !defender.hasType("Steel");
-		let burnable = defender.status === "Healthy" && !defender.hasType("Fire");
-
-		let weather = defender.item !== "Safety Goggles" &&
-		((move.name === "Sandstorm" && (!defender.hasType("Rock") && !defender.hasType("Steel") && !defender.hasType("Ground"))) || (move.name === "Hail" && !defender.hasType("Ice")));
-		// akin to Sash, status berries should not be accounted for
-		let poison = ["Toxic", "Poison Gas", "Poison Powder", "Toxic Thread"].includes(move.name) && (poisonable || (attacker.curAbility === "Corrosion" && defender.status === "Healthy"));
-		let burn = move.name === "Will-O-Wisp" && burnable;
-		let dangerItem = (["Trick", "Switcheroo"].includes(move.name) || (move.name === "Bestow" && defender.item === "")) &&
-		(attacker.item === "Sticky Barb" || (attacker.item === "Toxic Orb" && poisonable) || (attacker.item === "Flame Orb" && burnable));
-		let confusion = ["Confuse Ray", "Flatter", "Supersonic", "Swagger", "Sweet Kiss", "Teeter Dance"].includes(move.name);
-		let otherPassive = (move.name === "Leech Seed" && !defender.hasType("Grass")) || (move.name === "Curse" && attacker.hasType("Ghost"));
-		return weather || poison || burn || dangerItem || confusion || otherPassive;
+	if (!(defender.curAbility === "Wonder Guard" && defender.curHP == 1)) {
+		return false;
 	}
-	return false;
+	let afflictable = defender.status === "Healthy" && !(field.terrain === "Misty" && isGrounded(defender, field));
+	let poisonable = afflictable && !defender.hasType("Poison") && !defender.hasType("Steel");
+	let burnable = afflictable && !defender.hasType("Fire");
+
+	let weather = defender.item !== "Safety Goggles" &&
+	((move.name === "Sandstorm" && (!defender.hasType("Rock") && !defender.hasType("Steel") && !defender.hasType("Ground"))) || (move.name === "Hail" && !defender.hasType("Ice")));
+	// akin to Sash, status berries should not be accounted for
+	let poison = ["Toxic", "Poison Gas", "Poison Powder", "Toxic Thread"].includes(move.name) && (poisonable || (afflictable && attacker.curAbility === "Corrosion"));
+	let burn = move.name === "Will-O-Wisp" && burnable;
+	let dangerItem = (["Trick", "Switcheroo"].includes(move.name) || (move.name === "Bestow" && defender.item === "")) &&
+	(attacker.item === "Sticky Barb" || (attacker.item === "Toxic Orb" && poisonable) || (attacker.item === "Flame Orb" && burnable));
+	let confusion = ["Confuse Ray", "Flatter", "Supersonic", "Swagger", "Sweet Kiss", "Teeter Dance"].includes(move.name);
+	let otherPassive = (move.name === "Leech Seed" && !defender.hasType("Grass")) || (move.name === "Curse" && attacker.hasType("Ghost"));
+	return weather || poison || burn || dangerItem || confusion || otherPassive;
 }
 
 function checkAirLock(pokemon, field) {
