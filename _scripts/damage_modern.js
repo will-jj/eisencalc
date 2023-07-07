@@ -338,25 +338,23 @@ function getDamageResult(attacker, defender, move, field) {
 
 	let finalMod = calcFinalMods(attacker, defender, move, field, description, bypassProtect);
 
-	var damage = [], pbDamage = [];
-	var child, childDamage;
+	let damage = [], pbDamage = [];
+	let childDamage;
 	if (attacker.curAbility === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
-		child = JSON.parse(JSON.stringify(attacker));
-		child.rawStats = attacker.rawStats;
-		child.stats = attacker.stats;
-		child.ability = "";
-		child.curAbility = "";
-		child.isChild = true;
-		child.hasType = attacker.hasType;
+		let originalATBoost = attacker.boosts[AT];
 		if (move.name === "Power-Up Punch") {
-			child.boosts[AT] = Math.min(6, child.boosts[AT] + 1);
-			child.stats[AT] = getModifiedStat(child.rawStats[AT], child.boosts[AT]);
+			attacker.boosts[AT] = Math.min(6, attacker.boosts[AT] + 1);
+			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
-		childDamage = getDamageResult(child, defender, move, field).damage;
+		attacker.curAbility = "";
+		attacker.isChild = true;
+		childDamage = getDamageResult(attacker, defender, move, field).damage;
+		attacker.curAbility = "Parental Bond";
+		attacker.isChild = false;
 		description.attackerAbility = attacker.curAbility;
 		if (move.name === "Power-Up Punch") {
-			child.boosts[AT]--;
-			child.stats[AT] = getModifiedStat(child.rawStats[AT], child.boosts[AT]);
+			attacker.boosts[AT] = originalATBoost;
+			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
 	}
 	let applyBurn = attacker.status === "Burned" && moveCategory === "Physical" && attacker.curAbility !== "Guts" && !move.ignoresBurn;
