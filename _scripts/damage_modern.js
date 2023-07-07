@@ -300,6 +300,9 @@ function getDamageResult(attacker, defender, move, field) {
 			return {"damage": [0], "description": buildDescription(description)};
 		}
 	}
+	if (["Burn Up", "Double Shock"].includes(move.name) && !attacker.hasType(moveType)) {
+		return {"damage": [0], "description": buildDescription(description)};
+	}
 	let bypassProtect = ["Doom Desire", "Feint", "Future Sight", "Hyperspace Fury", "Hyperspace Hole", "Phantom Force", "Shadow Force", "Hyper Drill"].includes(move.name) || (attacker.curAbility === "Unseen Fist" && makesContact);
 	if (field.isProtect && !move.isZ && !move.isMax && !bypassProtect) {
 		description.defenderAbility = "Protecting";
