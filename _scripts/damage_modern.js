@@ -965,31 +965,26 @@ function modBaseDamage(baseDamage, attacker, defender, move, field, description)
 }
 
 function calcSTABMod(attacker, description) {
-	if (attacker.isTerastal) {
-		if (moveType === attacker.type1) {
-			description.attackerTera = attacker.type1;
-			if (attacker.curAbility === "Adaptability") {
-				description.attackerAbility = attacker.curAbility;
-				return (moveType === attacker.dexType1 || moveType === attacker.dexType2) ? 0x2400 : 0x2000;
-			} else {
-				return (moveType === attacker.dexType1 || moveType === attacker.dexType2) ? 0x2000 : 0x1800;
-			}
-		}
-		else if (moveType === attacker.dexType1 || moveType === attacker.dexType2) {
-			return 0x1800;
-		}
-	} else if (attacker.hasType(moveType)) {
-		if (attacker.curAbility === "Adaptability") {
-			description.attackerAbility = attacker.curAbility;
-			return 0x2000;
-		} else {
-			return 0x1800;
-		}
-	} else if (attacker.curAbility === "Protean" || attacker.curAbility == "Libero") {
+	if (["Protean", "Libero"].includes(attacker.curAbility) && !attacker.isTerastal) {
 		description.attackerAbility = attacker.curAbility;
 		return 0x1800;
 	}
-	return 0x1000;
+	let stabMod = 0x1000;
+	if (attacker.hasType(moveType)) {
+		stabMod += 0x800;
+		if (attacker.isTerastal) {
+			description.attackerTera = attacker.type1;
+		}
+	}
+	if (attacker.isTerastal && (moveType === attacker.dexType1 || moveType === attacker.dexType2)) {
+		stabMod += 0x800;
+	}
+	if (attacker.curAbility === "Adaptability" && attacker.hasType(moveType)) {
+		// this ternary is for when move type matches dex type matches tera type
+		stabMod += stabMod >= 0x2000 ? 0x400 : 0x800;
+		description.attackerAbility = attacker.curAbility;
+	}
+	return stabMod;
 }
 
 function calcFinalMods(attacker, defender, move, field, description, typeEffectiveness, bypassProtect) {
