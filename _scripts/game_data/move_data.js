@@ -2917,7 +2917,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"bp": 1,
 		"type": "Fire",
 		"category": "Physical",
-		"makesContact": true
+		"makesContact": true,
+		"acc": 100
 	},
 	"Heavy Slam": {
 		"bp": 1,
@@ -4618,14 +4619,6 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"makesContact": true,
 		"isPunch": true,
 		"hasSecondaryEffect": true,
-		"acc": 100
-	},
-	"Heat Crash": {
-		"bp": 1,
-		"acc": 100,
-		"type": "Fire",
-		"category": "Physical",
-		"makesContact": true,
 		"acc": 100
 	},
 	"Dynamax Cannon": {
