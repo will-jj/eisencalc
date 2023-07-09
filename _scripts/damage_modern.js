@@ -504,6 +504,12 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		basePower = (attacker.name === "Ash-Greninja" && attacker.ability === "Battle Bond") ? 20 : move.bp;
 		description.moveBP = basePower;
 		break;
+	case "Grav Apple":
+		if (field.isGravity) {
+			basePower *= 2;
+			description.moveBP = basePower;
+		}
+		break;
 	case "Misty Explosion":
 		basePower *= (field.terrain === "Misty" && attackerGrounded ? 1.5 : 1);
 		description.moveBP = basePower;
