@@ -1037,6 +1037,18 @@ function Side(format, terrain, weather, isAuraFairy, isAuraDark, isAuraBreak, is
 	this.isRuinBeads = isRuinBeads;
 }
 
+// please add the new setdex to this function whenever adding a new gen
+function isFacilitySet(speciesName, setName) {
+	let setdexMaps = [SETDEX_EM, SETDEX_EM_OPEN_LVL, SETDEX_PHGSS, SETDEX_GEN5, SETDEX_GEN6, SETDEX_GEN7, SETDEX_GEN8, SETDEX_GEN80];
+	for (let setdexMap of setdexMaps) {
+		let speciesSets = setdexMap[speciesName];
+		if (speciesSets && (setName in speciesSets)) {
+			return true;
+		}
+	}
+	return false;
+}
+
 const IVS_GEN3 = [31, 21, 18, 15, 12, 9, 6, 3];
 const IVS_OTHER = [31, 27, 23, 19];
 

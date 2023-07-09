@@ -284,6 +284,9 @@ var savecustom = function () {
 		if (!pokedex[species]) {
 			rejectSet = true;
 			alert("Error: something unexpected happened when parsing " + species + " as a species. Please contact Silver or Eisen with a screenshot including this popup and the calc.");
+		} else if (isFacilitySet(species, spreadName)) {
+			rejectSet = true;
+			alert("Error: " + spreadName + " is already an AI set. Select a different spread name.");
 		} else if (pokedex[species].hasBaseForme) {
 			// This error might pop up if the pokedex has a chain of hasBaseForme longer than 2.
 			rejectSet = true;
