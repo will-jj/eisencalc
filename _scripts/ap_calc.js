@@ -90,8 +90,8 @@ function calculate() {
 	}
 	bestResult.prop("checked", true);
 	bestResult.change();*/
-	$("#resultHeaderL").text(p1.name + "'s Moves (select one to show detailed results)");
-	$("#resultHeaderR").text(p2.name + "'s Moves (select one to show detailed results)");
+	//$("#resultHeaderL").text(p1.name + "'s Moves (select one to show detailed results)");
+	//$("#resultHeaderR").text(p2.name + "'s Moves (select one to show detailed results)");
 	updateDamageText($("input:radio[name='resultMove']:checked"));
 }
 
