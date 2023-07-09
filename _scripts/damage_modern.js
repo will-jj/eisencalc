@@ -359,6 +359,10 @@ function getDamageResult(attacker, defender, move, field) {
 			attacker.boosts[AT] = originalATBoost;
 			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
+		// temp solution to deal with resist berries on multi-hit moves and provide description
+		if (activateResistBerry(attacker, defender, typeEffectiveness)) {
+			description.defenderItem += " (first hit only)";
+		}
 	}
 	let applyBurn = attacker.status === "Burned" && moveCategory === "Physical" && attacker.curAbility !== "Guts" && !move.ignoresBurn;
 	description.isBurned = applyBurn;
@@ -1047,7 +1051,9 @@ function calcFinalMods(attacker, defender, move, field, description, typeEffecti
 		finalMods.push(0x14CC);
 		description.attackerItem = attacker.item;
 	}
-	if (getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") && attacker.curAbility !== "Unnerve" && attacker.ability !== "As One") {
+	if (activateResistBerry(attacker, defender, typeEffectiveness) && !attacker.isChild) {
+		// Do not apply the resist berry to the second Parental Bond hit
+		// Still need to figure out how I want multi-hit moves to handle this interaction
 		finalMods.push(0x800);
 		description.defenderItem = defender.item;
 	}
@@ -1297,6 +1303,10 @@ function killsShedinja(attacker, defender, move, field = {}) {
 	let confusion = ["Confuse Ray", "Flatter", "Supersonic", "Swagger", "Sweet Kiss", "Teeter Dance"].includes(move.name);
 	let otherPassive = (move.name === "Leech Seed" && !defender.hasType("Grass")) || (move.name === "Curse" && attacker.hasType("Ghost"));
 	return weather || poison || burn || dangerItem || confusion || otherPassive;
+}
+
+function activateResistBerry(attacker, defender, typeEffectiveness) {
+	return getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") && attacker.curAbility !== "Unnerve" && attacker.ability !== "As One";
 }
 
 function checkAirLock(pokemon, field) {
