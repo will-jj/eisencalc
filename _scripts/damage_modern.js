@@ -404,17 +404,13 @@ function getDamageResult(attacker, defender, move, field) {
 	// Return a bit more info if this is a Parental Bond usage.
 	if (pbDamage.length) {
 		return {
-			"damage": pbDamage.sort(numericSort),
+			"damage": pbDamage.sort((a, b) => a - b),
 			"parentDamage": damage,
 			"childDamage": childDamage,
 			"description": buildDescription(description)
 		};
 	}
-	return {"damage": pbDamage.length ? pbDamage.sort(numericSort) : damage, "description": buildDescription(description)};
-}
-
-function numericSort(a, b) {
-	return a - b;
+	return {"damage": damage, "description": buildDescription(description)};
 }
 
 function calcBP(attacker, defender, move, field, description, ateizeBoost) {
