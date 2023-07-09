@@ -16,7 +16,9 @@ function CALCULATE_ALL_MOVES_PTHGSS(p1, p2, field) {
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
 		results[0][i] = getDamageResultPtHGSS(p1, p2, p1.moves[i], side1);
+		p2.resetCurAbility();
 		results[1][i] = getDamageResultPtHGSS(p2, p1, p2.moves[i], side2);
+		p1.resetCurAbility();
 	}
 	return results;
 }
@@ -30,13 +32,14 @@ function CALCULATE_MOVES_OF_ATTACKER_PTHGSS(attacker, defender, field) {
 	checkKlutz(defender);
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
-	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather(), field.getTerrain());
-	defender.stats[SP] = getFinalSpeed(defender, field.getWeather(), field.getTerrain());
+	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());
+	defender.stats[SP] = getFinalSpeed(defender, field.getWeather());
 	checkDownload(attacker, defender);
 	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
 	var results = [];
 	for (var i = 0; i < 4; i++) {
 		results[i] = getDamageResultPtHGSS(attacker, defender, attacker.moves[i], defenderSide);
+		defender.resetCurAbility();
 	}
 	return results;
 }
@@ -62,13 +65,12 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 
-	var defAbility = defender.ability;
 	if (attacker.ability === "Mold Breaker") {
-		defAbility = "";
-		description.attackerAbility = attacker.ability;
+		defender.curAbility = "";
+		//description.attackerAbility = attacker.ability;
 	}
 
-	var isCritical = move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1;
+	var isCritical = move.isCrit && !["Battle Armor", "Shell Armor"].includes(defender.curAbility);
 
 	let basePower = move.bp;
 
@@ -102,20 +104,20 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
-	var typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1, attacker.ability === "Scrappy", field.isGravity);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, moveType, defender.type2, attacker.ability === "Scrappy", field.isGravity) : 1;
+	var typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1, attacker.ability === "Scrappy", field);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, moveType, defender.type2, attacker.ability === "Scrappy", field) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1 && !["Struggle", "Beat Up", "Future Sight", "Doom Desire", "Fire Fang"].includes(move.name)) ||
-            (moveType === "Fire" && defAbility.indexOf("Flash Fire") !== -1) ||
-            (moveType === "Water" && ["Dry Skin", "Water Absorb"].indexOf(defAbility) !== -1) ||
-            (moveType === "Electric" && ["Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1) ||
-            (moveType === "Ground" && !field.isGravity && defAbility === "Levitate") ||
-            (move.isSound && defAbility === "Soundproof")) {
-		description.defenderAbility = defAbility;
+	if ((defender.curAbility === "Wonder Guard" && typeEffectiveness <= 1 && !["Struggle", "Beat Up", "Future Sight", "Doom Desire", "Fire Fang"].includes(move.name)) ||
+            (moveType === "Fire" && defender.curAbility.indexOf("Flash Fire") !== -1) ||
+            (moveType === "Water" && ["Dry Skin", "Water Absorb"].indexOf(defender.curAbility) !== -1) ||
+            (moveType === "Electric" && ["Motor Drive", "Volt Absorb"].indexOf(defender.curAbility) !== -1) ||
+            (moveType === "Ground" && defender.curAbility === "Levitate" && !isGrounded(defender, field)) ||
+            (move.isSound && defender.curAbility === "Soundproof")) {
+		description.defenderAbility = defender.curAbility;
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 
@@ -238,13 +240,13 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
-	if ((defAbility === "Thick Fat" && (moveType === "Fire" || moveType === "Ice")) ||
-            (defAbility === "Heatproof" && moveType === "Fire")) {
+	if ((defender.curAbility === "Thick Fat" && (moveType === "Fire" || moveType === "Ice")) ||
+            (defender.curAbility === "Heatproof" && moveType === "Fire")) {
 		basePower = Math.floor(basePower * 0.5);
-		description.defenderAbility = defAbility;
-	} else if (defAbility === "Dry Skin" && moveType === "Fire") {
+		description.defenderAbility = defender.curAbility;
+	} else if (defender.curAbility === "Dry Skin" && moveType === "Fire") {
 		basePower = Math.floor(basePower * 1.25);
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.curAbility;
 	}
 
 	////////////////////////////////
@@ -259,9 +261,9 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	var rawAttack = attacker.rawStats[attackStat];
 	if (attackBoost === 0 || (isCritical && attackBoost < 0)) {
 		attack = rawAttack;
-	} else if (defAbility === "Unaware") {
+	} else if (defender.curAbility === "Unaware") {
 		attack = rawAttack;
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.curAbility;
 	} else if (attacker.ability === "Simple") {
 		attack = getSimpleModifiedStat(rawAttack, attackBoost);
 		description.attackerAbility = attacker.ability;
@@ -309,21 +311,21 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	} else if (attacker.ability === "Unaware") {
 		defense = rawDefense;
 		description.attackerAbility = attacker.ability;
-	} else if (defAbility === "Simple") {
+	} else if (defender.curAbility === "Simple") {
 		defense = getSimpleModifiedStat(rawDefense, defenseBoost);
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.curAbility;
 		description.defenseBoost = defenseBoost;
 	} else {
 		defense = getModifiedStat(rawDefense, defenseBoost);
 		description.defenseBoost = defenseBoost;
 	}
 
-	if (defAbility === "Marvel Scale" && defender.status !== "Healthy" && isPhysical) {
+	if (defender.curAbility === "Marvel Scale" && defender.status !== "Healthy" && isPhysical) {
 		defense = Math.floor(defense * 1.5);
-		description.defenderAbility = defAbility;
-	} else if (defAbility === "Flower Gift" && field.weather === "Sun" && !isPhysical) {
+		description.defenderAbility = defender.curAbility;
+	} else if (defender.curAbility === "Flower Gift" && field.weather === "Sun" && !isPhysical) {
 		defense = Math.floor(defense * 1.5);
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.curAbility;
 		description.weather = field.weather;
 	}
 
@@ -425,9 +427,9 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	}
 
 	var filterMod = 1;
-	if ((defAbility === "Filter" || defAbility === "Solid Rock") && typeEffectiveness > 1) {
+	if ((defender.curAbility === "Filter" || defender.curAbility === "Solid Rock") && typeEffectiveness > 1) {
 		filterMod = 0.75;
-		description.defenderAbility = defAbility;
+		description.defenderAbility = defender.curAbility;
 	}
 	var ebeltMod = 1;
 	if (attacker.item === "Expert Belt" && typeEffectiveness > 1) {

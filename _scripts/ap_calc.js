@@ -1,5 +1,6 @@
 $("#p1 .ability").bind("keyup change", function () {
 	autoSetCrits($("#p1"), 1);
+	checkNeutralizingGas();
 });
 
 $("#p1 .status").bind("keyup change", function () {
@@ -12,6 +13,7 @@ $("#p2 .ability").bind("keyup change", function () {
 	autoSetSteely(2, "R");
 	autoSetRuin(2, "R");
 	autoSetCrits($("#p2"), 2);
+	checkNeutralizingGas();
 });
 
 $("#p2 .item").bind("keyup change", function () {
@@ -43,6 +45,10 @@ function autoSetCrits(pokeInfo, i) {
 		let move = moves[moveName] || moves["(No Move)"];
 		moveInfo.children(".move-crit").prop("checked", move.alwaysCrit || (merciless && move.category));
 	}
+}
+
+function checkNeutralizingGas() {
+	isNeutralizingGas = $("#p1").find(".ability").val() === "Neutralizing Gas" || $("#p2").find(".ability").val() === "Neutralizing Gas";
 }
 
 var resultLocations = [[], []];
@@ -84,8 +90,8 @@ function calculate() {
 	}
 	bestResult.prop("checked", true);
 	bestResult.change();*/
-	$("#resultHeaderL").text(p1.name + "'s Moves (select one to show detailed results)");
-	$("#resultHeaderR").text(p2.name + "'s Moves (select one to show detailed results)");
+	//$("#resultHeaderL").text(p1.name + "'s Moves (select one to show detailed results)");
+	//$("#resultHeaderR").text(p2.name + "'s Moves (select one to show detailed results)");
 	updateDamageText($("input:radio[name='resultMove']:checked"));
 }
 

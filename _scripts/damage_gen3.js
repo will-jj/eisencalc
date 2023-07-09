@@ -22,8 +22,8 @@ function CALCULATE_MOVES_OF_ATTACKER_ADV(attacker, defender, field) {
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
 	checkForecast(defender, field.getWeather());
-	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather(), field.getTerrain());
-	defender.stats[SP] = getFinalSpeed(defender, field.getWeather(), field.getTerrain());
+	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());
+	defender.stats[SP] = getFinalSpeed(defender, field.getWeather());
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
 	var defenderSide = field.getSide(~~(mode === "one-vs-all"));

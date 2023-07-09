@@ -62,13 +62,14 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 	return parseInt(b) - parseInt(a);
 };
 
-function MassPokemon(speciesName, setName, autoLevel) {
+function MassPokemon(speciesName, setName) {
 	let pokemon = pokedex[speciesName];
 	let set = setdex[speciesName][setName];
 	let formeNum = getFormeNum(setName, speciesName);
 	if (formeNum != 0) {
 		pokemon = pokedex[pokemon.formes[formeNum]];
 	}
+	let autoLevel = parseInt(localStorage.getItem("autolevelGen" + gen));
 	let massPoke = {
 		"name": speciesName,
 		"setName": setName,
@@ -82,7 +83,8 @@ function MassPokemon(speciesName, setName, autoLevel) {
 		"HPEVs": set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0,
 		"nature": set.nature,
 		"ability": set.ability && typeof set.ability !== "undefined" ? set.ability :
-		(pokemon.ab && typeof pokemon.ab !== "undefined" ? pokemon.ab : ""),
+		(pokemon.ab && typeof pokemon.ab !== "undefined" ? pokemon.ab :
+		(pokemon.abilities && pokemon.abilities.length == 1 ? pokemon.abilities[0] : "")),
 		"item": set.item && typeof set.item !== "undefined" &&
 		(set.item === "Eviolite" || !(set.item.endsWith("ite") && set.item.endsWith("ite X") && set.item.endsWith("ite Y"))) ? set.item : "",
 		"status": "Healthy",
@@ -92,10 +94,15 @@ function MassPokemon(speciesName, setName, autoLevel) {
 		"weight": pokemon.w,
 		"tier": set.tier,
 		"hasType": function (type) { return this.type1 === type || this.type2 === type; },
+		// Reset this mon's stat stages to 0 and clear the stats.
+		// This is used for MassPokemon because the same objects are reused if the gen isn't changed.
 		"revertStats": function () {
 			Object.keys(this.boosts).forEach(stat => { this.boosts[stat] = 0; });
 			this.stats = [];
-		}
+		},
+		// Reset this mon's current ability subject to Neutralizing Gas
+		// This is designed to be called once before calcs and after calcing each move as defender. Do not call this in MassPokemon object creation
+		"resetCurAbility": function () { this.curAbility = (isNeutralizingGas && this.item !== "Ability Shield") ? "" : this.ability }
 	};
 	// maxHP
 	let autoIVs = gen == 4 ? parseInt($("#autoivs-box").val()) : (gen <= 7 ? parseInt($('#autoivs-select').find(":selected").val()) : 31);
@@ -143,11 +150,13 @@ function performCalculations() {
 	var dataSet = [];
 	var userPoke = new Pokemon($("#p1"));
 	userPoke.startingBoosts = [];
+	// after each MassPokemon is calc'd against, reset the user's mon's stat stages to what the user set them to and clear the stats
 	STATS.forEach(stat => { userPoke.startingBoosts[stat] = userPoke.boosts[stat]; });
 	userPoke.revertStats = function () {
 		Object.keys(this.boosts).forEach(stat => { this.boosts[stat] = this.startingBoosts[stat] });
 		this.stats = [];
 	};
+	let userNeutralizingGas = userPoke.ability === "Neutralizing Gas";
 	if (mode === "one-vs-all") {
 		attacker = userPoke;
 	} else {
@@ -171,12 +180,11 @@ function performCalculations() {
 		} else {
 			attacker = setPoke;
 		}
-		if (attacker.ability === "Rivalry") {
-			attacker.gender = "N";
-		}
-		if (defender.ability === "Rivalry") {
-			defender.gender = "N";
-		}
+		// apply Neutralizing Gas if applicable
+		isNeutralizingGas = userNeutralizingGas || setPoke.ability === "Neutralizing Gas";
+		userPoke.resetCurAbility();
+		setPoke.resetCurAbility();
+
 		var damageResults = calculateMovesOfAttacker(attacker, defender, field);
 		var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
 		var highestDamage = -1;
@@ -269,7 +277,6 @@ $(".gen").change(function () {
 	}
 
 	// set up the list of MassPokemon
-	let autoLevel = parseInt(localStorage.getItem("autolevelGen" + gen));
 	let setSpecies = Object.keys(gen == 3 && $("#autolevel-box").val() == 50 ? SETDEX_EM : setdex);
 	setsArray = [];
 	for (let i = 0; i < setSpecies.length; i++) {
@@ -277,7 +284,7 @@ $(".gen").change(function () {
 		let setNames = Object.keys(setdex[speciesName]);
 		for (let j = 0; j < setNames.length; j++) {
 			let setName = setNames[j];
-			setsArray.push(MassPokemon(speciesName, setName, autoLevel));
+			setsArray.push(MassPokemon(speciesName, setName));
 		}
 	}
 });
