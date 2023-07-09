@@ -83,7 +83,8 @@ function MassPokemon(speciesName, setName) {
 		"HPEVs": set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0,
 		"nature": set.nature,
 		"ability": set.ability && typeof set.ability !== "undefined" ? set.ability :
-		(pokemon.ab && typeof pokemon.ab !== "undefined" ? pokemon.ab : ""),
+		(pokemon.ab && typeof pokemon.ab !== "undefined" ? pokemon.ab :
+		(pokemon.abilities && pokemon.abilities.length == 1 ? pokemon.abilities[0] : "")),
 		"item": set.item && typeof set.item !== "undefined" &&
 		(set.item === "Eviolite" || !(set.item.endsWith("ite") && set.item.endsWith("ite X") && set.item.endsWith("ite Y"))) ? set.item : "",
 		"status": "Healthy",
