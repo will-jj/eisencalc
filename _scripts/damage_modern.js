@@ -339,7 +339,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	let stabMod = calcSTABMod(attacker, description);
 
-	let finalMod = calcFinalMods(attacker, defender, move, field, description, bypassProtect);
+	let finalMod = calcFinalMods(attacker, defender, move, field, description, typeEffectiveness, bypassProtect);
 
 	let damage = [], pbDamage = [];
 	let childDamage;
