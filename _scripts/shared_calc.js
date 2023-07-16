@@ -23,13 +23,6 @@ function attachValidation(clazz, min, max) {
 function validate(obj, min, max) {
 	obj.val(Math.max(min, Math.min(max, ~~obj.val())));
 }
-function clampIntRange(num, min, max) {
-	if (typeof num !== "number") num = 0;
-	num = Math.floor(num);
-	if (min !== undefined && num < min) num = min;
-	if (max !== undefined && num > max) num = max;
-	return num;
-}
 
 $(".max").bind("keyup change", function () {
 	var poke = $(this).closest(".poke-info");
@@ -624,7 +617,7 @@ $(".forme").change(function () {
 	//}
 });
 
-function getTerrainEffects() {
+/*function getTerrainEffects() {
 	var className = $(this).prop("className");
 	className = className.substring(0, className.indexOf(" "));
 	switch (className) {
@@ -656,7 +649,7 @@ function getTerrainEffects() {
 		}
 		break;
 	}
-}
+}*/
 
 function isGroundedTerrain(pokeInfo) {
 	return $("#gravity").prop("checked") || pokeInfo.find(".type1").val() !== "Flying" && pokeInfo.find(".type2").val() !== "Flying" &&
@@ -1364,7 +1357,7 @@ $(document).ready(function () {
 		$("#gen9").prop("checked", true);
 		$("#gen9").change();
 	}
-	$(".terrain-trigger").bind("change keyup", getTerrainEffects);
+	//$(".terrain-trigger").bind("change keyup", getTerrainEffects);
 	//$(".calc-trigger").bind("change keyup", calculate);
 	$(".set-selector").select2({
 		"formatResult": function (object) {
