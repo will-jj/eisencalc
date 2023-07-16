@@ -293,6 +293,10 @@ function setNewFieldEffect(effectType, currentAbility, newAbility, opponentAbili
 		newEffect = effectAbilities[newAbility];
 	}
 	// check if need to switch to the opponent's effect
+	else if (effectAbilities[currentAbility] !== currentEffect) {
+		// don't change to the opponent's effect if this mon's old ability doesn't match the current effect
+		return;
+	}
 	else if (opponentAbility in effectAbilities) {
 		newEffect = effectAbilities[opponentAbility];
 	}
