@@ -9,13 +9,14 @@ $("#p1 .status").bind("keyup change", function () {
 });
 
 $("#p2 .ability").bind("keyup change", function () {
-	autoSetWeatherTerrain(curAbilities[1], $(this).val(), curAbilities[0]);
-	autoSetVicStar(2, "R");
-	autoSetSteely(2, "R");
-	autoSetRuin(2, "R");
+	let ability = $(this).val();
+	autoSetWeatherTerrain(curAbilities[1], ability, curAbilities[0]);
+	autoSetVicStar(ability, "R");
+	autoSetSteely(ability, "R");
+	autoSetRuin(ability, "R");
 	autoSetCrits($("#p2"), 2);
 	checkNeutralizingGas();
-	curAbilities[1] = $(this).val();
+	curAbilities[1] = ability;
 });
 
 $("#p2 .item").bind("keyup change", function () {

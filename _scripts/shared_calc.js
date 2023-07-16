@@ -216,10 +216,11 @@ $(".ability").bind("keyup change", function () {
 });
 
 $("#p1 .ability").bind("keyup change", function () {
-	autoSetWeatherTerrain(curAbilities[0], $(this).val(), $("#p2") ? curAbilities[1] : "");
-	autoSetVicStar(1, "L");
-	autoSetSteely(1, "L");
-	autoSetRuin(1, "L");
+	let ability = $(this).val();
+	autoSetWeatherTerrain(curAbilities[0], ability, $("#p2") ? curAbilities[1] : "");
+	autoSetVicStar(ability, "L");
+	autoSetSteely(ability, "L");
+	autoSetRuin(ability, "L");
 	// Do not set curAbility here. This bind executes before the one in ap_calc
 });
 
@@ -240,11 +241,12 @@ function autoSetAura() {
 		$("input:checkbox[id='aura-break']").prop("checked", lastAura[2]);
 }
 
-function autoSetVicStar(i, side) {
-	var ability = $("#p" + i + " .ability").val();
+function autoSetVicStar(ability, side) {
 	$("input:checkbox[id='vicStar" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Victory Star"));
 }
 
+// Right now this is only getting used by weather/terrain setting since it's the only thing that cares about the previous ability.
+// Other functions could use this since it's global, but it would complicate things since curAbilities can only be updated after weather/terrain autoset.
 var curAbilities = ["", ""];
 var manuallySetWeather = "";
 var manuallySetTerrain = "";
@@ -281,11 +283,11 @@ var autoTerrainAbilities = {
 };
 
 function autoSetWeatherTerrain(currentAbility, newAbility, opponentAbility) {
-	let newWeather = getNewFieldEffect("weather", currentAbility, newAbility, opponentAbility, manuallySetWeather, autoWeatherAbilities);
-	let newTerrain = getNewFieldEffect("terrain", currentAbility, newAbility, opponentAbility, manuallySetTerrain, autoTerrainAbilities);
+	let newWeather = setNewFieldEffect("weather", currentAbility, newAbility, opponentAbility, manuallySetWeather, autoWeatherAbilities);
+	let newTerrain = setNewFieldEffect("terrain", currentAbility, newAbility, opponentAbility, manuallySetTerrain, autoTerrainAbilities);
 }
 
-function getNewFieldEffect(effectType, currentAbility, newAbility, opponentAbility, manuallySetEffect, effectAbilities) {
+function setNewFieldEffect(effectType, currentAbility, newAbility, opponentAbility, manuallySetEffect, effectAbilities) {
 	let currentEffect = $("input:radio[name='" + effectType + "']:checked").val();
 	let newEffect = manuallySetEffect;
 	// check if setting a new effect
@@ -337,13 +339,11 @@ function autosetStatus(p, item) {
 	}
 }
 
-function autoSetSteely(i, side) {
-	var ability = $("#p" + i + " .ability").val();
+function autoSetSteely(ability, side) {
 	$("input:checkbox[id='steelySpirit" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Steely Spirit"));
 }
 
-function autoSetRuin(i, side) {
-	var ability = $("#p" + i + " .ability").val();
+function autoSetRuin(ability, side) {
 	$("input:checkbox[id='ruinTablets" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Tablets of Ruin"));
 	$("input:checkbox[id='ruinVessel" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Vessel of Ruin"));
 	$("input:checkbox[id='ruinSword" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Sword of Ruin"));
