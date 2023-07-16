@@ -213,19 +213,16 @@ var isNeutralizingGas = false;
 $(".ability").bind("keyup change", function () {
 	autoSetMultiHits($(this).closest(".poke-info"));
 	autoSetAura();
-	autoSetTerrain();
 });
 
 $("#p1 .ability").bind("keyup change", function () {
-	autosetWeather($(this).val(), 0);
+	autoSetWeatherTerrain(curAbilities[0], $(this).val(), $("#p2") ? curAbilities[1] : "");
 	autoSetVicStar(1, "L");
 	autoSetSteely(1, "L");
 	autoSetRuin(1, "L");
+	// Do not set curAbility here. This bind executes before the one in ap_calc
 });
 
-var lastTerrain = "noterrain";
-var lastManualWeather = "";
-var lastAutoWeather = ["", ""];
 function autoSetAura() {
 	var ability1 = $("#p1 .ability").val();
 	var ability2 = $("#p2 .ability").val();
@@ -242,87 +239,73 @@ function autoSetAura() {
 	else
 		$("input:checkbox[id='aura-break']").prop("checked", lastAura[2]);
 }
+
 function autoSetVicStar(i, side) {
 	var ability = $("#p" + i + " .ability").val();
 	$("input:checkbox[id='vicStar" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Victory Star"));
 }
-function autoSetTerrain() {
-	var ability1 = $("#p1 .ability").val();
-	var ability2 = $("#p2 .ability").val();
-	if (ability1 == "Electric Surge" || ability2 == "Electric Surge" || ability1 == "Hadron Engine" || ability2 == "Hadron Engine") {
-		$("input:radio[id='electric']").prop("checked", true);
-		lastTerrain = "electric";
-	} else if (ability1 == "Grassy Surge" || ability2 == "Grassy Surge") {
-		$("input:radio[id='grassy']").prop("checked", true);
-		lastTerrain = "grassy";
-	} else if (ability1 == "Misty Surge" || ability2 == "Misty Surge") {
-		$("input:radio[id='misty']").prop("checked", true);
-		lastTerrain = "misty";
-	} else if (ability1 == "Psychic Surge" || ability2 == "Psychic Surge") {
-		$("input:radio[id='psychic']").prop("checked", true);
-		lastTerrain = "psychic";
-	} else
-		$("input:radio[id='noterrain']").prop("checked", true);
+
+var curAbilities = ["", ""];
+var manuallySetWeather = "";
+var manuallySetTerrain = "";
+
+$("input:radio[name='weather']").change(function () {
+	manuallySetWeather = $(this).val();
+});
+
+$("input:radio[name='terrain']").change(function () {
+	manuallySetTerrain = $(this).val();
+});
+
+var autoWeatherAbilities = {
+	"Drought": "Sun",
+	"Drizzle": "Rain",
+	"Sand Stream": "Sand",
+	"Snow Warning": "Snow",
+	"Desolate Land": "Harsh Sun",
+	"Primordial Sea": "Heavy Rain",
+	"Delta Stream": "Strong Winds",
+	"Orichalcum Pulse": "Sun"
+};
+var strongWeatherAbilities = {
+	"Desolate Land": "Harsh Sun",
+	"Primordial Sea": "Heavy Rain",
+	"Delta Stream": "Strong Winds",
+};
+var autoTerrainAbilities = {
+	"Electric Surge": "Electric",
+	"Grassy Surge": "Grassy",
+	"Misty Surge": "Misty",
+	"Psychic Surge": "Psychic",
+	"Hadron Engine": "Electric"
+};
+
+function autoSetWeatherTerrain(currentAbility, newAbility, opponentAbility) {
+	let newWeather = getNewFieldEffect("weather", currentAbility, newAbility, opponentAbility, manuallySetWeather, autoWeatherAbilities);
+	let newTerrain = getNewFieldEffect("terrain", currentAbility, newAbility, opponentAbility, manuallySetTerrain, autoTerrainAbilities);
 }
 
-function autosetWeather(ability, i) {
-	var currentWeather = $("input:radio[name='weather']:checked").val();
-	if (!(lastAutoWeather.includes(currentWeather)) || currentWeather === "") {
-		lastManualWeather = currentWeather;
-		lastAutoWeather[1 - i] = "";
-	}
-
-	var primalWeather = ["Harsh Sun", "Heavy Rain"];
-	var autoWeatherAbilities = {
-		"Drought": "Sun",
-		"Drizzle": "Rain",
-		"Sand Stream": "Sand",
-		"Snow Warning": "Snow",
-		"Desolate Land": "Harsh Sun",
-		"Primordial Sea": "Heavy Rain",
-		"Delta Stream": "Strong Winds",
-		"Orichalcum Pulse": "Sun"
-	};
-	var newWeather;
-
-	if (ability in autoWeatherAbilities) {
-		lastAutoWeather[i] = ability === "Snow Warning" && (gen < 9 || gen == 80) ? "Hail" : autoWeatherAbilities[ability];
-		if (currentWeather === "Strong Winds") {
-			if (!(lastAutoWeather.includes("Strong Winds"))) {
-				newWeather = lastAutoWeather[i];
-			}
-		} else if (primalWeather.includes(currentWeather)) {
-			if (lastAutoWeather[i] === "Strong Winds" || primalWeather.includes(lastAutoWeather[i])) {
-				newWeather = lastAutoWeather[i];
-			} else if (primalWeather.includes(lastAutoWeather[1 - i])) {
-				newWeather = lastAutoWeather[1 - i];
-			} else {
-				newWeather = lastAutoWeather[i];
-			}
-		} else {
-			newWeather = lastAutoWeather[i];
+function getNewFieldEffect(effectType, currentAbility, newAbility, opponentAbility, manuallySetEffect, effectAbilities) {
+	let currentEffect = $("input:radio[name='" + effectType + "']:checked").val();
+	let newEffect = manuallySetEffect;
+	// check if setting a new effect
+	if (newAbility in strongWeatherAbilities) {
+		newEffect = strongWeatherAbilities[newAbility];
+	} else if (newAbility in effectAbilities) {
+		if (Object.values(strongWeatherAbilities).includes(currentEffect)) {
+			return;
 		}
-	} else {
-		lastAutoWeather[i] = "";
-		newWeather = lastAutoWeather[1 - i] !== "" ? lastAutoWeather[1 - i] : lastManualWeather;
+		newEffect = effectAbilities[newAbility];
+	}
+	// check if need to switch to the opponent's effect
+	else if (opponentAbility in effectAbilities) {
+		newEffect = effectAbilities[opponentAbility];
 	}
 
-	if (newWeather === "Strong Winds" || primalWeather.includes(newWeather)) {
-		//$("input:radio[name='weather']").prop("disabled", true);
-		//edited out by squirrelboy1225 for doubles!
-		$("input:radio[name='weather'][value='" + newWeather + "']").prop("disabled", false);
-	} else if (typeof newWeather != "undefined") {
-		for (var k = 0; k < $("input:radio[name='weather']").length; k++) {
-			var val = $("input:radio[name='weather']")[k].value;
-			if (!(primalWeather.includes(val)) && val !== "Strong Winds") {
-				$("input:radio[name='weather']")[k].disabled = false;
-			} else {
-				//$("input:radio[name='weather']")[k].disabled = true;
-				//edited out by squirrelboy1225 for doubles!
-			}
-		}
+	if (newEffect === "Snow" && (gen <= 8 || gen == 80)) {
+		newEffect = "Hail";
 	}
-	$("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
+	$("input:radio[name='" + effectType + "'][value='" + newEffect + "']").prop("checked", true);
 }
 
 $("#p1 .item").bind("keyup change", function () {
@@ -1166,6 +1149,8 @@ $(".gen").change(function () {
 	p2AbilityCount = 0;
 	var itemOptions = getSelectOptions(items, true);
 	$("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
+	manuallySetWeather = "";
+	manuallySetTerrain = "";
 
 	$(".set-selector").val(getSetOptions()[1].id); // load the first set after the unselectable species name
 	$(".set-selector").change();
