@@ -252,28 +252,47 @@ $("input:radio[name='terrain']").change(function () {
 	manuallySetTerrain = $(this).val();
 });
 
-var autoWeatherAbilities = {
-	"Drought": "Sun",
-	"Drizzle": "Rain",
-	"Sand Stream": "Sand",
-	"Snow Warning": "Snow",
-	"Desolate Land": "Harsh Sun",
-	"Primordial Sea": "Heavy Rain",
-	"Delta Stream": "Strong Winds",
-	"Orichalcum Pulse": "Sun"
-};
+function autoWeatherAbilities(ability) {
+	switch (ability) {
+	case "Drought":
+	case "Orichalcum Pulse":
+		return "Sun";
+	case "Drizzle":
+		return "Rain";
+	case "Sand Stream":
+		return "Sand";
+	case "Snow Warning":
+		return (gen <= 8 || gen == 80) ? "Hail" : "Snow";
+	case "Desolate Land":
+		return "Harsh Sun";
+	case "Primordial Sea":
+		return "Heavy Rain";
+	case "Delta Stream":
+		return "Strong Winds";
+	default:
+		return "";
+	}
+}
 var strongWeatherAbilities = {
 	"Desolate Land": "Harsh Sun",
 	"Primordial Sea": "Heavy Rain",
 	"Delta Stream": "Strong Winds",
 };
-var autoTerrainAbilities = {
-	"Electric Surge": "Electric",
-	"Grassy Surge": "Grassy",
-	"Misty Surge": "Misty",
-	"Psychic Surge": "Psychic",
-	"Hadron Engine": "Electric"
-};
+function autoTerrainAbilities(ability) {
+	switch (ability) {
+	case "Electric Surge":
+	case "Hadron Engine":
+		return "Electric";
+	case "Grassy Surge":
+		return "Grassy";
+	case "Misty Surge":
+		return "Misty";
+	case "Psychic Surge":
+		return "Psychic";
+	default:
+		return "";
+	}
+}
 
 function autoSetWeatherTerrain(currentAbility, newAbility, opponentAbility) {
 	let newWeather = setNewFieldEffect("weather", currentAbility, newAbility, opponentAbility, manuallySetWeather, autoWeatherAbilities);
@@ -283,27 +302,24 @@ function autoSetWeatherTerrain(currentAbility, newAbility, opponentAbility) {
 function setNewFieldEffect(effectType, currentAbility, newAbility, opponentAbility, manuallySetEffect, effectAbilities) {
 	let currentEffect = $("input:radio[name='" + effectType + "']:checked").val();
 	let newEffect = manuallySetEffect;
+	let newAbilityEffect = effectAbilities(newAbility);
 	// check if setting a new effect
 	if (newAbility in strongWeatherAbilities) {
-		newEffect = strongWeatherAbilities[newAbility];
-	} else if (newAbility in effectAbilities) {
+		newEffect = newAbilityEffect;
+	} else if (newAbilityEffect != "") {
 		if (Object.values(strongWeatherAbilities).includes(currentEffect)) {
 			return;
 		}
-		newEffect = effectAbilities[newAbility];
+		newEffect = newAbilityEffect;
 	}
 	// check if need to switch to the opponent's effect
-	else if (effectAbilities[currentAbility] !== currentEffect) {
+	else if (effectAbilities(currentAbility) !== currentEffect) {
 		// don't change to the opponent's effect if this mon's old ability doesn't match the current effect
 		return;
-	}
-	else if (opponentAbility in effectAbilities) {
-		newEffect = effectAbilities[opponentAbility];
+	} else if (effectAbilities(opponentAbility)) {
+		newEffect = effectAbilities(opponentAbility);
 	}
 
-	if (newEffect === "Snow" && (gen <= 8 || gen == 80)) {
-		newEffect = "Hail";
-	}
 	$("input:radio[name='" + effectType + "'][value='" + newEffect + "']").prop("checked", true);
 }
 
@@ -653,12 +669,12 @@ $(".forme").change(function () {
 		}
 		break;
 	}
-}*/
+}
 
 function isGroundedTerrain(pokeInfo) {
 	return $("#gravity").prop("checked") || pokeInfo.find(".type1").val() !== "Flying" && pokeInfo.find(".type2").val() !== "Flying" &&
             pokeInfo.find(".ability").val() !== "Levitate" && pokeInfo.find(".item").val() !== "Air Balloon";
-}
+}*/
 
 // Need to close over "lastClicked", so we'll do it the old-fashioned way to avoid
 // needlessly polluting the global namespace.
