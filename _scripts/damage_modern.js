@@ -591,7 +591,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.isPowerSpot = true;
 	}
 	if (attacker.curAbility === "Sheer Force" && move.hasSecondaryEffect ||
-		attacker.curAbility === "Analytic" && turnOrder !== "FIRST" ||
+		attacker.curAbility === "Analytic" || // always apply analytic
 		attacker.curAbility === "Tough Claws" && makesContact ||
 		gen == 6 && ateizeBoost ||
 		attacker.curAbility === "Punk Rock" && move.isSound) {
