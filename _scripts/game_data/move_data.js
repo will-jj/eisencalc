@@ -4638,6 +4638,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"type": "Dark",
 		"category": "Physical",
 		"makesContact": true,
+		"isBite": true,
 		"acc": 100
 	},
 	"Dragon Darts": {
