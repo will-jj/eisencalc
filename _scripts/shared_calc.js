@@ -210,11 +210,11 @@ $(".ability").bind("keyup change", function () {
 
 $("#p1 .ability").bind("keyup change", function () {
 	let ability = $(this).val();
-	autoSetWeatherTerrain(curAbilities[0], ability, $("#p2") ? curAbilities[1] : "");
+	autoSetWeatherTerrain(curAbilities[0], ability, curAbilities[1]);
+	curAbilities[0] = $(this).val();
 	autoSetVicStar(ability, "L");
 	autoSetSteely(ability, "L");
 	autoSetRuin(ability, "L");
-	// Do not set curAbility here. This bind executes before the one in ap_calc
 });
 
 function autoSetAura() {
@@ -239,7 +239,7 @@ function autoSetVicStar(ability, side) {
 }
 
 // Right now this is only getting used by weather/terrain setting since it's the only thing that cares about the previous ability.
-// Other functions could use this since it's global, but it would complicate things since curAbilities can only be updated after weather/terrain autoset.
+// Other functions could use this since it's global, but it would complicate things since the order of calls really starts to matter.
 var curAbilities = ["", ""];
 var manuallySetWeather = "";
 var manuallySetTerrain = "";
@@ -295,8 +295,8 @@ function autoTerrainAbilities(ability) {
 }
 
 function autoSetWeatherTerrain(currentAbility, newAbility, opponentAbility) {
-	let newWeather = setNewFieldEffect("weather", currentAbility, newAbility, opponentAbility, manuallySetWeather, autoWeatherAbilities);
-	let newTerrain = setNewFieldEffect("terrain", currentAbility, newAbility, opponentAbility, manuallySetTerrain, autoTerrainAbilities);
+	setNewFieldEffect("weather", currentAbility, newAbility, opponentAbility, manuallySetWeather, autoWeatherAbilities);
+	setNewFieldEffect("terrain", currentAbility, newAbility, opponentAbility, manuallySetTerrain, autoTerrainAbilities);
 }
 
 function setNewFieldEffect(effectType, currentAbility, newAbility, opponentAbility, manuallySetEffect, effectAbilities) {
@@ -304,10 +304,9 @@ function setNewFieldEffect(effectType, currentAbility, newAbility, opponentAbili
 	let newEffect = manuallySetEffect;
 	let newAbilityEffect = effectAbilities(newAbility);
 	// check if setting a new effect
-	if (newAbility in strongWeatherAbilities) {
-		newEffect = newAbilityEffect;
-	} else if (newAbilityEffect != "") {
-		if (Object.values(strongWeatherAbilities).includes(currentEffect)) {
+	if (newAbilityEffect != "") {
+		if (!(newAbility in strongWeatherAbilities) &&
+			Object.values(strongWeatherAbilities).includes(currentEffect) && !(currentAbility in strongWeatherAbilities)) {
 			return;
 		}
 		newEffect = newAbilityEffect;

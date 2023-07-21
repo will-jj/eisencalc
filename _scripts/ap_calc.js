@@ -1,7 +1,6 @@
 $("#p1 .ability").bind("keyup change", function () {
 	autoSetCrits($("#p1"), 1);
 	checkNeutralizingGas();
-	curAbilities[0] = $(this).val();
 });
 
 $("#p1 .status").bind("keyup change", function () {
@@ -11,12 +10,12 @@ $("#p1 .status").bind("keyup change", function () {
 $("#p2 .ability").bind("keyup change", function () {
 	let ability = $(this).val();
 	autoSetWeatherTerrain(curAbilities[1], ability, curAbilities[0]);
+	curAbilities[1] = ability;
 	autoSetVicStar(ability, "R");
 	autoSetSteely(ability, "R");
 	autoSetRuin(ability, "R");
 	autoSetCrits($("#p2"), 2);
 	checkNeutralizingGas();
-	curAbilities[1] = ability;
 });
 
 $("#p2 .item").bind("keyup change", function () {
