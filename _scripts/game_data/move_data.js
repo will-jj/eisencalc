@@ -4811,6 +4811,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"bp": 140,
 		"type": "Steel",
 		"category": "Special",
+		"hasRecoil": true,
 		"acc": 95
 	},
 	"Stuff Cheeks": {
