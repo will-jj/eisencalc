@@ -457,12 +457,19 @@ function getFinalSpeedHonk() {
 	} else if (item === "Macho Brace" || item === "Iron Ball") {
 		speed = Math.floor(speed / 2);
 	}
+
+	if ($(".status").val() === "Paralyzed" && ability !== "Quick Feet") {
+		speed = Math.floor(speed / (gen <= 6 ? 4 : 2));
+	}
+
 	if (ability === "Chlorophyll" && weather.indexOf("Sun") > -1 && item !== "Utility Umbrella" ||
 		ability === "Sand Rush" && weather === "Sand" ||
 		ability === "Swift Swim" && weather.indexOf("Rain") > -1 && item !== "Utility Umbrella" ||
 		ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
 		ability === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
+	} else if (ability === "Quick Feet" && $(".status").val() !== "Healthy") {
+		speed = Math.floor(speed * 1.5);
 	}
 	$(".totalMod").text(speed);
 }

@@ -99,6 +99,7 @@ var ABILITIES_DPP = ABILITIES_ADV.concat([
 	"No Guard",
 	"Normalize",
 	"Poison Heal",
+	"Quick Feet",
 	"Reckless",
 	"Rivalry",
 	"Scrappy",
