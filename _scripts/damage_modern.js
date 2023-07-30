@@ -1251,13 +1251,18 @@ function getFinalSpeed(pokemon, weather, terrain) {
 		speed = Math.floor(speed / 2);
 	}
 	
+	if (pokemon.status === "Paralyzed" && pokemon.curAbility !== "Quick Feet") {
+		speed = Math.floor(speed / (gen <= 6 ? 4 : 2));
+	}
+
 	if (pokemon.curAbility === "Chlorophyll" && weather.indexOf("Sun") > -1 && pokemon.item !== "Utility Umbrella" ||
 		pokemon.curAbility === "Sand Rush" && weather === "Sand" ||
 		pokemon.curAbility === "Swift Swim" && weather.indexOf("Rain") > -1 && pokemon.item !== "Utility Umbrella" ||
 		pokemon.curAbility === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
 		pokemon.curAbility === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
-	} else if (checkProtoQuarkHighest(pokemon, weather, terrain) === SP) {
+	} else if (checkProtoQuarkHighest(pokemon, weather, terrain) === SP ||
+		pokemon.curAbility === "Quick Feet" && pokemon.status !== "Healthy") {
 		speed = Math.floor(speed * 1.5);
 	}
 	return speed;
