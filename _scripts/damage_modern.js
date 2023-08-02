@@ -113,6 +113,9 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.bp === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
+	if (["Grass Knot", "Low Kick", "Heat Crash", "Heavy Slam"].includes(move.name) && defender.isDynamax) {
+		return {"damage": [0], "description": buildDescription(description)};
+	}
 	
 	if (defender.isTerastal) {
 		description.defenderTera = defender.type1;
@@ -374,10 +377,6 @@ function getDamageResult(attacker, defender, move, field) {
 			damage[i] = Math.floor(damage[i] / 2);
 		}
 		damage[i] = Math.max(1, pokeRound(damage[i] * finalMod / 0x1000) % 65536);
-		if (["Grass Knot", "Low Kick", "Heat Crash", "Heavy Slam"].includes(move.name) && defender.isDynamax) {
-			damage[i] = 0;
-			description.isZeroVsDynamax = true;
-		}
 		if (attacker.curAbility === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
 			for (let j = 0; j < 16; j++) {
 				pbDamage[16 * i + j] = damage[i] + childDamage[j];
@@ -1174,9 +1173,6 @@ function buildDescription(description) {
 	}
 	if (description.isQuarteredByProtect) {
 		output += " through Protect";
-	}
-	if (description.isZeroVsDynamax) {
-		output += " (this move has No Effect against Dynamax Pokémon!)";
 	}
 
 	return output;
