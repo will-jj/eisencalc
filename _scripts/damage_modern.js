@@ -971,7 +971,9 @@ function modBaseDamage(baseDamage, attacker, defender, move, field, description)
 
 function calcSTABMod(attacker, description) {
 	if (["Protean", "Libero"].includes(attacker.curAbility) && !attacker.isTerastal) {
-		description.attackerAbility = attacker.curAbility;
+		if (!attacker.hasType(moveType)) {
+			description.attackerAbility = attacker.curAbility;
+		}
 		return 0x1800;
 	}
 	let stabMod = 0x1000;
