@@ -1295,12 +1295,14 @@ function killsShedinja(attacker, defender, move, field = {}) {
 	let burnable = afflictable && !defender.hasType("Fire");
 
 	let weather = defender.item !== "Safety Goggles" &&
-	((move.name === "Sandstorm" && (!defender.hasType("Rock") && !defender.hasType("Steel") && !defender.hasType("Ground"))) || (move.name === "Hail" && !defender.hasType("Ice")));
+	((move.name === "Sandstorm" && !defender.hasType("Rock") && !defender.hasType("Steel") && !defender.hasType("Ground")) || (move.name === "Hail" && !defender.hasType("Ice")));
 	// akin to Sash, status berries should not be accounted for
-	let poison = ["Toxic", "Poison Gas", "Poison Powder", "Toxic Thread"].includes(move.name) && (poisonable || (afflictable && attacker.curAbility === "Corrosion"));
+	let poison = (["Toxic", "Poison Gas", "Toxic Thread"].includes(move.name) || (move.name === "Poison Powder" && defender.item !== "Safety Goggles" && !defender.hasType("Grass"))) &&
+	(poisonable || (afflictable && attacker.curAbility === "Corrosion"));
 	let burn = move.name === "Will-O-Wisp" && burnable;
 	let dangerItem = (["Trick", "Switcheroo"].includes(move.name) || (move.name === "Bestow" && defender.item === "")) &&
-	(attacker.item === "Sticky Barb" || (attacker.item === "Toxic Orb" && poisonable) || (attacker.item === "Flame Orb" && burnable));
+	(attacker.item === "Sticky Barb" || (attacker.item === "Toxic Orb" && poisonable) || (attacker.item === "Flame Orb" && burnable) ||
+	(attacker.item === "Black Sludge" && !defender.hasType("Poison")));
 	let confusion = ["Confuse Ray", "Flatter", "Supersonic", "Swagger", "Sweet Kiss", "Teeter Dance"].includes(move.name);
 	let otherPassive = (move.name === "Leech Seed" && !defender.hasType("Grass")) || (move.name === "Curse" && attacker.hasType("Ghost"));
 	return weather || poison || burn || dangerItem || confusion || otherPassive;
