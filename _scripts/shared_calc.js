@@ -1099,6 +1099,8 @@ $(".gen").change(function () {
 		forumLink = "https://www.smogon.com/forums/threads/battle-maison-discussion-records.3492706/";
 		break;
 	case 7:
+		$(".evo_img1").attr("src", "_images/eevee.png");
+		$(".evo_img2").attr("src", "_images/eevium.png");
 		pokedex = POKEDEX_SM;
 		setdex = SETDEX_GEN7;
 		typeChart = TYPE_CHART_XY;
@@ -1132,6 +1134,8 @@ $(".gen").change(function () {
 		forumLink = "https://www.smogon.com/forums/threads/bdsp-battle-tower-discussion-records.3693739/";
 		break;
 	case 9:
+		$(".evo_img1").attr("src", "_images/dozo.png");
+		$(".evo_img2").attr("src", "_images/giri.png");
 		pokedex = POKEDEX_SV;
 		setdex = [];//SV
 		typeChart = TYPE_CHART_XY;
@@ -1234,11 +1238,11 @@ function clearField() {
 	$("#friendGuardR").prop("checked", false);
 	$("#batteryL").prop("checked", false);
 	$("#batteryR").prop("checked", false);
-	$("#clangL").prop("checked", false);
+	$("#clangL").prop("checked", false); // +1 All
 	$("#clangR").prop("checked", false);
 	$("#wpL").prop("checked", false);
 	$("#wpR").prop("checked", false);
-	$("#evoL").prop("checked", false);
+	$("#evoL").prop("checked", false); // +2 All
 	$("#evoR").prop("checked", false);
 	$("#steelySpiritL").prop("checked", false);
 	$("#steelySpiritR").prop("checked", false);
