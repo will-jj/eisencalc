@@ -95,7 +95,6 @@ function MassPokemon(speciesName, setName) {
 		"tier": set.tier,
 		"hasType": function (type) { return this.type1 === type || this.type2 === type; },
 		// Reset this mon's stat stages to 0 and clear the stats.
-		// This is used for MassPokemon because the same objects are reused if the gen isn't changed.
 		"revertStats": function () {
 			Object.keys(this.boosts).forEach(stat => { this.boosts[stat] = 0; });
 			this.stats = [];
@@ -164,64 +163,72 @@ function performCalculations() {
 	}
 	var field = new Field();
 	var startingWeather = field.getWeather();
-	for (let i = 0; i < setsArray.length; i++) {
-		setPoke = setsArray[i];
-		setTier = setPoke.tier; // setPoke.tier can be: 50, Hall, HallR10, 28, 40, Tower, RS, SM, DM, SMDM. A set might not have a tier key.
-		if (gen == 4 && selectedTier === "All" && setTier && setTier.indexOf("Hall") != -1) {
-			continue;
-		} else if (selectedTier === "All" || (setTier && setTier.indexOf(selectedTier) != -1) || (selectedTier == "threshold" && parseInt(setTier))) {
-			// let set be calculated
-		} else {
-			continue;
-		}
 
-		if (mode === "one-vs-all") {
-			defender = setPoke;
-		} else {
-			attacker = setPoke;
-		}
-		// apply Neutralizing Gas if applicable
-		isNeutralizingGas = userNeutralizingGas || setPoke.ability === "Neutralizing Gas";
-		userPoke.resetCurAbility();
-		setPoke.resetCurAbility();
+	// set up the list of MassPokemon
+	let setSpecies = Object.keys(gen == 3 && $("#autolevel-box").val() == 50 ? SETDEX_EM : setdex);
+	for (let i = 0; i < setSpecies.length; i++) {
+		let speciesName = setSpecies[i];
+		let setNames = Object.keys(setdex[speciesName]);
+		for (let j = 0; j < setNames.length; j++) {
+			let setName = setNames[j];
+			setPoke = MassPokemon(speciesName, setName);
+			setTier = setPoke.tier; // setPoke.tier can be: 50, Hall, HallR10, 28, 40, Tower, RS, SM, DM, SMDM. A set might not have a tier key.
+			if (gen == 4 && selectedTier === "All" && setTier && setTier.includes("Hall")) {
+				continue;
+			} else if (selectedTier === "All" || (setTier && setTier.includes(selectedTier)) || (selectedTier == "threshold" && parseInt(setTier))) {
+				// let set be calculated
+			} else {
+				continue;
+			}
 
-		var damageResults = calculateMovesOfAttacker(attacker, defender, field);
-		var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
-		var highestDamage = -1;
-		var data = [setPoke.setName];
-		for (let n = 0; n < 4; n++) {
-			result = damageResults[n];
-			attackerMove = attacker.moves[n];
-			minDamage = result.damage[0] * (attackerMove.name === "Triple Axel" ? 1 : attackerMove.hits); // Triple Axel already handles its extra hit(s) in the damage script
-			maxDamage = result.damage[result.damage.length - 1] * (attackerMove.name === "Triple Axel" ? 1 : attackerMove.hits);
-			// If any piece of the calculation is a string and not a number ie. Pokemon.level, stats will concatinate into strings, and the below will eval to 0.
-			// I want to be very sure that everything is using the correct types, so I want this behavior. Shoutouts to writing code w/o tests.
-			minPercentage = Math.round(minDamage * 1000 / defender.maxHP) / 10;
-			maxPercentage = Math.round(maxDamage * 1000 / defender.maxHP) / 10;
-			if (maxDamage > highestDamage) {
-				highestDamage = maxDamage;
-				while (data.length > 1) {
-					data.pop();
-				}
-				data.push(highestDamage <= 0 ? "(No Move)" : attackerMove.name.replace("Hidden Power", "HP"));
-				data.push(minPercentage + " - " + maxPercentage + "%");
-				setKOChanceText(result, attackerMove, attacker, defender, field.getSide(~~(mode === "one-vs-all")));
-				if (attackerMove.bp === 0) {
-					data.push("nice move");
-				} else {
-					data.push(result.koChanceText ? result.koChanceText : "Did not get koChanceText");
+			if (mode === "one-vs-all") {
+				defender = setPoke;
+			} else {
+				attacker = setPoke;
+			}
+			// apply Neutralizing Gas if applicable
+			isNeutralizingGas = userNeutralizingGas || setPoke.ability === "Neutralizing Gas";
+			userPoke.resetCurAbility();
+			setPoke.resetCurAbility();
+
+			var damageResults = calculateMovesOfAttacker(attacker, defender, field);
+			var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
+			var highestDamage = -1;
+			var data = [setName];
+			for (let n = 0; n < 4; n++) {
+				result = damageResults[n];
+				attackerMove = attacker.moves[n];
+				minDamage = result.damage[0] * (attackerMove.name === "Triple Axel" ? 1 : attackerMove.hits); // Triple Axel already handles its extra hit(s) in the damage script
+				maxDamage = result.damage[result.damage.length - 1] * (attackerMove.name === "Triple Axel" ? 1 : attackerMove.hits);
+				// If any piece of the calculation is a string and not a number ie. Pokemon.level, stats will concatinate into strings, and the below will eval to 0.
+				// I want to be very sure that everything is using the correct types, so I want this behavior. Shoutouts to writing code w/o tests.
+				minPercentage = Math.round(minDamage * 1000 / defender.maxHP) / 10;
+				maxPercentage = Math.round(maxDamage * 1000 / defender.maxHP) / 10;
+				if (maxDamage > highestDamage) {
+					highestDamage = maxDamage;
+					while (data.length > 1) {
+						data.pop();
+					}
+					data.push(highestDamage <= 0 ? "(No Move)" : attackerMove.name.replace("Hidden Power", "HP"));
+					data.push(minPercentage + " - " + maxPercentage + "%");
+					setKOChanceText(result, attackerMove, attacker, defender, field.getSide(~~(mode === "one-vs-all")));
+					if (attackerMove.bp === 0) {
+						data.push("nice move");
+					} else {
+						data.push(result.koChanceText ? result.koChanceText : "Did not get koChanceText");
+					}
 				}
 			}
-		}
-		data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
-		data.push(((mode === "one-vs-all") ? defender.type2 : attacker.type2) || "");
-		dataSet.push(data);
+			data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
+			data.push(((mode === "one-vs-all") ? defender.type2 : attacker.type2) || "");
+			dataSet.push(data);
 
-		// fields in the boosts and stats objects should be the only things that get changed in the Pokemon object during mass calc
-		attacker.revertStats();
-		defender.revertStats();
-		// the only Field object "property" that can be modified is weather
-		field.setWeather(startingWeather);
+			// fields in the boosts and stats objects should be the only things that get changed in the Pokemon object during mass calc
+			attacker.revertStats();
+			defender.revertStats();
+			// the only Field object "property" that can be modified is weather
+			field.setWeather(startingWeather);
+		}
 	}
 	var pokemon = mode === "one-vs-all" ? attacker : defender;
 	table.rows.add(dataSet).draw();
@@ -233,7 +240,6 @@ function getSelectedTier() {
 }
 
 var calculateMovesOfAttacker;
-var setsArray;
 $(".gen").change(function () {
 	//$(".tiers input").prop("checked", false); // since tiers is a radio button now, don't uncheck it
 	adjustTierBorderRadius();
@@ -274,18 +280,6 @@ $(".gen").change(function () {
 		table.clear();
 		constructDataTable();
 		placeBsBtn();
-	}
-
-	// set up the list of MassPokemon
-	let setSpecies = Object.keys(gen == 3 && $("#autolevel-box").val() == 50 ? SETDEX_EM : setdex);
-	setsArray = [];
-	for (let i = 0; i < setSpecies.length; i++) {
-		let speciesName = setSpecies[i];
-		let setNames = Object.keys(setdex[speciesName]);
-		for (let j = 0; j < setNames.length; j++) {
-			let setName = setNames[j];
-			setsArray.push(MassPokemon(speciesName, setName));
-		}
 	}
 });
 
