@@ -187,7 +187,7 @@ function getDamageResult(attacker, defender, move, field) {
 		originalSABoost = attacker.boosts[SA];
 		attacker.boosts[SA] = attacker.curAbility === "Simple" ? Math.min(6, attacker.boosts[SA] + 2) : (attacker.curAbility === "Contrary" && attacker.item !== "White Herb" ? Math.max(-6, attacker.boosts[SA] - 1) : Math.min(6, attacker.boosts[SA] + 1));
 		attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
-		// this boost gets reset after attack mods are calc'd
+		// this boost gets reset after the attack stat is calc'd
 		break;
 
 	case "Tera Blast":
@@ -760,6 +760,12 @@ function calcAtk(attacker, defender, move, field, description) {
 		description.attackBoost = attackSource.boosts[attackStat];
 	}
 
+	// reset the SpA boost from Meteor Beam
+	if (move.name === "Meteor Beam") {
+		attacker.boosts[SA] = originalSABoost;
+		attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
+	}
+
 	// unlike all other attack modifiers, Hustle gets applied directly
 	if (attacker.curAbility === "Hustle" && moveCategory === "Physical") {
 		attack = pokeRound(attack * 3 / 2);
@@ -841,12 +847,6 @@ function calcAtk(attacker, defender, move, field, description) {
 		attacker.item === "Light Ball" && attacker.name === "Pikachu" && !move.isZ) {
 		atMods.push(0x2000);
 		description.attackerItem = attacker.item;
-	}
-
-	// reset the SpA boost from Meteor Beam
-	if (move.name === "Meteor Beam") {
-		attacker.boosts[SA] = originalSABoost;
-		attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 	}
 
 	return Math.max(1, pokeRound(attack * chainMods(atMods) / 0x1000));
@@ -1242,7 +1242,6 @@ function getModifiedStat(stat, mod) {
 
 function getFinalSpeed(pokemon, weather, terrain) {
 	let speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
-	pokemon.stats[SP] = speed; // this is for ProtoQuark calculation. it should not include item
 	if (pokemon.item === "Choice Scarf" && !pokemon.isDynamax) {
 		speed = Math.floor(speed * 1.5);
 	} else if (pokemon.item === "Macho Brace" || pokemon.item === "Iron Ball") {
@@ -1395,20 +1394,20 @@ function checkProtoQuarkHighest(pokemon, weather, terrain) {
 		(pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric"))) {
 		let stats = pokemon.stats;
 		let highestStat = AT;
-		let highestValue = stats[AT];
-		if (stats.df > highestValue) {
+		let highestValue = getModifiedStat(pokemon.rawStats[AT], pokemon.boosts[AT]);
+		if (getModifiedStat(pokemon.rawStats[DF], pokemon.boosts[DF]) > highestValue) {
 			highestStat = DF;
 			highestValue = stats[DF];
 		}
-		if (stats.sa > highestValue) {
+		if (getModifiedStat(pokemon.rawStats[SA], pokemon.boosts[SA]) > highestValue) {
 			highestStat = SA;
 			highestValue = stats[SA];
 		}
-		if (stats.sd > highestValue) {
+		if (getModifiedStat(pokemon.rawStats[SD], pokemon.boosts[SD]) > highestValue) {
 			highestStat = SD;
 			highestValue = stats[SD];
 		}
-		if (stats.sp > highestValue) {
+		if (getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]) > highestValue) {
 			return SP;
 		}
 		return highestStat;
