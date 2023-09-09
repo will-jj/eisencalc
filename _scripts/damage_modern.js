@@ -306,7 +306,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (["Burn Up", "Double Shock"].includes(move.name) && !attacker.hasType(moveType)) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	let bypassProtect = ["Doom Desire", "Feint", "Future Sight", "Hyperspace Fury", "Hyperspace Hole", "Phantom Force", "Shadow Force", "Hyper Drill"].includes(move.name) || (attacker.curAbility === "Unseen Fist" && makesContact);
+	let bypassProtect = move.bypassesProtect || (attacker.curAbility === "Unseen Fist" && makesContact);
 	if (field.isProtect && !move.isZ && !move.isMax && !bypassProtect) {
 		description.defenderAbility = "Protecting";
 		return {"damage": [0], "description": buildDescription(description)};
@@ -367,7 +367,7 @@ function getDamageResult(attacker, defender, move, field) {
 			description.defenderItem += " (first hit only)";
 		}
 	}
-	let applyBurn = attacker.status === "Burned" && moveCategory === "Physical" && attacker.curAbility !== "Guts" && !move.ignoresBurn;
+	let applyBurn = attacker.status === "Burned" && moveCategory === "Physical" && attacker.curAbility !== "Guts" && !(move.name === "Facade" && gen >= 6);
 	description.isBurned = applyBurn;
 	for (let i = 0; i < 16; i++) {
 		damage[i] = Math.floor(baseDamage * (85 + i) / 100);

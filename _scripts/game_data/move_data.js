@@ -157,7 +157,7 @@ var MOVES_RBY = {
 		"type": "Psychic",
 		"category": "Special",
 		"percentHealed": 1/2,
-		"acc": 0x1000
+		"acc": 100
 	},
 	"Drill Peck": {
 		"bp": 80,
@@ -891,6 +891,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 80,
 		"type": "Psychic",
 		"category": "Special",
+		"bypassesProtect": true,
 		"acc": 100
 	},
 	"Giga Drain": {
@@ -1420,6 +1421,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"bp": 120,
 		"type": "Steel",
 		"category": "Special",
+		"bypassesProtect": true,
 		"acc": 100
 	},
 	"Dragon Claw": {
@@ -3361,7 +3363,6 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"type": "Electric"
 	},
 	"Energy Ball": {"bp": 90},
-	"Facade": {"ignoresBurn": true},
 	"Fairy Wind": {
 		"bp": 40,
 		"type": "Fairy",
@@ -5905,4 +5906,4 @@ delete MOVES_SV["Strange Steam"];
 delete MOVES_SV["Obstruct"];
 delete MOVES_SV["Meteor Assault"];
 delete MOVES_SV["Eternabeam"];
-delete MOVES_SV["Take Heart"]
+delete MOVES_SV["Take Heart"];
