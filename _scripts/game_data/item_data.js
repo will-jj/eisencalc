@@ -300,7 +300,8 @@ var ITEMS_SV = ITEMS_SS.concat([
 	"Loaded Dice",
 	"Griseous Core",
 	"Adamant Crystal",
-	"Lustrous Globe"
+	"Lustrous Globe",
+	"Fairy Feather"
 ]);
 
 function getTechnoBlast(item) {
@@ -357,6 +358,7 @@ function getItemBoostType(item) {
 	case "Twisted Spoon":
 		return "Psychic";
 	case "Pixie Plate":
+	case "Fairy Feather":
 		return "Fairy";
 	case "Sky Plate":
 	case "Sharp Beak":

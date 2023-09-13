@@ -3330,6 +3330,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 	"Disarming Voice": {
 		"bp": 40,
 		"type": "Fairy",
+		"category": "Special",
 		"isSound": true,
 		"acc": 100
 	},
@@ -5651,6 +5652,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"category": "Special",
 		"acc": 100
 	},
+
 	"Blood Moon": {
 		"bp": 140,
 		"type": "Normal",

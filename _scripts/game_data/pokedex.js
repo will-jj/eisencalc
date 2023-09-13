@@ -18085,7 +18085,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 80,
 			"sp": 40
 		},
-		"w": 44,
+		"w": 4.4,
 		"abilities": ["Supersweet Syrup", "Gluttony", "Sticky Hold"]
 	},
 	"Poltchageist": {
@@ -18100,7 +18100,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sp": 50
 		},
 		"ab": "Heatproof",
-		"w": 11,
+		"w": 1.1,
 		"abilities": ["Hospitality", "Heatproof"]
 	},
 	"Sinistcha": {
@@ -18115,7 +18115,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sp": 70
 		},
 		"ab": "Heatproof",
-		"w": 22,
+		"w": 2.2,
 		"abilities": ["Hospitality", "Heatproof"]
 	},
 	"Ursaluna-Bloodmoon": {
@@ -18143,7 +18143,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 86,
 			"sp": 80
 		},
-		"w": 920,
+		"w": 92,
 		"abilities": ["Toxic Chain", "Guard Dog"]
 	},
 	"Munkidori": {
@@ -18157,7 +18157,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 90,
 			"sp": 106
 		},
-		"w": 122,
+		"w": 12.2,
 		"abilities": ["Toxic Chain", "Frisk"]
 	},
 	"Fezandipiti": {
@@ -18172,7 +18172,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sp": 99
 		},
 		"ab": "Technician",
-		"w": 301,
+		"w": 30.1,
 		"abilities": ["Toxic Chain", "Technician"]
 	},
 	"Ogerpon": {
@@ -18185,7 +18185,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 96,
 			"sp": 110
 		},
-		"w": 398,
+		"w": 39.8,
 		"abilities": ["Defiant"]
 	},
 	"Ogerpon-Wellspring": {
@@ -18199,7 +18199,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 96,
 			"sp": 110
 		},
-		"w": 398,
+		"w": 39.8,
 		"abilities": ["Water Absorb"]
 	},
 	"Ogerpon-Hearthflame": {
@@ -18213,7 +18213,7 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 96,
 			"sp": 110
 		},
-		"w": 398,
+		"w": 39.8,
 		"abilities": ["Mold Breaker"]
 	},
 	"Ogerpon-Cornerstone": {
@@ -18227,15 +18227,14 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"sd": 96,
 			"sp": 110
 		},
-		"w": 398,
+		"w": 39.8,
 		"abilities": ["Sturdy"]
 	}
 });
 
 POKEDEX_SV["Gallade"].abilities.push("Sharpness");
-POKEDEX_SV["Empoleon"].abilities.pop();
-POKEDEX_SV["Empoleon"].abilities.push("Competitive");
-POKEDEX_SV["Shiftry"].abilities = ["Chlorophyll", "Wind Rider", "Pickpocket"];
+POKEDEX_SV["Empoleon"].abilities[1] = "Competitive";
+POKEDEX_SV["Shiftry"].abilities[1] = "Wind Rider";
 
 // Remove Megas for SwSh
 delete POKEDEX_SS["Charizard"].formes;
@@ -19663,8 +19662,6 @@ delete POKEDEX_SV["Pumpkaboo-Small"];
 delete POKEDEX_SV["Pumpkaboo-Super"];
 delete POKEDEX_SV["Rapidash-Galar"];
 delete POKEDEX_SV["Raticate-Alola"];
-delete POKEDEX_SV["Sandslash-Alola"];
-delete POKEDEX_SV["Ninetales-Alola"];
 delete POKEDEX_SV["Silvally-Bug"];
 delete POKEDEX_SV["Silvally-Dark"];
 delete POKEDEX_SV["Silvally-Dragon"];
@@ -19687,11 +19684,6 @@ delete POKEDEX_SV["Wormadam-G"];
 delete POKEDEX_SV["Wormadam-S"];
 delete POKEDEX_SV["Yamask-Galar"];
 delete POKEDEX_SV["Zigzagoon-Galar"];
-delete POKEDEX_SV["Vulpix-Alola"];
-delete POKEDEX_SV["Sandshrew-Alola"];
 delete POKEDEX_SV["Rattata-Alola"];
 delete POKEDEX_SV["Marowak-Alola"];
-delete POKEDEX_SV["Graveler-Alola"];
-delete POKEDEX_SV["Golem-Alola"];
-delete POKEDEX_SV["Geodude-Alola"];
 delete POKEDEX_SV["Exeggutor-Alola"];
