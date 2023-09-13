@@ -18072,10 +18072,170 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 		"ab": "Protosynthesis",
 		"w": 280,
 		"abilities": ["Protosynthesis"]
+	},
+
+	"Dipplin": {
+		"t1": "Grass",
+		"t2": "Dragon",
+		"bs": {
+			"hp": 80,
+			"at": 80,
+			"df": 110,
+			"sa": 95,
+			"sd": 80,
+			"sp": 40
+		},
+		"w": 44,
+		"abilities": ["Supersweet Syrup", "Gluttony", "Sticky Hold"]
+	},
+	"Poltchageist": {
+		"t1": "Grass",
+		"t2": "Ghost",
+		"bs": {
+			"hp": 40,
+			"at": 45,
+			"df": 45,
+			"sa": 74,
+			"sd": 54,
+			"sp": 50
+		},
+		"ab": "Heatproof",
+		"w": 11,
+		"abilities": ["Hospitality", "Heatproof"]
+	},
+	"Sinistcha": {
+		"t1": "Grass",
+		"t2": "Ghost",
+		"bs": {
+			"hp": 71,
+			"at": 60,
+			"df": 106,
+			"sa": 121,
+			"sd": 80,
+			"sp": 70
+		},
+		"ab": "Heatproof",
+		"w": 22,
+		"abilities": ["Hospitality", "Heatproof"]
+	},
+	"Ursaluna-Bloodmoon": {
+		"t1": "Ground",
+		"t2": "Normal",
+		"bs": {
+			"hp": 113,
+			"at": 70,
+			"df": 120,
+			"sa": 52,
+			"sd": 135,
+			"sp": 65
+		},
+		"w": 290,
+		"abilities": ["Mind's Eye"]
+	},
+	"Okidogi": {
+		"t1": "Poison",
+		"t2": "Fighting",
+		"bs": {
+			"hp": 88,
+			"at": 128,
+			"df": 115,
+			"sa": 58,
+			"sd": 86,
+			"sp": 80
+		},
+		"w": 920,
+		"abilities": ["Toxic Chain", "Guard Dog"]
+	},
+	"Munkidori": {
+		"t1": "Poison",
+		"t2": "Psychic",
+		"bs": {
+			"hp": 88,
+			"at": 75,
+			"df": 66,
+			"sa": 130,
+			"sd": 90,
+			"sp": 106
+		},
+		"w": 122,
+		"abilities": ["Toxic Chain", "Frisk"]
+	},
+	"Fezandipiti": {
+		"t1": "Poison",
+		"t2": "Fairy",
+		"bs": {
+			"hp": 88,
+			"at": 91,
+			"df": 82,
+			"sa": 70,
+			"sd": 125,
+			"sp": 99
+		},
+		"ab": "Technician",
+		"w": 301,
+		"abilities": ["Toxic Chain", "Technician"]
+	},
+	"Ogerpon": {
+		"t1": "Grass",
+		"bs": {
+			"hp": 80,
+			"at": 120,
+			"df": 84,
+			"sa": 60,
+			"sd": 96,
+			"sp": 110
+		},
+		"w": 398,
+		"abilities": ["Defiant"]
+	},
+	"Ogerpon-Wellspring": {
+		"t1": "Grass",
+		"t2": "Water",
+		"bs": {
+			"hp": 80,
+			"at": 120,
+			"df": 84,
+			"sa": 60,
+			"sd": 96,
+			"sp": 110
+		},
+		"w": 398,
+		"abilities": ["Water Absorb"]
+	},
+	"Ogerpon-Hearthflame": {
+		"t1": "Grass",
+		"t2": "Fire",
+		"bs": {
+			"hp": 80,
+			"at": 120,
+			"df": 84,
+			"sa": 60,
+			"sd": 96,
+			"sp": 110
+		},
+		"w": 398,
+		"abilities": ["Mold Breaker"]
+	},
+	"Ogerpon-Cornerstone": {
+		"t1": "Grass",
+		"t2": "Rock",
+		"bs": {
+			"hp": 80,
+			"at": 120,
+			"df": 84,
+			"sa": 60,
+			"sd": 96,
+			"sp": 110
+		},
+		"w": 398,
+		"abilities": ["Sturdy"]
 	}
 });
 
 POKEDEX_SV["Gallade"].abilities.push("Sharpness");
+POKEDEX_SV["Empoleon"].abilities.pop();
+POKEDEX_SV["Empoleon"].abilities.push("Competitive");
+POKEDEX_SV["Shiftry"].abilities = ["Chlorophyll", "Wind Rider", "Pickpocket"];
 
 // Remove Megas for SwSh
 delete POKEDEX_SS["Charizard"].formes;
@@ -19073,47 +19233,28 @@ delete POKEDEX_SV["Pidgeotto"];
 delete POKEDEX_SV["Pidgeot"];
 delete POKEDEX_SV["Rattata"];
 delete POKEDEX_SV["Raticate"];
-delete POKEDEX_SV["Raticate-Alola"];
 delete POKEDEX_SV["Spearow"];
 delete POKEDEX_SV["Fearow"];
-delete POKEDEX_SV["Ekans"];
-delete POKEDEX_SV["Arbok"];
 delete POKEDEX_SV["Sandshrew"];
-delete POKEDEX_SV["Sandlash"];
+delete POKEDEX_SV["Sandslash"];
 delete POKEDEX_SV["Nidoran-M"];
 delete POKEDEX_SV["Nidoran-F"];
 delete POKEDEX_SV["Nidorino"];
 delete POKEDEX_SV["Nidorina"];
 delete POKEDEX_SV["Nidoking"];
 delete POKEDEX_SV["Nidoqueen"];
-delete POKEDEX_SV["Clefairy"];
-delete POKEDEX_SV["Clefable"];
-delete POKEDEX_SV["Vulpix"];
-delete POKEDEX_SV["Ninetales"];
 delete POKEDEX_SV["Zubat"];
 delete POKEDEX_SV["Golbat"];
-delete POKEDEX_SV["Oddish"];
-delete POKEDEX_SV["Gloom"];
-delete POKEDEX_SV["Vileplume"];
 delete POKEDEX_SV["Paras"];
 delete POKEDEX_SV["Parasect"];
-delete POKEDEX_SV["Poliwag"];
-delete POKEDEX_SV["Poliwhirl"];
-delete POKEDEX_SV["Poliwrath"];
 delete POKEDEX_SV["Abra"];
 delete POKEDEX_SV["Kadabra"];
 delete POKEDEX_SV["Alakazam"];
 delete POKEDEX_SV["Machop"];
 delete POKEDEX_SV["Machoke"];
 delete POKEDEX_SV["Machamp"];
-delete POKEDEX_SV["Bellsprout"];
-delete POKEDEX_SV["Weepinbell"];
-delete POKEDEX_SV["Victreebel"];
 delete POKEDEX_SV["Tentacool"];
 delete POKEDEX_SV["Tentacruel"];
-delete POKEDEX_SV["Geodude"];
-delete POKEDEX_SV["Graveler"];
-delete POKEDEX_SV["Golem"];
 delete POKEDEX_SV["Ponyta"];
 delete POKEDEX_SV["Rapidash"];
 delete POKEDEX_SV["Farfetch'd"];
@@ -19128,11 +19269,7 @@ delete POKEDEX_SV["Exeggcute"];
 delete POKEDEX_SV["Exeggutor"];
 delete POKEDEX_SV["Cubone"];
 delete POKEDEX_SV["Marowak"];
-delete POKEDEX_SV["Hitmonlee"];
-delete POKEDEX_SV["Hitmonchan"];
 delete POKEDEX_SV["Lickitung"];
-delete POKEDEX_SV["Koffing"];
-delete POKEDEX_SV["Weezing"];
 delete POKEDEX_SV["Rhyhorn"];
 delete POKEDEX_SV["Rhydon"];
 delete POKEDEX_SV["Tangela"];
@@ -19155,61 +19292,27 @@ delete POKEDEX_SV["Omastar"];
 delete POKEDEX_SV["Kabuto"];
 delete POKEDEX_SV["Kabutops"];
 delete POKEDEX_SV["Aerodactyl"];
-delete POKEDEX_SV["Snorlax"];
 delete POKEDEX_SV["Chikorita"];
 delete POKEDEX_SV["Bayleef"];
 delete POKEDEX_SV["Meganium"];
 delete POKEDEX_SV["Totodile"];
 delete POKEDEX_SV["Croconaw"];
 delete POKEDEX_SV["Feraligatr"];
-delete POKEDEX_SV["Sentret"];
-delete POKEDEX_SV["Furret"];
-delete POKEDEX_SV["Hoothoot"];
-delete POKEDEX_SV["Noctowl"];
 delete POKEDEX_SV["Ledyba"];
 delete POKEDEX_SV["Ledian"];
-delete POKEDEX_SV["Spinarak"];
-delete POKEDEX_SV["Ariados"];
+delete POKEDEX_SV["Crobat"];
 delete POKEDEX_SV["Chinchou"];
 delete POKEDEX_SV["Lanturn"];
-delete POKEDEX_SV["Cleffa"];
 delete POKEDEX_SV["Togepi"];
 delete POKEDEX_SV["Togetic"];
 delete POKEDEX_SV["Natu"];
 delete POKEDEX_SV["Xatu"];
-delete POKEDEX_SV["Bellossom"];
-delete POKEDEX_SV["Politoed"];
-delete POKEDEX_SV["Aipom"];
-delete POKEDEX_SV["Yanma"];
 delete POKEDEX_SV["Unown"];
 delete POKEDEX_SV["Wobbuffet"];
-delete POKEDEX_SV["Gligar"];
 delete POKEDEX_SV["Steelix"];
 delete POKEDEX_SV["Snubbull"];
 delete POKEDEX_SV["Granbull"];
 delete POKEDEX_SV["Shuckle"];
-delete POKEDEX_SV["Arceus"];
-delete POKEDEX_SV["Arceus-Bug"];
-delete POKEDEX_SV["Arceus-Dark"];
-delete POKEDEX_SV["Arceus-Dragon"];
-delete POKEDEX_SV["Arceus-Electric"];
-delete POKEDEX_SV["Arceus-Fighting"];
-delete POKEDEX_SV["Arceus-Fire"];
-delete POKEDEX_SV["Arceus-Flying"];
-delete POKEDEX_SV["Arceus-Ghost"];
-delete POKEDEX_SV["Arceus-Grass"];
-delete POKEDEX_SV["Arceus-Ground"];
-delete POKEDEX_SV["Arceus-Ice"];
-delete POKEDEX_SV["Arceus-Poison"];
-delete POKEDEX_SV["Arceus-Psychic"];
-delete POKEDEX_SV["Arceus-Rock"];
-delete POKEDEX_SV["Arceus-Steel"];
-delete POKEDEX_SV["Arceus-Water"];
-delete POKEDEX_SV["Arceus-Fairy"];
-delete POKEDEX_SV["Slugma"];
-delete POKEDEX_SV["Magcargo"];
-delete POKEDEX_SV["Swinub"];
-delete POKEDEX_SV["Piloswine"];
 delete POKEDEX_SV["Corsola"];
 delete POKEDEX_SV["Remoraid"];
 delete POKEDEX_SV["Octillery"];
@@ -19218,8 +19321,6 @@ delete POKEDEX_SV["Skarmory"];
 delete POKEDEX_SV["Kingdra"];
 delete POKEDEX_SV["Porygon2"];
 delete POKEDEX_SV["Smeargle"];
-delete POKEDEX_SV["Tyrogue"];
-delete POKEDEX_SV["Hitmontop"];
 delete POKEDEX_SV["Smoochum"];
 delete POKEDEX_SV["Elekid"];
 delete POKEDEX_SV["Magby"];
@@ -19239,8 +19340,6 @@ delete POKEDEX_SV["Blaziken"];
 delete POKEDEX_SV["Mudkip"];
 delete POKEDEX_SV["Marshtomp"];
 delete POKEDEX_SV["Swampert"];
-delete POKEDEX_SV["Poochyena"];
-delete POKEDEX_SV["Mightyena"];
 delete POKEDEX_SV["Zigzagoon"];
 delete POKEDEX_SV["Linoone"];
 delete POKEDEX_SV["Wurmple"];
@@ -19248,19 +19347,14 @@ delete POKEDEX_SV["Silcoon"];
 delete POKEDEX_SV["Beautifly"];
 delete POKEDEX_SV["Cascoon"];
 delete POKEDEX_SV["Dustox"];
-delete POKEDEX_SV["Lotad"];
-delete POKEDEX_SV["Lombre"];
-delete POKEDEX_SV["Ludicolo"];
-delete POKEDEX_SV["Seedot"];
-delete POKEDEX_SV["Shiftry"];
 delete POKEDEX_SV["Taillow"];
 delete POKEDEX_SV["Swellow"];
 delete POKEDEX_SV["Nincada"];
 delete POKEDEX_SV["Ninjask"];
 delete POKEDEX_SV["Shedinja"];
 delete POKEDEX_SV["Whismur"];
+delete POKEDEX_SV["Loudred"];
 delete POKEDEX_SV["Exploud"];
-delete POKEDEX_SV["Nosepass"];
 delete POKEDEX_SV["Skitty"];
 delete POKEDEX_SV["Delcatty"];
 delete POKEDEX_SV["Mawile"];
@@ -19271,8 +19365,6 @@ delete POKEDEX_SV["Electrike"];
 delete POKEDEX_SV["Manectric"];
 delete POKEDEX_SV["Plusle"];
 delete POKEDEX_SV["Minun"];
-delete POKEDEX_SV["Volbeat"];
-delete POKEDEX_SV["Illumise"];
 delete POKEDEX_SV["Roselia"];
 delete POKEDEX_SV["Carvanha"];
 delete POKEDEX_SV["Sharpedo"];
@@ -19284,21 +19376,14 @@ delete POKEDEX_SV["Vibrava"];
 delete POKEDEX_SV["Flygon"];
 delete POKEDEX_SV["Lunatone"];
 delete POKEDEX_SV["Solrock"];
-delete POKEDEX_SV["Corphish"];
-delete POKEDEX_SV["Crawdaunt"];
 delete POKEDEX_SV["Baltoy"];
 delete POKEDEX_SV["Claydol"];
 delete POKEDEX_SV["Lileep"];
 delete POKEDEX_SV["Cradily"];
 delete POKEDEX_SV["Anorith"];
 delete POKEDEX_SV["Armaldo"];
-delete POKEDEX_SV["Feebas"];
-delete POKEDEX_SV["Milotic"];
 delete POKEDEX_SV["Castform"];
 delete POKEDEX_SV["Kecleon"];
-delete POKEDEX_SV["Duskull"];
-delete POKEDEX_SV["Dusclops"];
-delete POKEDEX_SV["Chimecho"];
 delete POKEDEX_SV["Absol"];
 delete POKEDEX_SV["Wynaut"];
 delete POKEDEX_SV["Spheal"];
@@ -19316,17 +19401,7 @@ delete POKEDEX_SV["Regice"];
 delete POKEDEX_SV["Registeel"];
 delete POKEDEX_SV["Latias"];
 delete POKEDEX_SV["Latios"];
-delete POKEDEX_SV["Jirachi"];
 delete POKEDEX_SV["Deoxys"];
-delete POKEDEX_SV["Turtwig"];
-delete POKEDEX_SV["Grotle"];
-delete POKEDEX_SV["Torterra"];
-delete POKEDEX_SV["Chimchar"];
-delete POKEDEX_SV["Monferno"];
-delete POKEDEX_SV["Infernape"];
-delete POKEDEX_SV["Piplup"];
-delete POKEDEX_SV["Prinplup"];
-delete POKEDEX_SV["Empoleon"];
 delete POKEDEX_SV["Bidoof"];
 delete POKEDEX_SV["Bibarel"];
 delete POKEDEX_SV["Budew"];
@@ -19340,15 +19415,12 @@ delete POKEDEX_SV["Wormadam"];
 delete POKEDEX_SV["Mothim"];
 delete POKEDEX_SV["Cherubi"];
 delete POKEDEX_SV["Cherrim"];
-delete POKEDEX_SV["Ambipom"];
 delete POKEDEX_SV["Buneary"];
 delete POKEDEX_SV["Lopunny"];
 delete POKEDEX_SV["Glameow"];
 delete POKEDEX_SV["Purugly"];
-delete POKEDEX_SV["Chingling"];
 delete POKEDEX_SV["Mime Jr."];
 delete POKEDEX_SV["Chatot"];
-delete POKEDEX_SV["Munchlax"];
 delete POKEDEX_SV["Skorupi"];
 delete POKEDEX_SV["Drapion"];
 delete POKEDEX_SV["Carnivine"];
@@ -19359,17 +19431,8 @@ delete POKEDEX_SV["Tangrowth"];
 delete POKEDEX_SV["Electivire"];
 delete POKEDEX_SV["Magmortar"];
 delete POKEDEX_SV["Togekiss"];
-delete POKEDEX_SV["Yanmega"];
-delete POKEDEX_SV["Gliscor"];
-delete POKEDEX_SV["Mamoswine"];
 delete POKEDEX_SV["Porygon-Z"];
-delete POKEDEX_SV["Probopass"];
-delete POKEDEX_SV["Dusknoir"];
 delete POKEDEX_SV["Regigigas"];
-delete POKEDEX_SV["Phione"];
-delete POKEDEX_SV["Manaphy"];
-delete POKEDEX_SV["Darkrai"];
-delete POKEDEX_SV["Shaymin"];
 delete POKEDEX_SV["Victini"];
 delete POKEDEX_SV["Snivy"];
 delete POKEDEX_SV["Servine"];
@@ -19405,17 +19468,11 @@ delete POKEDEX_SV["Swoobat"];
 delete POKEDEX_SV["Drilbur"];
 delete POKEDEX_SV["Excadrill"];
 delete POKEDEX_SV["Audino"];
-delete POKEDEX_SV["Timburr"];
-delete POKEDEX_SV["Gurdurr"];
-delete POKEDEX_SV["Conkeldurr"];
 delete POKEDEX_SV["Tympole"];
 delete POKEDEX_SV["Palpitoad"];
 delete POKEDEX_SV["Seismitoad"];
 delete POKEDEX_SV["Throh"];
 delete POKEDEX_SV["Sawk"];
-delete POKEDEX_SV["Sewaddle"];
-delete POKEDEX_SV["Swadloon"];
-delete POKEDEX_SV["Leavanny"];
 delete POKEDEX_SV["Venipede"];
 delete POKEDEX_SV["Whirlipede"];
 delete POKEDEX_SV["Scolipede"];
@@ -19442,8 +19499,6 @@ delete POKEDEX_SV["Cinccino"];
 delete POKEDEX_SV["Solosis"];
 delete POKEDEX_SV["Duosion"];
 delete POKEDEX_SV["Reuniclus"];
-delete POKEDEX_SV["Ducklett"];
-delete POKEDEX_SV["Swanna"];
 delete POKEDEX_SV["Vanillite"];
 delete POKEDEX_SV["Vanillish"];
 delete POKEDEX_SV["Vanilluxe"];
@@ -19461,20 +19516,13 @@ delete POKEDEX_SV["Klang"];
 delete POKEDEX_SV["Klinklang"];
 delete POKEDEX_SV["Elgyem"];
 delete POKEDEX_SV["Beheeyem"];
-delete POKEDEX_SV["Litwick"];
-delete POKEDEX_SV["Lampent"];
-delete POKEDEX_SV["Chandelure"];
 delete POKEDEX_SV["Shelmet"];
 delete POKEDEX_SV["Accelgor"];
 delete POKEDEX_SV["Stunfisk"];
-delete POKEDEX_SV["Mienfoo"];
-delete POKEDEX_SV["Mienshao"];
 delete POKEDEX_SV["Druddigon"];
 delete POKEDEX_SV["Golett"];
 delete POKEDEX_SV["Golurk"];
 delete POKEDEX_SV["Bouffalant"];
-delete POKEDEX_SV["Vullaby"];
-delete POKEDEX_SV["Mandibuzz"];
 delete POKEDEX_SV["Heatmor"];
 delete POKEDEX_SV["Durant"];
 delete POKEDEX_SV["Cobalion"];
@@ -19509,8 +19557,6 @@ delete POKEDEX_SV["Tyrunt"];
 delete POKEDEX_SV["Tyrantrum"];
 delete POKEDEX_SV["Amaura"];
 delete POKEDEX_SV["Aurorus"];
-delete POKEDEX_SV["Phantump"];
-delete POKEDEX_SV["Trevenant"];
 delete POKEDEX_SV["Pumpkaboo"];
 delete POKEDEX_SV["Gourgeist"];
 delete POKEDEX_SV["Xerneas"];
@@ -19523,12 +19569,8 @@ delete POKEDEX_SV["Popplio"];
 delete POKEDEX_SV["Brionne"];
 delete POKEDEX_SV["Primarina"];
 delete POKEDEX_SV["Pikipek"];
+delete POKEDEX_SV["Trumbeak"];
 delete POKEDEX_SV["Toucannon"];
-delete POKEDEX_SV["Grubbin"];
-delete POKEDEX_SV["Charjabug"];
-delete POKEDEX_SV["Vikavolt"];
-delete POKEDEX_SV["Cutiefly"];
-delete POKEDEX_SV["Ribombee"];
 delete POKEDEX_SV["Wishiwashi"];
 delete POKEDEX_SV["Dewpider"];
 delete POKEDEX_SV["Araquanid"];
@@ -19547,9 +19589,6 @@ delete POKEDEX_SV["Turtonator"];
 delete POKEDEX_SV["Togedemaru"];
 delete POKEDEX_SV["Drampa"];
 delete POKEDEX_SV["Dhelmise"];
-delete POKEDEX_SV["Jangmo-o"];
-delete POKEDEX_SV["Hakamo-o"];
-delete POKEDEX_SV["Kommo-o"];
 delete POKEDEX_SV["Tapu Koko"];
 delete POKEDEX_SV["Tapu Lele"];
 delete POKEDEX_SV["Tapu Bulu"];
@@ -19575,8 +19614,8 @@ delete POKEDEX_SV["Zeraora"];
 delete POKEDEX_SV["Meltan"];
 delete POKEDEX_SV["Melmetal"];
 delete POKEDEX_SV["Blipbug"];
-delete POKEDEX_SV["Orbeetle"];
 delete POKEDEX_SV["Dottler"];
+delete POKEDEX_SV["Orbeetle"];
 delete POKEDEX_SV["Nickit"];
 delete POKEDEX_SV["Thievul"];
 delete POKEDEX_SV["Gossifleur"];
@@ -19585,7 +19624,6 @@ delete POKEDEX_SV["Wooloo"];
 delete POKEDEX_SV["Dubwool"];
 delete POKEDEX_SV["Yamper"];
 delete POKEDEX_SV["Boltund"];
-delete POKEDEX_SV["Cramorant"];
 delete POKEDEX_SV["Sizzlipede"];
 delete POKEDEX_SV["Centiskorch"];
 delete POKEDEX_SV["Clobbopus"];
@@ -19597,7 +19635,6 @@ delete POKEDEX_SV["Mr. Rime"];
 delete POKEDEX_SV["Runerigus"];
 delete POKEDEX_SV["Milcery"];
 delete POKEDEX_SV["Alcremie"];
-delete POKEDEX_SV["Morpeko"];
 delete POKEDEX_SV["Dracozolt"];
 delete POKEDEX_SV["Arctozolt"];
 delete POKEDEX_SV["Dracovish"];
@@ -19625,9 +19662,9 @@ delete POKEDEX_SV["Pumpkaboo-Large"];
 delete POKEDEX_SV["Pumpkaboo-Small"];
 delete POKEDEX_SV["Pumpkaboo-Super"];
 delete POKEDEX_SV["Rapidash-Galar"];
+delete POKEDEX_SV["Raticate-Alola"];
 delete POKEDEX_SV["Sandslash-Alola"];
 delete POKEDEX_SV["Ninetales-Alola"];
-delete POKEDEX_SV["Shaymin-S"];
 delete POKEDEX_SV["Silvally-Bug"];
 delete POKEDEX_SV["Silvally-Dark"];
 delete POKEDEX_SV["Silvally-Dragon"];

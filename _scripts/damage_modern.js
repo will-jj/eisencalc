@@ -12,6 +12,8 @@ function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	checkSeeds(p2, field.getTerrain());
 	checkAngerShell(p1);
 	checkAngerShell(p2);
+	checkEmbodyAspect(p1);
+	checkEmbodyAspect(p2);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
 	p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
 	p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
@@ -54,6 +56,8 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	checkSeedsHonk(defender, field.getTerrain());
 	checkAngerShell(attacker);
 	checkAngerShell(defender);
+	checkEmbodyAspect(attacker);
+	checkEmbodyAspect(defender);
 	attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF]);
 	attacker.stats[SD] = getModifiedStat(attacker.rawStats[SD], attacker.boosts[SD]);
 	defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
@@ -196,7 +200,12 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 
 	case "Raging Bull":
-		moveType = attacker.name === "Tauros-Paldea" ? "Fighting" : attacker.name === "Tauros-Paldea-Aqua" ? "Water" : attacker.name === "Tauros-Paldea-Blaze" ? "Fire" : "Normal";
+		moveType = attacker.name === "Tauros-Paldea" ? "Fighting" : attacker.name === "Tauros-Paldea-Aqua" ? "Water" : attacker.name === "Tauros-Paldea-Blaze" ? "Fire" : moveType;
+		description.moveType = moveType;
+		break;
+
+	case "Ivy Cudgel":
+		moveType = attacker.name === "Ogerpon-Wellspring" ? "Water" : attacker.name === "Ogerpon-Hearthflame" ? "Fire" : attacker.name === "Ogerpon-Cornerstone" ? "Rock" : moveType;
 		description.moveType = moveType;
 		break;
 	}
@@ -245,9 +254,10 @@ function getDamageResult(attacker, defender, move, field) {
 		hasPriority = true;
 	}
 
-	var typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1, attacker.curAbility === "Scrappy", field, field.weather === "Strong Winds", description);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, moveType, defender.type2, attacker.curAbility === "Scrappy", field, field.weather === "Strong Winds", description) : 1;
-	var typeEffectiveness = typeEffect1 * typeEffect2;
+	let scrappy = ["Scrappy", "Mind's Eye"].includes(attacker.curAbility);
+	let typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1, scrappy, field, field.weather === "Strong Winds", description);
+	let typeEffect2 = defender.type2 ? getMoveEffectiveness(move, moveType, defender.type2, scrappy, field, field.weather === "Strong Winds", description) : 1;
+	let typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
 		typeEffectiveness = 1;
@@ -1375,6 +1385,14 @@ function checkZacianZamazaenta(pokemon) {
 	} else if (pokemon.curAbility === "Dauntless Shield") {
 		pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
 	}
+}
+
+function checkEmbodyAspect(pokemon) {
+	if (pokemon.ability !== "Embody Aspect") {
+		return;
+	}
+	let boostedStat = pokemon.name === "Ogerpon-Wellspring" ? SD : pokemon.name === "Ogerpon-Hearthflame" ? AT : pokemon.name === "Ogerpon-Cornerstone" ? DF : SP;
+	pokemon.boosts[boostedStat] = Math.min(6, pokemon.boosts[boostedStat] + 1);
 }
 
 function isShellSideArmPhysical(attacker, defender, move) {
