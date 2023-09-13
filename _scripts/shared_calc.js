@@ -52,18 +52,25 @@ $(".tera").bind("keyup change", function () {
 	if (gen != 9) {
 		return;
 	}
-	var pokeInfo = $(this).closest(".poke-info");
+	let pokeInfo = $(this).closest(".poke-info");
+	let setName = pokeInfo.find("input.set-selector").val(); // speciesName (setName)
+	let pokeName = setName.substring(0, setName.indexOf(" ("));
 	if ($(this).prop("checked")) {
 		pokeInfo.find(".type1").val(pokeInfo.find(".tera-type").val());
 		pokeInfo.find(".type2").val("");
+		if (pokeName.startsWith("Ogerpon")) {
+			pokeInfo.find(".ability").val("Embody Aspect");
+		}
 	} else {
-		let setName = pokeInfo.find("input.set-selector").val();
-		let dexEntry = pokedex[setName.substring(0, setName.indexOf(" ("))];
+		let dexEntry = pokedex[pokeName];
 		if (dexEntry.formes) {
 			dexEntry = pokedex[pokeInfo.find(".forme").val()];
 		}
 		pokeInfo.find(".type1").val(dexEntry.t1);
 		pokeInfo.find(".type2").val(dexEntry.t2 !== undefined ? dexEntry.t2 : "");
+		if (pokeName.startsWith("Ogerpon")) {
+			pokeInfo.find(".ability").val(dexEntry.abilities[0]);
+		}
 	}
 });
 
@@ -419,16 +426,15 @@ $(".move-selector").change(function () {
 
 // auto-update set details on select
 $(".set-selector").bind("change click keyup keydown", function () {
-	var fullSetName = $(this).val();
-	var pokemonName, setName;
-	pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
-	setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
-	var pokemon = pokedex[pokemonName];
+	let fullSetName = $(this).val();
+	let pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
+	let setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
+	let pokemon = pokedex[pokemonName];
 	if (!pokemon) {
 		console.log("error: `" + pokemonName + "` could not be found in pokedex[]");
 		return;
 	}
-	var pokeObj = $(this).closest(".poke-info");
+	let pokeObj = $(this).closest(".poke-info");
 	let pokeObjID = pokeObj.prop("id");
 
 	// If the sticky move was on this side, reset it
@@ -437,7 +443,7 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	}
 
 	// If the selected move was on this side, reset it
-	var selectedMove = $("input:radio[name='resultMove']:checked").prop("id");
+	let selectedMove = $("input:radio[name='resultMove']:checked").prop("id");
 	if (selectedMove !== undefined) {
 		var selectedSide = selectedMove.charAt(selectedMove.length - 2);
 		if (pokeObjID === "p1" && selectedSide === "L") {
@@ -453,8 +459,7 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	pokeObj.find(".type1").val(pokemon.t1);
 	pokeObj.find(".type2").val(pokemon.t2 !== undefined ? pokemon.t2 : "");
 	pokeObj.find(".hp .base").val(pokemon.bs.hp);
-	var i;
-	for (i = 0; i < STATS.length; i++) {
+	for (let i = 0; i < STATS.length; i++) {
 		pokeObj.find("." + STATS[i] + " .base").val(pokemon.bs[STATS[i]]);
 	}
 	pokeObj.find(".hp").val("calcHP");
@@ -465,7 +470,7 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	$(".status").change();
 	pokeObj.find(".max-level").val(10);
 	pokeObj.find(".max").prop("checked", false);
-	pokeObj.find(".tera-type").val(pokemon.t1);
+	pokeObj.find(".tera-type").val(pokemon.t1); // this statement might do nothing
 	pokeObj.find(".tera").prop("checked", false);
 	//.change() for max and tera is below
 	var moveObj;
@@ -508,7 +513,11 @@ $(".set-selector").bind("change click keyup keydown", function () {
 		}
 		pokeObj.find(".nature").val("Hardy");
 		setSelectValueIfValid(abilityObj, abilityList && abilityList.length == 1 ? abilityList[0] : pokemon.ab, "");
-		pokeObj.find(".tera-type").val(pokemon.t1);
+		if (pokemonName.startsWith("Ogerpon") && pokemonName.includes("-")) {
+			pokeObj.find(".tera-type").val(pokemon.t2);
+		} else {
+			pokeObj.find(".tera-type").val(pokemon.t1);
+		}
 		itemObj.val("");
 		for (i = 0; i < 4; i++) {
 			moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
@@ -844,18 +853,22 @@ function getMoveDetails(moveInfo, item, species) {
 			tempType = "Ice";
 		}
 
+		let negateAbility = false;
 		if (tempBP == 0) {
 			maxMoveName = "Max Guard";
 			tempType = "Normal";
 		} else if (species === "Cinderace-Gmax" && tempType === "Fire") {
 			tempBP = 160;
 			maxMoveName = "G-Max Fireball";
+			negateAbility = true;
 		} else if (species === "Inteleon-Gmax" && tempType === "Water") {
 			tempBP = 160;
 			maxMoveName = "G-Max Hydrosnipe";
+			negateAbility = true;
 		} else if (species === "Rillaboom-Gmax" && tempType === "Grass") {
 			tempBP = 160;
 			maxMoveName = "G-Max Drum Solo";
+			negateAbility = true;
 		}
 
 		return $.extend({}, moves[maxMoveName], {
@@ -866,7 +879,8 @@ function getMoveDetails(moveInfo, item, species) {
 			"category": defaultDetails.category,
 			"isCrit": moveInfo.find(".move-crit").prop("checked"),
 			"hits": 1,
-			"isMax": true
+			"isMax": true,
+			"negateAbility": negateAbility
 		});
 	}
 

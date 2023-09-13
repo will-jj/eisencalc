@@ -4115,6 +4115,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"type": "Psychic",
 		"category": "Special",
 		"usesHighestAttackStat": true,
+		"negateAbility": true,
 		"isZ": true
 	},
 	"Liquidation": {
@@ -4154,6 +4155,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"bp": 200,
 		"type": "Ghost",
 		"category": "Special",
+		"negateAbility": true,
 		"isZ": true
 	},
 	"Metal Claw": {"zp": 100},
@@ -4174,6 +4176,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"bp": 100,
 		"type": "Ghost",
 		"category": "Special",
+		"negateAbility": true,
 		"zp": 180,
 		"acc": 100
 	},
@@ -4340,6 +4343,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"type": "Steel",
 		"category": "Physical",
 		"makesContact": true,
+		"negateAbility": true,
 		"isZ": true
 	},
 	"Secret Power": {"zp": 140},
@@ -4513,6 +4517,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"type": "Steel",
 		"category": "Physical",
 		"makesContact": true,
+		"negateAbility": true,
 		"zp": 180,
 		"acc": 100
 	},
@@ -5644,6 +5649,33 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 80,
 		"type": "Water",
 		"category": "Special",
+		"acc": 100
+	},
+	"Blood Moon": {
+		"bp": 140,
+		"type": "Normal",
+		"category": "Special",
+		"acc": 100
+	},
+	"Matcha Gotcha": {
+		"bp": 80,
+		"type": "Grass",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"percentHealed": 1/2,
+		"acc": 90
+	},
+	"Syrup Bomb": {
+		"bp": 60,
+		"type": "Grass",
+		"category": "Special",
+		"isBullet": true,
+		"acc": 85
+	},
+	"Ivy Cudgel": {
+		"bp": 100,
+		"type": "Grass",
+		"category": "Physical",
 		"acc": 100
 	}
 });
