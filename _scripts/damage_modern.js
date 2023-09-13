@@ -99,9 +99,8 @@ function getDamageResult(attacker, defender, move, field) {
 		"isDynamax": defender.isDynamax
 	};
 
-	if (defender.item !== "Ability Shield" && (
-		["Mold Breaker", "Teravolt", "Turboblaze"].includes(attacker.curAbility) ||
-		["Moongeist Beam", "Sunsteel Strike", "Searing Sunraze Smash", "Menacing Moonraze Maelstrom", "Light That Burns the Sky", "G-Max Drum Solo", "G-Max Hydrosnipe", "G-Max Fireball"].includes(move.name))) {
+	// aside from what's in move_data, negateAbility is also applied to the Galar starters' Gmax moves
+	if (defender.item !== "Ability Shield" && (["Mold Breaker", "Teravolt", "Turboblaze"].includes(attacker.curAbility) || move.negateAbility)) {
 		// since Mold Breaker and Ability Shield don't actually change damage, I would prefer that they don't print in the description
 		// a reason to revert this change and print Mold Breaker would be to better highlight to users when an ability is being negated
 		defender.curAbility = "";
@@ -1288,7 +1287,7 @@ function getModdedWeight(pokemon) {
 function killsShedinja(attacker, defender, move, field = {}) {
 	// This is meant to at-a-glance highlight moves that are fatal to Shedinja and allow the mass calc to better capture Shedinja's defensive profile.
 	// sorry for the mess of conditionals
-	if (!(defender.curAbility === "Wonder Guard" && defender.curHP == 1)) {
+	if (!(defender.ability === "Wonder Guard" && defender.curHP == 1)) {
 		return false;
 	}
 	let afflictable = defender.status === "Healthy" && !(field.terrain === "Misty" && isGrounded(defender, field));
