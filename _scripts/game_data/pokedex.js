@@ -18125,9 +18125,9 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 			"hp": 113,
 			"at": 70,
 			"df": 120,
-			"sa": 52,
-			"sd": 135,
-			"sp": 65
+			"sa": 135,
+			"sd": 65,
+			"sp": 52
 		},
 		"w": 290,
 		"abilities": ["Mind's Eye"]
