@@ -5288,7 +5288,6 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"category": "Physical",
 		"makesContact": true,
 		"isPunch": true,
-		"hasSecondaryEffect": true, // No actual effect, but is affected by Sheer Force
 		"hasPriority": true,
 		"acc": 100
 	},

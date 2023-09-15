@@ -677,6 +677,9 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		attacker.item === "Soul Dew" && gen >= 7 && (attacker.name === "Latios" || attacker.name === "Latias")))) {
 		bpMods.push(0x1333);
 		description.attackerItem = attacker.item;
+	} else if (attacker.name.startsWith("Ogerpon-") && attacker.item.endsWith("Mask") && attacker.item.startsWith(attacker.name.substring(attacker.name.indexOf("-") + 1))) {
+		bpMods.push(0x1333);
+		description.attackerItem = attacker.item;
 	} else if (attacker.item === moveType + " Gem") {
 		bpMods.push(gen >= 6 ? 0x14CD : 0x1800);
 		description.attackerItem = attacker.item;
@@ -818,8 +821,8 @@ function calcAtk(attacker, defender, move, field, description) {
 		description.attackerAbility = attacker.curAbility;
 	}
 
-	if ((attacker.curAbility === "Hadron Engine" && field.terrain === "Electric" && moveCategory === "Special") ||
-		(attacker.curAbility === "Orichalcum Pulse" && field.weather.endsWith("Sun") && moveCategory === "Physical")) {
+	if ((attacker.ability === "Hadron Engine" && field.terrain === "Electric" && moveCategory === "Special") ||
+		(attacker.ability === "Orichalcum Pulse" && field.weather.endsWith("Sun") && moveCategory === "Physical")) {
 		atMods.push(0x1555); // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9423025
 		description.attackerAbility = attacker.curAbility;
 	}
@@ -1388,7 +1391,7 @@ function checkZacianZamazaenta(pokemon) {
 }
 
 function checkEmbodyAspect(pokemon) {
-	if (pokemon.ability !== "Embody Aspect") {
+	if (pokemon.ability !== "Embody Aspect" || !pokemon.name.startsWith("Ogerpon")) {
 		return;
 	}
 	let boostedStat = pokemon.name === "Ogerpon-Wellspring" ? SD : pokemon.name === "Ogerpon-Hearthflame" ? AT : pokemon.name === "Ogerpon-Cornerstone" ? DF : SP;

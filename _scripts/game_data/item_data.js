@@ -301,7 +301,10 @@ var ITEMS_SV = ITEMS_SS.concat([
 	"Griseous Core",
 	"Adamant Crystal",
 	"Lustrous Globe",
-	"Fairy Feather"
+	"Fairy Feather",
+	"Wellspring Mask",
+	"Hearthflame Mask",
+	"Cornerstone Mask"
 ]);
 
 function getTechnoBlast(item) {
