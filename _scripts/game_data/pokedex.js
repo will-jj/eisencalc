@@ -11658,7 +11658,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 		"w": 112.6,
 		"ab": "Aerilate",
 		"abilities": ["Aerilate"],
-		"hasBaseForme": "Salamencea"
+		"hasBaseForme": "Salamence"
 	},
 	"Mega Sceptile": {
 		"t1": "Grass",
