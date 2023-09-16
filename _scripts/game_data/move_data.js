@@ -5466,7 +5466,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
-	"Grassy Glide": {"bp": 60},
+	"Grassy Glide": {"bp": 55},
 	"Wicked Blow": {"bp": 75},
 	"Glacial Lance": {"bp": 120},
 	"Barb Barrage": {
