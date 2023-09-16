@@ -158,18 +158,19 @@ var savecustom = function () {
 		}
 
 		// How formes are handled:
-		// Most Pokemon that have formes don't actually use the calc's forme system. Instead they are easier to handle because they're simply listed as separate species.
+		// Most Pokemon that have formes don't actually use the calc's forme system. Instead they are simply listed as separate species, which is easier to deal with.
 		// Search for hasBaseForme in the pokedex to see what actually uses the forme system.
 
-		// If something has a base forme, species is set to the hasBaseForme in the forme's pokedex object.
-		// This means that species will always be the simplest string: the name of the base species. Both for Pokemon the use the forme system and don't.
+		// If something has a base forme, species gets set to the hasBaseForme in the forme's pokedex object.
+		// This means that species will always be the simplest string: the name of the base species. Both for Pokemon that use the forme system and those that don't.
 		// If something has a base forme, forme is set to the full string: "speciesName-formeSuffix". The way the forme object is named in the pokedex.
 		// The set gets saved in localStorage custom with key species (which is hasBaseForme). Get the imported set object with SETDEX_CUSTOM[hasBaseForme][spreadName].
 		// When the calc loads the set, if the custom set's forme is not "", then forme is used to load the correct pokedex object.
 
 		// Megas have changed in how they are handled. Previously they only stored their base species name and mega stone item.
 		// They would load as Mega if the item was their mega stone. The forme loading code still accommodates old Mega sets that were made before this forme import logic.
-		// Currently each of the following Showdown format lines will load as Mega when imported: "baseSpecies-Mega @ Speciesite", "baseSpecies-Mega", "baseSpecies @ Speciesite"
+		// Currently each of the following Showdown format lines will correctly load as Mega when imported:
+		// "baseSpecies-Mega @ Speciesite", "baseSpecies-Mega", "baseSpecies @ Speciesite"
 
 		if (showdownFormes[species]) {
 			species = showdownFormes[species];
@@ -288,13 +289,9 @@ var savecustom = function () {
 			rejectSet = true;
 			alert("Error: " + spreadName + " is already an AI set. Select a different spread name.");
 		} else if (pokedex[species].hasBaseForme) {
-			// This error might pop up if the pokedex has a chain of hasBaseForme longer than 2.
+			// This error might pop up if the pokedex has an entry with a forme of a forme.
 			rejectSet = true;
 			alert("Error: recognized " + species + " as an alternate forme, but did not parse it properly. Please contact Silver or Eisen with a screenshot including this popup and the calc.");
-		} else if (ability === "Parental Bond" && moves.indexOf("Power-Up Punch") > -1 && moves.indexOf("Power-Up Punch") < 3) {
-			// This should have been fixed by the tweaks to optimize the mass calc, but I'm leaving this intact until it's tested further.
-			rejectSet = true;
-			alert("Please ensure that Power-up Punch is in the 4th moveslot, otherwise you may experience some errors in calcs!");
 		}
 		if (rejectSet) {
 			alert('Set not saved: "' + species + '"');
