@@ -651,7 +651,8 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.attackerAbility = attacker.curAbility;
 	}
 
-	if (defender.curAbility === "Heatproof" && moveType === "Fire") {
+	// Heatproof was a power mod until gen 9; it is currently an attack mod https://www.smogon.com/forums/threads/bug-reports-v4-read-original-post-before-posting.3663703/post-9780607
+	if (defender.curAbility === "Heatproof" && moveType === "Fire" && (gen <= 8 || gen == 80)) {
 		bpMods.push(0x800);
 		description.defenderAbility = defender.curAbility;
 	} else if (defender.curAbility === "Dry Skin" && moveType === "Fire") {
@@ -671,13 +672,13 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		attacker.item === "Adamant Crystal" && attacker.name === "Dialga-O" ||
 		attacker.item === "Lustrous Orb" && attacker.name === "Palkia" ||
 		attacker.item === "Lustrous Globe" && attacker.name === "Palkia-O" ||
-		(gen <= 8 || gen == 80) && attacker.item === "Griseous Orb" && attacker.name === "Giratina-O" || // thanks GF, this is horrible
+		(gen <= 8 || gen == 80) && attacker.item === "Griseous Orb" && attacker.name === "Giratina-O" ||
 		gen >= 9 && gen != 80 && attacker.item === "Griseous Orb" && attacker.name === "Giratina" ||
 		attacker.item === "Griseous Core" && attacker.name === "Giratina-O" ||
 		attacker.item === "Soul Dew" && gen >= 7 && (attacker.name === "Latios" || attacker.name === "Latias")))) {
 		bpMods.push(0x1333);
 		description.attackerItem = attacker.item;
-	} else if (attacker.name.startsWith("Ogerpon-") && attacker.item.endsWith("Mask") && attacker.item.startsWith(attacker.name.substring(attacker.name.indexOf("-") + 1))) {
+	} else if (attacker.name.startsWith("Ogerpon-") && attacker.item == attacker.name.substring(attacker.name.indexOf("-") + 1) + " Mask") {
 		bpMods.push(0x1333);
 		description.attackerItem = attacker.item;
 	} else if (attacker.item === moveType + " Gem") {
@@ -790,14 +791,19 @@ function calcAtk(attacker, defender, move, field, description) {
 		atMods.push(0x800);
 		description.attackerAbility = attacker.curAbility;
 	}
-
-	if (attacker.curAbility === "Flower Gift" && field.weather.indexOf("Sun") > -1 && moveCategory === "Physical" ||
-		attacker.curAbility === "Solar Power" && field.weather.indexOf("Sun") > -1 && moveCategory === "Special") {
+	let attackerProtoQuark = checkProtoQuarkHighest(attacker, field.weather, field.terrain);
+	if ((attackerProtoQuark === AT && moveCategory === "Physical") || (attackerProtoQuark === SA && moveCategory === "Special")) {
+		atMods.push(0x14CD); // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9423025
+		description.attackerAbility = attacker.ability; // use base ability for ProtoQuark
+	} else if (attacker.curAbility === "Transistor" && gen >= 9 && moveType === "Electric") {
+		atMods.push(0x14CD); // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9647211
+		description.attackerAbility = attacker.curAbility;
+	} else if (attacker.curAbility === "Flower Gift" && field.weather.endsWith("Sun") && moveCategory === "Physical" ||
+		attacker.curAbility === "Solar Power" && field.weather.endsWith("Sun") && moveCategory === "Special") {
 		atMods.push(0x1800);
 		description.attackerAbility = attacker.curAbility;
 		description.weather = field.weather;
-	} 
-	if (attacker.curAbility === "Guts" && attacker.status !== "Healthy" && moveCategory === "Physical" ||
+	} else if (attacker.curAbility === "Guts" && attacker.status !== "Healthy" && moveCategory === "Physical" ||
 		attacker.curAbility === "Overgrow" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Grass" ||
 		attacker.curAbility === "Blaze" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Fire" ||
 		attacker.curAbility === "Torrent" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Water" ||
@@ -813,26 +819,13 @@ function calcAtk(attacker, defender, move, field, description) {
 	} else if (attacker.curAbility === "Flash Fire (activated)" && moveType === "Fire") {
 		atMods.push(0x1800);
 		description.attackerAbility = "Flash Fire";
-	}
-
-	if (attacker.curAbility === "Water Bubble" && moveType === "Water" ||
+	} else if (attacker.curAbility === "Water Bubble" && moveType === "Water" ||
 		(attacker.curAbility === "Huge Power" || attacker.curAbility === "Pure Power") && moveCategory === "Physical") {
 		atMods.push(0x2000);
 		description.attackerAbility = attacker.curAbility;
-	}
-
-	if ((attacker.ability === "Hadron Engine" && field.terrain === "Electric" && moveCategory === "Special") ||
-		(attacker.ability === "Orichalcum Pulse" && field.weather.endsWith("Sun") && moveCategory === "Physical")) {
+	} else if ((attacker.curAbility === "Hadron Engine" && field.terrain === "Electric" && moveCategory === "Special") ||
+		(attacker.curAbility === "Orichalcum Pulse" && field.weather.endsWith("Sun") && moveCategory === "Physical")) {
 		atMods.push(0x1555); // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9423025
-		description.attackerAbility = attacker.curAbility;
-	}
-	let attackerProtoQuark = checkProtoQuarkHighest(attacker, field.weather, field.terrain);
-	if ((attackerProtoQuark === AT && moveCategory === "Physical") || (attackerProtoQuark === SA && moveCategory === "Special")) {
-		atMods.push(0x14CD); // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9423025
-		description.attackerAbility = attacker.ability; // use base ability for ProtoQuark
-	}
-	if (attacker.curAbility === "Transistor" && gen >= 9 && moveType === "Electric") {
-		atMods.push(0x14CD); // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9647211
 		description.attackerAbility = attacker.curAbility;
 	}
 
@@ -842,7 +835,9 @@ function calcAtk(attacker, defender, move, field, description) {
 		description.isRuinAtk = true;
 	}
 
+	// Heatproof was a power mod until gen 9 https://www.smogon.com/forums/threads/bug-reports-v4-read-original-post-before-posting.3663703/post-9780607
 	if (defender.curAbility === "Thick Fat" && (moveType === "Fire" || moveType === "Ice") ||
+		defender.curAbility === "Heatproof" && moveType === "Fire" && gen >= 9 && gen != 80 ||
 		defender.curAbility === "Water Bubble" && moveType === "Fire" ||
 		defender.curAbility === "Purifying Salt" && moveType === "Ghost") {
 		atMods.push(0x800);
@@ -1167,10 +1162,17 @@ function buildDescription(description) {
 		output += "Tera " + description.defenderTera + " ";
 	}
 	output += description.defenderName;
-	if (description.weather) {
-		output += " in " + description.weather;
-	} else if (description.terrain) {
-		output += " in " + description.terrain + " Terrain";
+	if (description.weather || description.terrain) {
+		output += " in ";
+		if (description.weather) {
+			output += description.weather;
+		}
+		if (description.weather && description.terrain) {
+			output += " and ";
+		}
+		if (description.terrain) {
+			output += description.terrain + " Terrain";
+		}
 	}
 	if (description.isDoublesScreen) {
 		output += " through Doubles " + (description.isReflect ? "Reflect" : "Light Screen");
@@ -1391,7 +1393,7 @@ function checkZacianZamazaenta(pokemon) {
 }
 
 function checkEmbodyAspect(pokemon) {
-	if (pokemon.ability !== "Embody Aspect" || !pokemon.name.startsWith("Ogerpon")) {
+	if (isNeutralizingGas || !(pokemon.ability === "Embody Aspect" && pokemon.name.startsWith("Ogerpon") && pokemon.isTerastal)) {
 		return;
 	}
 	let boostedStat = pokemon.name === "Ogerpon-Wellspring" ? SD : pokemon.name === "Ogerpon-Hearthflame" ? AT : pokemon.name === "Ogerpon-Cornerstone" ? DF : SP;
@@ -1409,7 +1411,6 @@ function isShellSideArmPhysical(attacker, defender, move) {
 }
 
 function checkProtoQuarkHighest(pokemon, weather, terrain) {
-	// Neither Mold Breaker nor Gastro Acid ignore ProtoQuark. Assume that ProtoQuark can't be negated
 	if ((pokemon.ability === "Protosynthesis" && (pokemon.item === "Booster Energy" || weather.indexOf("Sun") > -1)) ||
 		(pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric"))) {
 		let stats = pokemon.stats;

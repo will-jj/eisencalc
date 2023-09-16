@@ -756,7 +756,12 @@ function Pokemon(pokeInfo) {
 		poke.name = setName;
 	} else {
 		let pokemonName = setName.substring(0, setName.indexOf(" ("));
-		poke.name = pokedex[pokemonName].formes ? pokeInfo.find(".forme").val() : pokemonName;
+		let currentForme = pokeInfo.find(".forme").val();
+		if (pokedex[pokemonName].formes && currentForme != null) {
+			poke.name = currentForme;
+		} else {
+			poke.name = pokemonName;
+		}
 	}
 	// .ability is the mon's ability and should never be overwritten
 	// .curAbility represents the ability after negation through Neutralizing Gas or a Mold Breaker ability or move
