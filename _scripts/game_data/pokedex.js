@@ -12267,9 +12267,9 @@ POKEDEX_XY["Gothita"].abilities.push("Competitive");
 POKEDEX_XY["Gothorita"].abilities.push("Competitive");
 POKEDEX_XY["Gothitelle"].abilities.push("Competitive");
 POKEDEX_XY["Ferrothorn"].abilities.push("Anticipation");
-POKEDEX_XY["Litwick"].abilities[2] = "Infiltrator";
-POKEDEX_XY["Lampent"].abilities[2] = "Infiltrator";
-POKEDEX_XY["Chandelure"].abilities[2] = "Infiltrator";
+POKEDEX_XY["Litwick"].abilities[3] = "Infiltrator";
+POKEDEX_XY["Lampent"].abilities[3] = "Infiltrator";
+POKEDEX_XY["Chandelure"].abilities[3] = "Infiltrator";
 
 var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 
