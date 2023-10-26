@@ -57,7 +57,13 @@ title: Battle Facilities Calculator
 
 	<div class="panel poke-info" id="p1">
 		<div class="panel-heading">
-			<h4 class="panel-title">Pokémon 1</h4>
+			<h4 class="panel-title">Pokémon 1
+				<div class="autoivs calc-trigger gen-specific g3 g4" id="autoivsL">
+					IVs:
+					<input class="autoivs-box gen-specific g4" id="autoivs-box" style="width:2.5em" value=31 />
+					<select class="autoivs-select gen-specific g3" id="autoivs-select"></select>
+				</div>
+			</h4>
 		</div>
 		<div class="panel-body">
 			<input type="text" class="set-selector calc-trigger" />
@@ -430,7 +436,7 @@ title: Battle Facilities Calculator
 						<input class="btn-input calc-trigger" type="radio" name="autolevel-btn" value="100" id="autolevel100" /><label class="btn btn-right format-btn" for="autolevel100">100</label>
 					</span>
 				</div>
-				<div class="calc-trigger gen-specific g3 g4 g5 g6 g7" id="autoivs">
+				<div class="autoivs calc-trigger gen-specific g5 g6 g7" id="autoivs-center">
 					AI IVs:
 					<input class="autoivs-box gen-specific g4" id="autoivs-box" style="width:2.5em" value=31 />
 					<select class="gen-specific g3 g5 g6 g7" id="autoivs-select"></select>
@@ -707,7 +713,13 @@ title: Battle Facilities Calculator
 	</div><!--End Field panel-->
 	<div class="panel poke-info" id="p2">
 		<div class="panel-heading">
-			<h4 class="panel-title">Pokémon 2</h4>
+			<h4 class="panel-title">Pokémon 2
+				<div class="autoivs calc-trigger gen-specific g3 g4" id="autoivsR">
+					IVs:
+					<input class="autoivs-box gen-specific g4" id="autoivs-box" style="width:2.5em" value=31 />
+					<select class="autoivs-select gen-specific g3" id="autoivs-select"></select>
+				</div>
+			</h4>
 		</div>
 		<div class="panel-body">
 			<input type="text" class="set-selector calc-trigger" />

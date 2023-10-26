@@ -316,7 +316,7 @@ select.toxic-counter {
 }
 
 /* Auto IVs Box */
-#autoivs {
+.autoivs {
   float: right;
   text-decoration: none;
   display: inline;

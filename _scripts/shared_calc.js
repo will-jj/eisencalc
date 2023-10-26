@@ -108,8 +108,14 @@ $("#autolevel").change(function () {
 	localStorage.setItem("autolevelGen" + gen, autoLevel);
 });
 
-$("#autoivs").change(function () {
-	var autoIVs = gen == 4 ? $("#autoivs-box").val() : $('#autoivs-select').find(":selected").val();
+$("#autoivs-center").change(function () {
+	if (gen <= 4 || gen >= 8) {
+		return;
+	}
+	var autoIVs = $("#autoivs-center #autoivs-select").find(":selected").val();
+	if (!autoIVs || isNaN(autoIVs)) {
+		autoIVs = 31;
+	}
 	var p1 = $("#p1");
 	var p2 = $("#p2");
 
@@ -134,6 +140,58 @@ $("#autoivs").change(function () {
 			calcHP(p2);
 			calcStats(p2);
 		}
+	}
+});
+
+$("#autoivsL").change(function () {
+	if (gen == 3) {
+		var autoIVs = parseInt($('#autoivsL #autoivs-select').find(":selected").val());
+	} else if (gen == 4) {
+		var autoIVs = parseInt($('#autoivsL #autoivs-box').val());
+	} else {
+		return;
+	}
+	if (!autoIVs || isNaN(autoIVs)) {
+		autoIVs = 31;
+	}
+
+	var p1 = $("#p1");
+
+	var p1Name = p1.find("input.set-selector").val(); // speciesName (setName)
+	var speciesSets = setdex[p1Name.substring(0, p1Name.indexOf(" ("))];
+	if (speciesSets && speciesSets[p1Name.substring(p1Name.indexOf('(') + 1, p1Name.length - 1)]) {
+		p1.find(".hp .ivs").val(autoIVs);
+		for (i = 0; i < STATS.length; i++) {
+			p1.find("." + STATS[i] + " .ivs").val(autoIVs);
+		}
+		calcHP(p1);
+		calcStats(p1);
+	}
+});
+
+$("#autoivsR").change(function () {
+	if (gen == 3) {
+		var autoIVs = parseInt($('#autoivsR #autoivs-select').find(":selected").val());
+	} else if (gen == 4) {
+		var autoIVs = parseInt($('#autoivsR #autoivs-box').val());
+	} else {
+		return;
+	}
+	if (!autoIVs || isNaN(autoIVs)) {
+		autoIVs = 31;
+	}
+
+	var p2 = $("#p2");
+
+	var p2Name = p2.find("input.set-selector").val(); // speciesName (setName)
+	var speciesSets = setdex[p2Name.substring(0, p2Name.indexOf(" ("))];
+	if (speciesSets && speciesSets[p2Name.substring(p2Name.indexOf('(') + 1, p2Name.length - 1)]) {
+		p2.find(".hp .ivs").val(autoIVs);
+		for (i = 0; i < STATS.length; i++) {
+			p2.find("." + STATS[i] + " .ivs").val(autoIVs);
+		}
+		calcHP(p2);
+		calcStats(p2);
 	}
 });
 
@@ -481,7 +539,17 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
 		var set = setdexAll[pokemonName][setName];
 		pokeObj.find(".level").val(set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50));
-		var autoIVs = gen == 4 ? parseInt($("#autoivs-box").val()) : (gen <= 7 ? parseInt($('#autoivs-select').find(":selected").val()) : 31);
+		let autoIVs;
+		if (gen == 3) {
+			autoIVs = parseInt(pokeObj.find('.autoivs-select').find(":selected").val());
+		} else if (gen == 4) {
+			autoIVs = parseInt(pokeObj.find(".autoivs-box").val());
+		} else if (gen <= 7) {
+			autoIVs = parseInt($('#autoivs-center #autoivs-select').find(":selected").val());
+		}
+		if (!autoIVs || isNaN(autoIVs)) {
+			autoIVs = 31;
+		}
 		pokeObj.find(".hp .evs").val(set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0);
 		pokeObj.find(".hp .ivs").val(set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : autoIVs);
 		for (i = 0; i < STATS.length; i++) {
@@ -1082,7 +1150,7 @@ $(".gen").change(function () {
 		items = ITEMS_ADV;
 		abilities = ABILITIES_ADV;
 		calculateAllMoves = CALCULATE_ALL_MOVES_ADV;
-		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_GEN3));
+		$(".autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_GEN3));
 		forumLink = "https://www.smogon.com/forums/threads/gen-iii-battle-frontier-discussion-and-records.3648697/";
 		break;
 	case 4:
@@ -1103,7 +1171,7 @@ $(".gen").change(function () {
 		items = ITEMS_BW;
 		abilities = ABILITIES_BW;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
+		$("#autoivs-center #autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
 		forumLink = "https://www.smogon.com/forums/threads/black-white-battle-subway-records-now-with-gen-4-records.102593/";
 		break;
 	case 6:
@@ -1114,7 +1182,7 @@ $(".gen").change(function () {
 		items = ITEMS_XY;
 		abilities = ABILITIES_XY;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
+		$("#autoivs-center #autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
 		forumLink = "https://www.smogon.com/forums/threads/battle-maison-discussion-records.3492706/";
 		break;
 	case 7:
@@ -1127,7 +1195,7 @@ $(".gen").change(function () {
 		items = ITEMS_SM;
 		abilities = ABILITIES_SM;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		$("#autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
+		$("#autoivs-center #autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
 		forumLink = "https://www.smogon.com/forums/threads/battle-tree-discussion-and-records.3587215/";
 		break;
 	case 8:
