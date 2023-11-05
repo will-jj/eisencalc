@@ -164,13 +164,10 @@ function performCalculations() {
 	var field = new Field();
 	var startingWeather = field.getWeather();
 
-	// set up the list of MassPokemon
 	let setSpecies = Object.keys(gen == 3 && $("#autolevel-box").val() == 50 ? SETDEX_EM : setdex);
-	for (let i = 0; i < setSpecies.length; i++) {
-		let speciesName = setSpecies[i];
+	for (let speciesName of setSpecies) {
 		let setNames = Object.keys(setdex[speciesName]);
-		for (let j = 0; j < setNames.length; j++) {
-			let setName = setNames[j];
+		for (let setName of setNames) {
 			setPoke = MassPokemon(speciesName, setName);
 			setTier = setPoke.tier; // setPoke.tier can be: 50, Hall, HallR10, 28, 40, Tower, RS, SM, DM, SMDM. A set might not have a tier key.
 			if (gen == 4 && selectedTier === "All" && setTier && setTier.includes("Hall")) {
@@ -198,8 +195,15 @@ function performCalculations() {
 			for (let n = 0; n < 4; n++) {
 				result = damageResults[n];
 				attackerMove = attacker.moves[n];
-				minDamage = result.damage[0] * (attackerMove.name === "Triple Axel" ? 1 : attackerMove.hits); // Triple Axel already handles its extra hit(s) in the damage script
-				maxDamage = result.damage[result.damage.length - 1] * (attackerMove.name === "Triple Axel" ? 1 : attackerMove.hits);
+				let resultDamageMap = mapFromArray(result.damage);
+				let moveHits = attackerMove.hits; // this is placeholder.
+				let assembledDamageMap = getAssembledDamageMap(result, resultDamageMap, moveHits);
+				let firstHitMap = result.hasOwnProperty('resistBerryDamage') ? getAssembledDamageMap(result, resultDamageMap, moveHits, true) : new Map(assembledDamageMap);
+				let mapCombinations = result.damage.length ** moveHits;
+				let sortedDamageValues = Array.from(firstHitMap.keys());
+				sortedDamageValues.sort((a, b) => a - b);
+				minDamage = sortedDamageValues[0];
+				maxDamage = sortedDamageValues[sortedDamageValues.length - 1];
 				// If any piece of the calculation is a string and not a number ie. Pokemon.level, stats will concatinate into strings, and the below will eval to 0.
 				// I want to be very sure that everything is using the correct types, so I want this behavior. Shoutouts to writing code w/o tests.
 				minPercentage = Math.round(minDamage * 1000 / defender.maxHP) / 10;
@@ -211,7 +215,8 @@ function performCalculations() {
 					}
 					data.push(highestDamage <= 0 ? "(No Move)" : attackerMove.name.replace("Hidden Power", "HP"));
 					data.push(minPercentage + " - " + maxPercentage + "%");
-					setKOChanceText(result, attackerMove, attacker, defender, field.getSide(~~(mode === "one-vs-all")));
+					//setKOChanceText(result, attackerMove, attacker, defender, field.getSide(~~(mode === "one-vs-all")));
+					setKOChanceText(result, attackerMove, moveHits, attacker, defender, field.getSide(~~(mode === "one-vs-all")), assembledDamageMap, mapCombinations, firstHitMap, sortedDamageValues);
 					if (attackerMove.bp === 0) {
 						data.push("nice move");
 					} else {
@@ -230,7 +235,6 @@ function performCalculations() {
 			field.setWeather(startingWeather);
 		}
 	}
-	var pokemon = mode === "one-vs-all" ? attacker : defender;
 	table.rows.add(dataSet).draw();
 	return dataSet.length;
 }

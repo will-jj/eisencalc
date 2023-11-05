@@ -101,9 +101,109 @@ $(".result-move").change(function () {
 	updateDamageText($(this));
 });
 
+var MAX_GROUP_COUNT = 14;
+var MAX_UNGROUPED_COUNT = MAX_GROUP_COUNT + 4;
+function damageMapAsGroups(damageMap, sortedValues, combinationCount) {
+	// This takes in a damage map and puts its damage values into groups with the probability of that group occuring.
+	// This is to display something smaller and simpler for the complete calculation of multi-hit moves.
+	let valuesCount = sortedValues.length;
+	let groupCount = Math.min(valuesCount, MAX_GROUP_COUNT);
+	// make an array that stores how many damage values are in each group, evenly distributed
+	let groupSizes = new Array(groupCount);
+	groupSizes.fill(Math.floor(valuesCount / groupCount));
+	// if the number of damage values doesn't evenly divide, add 1 to the highest and lowest group(s)
+	let extra = valuesCount % groupCount;
+	let upperExtra = Math.ceil(extra / 2);
+	extra -= upperExtra;
+	for ( ; upperExtra > 0; upperExtra--) {
+		groupSizes[groupCount - upperExtra]++;
+	}
+	for (extra--; extra >= 0; extra--) {
+		groupSizes[extra]++;
+	}
+	// contruct the groups and generate the string
+	let valueIndex = 0;
+	let groupDamageResult = "[";
+	for (let i = 0; i < groupCount; i++) {
+		let groupSize = groupSizes[i];
+		let group = sortedValues[valueIndex]
+		if (groupSize > 1) {
+			group += "-" + sortedValues[valueIndex + groupSize - 1];
+		}
+		let groupCountTotal = 0;
+		// get the total number of combinations the group has
+		for (let j = valueIndex; j < valueIndex + groupSize; j++) {
+			groupCountTotal += damageMap.get(sortedValues[j]);
+		}
+		let percent = Math.round(groupCountTotal / combinationCount * 1000) / 10;
+		if (percent == 0) {
+			percent = "~0";
+		}
+		if (i != 0) {
+			groupDamageResult += ", ";
+		}
+		groupDamageResult += group + ": " + percent + "%";
+		valueIndex += groupSize;
+	}
+	return groupDamageResult + "]";
+}
+
 function setDamageText(result, attacker, defender, move, fieldSide, resultLocation) {
-	let minDamage = result.damage[0] * (move.name === "Triple Axel" ? 1 : move.hits);
-	let maxDamage = result.damage[result.damage.length - 1] * (move.name === "Triple Axel" ? 1 : move.hits);
+	if (!result.damage) {
+		result.damageText = "Error: uninitialized damage array.";
+		console.log(result.damageText);
+		console.log(move.name + " from " + attacker.name + " (" + attacker.ability + ") vs. " + defender.name + " (" + defender.ability + ")");
+		return;
+	}
+	let resultDamageMap = mapFromArray(result.damage); // damage map of a single hit (not sum of multi hits), no resist berry
+	let moveHits = 1;
+	if (move.isThreeHit) {
+		moveHits = 3;
+	} else if (move.isTwoHit || result.childDamage) {
+		moveHits = 2;
+	} else if (move.hits) {
+		moveHits = move.hits;
+	}
+
+	// assembledDamageMap is the damage map of all moveHits number of hits. Resist berry is not applied
+	// firstHitMap is the same as assembledDamageMap, but with resist berry applied if applicable. On multi hit moves the berry only applies to the first strike of the multihit.
+	// firstHitMap is the basis for the ranges and percentages displayed for the user, and is the same as assembledDamageMap if there is no resist berry.
+	let assembledDamageMap = getAssembledDamageMap(result, resultDamageMap, moveHits);
+	let firstHitMap = result.hasOwnProperty('resistBerryDamage') ? getAssembledDamageMap(result, resultDamageMap, moveHits, true) : new Map(assembledDamageMap);
+
+	// put together the primary hit information based on the first hit map
+	let sortedDamageValues = Array.from(firstHitMap.keys());
+	sortedDamageValues.sort((a, b) => a - b);
+	let minDamage = sortedDamageValues[0];
+	let maxDamage = sortedDamageValues[sortedDamageValues.length - 1];
+	let mapCombinations = result.damage.length ** moveHits;
+	if (assembledDamageMap) {
+		if (mapCombinations > MAX_UNGROUPED_COUNT) {
+			result.multiHitPercents = moveHits + " hits: " + damageMapAsGroups(firstHitMap, sortedDamageValues, mapCombinations);
+		}
+
+		if (result.childDamage) {
+			result.hitDamageValues = "(First hit: " + (result.resistBerryDamage ? result.resistBerryDamage : result.damage).join(", ") +
+			"; Second hit: " + result.childDamage.join(", ") + ")";
+		} else if (result.tripleAxelDamage) {
+			result.hitDamageValues = "(First hit: " + (result.resistBerryDamage ? result.resistBerryDamage : result.tripleAxelDamage[0]).join(", ") +
+			"; Second hit: " + result.tripleAxelDamage[1].join(", ") +
+			(moveHits > 2 ? "; Third hit: " + result.tripleAxelDamage[2].join(", ") : "") + ")";
+		} else if (result.resistBerryDamage) {
+			result.hitDamageValues = "(First hit: " + result.resistBerryDamage.join(", ") + "; Other hits: " + result.damage.join(", ") + ")";
+		} else {
+			result.hitDamageValues = "(" + result.damage.join(", ") + ")";
+		}
+	}
+
+	// damageMap numbers use integral numbers, except in this if statement.
+	// To avoid exceeding Number.MAX_SAFE_INTEGER (2 ** 53 - 1) and avoid needing BigNums, divide all values by the same factor
+	// Since damage maps are (currently) only used for the first 4 hits when calcing an NHKO, dividing all values by (mapCombinations / 8192) works.
+	if (mapCombinations > MAP_SQUASH_CONSTANT) {
+		squashDamageMap(firstHitMap, mapCombinations);
+		mapCombinations = squashDamageMap(assembledDamageMap, mapCombinations);
+	}
+
 	let minPercent = Math.round(minDamage * 1000 / defender.maxHP) / 10;
 	let maxPercent = Math.round(maxDamage * 1000 / defender.maxHP) / 10;
 	result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
@@ -112,7 +212,7 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 	} else if (move.isMLG) {
 		result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=iD92h-M474g'>it's a one-hit KO!</a>";
 	} else {
-		setKOChanceText(result, move, attacker, defender, fieldSide);
+		setKOChanceText(result, move, moveHits, attacker, defender, fieldSide, assembledDamageMap, mapCombinations, firstHitMap, sortedDamageValues);
 	}
 	setUpRecoilRecoveryText(result, attacker, defender, move, minDamage, maxDamage);
 	let recoilRecovery = "";
@@ -169,7 +269,7 @@ function setUpRecoilRecoveryText(result, attacker, defender, move, minDamage, ma
 		result.recoilRange = Math.max(roundFunc(atkMaxHP / 4), 1);
 		result.recoilPercent = Math.round(result.recoilRange * 1000 / atkMaxHP) / 10;
 	} else if (move.hasRecoil === true) { // checking for strict equality to true is necessary here
-		 // currently if a move has its hasRecoil property simply set to true instead of a string or a number, it means it damages the user for 50% max HP
+		// currently if a move has its hasRecoil property simply set to true instead of a string or a number, it means it damages the user for 50% max HP
 		result.recoilType = "recoil";
 		result.recoilRange = Math.ceil(atkMaxHP / 2);
 		result.recoilPercent = Math.round(result.recoilRange * 1000 / atkMaxHP) / 10;
@@ -181,8 +281,8 @@ function setUpRecoilRecoveryText(result, attacker, defender, move, minDamage, ma
 		let healingMultiplier = move.percentHealed * (attacker.item === "Big Root" ? 1.3 : 1);
 		if (result.childDamage) {
 			// unnecessarily messy solution just to account for Parental Bond healing after each hit
-			let minParentDamage = result.parentDamage[0];
-			let maxParentDamage = result.parentDamage[result.parentDamage.length - 1];
+			let minParentDamage = result.damage[0];
+			let maxParentDamage = result.damage[result.damage.length - 1];
 			let minChildDamage = result.childDamage[0];
 			let maxChildDamage = result.childDamage[result.childDamage.length - 1];
 			// get min recovery
@@ -201,8 +301,8 @@ function setUpRecoilRecoveryText(result, attacker, defender, move, minDamage, ma
 			} else {
 				// edge case where hitting optimal damage rolls to KO an even-HP defender maximizes recovery due to recovery values using normal rounding
 				let highestOddParent = maxParentDamage;
-				for (let i = result.parentDamage.length - 2; highestOddParent % 2 == 1 && i >= 0; i--) {
-					highestOddParent = result.parentDamage[i];
+				for (let i = result.damage.length - 2; highestOddParent % 2 == 1 && i >= 0; i--) {
+					highestOddParent = result.damage[i];
 				}
 				if (highestOddParent % 2 == 1 && highestOddParent + maxChildDamage >= defCurHP) {
 					maxHealthRecovered = Math.round(defCurHP * healingMultiplier) + 1;
@@ -260,12 +360,7 @@ function updateDamageText(resultMoveObj) {
 			mainResult = result.description + ": " + result.damageText + recoilText + recoveryText + " -- " + koChanceText;
 			$("#mainResult").html(mainResult);
 			$("#afterAcc").html(result.afterAccText ? result.afterAccText : "");
-			if (result.parentDamage) {
-				$("#damageValues").text("(First hit: " + result.parentDamage.join(", ") +
-                    "; Second hit: " + result.childDamage.join(", ") + ")");
-			} else {
-				$("#damageValues").text("(" + result.damage.join(", ") + ")");
-			}
+			$("#damageValues").html(result.hitDamageValues + (result.multiHitPercents ? "<br />" + result.multiHitPercents : ""));
 		} else {
 			mainResult = "problem with mainResult";
 		}
