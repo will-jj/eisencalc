@@ -6,7 +6,7 @@ function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	checkForecast(p2, field.getWeather());
 	checkKlutz(p1);
 	checkKlutz(p2);
-	checkEvo(p1, p2);
+	checkOmniboosts(p1, p2);
 	checkMinimize(p1, p2);
 	checkSeeds(p1, field.getTerrain());
 	checkSeeds(p2, field.getTerrain());
@@ -51,7 +51,7 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	checkForecast(defender, field.getWeather());
 	checkKlutz(attacker);
 	checkKlutz(defender);
-	checkEvo(attacker, defender);
+	checkOmniboosts(attacker, defender);
 	checkSeedsHonk(attacker, field.getTerrain());
 	checkSeedsHonk(defender, field.getTerrain());
 	checkAngerShell(attacker);
@@ -83,13 +83,10 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	return results;
 }
 
-var moveType;
-var moveCategory;
-var makesContact;
-var attackerGrounded;
-var defenderGrounded;
-var isCritical;
+var moveType, moveCategory, makesContact, isCritical;
+var attackerGrounded, defenderGrounded;
 var originalSABoost;
+var allowResistBerry = true;
 function getDamageResult(attacker, defender, move, field) {
 	var moveDescName = move.name;
 
@@ -323,12 +320,8 @@ function getDamageResult(attacker, defender, move, field) {
 
 	description.HPEVs = defender.HPEVs + " HP";
 
-	if (["Seismic Toss", "Night Shade"].indexOf(move.name) !== -1) {
-		var lv = attacker.level;
-		if (attacker.curAbility === "Parental Bond") {
-			lv *= 2;
-		}
-		return {"damage": [lv], "description": buildDescription(description)};
+	if (["Seismic Toss", "Night Shade"].includes(move.name)) {
+		return {"damage": [attacker.level * (attacker.curAbility === "Parental Bond" ? 2 : 1)], "description": buildDescription(description)};
 	}
 
 	if (move.name === "Final Gambit") {
@@ -353,76 +346,68 @@ function getDamageResult(attacker, defender, move, field) {
 
 	let finalMod = calcFinalMods(attacker, defender, move, field, description, typeEffectiveness, bypassProtect);
 
-	let damage = [], pbDamage = [];
+	let applyBurn = attacker.status === "Burned" && moveCategory === "Physical" && attacker.curAbility !== "Guts" && !(move.name === "Facade" && gen >= 6);
+	description.isBurned = applyBurn;
+
+	let damage = calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod);
+
+	let result = {"damage": damage};
+
+	// Add more complicated damage results to the result object. They are made sense of by ap_calc
+
 	let childDamage;
-	if (attacker.curAbility === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
+	if (attacker.curAbility === "Parental Bond" && !attacker.isChild && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
 		let originalATBoost = attacker.boosts[AT];
 		if (move.name === "Power-Up Punch") {
 			attacker.boosts[AT] = Math.min(6, attacker.boosts[AT] + 1);
 			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
-		attacker.curAbility = "";
+		description.attackerAbility = attacker.curAbility;
+		allowResistBerry = false;
 		attacker.isChild = true;
 		childDamage = getDamageResult(attacker, defender, move, field).damage;
-		attacker.curAbility = "Parental Bond";
+		allowResistBerry = true;
 		attacker.isChild = false;
-		description.attackerAbility = attacker.curAbility;
 		if (move.name === "Power-Up Punch") {
 			attacker.boosts[AT] = originalATBoost;
 			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
-		// temp solution to deal with resist berries on multi-hit moves and provide description
+		result.childDamage = childDamage;
 		if (activateResistBerry(attacker, defender, typeEffectiveness)) {
-			description.defenderItem += " (first hit only)";
+			result.resistBerryDamage = damage;
 		}
 	}
-	let applyBurn = attacker.status === "Burned" && moveCategory === "Physical" && attacker.curAbility !== "Guts" && !(move.name === "Facade" && gen >= 6);
-	description.isBurned = applyBurn;
-	for (let i = 0; i < 16; i++) {
-		damage[i] = Math.floor(baseDamage * (85 + i) / 100);
-		damage[i] = pokeRound(damage[i] * stabMod / 0x1000);
-		damage[i] = Math.floor(damage[i] * typeEffectiveness);
-		if (applyBurn) {
-			damage[i] = Math.floor(damage[i] / 2);
-		}
-		damage[i] = Math.max(1, pokeRound(damage[i] * finalMod / 0x1000) % 65536);
-		if (attacker.curAbility === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
-			for (let j = 0; j < 16; j++) {
-				pbDamage[16 * i + j] = damage[i] + childDamage[j];
-			}
-		}
-	}
+
+	let tripleAxelDamage;
 	if (move.name === "Triple Axel") {
-		// normally damage gets multiplied by the number of hits right before being displayed to the calc user. Triple Axel has an exception.
+		// tripleAxelDamage is an array of damage arrays; a 2D number array
+		tripleAxelDamage = [];
 		let startingBP = move.bp;
-		for (let h = 1; h < move.hits; h++) {
-			move.bp += startingBP;
+		allowResistBerry = false;
+		let finalModNoBerry = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
+		allowResistBerry = true;
+		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
+			move.bp = startingBP * hitNum;
 			finalBasePower = calcBP(attacker, defender, move, field, {});
 			baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, {});
-			let tempDamage;
-			for (let i = 0; i < 16; i++) {
-				// simply add every ith result to damage[i]
-				tempDamage = Math.floor(baseDamage * (85 + i) / 100);
-				tempDamage = pokeRound(tempDamage * stabMod / 0x1000);
-				tempDamage = Math.floor(tempDamage * typeEffectiveness);
-				if (applyBurn) {
-					tempDamage = Math.floor(tempDamage / 2);
-				}
-				damage[i] += Math.max(1, pokeRound(tempDamage * finalMod / 0x1000) % 65536);
-			}
+			tripleAxelDamage.push(calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalModNoBerry));
 		}
 		move.bp = startingBP;
+		result.tripleAxelDamage = tripleAxelDamage;
 	}
-	// Return a bit more info if this is a Parental Bond usage.
-	if (pbDamage.length) {
-		return {
-			"damage": pbDamage.sort((a, b) => a - b),
-			"parentDamage": damage,
-			"childDamage": childDamage,
-			"description": buildDescription(description)
-		};
+
+	let resistBerryDamage;
+	if (allowResistBerry && activateResistBerry(attacker, defender, typeEffectiveness)) {
+		// this branch actually calculates the damage without the resist berry
+		result.resistBerryDamage = damage;
+		allowResistBerry = false;
+		finalMod = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
+		allowResistBerry = true;
+		result.damage = calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod);
 	}
-	return {"damage": damage, "description": buildDescription(description)};
+
+	result.description = buildDescription(description);
+	return result;
 }
 
 function calcBP(attacker, defender, move, field, description, ateizeBoost) {
@@ -1059,11 +1044,15 @@ function calcFinalMods(attacker, defender, move, field, description, typeEffecti
 		finalMods.push(0x14CC);
 		description.attackerItem = attacker.item;
 	}
-	if (activateResistBerry(attacker, defender, typeEffectiveness) && !attacker.isChild) {
-		// Do not apply the resist berry to the second Parental Bond hit
-		// Still need to figure out how I want multi-hit moves to handle this interaction
-		finalMods.push(0x800);
+	if (allowResistBerry && activateResistBerry(attacker, defender, typeEffectiveness)) {
+		if (attacker.curAbility === "Ripen") {
+			finalMods.push(0x400);
+			description.attackerAbility = attacker.curAbility;
+		} else {
+			finalMods.push(0x800);
+		}
 		description.defenderItem = defender.item;
+		// "first hit/strike only" text is inserted in ko_chance
 	}
 	if (field.isMinimized && (["Astonish", "Body Slam", "Dragon Rush", "Extrasensory", "Flying Press", "Heat Crash", "Heavy Slam", "Malicious Moonsault", "Needle Arm", "Phantom Force", "Shadow Force", "Steamroller", "Stomp"].includes(move.name))) {
 		finalMods.push(0x2000);
@@ -1218,6 +1207,20 @@ function chainMods(mods) {
 		}
 	}
 	return M;
+}
+
+function calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod) {
+	let damage = new Array(16);
+	for (let i = 0; i < 16; i++) {
+		damage[i] = Math.floor(baseDamage * (85 + i) / 100);
+		damage[i] = pokeRound(damage[i] * stabMod / 0x1000);
+		damage[i] = Math.floor(damage[i] * typeEffectiveness);
+		if (applyBurn) {
+			damage[i] = Math.floor(damage[i] / 2);
+		}
+		damage[i] = Math.max(1, pokeRound(damage[i] * finalMod / 0x1000) % 65536);
+	}
+	return damage;
 }
 
 function getMoveEffectiveness(move, mType, defType, isGhostRevealed, field, isStrongWinds, description) {
@@ -1476,7 +1479,7 @@ function checkMinimize(p1, p2) {
 	}
 }
 
-function checkEvo(p1, p2) {
+function checkOmniboosts(p1, p2) {
 	if ($("#evoL").prop("checked")) {
 		p1.boosts[AT] = Math.min(6, p1.boosts[AT] + 2);
 		p1.boosts[DF] = Math.min(6, p1.boosts[DF] + 2);

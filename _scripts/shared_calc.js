@@ -1038,10 +1038,10 @@ function Field() {
 	let isAuraDark = $("#dark-aura").prop("checked");
 	let isAuraBreak = $("#aura-break").prop("checked");
 	let isGravity = $("#gravity").prop("checked");
-	// isSR (stealth rocks), spikes, and Busted are all in the correct order. They are only used by ko_chance, and the defender's side is passed to it
-	let isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
+	// isSR (stealth rocks), spikes, and Busted are all in the correct order.
+	let isSR = [$("#srR").prop("checked"), $("#srL").prop("checked")];
 	let isProtect = [$("#protectL").prop("checked"), $("#protectR").prop("checked")];
-	let spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
+	let spikes = [~~$("input:radio[name='spikesR']:checked").val(), ~~$("input:radio[name='spikesL']:checked").val()];
 	let isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
 	let isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
 	let isSeeded = [$("#leechSeedR").prop("checked"), $("#leechSeedL").prop("checked")]; // affects attacks against opposite side
@@ -1052,8 +1052,8 @@ function Field() {
 	let isBattery = [$("#batteryR").prop("checked"), $("#batteryL").prop("checked")]; // affects attacks against opposite side
 	let isMinimized = [$("#minimL").prop("checked"), $("#minimR").prop("checked")];
 	let isVictoryStar = [$("#vicStarL").prop("checked"), $("#vicStarR").prop("checked")];
-	let isBusted8 = [$("#busted8L").prop("checked"), $("#busted8R").prop("checked")];
-	let isBusted16 = [$("#busted16L").prop("checked"), $("#busted16R").prop("checked")];
+	let isBusted8 = [$("#busted8R").prop("checked"), $("#busted8L").prop("checked")];
+	let isBusted16 = [$("#busted16R").prop("checked"), $("#busted16L").prop("checked")];
 	let isSteelySpirit = [$("#steelySpiritR").prop("checked"), $("#steelySpiritL").prop("checked")]; // affects attacks against opposite side
 	let fainted = [$("#faintedR").val(), $("#faintedL").val()]; // affects attacks against opposite side
 	let isRuinTablets = [$("#ruinTabletsL").prop("checked"), $("#ruinTabletsR").prop("checked")];
@@ -1118,6 +1118,92 @@ function Side(format, terrain, weather, isAuraFairy, isAuraDark, isAuraBreak, is
 	this.isRuinSword = isRuinSword;
 	this.isRuinBeads = isRuinBeads;
 }
+
+// Damage map functions
+function mapFromArray(array) {
+	let map = new Map();
+	for (let i = 0; i < array.length; i++) {
+		mapAddKey(map, array[i], 1);
+	}
+	return map;
+}
+
+function mapAddKey(map, key, value) {
+	map.set(key, map.has(key) ? map.get(key) + value : value);
+}
+
+function combineDuplicateDamageMaps(damageMap) {
+	// for combining two damage maps that have the same kv-pairs, thus just one arg
+	let returnDamageMap = new Map();
+	let damageValues = Array.from(damageMap.keys());
+	let valuesLength = damageValues.length;
+	for (let i = 0; i < valuesLength; i++) {
+		let iDamage = damageValues[i];
+		let iCount = damageMap.get(iDamage);
+		mapAddKey(returnDamageMap, iDamage + iDamage, iCount * iCount);
+		for (let j = i + 1; j < valuesLength; j++) {
+			let jDamage = damageValues[j];
+			let jCount = damageMap.get(jDamage);
+			mapAddKey(returnDamageMap, iDamage + jDamage, 2 * iCount * jCount);
+		}
+	}
+	return returnDamageMap;
+}
+
+function combineDamageMaps(iDamageMap, jDamageMap) {
+	let returnDamageMap = new Map();
+	for (const [iDamage, iCount] of iDamageMap) {
+		for (const [jDamage, jCount] of jDamageMap) {
+			mapAddKey(returnDamageMap, iDamage + jDamage, iCount * jCount);
+		}
+	}
+	return returnDamageMap;
+}
+
+function recurseDamageMaps(damageMap, numHits) {
+	// this function can be optimized a few ways, but with numHits <= 10, it won't do anything.
+	if (numHits == 1) {
+		return damageMap;
+	}
+	if (numHits % 2 == 0) {
+		return combineDuplicateDamageMaps(recurseDamageMaps(damageMap, numHits / 2));
+	} else {
+		return combineDamageMaps(damageMap, recurseDamageMaps(damageMap, numHits - 1));
+	}
+}
+
+var MAP_SQUASH_CONSTANT = 2 ** 13;
+function squashDamageMap(damageMap, mapCombinations) {
+	let divisor = mapCombinations / MAP_SQUASH_CONSTANT;
+	for (const [key, value] of damageMap) {
+		damageMap.set(key, value / divisor);
+	}
+	return mapCombinations / divisor;
+}
+
+function getAssembledDamageMap(result, resultDamageMap, moveHits, considerResistBerry) {
+	if (result.damage.length == 1) {
+		//result.hitDamageValues = "(" + result.damage[0] + ")";
+		return new Map([[result.damage[0], 1]]);
+	} else if (result.tripleAxelDamage) {
+		// result.tripleAxelDamage[0] goes unused, it should be the non-resist berry first hit.
+		let assembledDamageMap = combineDamageMaps((considerResistBerry ? mapFromArray(result.resistBerryDamage) : resultDamageMap), mapFromArray(result.tripleAxelDamage[1]));
+		if (moveHits == 3) {
+			return combineDamageMaps(assembledDamageMap, mapFromArray(result.tripleAxelDamage[2]));
+		}
+		return assembledDamageMap;
+	} else if (result.childDamage) {
+		return combineDamageMaps((considerResistBerry ? mapFromArray(result.resistBerryDamage) : resultDamageMap), mapFromArray(result.childDamage));
+	} else if (moveHits > 1) {
+		if (considerResistBerry) {
+			return combineDamageMaps(recurseDamageMaps(resultDamageMap, moveHits - 1), mapFromArray(result.resistBerryDamage));
+		}
+		return recurseDamageMaps(resultDamageMap, moveHits);
+	}
+
+	return considerResistBerry ? mapFromArray(result.resistBerryDamage) : resultDamageMap;
+}
+// End damage map functions
 
 // please add the new setdex to this function whenever adding a new gen
 function isFacilitySet(speciesName, setName) {
