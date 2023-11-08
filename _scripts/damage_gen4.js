@@ -442,7 +442,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 	var berryMod = 1;
-	if (getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") && attacker.ability !== "Unnerve") {
+	if (allowResistBerry && getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") && attacker.ability !== "Unnerve") {
 		berryMod = 0.5;
 		description.defenderItem = defender.item;
 	}
@@ -459,7 +459,17 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		damage[i] = Math.floor(damage[i] * berryMod);
 		damage[i] = Math.max(1, damage[i]);
 	}
-	return {"damage": damage, "description": buildDescription(description)};
+	let result = {"damage": damage, "description": buildDescription(description)};
+
+	if (berryMod != 1) {
+		// this branch actually calculates the damage without the resist berry
+		result.resistBerryDamage = damage;
+		allowResistBerry = false;
+		result.damage = getDamageResultPtHGSS(attacker, defender, move, field).damage;
+		allowResistBerry = true;
+	}
+
+	return result;
 }
 
 function getSimpleModifiedStat(stat, mod) {
