@@ -196,10 +196,14 @@ function performCalculations() {
 				result = damageResults[n];
 				attackerMove = attacker.moves[n];
 				let resultDamageMap = mapFromArray(result.damage);
-				let moveHits = attackerMove.hits; // this is placeholder.
+				let moveHits = result.childDamage ? 2 : attackerMove.hits; // this is placeholder.
 				let assembledDamageMap = getAssembledDamageMap(result, resultDamageMap, moveHits);
 				let firstHitMap = result.hasOwnProperty('resistBerryDamage') ? getAssembledDamageMap(result, resultDamageMap, moveHits, true) : new Map(assembledDamageMap);
 				let mapCombinations = result.damage.length ** moveHits;
+				if (mapCombinations > MAP_SQUASH_CONSTANT) { // see comment in ap_calc
+					squashDamageMap(firstHitMap, mapCombinations);
+					mapCombinations = squashDamageMap(assembledDamageMap, mapCombinations);
+				}
 				let sortedDamageValues = Array.from(firstHitMap.keys());
 				sortedDamageValues.sort((a, b) => a - b);
 				minDamage = sortedDamageValues[0];

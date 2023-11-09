@@ -355,7 +355,6 @@ function getDamageResult(attacker, defender, move, field) {
 
 	// Add more complicated damage results to the result object. They are made sense of by ap_calc
 
-	let childDamage;
 	if (attacker.curAbility === "Parental Bond" && !attacker.isChild && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
 		let originalATBoost = attacker.boosts[AT];
 		if (move.name === "Power-Up Punch") {
@@ -365,23 +364,21 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerAbility = attacker.curAbility;
 		allowResistBerry = false;
 		attacker.isChild = true;
-		childDamage = getDamageResult(attacker, defender, move, field).damage;
+		result.childDamage = getDamageResult(attacker, defender, move, field).damage;
 		allowResistBerry = true;
 		attacker.isChild = false;
 		if (move.name === "Power-Up Punch") {
 			attacker.boosts[AT] = originalATBoost;
 			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
-		result.childDamage = childDamage;
 		if (activateResistBerry(attacker, defender, typeEffectiveness)) {
 			result.resistBerryDamage = damage;
 		}
 	}
 
-	let tripleAxelDamage;
 	if (move.name === "Triple Axel") {
 		// tripleAxelDamage is an array of damage arrays; a 2D number array
-		tripleAxelDamage = [];
+		result.tripleAxelDamage = [];
 		let startingBP = move.bp;
 		allowResistBerry = false;
 		let finalModNoBerry = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
@@ -390,13 +387,11 @@ function getDamageResult(attacker, defender, move, field) {
 			move.bp = startingBP * hitNum;
 			finalBasePower = calcBP(attacker, defender, move, field, {});
 			baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, {});
-			tripleAxelDamage.push(calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalModNoBerry));
+			result.tripleAxelDamage.push(calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalModNoBerry));
 		}
 		move.bp = startingBP;
-		result.tripleAxelDamage = tripleAxelDamage;
 	}
 
-	let resistBerryDamage;
 	if (allowResistBerry && activateResistBerry(attacker, defender, typeEffectiveness)) {
 		// this branch actually calculates the damage without the resist berry
 		result.resistBerryDamage = damage;
