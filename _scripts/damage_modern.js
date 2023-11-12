@@ -682,7 +682,8 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		defender.item.endsWith("Plate") && defender.name.startsWith("Arceus") ||
 		defender.item.endsWith("Memory") && defender.name.startsWith("Silvally") ||
 		defender.item.endsWith(" Z") ||
-		defender.item === "Booster Energy" && (defender.ability === "Protosynthesis" || defender.ability === "Quark Drive"))) {
+		defender.item === "Booster Energy" && (defender.ability === "Protosynthesis" || defender.ability === "Quark Drive") ||
+		defender.item.endsWith("Mask") && defender.name.startsWith("Ogerpon-"))) {
 		// Mega Stones, Red/Blue Orbs, and Rusted items are already accounted for by the fact that they don't exist as items
 		bpMods.push(0x1800);
 		description.moveBP = move.bp * 1.5;
