@@ -92,6 +92,7 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 		setResultText(result, 1, moveAccuracy, false, mapCombinations, hazardText, "");
 		return;
 	} else if (checkHPThreshold(targetHP + berryRecovery, 0, firstHitMin, maxHP)) {
+		// since there was not a KO from the first condition, this KO is only guaranteed by eot damage
 		setResultText(result, 1, moveAccuracy, false, mapCombinations, hazardText.concat(eotText), berryText);
 		return;
 	} else if (firstHitMax >= targetHP || checkHPThreshold(targetHP + berryRecovery, 0, firstHitMax, maxHP)) {
@@ -104,7 +105,8 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 				break;
 			}
 		}
-		setResultText(result, 1, moveAccuracy, koCombinations, mapCombinations, hazardText.concat(eotText), berryText);
+		// this is checking hits that bypass berry recovery, so no berryText
+		setResultText(result, 1, moveAccuracy, koCombinations, mapCombinations, hazardText.concat(eotText), "");
 		return;
 	}
 	// since no OHKO occured, set up nHitDamageMap and berryDamageMap
@@ -396,9 +398,6 @@ function calculateNHKO(upperHitCount, targetHP, maxHP, damageMap, nHitDamageMap,
 }
 
 function toxicSum(counter, maxHP) {
-	if (counter == 0) {
-		return 0;
-	}
 	let sum = 0;
 	for (let i = counter; i > 0; i--) {
 		sum += Math.floor(maxHP * counter / 16);
@@ -407,7 +406,7 @@ function toxicSum(counter, maxHP) {
 }
 
 function powerDivision(numerator, divisor, power) {
-	// simple implementation of calculation of something of the form: numerator / (divisor ** power)
+	// naive implementation of calculation of something of the form: numerator / (divisor ** power)
 	// This is done this way to avoid issues with large numbers. This algorithm is fine since power will always be less than 10.
 	while (power > 0) {
 		power--;
