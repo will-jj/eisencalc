@@ -10030,7 +10030,7 @@ SETDEX_EM = {
       "tier": "50"
     },
     "Shuckle (Lucy Silver)": {
-      "evs": {
+      "evs": { // this is not a mistake: https://github.com/DizzyEggg/pokeemerald/blob/ec89e519f912618e9168d8a616ed85c35cb6d966/src/frontier_util.c#L401C48
         "hp": 252,
         "sa": 106,
         "sd": 252
