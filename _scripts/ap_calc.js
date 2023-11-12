@@ -185,6 +185,9 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 		if (result.childDamage) {
 			result.hitDamageValues = "(First hit: " + (result.firstHitDamage ? result.firstHitDamage : result.damage).join(", ") +
 			"; Second hit: " + result.childDamage.join(", ") + ")";
+			if (result.firstHitDamage) {
+				result.hitDamageValues += "; Other parent hits: (" + result.damage.join(", ") + ")";
+			}
 		} else if (result.tripleAxelDamage) {
 			result.hitDamageValues = "(First hit: " + (result.firstHitDamage ? result.firstHitDamage : result.tripleAxelDamage[0]).join(", ") +
 			"; Second hit: " + result.tripleAxelDamage[1].join(", ") +

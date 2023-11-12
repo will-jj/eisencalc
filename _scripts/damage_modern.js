@@ -362,19 +362,20 @@ function getDamageResult(attacker, defender, move, field) {
 			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
 		description.attackerAbility = attacker.curAbility;
+		// the following order of execution is important
 		allowOneTimeReducers = false;
 		attacker.isChild = true;
 		result.childDamage = getDamageResult(attacker, defender, move, field).damage;
-		allowOneTimeReducers = true;
-		attacker.isChild = false;
 		if (move.name === "Power-Up Punch") {
 			attacker.boosts[AT] = originalATBoost;
 			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
+		allowOneTimeReducers = true;
 		if (activateResistBerry(attacker, defender, typeEffectiveness) ||
 			((defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP)) {
 			result.firstHitDamage = damage;
 		}
+		attacker.isChild = false;
 	}
 
 	if (move.name === "Triple Axel") {
