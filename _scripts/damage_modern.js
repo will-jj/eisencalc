@@ -86,7 +86,7 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 var moveType, moveCategory, makesContact, isCritical;
 var attackerGrounded, defenderGrounded;
 var originalSABoost;
-var allowResistBerry = true;
+var allowOneTimeReducers = true;
 function getDamageResult(attacker, defender, move, field) {
 	var moveDescName = move.name;
 
@@ -362,17 +362,18 @@ function getDamageResult(attacker, defender, move, field) {
 			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
 		description.attackerAbility = attacker.curAbility;
-		allowResistBerry = false;
+		allowOneTimeReducers = false;
 		attacker.isChild = true;
 		result.childDamage = getDamageResult(attacker, defender, move, field).damage;
-		allowResistBerry = true;
+		allowOneTimeReducers = true;
 		attacker.isChild = false;
 		if (move.name === "Power-Up Punch") {
 			attacker.boosts[AT] = originalATBoost;
 			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
-		if (activateResistBerry(attacker, defender, typeEffectiveness)) {
-			result.resistBerryDamage = damage;
+		if (activateResistBerry(attacker, defender, typeEffectiveness) ||
+			((defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP)) {
+			result.firstHitDamage = damage;
 		}
 	}
 
@@ -380,9 +381,9 @@ function getDamageResult(attacker, defender, move, field) {
 		// tripleAxelDamage is an array of damage arrays; a 2D number array
 		result.tripleAxelDamage = [];
 		let startingBP = move.bp;
-		allowResistBerry = false;
+		allowOneTimeReducers = false;
 		let finalModNoBerry = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
-		allowResistBerry = true;
+		allowOneTimeReducers = true;
 		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
 			move.bp = startingBP * hitNum;
 			finalBasePower = calcBP(attacker, defender, move, field, {});
@@ -392,12 +393,14 @@ function getDamageResult(attacker, defender, move, field) {
 		move.bp = startingBP;
 	}
 
-	if (allowResistBerry && activateResistBerry(attacker, defender, typeEffectiveness)) {
-		// this branch actually calculates the damage without the resist berry
-		result.resistBerryDamage = damage;
-		allowResistBerry = false;
+	if (allowOneTimeReducers && (
+		activateResistBerry(attacker, defender, typeEffectiveness) ||
+		((defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP))) {
+		// this branch actually calculates the damage without the one-time reducers
+		result.firstHitDamage = damage;
+		allowOneTimeReducers = false;
 		finalMod = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
-		allowResistBerry = true;
+		allowOneTimeReducers = true;
 		result.damage = calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod);
 	}
 
@@ -682,7 +685,8 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		defender.item.endsWith("Plate") && defender.name.startsWith("Arceus") ||
 		defender.item.endsWith("Memory") && defender.name.startsWith("Silvally") ||
 		defender.item.endsWith(" Z") ||
-		defender.item === "Booster Energy" && (defender.ability === "Protosynthesis" || defender.ability === "Quark Drive"))) {
+		defender.item === "Booster Energy" && (defender.ability === "Protosynthesis" || defender.ability === "Quark Drive") ||
+		defender.item.endsWith("Mask") && defender.name.startsWith("Ogerpon-"))) {
 		// Mega Stones, Red/Blue Orbs, and Rusted items are already accounted for by the fact that they don't exist as items
 		bpMods.push(0x1800);
 		description.moveBP = move.bp * 1.5;
@@ -1013,7 +1017,7 @@ function calcFinalMods(attacker, defender, move, field, description, typeEffecti
 		finalMods.push(0x2000);
 		description.attackerAbility = attacker.curAbility;
 	}
-	if (((defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP) ||
+	if ((allowOneTimeReducers && (defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP) ||
 		defender.curAbility === "Fluffy" && makesContact ||
 		defender.curAbility === "Punk Rock" && move.isSound ||
 		defender.curAbility === "Ice Scales" && moveCategory === "Special") {
@@ -1039,7 +1043,7 @@ function calcFinalMods(attacker, defender, move, field, description, typeEffecti
 		finalMods.push(0x14CC);
 		description.attackerItem = attacker.item;
 	}
-	if (allowResistBerry && activateResistBerry(attacker, defender, typeEffectiveness)) {
+	if (allowOneTimeReducers && activateResistBerry(attacker, defender, typeEffectiveness)) {
 		if (attacker.curAbility === "Ripen") {
 			finalMods.push(0x400);
 			description.attackerAbility = attacker.curAbility;

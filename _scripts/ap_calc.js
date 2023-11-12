@@ -169,7 +169,7 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 	// firstHitMap is the same as assembledDamageMap, but with resist berry applied if applicable. On multi hit moves the berry only applies to the first strike of the multihit.
 	// firstHitMap is the basis for the ranges and percentages displayed for the user, and is the same as assembledDamageMap if there is no resist berry.
 	let assembledDamageMap = getAssembledDamageMap(result, resultDamageMap, moveHits);
-	let firstHitMap = result.hasOwnProperty('resistBerryDamage') ? getAssembledDamageMap(result, resultDamageMap, moveHits, true) : new Map(assembledDamageMap);
+	let firstHitMap = result.firstHitDamage ? getAssembledDamageMap(result, resultDamageMap, moveHits, true) : new Map(assembledDamageMap);
 
 	// put together the primary hit information based on the first hit map
 	let sortedDamageValues = Array.from(firstHitMap.keys());
@@ -183,14 +183,14 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 		}
 
 		if (result.childDamage) {
-			result.hitDamageValues = "(First hit: " + (result.resistBerryDamage ? result.resistBerryDamage : result.damage).join(", ") +
+			result.hitDamageValues = "(First hit: " + (result.firstHitDamage ? result.firstHitDamage : result.damage).join(", ") +
 			"; Second hit: " + result.childDamage.join(", ") + ")";
 		} else if (result.tripleAxelDamage) {
-			result.hitDamageValues = "(First hit: " + (result.resistBerryDamage ? result.resistBerryDamage : result.tripleAxelDamage[0]).join(", ") +
+			result.hitDamageValues = "(First hit: " + (result.firstHitDamage ? result.firstHitDamage : result.tripleAxelDamage[0]).join(", ") +
 			"; Second hit: " + result.tripleAxelDamage[1].join(", ") +
 			(moveHits > 2 ? "; Third hit: " + result.tripleAxelDamage[2].join(", ") : "") + ")";
-		} else if (result.resistBerryDamage) {
-			result.hitDamageValues = "(First hit: " + result.resistBerryDamage.join(", ") + "; Other hits: " + result.damage.join(", ") + ")";
+		} else if (result.firstHitDamage) {
+			result.hitDamageValues = "(First hit: " + result.firstHitDamage.join(", ") + "; Other hits: " + result.damage.join(", ") + ")";
 		} else {
 			result.hitDamageValues = "(" + result.damage.join(", ") + ")";
 		}
@@ -198,7 +198,7 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 
 	// damageMap numbers use integral numbers, except in this if statement.
 	// To avoid exceeding Number.MAX_SAFE_INTEGER (2 ** 53 - 1) and avoid needing BigNums, divide all values by the same factor
-	// Since damage maps are (currently) only used for the first 4 hits when calcing an NHKO, dividing all values by (mapCombinations / 8192) works.
+	// Since damage maps are (currently) only used for the first 4 hits when calcing an nHKO, dividing all values by (mapCombinations / (2 ** 13)) works.
 	if (mapCombinations > MAP_SQUASH_CONSTANT) {
 		squashDamageMap(firstHitMap, mapCombinations);
 		mapCombinations = squashDamageMap(assembledDamageMap, mapCombinations);

@@ -198,7 +198,7 @@ function performCalculations() {
 				let resultDamageMap = mapFromArray(result.damage);
 				let moveHits = result.childDamage ? 2 : attackerMove.hits; // this is placeholder.
 				let assembledDamageMap = getAssembledDamageMap(result, resultDamageMap, moveHits);
-				let firstHitMap = result.hasOwnProperty('resistBerryDamage') ? getAssembledDamageMap(result, resultDamageMap, moveHits, true) : new Map(assembledDamageMap);
+				let firstHitMap = result.firstHitDamage ? getAssembledDamageMap(result, resultDamageMap, moveHits, true) : new Map(assembledDamageMap);
 				let mapCombinations = result.damage.length ** moveHits;
 				if (mapCombinations > MAP_SQUASH_CONSTANT) { // see comment in ap_calc
 					squashDamageMap(firstHitMap, mapCombinations);
