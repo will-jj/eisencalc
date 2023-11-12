@@ -71,10 +71,9 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 	eotTotal = eotWeather + calcOtherEOT(attacker, defender, field, eotText);
 	let hazardText = [];
 	let targetHP = defender.curHP + calcHazards(defender, field, hazardText);
-	let maxHP = defender.maxHP;
 
 	// check if a multihit can OHKO.
-	let multiResult = checkMultiHitKO(moveHits, result, targetHP, maxHP, damageMap);
+	let multiResult = checkMultiHitKO(moveHits, result, targetHP, defender, damageMap);
 	if (multiResult && multiResult.hitCount <= moveHits) {
 		setResultText(result, 1, moveAccuracy, false, mapCombinations, hazardText, multiResult.berryKO ? berryText : "");
 		return;
@@ -87,6 +86,7 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 		berryThreshold = 0;
 	}
 
+	let maxHP = defender.maxHP;
 	// Check for OHKO chance
 	if (firstHitMin >= targetHP) {
 		setResultText(result, 1, moveAccuracy, false, mapCombinations, hazardText, "");
@@ -124,9 +124,15 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 	}
 
 	// add clarifying text for 2+HKOs that a resist berry is only being calculated for the first hit. This is duplicated in checkMultiHitKO
-	if (result.resistBerryDamage && moveHits == 1) {
-		let berryIndex = result.description.indexOf("Berry") + 5; // add the length of "Berry"
-		result.description = result.description.substring(0, berryIndex) +  " (first hit only)" + result.description.substring(berryIndex);
+	if (result.firstHitDamage && moveHits == 1) {
+		if (getBerryResistType(defender.item) && result.description.includes(defender.item)) {
+			let index = result.description.indexOf(defender.item) + defender.item.length;
+			result.description = result.description.substring(0, index) + " (first hit only)" + result.description.substring(index);
+		}
+		if (result.description.includes("Multiscale") || result.description.includes("Shadow Shield")) {
+			let index = result.description.indexOf(defender.ability) + defender.ability.length;
+			result.description = result.description.substring(0, index) + " (first hit only)" + result.description.substring(index);
+		}
 	}
 
 	let sortedMapKeys = Array.from(damageMap.keys());
@@ -228,7 +234,7 @@ function setUpBerryValues(attacker, defender) {
 }
 
 // this function does a check on whether a multihit move can OHKO and bypass a healing berry.
-function checkMultiHitKO(moveHits, result, targetHP, maxHP, damageMap) {
+function checkMultiHitKO(moveHits, result, targetHP, defender, damageMap) {
 	// still need to accomodate 2HKOs of multihits that bypass non-gluttony FIWAM berries
 	if (moveHits == 1) {
 		return; // return nothing
@@ -237,18 +243,24 @@ function checkMultiHitKO(moveHits, result, targetHP, maxHP, damageMap) {
 	let damage = result.damage;
 	let firstHitMin = damage[0];
 	let firstHitMax = damage[damage.length - 1];
-	if (result.resistBerryDamage) {
-		firstHitMin = result.resistBerryDamage[0];
-		firstHitMax = result.resistBerryDamage[result.resistBerryDamage.length - 1];
-		let berryIndex = result.description.indexOf("Berry") + 5; // add the length of "Berry"
-		result.description = result.description.substring(0, berryIndex) +  " (first strike only)" + result.description.substring(berryIndex);
+	if (result.firstHitDamage) {
+		firstHitMin = result.firstHitDamage[0];
+		firstHitMax = result.firstHitDamage[result.firstHitDamage.length - 1];
+		if (getBerryResistType(defender.item) && result.description.includes(defender.item)) {
+			let index = result.description.indexOf(defender.item) + defender.item.length;
+			result.description = result.description.substring(0, index) + " (first strike only)" + result.description.substring(index);
+		}
+		if (result.description.includes("Multiscale") || result.description.includes("Shadow Shield")) {
+			let index = result.description.indexOf(defender.ability) + defender.ability.length;
+			result.description = result.description.substring(0, index) + " (first strike only)" + result.description.substring(index);
+		}
 	}
-	if (result.childDamage || result.tripleAxelDamage) { // easier to not deal with these types of damage in here right now
-		return;
+	if (result.childDamage || result.tripleAxelDamage) {
+		return; // easier to not deal with these types of damage in here right now. still apply the above text
 	}
 
 	let minDamage = damage[0];
-	if (checkHPThreshold(targetHP + berryRecovery, 0, firstHitMin + minDamage * (moveHits - 1), maxHP)) {
+	if (checkHPThreshold(targetHP + berryRecovery, 0, firstHitMin + minDamage * (moveHits - 1), defender.maxHP)) {
 		return {"hitCount": moveHits, "berryKO": true};
 	}
 
@@ -274,11 +286,11 @@ function checkMultiHitKO(moveHits, result, targetHP, maxHP, damageMap) {
 				if (targetHP <= damageTotal) {
 					// a KO occurs
 					koCombinations += countTotal;
-				} else if (checkHPThreshold(targetHP + berryRecovery, 0, damageTotal, maxHP)) {
+				} else if (checkHPThreshold(targetHP + berryRecovery, 0, damageTotal, defender.maxHP)) {
 					// a KO occurs
 					koCombinations += countTotal;
 					multiResult.berryKO = true;
-				} else if (berryRecovery > 0 && checkHPThreshold(targetHP, berryThreshold, damageTotal, maxHP)) {
+				} else if (berryRecovery > 0 && checkHPThreshold(targetHP, berryThreshold, damageTotal, defender.maxHP)) {
 					// no KO occurs and a berry was eaten
 					mapAddKey(nextBerryDamageMap, damageTotal, countTotal);
 				} else {
@@ -290,7 +302,7 @@ function checkMultiHitKO(moveHits, result, targetHP, maxHP, damageMap) {
 				for (let [berryValue, berryCount] of berryDamageMap) {
 					let damageTotal = baseValue + berryValue;
 					let countTotal = baseCount * berryCount;
-					if (checkHPThreshold(targetHP + berryRecovery, 0, damageTotal, maxHP)) {
+					if (checkHPThreshold(targetHP + berryRecovery, 0, damageTotal, defender.maxHP)) {
 						// a KO occurs
 						koCombinations += countTotal;
 						multiResult.berryKO = true;

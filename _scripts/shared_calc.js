@@ -1181,27 +1181,27 @@ function squashDamageMap(damageMap, mapCombinations) {
 	return mapCombinations / divisor;
 }
 
-function getAssembledDamageMap(result, resultDamageMap, moveHits, considerResistBerry) {
+function getAssembledDamageMap(result, resultDamageMap, moveHits, considerReducedDamage) {
 	if (result.damage.length == 1) {
 		//result.hitDamageValues = "(" + result.damage[0] + ")";
 		return new Map([[result.damage[0], 1]]);
 	} else if (result.tripleAxelDamage) {
 		// result.tripleAxelDamage[0] goes unused, it should be the non-resist berry first hit.
-		let assembledDamageMap = combineDamageMaps((considerResistBerry ? mapFromArray(result.resistBerryDamage) : resultDamageMap), mapFromArray(result.tripleAxelDamage[1]));
+		let assembledDamageMap = combineDamageMaps((considerReducedDamage ? mapFromArray(result.firstHitDamage) : resultDamageMap), mapFromArray(result.tripleAxelDamage[1]));
 		if (moveHits == 3) {
 			return combineDamageMaps(assembledDamageMap, mapFromArray(result.tripleAxelDamage[2]));
 		}
 		return assembledDamageMap;
 	} else if (result.childDamage) {
-		return combineDamageMaps((considerResistBerry ? mapFromArray(result.resistBerryDamage) : resultDamageMap), mapFromArray(result.childDamage));
+		return combineDamageMaps((considerReducedDamage ? mapFromArray(result.firstHitDamage) : resultDamageMap), mapFromArray(result.childDamage));
 	} else if (moveHits > 1) {
-		if (considerResistBerry) {
-			return combineDamageMaps(recurseDamageMaps(resultDamageMap, moveHits - 1), mapFromArray(result.resistBerryDamage));
+		if (considerReducedDamage) {
+			return combineDamageMaps(recurseDamageMaps(resultDamageMap, moveHits - 1), mapFromArray(result.firstHitDamage));
 		}
 		return recurseDamageMaps(resultDamageMap, moveHits);
 	}
 
-	return considerResistBerry ? mapFromArray(result.resistBerryDamage) : resultDamageMap;
+	return considerReducedDamage ? mapFromArray(result.firstHitDamage) : resultDamageMap;
 }
 // End damage map functions
 
