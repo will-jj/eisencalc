@@ -280,9 +280,12 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		attack = Math.floor(attack * 1.5);
 		description.attackerAbility = attacker.ability;
 		description.weather = field.weather;
-	} else if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy")) || (!isPhysical && (attacker.ability === "Plus" || attacker.ability === "Minus"))) {
+	} else if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy"))) {
 		attack = Math.floor(attack * 1.5);
 		description.attackerAbility = attacker.ability;
+	} else if (!isPhysical && (attacker.ability === "Plus (active)" || attacker.ability === "Minus (active)")) {
+		attack = Math.floor(attack * 1.5);
+		description.attackerAbility = attacker.ability.substring(0, attacker.ability.indexOf(" ("));
 	}
 
 	if ((isPhysical ? attacker.item === "Choice Band" : attacker.item === "Choice Specs") ||

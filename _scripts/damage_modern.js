@@ -801,9 +801,10 @@ function calcAtk(attacker, defender, move, field, description) {
 		attacker.curAbility === "Sharpness" && move.isSlicing) {
 		atMods.push(0x1800);
 		description.attackerAbility = attacker.curAbility;
-	} else if (attacker.curAbility === "Flash Fire (activated)" && moveType === "Fire") {
+	} else if (attacker.curAbility === "Flash Fire (activated)" && moveType === "Fire" ||
+		(moveCategory === "Special" && (attacker.ability === "Plus (active)" || attacker.ability === "Minus (active)"))) {
 		atMods.push(0x1800);
-		description.attackerAbility = "Flash Fire";
+		description.attackerAbility = attacker.ability.substring(0, attacker.ability.indexOf(" ("));
 	} else if (attacker.curAbility === "Water Bubble" && moveType === "Water" ||
 		(attacker.curAbility === "Huge Power" || attacker.curAbility === "Pure Power") && moveCategory === "Physical") {
 		atMods.push(0x2000);
