@@ -245,11 +245,6 @@ function getDamageResult(attacker, defender, move, field) {
 	if (attacker.curAbility === "Long Reach" || attacker.item === "Punching Glove") {
 		makesContact = false;
 	}
-	var hasPriority = move.hasPriority;
-	if ((attacker.curAbility === "Gale Wings" && moveType === "Flying") ||
-		(move.name === "Grassy Glide" && field.terrain === "Grassy" && attackerGrounded)) {
-		hasPriority = true;
-	}
 
 	let scrappy = ["Scrappy", "Mind's Eye"].includes(attacker.curAbility);
 	let typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1, scrappy, field, field.weather === "Strong Winds", description);
@@ -300,7 +295,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.name === "Steel Roller" && !field.terrain) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if (hasPriority) {
+	if (hasPriority(move, attacker, field)) {
 		if (field.terrain === "Psychic" && defenderGrounded) {
 			description.terrain = field.terrain;
 			return {"damage": [0], "description": buildDescription(description)};
@@ -731,7 +726,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 	let finalBasePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096));
 	
 	// if a move has 1 bp, then it bypasses damage calc or has variable power. Variable power moves do not receive this boost.
-	if (attacker.isTerastal && moveType === attacker.type1 && finalBasePower < 60 && !move.hasPriority && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && move.bp != 1) {
+	if (attacker.isTerastal && moveType === attacker.type1 && finalBasePower < 60 && !hasPriority(move, attacker, field) && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && move.bp != 1) {
 		finalBasePower = 60; // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9425737
 		description.moveBP = 60;
 	}
@@ -1288,6 +1283,10 @@ function isGrounded(pokemon, field) {
 		return true;
 	}
 	return !(pokemon.hasType("Flying") || pokemon.item === "Air Balloon" || pokemon.curAbility === "Levitate");
+}
+
+function hasPriority(move, attacker, field) {
+	return move.hasPriority || (attacker.curAbility === "Gale Wings" && moveType === "Flying") || (move.name === "Grassy Glide" && field.terrain === "Grassy" && attackerGrounded);
 }
 
 function getModdedWeight(pokemon) {
