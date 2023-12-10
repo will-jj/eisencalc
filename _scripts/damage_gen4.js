@@ -122,9 +122,14 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	}
 
 	description.HPEVs = defender.HPEVs + " HP";
+	let attackerLevel = attacker.level;
+	if (attackerLevel != defender.level || (attackerLevel != 50 && attackerLevel != 100)) {
+		description.attackerLevel = attackerLevel;
+		description.defenderLevel = defender.level;
+	}
 
 	if (move.name === "Seismic Toss" || move.name === "Night Shade") {
-		return {"damage": [attacker.level], "description": buildDescription(description)};
+		return {"damage": [attackerLevel], "description": buildDescription(description)};
 	}
 
 	if (move.hits > 1) {
@@ -357,7 +362,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	////////////////////////////////
 	//////////// DAMAGE ////////////
 	////////////////////////////////
-	var baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * basePower * attack / 50) / defense);
+	var baseDamage = Math.floor(Math.floor(Math.floor(2 * attackerLevel / 5 + 2) * basePower * attack / 50) / defense);
 
 	if (attacker.status === "Burned" && isPhysical && attacker.ability !== "Guts") {
 		baseDamage = Math.floor(baseDamage * 0.5);

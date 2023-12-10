@@ -314,9 +314,14 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	description.HPEVs = defender.HPEVs + " HP";
+	let attackerLevel = attacker.level;
+	if (attackerLevel != defender.level || (attackerLevel != 50 && attackerLevel != 100)) {
+		description.attackerLevel = attackerLevel;
+		description.defenderLevel = defender.level;
+	}
 
 	if (["Seismic Toss", "Night Shade"].includes(move.name)) {
-		return {"damage": [attacker.level * (attacker.curAbility === "Parental Bond" ? 2 : 1)], "description": buildDescription(description)};
+		return {"damage": [attackerLevel * (attacker.curAbility === "Parental Bond" ? 2 : 1)], "description": buildDescription(description)};
 	}
 
 	if (move.name === "Final Gambit") {
@@ -335,7 +340,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	let defense = calcDef(attacker, defender, move, field, description);
 
-	let baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, description);
+	let baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attackerLevel), attacker, defender, move, field, description);
 
 	let stabMod = calcSTABMod(attacker, description);
 
@@ -383,7 +388,7 @@ function getDamageResult(attacker, defender, move, field) {
 		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
 			move.bp = startingBP * hitNum;
 			finalBasePower = calcBP(attacker, defender, move, field, {});
-			baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, {});
+			baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attackerLevel), attacker, defender, move, field, {});
 			result.tripleAxelDamage.push(calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalModNoBerry));
 		}
 		move.bp = startingBP;
@@ -1090,6 +1095,9 @@ function buildDescription(description) {
 	if (description.attackerTera) {
 		output += "Tera " + description.attackerTera + " ";
 	}
+	if (description.attackerLevel) {
+		output += "Lv. " + description.attackerLevel + " ";
+	}
 	output += description.attackerName + " ";
 	if (description.isHelpingHand) {
 		output += "Helping Hand ";
@@ -1145,6 +1153,9 @@ function buildDescription(description) {
 	}
 	if (description.defenderTera) {
 		output += "Tera " + description.defenderTera + " ";
+	}
+	if (description.defenderLevel) {
+		output += "Lv. " + description.defenderLevel + " ";
 	}
 	output += description.defenderName;
 	if (description.weather || description.terrain) {
