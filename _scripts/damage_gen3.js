@@ -82,9 +82,14 @@ function getDamageResultADV(attacker, defender, move, field) {
 	}
 
 	description.HPEVs = defender.HPEVs + " HP";
+	let attackerLevel = attacker.level;
+	if (attackerLevel != defender.level || (attackerLevel != 50 && attackerLevel != 100)) {
+		description.attackerLevel = attackerLevel;
+		description.defenderLevel = defender.level;
+	}
 
 	if (move.name === "Seismic Toss" || move.name === "Night Shade") {
-		return {"damage": [attacker.level], "description": buildDescription(description)};
+		return {"damage": [attackerLevel], "description": buildDescription(description)};
 	}
 
 	if (move.hits > 1) {
@@ -164,9 +169,12 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.defenderAbility = defender.ability;
 	}
 
-	if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy")) || (!isPhysical && (attacker.ability === "Plus" || attacker.ability === "Minus"))) {
+	if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy"))) {
 		at = Math.floor(at * 1.5);
 		description.attackerAbility = attacker.ability;
+	} else if (!isPhysical && (attacker.ability === "Plus (active)" || attacker.ability === "Minus (active)")) {
+		at = Math.floor(at * 1.5);
+		description.attackerAbility = attacker.ability.substring(0, attacker.ability.indexOf(" ("));
 	} else if (attacker.curHP <= attacker.maxHP / 3 &&
             ((attacker.ability === "Overgrow" && moveType === "Grass") ||
             (attacker.ability === "Blaze" && moveType === "Fire") ||
@@ -191,7 +199,7 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.defenseBoost = defenseBoost;
 	}
 
-	var baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * at * basePower / df) / 50);
+	var baseDamage = Math.floor(Math.floor(Math.floor(2 * attackerLevel / 5 + 2) * at * basePower / df) / 50);
 
 	if (attacker.status === "Burned" && isPhysical && attacker.ability !== "Guts") {
 		baseDamage = Math.floor(baseDamage / 2);

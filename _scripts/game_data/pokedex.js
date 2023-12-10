@@ -4679,7 +4679,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sp": 95
 		},
 		"w": 4.2,
-		"abilities": ["Minus"]
+		"ab": "Minus",
+		"abilities": ["Minus", "Minus (active)"]
 	},
 	"Mudkip": {
 		"t1": "Water",
@@ -4789,7 +4790,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sp": 95
 		},
 		"w": 4.2,
-		"abilities": ["Plus"]
+		"ab": "Plus",
+		"abilities": ["Plus", "Plus (active)"]
 	},
 	"Poochyena": {
 		"t1": "Dark",
@@ -8430,7 +8432,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sp": 50
 		},
 		"w": 51.0,
-		"abilities": ["Plus", "Minus", "Clear Body"]
+		"abilities": ["Plus", "Plus (active)", "Minus", "Minus (active)", "Clear Body"]
 	},
 	"Klink": {
 		"t1": "Steel",
@@ -8443,7 +8445,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sp": 30
 		},
 		"w": 21.0,
-		"abilities": ["Plus", "Minus", "Clear Body"]
+		"abilities": ["Plus", "Plus (active)", "Minus", "Minus (active)", "Clear Body"]
 	},
 	"Klinklang": {
 		"t1": "Steel",
@@ -8456,7 +8458,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sp": 90
 		},
 		"w": 81.0,
-		"abilities": ["Plus", "Minus", "Clear Body"]
+		"abilities": ["Plus", "Plus (active)", "Minus", "Minus (active)", "Clear Body"]
 	},
 	"Krokorok": {
 		"t1": "Ground",
@@ -9887,7 +9889,7 @@ POKEDEX_BW["Wigglytuff"].abilities.push("Frisk");
 POKEDEX_BW["Zapdos"].abilities.push("Lightning Rod");
 POKEDEX_BW["Zubat"].abilities.push("Infiltrator");
 POKEDEX_BW["Aipom"].abilities.push("Skill Link");
-POKEDEX_BW["Ampharos"].abilities.push("Plus");
+POKEDEX_BW["Ampharos"].abilities.push("Plus", "Plus (active)");
 POKEDEX_BW["Ariados"].abilities.push("Sniper");
 POKEDEX_BW["Azumarill"].abilities.push("Sap Sipper");
 POKEDEX_BW["Bayleef"].abilities.push("Leaf Guard");
@@ -9907,7 +9909,7 @@ POKEDEX_BW["Elekid"].abilities.push("Vital Spirit");
 POKEDEX_BW["Entei"].abilities.push("Flash Fire");
 POKEDEX_BW["Espeon"].abilities.push("Magic Bounce");
 POKEDEX_BW["Feraligatr"].abilities.push("Sheer Force");
-POKEDEX_BW["Flaaffy"].abilities.push("Plus");
+POKEDEX_BW["Flaaffy"].abilities.push("Plus", "Plus (active)");
 POKEDEX_BW["Forretress"].abilities.push("Overcoat");
 POKEDEX_BW["Furret"].abilities.push("Frisk");
 POKEDEX_BW["Girafarig"].abilities.push("Sap Sipper");
@@ -9931,7 +9933,7 @@ POKEDEX_BW["Lugia"].abilities.push("Multiscale");
 POKEDEX_BW["Magby"].abilities.push("Vital Spirit");
 POKEDEX_BW["Magcargo"].abilities.push("Weak Armor");
 POKEDEX_BW["Mantine"].abilities.push("Water Veil");
-POKEDEX_BW["Mareep"].abilities.push("Plus");
+POKEDEX_BW["Mareep"].abilities.push("Plus", "Plus (active)");
 POKEDEX_BW["Marill"].abilities.push("Sap Sipper");
 POKEDEX_BW["Meganium"].abilities.push("Leaf Guard");
 POKEDEX_BW["Miltank"].abilities.push("Sap Sipper");
@@ -10007,7 +10009,7 @@ POKEDEX_BW["Cradily"].abilities.push("Storm Drain");
 POKEDEX_BW["Crawdaunt"].abilities.push("Adaptability");
 POKEDEX_BW["Delcatty"].abilities.push("Wonder Skin");
 POKEDEX_BW["Dustox"].abilities.push("Compound Eyes");
-POKEDEX_BW["Electrike"].abilities.push("Minus");
+POKEDEX_BW["Electrike"].abilities.push("Minus", "Minus (active)");
 POKEDEX_BW["Exploud"].abilities.push("Scrappy");
 POKEDEX_BW["Feebas"].abilities.push("Adaptability");
 POKEDEX_BW["Gardevoir"].abilities.push("Telepathy");
@@ -10029,7 +10031,7 @@ POKEDEX_BW["Loudred"].abilities.push("Scrappy");
 POKEDEX_BW["Ludicolo"].abilities.push("Own Tempo");
 POKEDEX_BW["Luvdisc"].abilities.push("Hydration");
 POKEDEX_BW["Makuhita"].abilities.push("Sheer Force");
-POKEDEX_BW["Manectric"].abilities.push("Minus");
+POKEDEX_BW["Manectric"].abilities.push("Minus", "Minus (active)");
 POKEDEX_BW["Marshtomp"].abilities.push("Damp");
 POKEDEX_BW["Masquerain"].abilities.push("Unnerve");
 POKEDEX_BW["Mawile"].abilities.push("Sheer Force");
@@ -10571,7 +10573,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 101
 		},
 		"w": 2.2,
-		"abilities": ["Cheek Pouch", "Pickup", "Plus"]
+		"abilities": ["Cheek Pouch", "Pickup", "Plus", "Plus (active)"]
 	},
 	"Delphox": {
 		"t1": "Fire",
@@ -12252,7 +12254,9 @@ POKEDEX_XY["Wigglytuff"].abilities.push("Competitive");
 POKEDEX_XY["Zapdos"].abilities[1] = "Static";
 POKEDEX_XY["Igglybuff"].abilities.push("Competitive");
 POKEDEX_XY["Plusle"].abilities.push("Lightning Rod");
+POKEDEX_XY["Plusle"].ab = "";
 POKEDEX_XY["Minun"].abilities.push("Volt Absorb");
+POKEDEX_XY["Minun"].ab = "";
 POKEDEX_XY["Feebas"].abilities.push("Oblivious");
 POKEDEX_XY["Milotic"].abilities.push("Competitive");
 POKEDEX_XY["Kecleon"].abilities.push("Protean");
@@ -15253,7 +15257,7 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SM, {
 			"sp": 75
 		},
 		"w": 40,
-		"abilities": ["Punk Rock", "Plus", "Technician"]
+		"abilities": ["Punk Rock", "Plus", "Plus (active)", "Technician"]
 	},
 	"Sizzlipede": {
 		"t1": "Fire",

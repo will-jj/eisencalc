@@ -185,6 +185,9 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 		if (result.childDamage) {
 			result.hitDamageValues = "(First hit: " + (result.firstHitDamage ? result.firstHitDamage : result.damage).join(", ") +
 			"; Second hit: " + result.childDamage.join(", ") + ")";
+			if (result.firstHitDamage) {
+				result.hitDamageValues += "; Other parent hits: (" + result.damage.join(", ") + ")";
+			}
 		} else if (result.tripleAxelDamage) {
 			result.hitDamageValues = "(First hit: " + (result.firstHitDamage ? result.firstHitDamage : result.tripleAxelDamage[0]).join(", ") +
 			"; Second hit: " + result.tripleAxelDamage[1].join(", ") +
@@ -237,7 +240,9 @@ function setUpRecoilRecoveryText(result, attacker, defender, move, minDamage, ma
 	let defMaxHP = defender.maxHP;
 	// percentage-based recoil and healing use normal rounding for their final value in gens 5+.
 	let roundFunc = gen <= 4 ? x => Math.floor(x) : x => Math.round(x);
-	if (typeof move.hasRecoil === "number" && minDamage > 0 && (attacker.ability !== "Rock Head" || isNeutralizingGas)) {
+	if (attacker.ability === "Magic Guard" && !isNeutralizingGas) {
+		// no recoil
+	} else if (typeof move.hasRecoil === "number" && minDamage > 0 && (attacker.ability !== "Rock Head" || isNeutralizingGas)) {
 		result.recoilType = "recoil";
 		// Parental Bond adds the damage values into a total and then applies the recoil value, so this is fine
 		minRecoilDamage = Math.max(roundFunc(Math.min(minDamage, defCurHP) * move.hasRecoil), 1);
@@ -321,7 +326,7 @@ function setUpRecoilRecoveryText(result, attacker, defender, move, minDamage, ma
 			maxHealthRecovered = Math.max(maxHealthRecovered, 1);
 		}
 
-		if (defender.ability === "Liquid Ooze" && !isNeutralizingGas) {
+		if (defender.ability === "Liquid Ooze" && !isNeutralizingGas && attacker.ability !== "Magic Guard") {
 			result.recoilType = defender.ability;
 			result.recoilRange = minHealthRecovered;
 			result.recoilPercent = Math.round(minHealthRecovered * 1000 / atkMaxHP) / 10;

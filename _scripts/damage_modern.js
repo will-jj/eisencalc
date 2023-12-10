@@ -245,11 +245,6 @@ function getDamageResult(attacker, defender, move, field) {
 	if (attacker.curAbility === "Long Reach" || attacker.item === "Punching Glove") {
 		makesContact = false;
 	}
-	var hasPriority = move.hasPriority;
-	if ((attacker.curAbility === "Gale Wings" && moveType === "Flying") ||
-		(move.name === "Grassy Glide" && field.terrain === "Grassy" && attackerGrounded)) {
-		hasPriority = true;
-	}
 
 	let scrappy = ["Scrappy", "Mind's Eye"].includes(attacker.curAbility);
 	let typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1, scrappy, field, field.weather === "Strong Winds", description);
@@ -300,7 +295,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.name === "Steel Roller" && !field.terrain) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if (hasPriority) {
+	if (hasPriority(move, attacker, field)) {
 		if (field.terrain === "Psychic" && defenderGrounded) {
 			description.terrain = field.terrain;
 			return {"damage": [0], "description": buildDescription(description)};
@@ -319,9 +314,14 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	description.HPEVs = defender.HPEVs + " HP";
+	let attackerLevel = attacker.level;
+	if (attackerLevel != defender.level || (attackerLevel != 50 && attackerLevel != 100)) {
+		description.attackerLevel = attackerLevel;
+		description.defenderLevel = defender.level;
+	}
 
 	if (["Seismic Toss", "Night Shade"].includes(move.name)) {
-		return {"damage": [attacker.level * (attacker.curAbility === "Parental Bond" ? 2 : 1)], "description": buildDescription(description)};
+		return {"damage": [attackerLevel * (attacker.curAbility === "Parental Bond" ? 2 : 1)], "description": buildDescription(description)};
 	}
 
 	if (move.name === "Final Gambit") {
@@ -340,7 +340,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	let defense = calcDef(attacker, defender, move, field, description);
 
-	let baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, description);
+	let baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attackerLevel), attacker, defender, move, field, description);
 
 	let stabMod = calcSTABMod(attacker, description);
 
@@ -362,19 +362,20 @@ function getDamageResult(attacker, defender, move, field) {
 			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
 		description.attackerAbility = attacker.curAbility;
+		// the following order of execution is important
 		allowOneTimeReducers = false;
 		attacker.isChild = true;
 		result.childDamage = getDamageResult(attacker, defender, move, field).damage;
-		allowOneTimeReducers = true;
-		attacker.isChild = false;
 		if (move.name === "Power-Up Punch") {
 			attacker.boosts[AT] = originalATBoost;
 			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
+		allowOneTimeReducers = true;
 		if (activateResistBerry(attacker, defender, typeEffectiveness) ||
 			((defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP)) {
 			result.firstHitDamage = damage;
 		}
+		attacker.isChild = false;
 	}
 
 	if (move.name === "Triple Axel") {
@@ -387,7 +388,7 @@ function getDamageResult(attacker, defender, move, field) {
 		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
 			move.bp = startingBP * hitNum;
 			finalBasePower = calcBP(attacker, defender, move, field, {});
-			baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, {});
+			baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attackerLevel), attacker, defender, move, field, {});
 			result.tripleAxelDamage.push(calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalModNoBerry));
 		}
 		move.bp = startingBP;
@@ -730,7 +731,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 	let finalBasePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096));
 	
 	// if a move has 1 bp, then it bypasses damage calc or has variable power. Variable power moves do not receive this boost.
-	if (attacker.isTerastal && moveType === attacker.type1 && finalBasePower < 60 && !move.hasPriority && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && move.bp != 1) {
+	if (attacker.isTerastal && moveType === attacker.type1 && finalBasePower < 60 && !hasPriority(move, attacker, field) && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && move.bp != 1) {
 		finalBasePower = 60; // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9425737
 		description.moveBP = 60;
 	}
@@ -800,9 +801,10 @@ function calcAtk(attacker, defender, move, field, description) {
 		attacker.curAbility === "Sharpness" && move.isSlicing) {
 		atMods.push(0x1800);
 		description.attackerAbility = attacker.curAbility;
-	} else if (attacker.curAbility === "Flash Fire (activated)" && moveType === "Fire") {
+	} else if (attacker.curAbility === "Flash Fire (activated)" && moveType === "Fire" ||
+		(moveCategory === "Special" && (attacker.ability === "Plus (active)" || attacker.ability === "Minus (active)"))) {
 		atMods.push(0x1800);
-		description.attackerAbility = "Flash Fire";
+		description.attackerAbility = attacker.ability.substring(0, attacker.ability.indexOf(" ("));
 	} else if (attacker.curAbility === "Water Bubble" && moveType === "Water" ||
 		(attacker.curAbility === "Huge Power" || attacker.curAbility === "Pure Power") && moveCategory === "Physical") {
 		atMods.push(0x2000);
@@ -1093,6 +1095,9 @@ function buildDescription(description) {
 	if (description.attackerTera) {
 		output += "Tera " + description.attackerTera + " ";
 	}
+	if (description.attackerLevel) {
+		output += "Lv. " + description.attackerLevel + " ";
+	}
 	output += description.attackerName + " ";
 	if (description.isHelpingHand) {
 		output += "Helping Hand ";
@@ -1148,6 +1153,9 @@ function buildDescription(description) {
 	}
 	if (description.defenderTera) {
 		output += "Tera " + description.defenderTera + " ";
+	}
+	if (description.defenderLevel) {
+		output += "Lv. " + description.defenderLevel + " ";
 	}
 	output += description.defenderName;
 	if (description.weather || description.terrain) {
@@ -1286,6 +1294,10 @@ function isGrounded(pokemon, field) {
 		return true;
 	}
 	return !(pokemon.hasType("Flying") || pokemon.item === "Air Balloon" || pokemon.curAbility === "Levitate");
+}
+
+function hasPriority(move, attacker, field) {
+	return move.hasPriority || (attacker.curAbility === "Gale Wings" && moveType === "Flying") || (move.name === "Grassy Glide" && field.terrain === "Grassy" && attackerGrounded);
 }
 
 function getModdedWeight(pokemon) {
