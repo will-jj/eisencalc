@@ -852,18 +852,18 @@ function Pokemon(pokeInfo) {
 	let move3 = pokeInfo.find(".move3");
 	let move4 = pokeInfo.find(".move4");
 	// if the set is a facility set and the move does not exist in moves, pass on the move's name so it appears in resultMove
-	let setdexObj = setdex[speciesName][setName.substring(speciesName.length + 2, setName.length - 1)];
+	let setdexPoke = setdex[speciesName] ? setdex[speciesName][setName.substring(speciesName.length + 2, setName.length - 1)] : false;
 	poke.baseMoveNames = [ // baseMoveNames is used in set export
-		setdexObj ? setdexObj.moves[0] : move1.find("select.move-selector").val(),
-		setdexObj ? setdexObj.moves[1] : move2.find("select.move-selector").val(),
-		setdexObj ? setdexObj.moves[2] : move3.find("select.move-selector").val(),
-		setdexObj ? setdexObj.moves[3] : move4.find("select.move-selector").val()
+		setdexPoke ? setdexPoke.moves[0] : move1.find("select.move-selector").val(),
+		setdexPoke ? setdexPoke.moves[1] : move2.find("select.move-selector").val(),
+		setdexPoke ? setdexPoke.moves[2] : move3.find("select.move-selector").val(),
+		setdexPoke ? setdexPoke.moves[3] : move4.find("select.move-selector").val()
 	];
 	poke.moves = [
-		setdexObj && !(setdexObj.moves[0] in moves) ? {"name": setdexObj.moves[0], "bp": 0} : getMoveDetails(move1, poke.item, poke.name),
-		setdexObj && !(setdexObj.moves[1] in moves) ? {"name": setdexObj.moves[1], "bp": 0} : getMoveDetails(move2, poke.item, poke.name),
-		setdexObj && !(setdexObj.moves[2] in moves) ? {"name": setdexObj.moves[2], "bp": 0} : getMoveDetails(move3, poke.item, poke.name),
-		setdexObj && !(setdexObj.moves[3] in moves) ? {"name": setdexObj.moves[3], "bp": 0} : getMoveDetails(move4, poke.item, poke.name)
+		setdexPoke && !(setdexPoke.moves[0] in moves) ? {"name": setdexPoke.moves[0], "bp": 0} : getMoveDetails(move1, poke.item, poke.name),
+		setdexPoke && !(setdexPoke.moves[1] in moves) ? {"name": setdexPoke.moves[1], "bp": 0} : getMoveDetails(move2, poke.item, poke.name),
+		setdexPoke && !(setdexPoke.moves[2] in moves) ? {"name": setdexPoke.moves[2], "bp": 0} : getMoveDetails(move3, poke.item, poke.name),
+		setdexPoke && !(setdexPoke.moves[3] in moves) ? {"name": setdexPoke.moves[3], "bp": 0} : getMoveDetails(move4, poke.item, poke.name)
 	];
 
 	return poke;
