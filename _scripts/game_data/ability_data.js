@@ -310,5 +310,6 @@ var ABILITIES_SV = ABILITIES_SS.concat([
 	"Wind Rider",
 	"Zero to Hero",
 	"Mind's Eye",
-	"Embody Aspect"
+	"Embody Aspect",
+	"Tera Shell"
 ]);

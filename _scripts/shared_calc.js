@@ -56,21 +56,35 @@ $(".tera").bind("keyup change", function () {
 	let setName = pokeInfo.find("input.set-selector").val(); // speciesName (setName)
 	let pokeName = setName.substring(0, setName.indexOf(" ("));
 	if ($(this).prop("checked")) {
-		pokeInfo.find(".type1").val(pokeInfo.find(".tera-type").val());
-		pokeInfo.find(".type2").val("");
 		if (pokeName.startsWith("Ogerpon")) {
 			pokeInfo.find(".ability").val("Embody Aspect");
+		} else if (pokeName == "Terapagos-Terastal") {
+			pokeInfo.find(".forme").val("Terapagos-Stellar");
+			pokeInfo.find(".forme").change();
 		}
+		let teraType = pokeInfo.find(".tera-type").val();
+		if (teraType == "Stellar") {
+			return; // do not change typing for Stellar tera type
+		}
+		pokeInfo.find(".type1").val(teraType);
+		pokeInfo.find(".type2").val("");
 	} else {
 		let dexEntry = pokedex[pokeName];
-		if (dexEntry.formes) {
-			dexEntry = pokedex[pokeInfo.find(".forme").val()];
+		let formeName = pokeInfo.find(".forme").val();
+		if (dexEntry.formes && formeName) {
+			dexEntry = pokedex[formeName];
+		}
+		if (pokeName.startsWith("Ogerpon")) {
+			pokeInfo.find(".ability").val(dexEntry.abilities[0]);
+		} else if (formeName == "Terapagos-Stellar") {
+			pokeInfo.find(".forme").val("Terapagos-Terastal");
+			pokeInfo.find(".forme").change();
+		}
+		if (pokeInfo.find(".tera-type").val() == "Stellar") {
+			return; // do not change typing for Stellar tera type
 		}
 		pokeInfo.find(".type1").val(dexEntry.t1);
 		pokeInfo.find(".type2").val(dexEntry.t2 !== undefined ? dexEntry.t2 : "");
-		if (pokeName.startsWith("Ogerpon")) {
-			pokeInfo.find(".ability").val(dexEntry.abilities[0]);
-		}
 	}
 });
 
@@ -583,6 +597,8 @@ $(".set-selector").bind("change click keyup keydown", function () {
 		setSelectValueIfValid(abilityObj, abilityList && abilityList.length == 1 ? abilityList[0] : pokemon.ab, "");
 		if (pokemonName.startsWith("Ogerpon") && pokemonName.includes("-")) {
 			pokeObj.find(".tera-type").val(pokemon.t2);
+		} else if (pokemonName.startsWith("Terapagos")) {
+			pokeObj.find(".tera-type").val("Stellar");
 		} else {
 			pokeObj.find(".tera-type").val(pokemon.t1);
 		}
@@ -790,7 +806,6 @@ function Pokemon(pokeInfo) {
 	// pokeInfo is a jquery object
 	let setName = pokeInfo.find("input.set-selector").val();
 	let speciesName = setName.substring(0, setName.indexOf(" ("));
-	let dexEntry = pokedex[speciesName];
 	let poke = {
 		"type1": pokeInfo.find(".type1").val(),
 		"type2": pokeInfo.find(".type2").val(),
@@ -802,8 +817,6 @@ function Pokemon(pokeInfo) {
 		"HPIVs": ~~pokeInfo.find(".hp .ivs").val(),
 		"isDynamax": pokeInfo.find(".max").prop("checked"),
 		"isTerastal": pokeInfo.find(".tera").prop("checked"),
-		"dexType1":  dexEntry.t1,
-		"dexType2":  dexEntry.t2,
 		"rawStats": [],
 		"boosts": [],
 		"stats": [],
@@ -821,17 +834,21 @@ function Pokemon(pokeInfo) {
 		"resetCurAbility": function () { this.curAbility = (isNeutralizingGas && this.item !== "Ability Shield") ? "" : this.ability }
 	};
 	// name
+	let dexEntry = pokedex[speciesName];
 	if (!setName.includes("(")) {
 		poke.name = setName;
 	} else {
-		let pokemonName = speciesName;
 		let currentForme = pokeInfo.find(".forme").val();
-		if (pokedex[pokemonName].formes && currentForme != null) {
+		if (dexEntry.formes && currentForme != null) {
 			poke.name = currentForme;
+			dexEntry = pokedex[currentForme];
 		} else {
-			poke.name = pokemonName;
+			poke.name = speciesName;
 		}
 	}
+	// dexType
+	poke.dexType1 = dexEntry.t1;
+	poke.dexType2 = dexEntry.t2;
 	// .ability is the mon's ability and should never be overwritten
 	// .curAbility represents the ability after negation through Neutralizing Gas or a Mold Breaker ability or move
 	poke.resetCurAbility();
@@ -1330,9 +1347,12 @@ $(".gen").change(function () {
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
 	let typeOptions = getSelectOptions(Object.keys(typeChart));
-	$("select.type1" + (gen == 9 ? ", select.tera-type" : "")).find("option").remove().end().append(typeOptions);
+	$("select.type1").find("option").remove().end().append(typeOptions);
 	$("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
 	$("select.move-type").find("option").remove().end().append("<option value=\"None\">None</option>" + typeOptions);
+	if (gen == 9) {
+		$("select.tera-type").find("option").remove().end().append(typeOptions + "<option value=\"Stellar\">Stellar</option>");
+	}
 	var moveOptions = getSelectOptions(Object.keys(moves), true);
 	$("select.move-selector").find("option").remove().end().append(moveOptions);
 	var abilityOptions = getSelectOptions(abilities, true);

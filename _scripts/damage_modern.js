@@ -184,6 +184,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 
 	case "Meteor Beam":
+	case "Electro Shot":
 		originalSABoost = attacker.boosts[SA];
 		attacker.boosts[SA] = attacker.curAbility === "Simple" ? Math.min(6, attacker.boosts[SA] + 2) : (attacker.curAbility === "Contrary" && attacker.item !== "White Herb" ? Math.max(-6, attacker.boosts[SA] - 1) : Math.min(6, attacker.boosts[SA] + 1));
 		attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
@@ -192,7 +193,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	case "Tera Blast":
 		if (attacker.isTerastal) {
-			moveType = attacker.type1;
+			moveType = attacker.teraType;
 		}
 		break;
 
@@ -260,6 +261,12 @@ function getDamageResult(attacker, defender, move, field) {
 		} else if (typeChart[moveType][defender.type2] === 0) {
 			typeEffectiveness = typeEffect1;
 		}
+	}
+	if (move.name === "Tera Blast" && attacker.teraType === "Stellar" && attacker.isTerastal && defender.isTerastal) {
+		typeEffectiveness *= 2;
+	}
+	if (allowOneTimeReducers && defender.ability === "Tera Shell" && typeEffectiveness >= 1) {
+		typeEffectiveness = 0.5;
 	}
 
 	if (typeEffectiveness === 0) {
@@ -405,6 +412,14 @@ function getDamageResult(attacker, defender, move, field) {
 		result.damage = calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod);
 	}
 
+	if (allowOneTimeReducers && defender.ability == "Tera Shell" && defender.curHP === defender.maxHP) {
+		// this branch actually calculates the damage without applying Tera Shell
+		result.firstHitDamage = damage;
+		allowOneTimeReducers = false;
+		result.damage = getDamageResult(attacker, defender, move, field).damage;
+		allowOneTimeReducers = true;
+	}
+
 	result.description = buildDescription(description);
 	return result;
 }
@@ -439,6 +454,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		break;
 	case "Crush Grip":
 	case "Wring Out":
+	case "Hard Press":
 		basePower = 100 * Math.floor((defender.curHP * 4096) / defender.maxHP);
 		basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
 		description.moveBP = basePower;
@@ -731,7 +747,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 	let finalBasePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096));
 	
 	// if a move has 1 bp, then it bypasses damage calc or has variable power. Variable power moves do not receive this boost.
-	if (attacker.isTerastal && moveType === attacker.type1 && finalBasePower < 60 && !hasPriority(move, attacker, field) && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && move.bp != 1) {
+	if (attacker.isTerastal && moveType === attacker.teraType && finalBasePower < 60 && !hasPriority(move, attacker, field) && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && move.bp != 1) {
 		finalBasePower = 60; // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9425737
 		description.moveBP = 60;
 	}
@@ -759,7 +775,7 @@ function calcAtk(attacker, defender, move, field, description) {
 	}
 
 	// reset the SpA boost from Meteor Beam
-	if (move.name === "Meteor Beam") {
+	if (move.name === "Meteor Beam" || move.name === "Electro Shot") {
 		attacker.boosts[SA] = originalSABoost;
 		attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 	}
@@ -919,7 +935,8 @@ function calcBaseDamage(moddedBasePower, attack, defense, attackerLevel) {
 }
 
 function modBaseDamage(baseDamage, attacker, defender, move, field, description) {
-	if (field.format === "doubles" && (move.isSpread || (move.name === "Expanding Force" && field.terrain === "Psychic" && attackerGrounded))) {
+	if (field.format === "doubles" &&
+		(move.isSpread || (move.name === "Expanding Force" && field.terrain === "Psychic" && attackerGrounded) || (move.name === "Tera Starstorm" && attacker.name === "Terapagos-Stellar"))) {
 		baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
 		description.isSpread = true;
 	}
@@ -969,11 +986,15 @@ function calcSTABMod(attacker, description) {
 		}
 		return 0x1800;
 	}
+	if (attacker.isTerastal && attacker.teraType === "Stellar") {
+		description.attackerTera = attacker.teraType;
+		return 0x1800;
+	}
 	let stabMod = 0x1000;
 	if (attacker.hasType(moveType)) {
 		stabMod += 0x800;
 		if (attacker.isTerastal) {
-			description.attackerTera = attacker.type1;
+			description.attackerTera = attacker.teraType;
 		}
 	}
 	if (attacker.isTerastal && (moveType === attacker.dexType1 || moveType === attacker.dexType2)) {
@@ -1046,9 +1067,9 @@ function calcFinalMods(attacker, defender, move, field, description, typeEffecti
 		description.attackerItem = attacker.item;
 	}
 	if (allowOneTimeReducers && activateResistBerry(attacker, defender, typeEffectiveness)) {
-		if (attacker.curAbility === "Ripen") {
+		if (defender.curAbility === "Ripen") {
 			finalMods.push(0x400);
-			description.attackerAbility = attacker.curAbility;
+			description.defenderAbility = defender.curAbility;
 		} else {
 			finalMods.push(0x800);
 		}
@@ -1234,7 +1255,7 @@ function getMoveEffectiveness(move, mType, defType, isGhostRevealed, field, isSt
 	if (!mType) {
 		console.log(move.name + " does not have a type field.");
 		return 0;
-	} else if (mType === "None") {
+	} else if (mType === "None" || mType === "Stellar") {
 		return 1;
 	} else if (isGhostRevealed && defType === "Ghost" && (mType === "Normal" || mType === "Fighting")) {
 		return 1;

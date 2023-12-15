@@ -5658,6 +5658,12 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"category": "Special",
 		"acc": 100
 	},
+	"Ivy Cudgel": {
+		"bp": 100,
+		"type": "Grass",
+		"category": "Physical",
+		"acc": 100
+	},
 	"Matcha Gotcha": {
 		"bp": 80,
 		"type": "Grass",
@@ -5673,10 +5679,92 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"isBullet": true,
 		"acc": 85
 	},
-	"Ivy Cudgel": {
-		"bp": 100,
-		"type": "Grass",
+
+	"Alluring Voice": {
+		"bp": 80,
+		"type": "Fairy",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Electro Shot": {
+		"bp": 130,
+		"type": "Electric",
+		"category": "Special",
+		"acc": 100
+	},
+	"Fickle Beam": {
+		"bp": 80,
+		"type": "Dragon",
+		"category": "Special",
+		"acc": 100
+	},
+	"Hard Press": {
+		"bp": 1,
+		"type": "Steel",
 		"category": "Physical",
+		"acc": 100
+	},
+	"Malignant Chain": {
+		"bp": 100,
+		"type": "Poison",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Mighty Cleave": {
+		"bp": 95,
+		"type": "Rock",
+		"category": "Physical",
+		"bypassesProtect": true,
+		"acc": 100
+	},
+	"Psychic Noise": {
+		"bp": 75,
+		"type": "Psychic",
+		"category": "Special",
+		"hasSecondaryEffect": true,
+		"acc": 100
+	},
+	"Supercell Slam": {
+		"bp": 100,
+		"type": "Electric",
+		"category": "Physical",
+		"hasRecoil": "crash",
+		"acc": 95
+	},
+	"Tachyon Cutter": {
+		"bp": 50,
+		"type": "Steel",
+		"category": "Special",
+		"isTwoHit": true,
+		"acc": 101
+	},
+	"Temper Flare": {
+		"bp": 75,
+		"type": "Fire",
+		"category": "Physical",
+		"acc": 100
+	},
+	"Tera Starstorm": {
+		"bp": 120,
+		"type": "Normal",
+		"category": "Special",
+		"acc": 100
+	},
+	"Thunderclap": {
+		"bp": 70,
+		"type": "Electric",
+		"category": "Special",
+		"hasPriority": true,
+		"acc": 100
+	},
+	"Upper Hand": {
+		"bp": 65,
+		"type": "Fighting",
+		"category": "Physical",
+		"hasPriority": true,
+		"hasSecondaryEffect": true,
 		"acc": 100
 	}
 });
