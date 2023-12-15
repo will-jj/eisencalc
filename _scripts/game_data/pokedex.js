@@ -18233,6 +18233,133 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 		},
 		"w": 39.8,
 		"abilities": ["Sturdy"]
+	},
+
+	"Archaludon": {
+		"t1": "Steel",
+		"t2": "Dragon",
+		"bs": {
+			"hp": 90,
+			"at": 105,
+			"df": 130,
+			"sa": 125,
+			"sd": 65,
+			"sp": 85
+		},
+		"w": 60,
+		"abilities": ["Stamina", "Sturdy", "Stalwart"]
+	},
+	"Hydrapple": {
+		"t1": "Grass",
+		"t2": "Dragon",
+		"bs": {
+			"hp": 106,
+			"at": 80,
+			"df": 110,
+			"sa": 120,
+			"sd": 80,
+			"sp": 44
+		},
+		"w": 93,
+		"abilities": ["Supersweet Syrup", "Regenerator", "Sticky Hold"]
+	},
+	"Gouging Fire": {
+		"t1": "Fire",
+		"t2": "Dragon",
+		"bs": {
+			"hp": 105,
+			"at": 115,
+			"df": 121,
+			"sa": 65,
+			"sd": 93,
+			"sp": 91
+		},
+		"w": 590,
+		"abilities": ["Protosynthesis"]
+	},
+	"Raging Bolt": {
+		"t1": "Electric",
+		"t2": "Dragon",
+		"bs": {
+			"hp": 125,
+			"at": 73,
+			"df": 91,
+			"sa": 137,
+			"sd": 89,
+			"sp": 75
+		},
+		"w": 480,
+		"abilities": ["Protosynthesis"]
+	},
+	"Iron Boulder": {
+		"t1": "Rock",
+		"t2": "Psychic",
+		"bs": {
+			"hp": 90,
+			"at": 120,
+			"df": 80,
+			"sa": 68,
+			"sd": 108,
+			"sp": 124
+		},
+		"w": 162.5,
+		"abilities": ["Quark Drive"]
+	},
+	"Iron Crown": {
+		"t1": "Steel",
+		"t2": "Psychic",
+		"bs": {
+			"hp": 90,
+			"at": 72,
+			"df": 100,
+			"sa": 122,
+			"sd": 108,
+			"sp": 98
+		},
+		"w": 156,
+		"abilities": ["Quark Drive"]
+	},
+	"Terapagos-Terastal": {
+		"t1": "Normal",
+		"bs": {
+			"hp": 95,
+			"at": 95,
+			"df": 110,
+			"sa": 105,
+			"sd": 110,
+			"sp": 85
+		},
+		"w": 16,
+		"abilities": ["Tera Shell"],
+		"formes": [ "Terapagos-Terastal", "Terapagos-Stellar"]
+	},
+	"Terapagos-Stellar": {
+		"t1": "Normal",
+		"bs": {
+			"hp": 160,
+			"at": 105,
+			"df": 110,
+			"sa": 130,
+			"sd": 110,
+			"sp": 85
+		},
+		"w": 77,
+		"abilities": ["Teraform Zero"],
+		"hasBaseForme": "Terapagos-Terastal"
+	},
+	"Pecharunt": {
+		"t1": "Poison",
+		"t2": "Ghost",
+		"bs": {
+			"hp": 88,
+			"at": 88,
+			"df": 160,
+			"sa": 88,
+			"sd": 88,
+			"sp": 88
+		},
+		"w": 77,
+		"abilities": ["Poison Puppeteer"]
 	}
 });
 
