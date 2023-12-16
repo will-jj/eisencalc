@@ -5221,7 +5221,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"acc": 100
 	},
 	"Comeuppance": {
-		"bp": 0,
+		"bp": 1,
 		"type": "Dark",
 		"makesContact": true
 	},
@@ -5684,6 +5684,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 80,
 		"type": "Fairy",
 		"category": "Special",
+		"isSound": true,
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
@@ -5691,6 +5692,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 130,
 		"type": "Electric",
 		"category": "Special",
+		"hasSecondaryEffect": true,
 		"acc": 100
 	},
 	"Fickle Beam": {
@@ -5703,6 +5705,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 1,
 		"type": "Steel",
 		"category": "Physical",
+		"makesContact": true,
 		"acc": 100
 	},
 	"Malignant Chain": {
@@ -5716,6 +5719,8 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 95,
 		"type": "Rock",
 		"category": "Physical",
+		"makesContact": true,
+		"isSlicing": true,
 		"bypassesProtect": true,
 		"acc": 100
 	},
@@ -5723,6 +5728,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 75,
 		"type": "Psychic",
 		"category": "Special",
+		"isSound": true,
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
@@ -5730,6 +5736,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 100,
 		"type": "Electric",
 		"category": "Physical",
+		"makesContact": true,
 		"hasRecoil": "crash",
 		"acc": 95
 	},
@@ -5737,6 +5744,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 50,
 		"type": "Steel",
 		"category": "Special",
+		"isSlicing": true,
 		"isTwoHit": true,
 		"acc": 101
 	},
@@ -5744,6 +5752,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"bp": 75,
 		"type": "Fire",
 		"category": "Physical",
+		"makesContact": true,
 		"acc": 100
 	},
 	"Tera Starstorm": {
@@ -5764,6 +5773,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"type": "Fighting",
 		"category": "Physical",
 		"hasPriority": true,
+		"makesContact": true,
 		"hasSecondaryEffect": true,
 		"acc": 100
 	}
