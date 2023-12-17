@@ -207,6 +207,13 @@ function getDamageResult(attacker, defender, move, field) {
 		moveType = attacker.name === "Ogerpon-Wellspring" ? "Water" : attacker.name === "Ogerpon-Hearthflame" ? "Fire" : attacker.name === "Ogerpon-Cornerstone" ? "Rock" : moveType;
 		description.moveType = moveType;
 		break;
+
+	case "Tera Starstorm":
+		if (attacker.name === "Terapagos-Stellar") {
+			moveType = "Stellar";
+			description.moveType = moveType;
+		}
+		break;
 	}
 
 	// Abilities that change move type
