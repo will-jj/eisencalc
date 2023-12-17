@@ -194,6 +194,7 @@ function getDamageResult(attacker, defender, move, field) {
 	case "Tera Blast":
 		if (attacker.isTerastal) {
 			moveType = attacker.teraType;
+			// moveType is implied by the printed tera type of the attacker
 		}
 		break;
 
@@ -265,7 +266,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.name === "Tera Blast" && attacker.teraType === "Stellar" && attacker.isTerastal && defender.isTerastal) {
 		typeEffectiveness *= 2;
 	}
-	if (allowOneTimeReducers && defender.ability === "Tera Shell" && typeEffectiveness >= 1) {
+	if (allowOneTimeReducers && defender.curAbility === "Tera Shell" && typeEffectiveness >= 1) {
 		typeEffectiveness = 0.5;
 	}
 
@@ -553,6 +554,12 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		basePower *= (field.terrain === "Electric" && attackerGrounded ? 1.5 : 1);
 		description.moveBP = basePower;
 		break;
+	case "Tera Blast":
+		if (attacker.isTerastal && attacker.teraType === "Stellar") {
+			basePower = 100;
+			description.moveBP = basePower;
+		}
+		break;
 	}
 
 	if (["Breakneck Blitz", "Bloom Doom", "Inferno Overdrive", "Hydro Vortex", "Gigavolt Havoc", "Subzero Slammer", "Supersonic Skystrike",
@@ -747,7 +754,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 	let finalBasePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096));
 	
 	// if a move has 1 bp, then it bypasses damage calc or has variable power. Variable power moves do not receive this boost.
-	if (attacker.isTerastal && moveType === attacker.teraType && finalBasePower < 60 && !hasPriority(move, attacker, field) && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && move.bp != 1) {
+	if (attacker.isTerastal && (moveType === attacker.teraType || attacker.teraType === "Stellar") && finalBasePower < 60 && !hasPriority(move, attacker, field) && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && move.bp != 1) {
 		finalBasePower = 60; // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9425737
 		description.moveBP = 60;
 	}
@@ -988,7 +995,8 @@ function calcSTABMod(attacker, description) {
 	}
 	if (attacker.isTerastal && attacker.teraType === "Stellar") {
 		description.attackerTera = attacker.teraType;
-		return 0x1800;
+		// https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9894284
+		return attacker.hasType(moveType) ? 0x2000 : 0x1333;
 	}
 	let stabMod = 0x1000;
 	if (attacker.hasType(moveType)) {
@@ -1113,11 +1121,11 @@ function buildDescription(description) {
 	if (description.isBurned) {
 		output += "burned ";
 	}
-	if (description.attackerTera) {
-		output += "Tera " + description.attackerTera + " ";
-	}
 	if (description.attackerLevel) {
 		output += "Lv. " + description.attackerLevel + " ";
+	}
+	if (description.attackerTera) {
+		output += "Tera " + description.attackerTera + " ";
 	}
 	output += description.attackerName + " ";
 	if (description.isHelpingHand) {
@@ -1172,11 +1180,11 @@ function buildDescription(description) {
 	if (description.isRuinDef) {
 		output += "Ruin ";
 	}
-	if (description.defenderTera) {
-		output += "Tera " + description.defenderTera + " ";
-	}
 	if (description.defenderLevel) {
 		output += "Lv. " + description.defenderLevel + " ";
+	}
+	if (description.defenderTera) {
+		output += "Tera " + description.defenderTera + " ";
 	}
 	output += description.defenderName;
 	if (description.weather || description.terrain) {
@@ -1255,7 +1263,7 @@ function getMoveEffectiveness(move, mType, defType, isGhostRevealed, field, isSt
 	if (!mType) {
 		console.log(move.name + " does not have a type field.");
 		return 0;
-	} else if (mType === "None" || mType === "Stellar") {
+	} else if (mType === "None" || mType === "Stellar") { // Stellar's super effective on tera defenders is handled outside this function
 		return 1;
 	} else if (isGhostRevealed && defType === "Ghost" && (mType === "Normal" || mType === "Fighting")) {
 		return 1;
@@ -1446,29 +1454,29 @@ function isShellSideArmPhysical(attacker, defender, move) {
 }
 
 function checkProtoQuarkHighest(pokemon, weather, terrain) {
-	if ((pokemon.ability === "Protosynthesis" && (pokemon.item === "Booster Energy" || weather.indexOf("Sun") > -1)) ||
-		(pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric"))) {
-		let stats = pokemon.stats;
+	if ((pokemon.ability === "Protosynthesis" && !isNeutralizingGas && (pokemon.item === "Booster Energy" || weather.endsWith("Sun") > -1)) ||
+		(pokemon.ability === "Quark Drive" && !isNeutralizingGas && (pokemon.item === "Booster Energy" || terrain === "Electric"))) {
+		// getModifiedStat() is used because the CALCULATE_ functions have not yet initialized a stats[SP] value, and this function is part of that initialization
 		let highestStat = AT;
 		let highestValue = getModifiedStat(pokemon.rawStats[AT], pokemon.boosts[AT]);
 		if (getModifiedStat(pokemon.rawStats[DF], pokemon.boosts[DF]) > highestValue) {
 			highestStat = DF;
-			highestValue = stats[DF];
+			highestValue = getModifiedStat(pokemon.rawStats[highestStat], pokemon.boosts[highestStat]);
 		}
 		if (getModifiedStat(pokemon.rawStats[SA], pokemon.boosts[SA]) > highestValue) {
 			highestStat = SA;
-			highestValue = stats[SA];
+			highestValue = getModifiedStat(pokemon.rawStats[highestStat], pokemon.boosts[highestStat]);
 		}
 		if (getModifiedStat(pokemon.rawStats[SD], pokemon.boosts[SD]) > highestValue) {
 			highestStat = SD;
-			highestValue = stats[SD];
+			highestValue = getModifiedStat(pokemon.rawStats[highestStat], pokemon.boosts[highestStat]);
 		}
 		if (getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]) > highestValue) {
 			return SP;
 		}
 		return highestStat;
 	}
-	return "";
+	return false;
 }
 
 function checkAngerShell(pokemon) {

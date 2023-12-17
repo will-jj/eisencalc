@@ -19494,7 +19494,6 @@ delete POKEDEX_SV["Mantyke"];
 delete POKEDEX_SV["Lickilicky"];
 delete POKEDEX_SV["Tangrowth"];
 delete POKEDEX_SV["Togekiss"];
-delete POKEDEX_SV["Regigigas"];
 delete POKEDEX_SV["Victini"];
 delete POKEDEX_SV["Patrat"];
 delete POKEDEX_SV["Watchog"];
