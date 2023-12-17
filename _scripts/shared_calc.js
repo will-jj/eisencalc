@@ -63,7 +63,7 @@ $(".tera").bind("keyup change", function () {
 			pokeInfo.find(".forme").change();
 		}
 		let teraType = pokeInfo.find(".tera-type").val();
-		if (teraType == "Stellar") {
+		if (teraType === "Stellar") {
 			return; // do not change typing for Stellar tera type
 		}
 		pokeInfo.find(".type1").val(teraType);
@@ -80,19 +80,42 @@ $(".tera").bind("keyup change", function () {
 			pokeInfo.find(".forme").val("Terapagos-Terastal");
 			pokeInfo.find(".forme").change();
 		}
-		if (pokeInfo.find(".tera-type").val() == "Stellar") {
+		if (pokeInfo.find(".tera-type").val() === "Stellar") {
 			return; // do not change typing for Stellar tera type
 		}
 		pokeInfo.find(".type1").val(dexEntry.t1);
-		pokeInfo.find(".type2").val(dexEntry.t2 !== undefined ? dexEntry.t2 : "");
+		pokeInfo.find(".type2").val(dexEntry.t2 ? dexEntry.t2 : "");
 	}
 });
 
 $(".tera-type").bind("keyup change", function () {
-	var pokeInfo = $(this).closest(".poke-info");
-	if (pokeInfo.find(".tera").prop("checked")) {
-		pokeInfo.find(".type1").val($(this).val());
+	if (gen != 9) {
+		return;
 	}
+	let pokeInfo = $(this).closest(".poke-info");
+	if (!pokeInfo.find(".tera").prop("checked")) {
+		return;
+	}
+	// the tera type changed while terastallized, so update the current typing
+	let teraType = $(this).val();
+	let type1 = teraType;
+	let type2 = "";
+	if (teraType === "Stellar") {
+		let setName = pokeInfo.find("input.set-selector").val(); // speciesName (setName)
+		let pokeName = setName.substring(0, setName.indexOf(" ("));
+		let dexEntry = pokedex[pokeName];
+		let formeName = pokeInfo.find(".forme").val();
+		if (dexEntry.formes && formeName) {
+			dexEntry = pokedex[formeName];
+		}
+		type1 = dexEntry.t1;
+		type2 = dexEntry.t2 ? dexEntry.t2 : "";
+	} else {
+		type1 = teraType;
+		type2 = "";
+	}
+	pokeInfo.find(".type1").val(type1);
+	pokeInfo.find(".type2").val(type2);
 });
 
 $("#autolevel").change(function () {
