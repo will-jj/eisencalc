@@ -209,7 +209,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 
 	case "Tera Starstorm":
-		if (attacker.name === "Terapagos-Stellar") {
+		if (attacker.isTerastal) {
 			moveType = "Stellar";
 			description.moveType = moveType;
 		}
@@ -270,8 +270,8 @@ function getDamageResult(attacker, defender, move, field) {
 			typeEffectiveness = typeEffect1;
 		}
 	}
-	if (move.name === "Tera Blast" && attacker.teraType === "Stellar" && attacker.isTerastal && defender.isTerastal) {
-		typeEffectiveness *= 2;
+	if (attacker.isTerastal && defender.isTerastal && attacker.teraType === "Stellar") {
+		typeEffectiveness = 2;
 	}
 	if (allowOneTimeReducers && defender.curAbility === "Tera Shell" && typeEffectiveness >= 1) {
 		typeEffectiveness = 0.5;
@@ -463,8 +463,9 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 	case "Crush Grip":
 	case "Wring Out":
 	case "Hard Press":
-		basePower = 100 * Math.floor((defender.curHP * 4096) / defender.maxHP);
-		basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
+		basePower = move.name === "Hard Press" ? 100 : 120;
+		// formula taken from DaWoblefet’s Damage Dissertation, based on the reverse-engineered gen 5 damage formula
+		basePower = Math.max(1, Math.floor(pokeRound((basePower * 100 * Math.floor((defender.curHP * 4096) / defender.maxHP)) / 4096) / 100));
 		description.moveBP = basePower;
 		break;
 	case "Hex":
@@ -950,7 +951,7 @@ function calcBaseDamage(moddedBasePower, attack, defense, attackerLevel) {
 
 function modBaseDamage(baseDamage, attacker, defender, move, field, description) {
 	if (field.format === "doubles" &&
-		(move.isSpread || (move.name === "Expanding Force" && field.terrain === "Psychic" && attackerGrounded) || (move.name === "Tera Starstorm" && attacker.name === "Terapagos-Stellar"))) {
+		(move.isSpread || (move.name === "Expanding Force" && field.terrain === "Psychic" && attackerGrounded) || (move.name === "Tera Starstorm" && attacker.isTerastal))) {
 		baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
 		description.isSpread = true;
 	}
