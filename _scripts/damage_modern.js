@@ -218,6 +218,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	// Abilities that change move type
 	let ateizeBoost = false;
+	// if the move is a Max move, it already had its type changed in shared_calc (so that the move's name changes) and won't receive this boost. this is correct behavior.
 	if (!move.isZ) { //Z-Moves don't receive -ate type changes
 		let applicableNormalMove = moveType === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal); // Raging Bull could be here
 		if (applicableNormalMove && attacker.curAbility === "Aerilate") {
@@ -412,7 +413,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (allowOneTimeReducers && (
 		activateResistBerry(attacker, defender, typeEffectiveness) ||
 		((defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP))) {
-		// this branch actually calculates the damage without the one-time reducers
+		// this branch calculates the damage without the one-time reducers
 		result.firstHitDamage = damage;
 		allowOneTimeReducers = false;
 		finalMod = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
@@ -421,10 +422,19 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	if (allowOneTimeReducers && defender.ability == "Tera Shell" && defender.curHP === defender.maxHP) {
-		// this branch actually calculates the damage without applying Tera Shell
+		// this branch calculates the damage without applying Tera Shell
 		result.firstHitDamage = damage;
 		allowOneTimeReducers = false;
 		result.damage = getDamageResult(attacker, defender, move, field).damage;
+		allowOneTimeReducers = true;
+	}
+
+	if (allowOneTimeReducers && attacker.isTerastal && attacker.teraType === "Stellar" && !attacker.name.includes("Terapagos")) {
+		// this branch calculates the damage without applying Stellar STAB
+		result.firstHitDamage = damage;
+		allowOneTimeReducers = false;
+		// Adaptability is never factored in for Stellar tera
+		result.damage = calcDamageRange(baseDamage, attacker.hasType(moveType) ? 0x1800 : 0x1000, typeEffectiveness, applyBurn, finalMod);
 		allowOneTimeReducers = true;
 	}
 
