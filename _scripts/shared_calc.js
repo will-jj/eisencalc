@@ -912,94 +912,12 @@ function Pokemon(pokeInfo) {
 function getMoveDetails(moveInfo, item, species) {
 	let moveName = moveInfo.find("select.move-selector").val();
 	let defaultDetails = moves[moveName];
-	let isZMove = gen == 7 && moveInfo.find("input.move-z").prop("checked") && moveName !== "Struggle";
-	let isMax = gen == 8 && moveInfo.find("input.move-max").prop("checked") && moveName !== "Struggle";
 
-	if (isMax) {
-		var exceptions_100_fight = ["Low Kick", "Reversal", "Final Gambit"];
-		var exceptions_80_fight = ["Double Kick", "Triple Kick"];
-		var exceptions_75_fight = ["Counter", "Seismic Toss"];
-		var exceptions_140 = ["Triple Axel", "Crush Grip", "Wring Out", "Magnitude", "Double Iron Bash", "Rising Voltage"];
-		var exceptions_130 = ["Lash Out (Doubled)", "Scale Shot", "Dual Wingbeat", "Terrain Pulse", "Bolt Beak (Doubled)", "Fishious Rend (Doubled)", "Pin Missile", "Power Trip", "Punishment", "Dragon Darts", "Dual Chop", "Electro Ball", "Heat Crash",
-			"Bullet Seed", "Grass Knot", "Bonemerang", "Bone Rush", "Fissure", "Icicle Spear", "Sheer Cold", "Weather Ball", "Tail Slap", "Guillotine", "Horn Drill",
-			"Flail", "Return", "Frustration", "Endeavor", "Natural Gift", "Trump Card", "Stored Power", "Rock Blast", "Gear Grind", "Gyro Ball", "Heavy Slam"];
-		var exceptions_120 = ["Double Hit", "Spike Cannon"];
-		var exceptions_110 = ["Avalanche (Doubled)", "Revenge (Doubled)"];
-		var exceptions_100 = ["Twineedle", "Beat Up", "Fling", "Dragon Rage", "Nature\'s Madness", "Night Shade", "Comet Punch", "Fury Swipes", "Sonic Boom", "Bide",
-			"Super Fang", "Present", "Spit Up", "Psywave", "Mirror Coat", "Metal Burst"];
-
-		var tempBP = 0;
-
-		var maxMoveName = MAXMOVES_LOOKUP[defaultDetails.type];
-
-		if (moves[maxMoveName].type == "Fighting" || moves[maxMoveName].type == "Poison") {
-			if (exceptions_100_fight.includes(moveName)) tempBP = 100;
-			else if (exceptions_80_fight.includes(moveName)) tempBP = 80;
-			else if (exceptions_75_fight.includes(moveName)) tempBP = 75;
-			else if (defaultDetails.bp >= 150) tempBP = 100;
-			else if (defaultDetails.bp >= 110) tempBP = 95;
-			else if (defaultDetails.bp >= 75) tempBP = 90;
-			else if (defaultDetails.bp >= 65) tempBP = 85;
-			else if (defaultDetails.bp >= 55) tempBP = 80;
-			else if (defaultDetails.bp >= 45) tempBP = 75;
-			else if (defaultDetails.bp >= 1) tempBP = 70;
-		} else {
-			if (exceptions_140.includes(moveName)) tempBP = 140;
-			else if (exceptions_130.includes(moveName)) tempBP = 130;
-			else if (exceptions_120.includes(moveName)) tempBP = 120;
-			else if (exceptions_110.includes(moveName)) tempBP = 110;
-			else if (exceptions_100.includes(moveName)) tempBP = 100;
-			else if (defaultDetails.bp >= 150) tempBP = 150;
-			else if (defaultDetails.bp >= 110) tempBP = 140;
-			else if (defaultDetails.bp >= 75) tempBP = 130;
-			else if (defaultDetails.bp >= 65) tempBP = 120;
-			else if (defaultDetails.bp >= 55) tempBP = 110;
-			else if (defaultDetails.bp >= 45) tempBP = 100;
-			else if (defaultDetails.bp >= 1) tempBP = 90;
-		}
-
-		var tempType = defaultDetails.type;
-		var ability = moveInfo.closest(".poke-info").find(".ability").val();
-		// changing the type like this prevents getDamageResult() from applying the -ate boost, which is accurate to the game
-		if (!isNeutralizingGas && ability === "Pixilate" && tempType === "Normal") {
-			maxMoveName = "Max Starfall";
-			tempType = "Fairy";
-		} else if (!isNeutralizingGas && ability === "Refrigerate" && tempType === "Normal") {
-			maxMoveName = "Max Hailstorm";
-			tempType = "Ice";
-		}
-
-		let negateAbility = false;
-		if (tempBP == 0) {
-			maxMoveName = "Max Guard";
-			tempType = "Normal";
-		} else if (species === "Cinderace-Gmax" && tempType === "Fire") {
-			tempBP = 160;
-			maxMoveName = "G-Max Fireball";
-			negateAbility = true;
-		} else if (species === "Inteleon-Gmax" && tempType === "Water") {
-			tempBP = 160;
-			maxMoveName = "G-Max Hydrosnipe";
-			negateAbility = true;
-		} else if (species === "Rillaboom-Gmax" && tempType === "Grass") {
-			tempBP = 160;
-			maxMoveName = "G-Max Drum Solo";
-			negateAbility = true;
-		}
-
-		return $.extend({}, moves[maxMoveName], {
-			"name": maxMoveName,
-			"moveDescName": maxMoveName + " (" + tempBP + "BP)",
-			"bp": tempBP,
-			"type": tempType,
-			"category": defaultDetails.category,
-			"isCrit": moveInfo.find(".move-crit").prop("checked"),
-			"hits": 1,
-			"isMax": true,
-			"negateAbility": negateAbility
-		});
+	if (gen == 8 && moveInfo.find("input.move-max").prop("checked") && moveName !== "Struggle") {
+		return getMaxMove(moveName, defaultDetails, species, moveInfo);
 	}
 
+	let isZMove = gen == 7 && moveInfo.find("input.move-z").prop("checked") && moveName !== "Struggle";
 	// If z-move is checked but there isn't a corresponding z-move, use the original move
 	if (isZMove && "zp" in defaultDetails) {
 		if (moveName === "Nature Power") {
@@ -1024,11 +942,95 @@ function getMoveDetails(moveInfo, item, species) {
 			"type": moveInfo.find(".move-type").val(),
 			"category": moveInfo.find(".move-cat").val(),
 			"isCrit": moveInfo.find(".move-crit").prop("checked"),
-			"isMax": isMax,
 			"hits": defaultDetails.maxMultiHits ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 			"usedTimes": defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1
 		});
 	}
+}
+
+function getMaxMove(moveName, defaultDetails, species, moveInfo) {
+	let exceptions_100_fight = ["Low Kick", "Reversal", "Final Gambit"];
+	let exceptions_80_fight = ["Double Kick", "Triple Kick"];
+	let exceptions_75_fight = ["Counter", "Seismic Toss"];
+	let exceptions_140 = ["Triple Axel", "Crush Grip", "Wring Out", "Magnitude", "Double Iron Bash", "Rising Voltage"];
+	let exceptions_130 = ["Lash Out (Doubled)", "Scale Shot", "Dual Wingbeat", "Terrain Pulse", "Bolt Beak (Doubled)", "Fishious Rend (Doubled)", "Pin Missile", "Power Trip", "Punishment", "Dragon Darts", "Dual Chop", "Electro Ball", "Heat Crash",
+		"Bullet Seed", "Grass Knot", "Bonemerang", "Bone Rush", "Fissure", "Icicle Spear", "Sheer Cold", "Weather Ball", "Tail Slap", "Guillotine", "Horn Drill",
+		"Flail", "Return", "Frustration", "Endeavor", "Natural Gift", "Trump Card", "Stored Power", "Rock Blast", "Gear Grind", "Gyro Ball", "Heavy Slam"];
+	let exceptions_120 = ["Double Hit", "Spike Cannon"];
+	let exceptions_110 = ["Avalanche (Doubled)", "Revenge (Doubled)"];
+	let exceptions_100 = ["Twineedle", "Beat Up", "Fling", "Dragon Rage", "Nature\'s Madness", "Night Shade", "Comet Punch", "Fury Swipes", "Sonic Boom", "Bide",
+		"Super Fang", "Present", "Spit Up", "Psywave", "Mirror Coat", "Metal Burst"];
+
+	let tempBP = 0;
+
+	let maxMoveName = MAXMOVES_LOOKUP[defaultDetails.type];
+
+	if (moves[maxMoveName].type == "Fighting" || moves[maxMoveName].type == "Poison") {
+		if (exceptions_100_fight.includes(moveName)) tempBP = 100;
+		else if (exceptions_80_fight.includes(moveName)) tempBP = 80;
+		else if (exceptions_75_fight.includes(moveName)) tempBP = 75;
+		else if (defaultDetails.bp >= 150) tempBP = 100;
+		else if (defaultDetails.bp >= 110) tempBP = 95;
+		else if (defaultDetails.bp >= 75) tempBP = 90;
+		else if (defaultDetails.bp >= 65) tempBP = 85;
+		else if (defaultDetails.bp >= 55) tempBP = 80;
+		else if (defaultDetails.bp >= 45) tempBP = 75;
+		else if (defaultDetails.bp >= 1) tempBP = 70;
+	} else {
+		if (exceptions_140.includes(moveName)) tempBP = 140;
+		else if (exceptions_130.includes(moveName)) tempBP = 130;
+		else if (exceptions_120.includes(moveName)) tempBP = 120;
+		else if (exceptions_110.includes(moveName)) tempBP = 110;
+		else if (exceptions_100.includes(moveName)) tempBP = 100;
+		else if (defaultDetails.bp >= 150) tempBP = 150;
+		else if (defaultDetails.bp >= 110) tempBP = 140;
+		else if (defaultDetails.bp >= 75) tempBP = 130;
+		else if (defaultDetails.bp >= 65) tempBP = 120;
+		else if (defaultDetails.bp >= 55) tempBP = 110;
+		else if (defaultDetails.bp >= 45) tempBP = 100;
+		else if (defaultDetails.bp >= 1) tempBP = 90;
+	}
+
+	let tempType = defaultDetails.type;
+	let ability = moveInfo ? moveInfo.closest(".poke-info").find(".ability").val() : "";
+	// changing the type like this prevents getDamageResult() from applying the -ate boost, which is accurate to the game
+	if (!isNeutralizingGas && ability === "Pixilate" && tempType === "Normal") {
+		maxMoveName = "Max Starfall";
+		tempType = "Fairy";
+	} else if (!isNeutralizingGas && ability === "Refrigerate" && tempType === "Normal") {
+		maxMoveName = "Max Hailstorm";
+		tempType = "Ice";
+	}
+
+	let negateAbility = false;
+	if (tempBP == 0) {
+		maxMoveName = "Max Guard";
+		tempType = "Normal";
+	} else if (species === "Cinderace-Gmax" && tempType === "Fire") {
+		tempBP = 160;
+		maxMoveName = "G-Max Fireball";
+		negateAbility = true;
+	} else if (species === "Inteleon-Gmax" && tempType === "Water") {
+		tempBP = 160;
+		maxMoveName = "G-Max Hydrosnipe";
+		negateAbility = true;
+	} else if (species === "Rillaboom-Gmax" && tempType === "Grass") {
+		tempBP = 160;
+		maxMoveName = "G-Max Drum Solo";
+		negateAbility = true;
+	}
+
+	return $.extend({}, moves[maxMoveName], {
+		"name": maxMoveName,
+		"moveDescName": maxMoveName + " (" + tempBP + "BP)",
+		"bp": tempBP,
+		"type": tempType,
+		"category": defaultDetails.category,
+		"isCrit": moveInfo ? moveInfo.find(".move-crit").prop("checked") : false,
+		"hits": 1,
+		"isMax": true,
+		"negateAbility": negateAbility
+	});
 }
 
 function getZMoveName(moveName, moveType, item) {

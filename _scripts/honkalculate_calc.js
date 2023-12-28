@@ -111,6 +111,9 @@ function MassPokemon(speciesName, setName) {
 		let HPIVs = set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : autoIVs;
 		// ~~ is used as a faster Math.floor() for positive numbers
 		massPoke.maxHP = ~~((pokemon.bs.hp * 2 + HPIVs + ~~(massPoke.HPEVs / 4)) * massPoke.level / 100) + massPoke.level + 10;
+		if (set.startDmax) {
+			massPoke.maxHP *= 2;
+		}
 	}
 	// curHP
 	massPoke.curHP = massPoke.maxHP;
@@ -128,16 +131,20 @@ function MassPokemon(speciesName, setName) {
 	for (let n = 0; n < 4; n++) {
 		let moveName = set.moves[n];
 		let defaultDetails = moves[moveName] || moves["(No Move)"];
-		massPoke.moves.push($.extend({}, defaultDetails, {
-			"name": moveName,
-			"bp": defaultDetails.bp,
-			"type": defaultDetails.type,
-			"category": defaultDetails.category,
-			"isCrit": !!defaultDetails.alwaysCrit,
-			"acc": defaultDetails.acc,
-			"hits": defaultDetails.maxMultiHits ? (massPoke.ability === "Skill Link" || moveName === "Population Bomb" || moveName === "Triple Axel" ? defaultDetails.maxMultiHits : (massPoke.item === "Loaded Dice" ? 4 : 3)) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
-			"usedTimes": 1
-		}));
+		if (set.startDmax) {
+			massPoke.moves.push(getMaxMove(moveName, defaultDetails, speciesName));
+		} else {
+			massPoke.moves.push($.extend({}, defaultDetails, {
+				"name": moveName,
+				"bp": defaultDetails.bp,
+				"type": defaultDetails.type,
+				"category": defaultDetails.category,
+				"isCrit": !!defaultDetails.alwaysCrit,
+				"acc": defaultDetails.acc,
+				"hits": defaultDetails.maxMultiHits ? (massPoke.ability === "Skill Link" || moveName === "Population Bomb" || moveName === "Triple Axel" ? defaultDetails.maxMultiHits : (massPoke.item === "Loaded Dice" ? 4 : 3)) : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
+				"usedTimes": 1
+			}));
+		}
 	}
 
 	return massPoke;
