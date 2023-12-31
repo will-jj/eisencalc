@@ -86,7 +86,7 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 var moveType, moveCategory, makesContact, isCritical;
 var attackerGrounded, defenderGrounded;
 var originalSABoost;
-var allowOneTimeReducers = true;
+var isFirstHit = true;
 function getDamageResult(attacker, defender, move, field) {
 	var moveDescName = move.name;
 
@@ -274,8 +274,9 @@ function getDamageResult(attacker, defender, move, field) {
 	if (attacker.isTerastal && defender.isTerastal && attacker.teraType === "Stellar") {
 		typeEffectiveness = 2;
 	}
-	if (allowOneTimeReducers && defender.curAbility === "Tera Shell" && typeEffectiveness >= 1) {
+	if (isFirstHit && defender.curAbility === "Tera Shell" && typeEffectiveness >= 1) {
 		typeEffectiveness = 0.5;
+		description.defenderAbility = defender.curAbility;
 	}
 
 	if (typeEffectiveness === 0) {
@@ -369,8 +370,15 @@ function getDamageResult(attacker, defender, move, field) {
 
 	let result = {"damage": damage};
 
-	// Add more complicated damage results to the result object. They are made sense of by ap_calc
 
+	// Calculate for scenarios where the first hit does different damage from other hits.
+	// Add these damage results to the result object. They are made sense of and set up for display by ap_calc
+
+	if (!isFirstHit) {
+		return result;
+	}
+
+	// Parental Bond
 	if (attacker.curAbility === "Parental Bond" && !attacker.isChild && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
 		let originalATBoost = attacker.boosts[AT];
 		if (move.name === "Power-Up Punch") {
@@ -379,14 +387,14 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 		description.attackerAbility = attacker.curAbility;
 		// the following order of execution is important
-		allowOneTimeReducers = false;
+		isFirstHit = false;
 		attacker.isChild = true;
 		result.childDamage = getDamageResult(attacker, defender, move, field).damage;
 		if (move.name === "Power-Up Punch") {
 			attacker.boosts[AT] = originalATBoost;
 			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 		}
-		allowOneTimeReducers = true;
+		isFirstHit = true;
 		if (activateResistBerry(attacker, defender, typeEffectiveness) ||
 			((defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP)) {
 			result.firstHitDamage = damage;
@@ -394,13 +402,14 @@ function getDamageResult(attacker, defender, move, field) {
 		attacker.isChild = false;
 	}
 
+	// Triple Axel
 	if (move.name === "Triple Axel") {
 		// tripleAxelDamage is an array of damage arrays; a 2D number array
 		result.tripleAxelDamage = [];
 		let startingBP = move.bp;
-		allowOneTimeReducers = false;
+		isFirstHit = false;
 		let finalModNoBerry = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
-		allowOneTimeReducers = true;
+		isFirstHit = true;
 		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
 			move.bp = startingBP * hitNum;
 			finalBasePower = calcBP(attacker, defender, move, field, {});
@@ -410,32 +419,45 @@ function getDamageResult(attacker, defender, move, field) {
 		move.bp = startingBP;
 	}
 
-	if (allowOneTimeReducers && (
-		activateResistBerry(attacker, defender, typeEffectiveness) ||
-		((defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP))) {
-		// this branch calculates the damage without the one-time reducers
+	// Throat Spray
+	let attackerBoosts = attacker.boosts[move.name === "Body Press" ? DF : (moveCategory === "Physical" ? AT : SA)];
+	if (attacker.item === "Throat Spray" && (attacker.curAbility === "Contrary" ? attackerBoosts > -6 : attackerBoosts < 6)) {
 		result.firstHitDamage = damage;
-		allowOneTimeReducers = false;
-		finalMod = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
-		allowOneTimeReducers = true;
+		isFirstHit = false;
+		attack = calcAtk(attacker, defender, move, field, description);
+		baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attackerLevel), attacker, defender, move, field, description);
+		isFirstHit = true;
 		result.damage = calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod);
 	}
 
-	if (allowOneTimeReducers && defender.ability == "Tera Shell" && defender.curHP === defender.maxHP) {
-		// this branch calculates the damage without applying Tera Shell
+	// Resist Berries/Multiscale
+	if (activateResistBerry(attacker, defender, typeEffectiveness) ||
+		((defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP)) {
+		// this branch calculates the damage without the one-time reducers
 		result.firstHitDamage = damage;
-		allowOneTimeReducers = false;
-		result.damage = getDamageResult(attacker, defender, move, field).damage;
-		allowOneTimeReducers = true;
+		isFirstHit = false;
+		finalMod = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
+		isFirstHit = true;
+		result.damage = calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod);
 	}
 
-	if (allowOneTimeReducers && attacker.isTerastal && attacker.teraType === "Stellar" && !attacker.name.includes("Terapagos")) {
+	// Tera Shell
+	if (defender.ability == "Tera Shell" && defender.curHP === defender.maxHP) {
+		// this branch calculates the damage without applying Tera Shell
+		result.firstHitDamage = damage;
+		isFirstHit = false;
+		result.damage = getDamageResult(attacker, defender, move, field).damage;
+		isFirstHit = true;
+	}
+
+	// Tera Stellar
+	if (attacker.isTerastal && attacker.teraType === "Stellar" && !attacker.name.includes("Terapagos")) {
 		// this branch calculates the damage without applying Stellar STAB
 		result.firstHitDamage = damage;
-		allowOneTimeReducers = false;
+		isFirstHit = false;
 		// Adaptability is never factored in for Stellar tera
 		result.damage = calcDamageRange(baseDamage, attacker.hasType(moveType) ? 0x1800 : 0x1000, typeEffectiveness, applyBurn, finalMod);
-		allowOneTimeReducers = true;
+		isFirstHit = true;
 	}
 
 	result.description = buildDescription(description);
@@ -785,11 +807,18 @@ function calcAtk(attacker, defender, move, field, description) {
 	if (move.usesHighestAttackStat || (move.name === "Tera Blast" && attacker.isTerastal)) {
 		moveCategory = attackSource.stats[AT] > attackSource.stats[SA] ? "Physical" : "Special";
 	}
-	let attackStat = move.name === "Body Press" ? DF : moveCategory === "Physical" ? AT : SA;
+	let attackStat = move.name === "Body Press" ? DF : (moveCategory === "Physical" ? AT : SA);
 	description.attackEVs = attacker.evs[attackStat] +
 		(NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +
 		toSmogonStat(attackStat);
-	if (attackSource.boosts[attackStat] === 0 || isCritical && attackSource.boosts[attackStat] < 0) {
+	if (!isFirstHit && move.isSound && attacker.item === "Throat Spray") {
+		// if isFirstHit is false then the attacker is already guaranteed to not be at +6 (or -6 Contrary)
+		let moddedBoost = attacker.boosts[attackStat] + (attacker.curAbility === "Contrary" ? -1 : 1);
+		attack = getModifiedStat(attacker.rawStats[attackStat], moddedBoost);
+		if (moddedBoost != 0) {
+			description.attackBoost = attackSource.boosts[attackStat];
+		}
+	} else if (attackSource.boosts[attackStat] === 0 || isCritical && attackSource.boosts[attackStat] < 0) {
 		attack = attackSource.rawStats[attackStat];
 	} else if (defender.curAbility === "Unaware") {
 		attack = attackSource.rawStats[attackStat];
@@ -1066,7 +1095,7 @@ function calcFinalMods(attacker, defender, move, field, description, typeEffecti
 		finalMods.push(0x2000);
 		description.attackerAbility = attacker.curAbility;
 	}
-	if ((allowOneTimeReducers && (defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP) ||
+	if ((isFirstHit && (defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP) ||
 		defender.curAbility === "Fluffy" && makesContact ||
 		defender.curAbility === "Punk Rock" && move.isSound ||
 		defender.curAbility === "Ice Scales" && moveCategory === "Special") {
@@ -1092,7 +1121,7 @@ function calcFinalMods(attacker, defender, move, field, description, typeEffecti
 		finalMods.push(0x14CC);
 		description.attackerItem = attacker.item;
 	}
-	if (allowOneTimeReducers && activateResistBerry(attacker, defender, typeEffectiveness)) {
+	if (isFirstHit && activateResistBerry(attacker, defender, typeEffectiveness)) {
 		if (defender.curAbility === "Ripen") {
 			finalMods.push(0x400);
 			description.defenderAbility = defender.curAbility;
@@ -1120,6 +1149,20 @@ function calcFinalMods(attacker, defender, move, field, description, typeEffecti
 	}
 
 	return finalMod;
+}
+
+function calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod) {
+	let damage = new Array(16);
+	for (let i = 0; i < 16; i++) {
+		damage[i] = Math.floor(baseDamage * (85 + i) / 100);
+		damage[i] = pokeRound(damage[i] * stabMod / 0x1000);
+		damage[i] = Math.floor(damage[i] * typeEffectiveness);
+		if (applyBurn) {
+			damage[i] = Math.floor(damage[i] / 2);
+		}
+		damage[i] = Math.max(1, pokeRound(damage[i] * finalMod / 0x1000) % 65536);
+	}
+	return damage;
 }
 
 function buildDescription(description) {
@@ -1261,20 +1304,6 @@ function chainMods(mods) {
 		}
 	}
 	return M;
-}
-
-function calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod) {
-	let damage = new Array(16);
-	for (let i = 0; i < 16; i++) {
-		damage[i] = Math.floor(baseDamage * (85 + i) / 100);
-		damage[i] = pokeRound(damage[i] * stabMod / 0x1000);
-		damage[i] = Math.floor(damage[i] * typeEffectiveness);
-		if (applyBurn) {
-			damage[i] = Math.floor(damage[i] / 2);
-		}
-		damage[i] = Math.max(1, pokeRound(damage[i] * finalMod / 0x1000) % 65536);
-	}
-	return damage;
 }
 
 function getMoveEffectiveness(move, mType, defType, isGhostRevealed, field, isStrongWinds, description) {
