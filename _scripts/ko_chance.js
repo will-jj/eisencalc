@@ -27,7 +27,7 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 
 	// Set up move accuracy
 	let moveAccuracy = "";
-	if (move.acc || move.isZ) {
+	if (move.acc || move.isZ || move.isMax) {
 		// all genie sig moves have perfect acc in rain, except the pink one's.
 		if (move.isZ || move.acc === 101 || (move.name === "Blizzard" && (field.weather === "Hail" || field.weather === "Snow")) ||
 			(["Thunder", "Hurricane", "Bleakwind Storm", "Sandsear Storm", "Wildbolt Storm"].includes(move.name) && field.weather.includes("Rain")) ||

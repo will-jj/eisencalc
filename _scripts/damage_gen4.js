@@ -60,11 +60,6 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 
 	let moveType = move.type;
 
-	if (field.isProtected && !move.bypassesProtect) {
-		description.isProtected = true;
-		return {"damage": [0], "description": buildDescription(description)};
-	}
-
 	if (attacker.ability === "Mold Breaker") {
 		defender.curAbility = "";
 		//description.attackerAbility = attacker.ability;

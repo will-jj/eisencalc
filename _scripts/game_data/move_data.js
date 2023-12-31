@@ -508,7 +508,7 @@ var MOVES_RBY = {
 		"type": "Ground"
 	},
 	"Seismic Toss": {
-		"bp": 100,
+		"bp": 1,
 		"type": "Fighting",
 		"category": "Physical",
 		"makesContact": true,
