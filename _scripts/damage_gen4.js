@@ -445,7 +445,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 	var berryMod = 1;
-	if (allowOneTimeReducers && getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") && attacker.ability !== "Unnerve") {
+	if (isFirstHit && getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") && attacker.ability !== "Unnerve") {
 		berryMod = 0.5;
 		description.defenderItem = defender.item;
 	}
@@ -467,9 +467,9 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	if (berryMod != 1) {
 		// this branch actually calculates the damage without the resist berry
 		result.firstHitDamage = damage;
-		allowOneTimeReducers = false;
+		isFirstHit = false;
 		result.damage = getDamageResultPtHGSS(attacker, defender, move, field).damage;
-		allowOneTimeReducers = true;
+		isFirstHit = true;
 	}
 
 	return result;
