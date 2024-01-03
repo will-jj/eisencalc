@@ -1812,7 +1812,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		"type": "Normal"
 	},
 	"Smelling Salts": {
-		"bp": 70,
+		"bp": 60,
 		"type": "Normal",
 		"category": "Physical",
 		"makesContact": true
@@ -3601,6 +3601,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"bp": 0,
 		"type": "Grass"
 	},
+	"Smelling Salts": {"bp": 70},
 	"Snore": {"bp": 50},
 	"Steam Eruption": {
 		"bp": 110,
