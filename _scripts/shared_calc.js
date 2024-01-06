@@ -870,8 +870,10 @@ function Pokemon(pokeInfo) {
 		}
 	}
 	// dexType
-	poke.dexType1 = dexEntry.t1;
-	poke.dexType2 = dexEntry.t2;
+	if (dexEntry) {
+		poke.dexType1 = dexEntry.t1;
+		poke.dexType2 = dexEntry.t2;
+	}
 	// .ability is the mon's ability and should never be overwritten
 	// .curAbility represents the ability after negation through Neutralizing Gas or a Mold Breaker ability or move
 	poke.resetCurAbility();
