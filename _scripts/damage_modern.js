@@ -88,14 +88,9 @@ var attackerGrounded, defenderGrounded;
 var originalSABoost;
 var isFirstHit = true;
 function getDamageResult(attacker, defender, move, field) {
-	var moveDescName = move.name;
-
-	if (move.isMax) {
-		moveDescName = move.name + " (" + move.bp + " BP)";
-	}
 	var description = {
 		"attackerName": attacker.name,
-		"moveName": moveDescName,
+		"moveName": move.name,
 		"defenderName": defender.name,
 		"isDynamax": defender.isDynamax
 	};
@@ -601,12 +596,10 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		}
 		break;
 	}
-
-	if (["Breakneck Blitz", "Bloom Doom", "Inferno Overdrive", "Hydro Vortex", "Gigavolt Havoc", "Subzero Slammer", "Supersonic Skystrike",
-		"Savage Spin-Out", "Acid Downpour", "Tectonic Rage", "Continental Crush", "All-Out Pummeling", "Shattered Psyche", "Never-Ending Nightmare",
-		"Devastating Drake", "Black Hole Eclipse", "Corkscrew Crash", "Twinkle Tackle"].includes(move.name)) {
-		// show z-move power in description
-		description.moveBP = move.bp;
+	if ((move.isZ && !(move.name in EXCLUSIVE_ZMOVES)) ||
+		(move.isMax && !move.name.includes("G-Max"))) {
+		// show z and max move power in description
+		description.moveBP = basePower;
 	}
 
 	var bpMods = [];
