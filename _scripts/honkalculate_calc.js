@@ -105,6 +105,9 @@ function MassPokemon(speciesName, setName) {
 	};
 	// maxHP
 	let autoIVs = gen == 4 ? parseInt($("#autoivs-box").val()) : (gen <= 7 ? parseInt($('#autoivs-select').find(":selected").val()) : 31);
+	if (!autoIVs || isNaN(autoIVs)) { // quickfix until autoIV boxes are restored in gens 3 and 4
+		autoIVs = 31;
+	}
 	if (pokemon.bs.hp === 1) {
 		massPoke.maxHP = 1;
 	} else {
