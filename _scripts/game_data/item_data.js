@@ -8,6 +8,7 @@ var ITEMS_GSC = [
 	"Gold Berry",
 	"Hard Stone",
 	"King's Rock",
+	"Leek",
 	"Leftovers",
 	"Light Ball",
 	"Magnet",
@@ -149,35 +150,19 @@ var ITEMS_BW = ITEMS_DPP.concat([
 	"Absorb Bulb",
 	"Air Balloon",
 	"Binding Band",
-	"Bug Gem",
 	"Burn Drive",
 	"Cell Battery",
 	"Chill Drive",
-	"Dark Gem",
-	"Dragon Gem",
 	"Douse Drive",
 	"Eject Button",
-	"Electric Gem",
 	"Eviolite",
-	"Fighting Gem",
-	"Fire Gem",
 	"Float Stone",
-	"Flying Gem",
-	"Ghost Gem",
-	"Grass Gem",
-	"Ground Gem",
-	"Ice Gem",
 	"Icy Rock",
 	"Normal Gem",
-	"Poison Gem",
-	"Psychic Gem",
 	"Red Card",
 	"Ring Target",
-	"Rock Gem",
 	"Rocky Helmet",
-	"Shock Drive",
-	"Steel Gem",
-	"Water Gem"
+	"Shock Drive"
 ]);
 
 var ITEMS_XY = ITEMS_BW.concat([
@@ -200,23 +185,6 @@ ITEMS_XY.splice(ITEMS_XY.indexOf("NeverMeltIce"), 1, "Never-Melt Ice");
 ITEMS_XY.splice(ITEMS_XY.indexOf("SilverPowder"), 1, "Silver Powder");
 ITEMS_XY.splice(ITEMS_XY.indexOf("TwistedSpoon"), 1, "Twisted Spoon");
 ITEMS_XY.splice(ITEMS_XY.indexOf("BrightPowder"), 1, "Bright Powder");
-ITEMS_XY.splice(ITEMS_XY.indexOf("Bug Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Dark Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Dragon Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Electric Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Fighting Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Fire Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Flying Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Ghost Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Grass Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Ground Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Ice Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Poison Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Psychic Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Rock Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Steel Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Water Gem"), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf("Soul Dew"), 1);
 
 var ITEMS_SM = ITEMS_XY.concat([
 	"Adrenaline Orb",
@@ -247,44 +215,13 @@ var ITEMS_SM = ITEMS_XY.concat([
 	"Psychic Memory",
 	"Rock Memory",
 	"Steel Memory",
-	"Water Memory",
-	"Normalium Z",
-	"Grassium Z",
-	"Firium Z",
-	"Waterium Z",
-	"Electrium Z",
-	"Icium Z",
-	"Flyinium Z",
-	"Buginium Z",
-	"Poisonium Z",
-	"Groundium Z",
-	"Rockium Z",
-	"Fightinium Z",
-	"Psychium Z",
-	"Ghostium Z",
-	"Dragonium Z",
-	"Darkinium Z",
-	"Steelium Z",
-	"Fairium Z",
-	"Decidium Z",
-	"Incinium Z",
-	"Primarium Z",
-	"Aloraichium Z",
-	"Tapunium Z",
-	"Mimikium Z",
-	"Ultranecrozium Z",
-	"Solganium Z",
-	"Lunalium Z",
-	"Lycanium Z",
-	"Kommonium Z",
-	"Marshadium Z"
+	"Water Memory"
 ]);
 
 var ITEMS_SS = ITEMS_SM.concat([
 	"Blunder Policy",
 	"Eject Pack",
 	"Heavy-Duty Boots",
-	"Leek",
 	"Room Service",
 	"Throat Spray",
 	"Utility Umbrella"
@@ -306,6 +243,65 @@ var ITEMS_SV = ITEMS_SS.concat([
 	"Hearthflame Mask",
 	"Cornerstone Mask"
 ]);
+
+
+var NON_NORMAL_GEMS = [
+	"Bug Gem",
+	"Dark Gem",
+	"Dragon Gem",
+	"Electric Gem",
+	"Fighting Gem",
+	"Fire Gem",
+	"Flying Gem",
+	"Ghost Gem",
+	"Grass Gem",
+	"Ground Gem",
+	"Ice Gem",
+	"Poison Gem",
+	"Psychic Gem",
+	"Rock Gem",
+	"Steel Gem",
+	"Water Gem"
+];
+
+var Z_CRYSTALS = [
+	"Normalium Z",
+	"Grassium Z",
+	"Firium Z",
+	"Waterium Z",
+	"Electrium Z",
+	"Icium Z",
+	"Flyinium Z",
+	"Buginium Z",
+	"Poisonium Z",
+	"Groundium Z",
+	"Rockium Z",
+	"Fightinium Z",
+	"Psychium Z",
+	"Ghostium Z",
+	"Dragonium Z",
+	"Darkinium Z",
+	"Steelium Z",
+	"Fairium Z",
+	"Decidium Z",
+	"Incinium Z",
+	"Primarium Z",
+	"Snorlium Z",
+	"Aloraichium Z",
+	"Mewnium Z",
+	"Tapunium Z",
+	"Mimikium Z",
+	"Ultranecrozium Z",
+	"Solganium Z",
+	"Lunalium Z",
+	"Lycanium Z",
+	"Kommonium Z",
+	"Marshadium Z"
+];
+
+ITEMS_BW = ITEMS_BW.concat(NON_NORMAL_GEMS);
+
+ITEMS_SM = ITEMS_SM.concat(Z_CRYSTALS);
 
 function getTechnoBlast(item) {
 	switch (item) {
