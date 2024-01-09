@@ -870,8 +870,10 @@ function Pokemon(pokeInfo) {
 		}
 	}
 	// dexType
-	poke.dexType1 = dexEntry.t1;
-	poke.dexType2 = dexEntry.t2;
+	if (dexEntry) {
+		poke.dexType1 = dexEntry.t1;
+		poke.dexType2 = dexEntry.t2;
+	}
 	// .ability is the mon's ability and should never be overwritten
 	// .curAbility represents the ability after negation through Neutralizing Gas or a Mold Breaker ability or move
 	poke.resetCurAbility();
@@ -913,39 +915,22 @@ function getMoveDetails(moveInfo, item, species) {
 	let moveName = moveInfo.find("select.move-selector").val();
 	let defaultDetails = moves[moveName];
 
+	if (gen == 7 && moveInfo.find("input.move-z").prop("checked") && moveName !== "Struggle" && "zp" in defaultDetails) {
+		return getZMove(moveName, defaultDetails, item, moveInfo.find(".move-crit").prop("checked"));
+	}
 	if (gen == 8 && moveInfo.find("input.move-max").prop("checked") && moveName !== "Struggle") {
 		return getMaxMove(moveName, defaultDetails, species, moveInfo);
 	}
 
-	let isZMove = gen == 7 && moveInfo.find("input.move-z").prop("checked") && moveName !== "Struggle";
-	// If z-move is checked but there isn't a corresponding z-move, use the original move
-	if (isZMove && "zp" in defaultDetails) {
-		if (moveName === "Nature Power") {
-			let terrainValue = $("input:radio[name='terrain']:checked").val();
-			var zMoveName = ZMOVES_TYPING[terrainValue === "Electric" ? "Electric" : terrainValue === "Grassy" ? "Grass" : terrainValue === "Misty" ? "Fairy" : terrainValue === "Psychic" ? "Psychic" : defaultDetails.type];
-			var zp = terrainValue ? 175 : defaultDetails.zp;
-		} else {
-			var zMoveName = getZMoveName(moveName, defaultDetails.type, item);
-			var zp = moves[zMoveName].bp === 1 ? defaultDetails.zp : moves[zMoveName].bp;
-		}
-		return $.extend({}, moves[zMoveName], {
-			"name": zMoveName,
-			"bp": zp,
-			"category": defaultDetails.category,
-			"isCrit": moveInfo.find(".move-crit").prop("checked"),
-			"hits": 1
-		});
-	} else {
-		return $.extend({}, defaultDetails, {
-			"name": moveName,
-			"bp": ~~moveInfo.find(".move-bp").val(),
-			"type": moveInfo.find(".move-type").val(),
-			"category": moveInfo.find(".move-cat").val(),
-			"isCrit": moveInfo.find(".move-crit").prop("checked"),
-			"hits": defaultDetails.maxMultiHits ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
-			"usedTimes": defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1
-		});
-	}
+	return $.extend({
+		"name": moveName,
+		"bp": ~~moveInfo.find(".move-bp").val(),
+		"type": moveInfo.find(".move-type").val(),
+		"category": moveInfo.find(".move-cat").val(),
+		"isCrit": moveInfo.find(".move-crit").prop("checked"),
+		"hits": defaultDetails.maxMultiHits ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
+		"usedTimes": defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1
+	}, defaultDetails);
 }
 
 function getMaxMove(moveName, defaultDetails, species, moveInfo) {
@@ -961,11 +946,20 @@ function getMaxMove(moveName, defaultDetails, species, moveInfo) {
 	let exceptions_100 = ["Twineedle", "Beat Up", "Fling", "Dragon Rage", "Nature\'s Madness", "Night Shade", "Comet Punch", "Fury Swipes", "Sonic Boom", "Bide",
 		"Super Fang", "Present", "Spit Up", "Psywave", "Mirror Coat", "Metal Burst"];
 
-	let tempBP = 0;
+	let moveType = defaultDetails.type;
+
+	let ability = moveInfo ? moveInfo.closest(".poke-info").find(".ability").val() : "";
+	// changing the type like this prevents getDamageResult() from applying the -ate boost, which is accurate to the game
+	if (!isNeutralizingGas && ability === "Pixilate" && moveType === "Normal") {
+		moveType = "Fairy";
+	} else if (!isNeutralizingGas && ability === "Refrigerate" && moveType === "Normal") {
+		moveType = "Ice";
+	}
 
 	let maxMoveName = MAXMOVES_LOOKUP[defaultDetails.type];
 
-	if (moves[maxMoveName].type == "Fighting" || moves[maxMoveName].type == "Poison") {
+	let tempBP = 0;
+	if (moveType == "Fighting" || moveType == "Poison") {
 		if (exceptions_100_fight.includes(moveName)) tempBP = 100;
 		else if (exceptions_80_fight.includes(moveName)) tempBP = 80;
 		else if (exceptions_75_fight.includes(moveName)) tempBP = 75;
@@ -991,88 +985,67 @@ function getMaxMove(moveName, defaultDetails, species, moveInfo) {
 		else if (defaultDetails.bp >= 1) tempBP = 90;
 	}
 
-	let tempType = defaultDetails.type;
-	let ability = moveInfo ? moveInfo.closest(".poke-info").find(".ability").val() : "";
-	// changing the type like this prevents getDamageResult() from applying the -ate boost, which is accurate to the game
-	if (!isNeutralizingGas && ability === "Pixilate" && tempType === "Normal") {
-		maxMoveName = "Max Starfall";
-		tempType = "Fairy";
-	} else if (!isNeutralizingGas && ability === "Refrigerate" && tempType === "Normal") {
-		maxMoveName = "Max Hailstorm";
-		tempType = "Ice";
-	}
-
 	let negateAbility = false;
 	if (tempBP == 0) {
 		maxMoveName = "Max Guard";
-		tempType = "Normal";
-	} else if (species === "Cinderace-Gmax" && tempType === "Fire") {
+		moveType = "Normal";
+	} else if (species === "Cinderace-Gmax" && moveType === "Fire") {
 		tempBP = 160;
 		maxMoveName = "G-Max Fireball";
 		negateAbility = true;
-	} else if (species === "Inteleon-Gmax" && tempType === "Water") {
+	} else if (species === "Inteleon-Gmax" && moveType === "Water") {
 		tempBP = 160;
 		maxMoveName = "G-Max Hydrosnipe";
 		negateAbility = true;
-	} else if (species === "Rillaboom-Gmax" && tempType === "Grass") {
+	} else if (species === "Rillaboom-Gmax" && moveType === "Grass") {
 		tempBP = 160;
 		maxMoveName = "G-Max Drum Solo";
 		negateAbility = true;
 	}
 
-	return $.extend({}, moves[maxMoveName], {
+	return {
 		"name": maxMoveName,
-		"moveDescName": maxMoveName + " (" + tempBP + "BP)",
 		"bp": tempBP,
-		"type": tempType,
+		"type": moveType,
 		"category": defaultDetails.category,
+		"acc": 101,
 		"isCrit": moveInfo ? moveInfo.find(".move-crit").prop("checked") : false,
 		"hits": 1,
 		"isMax": true,
 		"negateAbility": negateAbility
-	});
+	};
 }
 
-function getZMoveName(moveName, moveType, item) {
-	if (moveName.includes("Hidden Power")) { // Hidden Power will become Breakneck Blitz
-		return  "Breakneck Blitz";
-	} else if (moveName === "Clanging Scales" && item === "Kommonium Z") {
-		return "Clangorous Soulblaze";
-	} else if (moveName === "Darkest Lariat" && item === "Incinium Z") {
-		return "Malicious Moonsault";
-	} else if (moveName === "Giga Impact" && item === "Snorlium Z") {
-		return "Pulverizing Pancake";
-	} else if (moveName === "Moongeist Beam" && item === "Lunalium Z") {
-		return "Menacing Moonraze Maelstrom";
-	} else if (moveName === "Photon Geyser" && item === "Ultranecrozium Z") {
-		return "Light That Burns the Sky";
-	} else if (moveName === "Play Rough" && item === "Mimikium Z") {
-		return "Let\'s Snuggle Forever";
-	} else if (moveName === "Psychic" && item === "Mewnium Z") {
-		return "Genesis Supernova";
-	} else if (moveName === "Sparkling Aria" && item === "Primarium Z") {
-		return "Oceanic Operetta";
-	} else if (moveName === "Spectral Thief" && item === "Marshadium Z") {
-		return "Soul-Stealing 7-Star Strike";
-	} else if (moveName === "Spirit Shackle" && item === "Decidium Z") {
-		return "Sinister Arrow Raid";
-	} else if (moveName === "Stone Edge" && item === "Lycanium Z") {
-		return "Splintered Stormshards";
-	} else if (moveName === "Sunsteel Strike" && item === "Solganium Z") {
-		return "Searing Sunraze Smash";
-	} else if (moveName === "Thunderbolt" && item === "Aloraichium Z") {
-		return "Stoked Sparksurfer";
-	} else if (moveName === "Thunderbolt" && item === "Pikashunium Z") {
-		return "10,000,000 Volt Thunderbolt";
-	} else if (moveName === "Volt Tackle" && item === "Pikanium Z") {
-		return "Catastropika";
-	} else if (moveName === "Nature\'s Madness" && item === "Tapunium Z") {
-		return "Guardian of Alola";
-	} else if (moveName === "Spectral Thief" && item === "Marshadium Z") {
-		return "Soul-Stealing 7-Star Strike";
+function getZMove(moveName, defaultDetails, item, isCrit) {
+	let moveType = defaultDetails.type;
+
+	let zMoveName, moveDetails;
+	if (item in EXCLUSIVE_ZMOVES_LOOKUP && EXCLUSIVE_ZMOVES_LOOKUP[item].baseMove === moveName) {
+		zMoveName = EXCLUSIVE_ZMOVES_LOOKUP[item].zMoveName;
+		moveDetails = EXCLUSIVE_ZMOVES[zMoveName];
 	} else {
-		return ZMOVES_TYPING[moveType];
+		if (moveName.includes("Hidden Power")) { // Hidden Power will become Breakneck Blitz
+			moveType = "Normal";
+		} else if (moveName === "Nature Power") {
+			let terrainValue = $("input:radio[name='terrain']:checked").val();
+			moveType = terrainValue === "Electric" ? "Electric" : terrainValue === "Grassy" ? "Grass" : terrainValue === "Misty" ? "Fairy" : terrainValue === "Psychic" ? "Psychic" : defaultDetails.type;
+		}
+
+		zMoveName = ZMOVES_LOOKUP[moveType];
+		moveDetails = {
+			"bp": (moveName === "Nature Power" && moveType !== defaultDetails.type) ? 175 : defaultDetails.zp,
+			"type": moveType,
+			"category": defaultDetails.category
+		};
 	}
+
+	return $.extend({
+		"name": zMoveName,
+		"acc": 101,
+		"isCrit": isCrit,
+		"hits": 1,
+		"isZ": true
+	}, moveDetails);
 }
 
 function Field() {
