@@ -104,8 +104,8 @@ function MassPokemon(speciesName, setName) {
 		"resetCurAbility": function () { this.curAbility = (isNeutralizingGas && this.item !== "Ability Shield") ? "" : this.ability }
 	};
 	// maxHP
-	let autoIVs = gen == 4 ? parseInt($("#autoivs-box").val()) : (gen <= 7 ? parseInt($('#autoivs-select').find(":selected").val()) : 31);
-	if (!autoIVs || isNaN(autoIVs)) { // quickfix until autoIV boxes are restored in gens 3 and 4
+	let autoIVs = gen == 4 ? parseInt($("#autoivs-center #autoivs-box").val()) : (gen <= 7 ? parseInt($("#autoivs-center #autoivs-select").find(":selected").val()) : 31);
+	if (isNaN(autoIVs)) {
 		autoIVs = 31;
 	}
 	if (pokemon.bs.hp === 1) {

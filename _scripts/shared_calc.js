@@ -120,20 +120,17 @@ $(".tera-type").bind("keyup change", function () {
 
 $("#autolevel").change(function () {
 	// auto-calc stats and current HP on change
-	var autoLevel = $(gen == 3 || gen == 4 ? "#autolevel-box" : "input:radio[name='autolevel-btn']:checked").val();
-	var p1 = $("#p1");
-	var p2 = $("#p2");
+	let autoLevel = $(gen == 3 || gen == 4 ? "#autolevel-box" : "input:radio[name='autolevel-btn']:checked").val();
+	let p1 = $("#p1");
+	let p2 = $("#p2");
 	if (gen == 4) {
 		// for gen 4 only, due to Hall mechanics, changes to the autolevel should not affect the pokemon if it's a custom set
-		var p1Name = p1.find("input.set-selector").val(); // speciesName (setName)
-		var speciesSets = setdex[p1Name.substring(0, p1Name.indexOf(" ("))];
-		if (speciesSets && speciesSets[p1Name.substring(p1Name.indexOf('(') + 1, p1Name.length - 1)]) {
+		if (!isCustomSet(p1.find("input.set-selector").val())) {
 			p1.find(".level").val(autoLevel);
 		}
-		var p2Name = p2.find("input.set-selector").val();
+		let p2Name = p2.find("input.set-selector").val();
 		if (p2Name) {
-			speciesSets = setdex[p2Name.substring(0, p2Name.indexOf(" ("))];
-			if (speciesSets && speciesSets[p2Name.substring(p2Name.indexOf('(') + 1, p2Name.length - 1)]) {
+			if (!isCustomSet(p2Name)) {
 				p2.find(".level").val(autoLevel);
 			}
 		}
@@ -146,91 +143,65 @@ $("#autolevel").change(function () {
 });
 
 $("#autoivs-center").change(function () {
+	// do not set the IVs of non-AI sets
 	if (gen <= 4 || gen >= 8) {
 		return;
 	}
-	var autoIVs = $("#autoivs-center #autoivs-select").find(":selected").val();
-	if (!autoIVs || isNaN(autoIVs)) {
-		autoIVs = 31;
+	let p1 = $("#p1");
+	if (!isCustomSet(p1.find("input.set-selector").val())) {
+		setIVSelectors(p1, "L");
 	}
-	var p1 = $("#p1");
-	var p2 = $("#p2");
-
-	var p1Name = p1.find("input.set-selector").val(); // speciesName (setName)
-	var speciesSets = setdex[p1Name.substring(0, p1Name.indexOf(" ("))];
-	if (speciesSets && speciesSets[p1Name.substring(p1Name.indexOf('(') + 1, p1Name.length - 1)]) {
-		p1.find(".hp .ivs").val(autoIVs);
-		for (i = 0; i < STATS.length; i++) {
-			p1.find("." + STATS[i] + " .ivs").val(autoIVs);
-		}
-		calcHP(p1);
-		calcStats(p1);
-	}
-	var p2Name = p2.find("input.set-selector").val();
-	if (p2Name) { // because no p2 in mass calc
-		speciesSets = setdex[p2Name.substring(0, p2Name.indexOf(" ("))];
-		if (speciesSets && speciesSets[p2Name.substring(p2Name.indexOf('(') + 1, p2Name.length - 1)]) {
-			p2.find(".hp .ivs").val(autoIVs);
-			for (i = 0; i < STATS.length; i++) {
-				p2.find("." + STATS[i] + " .ivs").val(autoIVs);
-			}
-			calcHP(p2);
-			calcStats(p2);
-		}
+	let p2 = $("#p2");
+	if (!isCustomSet(p2.find("input.set-selector").val())) {
+		setIVSelectors(p2, "R");
 	}
 });
 
 $("#autoivsL").change(function () {
-	if (gen == 3) {
-		var autoIVs = parseInt($('#autoivsL #autoivs-select').find(":selected").val());
-	} else if (gen == 4) {
-		var autoIVs = parseInt($('#autoivsL #autoivs-box').val());
-	} else {
+	if (gen != 3 && gen != 4) {
 		return;
 	}
-	if (!autoIVs || isNaN(autoIVs)) {
-		autoIVs = 31;
-	}
-
-	var p1 = $("#p1");
-
-	var p1Name = p1.find("input.set-selector").val(); // speciesName (setName)
-	var speciesSets = setdex[p1Name.substring(0, p1Name.indexOf(" ("))];
-	if (speciesSets && speciesSets[p1Name.substring(p1Name.indexOf('(') + 1, p1Name.length - 1)]) {
-		p1.find(".hp .ivs").val(autoIVs);
-		for (i = 0; i < STATS.length; i++) {
-			p1.find("." + STATS[i] + " .ivs").val(autoIVs);
-		}
-		calcHP(p1);
-		calcStats(p1);
-	}
+	setIVSelectors($("#p1"), "L");
 });
 
-$("#autoivsR").change(function () {
-	if (gen == 3) {
-		var autoIVs = parseInt($('#autoivsR #autoivs-select').find(":selected").val());
-	} else if (gen == 4) {
-		var autoIVs = parseInt($('#autoivsR #autoivs-box').val());
-	} else {
+function setIVSelectors(poke, side) {
+	if (!poke) {
 		return;
 	}
-	if (!autoIVs || isNaN(autoIVs)) {
-		autoIVs = 31;
-	}
 
-	var p2 = $("#p2");
+	let autoIVs = getAutoIVValue(side);
 
-	var p2Name = p2.find("input.set-selector").val(); // speciesName (setName)
-	var speciesSets = setdex[p2Name.substring(0, p2Name.indexOf(" ("))];
-	if (speciesSets && speciesSets[p2Name.substring(p2Name.indexOf('(') + 1, p2Name.length - 1)]) {
-		p2.find(".hp .ivs").val(autoIVs);
-		for (i = 0; i < STATS.length; i++) {
-			p2.find("." + STATS[i] + " .ivs").val(autoIVs);
-		}
-		calcHP(p2);
-		calcStats(p2);
+	poke.find(".hp .ivs").val(autoIVs);
+	for (i = 0; i < STATS.length; i++) {
+		poke.find("." + STATS[i] + " .ivs").val(autoIVs);
 	}
-});
+	calcHP(poke);
+	calcStats(poke);
+}
+
+function getAutoIVValue(side) {
+	let autoIVs;
+	if (gen == 3) {
+		autoIVs = parseInt($("#autoivs" + side + " #autoivs-select").find(":selected").val());
+	} else if (gen == 4) {
+		autoIVs = parseInt($("#autoivs" + side + " #autoivs-box").val());
+	} else if (gen <= 7) {
+		autoIVs = parseInt($('#autoivs-center #autoivs-select').find(":selected").val());
+	}
+	if (isNaN(autoIVs)) {
+		return 31;
+	}
+	return autoIVs;
+}
+
+function isCustomSet(pokeName) {
+	// pokeName should be the name as displayed in the sets list: speciesName (setName)
+	if (!pokeName) {
+		return false;
+	}
+	let speciesSets = SETDEX_CUSTOM[pokeName.substring(0, pokeName.indexOf(" ("))];
+	return (speciesSets && (pokeName.substring(pokeName.indexOf("(") + 1, pokeName.length - 1) in speciesSets));
+}
 
 $("#format").change(function () {
 	localStorage.setItem("selectedFormat", $("input:radio[name='format']:checked").val().toLowerCase());
@@ -576,17 +547,7 @@ $(".set-selector").bind("change click keyup keydown", function () {
 	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
 		var set = setdexAll[pokemonName][setName];
 		pokeObj.find(".level").val(set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50));
-		let autoIVs;
-		if (gen == 3) {
-			autoIVs = parseInt(pokeObj.find('.autoivs-select').find(":selected").val());
-		} else if (gen == 4) {
-			autoIVs = parseInt(pokeObj.find(".autoivs-box").val());
-		} else if (gen <= 7) {
-			autoIVs = parseInt($('#autoivs-center #autoivs-select').find(":selected").val());
-		}
-		if (!autoIVs || isNaN(autoIVs)) {
-			autoIVs = 31;
-		}
+		let autoIVs = getAutoIVValue(pokeObjID === "p2" ? "R" : "L");
 		pokeObj.find(".hp .evs").val(set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0);
 		pokeObj.find(".hp .ivs").val(set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : autoIVs);
 		for (i = 0; i < STATS.length; i++) {

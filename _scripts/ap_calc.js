@@ -39,6 +39,13 @@ $("#maxR").change(function () {
 	}
 });
 
+$("#autoivsR").change(function () {
+	if (gen != 3 && gen != 4) {
+		return;
+	}
+	setIVSelectors($("#p2"), "R");
+});
+
 function autoSetCrits(pokeInfo, i) {
 	let merciless = pokeInfo.find(".ability").val() === "Merciless" && $("#p" + (i === 1 ? "2" : "1")).find(".status").val().includes("Poisoned");
 	for (let i = 1; i <= 4; i++) {
