@@ -137,11 +137,8 @@ function exportToPsFormat(pokeInfo) {
 	if (evsAlert === true) {
 		alert("Exported Pokemon has " + evSum + " EVs and is therefore illegal. Exported set anyway.");
 	}
-	document.getElementById("customMon").innerHTML = finalText;
 
-	var copyText = document.getElementById("customMon");
-	copyText.select();
-	document.execCommand("Copy");
+	$("#customMon").val(finalText).select();
 }
 
 function serialize(array, separator) {
