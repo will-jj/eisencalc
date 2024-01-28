@@ -179,12 +179,16 @@ function setResultText(result, hitCount, moveAccuracy, koCombinations, mapCombin
 		result.koChanceText = (koCombinations ? "possible" : "guaranteed") + " " + hko;
 	} else if (koCombinations) {
 		let koChance = powerDivision(koCombinations, mapCombinations, hitCount);
-		let printedKOChance = Math.round(koChance * 1000) / 10;
-		if (printedKOChance == 0) {
-			printedKOChance = "Miniscule";
+		if (koChance == 1) {
+			result.koChanceText = "guaranteed " + hko;
+		} else {
+			let printedKOChance = Math.round(koChance * 1000) / 10;
+			if (printedKOChance == 0) {
+				printedKOChance = "Miniscule";
+			}
+			result.koChanceText = printedKOChance + "% chance to " + hko;
+			finalAcc *= koChance;
 		}
-		result.koChanceText = printedKOChance + "% chance to " + hko;
-		finalAcc *= koChance;
 	} else {
 		result.koChanceText = "guaranteed " + hko;
 	}
