@@ -1186,7 +1186,7 @@ function getAssembledDamageMap(result, resultDamageMap, moveHits, considerReduce
 
 // please add the new setdex to this function whenever adding a new gen
 function isFacilitySet(speciesName, setName) {
-	let setdexMaps = [SETDEX_EM, SETDEX_EM_OPEN_LVL, SETDEX_PHGSS, SETDEX_GEN5, SETDEX_GEN6, SETDEX_GEN7, SETDEX_GEN8, SETDEX_GEN80];
+	let setdexMaps = [SETDEX_EM, SETDEX_PHGSS, SETDEX_GEN5, SETDEX_GEN6, SETDEX_GEN7, SETDEX_GEN8, SETDEX_GEN80];
 	for (let setdexMap of setdexMaps) {
 		let speciesSets = setdexMap[speciesName];
 		if (speciesSets && (setName in speciesSets)) {
@@ -1209,7 +1209,7 @@ $(".gen").change(function () {
 	switch (gen) {
 	case 3:
 		pokedex = POKEDEX_ADV;
-		setdex = joinDexes([SETDEX_EM, SETDEX_EM_OPEN_LVL]);
+		setdex = SETDEX_EM;
 		typeChart = TYPE_CHART_GSC;
 		moves = MOVES_ADV;
 		items = ITEMS_ADV;

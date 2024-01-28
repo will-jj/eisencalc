@@ -13079,6 +13079,36 @@ SETDEX_EM = {
       "item": "Chesto Berry",
       "tier": "50"
     },
+    "Articuno-5 (871)": {
+      "evs": {
+        "at": 255,
+        "sa": 255
+      },
+      "moves": [
+        "Blizzard",
+        "Double-Edge",
+        "Agility",
+        "Swagger"
+      ],
+      "nature": "Docile",
+      "item": "Focus Band",
+      "tier": "Open"
+    },
+    "Articuno-6 (872)": {
+      "evs": {
+        "at": 255,
+        "sa": 255
+      },
+      "moves": [
+        "Ice Beam",
+        "Aerial Ace",
+        "Reflect",
+        "Rest"
+      ],
+      "nature": "Docile",
+      "item": "Chesto Berry",
+      "tier": "Open"
+    },
     "Articuno (Brandon Gold)": {
       "evs": {
         "hp": 6,
@@ -13157,6 +13187,37 @@ SETDEX_EM = {
       "item": "Shell Bell",
       "tier": "50"
     },
+    "Zapdos-5 (873)": {
+      "evs": {
+        "at": 255,
+        "sa": 255
+      },
+      "moves": [
+        "Thunderbolt",
+        "Drill Peck",
+        "Double-Edge",
+        "Thunder Wave"
+      ],
+      "nature": "Docile",
+      "item": "Scope Lens",
+      "tier": "Open"
+    },
+    "Zapdos-6 (874)": {
+      "evs": {
+        "at": 170,
+        "sa": 170,
+        "sp": 170
+      },
+      "moves": [
+        "Thunder",
+        "Drill Peck",
+        "Rain Dance",
+        "Double-Edge"
+      ],
+      "nature": "Docile",
+      "item": "Lum Berry",
+      "tier": "Open"
+    },
     "Zapdos (Brandon Gold)": {
       "evs": {
         "hp": 6,
@@ -13233,6 +13294,36 @@ SETDEX_EM = {
       "nature": "Quiet",
       "item": "White Herb",
       "tier": "50"
+    },
+    "Moltres-5 (875)": {
+      "evs": {
+        "sa": 255,
+        "sp": 255
+      },
+      "moves": [
+        "Overheat",
+        "Sunny Day",
+        "Swagger",
+        "Facade"
+      ],
+      "nature": "Docile",
+      "item": "White Herb",
+      "tier": "Open"
+    },
+    "Moltres-6 (876)": {
+      "evs": {
+        "at": 255,
+        "sa": 255
+      },
+      "moves": [
+        "Overheat",
+        "Double-Edge",
+        "Aerial Ace",
+        "Steel Wing"
+      ],
+      "nature": "Docile",
+      "item": "White Herb",
+      "tier": "Open"
     },
     "Moltres (Brandon Gold)": {
       "evs": {
@@ -13311,6 +13402,36 @@ SETDEX_EM = {
       "item": "Lum Berry",
       "tier": "50"
     },
+    "Raikou-5 (877)": {
+      "evs": {
+        "sa": 255,
+        "sp": 255
+      },
+      "moves": [
+        "Thunderbolt",
+        "Double-Edge",
+        "Roar",
+        "Reflect"
+      ],
+      "nature": "Modest",
+      "item": "BrightPowder",
+      "tier": "Open"
+    },
+    "Raikou-6 (878)": {
+      "evs": {
+        "hp": 255,
+        "df": 255
+      },
+      "moves": [
+        "Thunderbolt",
+        "Calm Mind",
+        "Substitute",
+        "Rest"
+      ],
+      "nature": "Modest",
+      "item": "Chesto Berry",
+      "tier": "Open"
+    },
     "Raikou (Anabel Gold)": {
       "evs": {
         "hp": 158,
@@ -13387,6 +13508,36 @@ SETDEX_EM = {
       "nature": "Modest",
       "item": "King's Rock",
       "tier": "50"
+    },
+    "Entei-5 (879)": {
+      "evs": {
+        "df": 255,
+        "sd": 255
+      },
+      "moves": [
+        "Fire Blast",
+        "Double-Edge",
+        "Endure",
+        "Reflect"
+      ],
+      "nature": "Docile",
+      "item": "Salac Berry",
+      "tier": "Open"
+    },
+    "Entei-6 (880)": {
+      "evs": {
+        "df": 255,
+        "sd": 255
+      },
+      "moves": [
+        "Flamethrower",
+        "Calm Mind",
+        "Roar",
+        "Rest"
+      ],
+      "nature": "Modest",
+      "item": "Chesto Berry",
+      "tier": "Open"
     },
     "Entei (Anabel Silver)": {
       "evs": {
@@ -13506,6 +13657,37 @@ SETDEX_EM = {
       "nature": "Modest",
       "item": "Chesto Berry",
       "tier": "50"
+    },
+    "Suicune-5 (881)": {
+      "evs": {
+        "hp": 255,
+        "sa": 255
+      },
+      "moves": [
+        "Surf",
+        "Ice Beam",
+        "Calm Mind",
+        "Icy Wind"
+      ],
+      "nature": "Modest",
+      "item": "Lum Berry",
+      "tier": "Open"
+    },
+    "Suicune-6 (882)": {
+      "evs": {
+        "hp": 170,
+        "df": 170,
+        "sd": 170
+      },
+      "moves": [
+        "Surf",
+        "Ice Beam",
+        "Calm Mind",
+        "Rest"
+      ],
+      "nature": "Modest",
+      "item": "Chesto Berry",
+      "tier": "Open"
     },
     "Suicune (Spenser Gold)": {
       "evs": {
@@ -14156,10 +14338,7 @@ SETDEX_EM = {
       "nature": "Modest",
       "item": "BrightPowder"
     }
-  }
-};
-
-SETDEX_EM_OPEN_LVL = {
+  },
   "Dragonite": {
     "Dragonite-1 (851)": {
       "evs": {
@@ -14175,7 +14354,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Adamant",
       "item": "BrightPowder",
-      "tier": "50"
+      "tier": "Open"
     },
     "Dragonite-2 (852)": {
       "evs": {
@@ -14191,7 +14370,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Adamant",
       "item": "BrightPowder",
-      "tier": "50"
+      "tier": "Open"
     },
     "Dragonite-3 (853)": {
       "evs": {
@@ -14207,7 +14386,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Adamant",
       "item": "Leftovers",
-      "tier": "50"
+      "tier": "Open"
     },
     "Dragonite-4 (854)": {
       "evs": {
@@ -14223,7 +14402,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Adamant",
       "item": "Chesto Berry",
-      "tier": "50"
+      "tier": "Open"
     },
     "Dragonite-5 (855)": {
       "evs": {
@@ -14238,7 +14417,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Docile",
       "item": "Lum Berry",
-      "tier": "50"
+      "tier": "Open"
     },
     "Dragonite-6 (856)": {
       "evs": {
@@ -14253,7 +14432,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Modest",
       "item": "Shell Bell",
-      "tier": "50"
+      "tier": "Open"
     },
     "Dragonite-7 (857)": {
       "evs": {
@@ -14268,7 +14447,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Modest",
       "item": "Shell Bell",
-      "tier": "50"
+      "tier": "Open"
     },
     "Dragonite-8 (858)": {
       "evs": {
@@ -14283,7 +14462,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Modest",
       "item": "Shell Bell",
-      "tier": "50"
+      "tier": "Open"
     },
     "Dragonite-9 (859)": {
       "evs": {
@@ -14298,7 +14477,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Docile",
       "item": "Quick Claw",
-      "tier": "50"
+      "tier": "Open"
     },
     "Dragonite-10 (860)": {
       "evs": {
@@ -14313,7 +14492,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Docile",
       "item": "Quick Claw",
-      "tier": "50"
+      "tier": "Open"
     }
   },
   "Tyranitar": {
@@ -14330,7 +14509,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Hardy",
       "item": "BrightPowder",
-      "tier": "50"
+      "tier": "Open"
     },
     "Tyranitar-2 (862)": {
       "evs": {
@@ -14345,7 +14524,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Hardy",
       "item": "BrightPowder",
-      "tier": "50"
+      "tier": "Open"
     },
     "Tyranitar-3 (863)": {
       "evs": {
@@ -14361,7 +14540,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Adamant",
       "item": "Focus Band",
-      "tier": "50"
+      "tier": "Open"
     },
     "Tyranitar-4 (864)": {
       "evs": {
@@ -14376,7 +14555,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Modest",
       "item": "Quick Claw",
-      "tier": "50"
+      "tier": "Open"
     },
     "Tyranitar-5 (865)": {
       "evs": {
@@ -14392,7 +14571,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Adamant",
       "item": "Chesto Berry",
-      "tier": "50"
+      "tier": "Open"
     },
     "Tyranitar-6 (866)": {
       "evs": {
@@ -14408,7 +14587,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Adamant",
       "item": "Chesto Berry",
-      "tier": "50"
+      "tier": "Open"
     },
     "Tyranitar-7 (867)": {
       "evs": {
@@ -14423,7 +14602,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Adamant",
       "item": "Quick Claw",
-      "tier": "50"
+      "tier": "Open"
     },
     "Tyranitar-8 (868)": {
       "evs": {
@@ -14439,7 +14618,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Adamant",
       "item": "Lum Berry",
-      "tier": "50"
+      "tier": "Open"
     },
     "Tyranitar-9 (869)": {
       "evs": {
@@ -14454,7 +14633,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Hardy",
       "item": "Quick Claw",
-      "tier": "50"
+      "tier": "Open"
     },
     "Tyranitar-10 (870)": {
       "evs": {
@@ -14470,201 +14649,7 @@ SETDEX_EM_OPEN_LVL = {
       ],
       "nature": "Adamant",
       "item": "Lum Berry",
-      "tier": "50"
-    }
-  },
-  "Articuno": {
-    "Articuno-5 (871)": {
-      "evs": {
-        "at": 255,
-        "sa": 255
-      },
-      "moves": [
-        "Blizzard",
-        "Double-Edge",
-        "Agility",
-        "Swagger"
-      ],
-      "nature": "Docile",
-      "item": "Focus Band",
-      "tier": "50"
-    },
-    "Articuno-6 (872)": {
-      "evs": {
-        "at": 255,
-        "sa": 255
-      },
-      "moves": [
-        "Ice Beam",
-        "Aerial Ace",
-        "Reflect",
-        "Rest"
-      ],
-      "nature": "Docile",
-      "item": "Chesto Berry",
-      "tier": "50"
-    }
-  },
-  "Zapdos" : {
-    "Zapdos-5 (873)": {
-      "evs": {
-        "at": 255,
-        "sa": 255
-      },
-      "moves": [
-        "Thunderbolt",
-        "Drill Peck",
-        "Double-Edge",
-        "Thunder Wave"
-      ],
-      "nature": "Docile",
-      "item": "Scope Lens",
-      "tier": "50"
-    },
-    "Zapdos-6 (874)": {
-      "evs": {
-        "at": 170,
-        "sa": 170,
-        "sp": 170
-      },
-      "moves": [
-        "Thunder",
-        "Drill Peck",
-        "Rain Dance",
-        "Double-Edge"
-      ],
-      "nature": "Docile",
-      "item": "Lum Berry",
-      "tier": "50"
-    }
-  },
-  "Moltres": {
-    "Moltres-5 (875)": {
-      "evs": {
-        "sa": 255,
-        "sp": 255
-      },
-      "moves": [
-        "Overheat",
-        "Sunny Day",
-        "Swagger",
-        "Facade"
-      ],
-      "nature": "Docile",
-      "item": "White Herb",
-      "tier": "50"
-    },
-    "Moltres-6 (876)": {
-      "evs": {
-        "at": 255,
-        "sa": 255
-      },
-      "moves": [
-        "Overheat",
-        "Double-Edge",
-        "Aerial Ace",
-        "Steel Wing"
-      ],
-      "nature": "Docile",
-      "item": "White Herb",
-      "tier": "50"
-    }
-  },
-  "Raikou": {
-    "Raikou-5 (877)": {
-      "evs": {
-        "sa": 255,
-        "sp": 255
-      },
-      "moves": [
-        "Thunderbolt",
-        "Double-Edge",
-        "Roar",
-        "Reflect"
-      ],
-      "nature": "Modest",
-      "item": "BrightPowder",
-      "tier": "50"
-    },
-    "Raikou-6 (878)": {
-      "evs": {
-        "hp": 255,
-        "df": 255
-      },
-      "moves": [
-        "Thunderbolt",
-        "Calm Mind",
-        "Substitute",
-        "Rest"
-      ],
-      "nature": "Modest",
-      "item": "Chesto Berry",
-      "tier": "50"
-    }
-  },
-  "Entei": {
-    "Entei-5 (879)": {
-      "evs": {
-        "df": 255,
-        "sd": 255
-      },
-      "moves": [
-        "Fire Blast",
-        "Double-Edge",
-        "Endure",
-        "Reflect"
-      ],
-      "nature": "Docile",
-      "item": "Salac Berry",
-      "tier": "50"
-    },
-    "Entei-6 (880)": {
-      "evs": {
-        "df": 255,
-        "sd": 255
-      },
-      "moves": [
-        "Flamethrower",
-        "Calm Mind",
-        "Roar",
-        "Rest"
-      ],
-      "nature": "Modest",
-      "item": "Chesto Berry",
-      "tier": "50"
-    }
-  },
-  "Suicune": {
-    "Suicune-5 (881)": {
-      "evs": {
-        "hp": 255,
-        "sa": 255
-      },
-      "moves": [
-        "Surf",
-        "Ice Beam",
-        "Calm Mind",
-        "Icy Wind"
-      ],
-      "nature": "Modest",
-      "item": "Lum Berry",
-      "tier": "50"
-    },
-    "Suicune-6 (882)": {
-      "evs": {
-        "hp": 170,
-        "df": 170,
-        "sd": 170
-      },
-      "moves": [
-        "Surf",
-        "Ice Beam",
-        "Calm Mind",
-        "Rest"
-      ],
-      "nature": "Modest",
-      "item": "Chesto Berry",
-      "tier": "50"
+      "tier": "Open"
     }
   }
-};
+}
