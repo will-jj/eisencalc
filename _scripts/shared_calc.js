@@ -377,7 +377,7 @@ function setNewFieldEffect(effectType, currentAbility, newAbility, opponentAbili
 	let newEffect = manuallySetEffect;
 	let newAbilityEffect = effectAbilities(newAbility);
 	// check if setting a new effect
-	if (newAbilityEffect != "") {
+	if (newAbilityEffect !== "") {
 		if (!(newAbility in strongWeatherAbilities) &&
 			Object.values(strongWeatherAbilities).includes(currentEffect) && !(currentAbility in strongWeatherAbilities)) {
 			return;
@@ -1322,6 +1322,8 @@ $(".gen").change(function () {
 	$("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
 	manuallySetWeather = "";
 	manuallySetTerrain = "";
+	$("input:radio[name='weather'][value='']").prop("checked", true);
+	$("input:radio[name='terrain'][value='']").prop("checked", true);
 
 	$(".set-selector").val(getSetOptions()[1].id); // load the first set after the unselectable species name
 	$(".set-selector").change();
