@@ -377,7 +377,7 @@ function setNewFieldEffect(effectType, currentAbility, newAbility, opponentAbili
 	let newEffect = manuallySetEffect;
 	let newAbilityEffect = effectAbilities(newAbility);
 	// check if setting a new effect
-	if (newAbilityEffect != "") {
+	if (newAbilityEffect !== "") {
 		if (!(newAbility in strongWeatherAbilities) &&
 			Object.values(strongWeatherAbilities).includes(currentEffect) && !(currentAbility in strongWeatherAbilities)) {
 			return;
@@ -468,10 +468,8 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-bp").val(move.bp);
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
-	if (pokeInfo.prop("id")[1] == "1") {
-		let forceCrit = move.alwaysCrit || (!isNeutralizingGas && ability === "Merciless" && move.category && $("#p2").find(".status").val().endsWith("Poisoned"));
-		moveGroupObj.children(".move-crit").prop("checked", forceCrit);
-	}
+	let forceCrit = move.alwaysCrit || (!isNeutralizingGas && ability === "Merciless" && move.category && pokeInfo.find(".status").val().endsWith("Poisoned"));
+	moveGroupObj.children(".move-crit").prop("checked", forceCrit);
 	var moveHits = moveGroupObj.children(".move-hits");
 	moveHits.empty();
 	var maxMultiHits = move.maxMultiHits;
@@ -1186,7 +1184,7 @@ function getAssembledDamageMap(result, resultDamageMap, moveHits, considerReduce
 
 // please add the new setdex to this function whenever adding a new gen
 function isFacilitySet(speciesName, setName) {
-	let setdexMaps = [SETDEX_EM, SETDEX_EM_OPEN_LVL, SETDEX_PHGSS, SETDEX_GEN5, SETDEX_GEN6, SETDEX_GEN7, SETDEX_GEN8, SETDEX_GEN80];
+	let setdexMaps = [SETDEX_EM, SETDEX_PHGSS, SETDEX_GEN5, SETDEX_GEN6, SETDEX_GEN7, SETDEX_GEN8, SETDEX_GEN80];
 	for (let setdexMap of setdexMaps) {
 		let speciesSets = setdexMap[speciesName];
 		if (speciesSets && (setName in speciesSets)) {
@@ -1209,7 +1207,7 @@ $(".gen").change(function () {
 	switch (gen) {
 	case 3:
 		pokedex = POKEDEX_ADV;
-		setdex = joinDexes([SETDEX_EM, SETDEX_EM_OPEN_LVL]);
+		setdex = SETDEX_EM;
 		typeChart = TYPE_CHART_GSC;
 		moves = MOVES_ADV;
 		items = ITEMS_ADV;
@@ -1322,6 +1320,8 @@ $(".gen").change(function () {
 	$("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
 	manuallySetWeather = "";
 	manuallySetTerrain = "";
+	$("input:radio[name='weather'][value='']").prop("checked", true);
+	$("input:radio[name='terrain'][value='']").prop("checked", true);
 
 	$(".set-selector").val(getSetOptions()[1].id); // load the first set after the unselectable species name
 	$(".set-selector").change();

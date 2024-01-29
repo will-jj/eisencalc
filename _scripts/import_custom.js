@@ -74,11 +74,11 @@ function eraseCookie(name) {
 
 var savecustom = function () {
 	//first, to parse it all from the PS format
-	var string = document.getElementById("customMon").value;
-	var importArray = string.split("\n");
-	var splitArr = ["0"];
-	var monArr = [];
-	var finalArr = [];
+	let string = $("#customMon").val();
+	let importArray = string.split("\n");
+	let splitArr = ["0"];
+	let monArr = [];
+	let finalArr = [];
 	//console.log(importArray);
 
 	for (var i = 0; i < importArray.length; i++) {

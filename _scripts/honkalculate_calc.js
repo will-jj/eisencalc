@@ -174,15 +174,18 @@ function performCalculations() {
 	var field = new Field();
 	var startingWeather = field.getWeather();
 
-	let setSpecies = Object.keys(gen == 3 && $("#autolevel-box").val() == 50 ? SETDEX_EM : setdex);
+	let setSpecies = Object.keys(setdex);
 	for (let speciesName of setSpecies) {
 		let setNames = Object.keys(setdex[speciesName]);
 		for (let setName of setNames) {
 			setPoke = MassPokemon(speciesName, setName);
-			setTier = setPoke.tier; // setPoke.tier can be: 50, Hall, HallR10, 28, 40, Tower, RS, SM, DM, SMDM. A set might not have a tier key.
-			if (gen == 4 && selectedTier === "All" && setTier && setTier.includes("Hall")) {
+			setTier = setPoke.tier; // setPoke.tier can be: 50, Open, Hall, HallR10, 28, 40, Tower, RS, SM, DM, SMDM. A set might not have a tier key.
+			if (gen == 3 && selectedTier === "threshold" && setTier === "Open" && $("#autolevel-box").val() !== "50") {
+				// let set be calculated for open level
+				// threshold checks for 50+
+			} else if (gen == 4 && selectedTier === "All" && setTier && setTier.includes("Hall")) {
 				continue;
-			} else if (selectedTier === "All" || (setTier && setTier.includes(selectedTier)) || (selectedTier == "threshold" && parseInt(setTier))) {
+			} else if (selectedTier === "All" || (setTier && setTier.includes(selectedTier)) || (selectedTier === "threshold" && parseInt(setTier))) {
 				// let set be calculated
 			} else {
 				continue;
