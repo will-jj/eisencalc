@@ -881,7 +881,7 @@ function getMoveDetails(moveInfo, item, species) {
 		return getMaxMove(moveName, defaultDetails, species, moveInfo);
 	}
 
-	return $.extend({
+	return $.extend({}, defaultDetails, {
 		"name": moveName,
 		"bp": ~~moveInfo.find(".move-bp").val(),
 		"type": moveInfo.find(".move-type").val(),
@@ -889,7 +889,7 @@ function getMoveDetails(moveInfo, item, species) {
 		"isCrit": moveInfo.find(".move-crit").prop("checked"),
 		"hits": defaultDetails.maxMultiHits ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isThreeHit ? 3 : defaultDetails.isTwoHit ? 2 : 1,
 		"usedTimes": defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1
-	}, defaultDetails);
+	});
 }
 
 function getMaxMove(moveName, defaultDetails, species, moveInfo) {
