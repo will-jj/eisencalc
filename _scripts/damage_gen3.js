@@ -145,7 +145,7 @@ function getDamageResultADV(attacker, defender, move, field) {
             (!isPhysical && attacker.item === "Soul Dew" && (attacker.name === "Latios" || attacker.name === "Latias"))) {
 		at = Math.floor(at * 1.5);
 		description.attackerItem = attacker.item;
-	} else if ((!isPhysical && attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl") ||
+	} else if ((!isPhysical && attacker.item.replaceAll(" ", "") === "DeepSeaTooth" && attacker.name === "Clamperl") ||
             (!isPhysical && attacker.item === "Light Ball" && attacker.name === "Pikachu") ||
             (isPhysical && attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak"))) {
 		at *= 2;
@@ -155,7 +155,7 @@ function getDamageResultADV(attacker, defender, move, field) {
 	if (!isPhysical && defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias")) {
 		df = Math.floor(df * 1.5);
 		description.defenderItem = defender.item;
-	} else if ((!isPhysical && defender.item === "Deep Sea Scale" && defender.name === "Clamperl") ||
+	} else if ((!isPhysical && defender.item.replaceAll(" ", "") === "DeepSeaScale" && defender.name === "Clamperl") ||
             (isPhysical && defender.item === "Metal Powder" && defender.name === "Ditto")) {
 		df *= 2;
 		description.defenderItem = defender.item;

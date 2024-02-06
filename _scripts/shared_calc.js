@@ -1416,39 +1416,32 @@ function clearField() {
 }
 
 function getSetOptions() {
-	var pokeNames, index;
-	pokeNames = Object.keys(pokedex);
-	index = pokeNames.length;
-	while (index--) {
-		if (pokedex[pokeNames[index]].hasBaseForme) {
-			pokeNames.splice(index, 1);
+	let setOptions = [];
+	let customSetOptions = [];
+	Object.keys(pokedex).sort().forEach(function(pokeName) {
+		if (pokedex[pokeName].hasBaseForme) {
+			return;
 		}
-	}
-	pokeNames.sort();
-	index = pokeNames.length;
-	while (index--) { //forcing alolan forms to show first
-		if (pokeNames[index].includes("-Alola")) {
-			var temp = pokeNames[index];
-			pokeNames.splice(index, 1); //deleting alolan entry
-			var regularForm = temp.substring(0, temp.indexOf("-Alola"));
-			var regularIndex = pokeNames.indexOf(regularForm);
-			pokeNames.splice(regularIndex, 0, temp); //re-inserting it right before non-alolan entry
-		}
-	}
-	var setOptions = [];
-	for (var i = 0; i < pokeNames.length; i++) {
-		var pokeName = pokeNames[i];
-		setOptions.push({
+
+		setOptions.push({ // bold species header, will be unselectable
 			"pokemon": pokeName,
 			"text": pokeName
 		});
-		if (pokeName in setdexAll) {
-			var setNames = Object.keys(setdexAll[pokeName]);
-			for (var j = 0; j < setNames.length; j++) {
-				var setName = setNames[j];
+		if (pokeName in setdex) {
+			for (setName in setdex[pokeName]) {
 				setOptions.push({
+					"pokemon": pokeName, // string used in searches
+					"set": setName, // string that displays in the dropdown list
+					"text": pokeName + " (" + setName + ")", // string that displays in the selector
+					"id": pokeName + " (" + setName + ")"
+				});
+			}
+		}
+		if (pokeName in SETDEX_CUSTOM) {
+			for (setName in SETDEX_CUSTOM[pokeName]) {
+				customSetOptions.push({
 					"pokemon": pokeName,
-					"set": setName,
+					"set": pokeName + " (" + setName + ")",
 					"text": pokeName + " (" + setName + ")",
 					"id": pokeName + " (" + setName + ")"
 				});
@@ -1460,7 +1453,13 @@ function getSetOptions() {
 			"text": pokeName + " (Blank Set)",
 			"id": pokeName + " (Blank Set)"
 		});
+	});
+
+	if (customSetOptions.length > 0) {
+		customSetOptions.sort((a, b) => a.set < b.set ? -1 : (a.set > b.set ? 1 : 0));
+		setOptions = [{"pokemon": "", "text": "Custom Sets"}, ...customSetOptions, ...setOptions];
 	}
+
 	return setOptions;
 }
 
