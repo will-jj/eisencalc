@@ -1430,7 +1430,7 @@ function getSetOptions() {
 		if (pokeName in setdex) {
 			for (setName in setdex[pokeName]) {
 				setOptions.push({
-					"pokemon": pokeName,
+					"pokemon": pokeName, // string used in searches
 					"set": setName, // string that displays in the dropdown list
 					"text": pokeName + " (" + setName + ")", // string that displays in the selector
 					"id": pokeName + " (" + setName + ")"
@@ -1457,7 +1457,7 @@ function getSetOptions() {
 
 	if (customSetOptions.length > 0) {
 		customSetOptions.sort((a, b) => a.set < b.set ? -1 : (a.set > b.set ? 1 : 0));
-		setOptions = [{"pokemon": "Custom Sets", "text": "Custom Sets"}, ...customSetOptions, ...setOptions];
+		setOptions = [{"pokemon": "", "text": "Custom Sets"}, ...customSetOptions, ...setOptions];
 	}
 
 	return setOptions;
