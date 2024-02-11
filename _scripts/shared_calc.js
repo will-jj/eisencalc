@@ -861,24 +861,24 @@ function Pokemon(pokeInfo) {
 		setdexPoke ? setdexPoke.moves[3] : move4.find("select.move-selector").val()
 	];
 	poke.moves = [
-		setdexPoke && !(setdexPoke.moves[0] in moves) ? {"name": setdexPoke.moves[0], "bp": 0} : getMoveDetails(move1, poke.item, poke.name),
-		setdexPoke && !(setdexPoke.moves[1] in moves) ? {"name": setdexPoke.moves[1], "bp": 0} : getMoveDetails(move2, poke.item, poke.name),
-		setdexPoke && !(setdexPoke.moves[2] in moves) ? {"name": setdexPoke.moves[2], "bp": 0} : getMoveDetails(move3, poke.item, poke.name),
-		setdexPoke && !(setdexPoke.moves[3] in moves) ? {"name": setdexPoke.moves[3], "bp": 0} : getMoveDetails(move4, poke.item, poke.name)
+		setdexPoke && !(setdexPoke.moves[0] in moves) ? {"name": setdexPoke.moves[0], "bp": 0} : getMoveDetails(move1, poke),
+		setdexPoke && !(setdexPoke.moves[1] in moves) ? {"name": setdexPoke.moves[1], "bp": 0} : getMoveDetails(move2, poke),
+		setdexPoke && !(setdexPoke.moves[2] in moves) ? {"name": setdexPoke.moves[2], "bp": 0} : getMoveDetails(move3, poke),
+		setdexPoke && !(setdexPoke.moves[3] in moves) ? {"name": setdexPoke.moves[3], "bp": 0} : getMoveDetails(move4, poke)
 	];
 
 	return poke;
 }
 
-function getMoveDetails(moveInfo, item, species) {
+function getMoveDetails(moveInfo, attacker) {
 	let moveName = moveInfo.find("select.move-selector").val();
 	let defaultDetails = moves[moveName];
 
 	if (gen == 7 && moveInfo.find("input.move-z").prop("checked") && moveName !== "Struggle" && "zp" in defaultDetails) {
-		return getZMove(moveName, defaultDetails, item, moveInfo.find(".move-crit").prop("checked"));
+		return getZMove(moveName, attacker, defaultDetails, moveInfo);
 	}
 	if (gen == 8 && moveInfo.find("input.move-max").prop("checked") && moveName !== "Struggle") {
-		return getMaxMove(moveName, defaultDetails, species, moveInfo);
+		return getMaxMove(moveName, attacker, defaultDetails, moveInfo);
 	}
 
 	return $.extend({}, defaultDetails, {
@@ -892,7 +892,42 @@ function getMoveDetails(moveInfo, item, species) {
 	});
 }
 
-function getMaxMove(moveName, defaultDetails, species, moveInfo) {
+function getZMove(moveName, attacker, defaultDetails, moveInfo) {
+	let moveType = getMoveTypePreDamage(moveName, attacker);
+	if (!moveType) {
+		moveType = moveInfo ? moveInfo.find(".move-type").val() : defaultDetails.type;
+		if (!moveType || moveType === "None") {
+			moveType = "Normal";
+		}
+	}
+
+	let zMoveName, moveDetails;
+	if (attacker.item in EXCLUSIVE_ZMOVES_LOOKUP && EXCLUSIVE_ZMOVES_LOOKUP[attacker.item].baseMove === moveName) {
+		zMoveName = EXCLUSIVE_ZMOVES_LOOKUP[attacker.item].zMoveName;
+		moveDetails = EXCLUSIVE_ZMOVES[zMoveName];
+	} else {
+		if (moveName.includes("Hidden Power") || moveName === "Revelation Dance") { // always becomes Breakneck Blitz
+			moveType = "Normal";
+		}
+		zMoveName = ZMOVES_LOOKUP[moveType];
+		moveDetails = {
+			"bp": (moveName === "Nature Power" && moveType !== "Normal") ? 175 : (defaultDetails.zp ? defaultDetails.zp : 0),
+			"type": moveType,
+			"category": moveInfo ? moveInfo.find(".move-cat").val() : defaultDetails.category
+		};
+	}
+
+	return $.extend({
+		"name": zMoveName,
+		"acc": 101,
+		"isCrit": moveInfo ? moveInfo.find(".move-crit").prop("checked") : false,
+		"hits": 1,
+		"isZ": true
+	}, moveDetails);
+}
+
+function getMaxMove(moveName, attacker, defaultDetails, moveInfo) {
+	// defaultDetails are designed to only be used from the mass calc call
 	let exceptions_100_fight = ["Low Kick", "Reversal", "Final Gambit"];
 	let exceptions_80_fight = ["Double Kick", "Triple Kick"];
 	let exceptions_75_fight = ["Counter", "Seismic Toss"];
@@ -905,58 +940,68 @@ function getMaxMove(moveName, defaultDetails, species, moveInfo) {
 	let exceptions_100 = ["Twineedle", "Beat Up", "Fling", "Dragon Rage", "Nature\'s Madness", "Night Shade", "Comet Punch", "Fury Swipes", "Sonic Boom", "Bide",
 		"Super Fang", "Present", "Spit Up", "Psywave", "Mirror Coat", "Metal Burst"];
 
-	let moveType = defaultDetails.type;
-
-	let ability = moveInfo ? moveInfo.closest(".poke-info").find(".ability").val() : "";
-	// changing the type like this prevents getDamageResult() from applying the -ate boost, which is accurate to the game
-	if (!isNeutralizingGas && ability === "Pixilate" && moveType === "Normal") {
-		moveType = "Fairy";
-	} else if (!isNeutralizingGas && ability === "Refrigerate" && moveType === "Normal") {
-		moveType = "Ice";
+	let moveType = getMoveTypePreDamage(moveName, attacker);
+	if (!moveType) {
+		moveType = moveInfo ? moveInfo.find(".move-type").val() : defaultDetails.type;
+		// this won't account for an opponent's neutralizing gas in the 1vAll mass calc
+		let ability = (isNeutralizingGas && attacker.item !== "Ability Shield") ? "" : attacker.ability;
+		if (!moveType || moveType === "None") {
+			moveType = "Normal";
+		} else if (ability === "Pixilate" && moveType === "Normal") {
+			// changing the type like this prevents getDamageResult() from applying the -ate boost, which is correct
+			// this will also display the correct max move i.e. Max Starfall
+			moveType = "Fairy";
+		} else if (ability === "Refrigerate" && moveType === "Normal") {
+			moveType = "Ice";
+		}
 	}
 
-	let maxMoveName = MAXMOVES_LOOKUP[defaultDetails.type];
+	let maxMoveName = MAXMOVES_LOOKUP[moveType];
 
-	let tempBP = 0;
-	if (moveType == "Fighting" || moveType == "Poison") {
+	let tempBP = moveInfo ? ~~moveInfo.find(".move-bp").val() : defaultDetails.bp;
+	if (!tempBP || tempBP === 0) {
+		tempBP = 0;
+	} else if (moveType == "Fighting" || moveType == "Poison") {
 		if (exceptions_100_fight.includes(moveName)) tempBP = 100;
 		else if (exceptions_80_fight.includes(moveName)) tempBP = 80;
 		else if (exceptions_75_fight.includes(moveName)) tempBP = 75;
-		else if (defaultDetails.bp >= 150) tempBP = 100;
-		else if (defaultDetails.bp >= 110) tempBP = 95;
-		else if (defaultDetails.bp >= 75) tempBP = 90;
-		else if (defaultDetails.bp >= 65) tempBP = 85;
-		else if (defaultDetails.bp >= 55) tempBP = 80;
-		else if (defaultDetails.bp >= 45) tempBP = 75;
-		else if (defaultDetails.bp >= 1) tempBP = 70;
+		else if (tempBP >= 150) tempBP = 100;
+		else if (tempBP >= 110) tempBP = 95;
+		else if (tempBP >= 75) tempBP = 90;
+		else if (tempBP >= 65) tempBP = 85;
+		else if (tempBP >= 55) tempBP = 80;
+		else if (tempBP >= 45) tempBP = 75;
+		else if (tempBP >= 1) tempBP = 70;
 	} else {
 		if (exceptions_140.includes(moveName)) tempBP = 140;
 		else if (exceptions_130.includes(moveName)) tempBP = 130;
 		else if (exceptions_120.includes(moveName)) tempBP = 120;
 		else if (exceptions_110.includes(moveName)) tempBP = 110;
 		else if (exceptions_100.includes(moveName)) tempBP = 100;
-		else if (defaultDetails.bp >= 150) tempBP = 150;
-		else if (defaultDetails.bp >= 110) tempBP = 140;
-		else if (defaultDetails.bp >= 75) tempBP = 130;
-		else if (defaultDetails.bp >= 65) tempBP = 120;
-		else if (defaultDetails.bp >= 55) tempBP = 110;
-		else if (defaultDetails.bp >= 45) tempBP = 100;
-		else if (defaultDetails.bp >= 1) tempBP = 90;
+		else if (tempBP >= 150) tempBP = 150;
+		else if (tempBP >= 110) tempBP = 140;
+		else if (tempBP >= 75) tempBP = 130;
+		else if (tempBP >= 65) tempBP = 120;
+		else if (tempBP >= 55) tempBP = 110;
+		else if (tempBP >= 45) tempBP = 100;
+		else if (tempBP >= 1) tempBP = 90;
 	}
 
 	let negateAbility = false;
-	if (tempBP == 0) {
+	// Weather Ball / Terrain Pulse turn into their respective G-Max move in the proper field condition
+	// As a status move, Nature Power turns into Max Guard
+	if (tempBP == 0 || moveName === "Nature Power") {
+		tempBP = 0;
 		maxMoveName = "Max Guard";
-		moveType = "Normal";
-	} else if (species === "Cinderace-Gmax" && moveType === "Fire") {
+	} else if (attacker.name === "Cinderace-Gmax" && moveType === "Fire") {
 		tempBP = 160;
 		maxMoveName = "G-Max Fireball";
 		negateAbility = true;
-	} else if (species === "Inteleon-Gmax" && moveType === "Water") {
+	} else if (attacker.name === "Inteleon-Gmax" && moveType === "Water") {
 		tempBP = 160;
 		maxMoveName = "G-Max Hydrosnipe";
 		negateAbility = true;
-	} else if (species === "Rillaboom-Gmax" && moveType === "Grass") {
+	} else if (attacker.name === "Rillaboom-Gmax" && moveType === "Grass") {
 		tempBP = 160;
 		maxMoveName = "G-Max Drum Solo";
 		negateAbility = true;
@@ -966,7 +1011,7 @@ function getMaxMove(moveName, defaultDetails, species, moveInfo) {
 		"name": maxMoveName,
 		"bp": tempBP,
 		"type": moveType,
-		"category": defaultDetails.category,
+		"category": moveInfo ? moveInfo.find(".move-cat").val() : defaultDetails.category,
 		"acc": 101,
 		"isCrit": moveInfo ? moveInfo.find(".move-crit").prop("checked") : false,
 		"hits": 1,
@@ -975,36 +1020,75 @@ function getMaxMove(moveName, defaultDetails, species, moveInfo) {
 	};
 }
 
-function getZMove(moveName, defaultDetails, item, isCrit) {
-	let moveType = defaultDetails.type;
-
-	let zMoveName, moveDetails;
-	if (item in EXCLUSIVE_ZMOVES_LOOKUP && EXCLUSIVE_ZMOVES_LOOKUP[item].baseMove === moveName) {
-		zMoveName = EXCLUSIVE_ZMOVES_LOOKUP[item].zMoveName;
-		moveDetails = EXCLUSIVE_ZMOVES[zMoveName];
-	} else {
-		if (moveName.includes("Hidden Power")) { // Hidden Power will become Breakneck Blitz
-			moveType = "Normal";
-		} else if (moveName === "Nature Power") {
-			let terrainValue = $("input:radio[name='terrain']:checked").val();
-			moveType = terrainValue === "Electric" ? "Electric" : terrainValue === "Grassy" ? "Grass" : terrainValue === "Misty" ? "Fairy" : terrainValue === "Psychic" ? "Psychic" : defaultDetails.type;
-		}
-
-		zMoveName = ZMOVES_LOOKUP[moveType];
-		moveDetails = {
-			"bp": (moveName === "Nature Power" && moveType !== defaultDetails.type) ? 175 : defaultDetails.zp,
-			"type": moveType,
-			"category": defaultDetails.category
-		};
+function getMoveTypePreDamage(moveName, attacker) {
+	if (moveName === "Weather Ball") {
+		// this won't account for an opponent's cloud nine in the 1vAll mass calc
+		return getWeatherBall(getActiveWeather(), attacker.item);
+	} else if (moveName === "Nature Power") {
+		// Nature Power only changes in terrain, not weather. It still changes if the user is not grounded
+		return getTerrainType($("input:radio[name='terrain']:checked").val());
+	} else if (moveName === "Terrain Pulse") {
+		let tempAbility = attacker.curAbility;
+		attacker.resetCurAbility(); // temporarily negate ability via neutralizing gas if active
+		let grounded = isGrounded(attacker, { "isGravity": $("#gravity").prop("checked") });
+		attacker.curAbility = tempAbility;
+		return grounded ? getTerrainType($("input:radio[name='terrain']:checked").val()) : "Normal";
+	} else if (moveName === "Techno Blast" && attacker.item.endsWith("Drive")) {
+		return getTechnoBlast(attacker.item);
+	} else if (moveName === "Multi-Attack" && attacker.name.startsWith("Silvally-")) {
+		return attacker.name.substring(attacker.name.indexOf("-") + 1);
 	}
+}
 
-	return $.extend({
-		"name": zMoveName,
-		"acc": 101,
-		"isCrit": isCrit,
-		"hits": 1,
-		"isZ": true
-	}, moveDetails);
+function getWeatherBall(weather, attackerItem) {
+	if (weather.includes("Sun") && attackerItem !== "Utility Umbrella") {
+		return "Fire";
+	} else if (weather.includes("Rain") && attackerItem !== "Utility Umbrella") {
+		return "Water";
+	} else if (weather === "Sand") {
+		return "Rock";
+	} else if (weather === "Hail" || weather === "Snow") {
+		return "Ice";
+	}
+	return "Normal";
+}
+
+function getTerrainType(terrain) {
+	switch (terrain) {
+		case "Electric":
+			return "Electric";
+		case "Grassy":
+			return "Grass";
+		case "Misty":
+			return "Fairy";
+		case "Psychic":
+			return "Psychic";
+		default:
+			return "Normal";
+	}
+}
+
+// get the current weather subject to cloud nine / air lock
+function getActiveWeather() {
+	let p1 = $("#p1")
+	let p1Ability = p1.find(".ability").val();
+	let p2 = $("#p2");
+	let p2Ability = p2.find(".ability").val();
+	if (isNeutralizingGas && p1.find(".item").val() !== "Ability Shield") {
+		p1Ability = "";
+	}
+	if (p2Ability) {
+		if (isNeutralizingGas && p2.find(".item").val() !== "Ability Shield") {
+			p2Ability = "";
+		}
+	} else {
+		p2Ability = "";
+	}
+	let noWeatherAbilities = ["Cloud Nine", "Air Lock"];
+	if (noWeatherAbilities.includes(p1Ability) || noWeatherAbilities.includes(p2Ability)) {
+		return "";
+	}
+	return $("input:radio[name='weather']:checked").val();
 }
 
 function Field() {

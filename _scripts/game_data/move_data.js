@@ -4498,13 +4498,6 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
-	"Aura Wheel (Dark)": {
-		"bp": 110,
-		"type": "Dark",
-		"category": "Physical",
-		"hasSecondaryEffect": true,
-		"acc": 100
-	},
 	"Breaking Swipe": {
 		"bp": 60,
 		"type": "Dragon",
