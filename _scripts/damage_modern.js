@@ -1488,7 +1488,7 @@ function isShellSideArmPhysical(attacker, defender, move) {
 }
 
 function checkProtoQuarkHighest(pokemon, weather, terrain) {
-	if ((pokemon.ability === "Protosynthesis" && !isNeutralizingGas && (pokemon.item === "Booster Energy" || weather.endsWith("Sun") > -1)) ||
+	if ((pokemon.ability === "Protosynthesis" && !isNeutralizingGas && (pokemon.item === "Booster Energy" || weather.endsWith("Sun"))) ||
 		(pokemon.ability === "Quark Drive" && !isNeutralizingGas && (pokemon.item === "Booster Energy" || terrain === "Electric"))) {
 		// getModifiedStat() is used because the CALCULATE_ functions have not yet initialized a stats[SP] value, and this function is part of that initialization
 		let highestStat = AT;
