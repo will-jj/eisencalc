@@ -134,8 +134,11 @@ function MassPokemon(speciesName, setName) {
 	for (let n = 0; n < 4; n++) {
 		let moveName = set.moves[n];
 		let defaultDetails = moves[moveName] || moves["(No Move)"];
-		if (set.startDmax) {
-			massPoke.moves.push(getMaxMove(moveName, defaultDetails, speciesName));
+		if (gen == 7 && defaultDetails.zp && defaultDetails.type && defaultDetails.type !== "None" &&
+			massPoke.item.endsWith(" Z") && massPoke.item.startsWith(defaultDetails.type.substring(0, defaultDetails.type.length - 1))) {
+			massPoke.moves.push(getZMove(moveName, massPoke, defaultDetails));
+		} else if (gen == 8 && set.startDmax) {
+			massPoke.moves.push(getMaxMove(moveName, massPoke, defaultDetails));
 		} else {
 			massPoke.moves.push($.extend({}, defaultDetails, {
 				"name": moveName,

@@ -111,7 +111,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (["Grass Knot", "Low Kick", "Heat Crash", "Heavy Slam"].includes(move.name) && defender.isDynamax) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	
+
 	if (defender.isTerastal) {
 		description.defenderTera = defender.type1;
 	}
@@ -120,62 +120,54 @@ function getDamageResult(attacker, defender, move, field) {
 
 	switch (move.name) {
 	case "Weather Ball":
-		if (attacker.item !== "Utility Umbrella") {
-			moveType = field.weather.indexOf("Sun") > -1 ? "Fire" :
-				field.weather.indexOf("Rain") > -1 ? "Water" :
-					field.weather === "Sand" ? "Rock" :
-						(field.weather === "Hail" || field.weather === "Snow") ? "Ice" :
-							"Normal";
+		moveType = getWeatherBall(field.weather, attacker.item);
+		if (moveType !== "Normal") {
 			description.weather = field.weather;
-			description.moveType = moveType;
 		}
 		break;
 
 	case "Terrain Pulse":
-		moveType = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : field.terrain === "Psychic" ? "Psychic" : "Normal";
-		description.moveType = moveType;
+		if (field.terrain && attackerGrounded) {
+			moveType = getTerrainType(field.terrain);
+		}
 		break;
 
 	case "Judgment":
-		if (attacker.item.indexOf("Plate") !== -1) {
+		if (attacker.item.includes("Plate")) {
 			moveType = getItemBoostType(attacker.item);
-			description.moveType = moveType;
 		}
 		break;
 
 	case "Multi-Attack":
-		if (attacker.item.indexOf("Memory") !== -1) {
-			moveType = getMultiAttack(attacker.item);
-			description.moveType = moveType;
+		if (attacker.name.startsWith("Silvally-")) {
+			moveType = attacker.name.substring(attacker.name.indexOf("-") + 1);
 		}
 		break;
 
 	case "Techno Blast":
-		if (attacker.item.indexOf("Drive") !== -1) {
+		if (attacker.item.includes("Drive")) {
 			moveType = getTechnoBlast(attacker.item);
-			description.moveType = moveType;
 		}
 		break;
 
 	case "Natural Gift":
-		if (attacker.item.indexOf("Berry") !== -1) {
+		if (attacker.item.includes("Berry")) {
 			var gift = getNaturalGift(attacker.item);
 			moveType = gift.t;
 			move.bp = gift.p;
 			description.attackerItem = attacker.item;
 			description.moveBP = move.bp;
-			description.moveType = moveType;
 		}
+		description.moveType = moveType; // for clarity, always print move type
 		break;
 
 	case "Nature Power":
-		moveType = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : field.terrain === "Psychic" ? "Psychic" : "Normal";
-		description.moveType = moveType;
+		moveType = getTerrainType(field.terrain);
 		break;
 
 	case "Revelation Dance":
 		moveType = attacker.type1; // always just takes on the first type, even in tera
-		description.moveType = moveType;
+		description.moveType = moveType; // for clarity, always print move type
 		break;
 
 	case "Meteor Beam":
@@ -189,34 +181,35 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 
 	case "Tera Blast":
+	case "Tera Starstorm":
 		if (attacker.isTerastal) {
 			moveType = attacker.teraType;
-			// moveType is implied by the printed tera type of the attacker
 		}
 		break;
 
 	case "Raging Bull":
 		moveType = attacker.name === "Tauros-Paldea" ? "Fighting" : attacker.name === "Tauros-Paldea-Aqua" ? "Water" : attacker.name === "Tauros-Paldea-Blaze" ? "Fire" : moveType;
-		description.moveType = moveType;
+		description.moveType = moveType; // for clarity, always print move type
 		break;
 
 	case "Ivy Cudgel":
 		moveType = attacker.name === "Ogerpon-Wellspring" ? "Water" : attacker.name === "Ogerpon-Hearthflame" ? "Fire" : attacker.name === "Ogerpon-Cornerstone" ? "Rock" : moveType;
-		description.moveType = moveType;
 		break;
+	}
 
-	case "Tera Starstorm":
-		if (attacker.isTerastal) {
-			moveType = "Stellar";
+	// If a move's type is different from its default type, print it. Move type is implied by printed ate/ize abilities, so do this check before ate/ize
+	if (!move.isZ && !move.isMax && move.name in moves && move.name !== "Tera Blast") { // Tera Blast does not want to print the move type. It is implied by the attacker's tera type
+		let moveDefaultDetails = moves[move.name];
+		if (moveDefaultDetails.hasOwnProperty("type") && moveType !== moveDefaultDetails.type) {
 			description.moveType = moveType;
 		}
-		break;
 	}
 
 	// Abilities that change move type
 	let ateizeBoost = false;
-	// if the move is a Max move, it already had its type changed in shared_calc (so that the move's name changes) and won't receive this boost. this is correct behavior.
-	if (!move.isZ) { //Z-Moves don't receive -ate type changes
+	// If the move is a Max move, it already had its type changed in shared_calc (so that the move's name changes) and won't receive this boost. This is correct behavior.
+	// Z-Moves don't receive -ate type changes
+	if (!move.isZ && !move.isMax) {
 		let applicableNormalMove = moveType === "Normal" && move.name !== "Revelation Dance" && !(move.name === "Tera Blast" && attacker.isTerastal); // Raging Bull could be here
 		if (applicableNormalMove && attacker.curAbility === "Aerilate") {
 			moveType = "Flying";
@@ -526,7 +519,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.moveBP = basePower;
 		break;
 	case "Terrain Pulse":
-		basePower *= field.terrain !== "" ? 2 : 1;
+		basePower *= (field.terrain !== "" && attackerGrounded) ? 2 : 1;
 		description.moveBP = basePower;
 		break;
 	case "Fling":
@@ -742,11 +735,10 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		defender.item === "Griseous Orb" && (gen <= 8 || gen == 80) && defender.name === "Giratina-O" ||
 		defender.item === "Griseous Core" && defender.name === "Giratina-O" ||
 		defender.item.endsWith("Plate") && defender.name.startsWith("Arceus") ||
-		defender.item.endsWith("Memory") && defender.name.startsWith("Silvally") ||
 		defender.item.endsWith(" Z") ||
 		defender.item === "Booster Energy" && (defender.ability === "Protosynthesis" || defender.ability === "Quark Drive") ||
 		defender.item.endsWith("Mask") && defender.name.startsWith("Ogerpon-"))) {
-		// Mega Stones, Red/Blue Orbs, and Rusted items are already accounted for by the fact that they don't exist as items
+		// Mega Stones, Red/Blue Orbs, Memories, and Rusted items are already accounted for by the fact that they don't exist as items
 		bpMods.push(0x1800);
 		description.moveBP = move.bp * 1.5;
 	}
@@ -1496,7 +1488,7 @@ function isShellSideArmPhysical(attacker, defender, move) {
 }
 
 function checkProtoQuarkHighest(pokemon, weather, terrain) {
-	if ((pokemon.ability === "Protosynthesis" && !isNeutralizingGas && (pokemon.item === "Booster Energy" || weather.endsWith("Sun") > -1)) ||
+	if ((pokemon.ability === "Protosynthesis" && !isNeutralizingGas && (pokemon.item === "Booster Energy" || weather.endsWith("Sun"))) ||
 		(pokemon.ability === "Quark Drive" && !isNeutralizingGas && (pokemon.item === "Booster Energy" || terrain === "Electric"))) {
 		// getModifiedStat() is used because the CALCULATE_ functions have not yet initialized a stats[SP] value, and this function is part of that initialization
 		let highestStat = AT;
