@@ -70,19 +70,10 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	let basePower = move.bp;
 
 	if (move.name === "Weather Ball") {
-		if (field.weather === "Sun") {
-			moveType = "Fire";
-		} else if (field.weather === "Rain") {
-			moveType = "Water";
-		} else if (field.weather === "Sand") {
-			moveType = "Rock";
-		} else if (field.weather === "Hail") {
-			moveType = "Ice";
-		} else {
-			moveType = "Normal";
+		moveType = getWeatherBall(field.weather, attacker.item);
+		if (moveType !== "Normal") {
+			description.weather = field.weather;
 		}
-		description.weather = field.weather;
-		description.moveType = moveType;
 	} else if (move.name === "Judgment" && attacker.item.indexOf("Plate") !== -1) {
 		moveType = getItemBoostType(attacker.item);
 	} else if (move.name === "Natural Gift" && attacker.item.indexOf("Berry") !== -1) {
@@ -91,7 +82,14 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		basePower = gift.p;
 		description.attackerItem = attacker.item;
 		description.moveBP = basePower;
-		description.moveType = moveType;
+	}
+
+	// If a move's type is different from its default type, print it.
+	if (move.name in moves) {
+		let moveDefaultDetails = moves[move.name];
+		if (moveDefaultDetails.hasOwnProperty("type") && moveType !== moveDefaultDetails.type) {
+			description.moveType = moveType;
+		}
 	}
 
 	if (attacker.ability === "Normalize") {

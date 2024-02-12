@@ -53,14 +53,19 @@ function getDamageResultADV(attacker, defender, move, field) {
 	var isCritical = move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defender.ability) === -1;
 
 	if (move.name === "Weather Ball") {
-		moveType = field.weather === "Sun" ? "Fire" :
-			field.weather === "Rain" ? "Water" :
-				field.weather === "Sand" ? "Rock" :
-					field.weather === "Hail" ? "Ice" :
-						"Normal";
-		description.weather = field.weather;
-		description.moveType = moveType;
+		moveType = getWeatherBall(field.weather, attacker.item);
+		if (moveType !== "Normal") {
+			description.weather = field.weather;
+		}
 		description.moveBP = move.bp;
+	}
+
+	// If a move's type is different from its default type, print it.
+	if (move.name in moves) {
+		let moveDefaultDetails = moves[move.name];
+		if (moveDefaultDetails.hasOwnProperty("type") && moveType !== moveDefaultDetails.type) {
+			description.moveType = moveType;
+		}
 	}
 
 	var typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1);
@@ -254,7 +259,7 @@ function getDamageResultADV(attacker, defender, move, field) {
 
 	if (move.name === "Weather Ball" && field.weather !== "") {
 		baseDamage *= 2;
-		description.moveBP = move.bp * 2;
+		description.moveBP = baseDamage;
 	}
 
 	if (field.isCharge && moveType === "Electric") {
