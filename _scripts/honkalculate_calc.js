@@ -204,50 +204,43 @@ function performCalculations() {
 			userPoke.resetCurAbility();
 			setPoke.resetCurAbility();
 
-			var damageResults = calculateMovesOfAttacker(attacker, defender, field);
-			var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
-			var highestDamage = -1;
-			var data = [setName];
+			let damageResults = calculateMovesOfAttacker(attacker, defender, field);
+			let result;
+			let maxDamage;
+			let highestDamage = 0;
+			let highestN = 0;
+			let data = { setName: setName, move: "(No Move)", percentRange: "0 - 0%", koChance: "nice move" };
+			if (mode === "one-vs-all") {
+				data.type1 = defender.type1;
+				data.type2 = defender.type2 ? defender.type2 : "";
+			} else {
+				data.type1 = attacker.type1;
+				data.type2 = attacker.type2 ? attacker.type2 : "";
+			}
 			for (let n = 0; n < 4; n++) {
 				result = damageResults[n];
-				attackerMove = attacker.moves[n];
-				let resultDamageMap = mapFromArray(result.damage);
-				let moveHits = result.childDamage ? 2 : attackerMove.hits; // this is placeholder.
-				let assembledDamageMap = getAssembledDamageMap(result, resultDamageMap, moveHits);
-				let firstHitMap = result.firstHitDamage ? getAssembledDamageMap(result, resultDamageMap, moveHits, true) : new Map(assembledDamageMap);
-				let mapCombinations = result.damage.length ** moveHits;
-				if (mapCombinations > MAP_SQUASH_CONSTANT) { // see comment in ap_calc
-					squashDamageMap(firstHitMap, mapCombinations);
-					mapCombinations = squashDamageMap(assembledDamageMap, mapCombinations);
-				}
-				let sortedDamageValues = Array.from(firstHitMap.keys());
-				sortedDamageValues.sort((a, b) => a - b);
-				minDamage = sortedDamageValues[0];
-				maxDamage = sortedDamageValues[sortedDamageValues.length - 1];
-				// If any piece of the calculation is a string and not a number ie. Pokemon.level, stats will concatinate into strings, and the below will eval to 0.
-				// I want to be very sure that everything is using the correct types, so I want this behavior. Shoutouts to writing code w/o tests.
-				minPercentage = Math.round(minDamage * 1000 / defender.maxHP) / 10;
-				maxPercentage = Math.round(maxDamage * 1000 / defender.maxHP) / 10;
+				let moveHits = result.childDamage ? 2 : attacker.moves[n].hits; // this is placeholder.
+				maxDamage = moveHits * (result.firstHitDamage ? result.firstHitDamage[result.firstHitDamage - 1] : result.damage[result.damage.length - 1]);
 				if (maxDamage > highestDamage) {
 					highestDamage = maxDamage;
-					while (data.length > 1) {
-						data.pop();
-					}
-					data.push(highestDamage <= 0 ? "(No Move)" : attackerMove.name.replace("Hidden Power", "HP"));
-					data.push(minPercentage + " - " + maxPercentage + "%");
-					//setKOChanceText(result, attackerMove, attacker, defender, field.getSide(~~(mode === "one-vs-all")));
-					setKOChanceText(result, attackerMove, moveHits, attacker, defender, field.getSide(~~(mode === "one-vs-all")), assembledDamageMap, mapCombinations, firstHitMap, sortedDamageValues);
-					if (attackerMove.bp === 0) {
-						data.push("nice move");
-					} else {
-						data.push(result.koChanceText ? result.koChanceText : "Did not get koChanceText");
-					}
+					highestN = n;
 				}
 			}
-			data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
-			data.push(((mode === "one-vs-all") ? defender.type2 : attacker.type2) || "");
-			dataSet.push(data);
+			if (highestDamage) {
+				result = damageResults[highestN];
+				let move = attacker.moves[highestN];
+				let moveHits = result.childDamage ? 2 : move.hits; // this is placeholder.
+				let mainDamageInfo = DamageInfo(result, moveHits);
+				let firstHitDamageInfo = result.firstHitDamage ? DamageInfo(result, moveHits, true) : mainDamageInfo;
+				setKOChanceText(result, move, moveHits, attacker, defender, field.getSide(~~(mode === "one-vs-all")), mainDamageInfo, firstHitDamageInfo);
+				data.koChance = result.koChanceText ? result.koChanceText : "Did not get koChanceText";
+				let minPercentage = Math.round(firstHitDamageInfo.min * 1000 / defender.maxHP) / 10;
+				let maxPercentage = Math.round(firstHitDamageInfo.max * 1000 / defender.maxHP) / 10;
+				data.percentRange = minPercentage + " - " + maxPercentage + "%";
+				data.move = move.name.replace("Hidden Power", "HP");
+			}
 
+			dataSet.push(data);
 			// fields in the boosts and stats objects should be the only things that get changed in the Pokemon object during mass calc
 			attacker.revertStats();
 			defender.revertStats();
@@ -340,19 +333,18 @@ function constructDataTable() {
 	table = $("#holder-2").DataTable({
 		destroy: true,
 		columnDefs: [
-			{ // remove the type columns
-				targets: [4, 5],
-				visible: false,
-				searchable: false
-			},
-			{
-				targets: [2],
-				type: 'damage100'
-			},
 			{ // Sort KO Chance by damage% instead
-				targets: [3],
-				iDataSort: 2
+				"orderData": [2], // percentRange = col 2
+				"targets": 3 // koChance = col 3
 			}
+		],
+		columns: [
+			{ data: 'setName' },
+			{ data: "move" },
+			{ data: 'percentRange', type: "damage100" }, // type specifies that this column is sorted via the damage100 functions
+			{ data: 'koChance' },
+			{ data: 'type1', visible: false, searchable: false },
+			{ data: 'type2', visible: false, searchable: false }
 		],
 		dom: 'frti',
 		/*colVis: { The options that allows selection of which columns to include in the table

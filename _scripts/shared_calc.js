@@ -852,7 +852,6 @@ function Pokemon(pokeInfo) {
 	let move2 = pokeInfo.find(".move2");
 	let move3 = pokeInfo.find(".move3");
 	let move4 = pokeInfo.find(".move4");
-	// if the set is a facility set and the move does not exist in moves, pass on the move's name so it appears in resultMove
 	let setdexPoke = setdex[speciesName] ? setdex[speciesName][setName.substring(speciesName.length + 2, setName.length - 1)] : false;
 	poke.baseMoveNames = [ // baseMoveNames is used in set export
 		setdexPoke ? setdexPoke.moves[0] : move1.find("select.move-selector").val(),
@@ -860,6 +859,7 @@ function Pokemon(pokeInfo) {
 		setdexPoke ? setdexPoke.moves[2] : move3.find("select.move-selector").val(),
 		setdexPoke ? setdexPoke.moves[3] : move4.find("select.move-selector").val()
 	];
+	// if the set is a facility set and the move does not exist in moves, pass on the move's name so it appears in resultMove
 	poke.moves = [
 		setdexPoke && !(setdexPoke.moves[0] in moves) ? {"name": setdexPoke.moves[0], "bp": 0} : getMoveDetails(move1, poke),
 		setdexPoke && !(setdexPoke.moves[1] in moves) ? {"name": setdexPoke.moves[1], "bp": 0} : getMoveDetails(move2, poke),
@@ -1263,6 +1263,25 @@ function getAssembledDamageMap(result, resultDamageMap, moveHits, considerReduce
 	}
 
 	return considerReducedDamage ? mapFromArray(result.firstHitDamage) : resultDamageMap;
+}
+
+function DamageInfo(result, moveHits, isFirstHit = false) {
+	let damage = {
+		// mapFromArray is of a single hit (not sum of multi hits), no resist berry
+		"damageMap": getAssembledDamageMap(result, mapFromArray(result.damage), moveHits, isFirstHit),
+		"mapCombinations": result.damage.length ** moveHits
+	};
+	damage.sortedDamageValues = Array.from(damage.damageMap.keys())
+	damage.sortedDamageValues.sort((a, b) => a - b);
+	damage.min = damage.sortedDamageValues[0];
+	damage.max = damage.sortedDamageValues[damage.sortedDamageValues.length - 1];
+	// damageMap numbers use integral numbers, except in this if statement.
+	// To avoid exceeding Number.MAX_SAFE_INTEGER (2 ** 53 - 1) and avoid needing BigNums, divide all values by the same factor
+	// Since damage maps are (currently) only used for the first 4 hits when calcing an nHKO, dividing all values by (mapCombinations / (2 ** 13)) works.
+	if (damage.mapCombinations > MAP_SQUASH_CONSTANT) {
+		damage.mapCombinations = squashDamageMap(damage.damageMap, damage.mapCombinations);
+	}
+	return damage;
 }
 // End damage map functions
 

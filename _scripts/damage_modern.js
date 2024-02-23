@@ -515,7 +515,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.moveBP = basePower;
 		break;
 	case "Weather Ball":
-		basePower *= (field.weather !== "" && attacker.item !== "Utility Umbrella") ? 2 : 1;
+		basePower *= (field.weather !== "" && !((field.weather.endsWith("Sun") || field.weather.endsWith("Rain")) && attacker.item === "Utility Umbrella")) ? 2 : 1;
 		description.moveBP = basePower;
 		break;
 	case "Terrain Pulse":
