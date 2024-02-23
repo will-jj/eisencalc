@@ -201,7 +201,10 @@ var ITEMS_SM = ITEMS_XY.concat([
 	"Grassy Seed"
 ]);
 
+// Big Nugget is 130 Fling BP without the side effects of Heavy Ball.
+// It also consolidates Overheat and Leaf Storm TR items.
 var ITEMS_SS = ITEMS_SM.concat([
+	"Big Nugget",
 	"Blunder Policy",
 	"Eject Pack",
 	"Heavy-Duty Boots",
@@ -416,18 +419,52 @@ function getBerryResistType(berry) {
 }
 
 function getFlingPower(item) {
-	return item === "Iron Ball" ? 130 :
-		item === "Hard Stone" ? 100 :
-			item.indexOf("Plate") !== -1 || ["Deep Sea Tooth", "Thick Club"].indexOf(item) !== -1 ? 90 :
-				["Assault Vest", "Weakness Policy"].indexOf(item) !== -1 ? 80 :
-					["Poison Barb", "Dragon Fang"].indexOf(item) !== -1 ? 70 :
-						["Adamant Orb", "Lustrous Orb", "Macho Brace", "Stick"].indexOf(item) !== -1 ? 60 :
-							item === "Sharp Beak" ? 50 :
-								item === "Eviolite" ? 40 :
-									["Black Belt", "Black Sludge", "Black Glasses", "Charcoal", "Deep Sea Scale", "Flame Orb", "King's Rock",
-										"Life Orb", "Light Ball", "Magnet", "Metal Coat", "Miracle Seed", "Mystic Water", "Never-Melt Ice",
-										"Razor Fang", "Soul Dew", "Spell Tag", "Toxic Orb", "Twisted Spoon"].indexOf(item) !== -1 ? 30 :
-										10;
+	if (item.includes("Plate")) {
+		return 90;
+	}
+	switch (item) {
+		case "Iron Ball":
+		case "Big Nugget":
+			return 130;
+		case "Hard Stone":
+		case "Room Service":
+			return 100;
+		case "DeepSeaTooth":
+		case "Deep Sea Tooth":
+		case "Grip Claw":
+		case "Thick Club":
+			return 90;
+		case "Assault Vest":
+		case "Blunder Policy":
+		case "Heavy-Duty Boots":
+		case "Quick Claw":
+		case "Razor Claw":
+		case "Safety Goggles":
+		case "Sticky Barb":
+		case "Weakness Policy":
+			return 80;
+		case "Dragon Fang":
+		case "Poison Barb":
+			return 70;
+		case "Adamant Orb":
+		case "Damp Rock":
+		case "Griseous Orb":
+		case "Heat Rock":
+		case "Leek":
+		case "Lustrous Orb":
+		case "Macho Brace":
+		case "Rocky Helmet":
+		case "Terrain Extender":
+		case "Utility Umbrella":
+			return 60;
+		case "Toxic Orb":
+		case "Flame Orb":
+		case "Light Ball":
+		case "King's Rock":
+		case "Razor Fang":
+			return 30;
+	}
+	return 10;
 }
 
 function getNaturalGift(item) {
