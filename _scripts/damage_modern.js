@@ -1215,7 +1215,7 @@ function buildDescription(description) {
 	}
 	output = appendIfSet(output, description.HPEVs);
 	if (description.defenseEVs) {
-		output += " / " + description.defenseEVs + " ";
+		output += "/ " + description.defenseEVs + " ";
 	}
 	output = appendIfSet(output, description.defenderItem);
 	output = appendIfSet(output, description.defenderAbility);
