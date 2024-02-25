@@ -178,6 +178,7 @@ function performCalculations() {
 	var startingWeather = field.getWeather();
 
 	let setSpecies = Object.keys(setdex);
+	let ohkoCount = 0;
 	for (let speciesName of setSpecies) {
 		let setNames = Object.keys(setdex[speciesName]);
 		for (let setName of setNames) {
@@ -220,7 +221,7 @@ function performCalculations() {
 			for (let n = 0; n < 4; n++) {
 				result = damageResults[n];
 				let moveHits = result.childDamage ? 2 : attacker.moves[n].hits; // this is placeholder.
-				maxDamage = moveHits * (result.firstHitDamage ? result.firstHitDamage[result.firstHitDamage - 1] : result.damage[result.damage.length - 1]);
+				maxDamage = moveHits * (result.firstHitDamage ? result.firstHitDamage[result.firstHitDamage.length - 1] : result.damage[result.damage.length - 1]);
 				if (maxDamage > highestDamage) {
 					highestDamage = maxDamage;
 					highestN = n;
@@ -238,6 +239,10 @@ function performCalculations() {
 				let maxPercentage = Math.round(firstHitDamageInfo.max * 1000 / defender.maxHP) / 10;
 				data.percentRange = minPercentage + " - " + maxPercentage + "%";
 				data.move = move.name.replace("Hidden Power", "HP");
+				// let setKOChanceText() do the math of whether something got the OHKO after hazards etc.
+				if (data.koChance === "guaranteed OHKO") {
+					ohkoCount++;
+				}
 			}
 
 			dataSet.push(data);
@@ -249,7 +254,7 @@ function performCalculations() {
 		}
 	}
 	table.rows.add(dataSet).draw();
-	return dataSet.length;
+	return { setsCount: dataSet.length, ohkoCount: ohkoCount };
 }
 
 function getSelectedTier() {
@@ -293,6 +298,7 @@ $(".gen").change(function () {
 		break;
 	}
 	$(defaultChecked).prop("checked", true);
+	$("#ohkoCounter").text("");
 	if ($.fn.DataTable.isDataTable("#holder-2")) {
 		table.clear();
 		constructDataTable();
@@ -370,10 +376,11 @@ function placeBsBtn() {
 	$("#holder-2_wrapper").prepend(honkalculator);
 	$("#honkalculate").click(function () {
 		table.clear();
-		var startTime = performance.now();
-		var setCount = performCalculations();
-		var endTime = performance.now();
-		console.log("honkalculated " + setCount + " sets in " + Math.round(endTime - startTime) + "ms");
+		let startTime = performance.now();
+		let massCalcInfo = performCalculations();
+		let endTime = performance.now();
+		console.log("honkalculated " + massCalcInfo.setsCount + " sets in " + Math.round(endTime - startTime) + "ms");
+		$("#ohkoCounter").text("OHKOs: " + Math.round(massCalcInfo.ohkoCount * 100 / massCalcInfo.setsCount) + "% (" + massCalcInfo.ohkoCount + "/" + massCalcInfo.setsCount + ")");
 	});
 }
 
