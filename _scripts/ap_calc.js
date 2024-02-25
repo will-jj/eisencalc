@@ -110,10 +110,10 @@ $(".result-move").change(function () {
 
 var MAX_GROUP_COUNT = 14;
 var MAX_UNGROUPED_COUNT = MAX_GROUP_COUNT + 4;
-function damageMapAsGroups(damageMap, sortedValues, combinationCount) {
+function damageMapAsGroups(damageInfo) {
 	// This takes in a damage map and puts its damage values into groups with the probability of that group occuring.
 	// This is to display something smaller and simpler for the complete calculation of multi-hit moves.
-	let valuesCount = sortedValues.length;
+	let valuesCount = damageInfo.sortedDamageValues.length;
 	let groupCount = Math.min(valuesCount, MAX_GROUP_COUNT);
 	// make an array that stores how many damage values are in each group, evenly distributed
 	let groupSizes = new Array(groupCount);
@@ -133,16 +133,16 @@ function damageMapAsGroups(damageMap, sortedValues, combinationCount) {
 	let groupDamageResult = "[";
 	for (let i = 0; i < groupCount; i++) {
 		let groupSize = groupSizes[i];
-		let group = sortedValues[valueIndex]
+		let group = damageInfo.sortedDamageValues[valueIndex]
 		if (groupSize > 1) {
-			group += "-" + sortedValues[valueIndex + groupSize - 1];
+			group += "-" + damageInfo.sortedDamageValues[valueIndex + groupSize - 1];
 		}
 		let groupCountTotal = 0;
 		// get the total number of combinations the group has
 		for (let j = valueIndex; j < valueIndex + groupSize; j++) {
-			groupCountTotal += damageMap.get(sortedValues[j]);
+			groupCountTotal += damageInfo.damageMap.get(damageInfo.sortedDamageValues[j]);
 		}
-		let percent = Math.round(groupCountTotal / combinationCount * 1000) / 10;
+		let percent = Math.round(groupCountTotal / damageInfo.mapCombinations * 1000) / 10;
 		if (percent == 0) {
 			percent = "~0";
 		}
@@ -162,7 +162,6 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 		console.log(move.name + " from " + attacker.name + " (" + attacker.ability + ") vs. " + defender.name + " (" + defender.ability + ")");
 		return;
 	}
-	let resultDamageMap = mapFromArray(result.damage); // damage map of a single hit (not sum of multi hits), no resist berry
 	let moveHits = 1;
 	if (move.isThreeHit) {
 		moveHits = 3;
@@ -175,18 +174,13 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 	// assembledDamageMap is the damage map of all moveHits number of hits. Resist berry is not applied
 	// firstHitMap is the same as assembledDamageMap, but with resist berry applied if applicable. On multi hit moves the berry only applies to the first strike of the multihit.
 	// firstHitMap is the basis for the ranges and percentages displayed for the user, and is the same as assembledDamageMap if there is no resist berry.
-	let assembledDamageMap = getAssembledDamageMap(result, resultDamageMap, moveHits);
-	let firstHitMap = result.firstHitDamage ? getAssembledDamageMap(result, resultDamageMap, moveHits, true) : new Map(assembledDamageMap);
+	let mainDamageInfo = DamageInfo(result, moveHits);
+	let firstHitDamageInfo = result.firstHitDamage ? DamageInfo(result, moveHits, true) : mainDamageInfo;
 
 	// put together the primary hit information based on the first hit map
-	let sortedDamageValues = Array.from(firstHitMap.keys());
-	sortedDamageValues.sort((a, b) => a - b);
-	let minDamage = sortedDamageValues[0];
-	let maxDamage = sortedDamageValues[sortedDamageValues.length - 1];
-	let mapCombinations = result.damage.length ** moveHits;
-	if (assembledDamageMap) {
-		if (mapCombinations > MAX_UNGROUPED_COUNT) {
-			result.multiHitPercents = moveHits + " hits: " + damageMapAsGroups(firstHitMap, sortedDamageValues, mapCombinations);
+	if (mainDamageInfo.damageMap) {
+		if (firstHitDamageInfo.mapCombinations > MAX_UNGROUPED_COUNT) {
+			result.multiHitPercents = moveHits + " hits: " + damageMapAsGroups(firstHitDamageInfo);
 		}
 
 		if (result.childDamage) {
@@ -206,25 +200,17 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 		}
 	}
 
-	// damageMap numbers use integral numbers, except in this if statement.
-	// To avoid exceeding Number.MAX_SAFE_INTEGER (2 ** 53 - 1) and avoid needing BigNums, divide all values by the same factor
-	// Since damage maps are (currently) only used for the first 4 hits when calcing an nHKO, dividing all values by (mapCombinations / (2 ** 13)) works.
-	if (mapCombinations > MAP_SQUASH_CONSTANT) {
-		squashDamageMap(firstHitMap, mapCombinations);
-		mapCombinations = squashDamageMap(assembledDamageMap, mapCombinations);
-	}
-
-	let minPercent = Math.round(minDamage * 1000 / defender.maxHP) / 10;
-	let maxPercent = Math.round(maxDamage * 1000 / defender.maxHP) / 10;
-	result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
+	let minPercent = Math.round(firstHitDamageInfo.min * 1000 / defender.maxHP) / 10;
+	let maxPercent = Math.round(firstHitDamageInfo.max * 1000 / defender.maxHP) / 10;
+	result.damageText = firstHitDamageInfo.min + "-" + firstHitDamageInfo.max + " (" + minPercent + " - " + maxPercent + "%)";
 	if (move.bp === 0) {
 		result.koChanceText = "nice move";
 	} else if (move.isMLG) {
 		result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=iD92h-M474g'>it's a one-hit KO!</a>";
 	} else {
-		setKOChanceText(result, move, moveHits, attacker, defender, fieldSide, assembledDamageMap, mapCombinations, firstHitMap, sortedDamageValues);
+		setKOChanceText(result, move, moveHits, attacker, defender, fieldSide, mainDamageInfo, firstHitDamageInfo);
 	}
-	setUpRecoilRecoveryText(result, attacker, defender, move, minDamage, maxDamage);
+	setUpRecoilRecoveryText(result, attacker, defender, move, firstHitDamageInfo.min, firstHitDamageInfo.max);
 	let recoilRecovery = "";
 	// intentionally does not display both recoil and recovery text on the same line
 	if (result.recoilPercent) {
