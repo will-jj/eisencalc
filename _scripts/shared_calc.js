@@ -444,6 +444,7 @@ function applyIntimidate(ability, side) {
 			$('.at .boost')[index].value = Math.min(6, $('.at .boost')[index].value + 1);
 		} else if (targetAbility === "Competitive") {
 			$('.sa .boost')[index].value = Math.min(6, $('.sa .boost')[index].value + 2);
+			$('.at .boost')[index].value = Math.max(-6, $('.at .boost')[index].value - 1);
 		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body"].includes(targetAbility) ||
 			(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility)) ||
 			["Clear Amulet", "White Herb"].includes(targetItem)) {
