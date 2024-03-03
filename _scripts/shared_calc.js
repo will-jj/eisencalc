@@ -444,11 +444,12 @@ function applyIntimidate(ability, side) {
 			$('.at .boost')[index].value = Math.min(6, $('.at .boost')[index].value + 1);
 		} else if (targetAbility === "Competitive") {
 			$('.sa .boost')[index].value = Math.min(6, $('.sa .boost')[index].value + 2);
-		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(targetAbility) ||
+		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body"].includes(targetAbility) ||
 			(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility)) ||
 			["Clear Amulet", "White Herb"].includes(targetItem)) {
 			// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
-			// Mirror Armor does not reflect the stat drop to the source to simplify things for the calc user
+		} else if (targetAbility === "Mirror Armor") {
+			$('.at .boost')[index == 1 ? 0 : 1].value = Math.max(-6, $('.at .boost')[index == 1 ? 0 : 1].value - 1);
 		} else if (targetAbility === "Simple") {
 			$('.at .boost')[index].value = Math.max(-6, $('.at .boost')[index].value - 2);
 		} else {
