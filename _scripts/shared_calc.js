@@ -436,9 +436,28 @@ function autoSetSteely(ability, side) {
 
 function applyIntimidate(ability, side) {
 	var index = side == "L" ? 1 : 0;
-	if (ability == "Intimidate")
-	$('.at .boost')[index].value = $('.at .boost')[index].value == "-6" ? "-6" : $('.at .boost')[index].value - 1;
+	if (ability == "Intimidate") {
+		var targetAbility = $('.ability')[index].value;
+		var targetItem = $('.item')[index].value;
+		if (targetAbility === "Contrary" || targetAbility === "Defiant" || targetAbility === "Guard Dog") {
+			// the net result will still be +1 for something Defiant with White Herb
+			$('.at .boost')[index].value = Math.min(6, $('.at .boost')[index].value + 1);
+		} else if (targetAbility === "Competitive") {
+			$('.sa .boost')[index].value = Math.min(6, $('.sa .boost')[index].value + 2);
+		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(targetAbility) ||
+			(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility)) ||
+			["Clear Amulet", "White Herb"].includes(targetItem)) {
+			// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
+			// Mirror Armor does not reflect the stat drop to the source to simplify things for the calc user
+		} else if (targetAbility === "Simple") {
+			$('.at .boost')[index].value = Math.max(-6, $('.at .boost')[index].value - 2);
+		} else {
+			$('.at .boost')[index].value = Math.max(-6, $('.at .boost')[index].value - 1);
+		}
+	}
 }
+
+
 
 function autoSetRuin(ability, side) {
 	$("input:checkbox[id='ruinTablets" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Tablets of Ruin"));
