@@ -457,8 +457,6 @@ function applyIntimidate(ability, side) {
 	}
 }
 
-
-
 function autoSetRuin(ability, side) {
 	$("input:checkbox[id='ruinTablets" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Tablets of Ruin"));
 	$("input:checkbox[id='ruinVessel" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Vessel of Ruin"));
