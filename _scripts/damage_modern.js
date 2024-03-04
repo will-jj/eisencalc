@@ -6,7 +6,6 @@ function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	checkForecast(p2, field.getWeather());
 	checkKlutz(p1);
 	checkKlutz(p2);
-	
 	checkOmniboosts(p1, p2);
 	checkMinimize(p1, p2);
 	checkSeeds(p1, field.getTerrain());
