@@ -281,13 +281,19 @@ $(".ability").bind("keyup change", function () {
 	autoSetAura();
 });
 
-$("#p1 .ability").bind("keyup change", function () {
+$("#p1 .ability").bind("change", function () {
 	let ability = $(this).val();
 	autoSetWeatherTerrain(curAbilities[0], ability, curAbilities[1]);
 	curAbilities[0] = $(this).val();
 	autoSetVicStar(ability, "L");
 	autoSetSteely(ability, "L");
 	autoSetRuin(ability, "L");
+	applyIntimidate(ability, "L");
+});
+
+$("#p2 .ability").bind("change", function () {
+	let ability = $(this).val();
+	applyIntimidate(ability, "R");
 });
 
 function autoSetAura() {
@@ -428,6 +434,29 @@ function autoSetSteely(ability, side) {
 	$("input:checkbox[id='steelySpirit" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Steely Spirit"));
 }
 
+function applyIntimidate(ability, side) {
+	var index = side == "L" ? 1 : 0;
+	if (ability == "Intimidate") {
+		var targetAbility = $('.ability')[index].value;
+		var targetItem = $('.item')[index].value;
+		if (targetAbility === "Contrary" || targetAbility === "Defiant" || targetAbility === "Guard Dog") {
+			// the net result will still be +1 for something Defiant with White Herb
+			$('.at .boost')[index].value = Math.min(6, $('.at .boost')[index].value + 1);
+		} else if (targetAbility === "Competitive") {
+			$('.sa .boost')[index].value = Math.min(6, $('.sa .boost')[index].value + 2);
+			$('.at .boost')[index].value = Math.max(-6, $('.at .boost')[index].value - 1);
+		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(targetAbility) ||
+			(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility)) ||
+			["Clear Amulet", "White Herb"].includes(targetItem)) {
+			// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
+		} else if (targetAbility === "Simple") {
+			$('.at .boost')[index].value = Math.max(-6, $('.at .boost')[index].value - 2);
+		} else {
+			$('.at .boost')[index].value = Math.max(-6, $('.at .boost')[index].value - 1);
+		}
+	}
+}
+
 function autoSetRuin(ability, side) {
 	$("input:checkbox[id='ruinTablets" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Tablets of Ruin"));
 	$("input:checkbox[id='ruinVessel" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Vessel of Ruin"));
@@ -489,7 +518,7 @@ $(".move-selector").change(function () {
 });
 
 // auto-update set details on select
-$(".set-selector").bind("change click keyup keydown", function () {
+$(".set-selector").bind("change", function () {
 	let fullSetName = $(this).val();
 	let pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
 	let setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
@@ -599,11 +628,11 @@ $(".set-selector").bind("change click keyup keydown", function () {
 		showFormes(formeObj, setName, pokemonName, pokemon);
 	} else {
 		formeObj.hide();
+		abilityObj.change();
 	}
 	calcHP(pokeObj);
 	calcStats(pokeObj);
 	calcEvTotal(pokeObj);
-	abilityObj.change();
 	itemObj.change();
 });
 
@@ -692,7 +721,7 @@ $(".forme").change(function () {
 	} else {
 		container.find(".ability").val("");
 	}
-	container.find(".ability").keyup();
+	container.find(".ability").change();
 
 	if ($(this).val().indexOf("Mega") === 0 && $(this).val() !== "Mega Rayquaza") {
 		container.find(".item").val("").keyup();
