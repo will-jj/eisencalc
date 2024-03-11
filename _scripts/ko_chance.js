@@ -66,9 +66,10 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 
 	// Calculate KO chances
 	let eotText = [];
-	eotWeather = calcWeatherEOT(defender, field, eotText);
-	eotTotal = eotWeather + calcOtherEOT(attacker, defender, field, eotText);
+	let eotHealingText = [];
 	let hazardText = [];
+	eotWeather = calcWeatherEOT(defender, field, eotText, eotHealingText);
+	eotTotal = eotWeather + calcOtherEOT(attacker, defender, field, eotText, eotHealingText);
 	let targetHP = defender.curHP + calcHazards(defender, field, hazardText);
 
 	// check if a multihit can OHKO.
@@ -79,7 +80,7 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 		return;
 	} else if (moveHits > 1 && berryRecovery) {
 		// no multihit OHKO found, so currently treating this as though a berry must have been eaten
-		eotText.push(berryText);
+		eotHealingText.push(berryText);
 		berryText = "";
 		targetHP += berryRecovery;
 		berryRecovery = 0;
@@ -93,7 +94,7 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 		return;
 	} else if (checkHPThreshold(targetHP + berryRecovery, 0, firstHitDamageInfo.min, maxHP)) {
 		// since there was not a KO from the first condition, this OHKO could only guaranteed by eot damage
-		setResultText(result, 1, moveAccuracy, false, damageInfo, hazardText.concat(eotText), berryText);
+		setResultText(result, 1, moveAccuracy, false, damageInfo, hazardText.concat(eotText), "");
 		return;
 	} else if (firstHitDamageInfo.max >= targetHP || checkHPThreshold(targetHP + berryRecovery, 0, firstHitDamageInfo.max, maxHP)) {
 		// can start with the count of the max damage value
@@ -140,7 +141,7 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 	// calc 2-4HKO
 	let nhkoResult = calculateNHKO(4, targetHP, maxHP, nHitDamageMap, berryDamageMap, damageInfo, firstHitDamageInfo);
 	if (nhkoResult) {
-		setResultText(result, nhkoResult.hitCount, moveAccuracy, nhkoResult.koCombinations, damageInfo, hazardText.concat(eotText), nhkoResult.berryKO ? berryText : "");
+		setResultText(result, nhkoResult.hitCount, moveAccuracy, nhkoResult.koCombinations, damageInfo, hazardText.concat(eotText, eotHealingText), nhkoResult.berryKO ? berryText : "");
 		return;
 	}
 
@@ -149,10 +150,10 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 		let previousTurnsEot = (hitCount - 1) * eotTotal;
 		// even though it's easy to give an accurate chance of a 5+HKO with damage maps, keep the output text simple.
 		if (checkHPThreshold(targetHP + berryRecovery + previousTurnsEot, 0, firstHitDamageInfo.min + damageInfo.min * (hitCount - 1), maxHP)) {
-			setResultText(result, hitCount, moveAccuracy, false, false, hazardText.concat(eotText), berryText);
+			setResultText(result, hitCount, moveAccuracy, false, false, hazardText.concat(eotText, eotHealingText), berryText);
 			return;
 		} else if (checkHPThreshold(targetHP + berryRecovery + previousTurnsEot, 0, firstHitDamageInfo.min + damageInfo.max * (hitCount - 1), maxHP)) {
-			setResultText(result, hitCount, moveAccuracy, true, false, hazardText.concat(eotText), berryText);
+			setResultText(result, hitCount, moveAccuracy, true, false, hazardText.concat(eotText, eotHealingText), berryText);
 			return;
 		}
 		if (toxicCounter > 0) {
@@ -343,7 +344,8 @@ function calculateNHKO(upperHitCount, targetHP, maxHP, nHitDamageMap, berryDamag
 
 		if (checkHPThreshold(targetHP + berryRecovery + previousTurnsEot, 0, firstHitDamageInfo.min + damageInfo.min * (hitCount - 1), maxHP)) {
 			result.hitCount = hitCount;
-			result.berryKO = true;
+			// if there is any chance of berry activating, print berry text
+			result.berryKO = berryDamageMap.size > 0;
 			return result;
 		}
 
@@ -476,7 +478,7 @@ function calcHazards(defender, field, hazardText) {
 }
 
 // eot = end of turn
-function calcWeatherEOT(defender, field, eotText) {
+function calcWeatherEOT(defender, field, eotText, eotHealingText) {
 	if (defender.curAbility === "Magic Guard") {
 		return 0;
 	}
@@ -487,10 +489,10 @@ function calcWeatherEOT(defender, field, eotText) {
 	} else if (field.weather.includes("Rain")) {
 		if (defender.curAbility === "Dry Skin") {
 			eot += Math.floor(defender.maxHP / (defender.isDynamax ? 16 : 8));
-			eotText.push("Dry Skin recovery");
+			eotHealingText.push("Dry Skin recovery");
 		} else if (defender.curAbility === "Rain Dish") {
 			eot += Math.floor(defender.maxHP / (defender.isDynamax ? 32 : 16));
-			eotText.push("Rain Dish recovery");
+			eotHealingText.push("Rain Dish recovery");
 		}
 	} else if (field.weather === "Sand" && !defender.hasType("Rock") && !defender.hasType("Ground") && !defender.hasType("Steel") &&
 		!["Overcoat", "Sand Force", "Sand Rush", "Sand Veil"].includes(defender.curAbility) &&
@@ -499,7 +501,7 @@ function calcWeatherEOT(defender, field, eotText) {
 		eotText.push("sandstorm damage");
 	} else if (defender.curAbility === "Ice Body" && (field.weather === "Hail" || field.weather === "Snow")) {
 		eot += Math.floor(defender.maxHP / (defender.isDynamax ? 32 : 16));
-		eotText.push("Ice Body recovery");
+		eotHealingText.push("Ice Body recovery");
 	} else if (field.weather === "Hail" && !defender.hasType("Ice") && !["Overcoat", "Snow Cloak"].includes(defender.curAbility) &&
 		defender.item !== "Safety Goggles") {
 		eot -= Math.floor(defender.maxHP / (defender.isDynamax ? 32 : 16));
@@ -509,15 +511,15 @@ function calcWeatherEOT(defender, field, eotText) {
 	return eot;
 }
 
-function calcOtherEOT(attacker, defender, field, eotText) {
+function calcOtherEOT(attacker, defender, field, eotText, eotHealingText) {
 	let eot = 0;
 	if (defender.item === "Leftovers") {
 		eot += Math.floor(defender.maxHP / (defender.isDynamax ? 32 : 16));
-		eotText.push("Leftovers recovery");
+		eotHealingText.push("Leftovers recovery");
 	} else if (defender.item === "Black Sludge") {
 		if (defender.hasType("Poison")) {
 			eot += Math.floor(defender.maxHP / (defender.isDynamax ? 32 : 16));
-			eotText.push("Black Sludge recovery");
+			eotHealingText.push("Black Sludge recovery");
 		} else if (defender.curAbility !== "Magic Guard") {
 			eot -= Math.floor(defender.maxHP / (defender.isDynamax ? 16 : 8));
 			eotText.push("Black Sludge damage");
@@ -531,14 +533,14 @@ function calcOtherEOT(attacker, defender, field, eotText) {
 
 	if (field.terrain === "Grassy" && isGrounded(defender, field)) {
 		eot += Math.floor(defender.maxHP / (defender.isDynamax ? 32 : 16));
-		eotText.push("Grassy Terrain recovery");
+		eotHealingText.push("Grassy Terrain recovery");
 	}
 
 	var toxicCounter = 0;
 	if (defender.status === "Poisoned") {
 		if (defender.curAbility === "Poison Heal") {
 			eot += Math.floor(defender.maxHP / (defender.isDynamax ? 16 : 8));
-			eotText.push("Poison Heal");
+			eotHealingText.push("Poison Heal");
 		} else if (defender.curAbility !== "Magic Guard") {
 			eot -= Math.floor(defender.maxHP / (defender.isDynamax ? 16 : 8));
 			eotText.push("poison damage");
@@ -546,7 +548,7 @@ function calcOtherEOT(attacker, defender, field, eotText) {
 	} else if (defender.status === "Badly Poisoned") {
 		if (defender.curAbility === "Poison Heal") {
 			eot += Math.floor(defender.maxHP / (defender.isDynamax ? 16 : 8));
-			eotText.push("Poison Heal");
+			eotHealingText.push("Poison Heal");
 		} else if (defender.curAbility !== "Magic Guard") {
 			eotText.push("toxic damage");
 			toxicCounter = defender.toxicCounter;
