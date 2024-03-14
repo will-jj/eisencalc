@@ -18,8 +18,8 @@ function CALCULATE_ALL_MOVES_ADV(p1, p2, field) {
 function CALCULATE_MOVES_OF_ATTACKER_ADV(attacker, defender, field) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
-	checkIntimidate(p1, p2);
-	checkIntimidate(p2, p1);
+	checkIntimidate(attacker, defender);
+	checkIntimidate(defender, attacker);
 	checkForecast(attacker, field.getWeather());
 	checkForecast(defender, field.getWeather());
 	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());

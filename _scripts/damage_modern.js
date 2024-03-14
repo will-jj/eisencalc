@@ -49,8 +49,8 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	checkForecast(defender, field.getWeather());
 	checkKlutz(attacker);
 	checkKlutz(defender);
-	checkIntimidate(p1, p2);
-	checkIntimidate(p2, p1);
+	checkIntimidate(attacker, defender);
+	checkIntimidate(defender, attacker);
 	checkOmniboosts(attacker, defender);
 	checkSeedsHonk(attacker, field.getTerrain());
 	checkSeedsHonk(defender, field.getTerrain());
@@ -79,27 +79,6 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 		defender.resetCurAbility();
 	}
 	return results;
-}
-
-function checkIntimidate(source, target) {
-	if (source.curAbility === "Intimidate") {
-		let targetAbility = target.curAbility;
-		if (targetAbility === "Contrary" || targetAbility === "Defiant" || targetAbility === "Guard Dog") {
-			// the net result will still be +1 for something Defiant with White Herb
-			target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
-		} else if (targetAbility === "Competitive") {
-			target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
-		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(targetAbility) ||
-			(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility)) ||
-			["Clear Amulet", "White Herb"].includes(target.item)) {
-			// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
-			// Mirror Armor does not reflect the stat drop to the source to simplify things for the calc user
-		} else if (targetAbility === "Simple") {
-			target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
-		} else {
-			target.boosts[AT] = Math.max(-6, target.boosts[AT] - 1);
-		}
-	}
 }
 
 var moveType, moveCategory, makesContact, isCritical;
@@ -1540,6 +1519,33 @@ function checkAngerShell(pokemon) {
 		pokemon.boosts[DF] = Math.max(-6, pokemon.boosts[DF] - 1);
 		pokemon.boosts[SD] = Math.max(-6, pokemon.boosts[SD] - 1);
 	}
+}
+
+function checkIntimidate(source, target) {
+	// this function is exclusively used by the mass calc now. The AI sets should always apply Intimidate in the mass calc if possible.
+	// verify that the user's Pokemon has Intimidate activated to apply it.
+	if (source.curAbility !== "Intimidate" || (source.hasOwnProperty("baseMoveNames") && !source.isAbilityActivated)) {
+		return;
+	}
+
+	let targetAbility = target.curAbility;
+	let stageChange = -1;
+	if (["Contrary", "Defiant", "Guard Dog"].includes(targetAbility)) {
+		// the net result will still be +1 for something Defiant with White Herb
+		stageChange = 1;
+	} else if (targetAbility === "Competitive") {
+		target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
+	} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(targetAbility) ||
+		(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility)) ||
+		["Clear Amulet", "White Herb"].includes(target.item)) {
+		// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
+		// Mirror Armor does not reflect the stat drop to the source to simplify things for the calc user
+		return;
+	} else if (targetAbility === "Simple" && gen != 4) {
+		stageChange = -2;
+	}
+
+	target.boosts[AT] = Math.max(-6, Math.min(6, target.boosts[AT] + stageChange));
 }
 
 function checkMinimize(p1, p2) {

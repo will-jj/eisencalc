@@ -143,10 +143,11 @@ $("#autolevel").change(function () {
 });
 
 $("#autoivs-center").change(function () {
-	// do not set the IVs of non-AI sets
+	// gens 3 and 4 us an input box instead of a dropdown. gen 7 was the last gen to scale IVs
 	if (gen <= 4 || gen >= 8) {
 		return;
 	}
+	// do not set the IVs of non-AI sets
 	let p1 = $("#p1");
 	if (!isCustomSet(p1.find("input.set-selector").val())) {
 		setIVSelectors(p1, "L");
@@ -284,16 +285,19 @@ $(".ability").bind("keyup change", function () {
 $("#p1 .ability").bind("change", function () {
 	let ability = $(this).val();
 	autoSetWeatherTerrain(curAbilities[0], ability, curAbilities[1]);
+	if ($(this).siblings(".isActivated").prop("checked")) {
+		applyIntimidate(ability, curAbilities[0], "L");
+	}
 	curAbilities[0] = $(this).val();
 	autoSetVicStar(ability, "L");
 	autoSetSteely(ability, "L");
 	autoSetRuin(ability, "L");
-	applyIntimidate(ability, "L");
+	showActivated(ability, 1);
 });
 
-$("#p2 .ability").bind("change", function () {
-	let ability = $(this).val();
-	applyIntimidate(ability, "R");
+$("#p1 .isActivated").bind("change", function () {
+	let ability = $(this).siblings(".ability").val();
+	applyIntimidate(ability, "", "L");
 });
 
 function autoSetAura() {
@@ -434,27 +438,52 @@ function autoSetSteely(ability, side) {
 	$("input:checkbox[id='steelySpirit" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Steely Spirit"));
 }
 
-function applyIntimidate(ability, side) {
-	var index = side == "L" ? 1 : 0;
-	if (ability == "Intimidate") {
-		var targetAbility = $('.ability')[index].value;
-		var targetItem = $('.item')[index].value;
-		if (targetAbility === "Contrary" || targetAbility === "Defiant" || targetAbility === "Guard Dog") {
-			// the net result will still be +1 for something Defiant with White Herb
-			$('.at .boost')[index].value = Math.min(6, $('.at .boost')[index].value + 1);
-		} else if (targetAbility === "Competitive") {
-			$('.sa .boost')[index].value = Math.min(6, $('.sa .boost')[index].value + 2);
-			$('.at .boost')[index].value = Math.max(-6, $('.at .boost')[index].value - 1);
-		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(targetAbility) ||
-			(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility)) ||
-			["Clear Amulet", "White Herb"].includes(targetItem)) {
-			// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
-		} else if (targetAbility === "Simple") {
-			$('.at .boost')[index].value = Math.max(-6, $('.at .boost')[index].value - 2);
-		} else {
-			$('.at .boost')[index].value = Math.max(-6, $('.at .boost')[index].value - 1);
-		}
+function showActivated(ability, sideNum) {
+	let activatedObj = $("#p" + sideNum + " .isActivated");
+	if (ability === "Intimidate") {
+		// in the mass calc only, honkalculate_calc will check isActivated when Intimidate is selected
+		activatedObj.show();
+	} else {
+		activatedObj.prop("checked", false);
+		activatedObj.hide();
 	}
+}
+
+function applyIntimidate(newAbility, oldAbility, side) {
+	// since Intimidate has to be explicitly applied via the checkbox, no interaction with N Gas
+	if ((newAbility !== "Intimidate" && oldAbility !== "Intimidate") ||
+		(newAbility === "Intimidate" && oldAbility === "Intimidate")) {
+		return;
+	}
+
+	let fieldAbilities = $(".ability");
+	if (fieldAbilities.length < 2) {
+		return; // don't try to do the following in mass calc mode
+	}
+	let index = side == "L" ? 1 : 0; // side is the Intimidator's side; get the index of the opponent's side
+	let targetAbility = fieldAbilities[index].value;
+	let targetItem = $(".item")[index].value;
+	let stageChange = -1;
+	if (["Contrary", "Defiant", "Guard Dog"].includes(targetAbility)) {
+		// the net result will still be +1 for something Defiant with White Herb
+		stageChange = 1;
+	} else if (targetAbility === "Competitive") {
+		$(".sa .boost")[index].value = Math.min(6, parseInt($(".sa .boost")[index].value) + 2);
+	} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(targetAbility) ||
+		(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility)) ||
+		["Clear Amulet", "White Herb"].includes(targetItem)) {
+		// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
+		return;
+	} else if (targetAbility === "Simple" && gen != 4) { // only apply -1 for gen 4 Simple
+		stageChange = -2;
+	}
+
+	// if the effect of Intimidate is removed, reverse the effect of Intimidate that was previously applied
+	if (!$("#p" + (side === "L" ? 1 : 2) + " .isActivated").prop("checked") || (oldAbility === "Intimidate" && newAbility !== "Intimidate")) {
+		stageChange = -stageChange;
+	}
+
+	$(".at .boost")[index].value = Math.max(-6, Math.min(6, parseInt($(".at .boost")[index].value) + stageChange));
 }
 
 function autoSetRuin(ability, side) {
@@ -529,9 +558,10 @@ $(".set-selector").bind("change", function () {
 	}
 	let pokeObj = $(this).closest(".poke-info");
 	let pokeObjID = pokeObj.prop("id");
+	let side = pokeObjID === "p1" ? "L" : "R";
 
 	// If the sticky move was on this side, reset it
-	if (stickyMoves.getSelectedSide() === pokeObjID) {
+	if (stickyMoves.getSelectedSide() === side) {
 		stickyMoves.clearStickyMove();
 	}
 
@@ -539,11 +569,11 @@ $(".set-selector").bind("change", function () {
 	let selectedMove = $("input:radio[name='resultMove']:checked").prop("id");
 	if (selectedMove !== undefined) {
 		var selectedSide = selectedMove.charAt(selectedMove.length - 2);
-		if (pokeObjID === "p1" && selectedSide === "L") {
+		if (side === "L" && selectedSide === side) {
 			$("#resultMoveL1").prop("checked", true);
 			$("#resultMoveL1").change();
 		}
-		else if (pokeObjID === "p2" && selectedSide === "R") {
+		else if (side === "R" && selectedSide === side) {
 			$("#resultMoveR1").prop("checked", true);
 			$("#resultMoveR1").change();
 		}
@@ -574,7 +604,7 @@ $(".set-selector").bind("change", function () {
 	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
 		var set = setdexAll[pokemonName][setName];
 		pokeObj.find(".level").val(set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50));
-		let autoIVs = getAutoIVValue(pokeObjID === "p2" ? "R" : "L");
+		let autoIVs = getAutoIVValue(side);
 		pokeObj.find(".hp .evs").val(set.evs && typeof set.evs.hp !== "undefined" ? set.evs.hp : 0);
 		pokeObj.find(".hp .ivs").val(set.ivs && typeof set.ivs.hp !== "undefined" ? set.ivs.hp : autoIVs);
 		for (i = 0; i < STATS.length; i++) {
@@ -629,6 +659,14 @@ $(".set-selector").bind("change", function () {
 	} else {
 		formeObj.hide();
 		abilityObj.change();
+	}
+	let fieldAbilities = $(".ability");
+	if (fieldAbilities.length == 2) {
+		// if the opponent has active Intimidate, apply it
+		let otherAbilityObj = $("#p" + (side === "L" ? 2 : 1) + " .ability");
+		if (otherAbilityObj.siblings(".isActivated").prop("checked")) {
+			applyIntimidate(otherAbilityObj.val(), "", side === "L" ? "R" : "L");// don't forget to check that it applies to formes correctly too.
+		}
 	}
 	calcHP(pokeObj);
 	calcStats(pokeObj);
@@ -803,9 +841,9 @@ var stickyMoves = (function () {
 		"getSelectedSide": function () {
 			if (lastClicked) {
 				if (lastClicked.includes("resultMoveL")) {
-					return "p1";
+					return "L";
 				} else if (lastClicked.includes("resultMoveR")) {
-					return "p2";
+					return "R";
 				}
 			}
 			return null;
@@ -835,6 +873,7 @@ function Pokemon(pokeInfo) {
 		"ivs": [],
 		"nature": pokeInfo.find(".nature").val(),
 		"ability": pokeInfo.find(".ability").val(),
+		"isAbilityActivated": pokeInfo.find(".isActivated").prop("checked"),
 		"item": pokeInfo.find(".item").val(),
 		"status": pokeInfo.find(".status").val(),
 		"toxicCounter": pokeInfo.find(".status").val() === "Badly Poisoned" ? ~~pokeInfo.find(".toxic-counter").val() : 0,

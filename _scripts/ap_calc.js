@@ -7,13 +7,17 @@ $("#p1 .status").bind("keyup change", function () {
 	autoSetCrits($("#p2"), 2);
 });
 
-$("#p2 .ability").bind("keyup change", function () {
+$("#p2 .ability").bind("change", function () {
 	let ability = $(this).val();
 	autoSetWeatherTerrain(curAbilities[1], ability, curAbilities[0]);
+	if ($(this).siblings(".isActivated").prop("checked")) {
+		applyIntimidate(ability, curAbilities[1], "R");
+	}
 	curAbilities[1] = ability;
 	autoSetVicStar(ability, "R");
 	autoSetSteely(ability, "R");
 	autoSetRuin(ability, "R");
+	showActivated(ability, 2);
 	autoSetCrits($("#p2"), 2);
 	checkNeutralizingGas();
 });
@@ -44,6 +48,11 @@ $("#autoivsR").change(function () {
 		return;
 	}
 	setIVSelectors($("#p2"), "R");
+});
+
+$("#p2 .isActivated").bind("change", function () {
+	let ability = $(this).siblings(".ability").val();
+	applyIntimidate(ability, "", "R");
 });
 
 function autoSetCrits(pokeInfo, i) {

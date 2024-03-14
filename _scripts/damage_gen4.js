@@ -26,8 +26,8 @@ function CALCULATE_MOVES_OF_ATTACKER_PTHGSS(attacker, defender, field) {
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
 	checkForecast(defender, field.getWeather());
-	checkIntimidate(p1, p2);
-	checkIntimidate(p2, p1);
+	checkIntimidate(attacker, defender);
+	checkIntimidate(defender, attacker);
 	checkKlutz(attacker);
 	checkKlutz(defender);
 	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());
