@@ -5,8 +5,6 @@ function CALCULATE_ALL_MOVES_PTHGSS(p1, p2, field) {
 	checkForecast(p2, field.getWeather());
 	checkKlutz(p1);
 	checkKlutz(p2);
-	checkIntimidate(p1, p2);
-	checkIntimidate(p2, p1);
 	checkDownload(p1, p2);
 	checkDownload(p2, p1);
 	p1.stats[SP] = getFinalSpeed(p1, field.getWeather());
@@ -28,10 +26,10 @@ function CALCULATE_MOVES_OF_ATTACKER_PTHGSS(attacker, defender, field) {
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
 	checkForecast(defender, field.getWeather());
-	checkKlutz(attacker);
-	checkKlutz(defender);
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
+	checkKlutz(attacker);
+	checkKlutz(defender);
 	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());
 	defender.stats[SP] = getFinalSpeed(defender, field.getWeather());
 	checkDownload(attacker, defender);

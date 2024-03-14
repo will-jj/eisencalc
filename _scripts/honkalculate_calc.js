@@ -62,6 +62,13 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 	return parseInt(b) - parseInt(a);
 };
 
+$(".ability").bind("change", function () {
+	// by default, Intimidate will be checked for the player's pokemon in the mass calc
+	if ($(this).val() === "Intimidate") {
+		$("#p1 .isActivated").prop("checked", true);
+	}
+});
+
 function MassPokemon(speciesName, setName) {
 	let pokemon = pokedex[speciesName];
 	let set = setdex[speciesName][setName];
