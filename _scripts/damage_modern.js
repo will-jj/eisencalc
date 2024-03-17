@@ -1527,25 +1527,26 @@ function checkIntimidate(source, target) {
 	if (source.curAbility !== "Intimidate" || (source.hasOwnProperty("baseMoveNames") && !source.isAbilityActivated)) {
 		return;
 	}
+	target.boosts[AT] = Math.max(-6, Math.min(6, target.boosts[AT] + getIntimidateEffect(target.curAbility, target.item)));
+	if (target.curAbility === "Competitive") {
+		target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
+	}
+}
 
-	let targetAbility = target.curAbility;
-	let stageChange = -1;
+function getIntimidateEffect(targetAbility, targetItem) {
 	if (["Contrary", "Defiant", "Guard Dog"].includes(targetAbility)) {
 		// the net result will still be +1 for something Defiant with White Herb
-		stageChange = 1;
-	} else if (targetAbility === "Competitive") {
-		target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
+		return 1;
 	} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(targetAbility) ||
 		(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility)) ||
-		["Clear Amulet", "White Herb"].includes(target.item)) {
+		["Clear Amulet", "White Herb"].includes(targetItem)) {
 		// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
 		// Mirror Armor does not reflect the stat drop to the source to simplify things for the calc user
-		return;
+		return 0;
 	} else if (targetAbility === "Simple" && gen != 4) {
-		stageChange = -2;
+		return -2;
 	}
-
-	target.boosts[AT] = Math.max(-6, Math.min(6, target.boosts[AT] + stageChange));
+	return -1;
 }
 
 function checkMinimize(p1, p2) {

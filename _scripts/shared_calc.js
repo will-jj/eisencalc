@@ -460,30 +460,16 @@ function applyIntimidate(newAbility, oldAbility, side) {
 	if (fieldAbilities.length < 2) {
 		return; // don't try to do the following in mass calc mode
 	}
-	let index = side == "L" ? 1 : 0; // side is the Intimidator's side; get the index of the opponent's side
-	let targetAbility = fieldAbilities[index].value;
-	let targetItem = $(".item")[index].value;
-	let stageChange = -1;
-	if (["Contrary", "Defiant", "Guard Dog"].includes(targetAbility)) {
-		// the net result will still be +1 for something Defiant with White Herb
-		stageChange = 1;
-	} else if (targetAbility === "Competitive") {
-		$(".sa .boost")[index].value = Math.min(6, parseInt($(".sa .boost")[index].value) + 2);
-	} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(targetAbility) ||
-		(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility)) ||
-		["Clear Amulet", "White Herb"].includes(targetItem)) {
-		// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
-		return;
-	} else if (targetAbility === "Simple" && gen != 4) { // only apply -1 for gen 4 Simple
-		stageChange = -2;
-	}
+	let sideIndex = side == "L" ? 1 : 0; // side is the Intimidator's side; get the index of the opponent's side
 
+	let targetAbility = fieldAbilities[sideIndex].value;
+	let stageChange = getIntimidateEffect(targetAbility, $(".item")[sideIndex].value);
 	// if the effect of Intimidate is removed, reverse the effect of Intimidate that was previously applied
-	if (!fieldAbilities.siblings(".isActivated").prop("checked") || (oldAbility === "Intimidate" && newAbility !== "Intimidate")) {
-		stageChange = -stageChange;
+	let undoIntimidate = !fieldAbilities.siblings(".isActivated").prop("checked") || (oldAbility === "Intimidate" && newAbility !== "Intimidate");
+	applyBoostChange(AT, sideIndex + 1, undoIntimidate ? -stageChange : stageChange);
+	if (targetAbility === "Competitive") {
+		applyBoostChange(SA, sideIndex + 1, undoIntimidate ? -2 : 2);
 	}
-
-	applyBoostChange(AT, side == "L" ? 2 : 1, stageChange);
 }
 
 function applyBoostChange(stat, pokeNum, stageChange) {
@@ -666,13 +652,10 @@ $(".set-selector").bind("change", function () {
 		formeObj.hide();
 		abilityObj.change();
 	}
-	let fieldAbilities = $(".ability");
-	if (fieldAbilities.length == 2) {
-		// if the opponent has active Intimidate, apply it
-		let otherAbilityObj = $("#p" + (side === "L" ? 2 : 1) + " .ability");
-		if (otherAbilityObj.siblings(".isActivated").prop("checked")) {
-			applyIntimidate(otherAbilityObj.val(), "", side === "L" ? "R" : "L");// don't forget to check that it applies to formes correctly too.
-		}
+	let otherAbilityObj = $("#p" + (side === "L" ? 2 : 1) + " .ability");
+	// if the opponent has active Intimidate, apply it
+	if (otherAbilityObj.val() === "Intimidate" && otherAbilityObj.siblings(".isActivated").prop("checked")) {
+		applyIntimidate(otherAbilityObj.val(), "", side === "L" ? "R" : "L");
 	}
 	calcHP(pokeObj);
 	calcStats(pokeObj);
