@@ -479,11 +479,17 @@ function applyIntimidate(newAbility, oldAbility, side) {
 	}
 
 	// if the effect of Intimidate is removed, reverse the effect of Intimidate that was previously applied
-	if (!$("#p" + (side === "L" ? 1 : 2) + " .isActivated").prop("checked") || (oldAbility === "Intimidate" && newAbility !== "Intimidate")) {
+	if (!fieldAbilities.siblings(".isActivated").prop("checked") || (oldAbility === "Intimidate" && newAbility !== "Intimidate")) {
 		stageChange = -stageChange;
 	}
 
-	$(".at .boost")[index].value = Math.max(-6, Math.min(6, parseInt($(".at .boost")[index].value) + stageChange));
+	applyBoostChange(AT, side == "L" ? 2 : 1, stageChange);
+}
+
+function applyBoostChange(stat, pokeNum, stageChange) {
+	let statBoostObj = $("#p" + pokeNum).find("." + stat + " .boost");
+	statBoostObj.val(Math.max(-6, Math.min(6, parseInt(statBoostObj.val()) + stageChange)));
+	calculate();
 }
 
 function autoSetRuin(ability, side) {
