@@ -460,15 +460,15 @@ function applyIntimidate(newAbility, oldAbility, side) {
 	if (fieldAbilities.length < 2) {
 		return; // don't try to do the following in mass calc mode
 	}
-	let sideIndex = side == "L" ? 1 : 0; // side is the Intimidator's side; get the index of the opponent's side
+	let targetIndex = side == "L" ? 1 : 0; // side is the Intimidator's side; get the index of the opponent's side
 
-	let targetAbility = fieldAbilities[sideIndex].value;
-	let stageChange = getIntimidateEffect(targetAbility, $(".item")[sideIndex].value);
+	let targetAbility = fieldAbilities[targetIndex].value;
+	let stageChange = getIntimidateEffect(targetAbility, $(".item")[targetIndex].value);
 	// if the effect of Intimidate is removed, reverse the effect of Intimidate that was previously applied
-	let undoIntimidate = !fieldAbilities.siblings(".isActivated").prop("checked") || (oldAbility === "Intimidate" && newAbility !== "Intimidate");
-	applyBoostChange(AT, sideIndex + 1, undoIntimidate ? -stageChange : stageChange);
+	let undoIntimidate = !$(".isActivated")[side == "L" ? 0 : 1].checked || (oldAbility === "Intimidate" && newAbility !== "Intimidate");
+	applyBoostChange(AT, targetIndex + 1, undoIntimidate ? -stageChange : stageChange);
 	if (targetAbility === "Competitive") {
-		applyBoostChange(SA, sideIndex + 1, undoIntimidate ? -2 : 2);
+		applyBoostChange(SA, targetIndex + 1, undoIntimidate ? -2 : 2);
 	}
 }
 
