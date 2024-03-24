@@ -984,19 +984,6 @@ function getZMove(moveName, attacker, defaultDetails, moveInfo) {
 }
 
 function getMaxMove(moveName, attacker, defaultDetails, moveInfo) {
-	// defaultDetails are designed to only be used from the mass calc call
-	let exceptions_100_fight = ["Low Kick", "Reversal", "Final Gambit"];
-	let exceptions_80_fight = ["Double Kick", "Triple Kick"];
-	let exceptions_75_fight = ["Counter", "Seismic Toss"];
-	let exceptions_140 = ["Triple Axel", "Crush Grip", "Wring Out", "Magnitude", "Double Iron Bash", "Rising Voltage"];
-	let exceptions_130 = ["Lash Out (Doubled)", "Scale Shot", "Dual Wingbeat", "Terrain Pulse", "Bolt Beak (Doubled)", "Fishious Rend (Doubled)", "Pin Missile", "Power Trip", "Punishment", "Dragon Darts", "Dual Chop", "Electro Ball", "Heat Crash",
-		"Bullet Seed", "Grass Knot", "Bonemerang", "Bone Rush", "Fissure", "Icicle Spear", "Sheer Cold", "Weather Ball", "Tail Slap", "Guillotine", "Horn Drill",
-		"Flail", "Return", "Frustration", "Endeavor", "Natural Gift", "Trump Card", "Stored Power", "Rock Blast", "Gear Grind", "Gyro Ball", "Heavy Slam"];
-	let exceptions_120 = ["Double Hit", "Spike Cannon"];
-	let exceptions_110 = ["Avalanche (Doubled)", "Revenge (Doubled)"];
-	let exceptions_100 = ["Twineedle", "Beat Up", "Fling", "Dragon Rage", "Nature\'s Madness", "Night Shade", "Comet Punch", "Fury Swipes", "Sonic Boom", "Bide",
-		"Super Fang", "Present", "Spit Up", "Psywave", "Mirror Coat", "Metal Burst"];
-
 	let moveType = getMoveTypePreDamage(moveName, attacker);
 	if (!moveType) {
 		moveType = moveInfo ? moveInfo.find(".move-type").val() : defaultDetails.type;
@@ -1015,26 +1002,12 @@ function getMaxMove(moveName, attacker, defaultDetails, moveInfo) {
 
 	let maxMoveName = MAXMOVES_LOOKUP[moveType];
 
-	let tempBP = moveInfo ? ~~moveInfo.find(".move-bp").val() : defaultDetails.bp;
-	if (!tempBP || tempBP === 0) {
-		tempBP = 0;
-	} else if (moveType == "Fighting" || moveType == "Poison") {
-		if (exceptions_100_fight.includes(moveName)) tempBP = 100;
-		else if (exceptions_80_fight.includes(moveName)) tempBP = 80;
-		else if (exceptions_75_fight.includes(moveName)) tempBP = 75;
-		else if (tempBP >= 150) tempBP = 100;
-		else if (tempBP >= 110) tempBP = 95;
-		else if (tempBP >= 75) tempBP = 90;
-		else if (tempBP >= 65) tempBP = 85;
-		else if (tempBP >= 55) tempBP = 80;
-		else if (tempBP >= 45) tempBP = 75;
-		else if (tempBP >= 1) tempBP = 70;
+	let tempBP;
+	if (MAXMOVES_POWER[moveName]) {
+		tempBP = MAXMOVES_POWER[moveName];
 	} else {
-		if (exceptions_140.includes(moveName)) tempBP = 140;
-		else if (exceptions_130.includes(moveName)) tempBP = 130;
-		else if (exceptions_120.includes(moveName)) tempBP = 120;
-		else if (exceptions_110.includes(moveName)) tempBP = 110;
-		else if (exceptions_100.includes(moveName)) tempBP = 100;
+		tempBP = moveInfo ? ~~moveInfo.find(".move-bp").val() : defaultDetails.bp;
+		if (!tempBP || tempBP === 0) tempBP = 0;
 		else if (tempBP >= 150) tempBP = 150;
 		else if (tempBP >= 110) tempBP = 140;
 		else if (tempBP >= 75) tempBP = 130;
