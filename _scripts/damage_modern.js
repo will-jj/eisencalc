@@ -259,7 +259,7 @@ function getDamageResult(attacker, defender, move, field) {
 			typeEffectiveness = typeEffect1;
 		}
 	}
-	if (attacker.isTerastal && defender.isTerastal && attacker.teraType === "Stellar") {
+	if (moveType === "Stellar" && attacker.isTerastal && defender.isTerastal) {
 		typeEffectiveness = 2;
 	}
 	if (isFirstHit && defender.curAbility === "Tera Shell" && typeEffectiveness >= 1) {
