@@ -249,10 +249,22 @@ function getDamageResult(attacker, defender, move, field) {
 	let typeEffect2 = defender.type2 ? getMoveEffectiveness(move, moveType, defender.type2, scrappy, field, field.weather === "Strong Winds", description) : 1;
 	let typeEffectiveness = typeEffect1 * typeEffect2;
 
-	if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
-		typeEffectiveness = 1;
+	if (defender.hasType("Flying") && (move.name === "Thousand Arrows" || defender.item === "Iron Ball")) {
+		// A Flying-type holding an Iron Ball or hit by Thousand Arrows treats Ground attacks as neutral.
+		// However, Gravity causes Ground attacks to calculate effectiveness as though Flying is 1x
+		if (!field.isGravity) {
+			typeEffectiveness = 1;
+		}
+	}
+	if (moveType === "Ground" && defender.hasType("Flying") && defenderGrounded) {
+		if (field.isGravity) {
+			description.gravity = true;
+		} else if (defender.item === "Iron Ball") {
+			description.defenderItem = defender.item;
+		}
 	}
 	if (defender.item === "Ring Target" && typeEffectiveness === 0) {
+		description.defenderItem = defender.item;
 		if (typeChart[moveType][defender.type1] === 0) {
 			typeEffectiveness = typeEffect2;
 		} else if (typeChart[moveType][defender.type2] === 0) {
@@ -292,6 +304,9 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	if (move.name === "Sky Drop" &&
         (defender.hasType("Flying") || getModdedWeight(defender) >= 200.0 || field.isGravity)) {
+		if (field.isGravity) {
+			description.gravity = true;
+		}
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 	if (move.name === "Synchronoise" && !attacker.hasType(defender.type1) && !attacker.hasType(defender.type2)) {
@@ -549,6 +564,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		if (field.isGravity) {
 			basePower *= 2;
 			description.moveBP = basePower;
+			description.gravity = true;
 		}
 		break;
 	case "Misty Explosion":
@@ -1233,17 +1249,19 @@ function buildDescription(description) {
 		output += "Tera " + description.defenderTera + " ";
 	}
 	output += description.defenderName;
-	if (description.weather || description.terrain) {
+	if (description.weather || description.terrain || description.gravity) {
 		output += " in ";
+		fieldEffects = [];
 		if (description.weather) {
-			output += description.weather;
-		}
-		if (description.weather && description.terrain) {
-			output += " and ";
+			fieldEffects.push(description.weather);
 		}
 		if (description.terrain) {
-			output += description.terrain + " Terrain";
+			fieldEffects.push(description.terrain + " Terrain");
 		}
+		if (description.gravity) {
+			fieldEffects.push("Gravity");
+		}
+		output += fieldEffects.join(" and ");
 	}
 	if (description.isDoublesScreen) {
 		output += " through Doubles " + (description.isReflect ? "Reflect" : "Light Screen");
@@ -1295,11 +1313,13 @@ function getMoveEffectiveness(move, mType, defType, isGhostRevealed, field, isSt
 	if (!mType) {
 		console.log(move.name + " does not have a type field.");
 		return 0;
-	} else if (mType === "None" || mType === "Stellar") { // Stellar's super effective on tera defenders is handled outside this function
+	} else if (mType === "None" || mType === "Stellar") {
+		// let the caller handle Stellar attacking a terastallized defender
 		return 1;
 	} else if (isGhostRevealed && defType === "Ghost" && (mType === "Normal" || mType === "Fighting")) {
 		return 1;
-	} else if (field && field.isGravity && defType === "Flying" && mType === "Ground") {
+	} else if (defType === "Flying" && mType === "Ground" && (defenderGrounded || move.name === "Thousand Arrows")) {
+		// let the caller handle the Iron Ball and Thousand Arrows cases
 		return 1;
 	} else if (isStrongWinds && defType === "Flying" && (mType === "Electric" || mType === "Ice" || mType === "Rock")) {
 		description.weather = "Strong Winds";

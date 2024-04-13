@@ -66,6 +66,9 @@ function getDamageResultADV(attacker, defender, move, field) {
 		}
 	}
 
+	attackerGrounded = isGrounded(attacker, field);
+	defenderGrounded = isGrounded(defender, field);
+
 	var typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1);
 	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, moveType, defender.type2) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
