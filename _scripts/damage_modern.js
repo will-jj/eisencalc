@@ -1378,7 +1378,10 @@ function isGrounded(pokemon, field) {
 }
 
 function hasPriority(move, attacker, field) {
-	return move.hasPriority || (attacker.curAbility === "Gale Wings" && moveType === "Flying") || (move.name === "Grassy Glide" && field.terrain === "Grassy" && attackerGrounded);
+	return move.hasPriority ||
+		(attacker.curAbility === "Gale Wings" && moveType === "Flying") ||
+		(attacker.curAbility === "Triage" && move.percentHealed) ||
+		(move.name === "Grassy Glide" && field.terrain === "Grassy" && attackerGrounded);
 }
 
 function getModdedWeight(pokemon) {
