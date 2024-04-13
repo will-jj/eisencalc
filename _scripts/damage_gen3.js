@@ -273,7 +273,7 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.isHelpingHand = true;
 	}
 
-	if (attacker.hasType(moveType)) {
+	if (attacker.hasType(moveType) || move.name.includes("Pledge Boosted")) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 	}
 

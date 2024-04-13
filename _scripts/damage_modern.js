@@ -362,7 +362,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	let baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attackerLevel), attacker, defender, move, field, description);
 
-	let stabMod = calcSTABMod(attacker, description);
+	let stabMod = calcSTABMod(attacker, move, description);
 
 	let finalMod = calcFinalMods(attacker, defender, move, field, description, typeEffectiveness, bypassProtect);
 
@@ -730,7 +730,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 	} else if (attacker.name.startsWith("Ogerpon-") && attacker.item == attacker.name.substring(attacker.name.indexOf("-") + 1) + " Mask") {
 		bpMods.push(0x1333);
 		description.attackerItem = attacker.item;
-	} else if (attacker.item === moveType + " Gem") {
+	} else if (attacker.item === moveType + " Gem" && !move.name.includes("Pledge")) {
 		bpMods.push(gen >= 6 ? 0x14CD : 0x1800);
 		description.attackerItem = attacker.item;
 	}
@@ -1034,7 +1034,7 @@ function modBaseDamage(baseDamage, attacker, defender, move, field, description)
 	return baseDamage;
 }
 
-function calcSTABMod(attacker, description) {
+function calcSTABMod(attacker, move, description) {
 	if (["Protean", "Libero"].includes(attacker.curAbility) && !attacker.isTerastal) {
 		if (!attacker.hasType(moveType)) {
 			description.attackerAbility = attacker.curAbility;
@@ -1047,7 +1047,7 @@ function calcSTABMod(attacker, description) {
 		return attacker.hasType(moveType) ? 0x2000 : 0x1333;
 	}
 	let stabMod = 0x1000;
-	if (attacker.hasType(moveType)) {
+	if (attacker.hasType(moveType) || move.name.includes("Pledge Boosted")) {
 		stabMod += 0x800;
 		if (attacker.isTerastal) {
 			description.attackerTera = attacker.teraType;

@@ -428,7 +428,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 
 	// the random factor is applied between the LO mod and the STAB mod, so don't apply anything below this until we're inside the loop
 	var stabMod = 1;
-	if (attacker.hasType(moveType)) {
+	if (attacker.hasType(moveType) || move.name.includes("Pledge Boosted")) {
 		if (attacker.ability === "Adaptability") {
 			stabMod = 2;
 			description.attackerAbility = attacker.ability;

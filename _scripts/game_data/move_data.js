@@ -2794,13 +2794,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"category": "Special",
 		"acc": 100
 	},
-	"Fire Pledge (Grass Pledge Boosted)": {
-		"bp": 150,
-		"type": "Fire",
-		"category": "Special",
-		"acc": 100
-	},
-	"Fire Pledge (Water Pledge Boosted)": {
+	"Fire Pledge (Pledge Boosted)": {
 		"bp": 150,
 		"type": "Fire",
 		"category": "Special",
@@ -2879,13 +2873,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"category": "Special",
 		"acc": 100
 	},
-	"Grass Pledge (Fire Pledge Boosted)": {
-		"bp": 150,
-		"type": "Grass",
-		"category": "Special",
-		"acc": 100
-	},
-	"Grass Pledge (Water Pledge Boosted)": {
+	"Grass Pledge (Pledge Boosted)": {
 		"bp": 150,
 		"type": "Grass",
 		"category": "Special",
@@ -3236,13 +3224,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		"category": "Special",
 		"acc": 100
 	},
-	"Water Pledge (Fire Pledge Boosted)": {
-		"bp": 150,
-		"type": "Water",
-		"category": "Special",
-		"acc": 100
-	},
-	"Water Pledge (Grass Pledge Boosted)": {
+	"Water Pledge (Pledge Boosted)": {
 		"bp": 150,
 		"type": "Water",
 		"category": "Special",
