@@ -66,6 +66,9 @@ function getDamageResultADV(attacker, defender, move, field) {
 		}
 	}
 
+	attackerGrounded = isGrounded(attacker, field);
+	defenderGrounded = isGrounded(defender, field);
+
 	var typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1);
 	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, moveType, defender.type2) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
@@ -270,7 +273,7 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.isHelpingHand = true;
 	}
 
-	if (attacker.hasType(moveType)) {
+	if (attacker.hasType(moveType) || move.name.includes("Pledge Boosted")) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 	}
 

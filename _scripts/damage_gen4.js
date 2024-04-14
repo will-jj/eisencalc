@@ -95,9 +95,21 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
+	attackerGrounded = isGrounded(attacker, field);
+	defenderGrounded = isGrounded(defender, field);
+
 	var typeEffect1 = getMoveEffectiveness(move, moveType, defender.type1, attacker.ability === "Scrappy", field);
 	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, moveType, defender.type2, attacker.ability === "Scrappy", field) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
+
+	if (moveType === "Ground" && defender.hasType("Flying") && defenderGrounded) {
+		// Defending gen 4 Iron Ball Flying types always treat their Flying type as 1x with Ground attacks
+		if (field.isGravity) {
+			description.gravity = true;
+		} else if (defender.item === "Iron Ball") {
+			description.defenderItem = defender.item;
+		}
+	}
 
 	if (typeEffectiveness === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
@@ -416,7 +428,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 
 	// the random factor is applied between the LO mod and the STAB mod, so don't apply anything below this until we're inside the loop
 	var stabMod = 1;
-	if (attacker.hasType(moveType)) {
+	if (attacker.hasType(moveType) || move.name.includes("Pledge Boosted")) {
 		if (attacker.ability === "Adaptability") {
 			stabMod = 2;
 			description.attackerAbility = attacker.ability;
