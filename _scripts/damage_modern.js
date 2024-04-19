@@ -249,18 +249,16 @@ function getDamageResult(attacker, defender, move, field) {
 	let typeEffect2 = defender.type2 ? getMoveEffectiveness(move, moveType, defender.type2, scrappy, field, field.weather === "Strong Winds", description) : 1;
 	let typeEffectiveness = typeEffect1 * typeEffect2;
 
-	if (defender.hasType("Flying") && (move.name === "Thousand Arrows" || defender.item === "Iron Ball")) {
-		// A Flying-type holding an Iron Ball or hit by Thousand Arrows treats Ground attacks as neutral.
-		// However, Gravity causes Ground attacks to calculate effectiveness as though Flying is 1x
-		if (!field.isGravity) {
-			typeEffectiveness = 1;
-		}
-	}
-	if (moveType === "Ground" && defender.hasType("Flying") && defenderGrounded) {
+	// A Flying-type holding an Iron Ball or hit by Thousand Arrows treats Ground attacks as neutral.
+	// However, Gravity causes Ground attacks to calculate effectiveness as though Flying is 1x
+	if (moveType === "Ground" && defender.hasType("Flying") && (defenderGrounded || move.name === "Thousand Arrows")) {
 		if (field.isGravity) {
 			description.gravity = true;
+		} else if (move.name === "Thousand Arrows") {
+			typeEffectiveness = 1;
 		} else if (defender.item === "Iron Ball") {
 			description.defenderItem = defender.item;
+			typeEffectiveness = 1;
 		}
 	}
 	if (defender.item === "Ring Target" && typeEffectiveness === 0) {
