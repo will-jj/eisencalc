@@ -110,8 +110,8 @@ function getDamageResult(attacker, defender, move, field) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 
-	if (defender.isTerastal) {
-		description.defenderTera = defender.type1;
+	if (defender.isTerastal && defender.teraType !== "Stellar") {
+		description.defenderTera = defender.teraType;
 	}
 
 	moveType = move.type;
