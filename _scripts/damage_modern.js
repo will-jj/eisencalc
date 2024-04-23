@@ -1542,32 +1542,56 @@ function checkAngerShell(pokemon) {
 	}
 }
 
+function changeStatByStage(pokemon, stat, stageChange, applyBlockingItem = true) {
+	if (stageChange < 0 && applyBlockingItem && ["Clear Amulet", "White Herb"].includes(pokemon.item)) {
+		return;
+	}
+	pokemon.boosts[stat] = Math.max(-6, Math.min(6, pokemon.boosts[stat] + stageChange));
+}
+
 function checkIntimidate(source, target) {
 	// this function is exclusively used by the mass calc now. The AI sets should always apply Intimidate in the mass calc if possible.
 	// verify that the user's Pokemon has Intimidate activated to apply it.
 	if (source.curAbility !== "Intimidate" || (source.hasOwnProperty("baseMoveNames") && !source.isAbilityActivated)) {
 		return;
 	}
-	target.boosts[AT] = Math.max(-6, Math.min(6, target.boosts[AT] + getIntimidateEffect(target.curAbility, target.item)));
-	if (target.curAbility === "Competitive") {
-		target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
-	}
+	resolveIntimidate(target.curAbility, target.item, (pokemonTarget, stat, stageChange) => changeStatByStage(pokemonTarget === "target" ? target : source, stat, stageChange));
 }
 
-function getIntimidateEffect(targetAbility, targetItem) {
-	if (["Contrary", "Defiant", "Guard Dog"].includes(targetAbility)) {
-		// the net result will still be +1 for something Defiant with White Herb
-		return 1;
-	} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body", "Mirror Armor"].includes(targetAbility) ||
-		(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility)) ||
-		["Clear Amulet", "White Herb"].includes(targetItem)) {
-		// no effect (going by how Adrenaline Orb and Defiant work, checking these should come second)
-		// Mirror Armor does not reflect the stat drop to the source to simplify things for the calc user
-		return 0;
+function resolveIntimidate(targetAbility, targetItem, changeStat) {
+	let atkChange = -1;
+	if (["Contrary", "Guard Dog"].includes(targetAbility) || (targetAbility === "Defiant" && targetItem !== "Clear Amulet")) {
+		// White Herb does not factor into Intimidate into Defiant
+		// Contrary and Guard Dog will raise Atk even when holding Clear Amulet
+		atkChange = 1;
+	} else if (targetAbility === "Mirror Armor" && targetItem !== "Clear Amulet") {
+		// A Mirror Armor mon holding Clear Amulet does not bounce Intimidate
+		changeStat("source", AT, -1);
+		atkChange = 0;
+	} else if (targetAbility === "Competitive" && targetItem !== "Clear Amulet") {
+		changeStat("target", SA, 2);
+	} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body"].includes(targetAbility) ||
+		(gen >= 8 && ["Inner Focus", "Oblivious", "Scrappy", "Own Tempo"].includes(targetAbility))) {
+		atkChange = 0;
 	} else if (targetAbility === "Simple" && gen != 4) {
-		return -2;
+		atkChange = -2;
 	}
-	return -1;
+
+	if (atkChange < 0 && ["White Herb", "Clear Amulet"].includes(targetItem)) {
+		return;
+	}
+
+	if (targetItem === "Adrenaline Orb") {
+		let speedChange = 1;
+		if (targetAbility === "Contrary") {
+			speedChange = -1;
+		} else if (targetAbility === "Simple") {
+			speedChange = 2;
+		}
+		changeStat("target", SP, speedChange);
+	}
+
+	changeStat("target", AT, atkChange);
 }
 
 function checkMinimize(p1, p2) {

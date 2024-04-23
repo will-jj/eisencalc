@@ -463,17 +463,27 @@ function applyIntimidate(newAbility, oldAbility, side) {
 	let targetIndex = side == "L" ? 1 : 0; // side is the Intimidator's side; get the index of the opponent's side
 
 	let targetAbility = fieldAbilities[targetIndex].value;
-	let stageChange = getIntimidateEffect(targetAbility, $(".item")[targetIndex].value);
-	// if the effect of Intimidate is removed, reverse the effect of Intimidate that was previously applied
+	// if an active Intimidate is deactivated, reverse the effect of Intimidate that was previously applied
 	let undoIntimidate = !$(".isActivated")[side == "L" ? 0 : 1].checked || (oldAbility === "Intimidate" && newAbility !== "Intimidate");
-	applyBoostChange(AT, targetIndex + 1, undoIntimidate ? -stageChange : stageChange);
-	if (targetAbility === "Competitive") {
-		applyBoostChange(SA, targetIndex + 1, undoIntimidate ? -2 : 2);
-	}
+	resolveIntimidate(targetAbility, $(".item")[targetIndex].value, (targetPoke, stat, stageChange) => {
+		let pokeNum;
+		if (targetPoke === "target") {
+			pokeNum = side == "L" ? 2 : 1;
+		} else if (targetPoke === "source") {
+			pokeNum = side == "L" ? 1 : 2;
+		} else {
+			console.log("bad targetPoke: " + targetPoke);
+			return;
+		}
+		if (stageChange < 0 && ["Clear Amulet", "White Herb"].includes($(".item")[targetIndex].value)) {
+			return;
+		}
+		applyBoostChange(pokeNum, stat, undoIntimidate ? -stageChange : stageChange);
+	});
 }
 
-function applyBoostChange(stat, pokeNum, stageChange) {
-	let statBoostObj = $("#p" + pokeNum).find("." + stat + " .boost");
+function applyBoostChange(pokeNum, stat, stageChange) {
+	let statBoostObj = $("#p" + pokeNum + " ." + stat + " .boost");
 	statBoostObj.val(Math.max(-6, Math.min(6, parseInt(statBoostObj.val()) + stageChange)));
 	calculate();
 }
