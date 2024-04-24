@@ -76,7 +76,11 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 	let multiResult = checkMultiHitKO(moveHits, result, targetHP, defender, damageInfo, firstHitDamageInfo);
 	if (multiResult && multiResult.hitCount <= moveHits &&
 		(!multiResult.koCombinations || multiResult.koCombinations >= damageInfo.mapCombinations)) {
-		setResultText(result, 1, moveAccuracy, false, damageInfo, hazardText, multiResult.berryKO ? berryText : "");
+		// likely temporary fix: checkMultiHitKO() uses the base damage of each strike to calculate, so the mapCombinations need to be based on that too.
+		let temp = damageInfo.mapCombinations;
+		damageInfo.mapCombinations = result.damage.length ** multiResult.hitCount;
+		setResultText(result, 1, moveAccuracy, multiResult.koCombinations, damageInfo, hazardText, multiResult.berryKO ? berryText : "");
+		damageInfo.mapCombinations = temp;
 		return;
 	} else if (moveHits > 1 && berryRecovery) {
 		// no multihit OHKO found, so currently treating this as though a berry must have been eaten
