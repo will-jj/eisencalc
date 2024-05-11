@@ -52,14 +52,21 @@ title: Battle Facilities Calculator
 document.addEventListener('DOMContentLoaded', function() {
     var selects = document.querySelectorAll('.boost.calc-trigger');
     selects.forEach(function(select) {
+        let accumulatedDelta = 0;
+        const threshold = 50;  // Increase or decrease this value to adjust sensitivity
         select.addEventListener('wheel', function(event) {
-            event.preventDefault(); // Prevents the whole page from scrolling when using the wheel over the dropdown
-            if (event.deltaY < 0) {
-                // Scroll up
-                select.selectedIndex = Math.max(select.selectedIndex - 1, 0);
-            } else {
-                // Scroll down
-                select.selectedIndex = Math.min(select.selectedIndex + 1, select.options.length - 1);
+            event.preventDefault(); // Prevents the page from scrolling when using the wheel over the dropdown
+            accumulatedDelta += event.deltaY;
+
+            if (Math.abs(accumulatedDelta) > threshold) {
+                if (accumulatedDelta < 0) {
+                    // Scroll up
+                    select.selectedIndex = Math.max(select.selectedIndex - 1, 0);
+                } else {
+                    // Scroll down
+                    select.selectedIndex = Math.min(select.selectedIndex + 1, select.options.length - 1);
+                }
+                accumulatedDelta = 0; // Reset the accumulator after changing the index
             }
         }, {passive: false});
     });
