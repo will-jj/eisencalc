@@ -48,25 +48,33 @@ title: Battle Facilities Calculator
 		}
 	</script>
 	<script type="text/javascript" src="../_scripts/themes_choose.js"></script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var selects = document.querySelectorAll('.boost.calc-trigger');
     selects.forEach(function(select) {
         let accumulatedDelta = 0;
-        const threshold = 50;  // Increase or decrease this value to adjust sensitivity
+        const threshold = 50;  // Adjust this value to control sensitivity
+
         select.addEventListener('wheel', function(event) {
             event.preventDefault(); // Prevents the page from scrolling when using the wheel over the dropdown
             accumulatedDelta += event.deltaY;
 
             if (Math.abs(accumulatedDelta) > threshold) {
+                var currentIndex = select.selectedIndex;
                 if (accumulatedDelta < 0) {
                     // Scroll up
-                    select.selectedIndex = Math.max(select.selectedIndex - 1, 0);
+                    select.selectedIndex = Math.max(currentIndex - 1, 0);
                 } else {
                     // Scroll down
-                    select.selectedIndex = Math.min(select.selectedIndex + 1, select.options.length - 1);
+                    select.selectedIndex = Math.min(currentIndex + 1, select.options.length - 1);
                 }
                 accumulatedDelta = 0; // Reset the accumulator after changing the index
+
+                // Trigger the change event if the index has changed
+                if (select.selectedIndex !== currentIndex) {
+                    select.dispatchEvent(new Event('change'));
+                }
             }
         }, {passive: false});
     });
