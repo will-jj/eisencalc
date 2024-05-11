@@ -1685,7 +1685,7 @@ $(document).ready(function () {
 		},
 		"query": function (query) {
 			var setOptions = getSetOptions();
-			var pageSize = 30;
+			var pageSize = 10000;
 			var results = [];
 			for (var i = 0; i < setOptions.length; i++) {
 				var pokeName = setOptions[i].pokemon.toUpperCase();
