@@ -528,7 +528,7 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-bp").val(move.bp);
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
-	let forceCrit = move.alwaysCrit || (!isNeutralizingGas && ability === "Merciless" && move.category && pokeInfo.find(".status").val().endsWith("Poisoned"));
+	let forceCrit = move.alwaysCrit || (!isNeutralizingGas && ability === "Merciless" && move.category && $(".status")[pokeInfo.prop("id") == "p1" ? 1 : 0].value.endsWith("Poisoned"));
 	moveGroupObj.children(".move-crit").prop("checked", forceCrit);
 	var moveHits = moveGroupObj.children(".move-hits");
 	moveHits.empty();
