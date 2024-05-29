@@ -2534,7 +2534,7 @@ var SETDEX_GEN6 =
         "Moonblast",
         "Trick Room"
       ],
-      "nature": "Bold",
+      "nature": "Quiet",
       "item": "Iron Ball",
       "tier": "40"
     }
