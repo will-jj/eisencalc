@@ -55,9 +55,11 @@ $(".tera").bind("keyup change", function () {
 	let pokeInfo = $(this).closest(".poke-info");
 	let setName = pokeInfo.find("input.set-selector").val(); // speciesName (setName)
 	let pokeName = setName.substring(0, setName.indexOf(" ("));
+	let abilityObj = pokeInfo.find(".ability");
 	if ($(this).prop("checked")) {
 		if (pokeName.startsWith("Ogerpon")) {
-			pokeInfo.find(".ability").val("Embody Aspect");
+			abilityObj.val("Embody Aspect");
+			abilityObj.change();
 		} else if (pokeName == "Terapagos-Terastal") {
 			pokeInfo.find(".forme").val("Terapagos-Stellar");
 			pokeInfo.find(".forme").change();
@@ -75,7 +77,8 @@ $(".tera").bind("keyup change", function () {
 			dexEntry = pokedex[formeName];
 		}
 		if (pokeName.startsWith("Ogerpon")) {
-			pokeInfo.find(".ability").val(dexEntry.abilities[0]);
+			abilityObj.val(dexEntry.abilities[0]);
+			abilityObj.change();
 		} else if (formeName == "Terapagos-Stellar") {
 			pokeInfo.find(".forme").val("Terapagos-Terastal");
 			pokeInfo.find(".forme").change();
@@ -288,7 +291,8 @@ $("#p1 .ability").bind("change", function () {
 	if ($(this).siblings(".isActivated").prop("checked")) {
 		applyIntimidate(ability, curAbilities[0], "L");
 	}
-	curAbilities[0] = $(this).val();
+	applyStatAbilities(curAbilities[0], ability, 1);
+	curAbilities[0] = ability;
 	autoSetVicStar(ability, "L");
 	autoSetSteely(ability, "L");
 	autoSetRuin(ability, "L");
@@ -321,8 +325,8 @@ function autoSetVicStar(ability, side) {
 	$("input:checkbox[id='vicStar" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Victory Star"));
 }
 
-// Right now this is only getting used by weather/terrain setting since it's the only thing that cares about the previous ability.
-// Other functions could use this since it's global, but it would complicate things since the order of calls really starts to matter.
+// Whenever a pokemon changes ( $(".set-selector").bind("change"... ), the corresponding curAbilities entry is reset to empty string
+// However, it does NOT reset the ability for weather/terrain abilities so that weather/terrain logic works
 var curAbilities = ["", ""];
 var manuallySetWeather = "";
 var manuallySetTerrain = "";
@@ -452,7 +456,7 @@ function showActivated(ability, sideNum) {
 function applyIntimidate(newAbility, oldAbility, side) {
 	// since Intimidate has to be explicitly applied via the checkbox, no interaction with N Gas
 	if ((newAbility !== "Intimidate" && oldAbility !== "Intimidate") ||
-		(newAbility === "Intimidate" && oldAbility === "Intimidate")) {
+		newAbility === oldAbility) {
 		return;
 	}
 
@@ -480,6 +484,46 @@ function applyIntimidate(newAbility, oldAbility, side) {
 		}
 		applyBoostChange(pokeNum, stat, undoIntimidate ? -stageChange : stageChange);
 	});
+}
+
+// Implemented with the assumption that abilities only ever boost 1 stat by 1 stage
+// Due to the additional logic associated with them, Embody Aspect and Download are handled separately
+var statAbilities = {
+	"Intrepid Sword": AT,
+	"Dauntless Shield": DF
+}
+
+function applyStatAbilities(oldAbility, newAbility, pokeNum) {
+	if (oldAbility === newAbility) {
+		return; // if ability didn't change, don't do anything
+	}
+
+	if (oldAbility in statAbilities) {
+		// undo the existing effect by applying a stat drop
+		resolveStatAbilities(oldAbility, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, -stageChange));
+	}
+
+	if (newAbility in statAbilities) {
+		resolveStatAbilities(newAbility, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, stageChange));
+	}
+
+	applyEmbodyAspect(oldAbility, newAbility, pokeNum);
+}
+
+function applyEmbodyAspect(oldAbility, newAbility, pokeNum) {
+	if ((newAbility !== "Embody Aspect" && oldAbility !== "Embody Aspect") ||
+		newAbility === oldAbility) {
+		return;
+	}
+
+	let pokeInfo = $("#p" + pokeNum);
+	let setName = pokeInfo.find("input.set-selector").val(); // speciesName (setName)
+	let pokeName = setName.substring(0, setName.indexOf(" ("));
+	if (oldAbility === "Embody Aspect") {
+		resolveEmbodyAspect(oldAbility, true, pokeName, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, -stageChange));
+	} else {
+		resolveEmbodyAspect(newAbility, pokeInfo.find(".tera").prop("checked"), pokeName, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, stageChange));
+	}
 }
 
 function applyBoostChange(pokeNum, stat, stageChange) {
@@ -599,10 +643,16 @@ $(".set-selector").bind("change", function () {
 	pokeObj.find(".tera").prop("checked", false);
 	//.change() for max and tera is below
 	var moveObj;
+	var itemObj = pokeObj.find(".item");
 	var abilityObj = pokeObj.find(".ability");
 	var abilityList = pokemon.abilities;
 	prependSpeciesAbilities(abilityList, pokeObjID, abilityObj);
-	var itemObj = pokeObj.find(".item");
+	// the following works as a way to change curAbilities[] without triggering ability.change()
+	// for the weather/terrain logic to work properly, leave those abilities in curAbilities[]
+	let pokeIndex = pokeObjID === "p1" ? 0 : 1;
+	if (!autoWeatherAbilities(curAbilities[pokeIndex]) && !autoTerrainAbilities(curAbilities[pokeIndex])) {
+		curAbilities[pokeIndex] = "";
+	}
 	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
 		var set = setdexAll[pokemonName][setName];
 		pokeObj.find(".level").val(set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50));

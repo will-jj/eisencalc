@@ -12,16 +12,10 @@ function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	checkSeeds(p2, field.getTerrain());
 	checkAngerShell(p1);
 	checkAngerShell(p2);
-	checkEmbodyAspect(p1);
-	checkEmbodyAspect(p2);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
 	p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
 	p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
 	p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
-	//checkDownload(p1, p2);
-	//checkDownload(p2, p1);
-	checkZacianZamazaenta(p1);
-	checkZacianZamazaenta(p2);
 	// So that ProtoQuark is correctly calculated, all stats must be calculated, and getFinalSpeed must be called last.
 	p1.stats[AT] = getModifiedStat(p1.rawStats[AT], p1.boosts[AT]);
 	p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
@@ -56,15 +50,13 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	checkSeedsHonk(defender, field.getTerrain());
 	checkAngerShell(attacker);
 	checkAngerShell(defender);
-	checkEmbodyAspect(attacker);
-	checkEmbodyAspect(defender);
+	massCalcStatAbilities(attacker);
+	massCalcStatAbilities(defender);
 	attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF]);
 	attacker.stats[SD] = getModifiedStat(attacker.rawStats[SD], attacker.boosts[SD]);
 	defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
 	defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
 	checkDownload(attacker, defender);
-	checkZacianZamazaenta(attacker);
-	checkZacianZamazaenta(defender);
 	// So that ProtoQuark is correctly calculated, all stats must be calculated, and getFinalSpeed must be called last.
 	attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 	attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
@@ -1480,14 +1472,6 @@ function checkSeedsHonk(pokemon, terrain) {
 	}
 }
 
-function checkZacianZamazaenta(pokemon) {
-	if (pokemon.curAbility === "Intrepid Sword") {
-		pokemon.boosts[AT] = Math.min(6, pokemon.boosts[AT] + 1);
-	} else if (pokemon.curAbility === "Dauntless Shield") {
-		pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
-	}
-}
-
 function checkEmbodyAspect(pokemon) {
 	if (isNeutralizingGas || !(pokemon.ability === "Embody Aspect" && pokemon.name.startsWith("Ogerpon") && pokemon.isTerastal)) {
 		return;
@@ -1592,6 +1576,30 @@ function resolveIntimidate(targetAbility, targetItem, changeStat) {
 	}
 
 	changeStat("target", AT, atkChange);
+}
+
+function massCalcStatAbilities(pokemon) {
+	let ability = pokemon.curAbility;
+	if (ability in statAbilities) {
+		resolveStatAbilities(ability, (unused, stat, stageChange) => changeStatByStage(pokemon, stat, stageChange));
+	}
+	resolveEmbodyAspect(pokemon.curAbility, pokemon.isTerastal, pokemon.name, (unused, stat, stageChange) => changeStatByStage(pokemon, stat, stageChange));
+}
+
+function resolveStatAbilities(ability, changeStat) {
+	let stat = statAbilities[ability];
+	if (!stat) {
+		return;
+	}
+	changeStat("source", stat, 1);
+}
+
+function resolveEmbodyAspect(ability, isTerastal, pokeName, changeStat) {
+	if (!(ability === "Embody Aspect" && isTerastal)) {
+		return;
+	}
+	let stat = pokeName === "Ogerpon-Wellspring" ? SD : pokeName === "Ogerpon-Hearthflame" ? AT : pokeName === "Ogerpon-Cornerstone" ? DF : SP;
+	changeStat("source", stat, 1);
 }
 
 function checkMinimize(p1, p2) {

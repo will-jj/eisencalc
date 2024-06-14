@@ -13,6 +13,7 @@ $("#p2 .ability").bind("change", function () {
 	if ($(this).siblings(".isActivated").prop("checked")) {
 		applyIntimidate(ability, curAbilities[1], "R");
 	}
+	applyStatAbilities(curAbilities[1], ability, 2);
 	curAbilities[1] = ability;
 	autoSetVicStar(ability, "R");
 	autoSetSteely(ability, "R");
