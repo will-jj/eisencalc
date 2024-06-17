@@ -5,8 +5,6 @@ function CALCULATE_ALL_MOVES_PTHGSS(p1, p2, field) {
 	checkForecast(p2, field.getWeather());
 	checkKlutz(p1);
 	checkKlutz(p2);
-	checkDownload(p1, p2);
-	checkDownload(p2, p1);
 	p1.stats[SP] = getFinalSpeed(p1, field.getWeather());
 	p2.stats[SP] = getFinalSpeed(p2, field.getWeather());
 	var side1 = field.getSide(1);
@@ -115,7 +113,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 	if ((defender.curAbility === "Wonder Guard" && typeEffectiveness <= 1 && !["Struggle", "Beat Up", "Future Sight", "Doom Desire", "Fire Fang"].includes(move.name)) ||
-            (moveType === "Fire" && defender.curAbility.indexOf("Flash Fire") !== -1) ||
+            (moveType === "Fire" && defender.curAbility === "Flash Fire") ||
             (moveType === "Water" && ["Dry Skin", "Water Absorb"].indexOf(defender.curAbility) !== -1) ||
             (moveType === "Electric" && ["Motor Drive", "Volt Absorb"].indexOf(defender.curAbility) !== -1) ||
             (moveType === "Ground" && defender.curAbility === "Levitate" && !isGrounded(defender, field)) ||
@@ -234,6 +232,18 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.isCharge = true;
 	}
 
+	if (attacker.curAbility === "Rivalry" && attacker.isAbilityActivated) {
+		if (attacker.isAbilityActivated === true) {
+			basePower = Math.floor(basePower * 1.25);
+			description.attackerAbility = attacker.curAbility + " (increasing)";
+		} else if (attacker.isAbilityActivated === "indeterminate") {
+			basePower = Math.floor(basePower * 0.75);
+			description.attackerAbility = attacker.curAbility + " (decreasing)";
+		} else {
+			console.log("attacker.isAbilityActivated in a bad state for Rivalry: " + description.attackerAbility);
+		}
+	}
+
 	if ((attacker.ability === "Reckless" && move.hasRecoil) ||
             (attacker.ability === "Iron Fist" && move.isPunch)) {
 		basePower = Math.floor(basePower * 1.2);
@@ -291,9 +301,9 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	} else if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy"))) {
 		attack = Math.floor(attack * 1.5);
 		description.attackerAbility = attacker.ability;
-	} else if (!isPhysical && (attacker.ability === "Plus (active)" || attacker.ability === "Minus (active)")) {
+	} else if (!isPhysical && (attacker.ability === "Plus" || attacker.ability === "Minus") && attacker.isAbilityActivated) {
 		attack = Math.floor(attack * 1.5);
-		description.attackerAbility = attacker.ability.substring(0, attacker.ability.indexOf(" ("));
+		description.attackerAbility = attacker.ability;
 	}
 
 	if ((isPhysical ? attacker.item === "Choice Band" : attacker.item === "Choice Specs") ||
@@ -404,9 +414,9 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.weather = field.weather;
 	}
 
-	if (attacker.ability === "Flash Fire (activated)" && moveType === "Fire") {
+	if (attacker.ability === "Flash Fire" && attacker.isAbilityActivated && moveType === "Fire") {
 		baseDamage = Math.floor(baseDamage * 1.5);
-		description.attackerAbility = "Flash Fire";
+		description.attackerAbility = attacker.ability;
 	}
 
 	baseDamage += 2;

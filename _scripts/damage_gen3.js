@@ -77,7 +77,7 @@ function getDamageResultADV(attacker, defender, move, field) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 
-	if ((defender.ability.indexOf("Flash Fire") !== -1 && moveType === "Fire") ||
+	if ((defender.ability === "Flash Fire" && moveType === "Fire") ||
             (defender.ability === "Levitate" && moveType === "Ground") ||
             (defender.ability === "Volt Absorb" && moveType === "Electric") ||
             (defender.ability === "Water Absorb" && moveType === "Water") ||
@@ -178,9 +178,9 @@ function getDamageResultADV(attacker, defender, move, field) {
 	if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy"))) {
 		at = Math.floor(at * 1.5);
 		description.attackerAbility = attacker.ability;
-	} else if (!isPhysical && (attacker.ability === "Plus (active)" || attacker.ability === "Minus (active)")) {
+	} else if (!isPhysical && (attacker.ability === "Plus" || attacker.ability === "Minus") && attacker.isAbilityActivated) {
 		at = Math.floor(at * 1.5);
-		description.attackerAbility = attacker.ability.substring(0, attacker.ability.indexOf(" ("));
+		description.attackerAbility = attacker.ability;
 	} else if (attacker.curHP <= attacker.maxHP / 3 &&
             ((attacker.ability === "Overgrow" && moveType === "Grass") ||
             (attacker.ability === "Blaze" && moveType === "Fire") ||
@@ -246,9 +246,9 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.weather = field.weather;
 	}
 
-	if (attacker.ability === "Flash Fire (activated)" && moveType === "Fire") {
+	if (attacker.ability === "Flash Fire" && attacker.isAbilityActivated && moveType === "Fire") {
 		baseDamage = Math.floor(baseDamage * 1.5);
-		description.attackerAbility = "Flash Fire";
+		description.attackerAbility = attacker.ability;
 	}
 
 	baseDamage = Math.max(1, baseDamage) + 2;

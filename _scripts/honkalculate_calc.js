@@ -63,8 +63,8 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 };
 
 $(".ability").bind("change", function () {
-	// by default, Intimidate will be checked for the player's pokemon in the mass calc
-	if ($(this).val() === "Intimidate") {
+	let ability = $(this).val();
+	if (ability in checkboxAbilities && checkboxAbilities[ability].mass) {
 		$("#p1 .isActivated").prop("checked", true);
 	}
 });
@@ -92,6 +92,7 @@ function MassPokemon(speciesName, setName) {
 		"ability": set.ability && typeof set.ability !== "undefined" ? set.ability :
 		(pokemon.ab && typeof pokemon.ab !== "undefined" ? pokemon.ab :
 		(pokemon.abilities && pokemon.abilities.length == 1 ? pokemon.abilities[0] : "")),
+		"isAbilityActivated": "MassPokemon",
 		"item": set.item && typeof set.item !== "undefined" &&
 		(set.item === "Eviolite" || !(set.item.endsWith("ite") && set.item.endsWith("ite X") && set.item.endsWith("ite Y"))) ? set.item : "",
 		"status": "Healthy",
