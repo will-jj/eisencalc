@@ -287,9 +287,12 @@ $(".ability").bind("keyup change", function () {
 
 $("#p1 .ability").bind("change", function () {
 	let ability = $(this).val();
+	let isActivatedObj = $(this).siblings(".isActivated");
 	autoSetWeatherTerrain(curAbilities[0], ability, curAbilities[1]);
-	if ($(this).siblings(".isActivated").prop("checked")) {
-		applyIntimidate(ability, curAbilities[0], "L");
+	if (isActivatedObj.prop("checked")) {
+		// so long as all applyActivatedStatAbilities() abilities default to an unchecked box, this will work
+		// undo any activated stat abilities
+		applyActivatedStatAbilities(curAbilities[0], "", 1);
 	}
 	applyStatAbilities(curAbilities[0], ability, 1);
 	curAbilities[0] = ability;
@@ -301,8 +304,30 @@ $("#p1 .ability").bind("change", function () {
 
 $("#p1 .isActivated").bind("change", function () {
 	let ability = $(this).siblings(".ability").val();
-	applyIntimidate(ability, "", "L");
+	if (ability === "Rivalry") {
+		rivalryStateTransitions($(this), 1);
+	}
+	applyActivatedStatAbilities("", ability, 1); // passing in "" as oldAbility will allow the subfunctions to always run
+	if (ability in checkboxAbilities && $('#p2').length) { // check whether this is mass calc mode
+		calculate();
+	}
 });
+
+var rivalryState = [0, 0]; // 0 = unchecked, 1 = checked, 2 = indeterminate
+function rivalryStateTransitions(checkboxObj, pokeNum) {
+	let pokeIndex = pokeNum - 1;
+	rivalryState[pokeIndex] = (rivalryState[pokeIndex] + 1) % 3;
+	if (rivalryState[pokeIndex] == 0) {
+		checkboxObj.prop("checked", false);
+		checkboxObj.prop("indeterminate", false);
+	} else if (rivalryState[pokeIndex] == 1) {
+		checkboxObj.prop("checked", true);
+		checkboxObj.prop("indeterminate", false);
+	} else if (rivalryState[pokeIndex] == 2) {
+		checkboxObj.prop("checked", false);
+		checkboxObj.prop("indeterminate", true);
+	}
+}
 
 function autoSetAura() {
 	var ability1 = $("#p1 .ability").val();
@@ -442,10 +467,24 @@ function autoSetSteely(ability, side) {
 	$("input:checkbox[id='steelySpirit" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Steely Spirit"));
 }
 
+// each ability can independantly initialize as checked or unchecked in each calc mode
+var checkboxAbilities = {
+	"Analytic": { ap: true, mass: true },
+	"Intimidate": { ap: false, mass: true },
+	"Download": { ap: false, mass: true },
+	"Rivalry": { ap: false, mass: false },
+	"Flash Fire": { ap: false, mass: false },
+	"Plus": { ap: false, mass: false },
+	"Minus": { ap: false, mass: false }
+};
+
+// Based on input ability, show or hide the activated checkbox. Also use checkboxAbilities to initialize the checkbox state
 function showActivated(ability, sideNum) {
 	let activatedObj = $("#p" + sideNum + " .isActivated");
-	if (ability === "Intimidate") {
-		// in the mass calc only, honkalculate_calc will check isActivated when Intimidate is selected
+	activatedObj.prop("indeterminate", false);
+	rivalryState[sideNum - 1] = 0;
+	if (ability in checkboxAbilities) {
+		activatedObj.prop("checked", checkboxAbilities[ability].ap);
 		activatedObj.show();
 	} else {
 		activatedObj.prop("checked", false);
@@ -453,7 +492,12 @@ function showActivated(ability, sideNum) {
 	}
 }
 
-function applyIntimidate(newAbility, oldAbility, side) {
+function applyActivatedStatAbilities(oldAbility, newAbility, pokeNum) {
+	applyIntimidate(oldAbility, newAbility, pokeNum);
+	applyDownload(oldAbility, newAbility, pokeNum);
+}
+
+function applyIntimidate(oldAbility, newAbility, intimidatePokeNum) {
 	// since Intimidate has to be explicitly applied via the checkbox, no interaction with N Gas
 	if ((newAbility !== "Intimidate" && oldAbility !== "Intimidate") ||
 		newAbility === oldAbility) {
@@ -464,17 +508,17 @@ function applyIntimidate(newAbility, oldAbility, side) {
 	if (fieldAbilities.length < 2) {
 		return; // don't try to do the following in mass calc mode
 	}
-	let targetIndex = side == "L" ? 1 : 0; // side is the Intimidator's side; get the index of the opponent's side
+	let targetIndex = intimidatePokeNum === 1 ? 1 : 0; // intimidatePokeNum is the side (1 or 2) of the Intimidator; get the index of the opponent's side
 
 	let targetAbility = fieldAbilities[targetIndex].value;
 	// if an active Intimidate is deactivated, reverse the effect of Intimidate that was previously applied
-	let undoIntimidate = !$(".isActivated")[side == "L" ? 0 : 1].checked || (oldAbility === "Intimidate" && newAbility !== "Intimidate");
+	let undoIntimidate = !$(".isActivated")[intimidatePokeNum - 1].checked || (oldAbility === "Intimidate" && newAbility !== "Intimidate");
 	resolveIntimidate(targetAbility, $(".item")[targetIndex].value, (targetPoke, stat, stageChange) => {
-		let pokeNum;
+		let affectedPokeNum;
 		if (targetPoke === "target") {
-			pokeNum = side == "L" ? 2 : 1;
+			affectedPokeNum = intimidatePokeNum === 1 ? 2 : 1;
 		} else if (targetPoke === "source") {
-			pokeNum = side == "L" ? 1 : 2;
+			affectedPokeNum = intimidatePokeNum;
 		} else {
 			console.log("bad targetPoke: " + targetPoke);
 			return;
@@ -482,8 +526,35 @@ function applyIntimidate(newAbility, oldAbility, side) {
 		if (stageChange < 0 && ["Clear Amulet", "White Herb"].includes($(".item")[targetIndex].value)) {
 			return;
 		}
-		applyBoostChange(pokeNum, stat, undoIntimidate ? -stageChange : stageChange);
+		applyBoostChange(affectedPokeNum, stat, undoIntimidate ? -stageChange : stageChange);
 	});
+}
+
+var appliedDownloadStat = ["", ""];
+function applyDownload(oldAbility, newAbility, pokeNum) {
+	// since Download has to be explicitly applied via the checkbox, no interaction with N Gas
+	if ((newAbility !== "Download" && oldAbility !== "Download") ||
+		newAbility === oldAbility ||
+		!$('#p2').length) { // check whether this is mass calc mode
+		return;
+	}
+
+	let downloaderIndex = pokeNum - 1;
+	let opponentIndex = downloaderIndex === 0 ? 1 : 0;
+	// if an active Download is deactivated, reverse the effect of Download that was previously applied
+	let undoEffect = !$(".isActivated")[downloaderIndex].checked || (oldAbility === "Download" && newAbility !== "Download");
+	if (undoEffect) {
+		// if undoing the effect, undo the stat that was previously applied (not based on the current opponent stats)
+		applyBoostChange(pokeNum, appliedDownloadStat[downloaderIndex], -1);
+		appliedDownloadStat[downloaderIndex] = "";
+	} else {
+		let defense = getModifiedStat(parseInt($(".df .total")[opponentIndex].textContent), $("#p" + (opponentIndex + 1) + " .df .boost").val());
+		let spDefense = getModifiedStat(parseInt($(".sd .total")[opponentIndex].textContent), $("#p" + (opponentIndex + 1) + " .sd .boost").val());
+		resolveDownload(newAbility, defense, spDefense, (unused, stat, stageChange) => {
+			applyBoostChange(pokeNum, stat, stageChange);
+			appliedDownloadStat[downloaderIndex] = stat;
+		});
+	}
 }
 
 // Implemented with the assumption that abilities only ever boost 1 stat by 1 stage
@@ -712,10 +783,17 @@ $(".set-selector").bind("change", function () {
 		formeObj.hide();
 		abilityObj.change();
 	}
-	let otherAbilityObj = $("#p" + (side === "L" ? 2 : 1) + " .ability");
-	// if the opponent has active Intimidate, apply it
-	if (otherAbilityObj.val() === "Intimidate" && otherAbilityObj.siblings(".isActivated").prop("checked")) {
-		applyIntimidate(otherAbilityObj.val(), "", side === "L" ? "R" : "L");
+	let opponentPokeNum = pokeIndex === 0 ? 2 : 1;
+	let otherAbilityObj = $("#p" + opponentPokeNum + " .ability");
+	let otherAbility = otherAbilityObj.val();
+	let isOtherAbilityActivated = otherAbilityObj.siblings(".isActivated").prop("checked");
+	if (otherAbility === "Intimidate" && isOtherAbilityActivated) {
+		// if the opponent has active Intimidate, apply it to this new mon
+		applyIntimidate("", otherAbility, opponentPokeNum);
+	} else if (otherAbility === "Download" && isOtherAbilityActivated) {
+		// run the function once to remove the old Download stat stage then run it again to apply the correct stat stage
+		applyDownload(otherAbility, "", opponentPokeNum);
+		applyDownload("", otherAbility, opponentPokeNum);
 	}
 	calcHP(pokeObj);
 	calcStats(pokeObj);
@@ -922,7 +1000,7 @@ function Pokemon(pokeInfo) {
 		"ivs": [],
 		"nature": pokeInfo.find(".nature").val(),
 		"ability": pokeInfo.find(".ability").val(),
-		"isAbilityActivated": pokeInfo.find(".isActivated").prop("checked"),
+		"isAbilityActivated": pokeInfo.find(".isActivated").prop("indeterminate") ? "indeterminate" : pokeInfo.find(".isActivated").prop("checked"),
 		"item": pokeInfo.find(".item").val(),
 		"status": pokeInfo.find(".status").val(),
 		"toxicCounter": pokeInfo.find(".status").val() === "Badly Poisoned" ? ~~pokeInfo.find(".toxic-counter").val() : 0,

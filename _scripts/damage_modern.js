@@ -274,9 +274,9 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	if (defender.curAbility === "Wonder Guard" && typeEffectiveness <= 1 && move.name !== "Struggle" ||
 		moveType === "Grass" && defender.curAbility === "Sap Sipper" ||
-		moveType === "Fire" && ["Flash Fire", "Flash Fire (activated)", "Well-Baked Body"].indexOf(defender.curAbility) !== -1 ||
-		moveType === "Water" && ["Dry Skin", "Storm Drain", "Water Absorb"].indexOf(defender.curAbility) !== -1 ||
-		moveType === "Electric" && ["Lightning Rod", "Lightningrod", "Motor Drive", "Volt Absorb"].indexOf(defender.curAbility) !== -1 ||
+		moveType === "Fire" && ["Flash Fire", "Well-Baked Body"].includes(defender.curAbility) ||
+		moveType === "Water" && ["Dry Skin", "Storm Drain", "Water Absorb"].includes(defender.curAbility) ||
+		moveType === "Electric" && ["Lightning Rod", "Lightningrod", "Motor Drive", "Volt Absorb"].includes(defender.curAbility) ||
 		moveType === "Ground" && move.name !== "Thousand Arrows" && defender.curAbility === "Levitate" && !defenderGrounded ||
 		moveType === "Ground" && defender.curAbility === "Earth Eater" ||
 		move.isBullet && defender.curAbility === "Bulletproof" ||
@@ -622,6 +622,18 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		isAuraActive = false; // Done this way so that a Mold Breaker attacker still receives an Aura boost against an Aura Break defender
 	}
 
+	if (attacker.curAbility === "Rivalry" && attacker.isAbilityActivated) {
+		if (attacker.isAbilityActivated === true) {
+			bpMods.push(0x1400);
+			description.attackerAbility = attacker.curAbility + " (increasing)";
+		} else if (attacker.isAbilityActivated === "indeterminate") {
+			bpMods.push(0x0C00);
+			description.attackerAbility = attacker.curAbility + " (decreasing)";
+		} else {
+			console.log("attacker.isAbilityActivated in a bad state for Rivalry: " + description.attackerAbility);
+		}
+	}
+
 	if ((attacker.curAbility === "Reckless" && (typeof move.hasRecoil === "number" || move.hasRecoil === "crash")) ||
 		attacker.curAbility === "Iron Fist" && move.isPunch ||
 		gen >= 7 && !move.isZ && ateizeBoost) {
@@ -638,7 +650,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.isPowerSpot = true;
 	}
 	if (attacker.curAbility === "Sheer Force" && move.hasSecondaryEffect ||
-		attacker.curAbility === "Analytic" || // always apply analytic
+		attacker.curAbility === "Analytic" && attacker.isAbilityActivated ||
 		attacker.curAbility === "Tough Claws" && makesContact ||
 		gen == 6 && ateizeBoost ||
 		attacker.curAbility === "Punk Rock" && move.isSound) {
@@ -862,10 +874,10 @@ function calcAtk(attacker, defender, move, field, description) {
 		attacker.curAbility === "Sharpness" && move.isSlicing) {
 		atMods.push(0x1800);
 		description.attackerAbility = attacker.curAbility;
-	} else if (attacker.curAbility === "Flash Fire (activated)" && moveType === "Fire" ||
-		(moveCategory === "Special" && (attacker.ability === "Plus (active)" || attacker.ability === "Minus (active)"))) {
+	} else if (attacker.curAbility === "Flash Fire" && attacker.isAbilityActivated && moveType === "Fire" ||
+		(moveCategory === "Special" && (attacker.ability === "Plus" || attacker.ability === "Minus") && attacker.isAbilityActivated)) {
 		atMods.push(0x1800);
-		description.attackerAbility = attacker.ability.substring(0, attacker.ability.indexOf(" ("));
+		description.attackerAbility = attacker.ability;
 	} else if (attacker.curAbility === "Water Bubble" && moveType === "Water" ||
 		(attacker.curAbility === "Huge Power" || attacker.curAbility === "Pure Power") && moveCategory === "Physical") {
 		atMods.push(0x2000);
@@ -1441,16 +1453,6 @@ function checkKlutz(pokemon) {
 	}
 }
 
-function checkDownload(source, target) {
-	if (source.curAbility === "Download") {
-		if (target.stats[SD] <= target.stats[DF]) {
-			source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
-		} else {
-			source.boosts[AT] = Math.min(6, source.boosts[AT] + 1);
-		}
-	}
-}
-
 function checkSeeds(pokemon, terrain) {
 	let ability = pokemon.curAbility;
 	if ((pokemon.item === "Psychic Seed" && terrain === "Psychic") || (pokemon.item === "Misty Seed" && terrain === "Misty")) {
@@ -1470,14 +1472,6 @@ function checkSeedsHonk(pokemon, terrain) {
 		(pokemon.item === "Grassy Seed" && (terrain === "Grassy" || ability === "Grassy Surge"))) {
 		pokemon.boosts[DF] = ability === "Simple" ? Math.min(6, pokemon.boosts[DF] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[DF] - 1) : Math.min(6, pokemon.boosts[DF] + 1));
 	}
-}
-
-function checkEmbodyAspect(pokemon) {
-	if (isNeutralizingGas || !(pokemon.ability === "Embody Aspect" && pokemon.name.startsWith("Ogerpon") && pokemon.isTerastal)) {
-		return;
-	}
-	let boostedStat = pokemon.name === "Ogerpon-Wellspring" ? SD : pokemon.name === "Ogerpon-Hearthflame" ? AT : pokemon.name === "Ogerpon-Cornerstone" ? DF : SP;
-	pokemon.boosts[boostedStat] = Math.min(6, pokemon.boosts[boostedStat] + 1);
 }
 
 function isShellSideArmPhysical(attacker, defender, move) {
@@ -1526,20 +1520,39 @@ function checkAngerShell(pokemon) {
 	}
 }
 
+function checkIntimidate(source, target) {
+	// this function is exclusively used by the mass calc now. The AI sets should always apply Intimidate in the mass calc if possible.
+	// verify that the user's Pokemon has Intimidate activated to apply it.
+	if (source.curAbility !== "Intimidate" || !source.isAbilityActivated) {
+		return;
+	}
+	resolveIntimidate(target.curAbility, target.item,
+		(pokemonTarget, stat, stageChange) => changeStatByStage(pokemonTarget === "target" ? target : source, stat, stageChange)
+	);
+}
+
+function checkEmbodyAspect(pokemon) {
+	if (isNeutralizingGas || !(pokemon.curAbility === "Embody Aspect" && pokemon.name.startsWith("Ogerpon") && pokemon.isTerastal)) {
+		return;
+	}
+	let boostedStat = pokemon.name === "Ogerpon-Wellspring" ? SD : pokemon.name === "Ogerpon-Hearthflame" ? AT : pokemon.name === "Ogerpon-Cornerstone" ? DF : SP;
+	pokemon.boosts[boostedStat] = Math.min(6, pokemon.boosts[boostedStat] + 1);
+}
+
+function checkDownload(source, target) {
+	if (isNeutralizingGas || source.curAbility !== "Download" || !source.isAbilityActivated) {
+		return;
+	}
+	resolveDownload(source.curAbility, target.stats[DF], target.stats[SD],
+		(unused, stat, stageChange) => changeStatByStage(source, stat, stageChange)
+	);
+}
+
 function changeStatByStage(pokemon, stat, stageChange, applyBlockingItem = true) {
 	if (stageChange < 0 && applyBlockingItem && ["Clear Amulet", "White Herb"].includes(pokemon.item)) {
 		return;
 	}
 	pokemon.boosts[stat] = Math.max(-6, Math.min(6, pokemon.boosts[stat] + stageChange));
-}
-
-function checkIntimidate(source, target) {
-	// this function is exclusively used by the mass calc now. The AI sets should always apply Intimidate in the mass calc if possible.
-	// verify that the user's Pokemon has Intimidate activated to apply it.
-	if (source.curAbility !== "Intimidate" || (source.hasOwnProperty("baseMoveNames") && !source.isAbilityActivated)) {
-		return;
-	}
-	resolveIntimidate(target.curAbility, target.item, (pokemonTarget, stat, stageChange) => changeStatByStage(pokemonTarget === "target" ? target : source, stat, stageChange));
 }
 
 function resolveIntimidate(targetAbility, targetItem, changeStat) {
@@ -1600,6 +1613,13 @@ function resolveEmbodyAspect(ability, isTerastal, pokeName, changeStat) {
 	}
 	let stat = pokeName === "Ogerpon-Wellspring" ? SD : pokeName === "Ogerpon-Hearthflame" ? AT : pokeName === "Ogerpon-Cornerstone" ? DF : SP;
 	changeStat("source", stat, 1);
+}
+
+function resolveDownload(ability, targetDF, targetSD, changeStat) {
+	if (ability !== "Download") {
+		return;
+	}
+	changeStat("source", targetDF < targetSD ? AT : SA, 1);
 }
 
 function checkMinimize(p1, p2) {

@@ -9,9 +9,10 @@ $("#p1 .status").bind("keyup change", function () {
 
 $("#p2 .ability").bind("change", function () {
 	let ability = $(this).val();
+	let isActivatedObj = $(this).siblings(".isActivated");
 	autoSetWeatherTerrain(curAbilities[1], ability, curAbilities[0]);
 	if ($(this).siblings(".isActivated").prop("checked")) {
-		applyIntimidate(ability, curAbilities[1], "R");
+		applyActivatedStatAbilities(curAbilities[1], "", 2);
 	}
 	applyStatAbilities(curAbilities[1], ability, 2);
 	curAbilities[1] = ability;
@@ -53,7 +54,13 @@ $("#autoivsR").change(function () {
 
 $("#p2 .isActivated").bind("change", function () {
 	let ability = $(this).siblings(".ability").val();
-	applyIntimidate(ability, "", "R");
+	if (ability === "Rivalry") {
+		rivalryStateTransitions($(this), 2);
+	}
+	applyActivatedStatAbilities("", ability, 2);
+	if (ability in checkboxAbilities) {
+		calculate();
+	}
 });
 
 function autoSetCrits(pokeInfo, i) {
