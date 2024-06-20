@@ -877,12 +877,12 @@ $(".forme").change(function () {
 	var abilityList = altForme.abilities;
 	prependSpeciesAbilities(abilityList, container.parent().parent().prop("id"), container.find(".ability"));
 
-	if (abilityList && abilityList.length == 1) {
+	if (setName !== "Blank Set" && pokemonName && abilities.includes(setdexAll[pokemonName][setName].ability)) {
+		container.find(".ability").val(setdexAll[pokemonName][setName].ability);
+	} else if (abilityList && abilityList.length == 1) {
 		container.find(".ability").val(abilityList[0]);
 	} else if (abilities.includes(altForme.ab)) {
 		container.find(".ability").val(altForme.ab);
-	} else if (setName !== "Blank Set" && abilities.includes(setdexAll[pokemonName][setName].ability)) {
-		container.find(".ability").val(setdexAll[pokemonName][setName].ability);
 	} else {
 		container.find(".ability").val("");
 	}
