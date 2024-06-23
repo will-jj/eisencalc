@@ -170,22 +170,21 @@ function getDamageResultADV(attacker, defender, move, field) {
 	if (defender.ability === "Thick Fat" && (moveType === "Fire" || moveType === "Ice")) {
 		at = Math.floor(at / 2);
 		description.defenderAbility = defender.ability;
-	} else if (isPhysical && defender.ability === "Marvel Scale" && defender.status !== "Healthy") {
+	} else if (isPhysical && defender.ability === "Marvel Scale" && (defender.status !== "Healthy" || defender.isAbilityActivated)) {
 		df = Math.floor(df * 1.5);
 		description.defenderAbility = defender.ability;
 	}
 
-	if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy"))) {
+	if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && (attacker.status !== "Healthy" || attacker.isAbilityActivated)))) {
 		at = Math.floor(at * 1.5);
 		description.attackerAbility = attacker.ability;
 	} else if (!isPhysical && (attacker.ability === "Plus" || attacker.ability === "Minus") && attacker.isAbilityActivated) {
 		at = Math.floor(at * 1.5);
 		description.attackerAbility = attacker.ability;
-	} else if (attacker.curHP <= attacker.maxHP / 3 &&
-            ((attacker.ability === "Overgrow" && moveType === "Grass") ||
-            (attacker.ability === "Blaze" && moveType === "Fire") ||
-            (attacker.ability === "Torrent" && moveType === "Water") ||
-            (attacker.ability === "Swarm" && moveType === "Bug"))) {
+	} else if (((attacker.curAbility === "Overgrow" && moveType === "Grass" ||
+        attacker.curAbility === "Blaze" && moveType === "Fire" ||
+        attacker.curAbility === "Torrent" && moveType === "Water" ||
+        attacker.curAbility === "Swarm" && moveType === "Bug") && (attacker.curHP <= attacker.maxHP / 3 || attacker.isAbilityActivated))) {
 		basePower = Math.floor(basePower * 1.5);
 		description.attackerAbility = attacker.ability;
 	}

@@ -245,15 +245,14 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	}
 
 	if ((attacker.ability === "Reckless" && move.hasRecoil) ||
-            (attacker.ability === "Iron Fist" && move.isPunch)) {
+        (attacker.ability === "Iron Fist" && move.isPunch)) {
 		basePower = Math.floor(basePower * 1.2);
 		description.attackerAbility = attacker.ability;
-	} else if ((attacker.curHP <= attacker.maxHP / 3 &&
-            ((attacker.ability === "Overgrow" && moveType === "Grass") ||
-            (attacker.ability === "Blaze" && moveType === "Fire") ||
-            (attacker.ability === "Torrent" && moveType === "Water") ||
-            (attacker.ability === "Swarm" && moveType === "Bug"))) ||
-            (attacker.ability === "Technician" && basePower <= 60 && move.name !== "Struggle")) {
+	} else if (((attacker.curAbility === "Overgrow" && moveType === "Grass" ||
+        attacker.curAbility === "Blaze" && moveType === "Fire" ||
+        attacker.curAbility === "Torrent" && moveType === "Water" ||
+        attacker.curAbility === "Swarm" && moveType === "Bug") && (attacker.curHP <= attacker.maxHP / 3 || attacker.isAbilityActivated)) ||
+        attacker.ability === "Technician" && basePower <= 60 && move.name !== "Struggle") {
 		basePower = Math.floor(basePower * 1.5);
 		description.attackerAbility = attacker.ability;
 	}
@@ -298,7 +297,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		attack = Math.floor(attack * 1.5);
 		description.attackerAbility = attacker.ability;
 		description.weather = field.weather;
-	} else if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy"))) {
+	} else if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && (attacker.status !== "Healthy" || attacker.isAbilityActivated)))) {
 		attack = Math.floor(attack * 1.5);
 		description.attackerAbility = attacker.ability;
 	} else if (!isPhysical && (attacker.ability === "Plus" || attacker.ability === "Minus") && attacker.isAbilityActivated) {
@@ -341,7 +340,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.defenseBoost = defenseBoost;
 	}
 
-	if (defender.curAbility === "Marvel Scale" && defender.status !== "Healthy" && isPhysical) {
+	if (defender.curAbility === "Marvel Scale" && (defender.status !== "Healthy" || defender.isAbilityActivated) && isPhysical) {
 		defense = Math.floor(defense * 1.5);
 		description.defenderAbility = defender.curAbility;
 	} else if (defender.curAbility === "Flower Gift" && field.weather === "Sun" && !isPhysical) {

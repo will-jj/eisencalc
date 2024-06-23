@@ -475,7 +475,16 @@ var checkboxAbilities = {
 	"Rivalry": { ap: false, mass: false },
 	"Flash Fire": { ap: false, mass: false },
 	"Plus": { ap: false, mass: false },
-	"Minus": { ap: false, mass: false }
+	"Minus": { ap: false, mass: false },
+	"Electromorphosis": { ap: false, mass: false },
+	"Wind Power": { ap: false, mass: false },
+	"Marvel Scale": { ap: false, mass: false },
+	"Guts": { ap: false, mass: false },
+	"Quick Feet": { ap: false, mass: false },
+	"Overgrow": { ap: false, mass: false },
+	"Blaze": { ap: false, mass: false },
+	"Torrent": { ap: false, mass: false },
+	"Swarm": { ap: false, mass: false }
 };
 
 // Based on input ability, show or hide the activated checkbox. Also use checkboxAbilities to initialize the checkbox state
@@ -718,10 +727,11 @@ $(".set-selector").bind("change", function () {
 	var abilityObj = pokeObj.find(".ability");
 	var abilityList = pokemon.abilities;
 	prependSpeciesAbilities(abilityList, pokeObjID, abilityObj);
-	// the following works as a way to change curAbilities[] without triggering ability.change()
-	// for the weather/terrain logic to work properly, leave those abilities in curAbilities[]
 	let pokeIndex = pokeObjID === "p1" ? 0 : 1;
-	if (!autoWeatherAbilities(curAbilities[pokeIndex]) && !autoTerrainAbilities(curAbilities[pokeIndex])) {
+	let oldAbility = curAbilities[pokeIndex];
+	// the following works as a way to change curAbilities[] without triggering ability.change()
+	// for the weather/terrain logic to work properly, leave those abilities in curAbilities[]. same goes for undoing old Intimidate
+	if (!autoWeatherAbilities(oldAbility) && !autoTerrainAbilities(oldAbility) && oldAbility !== "Intimidate") {
 		curAbilities[pokeIndex] = "";
 	}
 	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
@@ -877,12 +887,13 @@ $(".forme").change(function () {
 	var abilityList = altForme.abilities;
 	prependSpeciesAbilities(abilityList, container.parent().parent().prop("id"), container.find(".ability"));
 
-	if (abilityList && abilityList.length == 1) {
+	if (pokemonName && setdexAll && setdexAll[pokemonName] && setdexAll[pokemonName][setName] &&
+		setName !== "Blank Set" && abilities.includes(setdexAll[pokemonName][setName].ability)) {
+		container.find(".ability").val(setdexAll[pokemonName][setName].ability);
+	} else if (abilityList && abilityList.length == 1) {
 		container.find(".ability").val(abilityList[0]);
 	} else if (abilities.includes(altForme.ab)) {
 		container.find(".ability").val(altForme.ab);
-	} else if (setName !== "Blank Set" && abilities.includes(setdexAll[pokemonName][setName].ability)) {
-		container.find(".ability").val(setdexAll[pokemonName][setName].ability);
 	} else {
 		container.find(".ability").val("");
 	}

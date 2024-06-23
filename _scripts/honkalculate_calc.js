@@ -92,7 +92,6 @@ function MassPokemon(speciesName, setName) {
 		"ability": set.ability && typeof set.ability !== "undefined" ? set.ability :
 		(pokemon.ab && typeof pokemon.ab !== "undefined" ? pokemon.ab :
 		(pokemon.abilities && pokemon.abilities.length == 1 ? pokemon.abilities[0] : "")),
-		"isAbilityActivated": "MassPokemon",
 		"item": set.item && typeof set.item !== "undefined" &&
 		(set.item === "Eviolite" || !(set.item.endsWith("ite") && set.item.endsWith("ite X") && set.item.endsWith("ite Y"))) ? set.item : "",
 		"status": "Healthy",
@@ -160,6 +159,9 @@ function MassPokemon(speciesName, setName) {
 			}));
 		}
 	}
+	// isAbilityActivated
+	// use the same default state as the user's Pokemon's checkbox
+	massPoke.isAbilityActivated = checkboxAbilities[massPoke.ability] ? checkboxAbilities[massPoke.ability].mass : false;
 
 	return massPoke;
 }
@@ -443,11 +445,7 @@ function setLevel(lvl) {
 }
 
 $(".set-selector").change(function (e) {
-	var genWasChanged;
 	var format = getSelectedTier();
-	if (genWasChanged) {
-		genWasChanged = false;
-	}
 });
 
 function calcDTDimensions() {
@@ -463,6 +461,10 @@ function calcDTDimensions() {
 function getBottomOffset(obj) {
 	return obj.offset().top + obj.outerHeight();
 }
+
+$(".isActivated").bind("change", function () {
+	getFinalSpeedHonk();
+});
 
 function getFinalSpeedHonk() {
 	var speed = getModifiedStat($(".sp .total").text(), $(".sp .boost").val());
@@ -493,7 +495,7 @@ function getFinalSpeedHonk() {
 		ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
 		ability === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
-	} else if (ability === "Quick Feet" && $(".status").val() !== "Healthy") {
+	} else if (ability === "Quick Feet" && ($(".status").val() !== "Healthy" || $(".isActivated").prop("checked"))) {
 		speed = Math.floor(speed * 1.5);
 	}
 	$(".totalMod").text(speed);

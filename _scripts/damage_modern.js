@@ -764,10 +764,10 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.isHelpingHand = true;
 	}
 
-	if (field.isCharge && moveType === "Electric") {
+	if (moveType === "Electric" && (field.isCharge || (["Electromorphosis", "Wind Power"].includes(attacker.curAbility) && attacker.isAbilityActivated))) {
 		bpMods.push(0x2000);
-		if (["Electromorphosis", "Wind Power"].includes(attacker.ability)) {
-			description.attackerAbility = attacker.ability;
+		if (["Electromorphosis", "Wind Power"].includes(attacker.curAbility)) {
+			description.attackerAbility = attacker.curAbility;
 		} else {
 			description.isCharge = true;
 		}
@@ -861,11 +861,11 @@ function calcAtk(attacker, defender, move, field, description) {
 		atMods.push(0x1800);
 		description.attackerAbility = attacker.curAbility;
 		description.weather = field.weather;
-	} else if (attacker.curAbility === "Guts" && attacker.status !== "Healthy" && moveCategory === "Physical" ||
-		attacker.curAbility === "Overgrow" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Grass" ||
-		attacker.curAbility === "Blaze" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Fire" ||
-		attacker.curAbility === "Torrent" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Water" ||
-		attacker.curAbility === "Swarm" && attacker.curHP <= attacker.maxHP / 3 && moveType === "Bug" ||
+	} else if (attacker.curAbility === "Guts" && moveCategory === "Physical" && (attacker.status !== "Healthy" || attacker.isAbilityActivated) ||
+		((attacker.curAbility === "Overgrow" && moveType === "Grass" ||
+		attacker.curAbility === "Blaze" && moveType === "Fire" ||
+		attacker.curAbility === "Torrent" && moveType === "Water" ||
+		attacker.curAbility === "Swarm" && moveType === "Bug") && (attacker.curHP <= attacker.maxHP / 3 || attacker.isAbilityActivated)) ||
 		attacker.curAbility === "Steelworker" && moveType === "Steel" ||
 		attacker.curAbility === "Gorilla Tactics" && moveCategory === "Physical" && !attacker.isDynamax ||
 		attacker.curAbility === "Transistor" && gen <= 8 && moveType === "Electric" ||
@@ -948,7 +948,7 @@ function calcDef(attacker, defender, move, field, description) {
 		description.defenderAbility = defender.curAbility;
 		description.weather = field.weather;
 	}
-	if (defender.curAbility === "Marvel Scale" && defender.status !== "Healthy" && hitsPhysical ||
+	if (defender.curAbility === "Marvel Scale" && (defender.status !== "Healthy" || defender.isAbilityActivated) && hitsPhysical ||
 		defender.curAbility === "Grass Pelt" && field.terrain === "Grassy" && hitsPhysical) {
 		dfMods.push(0x1800);
 		description.defenderAbility = defender.curAbility;
@@ -1366,7 +1366,7 @@ function getFinalSpeed(pokemon, weather, terrain) {
 		pokemon.curAbility === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
 	} else if (checkProtoQuarkHighest(pokemon, weather, terrain) === SP ||
-		pokemon.curAbility === "Quick Feet" && pokemon.status !== "Healthy") {
+		pokemon.curAbility === "Quick Feet" && (pokemon.status !== "Healthy" || pokemon.isAbilityActivated)) {
 		speed = Math.floor(speed * 1.5);
 	}
 	return speed;
