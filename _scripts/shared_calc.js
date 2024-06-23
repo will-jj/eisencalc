@@ -718,10 +718,11 @@ $(".set-selector").bind("change", function () {
 	var abilityObj = pokeObj.find(".ability");
 	var abilityList = pokemon.abilities;
 	prependSpeciesAbilities(abilityList, pokeObjID, abilityObj);
-	// the following works as a way to change curAbilities[] without triggering ability.change()
-	// for the weather/terrain logic to work properly, leave those abilities in curAbilities[]
 	let pokeIndex = pokeObjID === "p1" ? 0 : 1;
-	if (!autoWeatherAbilities(curAbilities[pokeIndex]) && !autoTerrainAbilities(curAbilities[pokeIndex])) {
+	let oldAbility = curAbilities[pokeIndex];
+	// the following works as a way to change curAbilities[] without triggering ability.change()
+	// for the weather/terrain logic to work properly, leave those abilities in curAbilities[]. same goes for undoing old Intimidate
+	if (!autoWeatherAbilities(oldAbility) && !autoTerrainAbilities(oldAbility) && oldAbility !== "Intimidate") {
 		curAbilities[pokeIndex] = "";
 	}
 	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
