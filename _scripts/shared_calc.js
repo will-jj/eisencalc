@@ -887,7 +887,8 @@ $(".forme").change(function () {
 	var abilityList = altForme.abilities;
 	prependSpeciesAbilities(abilityList, container.parent().parent().prop("id"), container.find(".ability"));
 
-	if (setName !== "Blank Set" && pokemonName && abilities.includes(setdexAll[pokemonName][setName].ability)) {
+	if (pokemonName && setdexAll && setdexAll[pokemonName] && setdexAll[pokemonName][setName] &&
+		setName !== "Blank Set" && abilities.includes(setdexAll[pokemonName][setName].ability)) {
 		container.find(".ability").val(setdexAll[pokemonName][setName].ability);
 	} else if (abilityList && abilityList.length == 1) {
 		container.find(".ability").val(abilityList[0]);
