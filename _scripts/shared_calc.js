@@ -475,7 +475,16 @@ var checkboxAbilities = {
 	"Rivalry": { ap: false, mass: false },
 	"Flash Fire": { ap: false, mass: false },
 	"Plus": { ap: false, mass: false },
-	"Minus": { ap: false, mass: false }
+	"Minus": { ap: false, mass: false },
+	"Electromorphosis": { ap: false, mass: false },
+	"Wind Power": { ap: false, mass: false },
+	"Marvel Scale": { ap: false, mass: false },
+	"Guts": { ap: false, mass: false },
+	"Quick Feet": { ap: false, mass: false },
+	"Overgrow": { ap: false, mass: false },
+	"Blaze": { ap: false, mass: false },
+	"Torrent": { ap: false, mass: false },
+	"Swarm": { ap: false, mass: false }
 };
 
 // Based on input ability, show or hide the activated checkbox. Also use checkboxAbilities to initialize the checkbox state

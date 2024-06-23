@@ -443,11 +443,7 @@ function setLevel(lvl) {
 }
 
 $(".set-selector").change(function (e) {
-	var genWasChanged;
 	var format = getSelectedTier();
-	if (genWasChanged) {
-		genWasChanged = false;
-	}
 });
 
 function calcDTDimensions() {
@@ -463,6 +459,10 @@ function calcDTDimensions() {
 function getBottomOffset(obj) {
 	return obj.offset().top + obj.outerHeight();
 }
+
+$(".isActivated").bind("change", function () {
+	getFinalSpeedHonk();
+});
 
 function getFinalSpeedHonk() {
 	var speed = getModifiedStat($(".sp .total").text(), $(".sp .boost").val());
@@ -493,7 +493,7 @@ function getFinalSpeedHonk() {
 		ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
 		ability === "Surge Surfer" && terrain === "Electric") {
 		speed *= 2;
-	} else if (ability === "Quick Feet" && $(".status").val() !== "Healthy") {
+	} else if (ability === "Quick Feet" && ($(".status").val() !== "Healthy" || $(".isActivated").prop("checked"))) {
 		speed = Math.floor(speed * 1.5);
 	}
 	$(".totalMod").text(speed);
