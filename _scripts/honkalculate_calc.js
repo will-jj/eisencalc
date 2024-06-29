@@ -69,6 +69,9 @@ $(".ability").bind("change", function () {
 	}
 });
 
+// empty calculate() so that shared_calc functions don't have to have a special exception in mass calc mode.
+function calculate() {}
+
 function MassPokemon(speciesName, setName) {
 	let pokemon = pokedex[speciesName];
 	let set = setdex[speciesName][setName];

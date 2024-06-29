@@ -8,8 +8,6 @@ function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	checkKlutz(p2);
 	checkOmniboosts(p1, p2);
 	checkMinimize(p1, p2);
-	checkSeeds(p1, field.getTerrain());
-	checkSeeds(p2, field.getTerrain());
 	checkAngerShell(p1);
 	checkAngerShell(p2);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
@@ -107,6 +105,8 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	moveType = move.type;
+	attackerGrounded = isGrounded(attacker, field);
+	defenderGrounded = isGrounded(defender, field);
 
 	switch (move.name) {
 	case "Weather Ball":
@@ -224,8 +224,6 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 	}
 
-	attackerGrounded = isGrounded(attacker, field);
-	defenderGrounded = isGrounded(defender, field);
 	moveCategory = move.category;
 	makesContact = move.makesContact;
 	if (isShellSideArmPhysical(attacker, defender, move)) {
@@ -510,7 +508,8 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.moveBP = basePower;
 		break;
 	case "Acrobatics":
-		basePower *= attacker.item === "Flying Gem" || attacker.item === "" ? 2 : 1;
+		let attackerEffectiveItem = getEffectiveItem(attacker, defender, field.terrain);
+		basePower *= attackerEffectiveItem === "Flying Gem" || attackerEffectiveItem === "" ? 2 : 1;
 		description.moveBP = basePower;
 		break;
 	case "Wake-Up Slap":
@@ -745,9 +744,9 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.weather = field.weather;
 	}
 
-	if (move.name === "Knock Off" && !(defender.item === "" ||
-		attacker.item === "Lustrous Globe" && attacker.name === "Palkia-O" ||
-		attacker.item === "Adamant Crystal" && attacker.name === "Dialga-O" ||
+	if (move.name === "Knock Off" && !(getEffectiveItem(defender, attacker, field.terrain) === "" ||
+		defender.item === "Lustrous Globe" && defender.name === "Palkia-O" ||
+		defender.item === "Adamant Crystal" && defender.name === "Dialga-O" ||
 		defender.item === "Griseous Orb" && (gen <= 8 || gen == 80) && defender.name === "Giratina-O" ||
 		defender.item === "Griseous Core" && defender.name === "Giratina-O" ||
 		defender.item.endsWith("Plate") && defender.name.startsWith("Arceus") ||
@@ -1379,6 +1378,15 @@ function isGrounded(pokemon, field) {
 	return !(pokemon.hasType("Flying") || pokemon.item === "Air Balloon" || pokemon.curAbility === "Levitate");
 }
 
+function getEffectiveItem(source, opponent, terrain) {
+	// Weak Pol
+	if (getSeedStat(source.item, terrain) ||
+		(source.item === "Adrenaline Orb" && opponent.curAbility === "Intimidate" && opponent.isAbilityActivated)) {
+		return "";
+	}
+	return source.item;
+}
+
 function hasPriority(move, attacker, field) {
 	return move.hasPriority ||
 		(attacker.curAbility === "Gale Wings" && moveType === "Flying") ||
@@ -1453,25 +1461,21 @@ function checkKlutz(pokemon) {
 	}
 }
 
-function checkSeeds(pokemon, terrain) {
-	let ability = pokemon.curAbility;
-	if ((pokemon.item === "Psychic Seed" && terrain === "Psychic") || (pokemon.item === "Misty Seed" && terrain === "Misty")) {
-		pokemon.boosts[SD] = ability === "Simple" ? Math.min(6, pokemon.boosts[SD] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[SD] - 1) : Math.min(6, pokemon.boosts[SD] + 1));
-	} else if ((pokemon.item === "Electric Seed" && terrain === "Electric") || (pokemon.item === "Grassy Seed" && terrain === "Grassy")) {
-		pokemon.boosts[DF] = ability === "Simple" ? Math.min(6, pokemon.boosts[DF] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[DF] - 1) : Math.min(6, pokemon.boosts[DF] + 1));
-	}
-}
-
 function checkSeedsHonk(pokemon, terrain) {
 	// A Seed can either come into the field that has the matching terrain, or its own Surge ability can proc its own Seed (Pincurchin-RS)
-	var ability = pokemon.curAbility;
-	if ((pokemon.item === "Psychic Seed" && (terrain === "Psychic" || ability === "Psychic Surge")) ||
-		(pokemon.item === "Misty Seed" && (terrain === "Misty" || ability === "Misty Surge"))) {
-		pokemon.boosts[SD] = ability === "Simple" ? Math.min(6, pokemon.boosts[SD] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[SD] - 1) : Math.min(6, pokemon.boosts[SD] + 1));
-	} else if ((pokemon.item === "Electric Seed" && (terrain === "Electric" || ability === "Electric Surge")) ||
-		(pokemon.item === "Grassy Seed" && (terrain === "Grassy" || ability === "Grassy Surge"))) {
-		pokemon.boosts[DF] = ability === "Simple" ? Math.min(6, pokemon.boosts[DF] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[DF] - 1) : Math.min(6, pokemon.boosts[DF] + 1));
+	let ability = pokemon.curAbility;
+	if (ability === "Psychic Surge") {
+		terrain = "Psychic";
+	} else if (ability === "Misty Surge") {
+		terrain = "Misty";
+	} else if (["Electric Surge", "Hadron Engine"].includes(ability)) {
+		terrain = "Electric";
+	} else if (ability === "Grassy Surge") {
+		terrain = "Grassy"
 	}
+	resolveSeeds(pokemon.item, terrain, pokemon.curAbility,
+		(unused, stat, stageChange) => changeStatByStage(pokemon, stat, stageChange)
+	);
 }
 
 function isShellSideArmPhysical(attacker, defender, move) {
@@ -1620,6 +1624,24 @@ function resolveDownload(ability, targetDF, targetSD, changeStat) {
 		return;
 	}
 	changeStat("source", targetDF < targetSD ? AT : SA, 1);
+}
+
+function getSeedStat(item, terrain) {
+	if ((item === "Psychic Seed" && terrain === "Psychic") || (item === "Misty Seed" && terrain === "Misty")) {
+		return SD;
+	} else if ((item === "Electric Seed" && terrain === "Electric") || (item === "Grassy Seed" && terrain === "Grassy")) {
+		return DF;
+	}
+	return "";
+}
+
+function resolveSeeds(item, terrain, ability, changeStat) {
+	let stat = getSeedStat(item, terrain);
+	if (!stat) {
+		return;
+	}
+	let stageChange = ability === "Simple" ? 2 : ability === "Contrary" ? -1 : 1;
+	changeStat("source", stat, stageChange);
 }
 
 function checkMinimize(p1, p2) {

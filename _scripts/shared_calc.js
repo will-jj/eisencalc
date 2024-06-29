@@ -353,6 +353,8 @@ function autoSetVicStar(ability, side) {
 // Whenever a pokemon changes ( $(".set-selector").bind("change"... ), the corresponding curAbilities entry is reset to empty string
 // However, it does NOT reset the ability for weather/terrain abilities so that weather/terrain logic works
 var curAbilities = ["", ""];
+var curTerrain = "";
+var curItems = ["", ""];
 var manuallySetWeather = "";
 var manuallySetTerrain = "";
 
@@ -362,7 +364,14 @@ $("input:radio[name='weather']").change(function () {
 
 $("input:radio[name='terrain']").change(function () {
 	manuallySetTerrain = $(this).val();
+	terrainChange(manuallySetTerrain);
 });
+
+function terrainChange(newTerrain) {
+	applySeeds(curItems[0], curItems[0], curTerrain, newTerrain, 1);
+	applySeeds(curItems[1], curItems[1], curTerrain, newTerrain, 2);
+	curTerrain = newTerrain;
+}
 
 function autoWeatherAbilities(ability) {
 	switch (ability) {
@@ -408,7 +417,10 @@ function autoTerrainAbilities(ability) {
 
 function autoSetWeatherTerrain(currentAbility, newAbility, opponentAbility) {
 	setNewFieldEffect("weather", currentAbility, newAbility, opponentAbility, manuallySetWeather, autoWeatherAbilities);
-	setNewFieldEffect("terrain", currentAbility, newAbility, opponentAbility, manuallySetTerrain, autoTerrainAbilities);
+	let newTerrain = setNewFieldEffect("terrain", currentAbility, newAbility, opponentAbility, manuallySetTerrain, autoTerrainAbilities);
+	if (currentAbility !== newAbility && curTerrain !== newTerrain && (curTerrain || newTerrain)) {
+		terrainChange(newTerrain);
+	}
 }
 
 function setNewFieldEffect(effectType, currentAbility, newAbility, opponentAbility, manuallySetEffect, effectAbilities) {
@@ -432,12 +444,22 @@ function setNewFieldEffect(effectType, currentAbility, newAbility, opponentAbili
 	}
 
 	$("input:radio[name='" + effectType + "'][value='" + newEffect + "']").prop("checked", true);
+	return newEffect;
 }
 
 $("#p1 .item").bind("keyup change", function () {
-	autosetStatus("#p1", $(this).val());
-	autoSetMultiHits($("#p1"));
+	itemChange($(this).val(), 1);
 });
+
+function itemChange(item, pokeNum) {
+	let pokeIndex = pokeNum - 1;
+	let pid = "#p" + pokeNum;
+
+	autosetStatus(pid, item);
+	autoSetMultiHits($(pid));
+	applySeeds(curItems[pokeIndex], item, curTerrain, curTerrain, pokeNum);
+	curItems[pokeIndex] = item;
+}
 
 var lastManualStatus = {"#p1": "Healthy", "#p2": "Healthy"};
 var lastAutoStatus = {"#p1": "Healthy", "#p2": "Healthy"};
@@ -606,6 +628,32 @@ function applyEmbodyAspect(oldAbility, newAbility, pokeNum) {
 	}
 }
 
+function applySeeds(oldItem, newItem, oldTerrain, newTerrain, pokeNum) {
+	if (oldItem === newItem && oldTerrain === newTerrain) {
+		return;
+	}
+	// old/newStat are used to check which set of items and terrain matched to determine how to apply the stageChange
+	let oldStat = getSeedStat(oldItem, oldTerrain);
+	let newStat = getSeedStat(newItem, newTerrain);
+	let resolvingItem;
+	let resolvingTerrain;
+	let undoEffect;
+	if (oldStat === newStat) {
+		return;
+	} if (oldStat) {
+		resolvingItem = oldItem;
+		resolvingTerrain = oldTerrain;
+		undoEffect = true;
+	} else if (newStat) {
+		resolvingItem = newItem;
+		resolvingTerrain = newTerrain;
+		undoEffect = false;
+	} else {
+		return;
+	}
+	resolveSeeds(resolvingItem, resolvingTerrain, $(".ability")[pokeNum - 1].value, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange));
+}
+
 function applyBoostChange(pokeNum, stat, stageChange) {
 	let statBoostObj = $("#p" + pokeNum + " ." + stat + " .boost");
 	statBoostObj.val(Math.max(-6, Math.min(6, parseInt(statBoostObj.val()) + stageChange)));
@@ -734,6 +782,7 @@ $(".set-selector").bind("change", function () {
 	if (!autoWeatherAbilities(oldAbility) && !autoTerrainAbilities(oldAbility) && oldAbility !== "Intimidate") {
 		curAbilities[pokeIndex] = "";
 	}
+	curItems[pokeIndex] = ""; // clear curItem so that the undo of a held seed is not applied to this new mon
 	if (pokemonName in setdexAll && setName in setdexAll[pokemonName]) {
 		var set = setdexAll[pokemonName][setName];
 		pokeObj.find(".level").val(set.level ? set.level : (localStorage.getItem("autolevelGen" + gen) ? parseInt(localStorage.getItem("autolevelGen" + gen)) : 50));
