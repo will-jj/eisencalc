@@ -25,8 +25,7 @@ $("#p2 .ability").bind("change", function () {
 });
 
 $("#p2 .item").bind("keyup change", function () {
-	autosetStatus("#p2", $(this).val());
-	autoSetMultiHits($("#p2"));
+	itemChange($(this).val(), 2);
 });
 
 $("#p2 .status").bind("keyup change", function () {

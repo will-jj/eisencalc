@@ -8,8 +8,6 @@ function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	checkKlutz(p2);
 	checkOmniboosts(p1, p2);
 	checkMinimize(p1, p2);
-	checkSeeds(p1, field.getTerrain());
-	checkSeeds(p2, field.getTerrain());
 	checkAngerShell(p1);
 	checkAngerShell(p2);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
@@ -1453,25 +1451,21 @@ function checkKlutz(pokemon) {
 	}
 }
 
-function checkSeeds(pokemon, terrain) {
-	let ability = pokemon.curAbility;
-	if ((pokemon.item === "Psychic Seed" && terrain === "Psychic") || (pokemon.item === "Misty Seed" && terrain === "Misty")) {
-		pokemon.boosts[SD] = ability === "Simple" ? Math.min(6, pokemon.boosts[SD] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[SD] - 1) : Math.min(6, pokemon.boosts[SD] + 1));
-	} else if ((pokemon.item === "Electric Seed" && terrain === "Electric") || (pokemon.item === "Grassy Seed" && terrain === "Grassy")) {
-		pokemon.boosts[DF] = ability === "Simple" ? Math.min(6, pokemon.boosts[DF] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[DF] - 1) : Math.min(6, pokemon.boosts[DF] + 1));
-	}
-}
-
 function checkSeedsHonk(pokemon, terrain) {
 	// A Seed can either come into the field that has the matching terrain, or its own Surge ability can proc its own Seed (Pincurchin-RS)
-	var ability = pokemon.curAbility;
-	if ((pokemon.item === "Psychic Seed" && (terrain === "Psychic" || ability === "Psychic Surge")) ||
-		(pokemon.item === "Misty Seed" && (terrain === "Misty" || ability === "Misty Surge"))) {
-		pokemon.boosts[SD] = ability === "Simple" ? Math.min(6, pokemon.boosts[SD] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[SD] - 1) : Math.min(6, pokemon.boosts[SD] + 1));
-	} else if ((pokemon.item === "Electric Seed" && (terrain === "Electric" || ability === "Electric Surge")) ||
-		(pokemon.item === "Grassy Seed" && (terrain === "Grassy" || ability === "Grassy Surge"))) {
-		pokemon.boosts[DF] = ability === "Simple" ? Math.min(6, pokemon.boosts[DF] + 2) : (ability === "Contrary" ? Math.max(-6, pokemon.boosts[DF] - 1) : Math.min(6, pokemon.boosts[DF] + 1));
+	let ability = pokemon.curAbility;
+	if (ability === "Psychic Surge") {
+		terrain = "Psychic";
+	} else if (ability === "Misty Surge") {
+		terrain = "Misty";
+	} else if (["Electric Surge", "Hadron Engine"].includes(ability)) {
+		terrain = "Electric";
+	} else if (ability === "Grassy Surge") {
+		terrain = "Grassy"
 	}
+	resolveSeeds(pokemon.item, terrain, pokemon.curAbility,
+		(unused, stat, stageChange) => changeStatByStage(pokemon, stat, stageChange)
+	);
 }
 
 function isShellSideArmPhysical(attacker, defender, move) {
@@ -1620,6 +1614,24 @@ function resolveDownload(ability, targetDF, targetSD, changeStat) {
 		return;
 	}
 	changeStat("source", targetDF < targetSD ? AT : SA, 1);
+}
+
+function getSeedStat(item, terrain) {
+	if ((item === "Psychic Seed" && terrain === "Psychic") || (item === "Misty Seed" && terrain === "Misty")) {
+		return SD;
+	} else if ((item === "Electric Seed" && terrain === "Electric") || (item === "Grassy Seed" && terrain === "Grassy")) {
+		return DF;
+	}
+	return "";
+}
+
+function resolveSeeds(item, terrain, ability, changeStat) {
+	let stat = getSeedStat(item, terrain);
+	if (!stat) {
+		return;
+	}
+	let stageChange = ability === "Simple" ? 2 : ability === "Contrary" ? -1 : 1;
+	changeStat("source", stat, stageChange);
 }
 
 function checkMinimize(p1, p2) {
