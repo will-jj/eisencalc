@@ -105,6 +105,8 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	moveType = move.type;
+	attackerGrounded = isGrounded(attacker, field);
+	defenderGrounded = isGrounded(defender, field);
 
 	switch (move.name) {
 	case "Weather Ball":
@@ -222,8 +224,6 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 	}
 
-	attackerGrounded = isGrounded(attacker, field);
-	defenderGrounded = isGrounded(defender, field);
 	moveCategory = move.category;
 	makesContact = move.makesContact;
 	if (isShellSideArmPhysical(attacker, defender, move)) {
@@ -508,7 +508,8 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.moveBP = basePower;
 		break;
 	case "Acrobatics":
-		basePower *= attacker.item === "Flying Gem" || attacker.item === "" ? 2 : 1;
+		let attackerEffectiveItem = getEffectiveItem(attacker, defender, field.terrain);
+		basePower *= attackerEffectiveItem === "Flying Gem" || attackerEffectiveItem === "" ? 2 : 1;
 		description.moveBP = basePower;
 		break;
 	case "Wake-Up Slap":
@@ -743,9 +744,9 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.weather = field.weather;
 	}
 
-	if (move.name === "Knock Off" && !(defender.item === "" ||
-		attacker.item === "Lustrous Globe" && attacker.name === "Palkia-O" ||
-		attacker.item === "Adamant Crystal" && attacker.name === "Dialga-O" ||
+	if (move.name === "Knock Off" && !(getEffectiveItem(defender, attacker, field.terrain) === "" ||
+		defender.item === "Lustrous Globe" && defender.name === "Palkia-O" ||
+		defender.item === "Adamant Crystal" && defender.name === "Dialga-O" ||
 		defender.item === "Griseous Orb" && (gen <= 8 || gen == 80) && defender.name === "Giratina-O" ||
 		defender.item === "Griseous Core" && defender.name === "Giratina-O" ||
 		defender.item.endsWith("Plate") && defender.name.startsWith("Arceus") ||
@@ -1375,6 +1376,15 @@ function isGrounded(pokemon, field) {
 		return true;
 	}
 	return !(pokemon.hasType("Flying") || pokemon.item === "Air Balloon" || pokemon.curAbility === "Levitate");
+}
+
+function getEffectiveItem(source, opponent, terrain) {
+	// Weak Pol
+	if (getSeedStat(source.item, terrain) ||
+		(source.item === "Adrenaline Orb" && opponent.curAbility === "Intimidate" && opponent.isAbilityActivated)) {
+		return "";
+	}
+	return source.item;
 }
 
 function hasPriority(move, attacker, field) {
