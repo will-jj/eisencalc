@@ -286,32 +286,44 @@ $(".ability").bind("keyup change", function () {
 });
 
 $("#p1 .ability").bind("change", function () {
-	let ability = $(this).val();
-	let isActivatedObj = $(this).siblings(".isActivated");
-	autoSetWeatherTerrain(curAbilities[0], ability, curAbilities[1]);
-	if (isActivatedObj.prop("checked")) {
-		// so long as all applyActivatedStatAbilities() abilities default to an unchecked box, this will work
-		// undo any activated stat abilities
-		applyActivatedStatAbilities(curAbilities[0], "", 1);
-	}
-	applyStatAbilities(curAbilities[0], ability, 1);
-	curAbilities[0] = ability;
-	autoSetVicStar(ability, "L");
-	autoSetSteely(ability, "L");
-	autoSetRuin(ability, "L");
-	showActivated(ability, 1);
+	abilityChange($(this), 1);
 });
 
-$("#p1 .isActivated").bind("change", function () {
-	let ability = $(this).siblings(".ability").val();
-	if (ability === "Rivalry") {
-		rivalryStateTransitions($(this), 1);
+function abilityChange(abilityObj, pokeNum) {
+	let pokeIndex = pokeNum - 1;
+	let side = pokeNum === 1 ? "L" : "R";
+	let opponentIndex = pokeNum === 1 ? 1 : 0;
+
+	let ability = abilityObj.val();
+	autoSetWeatherTerrain(curAbilities[pokeIndex], ability, curAbilities[opponentIndex]);
+	if (abilityObj.siblings(".isActivated").prop("checked")) {
+		// so long as all applyActivatedStatAbilities() abilities default to an unchecked box, this will work
+		// undo any activated stat abilities
+		applyActivatedStatAbilities(curAbilities[pokeIndex], "", pokeNum);
 	}
-	applyActivatedStatAbilities("", ability, 1); // passing in "" as oldAbility will allow the subfunctions to always run
-	if (ability in checkboxAbilities && $('#p2').length) { // check whether this is mass calc mode
+	applyStatAbilities(curAbilities[pokeIndex], ability, pokeNum);
+	curAbilities[pokeIndex] = ability;
+	autoSetVicStar(ability, side);
+	autoSetSteely(ability, side);
+	autoSetRuin(ability, side);
+	showActivated(ability, pokeNum);
+	checkNeutralizingGas();
+}
+
+$("#p1 .isActivated").bind("change", function () {
+	isActivatedChange($(this), 1);
+});
+
+function isActivatedChange(isActivatedObj, pokeNum) {
+	let ability = isActivatedObj.siblings(".ability").val();
+	if (ability === "Rivalry") {
+		rivalryStateTransitions(isActivatedObj, pokeNum);
+	}
+	applyActivatedStatAbilities("", ability, pokeNum); // passing in "" as oldAbility will allow the subfunctions to always run
+	if (ability in checkboxAbilities) {
 		calculate();
 	}
-});
+}
 
 var rivalryState = [0, 0]; // 0 = unchecked, 1 = checked, 2 = indeterminate
 function rivalryStateTransitions(checkboxObj, pokeNum) {
@@ -658,6 +670,17 @@ function applyBoostChange(pokeNum, stat, stageChange) {
 	let statBoostObj = $("#p" + pokeNum + " ." + stat + " .boost");
 	statBoostObj.val(Math.max(-6, Math.min(6, parseInt(statBoostObj.val()) + stageChange)));
 	calculate();
+}
+
+function checkNeutralizingGas() {
+	let fieldAbilities = $(".ability");
+	for (let i = 0; i < fieldAbilities.length; i++) {
+		if (fieldAbilities[i].value === "Neutralizing Gas") {
+			isNeutralizingGas = true;
+			return;
+		}
+	}
+	isNeutralizingGas = false;
 }
 
 function autoSetRuin(ability, side) {

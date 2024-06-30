@@ -1,27 +1,14 @@
 $("#p1 .ability").bind("keyup change", function () {
-	autoSetCrits($("#p1"), 1);
-	checkNeutralizingGas();
+	abilityAPCalcChange(1);
 });
 
 $("#p1 .status").bind("keyup change", function () {
-	autoSetCrits($("#p2"), 2);
+	statusAPCalcChange(1);
 });
 
 $("#p2 .ability").bind("change", function () {
-	let ability = $(this).val();
-	let isActivatedObj = $(this).siblings(".isActivated");
-	autoSetWeatherTerrain(curAbilities[1], ability, curAbilities[0]);
-	if ($(this).siblings(".isActivated").prop("checked")) {
-		applyActivatedStatAbilities(curAbilities[1], "", 2);
-	}
-	applyStatAbilities(curAbilities[1], ability, 2);
-	curAbilities[1] = ability;
-	autoSetVicStar(ability, "R");
-	autoSetSteely(ability, "R");
-	autoSetRuin(ability, "R");
-	showActivated(ability, 2);
-	autoSetCrits($("#p2"), 2);
-	checkNeutralizingGas();
+	abilityChange($(this), 2);
+	abilityAPCalcChange(2);
 });
 
 $("#p2 .item").bind("keyup change", function () {
@@ -29,7 +16,7 @@ $("#p2 .item").bind("keyup change", function () {
 });
 
 $("#p2 .status").bind("keyup change", function () {
-	autoSetCrits($("#p1"), 1);
+	statusAPCalcChange(2);
 });
 
 $("#maxR").change(function () {
@@ -52,28 +39,31 @@ $("#autoivsR").change(function () {
 });
 
 $("#p2 .isActivated").bind("change", function () {
-	let ability = $(this).siblings(".ability").val();
-	if (ability === "Rivalry") {
-		rivalryStateTransitions($(this), 2);
-	}
-	applyActivatedStatAbilities("", ability, 2);
-	if (ability in checkboxAbilities) {
-		calculate();
-	}
+	isActivatedChange($(this), 2);
 });
 
-function autoSetCrits(pokeInfo, i) {
-	let merciless = pokeInfo.find(".ability").val() === "Merciless" && $("#p" + (i === 1 ? "2" : "1")).find(".status").val().includes("Poisoned");
+function abilityAPCalcChange(pokeNum) {
+	autoSetCrits(pokeNum);
+}
+
+function statusAPCalcChange(pokeNum) {
+	let opponentPokeNum = pokeNum === 1 ? 2 : 1;
+
+	// since pokeNum mon's status is changing, check the autocrit status of the opponent, since it may have activated Merciless
+	autoSetCrits(opponentPokeNum);
+}
+
+function autoSetCrits(pokeNum) {
+	let pokeInfo = $("#p" + pokeNum);
+	let opponentIndex = pokeNum === 1 ? 1 : 0;
+
+	let merciless = pokeInfo.find(".ability").val() === "Merciless" && $(".status")[opponentIndex].value.includes("Poisoned");
 	for (let i = 1; i <= 4; i++) {
 		let moveInfo = pokeInfo.find(".move" + i);
 		let moveName = moveInfo.find("select.move-selector").val();
 		let move = moves[moveName] || moves["(No Move)"];
 		moveInfo.children(".move-crit").prop("checked", move.alwaysCrit || (merciless && move.category));
 	}
-}
-
-function checkNeutralizingGas() {
-	isNeutralizingGas = $("#p1").find(".ability").val() === "Neutralizing Gas" || $("#p2").find(".ability").val() === "Neutralizing Gas";
 }
 
 var resultLocations = [[], []];
