@@ -646,9 +646,13 @@ function applyEmbodyAspect(oldAbility, newAbility, pokeNum) {
 	let setName = pokeInfo.find("input.set-selector").val(); // speciesName (setName)
 	let pokeName = setName.substring(0, setName.indexOf(" ("));
 	if (oldAbility === "Embody Aspect") {
-		resolveEmbodyAspect(oldAbility, true, pokeName, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, -stageChange));
+		resolveEmbodyAspect(oldAbility, true, pokeName,
+			(unused, stat, stageChange) => applyBoostChange(pokeNum, stat, -stageChange)
+		);
 	} else {
-		resolveEmbodyAspect(newAbility, pokeInfo.find(".tera").prop("checked"), pokeName, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, stageChange));
+		resolveEmbodyAspect(newAbility, pokeInfo.find(".tera").prop("checked"), pokeName,
+			(unused, stat, stageChange) => applyBoostChange(pokeNum, stat, stageChange)
+		);
 	}
 }
 
@@ -675,15 +679,21 @@ function applySeeds(oldItem, newItem, oldTerrain, newTerrain, pokeNum) {
 	} else {
 		return;
 	}
-	resolveSeeds(resolvingItem, resolvingTerrain, $(".ability")[pokeNum - 1].value, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange));
+	resolveSeeds(resolvingItem, resolvingTerrain, $(".ability")[pokeNum - 1].value,
+		(unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange)
+	);
 }
 
 function applyWeaknessPolicy(pokeNum, undoEffect) {
-	resolveWeaknessPolicy($(".ability")[pokeNum - 1].value, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange));
+	resolveWeaknessPolicy($(".ability")[pokeNum - 1].value,
+		(unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange)
+	);
 }
 
 function applyOmniboost(pokeNum, scale, undoEffect) {
-	resolveOmniboost($(".ability")[pokeNum - 1].value, scale, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange));
+	resolveOmniboost($(".ability")[pokeNum - 1].value, scale,
+		(unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange)
+	);
 }
 
 function applyBoostChange(pokeNum, stat, stageChange) {

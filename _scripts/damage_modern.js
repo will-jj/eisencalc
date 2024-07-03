@@ -47,13 +47,13 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	checkAngerShell(attacker);
 	checkAngerShell(defender);
 	checkFieldBoosts(attacker, defender);
-	massCalcStatAbilities(attacker);
-	massCalcStatAbilities(defender);
+	massCalcStatAbilities(attacker, defender);
 	attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF]);
 	attacker.stats[SD] = getModifiedStat(attacker.rawStats[SD], attacker.boosts[SD]);
 	defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
 	defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
 	checkDownload(attacker, defender);
+	checkDownload(defender, attacker);
 	// So that ProtoQuark is correctly calculated, all stats must be calculated, and getFinalSpeed must be called last.
 	attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 	attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
@@ -1533,14 +1533,6 @@ function checkIntimidate(source, target) {
 	);
 }
 
-function checkEmbodyAspect(pokemon) {
-	if (isNeutralizingGas || !(pokemon.curAbility === "Embody Aspect" && pokemon.name.startsWith("Ogerpon") && pokemon.isTerastal)) {
-		return;
-	}
-	let boostedStat = pokemon.name === "Ogerpon-Wellspring" ? SD : pokemon.name === "Ogerpon-Hearthflame" ? AT : pokemon.name === "Ogerpon-Cornerstone" ? DF : SP;
-	pokemon.boosts[boostedStat] = Math.min(6, pokemon.boosts[boostedStat] + 1);
-}
-
 function checkDownload(source, target) {
 	if (isNeutralizingGas || source.curAbility !== "Download" || !source.isAbilityActivated) {
 		return;
@@ -1552,15 +1544,15 @@ function checkDownload(source, target) {
 
 function checkFieldBoosts(attacker, defender) {
 	// only apply this to the mass pokemon; the user's stat boosts are already applied as visible stat stages via #clangL #evoL
-	let target = mode === "one-vs-all" ? defender : attacker;
+	let source = mode === "one-vs-all" ? defender : attacker;
 	if ($("#wpR").prop("checked")) {
-		resolveWeaknessPolicy(target.curAbility, (unused, stat, stageChange) => changeStatByStage(target, stat, stageChange));
+		resolveWeaknessPolicy(source.curAbility, (unused, stat, stageChange) => changeStatByStage(source, stat, stageChange));
 	}
 	if ($("#clangR").prop("checked")) {
-		resolveOmniboost(target.curAbility, 1, (unused, stat, stageChange) => changeStatByStage(target, stat, stageChange));
+		resolveOmniboost(source.curAbility, 1, (unused, stat, stageChange) => changeStatByStage(source, stat, stageChange));
 	}
 	if ($("#evoR").prop("checked")) {
-		resolveOmniboost(target.curAbility, 2, (unused, stat, stageChange) => changeStatByStage(target, stat, stageChange));
+		resolveOmniboost(source.curAbility, 2, (unused, stat, stageChange) => changeStatByStage(source, stat, stageChange));
 	}
 }
 
@@ -1607,12 +1599,14 @@ function resolveIntimidate(targetAbility, targetItem, changeStat) {
 	changeStat("target", AT, atkChange);
 }
 
-function massCalcStatAbilities(pokemon) {
-	let ability = pokemon.curAbility;
+function massCalcStatAbilities(attacker, defender) {
+	// only apply this to the mass pokemon; the user's stat boosts are already applied as visible stat stages via #clangL #evoL
+	let source = mode === "one-vs-all" ? defender : attacker;
+	let ability = source.curAbility;
 	if (ability in statAbilities) {
-		resolveStatAbilities(ability, (unused, stat, stageChange) => changeStatByStage(pokemon, stat, stageChange));
+		resolveStatAbilities(ability, (unused, stat, stageChange) => changeStatByStage(source, stat, stageChange));
 	}
-	resolveEmbodyAspect(pokemon.curAbility, pokemon.isTerastal, pokemon.name, (unused, stat, stageChange) => changeStatByStage(pokemon, stat, stageChange));
+	resolveEmbodyAspect(ability, source.isTerastal, source.name, (unused, stat, stageChange) => changeStatByStage(source, stat, stageChange));
 }
 
 function resolveStatAbilities(ability, changeStat) {
