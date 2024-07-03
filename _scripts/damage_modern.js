@@ -6,7 +6,6 @@ function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	checkForecast(p2, field.getWeather());
 	checkKlutz(p1);
 	checkKlutz(p2);
-	checkOmniboosts(p1, p2);
 	checkMinimize(p1, p2);
 	checkAngerShell(p1);
 	checkAngerShell(p2);
@@ -43,18 +42,18 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	checkKlutz(defender);
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
-	checkOmniboosts(attacker, defender);
 	checkSeedsHonk(attacker, field.getTerrain());
 	checkSeedsHonk(defender, field.getTerrain());
 	checkAngerShell(attacker);
 	checkAngerShell(defender);
-	massCalcStatAbilities(attacker);
-	massCalcStatAbilities(defender);
+	checkFieldBoosts(attacker, defender);
+	massCalcStatAbilities(attacker, defender);
 	attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF]);
 	attacker.stats[SD] = getModifiedStat(attacker.rawStats[SD], attacker.boosts[SD]);
 	defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
 	defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
 	checkDownload(attacker, defender);
+	checkDownload(defender, attacker);
 	// So that ProtoQuark is correctly calculated, all stats must be calculated, and getFinalSpeed must be called last.
 	attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 	attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
@@ -1379,7 +1378,6 @@ function isGrounded(pokemon, field) {
 }
 
 function getEffectiveItem(source, opponent, terrain) {
-	// Weak Pol
 	if (getSeedStat(source.item, terrain) ||
 		(source.item === "Adrenaline Orb" && opponent.curAbility === "Intimidate" && opponent.isAbilityActivated)) {
 		return "";
@@ -1535,14 +1533,6 @@ function checkIntimidate(source, target) {
 	);
 }
 
-function checkEmbodyAspect(pokemon) {
-	if (isNeutralizingGas || !(pokemon.curAbility === "Embody Aspect" && pokemon.name.startsWith("Ogerpon") && pokemon.isTerastal)) {
-		return;
-	}
-	let boostedStat = pokemon.name === "Ogerpon-Wellspring" ? SD : pokemon.name === "Ogerpon-Hearthflame" ? AT : pokemon.name === "Ogerpon-Cornerstone" ? DF : SP;
-	pokemon.boosts[boostedStat] = Math.min(6, pokemon.boosts[boostedStat] + 1);
-}
-
 function checkDownload(source, target) {
 	if (isNeutralizingGas || source.curAbility !== "Download" || !source.isAbilityActivated) {
 		return;
@@ -1550,6 +1540,20 @@ function checkDownload(source, target) {
 	resolveDownload(source.curAbility, target.stats[DF], target.stats[SD],
 		(unused, stat, stageChange) => changeStatByStage(source, stat, stageChange)
 	);
+}
+
+function checkFieldBoosts(attacker, defender) {
+	// only apply this to the mass pokemon; the user's stat boosts are already applied as visible stat stages via #clangL #evoL
+	let source = mode === "one-vs-all" ? defender : attacker;
+	if ($("#wpR").prop("checked")) {
+		resolveWeaknessPolicy(source.curAbility, (unused, stat, stageChange) => changeStatByStage(source, stat, stageChange));
+	}
+	if ($("#clangR").prop("checked")) {
+		resolveOmniboost(source.curAbility, 1, (unused, stat, stageChange) => changeStatByStage(source, stat, stageChange));
+	}
+	if ($("#evoR").prop("checked")) {
+		resolveOmniboost(source.curAbility, 2, (unused, stat, stageChange) => changeStatByStage(source, stat, stageChange));
+	}
 }
 
 function changeStatByStage(pokemon, stat, stageChange, applyBlockingItem = true) {
@@ -1595,12 +1599,14 @@ function resolveIntimidate(targetAbility, targetItem, changeStat) {
 	changeStat("target", AT, atkChange);
 }
 
-function massCalcStatAbilities(pokemon) {
-	let ability = pokemon.curAbility;
+function massCalcStatAbilities(attacker, defender) {
+	// only apply this to the mass pokemon; the user's stat boosts are already applied as visible stat stages via #clangL #evoL
+	let source = mode === "one-vs-all" ? defender : attacker;
+	let ability = source.curAbility;
 	if (ability in statAbilities) {
-		resolveStatAbilities(ability, (unused, stat, stageChange) => changeStatByStage(pokemon, stat, stageChange));
+		resolveStatAbilities(ability, (unused, stat, stageChange) => changeStatByStage(source, stat, stageChange));
 	}
-	resolveEmbodyAspect(pokemon.curAbility, pokemon.isTerastal, pokemon.name, (unused, stat, stageChange) => changeStatByStage(pokemon, stat, stageChange));
+	resolveEmbodyAspect(ability, source.isTerastal, source.name, (unused, stat, stageChange) => changeStatByStage(source, stat, stageChange));
 }
 
 function resolveStatAbilities(ability, changeStat) {
@@ -1644,53 +1650,31 @@ function resolveSeeds(item, terrain, ability, changeStat) {
 	changeStat("source", stat, stageChange);
 }
 
+function resolveWeaknessPolicy(ability, changeStat) {
+	let stageChange = ability === "Simple" ? 4 : ability === "Contrary" ? -2 : 2;
+	changeStat("source", AT, stageChange);
+	changeStat("source", SA, stageChange);
+}
+
+function resolveOmniboost(ability, stageChange, changeStat) {
+	if (ability === "Simple") {
+		stageChange *= 2;
+	} else if (ability === "Contrary") {
+		stageChange *= -1;
+	}
+	changeStat("source", AT, stageChange);
+	changeStat("source", DF, stageChange);
+	changeStat("source", SA, stageChange);
+	changeStat("source", SD, stageChange);
+	changeStat("source", SP, stageChange);
+}
+
 function checkMinimize(p1, p2) {
 	if ($("#minimL").prop("checked")) {
 		p1.boosts[ES] = Math.min(6, p2.boosts[ES] + 2);
 	}
 	if ($("#minimR").prop("checked")) {
 		p2.boosts[ES] = Math.min(6, p2.boosts[ES] + 2);
-	}
-}
-
-function checkOmniboosts(p1, p2) {
-	if ($("#evoL").prop("checked")) {
-		p1.boosts[AT] = Math.min(6, p1.boosts[AT] + 2);
-		p1.boosts[DF] = Math.min(6, p1.boosts[DF] + 2);
-		p1.boosts[SA] = Math.min(6, p1.boosts[SA] + 2);
-		p1.boosts[SD] = Math.min(6, p1.boosts[SD] + 2);
-		p1.boosts[SP] = Math.min(6, p1.boosts[SP] + 2);
-	}
-	if ($("#evoR").prop("checked")) {
-		p2.boosts[AT] = Math.min(6, p2.boosts[AT] + 2);
-		p2.boosts[DF] = Math.min(6, p2.boosts[DF] + 2);
-		p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 2);
-		p2.boosts[SD] = Math.min(6, p2.boosts[SD] + 2);
-		p2.boosts[SP] = Math.min(6, p2.boosts[SP] + 2);
-	}
-
-	if ($("#clangL").prop("checked")) {
-		p1.boosts[AT] = Math.min(6, p1.boosts[AT] + 1);
-		p1.boosts[DF] = Math.min(6, p1.boosts[DF] + 1);
-		p1.boosts[SA] = Math.min(6, p1.boosts[SA] + 1);
-		p1.boosts[SD] = Math.min(6, p1.boosts[SD] + 1);
-		p1.boosts[SP] = Math.min(6, p1.boosts[SP] + 1);
-	}
-	if ($("#clangR").prop("checked")) {
-		p2.boosts[AT] = Math.min(6, p2.boosts[AT] + 1);
-		p2.boosts[DF] = Math.min(6, p2.boosts[DF] + 1);
-		p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 1);
-		p2.boosts[SD] = Math.min(6, p2.boosts[SD] + 1);
-		p2.boosts[SP] = Math.min(6, p2.boosts[SP] + 1);
-	}
-
-	if ($("#wpL").prop("checked")) {
-		p1.boosts[AT] = Math.min(6, p1.boosts[AT] + 2);
-		p1.boosts[SA] = Math.min(6, p1.boosts[SA] + 2);
-	}
-	if ($("#wpR").prop("checked")) {
-		p2.boosts[AT] = Math.min(6, p2.boosts[AT] + 2);
-		p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 2);
 	}
 }
 

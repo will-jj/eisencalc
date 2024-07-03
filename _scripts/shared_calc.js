@@ -48,6 +48,18 @@ $("#maxL").change(function () {
 	}
 });
 
+$("#wpL").change(function () {
+	applyWeaknessPolicy(1, !this.checked);
+});
+
+$("#clangL").change(function () {
+	applyOmniboost(1, 1, !this.checked);
+});
+
+$("#evoL").change(function () {
+	applyOmniboost(1, 2, !this.checked);
+});
+
 $(".tera").bind("keyup change", function () {
 	if (gen != 9) {
 		return;
@@ -286,32 +298,44 @@ $(".ability").bind("keyup change", function () {
 });
 
 $("#p1 .ability").bind("change", function () {
-	let ability = $(this).val();
-	let isActivatedObj = $(this).siblings(".isActivated");
-	autoSetWeatherTerrain(curAbilities[0], ability, curAbilities[1]);
-	if (isActivatedObj.prop("checked")) {
-		// so long as all applyActivatedStatAbilities() abilities default to an unchecked box, this will work
-		// undo any activated stat abilities
-		applyActivatedStatAbilities(curAbilities[0], "", 1);
-	}
-	applyStatAbilities(curAbilities[0], ability, 1);
-	curAbilities[0] = ability;
-	autoSetVicStar(ability, "L");
-	autoSetSteely(ability, "L");
-	autoSetRuin(ability, "L");
-	showActivated(ability, 1);
+	abilityChange($(this), 1);
 });
 
-$("#p1 .isActivated").bind("change", function () {
-	let ability = $(this).siblings(".ability").val();
-	if (ability === "Rivalry") {
-		rivalryStateTransitions($(this), 1);
+function abilityChange(abilityObj, pokeNum) {
+	let pokeIndex = pokeNum - 1;
+	let side = pokeNum === 1 ? "L" : "R";
+	let opponentIndex = pokeNum === 1 ? 1 : 0;
+
+	let ability = abilityObj.val();
+	autoSetWeatherTerrain(curAbilities[pokeIndex], ability, curAbilities[opponentIndex]);
+	if (abilityObj.siblings(".isActivated").prop("checked")) {
+		// so long as all applyActivatedStatAbilities() abilities default to an unchecked box, this will work
+		// undo any activated stat abilities
+		applyActivatedStatAbilities(curAbilities[pokeIndex], "", pokeNum);
 	}
-	applyActivatedStatAbilities("", ability, 1); // passing in "" as oldAbility will allow the subfunctions to always run
-	if (ability in checkboxAbilities && $('#p2').length) { // check whether this is mass calc mode
+	applyStatAbilities(curAbilities[pokeIndex], ability, pokeNum);
+	curAbilities[pokeIndex] = ability;
+	autoSetVicStar(ability, side);
+	autoSetSteely(ability, side);
+	autoSetRuin(ability, side);
+	showActivated(ability, pokeNum);
+	checkNeutralizingGas();
+}
+
+$("#p1 .isActivated").bind("change", function () {
+	isActivatedChange($(this), 1);
+});
+
+function isActivatedChange(isActivatedObj, pokeNum) {
+	let ability = isActivatedObj.siblings(".ability").val();
+	if (ability === "Rivalry") {
+		rivalryStateTransitions(isActivatedObj, pokeNum);
+	}
+	applyActivatedStatAbilities("", ability, pokeNum); // passing in "" as oldAbility will allow the subfunctions to always run
+	if (ability in checkboxAbilities) {
 		calculate();
 	}
-});
+}
 
 var rivalryState = [0, 0]; // 0 = unchecked, 1 = checked, 2 = indeterminate
 function rivalryStateTransitions(checkboxObj, pokeNum) {
@@ -622,9 +646,13 @@ function applyEmbodyAspect(oldAbility, newAbility, pokeNum) {
 	let setName = pokeInfo.find("input.set-selector").val(); // speciesName (setName)
 	let pokeName = setName.substring(0, setName.indexOf(" ("));
 	if (oldAbility === "Embody Aspect") {
-		resolveEmbodyAspect(oldAbility, true, pokeName, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, -stageChange));
+		resolveEmbodyAspect(oldAbility, true, pokeName,
+			(unused, stat, stageChange) => applyBoostChange(pokeNum, stat, -stageChange)
+		);
 	} else {
-		resolveEmbodyAspect(newAbility, pokeInfo.find(".tera").prop("checked"), pokeName, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, stageChange));
+		resolveEmbodyAspect(newAbility, pokeInfo.find(".tera").prop("checked"), pokeName,
+			(unused, stat, stageChange) => applyBoostChange(pokeNum, stat, stageChange)
+		);
 	}
 }
 
@@ -651,13 +679,38 @@ function applySeeds(oldItem, newItem, oldTerrain, newTerrain, pokeNum) {
 	} else {
 		return;
 	}
-	resolveSeeds(resolvingItem, resolvingTerrain, $(".ability")[pokeNum - 1].value, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange));
+	resolveSeeds(resolvingItem, resolvingTerrain, $(".ability")[pokeNum - 1].value,
+		(unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange)
+	);
+}
+
+function applyWeaknessPolicy(pokeNum, undoEffect) {
+	resolveWeaknessPolicy($(".ability")[pokeNum - 1].value,
+		(unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange)
+	);
+}
+
+function applyOmniboost(pokeNum, scale, undoEffect) {
+	resolveOmniboost($(".ability")[pokeNum - 1].value, scale,
+		(unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange)
+	);
 }
 
 function applyBoostChange(pokeNum, stat, stageChange) {
 	let statBoostObj = $("#p" + pokeNum + " ." + stat + " .boost");
 	statBoostObj.val(Math.max(-6, Math.min(6, parseInt(statBoostObj.val()) + stageChange)));
 	calculate();
+}
+
+function checkNeutralizingGas() {
+	let fieldAbilities = $(".ability");
+	for (let i = 0; i < fieldAbilities.length; i++) {
+		if (fieldAbilities[i].value === "Neutralizing Gas") {
+			isNeutralizingGas = true;
+			return;
+		}
+	}
+	isNeutralizingGas = false;
 }
 
 function autoSetRuin(ability, side) {
@@ -770,6 +823,9 @@ $(".set-selector").bind("change", function () {
 	pokeObj.find(".tera-type").val(pokemon.t1); // this statement might do nothing
 	pokeObj.find(".tera").prop("checked", false);
 	//.change() for max and tera is below
+	$("#wp" + side).prop("checked", false);
+	$("#clang" + side).prop("checked", false);
+	$("#evo" + side).prop("checked", false);
 	var moveObj;
 	var itemObj = pokeObj.find(".item");
 	var abilityObj = pokeObj.find(".ability");
@@ -1121,6 +1177,10 @@ function Pokemon(pokeInfo) {
 		setdexPoke && !(setdexPoke.moves[2] in moves) ? {"name": setdexPoke.moves[2], "bp": 0} : getMoveDetails(move3, poke),
 		setdexPoke && !(setdexPoke.moves[3] in moves) ? {"name": setdexPoke.moves[3], "bp": 0} : getMoveDetails(move4, poke)
 	];
+	// if this mon holds a weakness policy and the weakness policy button is pressed, treat it as having no held item
+	if (poke.item === "Weakness Policy" && $("#wp" + (pokeInfo.prop("id") == "p1" ? "L" : "R")).prop("checked")) {
+		poke.item = "";
+	}
 
 	return poke;
 }
