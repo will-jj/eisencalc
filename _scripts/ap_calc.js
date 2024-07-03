@@ -19,6 +19,10 @@ $("#p2 .status").bind("keyup change", function () {
 	statusAPCalcChange(2);
 });
 
+$("#p2 .isActivated").bind("change", function () {
+	isActivatedChange($(this), 2);
+});
+
 $("#maxR").change(function () {
 	if (this.checked) {
 		for (var i = 0; i < 4; i++) {
@@ -38,8 +42,16 @@ $("#autoivsR").change(function () {
 	setIVSelectors($("#p2"), "R");
 });
 
-$("#p2 .isActivated").bind("change", function () {
-	isActivatedChange($(this), 2);
+$("#wpR").change(function () {
+	applyWeaknessPolicy(2, !this.checked);
+});
+
+$("#clangR").change(function () {
+	applyOmniboost(2, 1, !this.checked);
+});
+
+$("#evoR").change(function () {
+	applyOmniboost(2, 2, !this.checked);
 });
 
 function abilityAPCalcChange(pokeNum) {

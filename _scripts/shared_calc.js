@@ -48,6 +48,18 @@ $("#maxL").change(function () {
 	}
 });
 
+$("#wpL").change(function () {
+	applyWeaknessPolicy(1, !this.checked);
+});
+
+$("#clangL").change(function () {
+	applyOmniboost(1, 1, !this.checked);
+});
+
+$("#evoL").change(function () {
+	applyOmniboost(1, 2, !this.checked);
+});
+
 $(".tera").bind("keyup change", function () {
 	if (gen != 9) {
 		return;
@@ -666,6 +678,14 @@ function applySeeds(oldItem, newItem, oldTerrain, newTerrain, pokeNum) {
 	resolveSeeds(resolvingItem, resolvingTerrain, $(".ability")[pokeNum - 1].value, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange));
 }
 
+function applyWeaknessPolicy(pokeNum, undoEffect) {
+	resolveWeaknessPolicy($(".ability")[pokeNum - 1].value, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange));
+}
+
+function applyOmniboost(pokeNum, scale, undoEffect) {
+	resolveOmniboost($(".ability")[pokeNum - 1].value, scale, (unused, stat, stageChange) => applyBoostChange(pokeNum, stat, undoEffect ? -stageChange : stageChange));
+}
+
 function applyBoostChange(pokeNum, stat, stageChange) {
 	let statBoostObj = $("#p" + pokeNum + " ." + stat + " .boost");
 	statBoostObj.val(Math.max(-6, Math.min(6, parseInt(statBoostObj.val()) + stageChange)));
@@ -793,6 +813,9 @@ $(".set-selector").bind("change", function () {
 	pokeObj.find(".tera-type").val(pokemon.t1); // this statement might do nothing
 	pokeObj.find(".tera").prop("checked", false);
 	//.change() for max and tera is below
+	$("#wp" + side).prop("checked", false);
+	$("#clang" + side).prop("checked", false);
+	$("#evo" + side).prop("checked", false);
 	var moveObj;
 	var itemObj = pokeObj.find(".item");
 	var abilityObj = pokeObj.find(".ability");
@@ -1144,6 +1167,10 @@ function Pokemon(pokeInfo) {
 		setdexPoke && !(setdexPoke.moves[2] in moves) ? {"name": setdexPoke.moves[2], "bp": 0} : getMoveDetails(move3, poke),
 		setdexPoke && !(setdexPoke.moves[3] in moves) ? {"name": setdexPoke.moves[3], "bp": 0} : getMoveDetails(move4, poke)
 	];
+	// if this mon holds a weakness policy and the weakness policy button is pressed, treat it as having no held item
+	if (poke.item === "Weakness Policy" && $("#wp" + (pokeInfo.prop("id") == "p1" ? "L" : "R")).prop("checked")) {
+		poke.item = "";
+	}
 
 	return poke;
 }

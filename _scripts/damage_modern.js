@@ -6,7 +6,6 @@ function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	checkForecast(p2, field.getWeather());
 	checkKlutz(p1);
 	checkKlutz(p2);
-	checkOmniboosts(p1, p2);
 	checkMinimize(p1, p2);
 	checkAngerShell(p1);
 	checkAngerShell(p2);
@@ -43,11 +42,11 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	checkKlutz(defender);
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
-	checkOmniboosts(attacker, defender);
 	checkSeedsHonk(attacker, field.getTerrain());
 	checkSeedsHonk(defender, field.getTerrain());
 	checkAngerShell(attacker);
 	checkAngerShell(defender);
+	checkFieldBoosts(attacker, defender);
 	massCalcStatAbilities(attacker);
 	massCalcStatAbilities(defender);
 	attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF]);
@@ -1379,7 +1378,6 @@ function isGrounded(pokemon, field) {
 }
 
 function getEffectiveItem(source, opponent, terrain) {
-	// Weak Pol
 	if (getSeedStat(source.item, terrain) ||
 		(source.item === "Adrenaline Orb" && opponent.curAbility === "Intimidate" && opponent.isAbilityActivated)) {
 		return "";
@@ -1552,6 +1550,20 @@ function checkDownload(source, target) {
 	);
 }
 
+function checkFieldBoosts(attacker, defender) {
+	// only apply this to the mass pokemon; the user's stat boosts are already applied as visible stat stages via #clangL #evoL
+	let target = mode === "one-vs-all" ? defender : attacker;
+	if ($("#wpR").prop("checked")) {
+		resolveWeaknessPolicy(target.curAbility, (unused, stat, stageChange) => changeStatByStage(target, stat, stageChange));
+	}
+	if ($("#clangR").prop("checked")) {
+		resolveOmniboost(target.curAbility, 1, (unused, stat, stageChange) => changeStatByStage(target, stat, stageChange));
+	}
+	if ($("#evoR").prop("checked")) {
+		resolveOmniboost(target.curAbility, 2, (unused, stat, stageChange) => changeStatByStage(target, stat, stageChange));
+	}
+}
+
 function changeStatByStage(pokemon, stat, stageChange, applyBlockingItem = true) {
 	if (stageChange < 0 && applyBlockingItem && ["Clear Amulet", "White Herb"].includes(pokemon.item)) {
 		return;
@@ -1644,53 +1656,31 @@ function resolveSeeds(item, terrain, ability, changeStat) {
 	changeStat("source", stat, stageChange);
 }
 
+function resolveWeaknessPolicy(ability, changeStat) {
+	let stageChange = ability === "Simple" ? 4 : ability === "Contrary" ? -2 : 2;
+	changeStat("source", AT, stageChange);
+	changeStat("source", SA, stageChange);
+}
+
+function resolveOmniboost(ability, stageChange, changeStat) {
+	if (ability === "Simple") {
+		stageChange *= 2;
+	} else if (ability === "Contrary") {
+		stageChange *= -1;
+	}
+	changeStat("source", AT, stageChange);
+	changeStat("source", DF, stageChange);
+	changeStat("source", SA, stageChange);
+	changeStat("source", SD, stageChange);
+	changeStat("source", SP, stageChange);
+}
+
 function checkMinimize(p1, p2) {
 	if ($("#minimL").prop("checked")) {
 		p1.boosts[ES] = Math.min(6, p2.boosts[ES] + 2);
 	}
 	if ($("#minimR").prop("checked")) {
 		p2.boosts[ES] = Math.min(6, p2.boosts[ES] + 2);
-	}
-}
-
-function checkOmniboosts(p1, p2) {
-	if ($("#evoL").prop("checked")) {
-		p1.boosts[AT] = Math.min(6, p1.boosts[AT] + 2);
-		p1.boosts[DF] = Math.min(6, p1.boosts[DF] + 2);
-		p1.boosts[SA] = Math.min(6, p1.boosts[SA] + 2);
-		p1.boosts[SD] = Math.min(6, p1.boosts[SD] + 2);
-		p1.boosts[SP] = Math.min(6, p1.boosts[SP] + 2);
-	}
-	if ($("#evoR").prop("checked")) {
-		p2.boosts[AT] = Math.min(6, p2.boosts[AT] + 2);
-		p2.boosts[DF] = Math.min(6, p2.boosts[DF] + 2);
-		p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 2);
-		p2.boosts[SD] = Math.min(6, p2.boosts[SD] + 2);
-		p2.boosts[SP] = Math.min(6, p2.boosts[SP] + 2);
-	}
-
-	if ($("#clangL").prop("checked")) {
-		p1.boosts[AT] = Math.min(6, p1.boosts[AT] + 1);
-		p1.boosts[DF] = Math.min(6, p1.boosts[DF] + 1);
-		p1.boosts[SA] = Math.min(6, p1.boosts[SA] + 1);
-		p1.boosts[SD] = Math.min(6, p1.boosts[SD] + 1);
-		p1.boosts[SP] = Math.min(6, p1.boosts[SP] + 1);
-	}
-	if ($("#clangR").prop("checked")) {
-		p2.boosts[AT] = Math.min(6, p2.boosts[AT] + 1);
-		p2.boosts[DF] = Math.min(6, p2.boosts[DF] + 1);
-		p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 1);
-		p2.boosts[SD] = Math.min(6, p2.boosts[SD] + 1);
-		p2.boosts[SP] = Math.min(6, p2.boosts[SP] + 1);
-	}
-
-	if ($("#wpL").prop("checked")) {
-		p1.boosts[AT] = Math.min(6, p1.boosts[AT] + 2);
-		p1.boosts[SA] = Math.min(6, p1.boosts[SA] + 2);
-	}
-	if ($("#wpR").prop("checked")) {
-		p2.boosts[AT] = Math.min(6, p2.boosts[AT] + 2);
-		p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 2);
 	}
 }
 
