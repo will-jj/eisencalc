@@ -204,6 +204,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Wring Out":
+	case "Crush Grip":
 		basePower = Math.floor(defender.curHP * 120 / defender.maxHP) + 1;
 		description.moveBP = basePower;
 		break;
@@ -302,6 +303,9 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	} else if (!isPhysical && (attacker.ability === "Plus" || attacker.ability === "Minus") && attacker.isAbilityActivated) {
 		attack = Math.floor(attack * 1.5);
+		description.attackerAbility = attacker.ability;
+	} else if (isPhysical && attacker.ability === "Slow Start" && attacker.isAbilityActivated) {
+		attack = Math.floor(attack * 0.5);
 		description.attackerAbility = attacker.ability;
 	}
 

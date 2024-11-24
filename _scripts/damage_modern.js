@@ -842,8 +842,8 @@ function calcAtk(attacker, defender, move, field, description) {
 	}
 
 	var atMods = [];
-	if (attacker.curAbility === "Defeatist" && attacker.curHP <= attacker.maxHP / 2 ||
-		attacker.curAbility === "Slow Start" && moveCategory === "Physical") {
+	if (attacker.curAbility === "Defeatist" && (attacker.curHP <= attacker.maxHP / 2 || attacker.isAbilityActivated) ||
+		attacker.curAbility === "Slow Start" && moveCategory === "Physical" && attacker.isAbilityActivated) {
 		atMods.push(0x800);
 		description.attackerAbility = attacker.curAbility;
 	}
@@ -1366,6 +1366,8 @@ function getFinalSpeed(pokemon, weather, terrain) {
 	} else if (checkProtoQuarkHighest(pokemon, weather, terrain) === SP ||
 		pokemon.curAbility === "Quick Feet" && (pokemon.status !== "Healthy" || pokemon.isAbilityActivated)) {
 		speed = Math.floor(speed * 1.5);
+	} else if (pokemon.curAbility === "Slow Start" && pokemon.isAbilityActivated) {
+		speed = Math.floor(speed * 0.5);
 	}
 	return speed;
 }
