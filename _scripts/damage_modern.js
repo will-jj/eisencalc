@@ -1477,12 +1477,12 @@ function checkSeedsHonk(pokemon, terrain) {
 }
 
 function isShellSideArmPhysical(attacker, defender, move) {
-	if (move.name != "Shell Side Arm") {
+	if (move.name !== "Shell Side Arm") {
 		return false;
 	}
-	let scaler = Math.floor(2 * attacker.level / 5) + 2;
-	let phys = Math.floor(scaler * move.basePower * attacker.stats[AT] / defender.stats[DF]);
-	let spec = Math.floor(scaler * move.basePower * attacker.stats[SA] / defender.stats[SD]);
+	let scaler = (Math.floor(2 * attacker.level / 5) + 2) * move.bp;
+	let phys = Math.floor(scaler * attacker.stats[AT] / defender.stats[DF]);
+	let spec = Math.floor(scaler * attacker.stats[SA] / defender.stats[SD]);
 	return phys > spec;
 }
 
