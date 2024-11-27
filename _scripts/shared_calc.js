@@ -513,7 +513,7 @@ function autoSetSteely(ability, side) {
 	$("input:checkbox[id='steelySpirit" + side + "']").prop("checked", (!isNeutralizingGas && ability === "Steely Spirit"));
 }
 
-// each ability can independantly initialize as checked or unchecked in each calc mode
+// each ability can independently initialize as checked or unchecked in each calc mode
 var checkboxAbilities = {
 	"Analytic": { ap: true, mass: true },
 	"Intimidate": { ap: false, mass: true },
@@ -530,7 +530,10 @@ var checkboxAbilities = {
 	"Overgrow": { ap: false, mass: false },
 	"Blaze": { ap: false, mass: false },
 	"Torrent": { ap: false, mass: false },
-	"Swarm": { ap: false, mass: false }
+	"Swarm": { ap: false, mass: false },
+	"Slow Start": { ap: true, mass: true },
+	"Defeatist": { ap: false, mass: false },
+	"Unburden": { ap: false, mass: false }
 };
 
 // Based on input ability, show or hide the activated checkbox. Also use checkboxAbilities to initialize the checkbox state

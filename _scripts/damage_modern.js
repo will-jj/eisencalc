@@ -16,10 +16,10 @@ function CALCULATE_ALL_MOVES_MODERN(p1, p2, field) {
 	// So that ProtoQuark is correctly calculated, all stats must be calculated, and getFinalSpeed must be called last.
 	p1.stats[AT] = getModifiedStat(p1.rawStats[AT], p1.boosts[AT]);
 	p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
-	p1.stats[SP] = getFinalSpeed(p1, field.getWeather(), field.getTerrain());
+	p1.stats[SP] = getFinalSpeed(p1, p2, field);
 	p2.stats[AT] = getModifiedStat(p2.rawStats[AT], p2.boosts[AT]);
 	p2.stats[SA] = getModifiedStat(p2.rawStats[SA], p2.boosts[SA]);
-	p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), field.getTerrain());
+	p2.stats[SP] = getFinalSpeed(p2, p1, field);
 	var side1 = field.getSide(1);
 	var side2 = field.getSide(0);
 	var results = [[], []];
@@ -57,10 +57,10 @@ function CALCULATE_MOVES_OF_ATTACKER_MODERN(attacker, defender, field) {
 	// So that ProtoQuark is correctly calculated, all stats must be calculated, and getFinalSpeed must be called last.
 	attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 	attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
-	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather(), field.getTerrain());
+	attacker.stats[SP] = getFinalSpeed(attacker, defender, field);
 	defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
 	defender.stats[SA] = getModifiedStat(defender.rawStats[SA], defender.boosts[SA]);
-	defender.stats[SP] = getFinalSpeed(defender, field.getWeather(), field.getTerrain());
+	defender.stats[SP] = getFinalSpeed(defender, attacker, field);
 	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
 	var results = [];
 	for (var i = 0; i < 4; i++) {
@@ -842,8 +842,8 @@ function calcAtk(attacker, defender, move, field, description) {
 	}
 
 	var atMods = [];
-	if (attacker.curAbility === "Defeatist" && attacker.curHP <= attacker.maxHP / 2 ||
-		attacker.curAbility === "Slow Start" && moveCategory === "Physical") {
+	if (attacker.curAbility === "Defeatist" && (attacker.curHP <= attacker.maxHP / 2 || attacker.isAbilityActivated) ||
+		attacker.curAbility === "Slow Start" && moveCategory === "Physical" && attacker.isAbilityActivated) {
 		atMods.push(0x800);
 		description.attackerAbility = attacker.curAbility;
 	}
@@ -1345,7 +1345,8 @@ function getModifiedStat(stat, mod) {
 	return stat;
 }
 
-function getFinalSpeed(pokemon, weather, terrain) {
+function getFinalSpeed(pokemon, opponent, field) {
+	let weather = field.getWeather();
 	let speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
 	if (pokemon.item === "Choice Scarf" && !pokemon.isDynamax) {
 		speed = Math.floor(speed * 1.5);
@@ -1361,11 +1362,14 @@ function getFinalSpeed(pokemon, weather, terrain) {
 		pokemon.curAbility === "Sand Rush" && weather === "Sand" ||
 		pokemon.curAbility === "Swift Swim" && weather.indexOf("Rain") > -1 && pokemon.item !== "Utility Umbrella" ||
 		pokemon.curAbility === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
-		pokemon.curAbility === "Surge Surfer" && terrain === "Electric") {
+		pokemon.curAbility === "Surge Surfer" && field.getTerrain() === "Electric" ||
+		pokemon.curAbility === "Unburden" && (pokemon.isAbilityActivated || getEffectiveItem(pokemon, opponent, field.getTerrain()) === "")) {
 		speed *= 2;
-	} else if (checkProtoQuarkHighest(pokemon, weather, terrain) === SP ||
+	} else if (checkProtoQuarkHighest(pokemon, weather, field.getTerrain()) === SP ||
 		pokemon.curAbility === "Quick Feet" && (pokemon.status !== "Healthy" || pokemon.isAbilityActivated)) {
 		speed = Math.floor(speed * 1.5);
+	} else if (pokemon.curAbility === "Slow Start" && pokemon.isAbilityActivated) {
+		speed = Math.floor(speed * 0.5);
 	}
 	return speed;
 }
@@ -1378,6 +1382,8 @@ function isGrounded(pokemon, field) {
 }
 
 function getEffectiveItem(source, opponent, terrain) {
+	// shared calc already accommodates Weakness Policy.
+	// Pokemon objects that hold Weak Pol and have the Weak Pol field button pressed are given the empty string as held item.
 	if (getSeedStat(source.item, terrain) ||
 		(source.item === "Adrenaline Orb" && opponent.curAbility === "Intimidate" && opponent.isAbilityActivated)) {
 		return "";
@@ -1461,15 +1467,9 @@ function checkKlutz(pokemon) {
 
 function checkSeedsHonk(pokemon, terrain) {
 	// A Seed can either come into the field that has the matching terrain, or its own Surge ability can proc its own Seed (Pincurchin-RS)
-	let ability = pokemon.curAbility;
-	if (ability === "Psychic Surge") {
-		terrain = "Psychic";
-	} else if (ability === "Misty Surge") {
-		terrain = "Misty";
-	} else if (["Electric Surge", "Hadron Engine"].includes(ability)) {
-		terrain = "Electric";
-	} else if (ability === "Grassy Surge") {
-		terrain = "Grassy"
+	let abilityTerrain = autoTerrainAbilities(pokemon.curAbility);
+	if (abilityTerrain) {
+		terrain = abilityTerrain;
 	}
 	resolveSeeds(pokemon.item, terrain, pokemon.curAbility,
 		(unused, stat, stageChange) => changeStatByStage(pokemon, stat, stageChange)
@@ -1477,12 +1477,12 @@ function checkSeedsHonk(pokemon, terrain) {
 }
 
 function isShellSideArmPhysical(attacker, defender, move) {
-	if (move.name != "Shell Side Arm") {
+	if (move.name !== "Shell Side Arm") {
 		return false;
 	}
-	let scaler = Math.floor(2 * attacker.level / 5) + 2;
-	let phys = Math.floor(scaler * move.basePower * attacker.stats[AT] / defender.stats[DF]);
-	let spec = Math.floor(scaler * move.basePower * attacker.stats[SA] / defender.stats[SD]);
+	let scaler = (Math.floor(2 * attacker.level / 5) + 2) * move.bp;
+	let phys = Math.floor(scaler * attacker.stats[AT] / defender.stats[DF]);
+	let spec = Math.floor(scaler * attacker.stats[SA] / defender.stats[SD]);
 	return phys > spec;
 }
 

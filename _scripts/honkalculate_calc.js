@@ -500,6 +500,8 @@ function getFinalSpeedHonk() {
 		speed *= 2;
 	} else if (ability === "Quick Feet" && ($(".status").val() !== "Healthy" || $(".isActivated").prop("checked"))) {
 		speed = Math.floor(speed * 1.5);
+	} else if (ability === "Slow Start" && $(".isActivated").prop("checked")) {
+		speed = Math.floor(speed * 0.5);
 	}
 	$(".totalMod").text(speed);
 }

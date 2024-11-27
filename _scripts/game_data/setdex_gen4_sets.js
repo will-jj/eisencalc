@@ -11912,7 +11912,7 @@ SETDEX_PHGSS = {
       "item": "Kasib Berry",
       "tier": "50"
     },
-    "Mismagius-2 ( )": {
+    "Mismagius-2 (549)": {
       "evs": {
         "sa": 252,
         "sd": 252
