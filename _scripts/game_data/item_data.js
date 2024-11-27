@@ -70,6 +70,25 @@ ITEMS_ADV.splice(ITEMS_ADV.indexOf("Gold Berry"), 1);
 ITEMS_ADV.splice(ITEMS_ADV.indexOf("Pink Bow"), 1);
 ITEMS_ADV.splice(ITEMS_ADV.indexOf("Polkadot Bow"), 1);
 
+var PLATES = [
+	"Fist Plate",
+	"Sky Plate",
+	"Toxic Plate",
+	"Earth Plate",
+	"Stone Plate",
+	"Insect Plate",
+	"Spooky Plate",
+	"Iron Plate",
+	"Flame Plate",
+	"Splash Plate",
+	"Meadow Plate",
+	"Zap Plate",
+	"Mind Plate",
+	"Icicle Plate",
+	"Draco Plate",
+	"Dread Plate"
+];
+
 var ITEMS_DPP = ITEMS_ADV.concat([
 	"Adamant Orb",
 	"Babiri Berry",
@@ -85,24 +104,16 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	"Colbur Berry",
 	"Custap Berry",
 	"Damp Rock",
-	"Draco Plate",
-	"Dread Plate",
 	"Durin Berry",
-	"Earth Plate",
 	"Expert Belt",
-	"Fist Plate",
 	"Flame Orb",
-	"Flame Plate",
 	"Focus Sash",
 	"Grip Claw",
 	"Griseous Orb",
 	"Haban Berry",
 	"Heat Rock",
-	"Icicle Plate",
 	"Icy Rock",
-	"Insect Plate",
 	"Iron Ball",
-	"Iron Plate",
 	"Jaboca Berry",
 	"Kasib Berry",
 	"Kebia Berry",
@@ -110,10 +121,8 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	"Life Orb",
 	"Light Clay",
 	"Lustrous Orb",
-	"Meadow Plate",
 	"Metronome",
 	"Micle Berry",
-	"Mind Plate",
 	"Muscle Band",
 	"Occa Berry",
 	"Odd Incense",
@@ -127,24 +136,19 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	"Rowap Berry",
 	"Shed Shell",
 	"Shuca Berry",
-	"Sky Plate",
 	"Smooth Rock",
-	"Splash Plate",
-	"Spooky Plate",
 	"Sticky Barb",
-	"Stone Plate",
 	"Tanga Berry",
 	"Toxic Orb",
-	"Toxic Plate",
 	"Wacan Berry",
 	"Watmel Berry",
 	"Wave Incense",
 	"Wide Lens",
 	"Wise Glasses",
 	"Yache Berry",
-	"Zap Plate",
 	"Zoom Lens"
-]);
+],
+PLATES);
 
 var ITEMS_BW = ITEMS_DPP.concat([
 	"Absorb Bulb",
@@ -170,13 +174,13 @@ var ITEMS_XY = ITEMS_BW.concat([
 	"Kee Berry",
 	"Luminous Moss",
 	"Maranga Berry",
-	"Pixie Plate",
 	"Power Herb",
 	"Roseli Berry",
 	"Safety Goggles",
 	"Snowball",
 	"Weakness Policy"
 ]);
+[ITEMS_XY, PLATES].forEach(itemSet => { itemSet.push("Pixie Plate"); });
 
 ITEMS_XY.splice(ITEMS_XY.indexOf("BlackGlasses"), 1, "Black Glasses");
 ITEMS_XY.splice(ITEMS_XY.indexOf("DeepSeaScale"), 1, "Deep Sea Scale");
@@ -288,6 +292,13 @@ var Z_CRYSTALS = [
 ITEMS_BW = ITEMS_BW.concat(NON_NORMAL_GEMS);
 
 ITEMS_SM = ITEMS_SM.concat(Z_CRYSTALS);
+
+// Remove Plates from an item array.
+for (let itemSet of [ITEMS_SS]) {
+	for (let plate of PLATES) {
+		itemSet.splice(itemSet.indexOf(plate), 1);
+	}
+}
 
 function getTechnoBlast(item) {
 	switch (item) {
