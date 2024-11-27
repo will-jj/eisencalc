@@ -532,7 +532,8 @@ var checkboxAbilities = {
 	"Torrent": { ap: false, mass: false },
 	"Swarm": { ap: false, mass: false },
 	"Slow Start": { ap: true, mass: true },
-	"Defeatist": { ap: false, mass: false }
+	"Defeatist": { ap: false, mass: false },
+	"Unburden": { ap: false, mass: false }
 };
 
 // Based on input ability, show or hide the activated checkbox. Also use checkboxAbilities to initialize the checkbox state
