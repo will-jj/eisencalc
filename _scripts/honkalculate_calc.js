@@ -223,7 +223,7 @@ function performCalculations() {
 			let maxDamage;
 			let highestDamage = 0;
 			let highestN = 0;
-			let data = { setName: setName, move: "(No Move)", percentRange: "0 - 0%", koChance: "nice move" };
+			let data = { setName: setName, move: "(No Move)", percentRange: "0 - 0%", koChance: "nice move", speed: setPoke.stats[SP] };
 			if (mode === "one-vs-all") {
 				data.type1 = defender.type1;
 				data.type2 = defender.type2 ? defender.type2 : "";
@@ -353,8 +353,12 @@ function constructDataTable() {
 		destroy: true,
 		columnDefs: [
 			{ // Sort KO Chance by damage% instead
-				"orderData": [2], // percentRange = col 2
-				"targets": 3 // koChance = col 3
+				orderData: [2], // percentRange = col 2
+				targets: 3 // koChance = col 3
+			},
+			{
+				width: "0", // this makes the column as small as possible
+				targets: 4 // speed = col 4
 			}
 		],
 		columns: [
@@ -362,9 +366,28 @@ function constructDataTable() {
 			{ data: "move" },
 			{ data: 'percentRange', type: "damage100" }, // type specifies that this column is sorted via the damage100 functions
 			{ data: 'koChance' },
+			{ data: 'speed' },
 			{ data: 'type1', visible: false, searchable: false },
 			{ data: 'type2', visible: false, searchable: false }
 		],
+		rowCallback: function(row, data, index) {
+			let userSpeed = parseInt($(".totalMod").text());
+			let massSpeed = data["speed"];
+			if (parseInt($(".sp .iv").text()) <= 5) {
+				if (massSpeed > userSpeed) {
+					return;
+				}
+			} else {
+				if (massSpeed < userSpeed) {
+					return;
+				}
+			}
+			// speed is col 4
+			$(row).find("td:eq(4)").css({
+				"color": massSpeed === userSpeed ? "gold" : "#F02020",
+				"font-weight": "bold"
+			});
+		},
 		dom: 'frti',
 		/*colVis: { The options that allows selection of which columns to include in the table
 			exclude: (gen > 2) ? [0, 1, 2] : (gen === 2) ? [0, 1, 2, 7] : [0, 1, 2, 7, 8],
