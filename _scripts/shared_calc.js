@@ -724,19 +724,26 @@ function autoSetRuin(ability, side) {
 }
 
 function autoSetMultiHits(pokeInfo) {
-	var ability = pokeInfo.find(".ability").val();
-	var item = pokeInfo.find(".item").val();
-	for (var i = 1; i <= 4; i++) {
-		var moveInfo = pokeInfo.find(".move" + i);
-		var moveName = moveInfo.find("select.move-selector").val();
-		if (moveName === "Population Bomb") {
-			moveInfo.children(".move-hits").val(10);
-		} else if (moveName === "Triple Axel") {
-			moveInfo.children(".move-hits").val(3);
-		} else {
-			moveInfo.children(".move-hits").val(ability === "Skill Link" ? 5 : (item === "Loaded Dice" ? 4 : 3));
-		}
+	let ability = pokeInfo.find(".ability").val();
+	let item = pokeInfo.find(".item").val();
+	for (let i = 1; i <= 4; i++) {
+		let moveInfo = pokeInfo.find(".move" + i);
+		let moveName = moveInfo.find("select.move-selector").val();
+		moveInfo.children(".move-hits").val(getDefaultMultiHits(moveName, ability, item));
 	}
+}
+
+function getDefaultMultiHits(moveName, ability, item) {
+	let move = moves[moveName];
+	if (!move || !move.maxMultiHits) {
+		return 1;
+	}
+	if (ability === "Skill Link" || moveName === "Population Bomb" || moveName === "Triple Axel") {
+		return move.maxMultiHits;
+	} else if (item === "Loaded Dice") {
+		return 4;
+	}
+	return 3;
 }
 
 $(".status").bind("keyup change", function () {
@@ -766,7 +773,7 @@ $(".move-selector").change(function () {
 			moveHits.append($("<option></option>").attr("value", i).text(i + " hits"));
 		}
 		moveHits.show();
-		moveHits.val(ability === "Skill Link" || moveName === "Population Bomb" ? maxMultiHits : (pokeInfo.find(".item").val() === "Loaded Dice" ? 4 : 3));
+		moveHits.val(getDefaultMultiHits(moveName, ability, pokeInfo.find(".item").val()));
 	} else {
 		moveHits.hide();
 	}

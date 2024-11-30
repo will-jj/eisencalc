@@ -219,24 +219,41 @@ function performCalculations() {
 			setPoke.resetCurAbility();
 
 			let damageResults = calculateMovesOfAttacker(attacker, defender, field);
+			let data = {
+				setName: setName,
+				move: "(No Move)",
+				percentRange: "0 - 0%",
+				koChance: "nice move",
+				speed: setPoke.stats[SP],
+				type1: setPoke.type1,
+				type2: setPoke.type2 ? setPoke.type2 : ""
+			};
 			let result;
 			let maxDamage;
 			let highestDamage = 0;
+			let highestDamageMinRange = 0;
 			let highestN = 0;
-			let data = { setName: setName, move: "(No Move)", percentRange: "0 - 0%", koChance: "nice move" };
-			if (mode === "one-vs-all") {
-				data.type1 = defender.type1;
-				data.type2 = defender.type2 ? defender.type2 : "";
-			} else {
-				data.type1 = attacker.type1;
-				data.type2 = attacker.type2 ? attacker.type2 : "";
-			}
 			for (let n = 0; n < 4; n++) {
 				result = damageResults[n];
-				let moveHits = result.childDamage ? 2 : attacker.moves[n].hits; // this is placeholder.
-				maxDamage = moveHits * (result.firstHitDamage ? result.firstHitDamage[result.firstHitDamage.length - 1] : result.damage[result.damage.length - 1]);
-				if (maxDamage > highestDamage) {
+				let moveHits = attacker.moves[n].hits;
+				maxDamage = moveHits * (result.firstHitDamage ? result.firstHitDamage[result.firstHitDamage.length - 1] : result.damage[result.damage.length - 1]) +
+					(result.childDamage ? result.childDamage[result.childDamage.length - 1] : 0);
+				minDamage = moveHits * (result.firstHitDamage ? result.firstHitDamage[0] : result.damage[0]) +
+					(result.childDamage ? result.childDamage[0] : 0);
+				// four cases (without expanding to include <=/>=):
+				// > min, > max (better move)
+				// < min, > max (I guess multihits? This would also come up if s toss was the max and min)
+				// > min, < max (s toss)
+				// < min, < max (worse move)
+				if (minDamage >= highestDamageMinRange && maxDamage > highestDamageMinRange) {
 					highestDamage = maxDamage;
+					highestDamageMinRange = minDamage;
+					highestN = n;
+				} else if (minDamage < highestDamageMinRange && maxDamage > highestDamageMinRange) {
+					// I think this case can be ignored
+				} else if (minDamage > highestDamageMinRange && maxDamage <= highestDamageMinRange) {
+					highestDamage = maxDamage;
+					highestDamageMinRange = minDamage;
 					highestN = n;
 				}
 			}
@@ -246,7 +263,8 @@ function performCalculations() {
 				let moveHits = result.childDamage ? 2 : move.hits; // this is placeholder.
 				let mainDamageInfo = DamageInfo(result, moveHits);
 				let firstHitDamageInfo = result.firstHitDamage ? DamageInfo(result, moveHits, true) : mainDamageInfo;
-				setKOChanceText(result, move, moveHits, attacker, defender, field.getSide(~~(mode === "one-vs-all")), mainDamageInfo, firstHitDamageInfo);
+				// do not want to pass child damage as 2 hits here, at least for now until KO text can figure out parental bond damage
+				setKOChanceText(result, move, move.hits, attacker, defender, field.getSide(~~(mode === "one-vs-all")), mainDamageInfo, firstHitDamageInfo);
 				data.koChance = result.koChanceText ? result.koChanceText : "Did not get koChanceText";
 				let minPercentage = Math.round(firstHitDamageInfo.min * 1000 / defender.maxHP) / 10;
 				let maxPercentage = Math.round(firstHitDamageInfo.max * 1000 / defender.maxHP) / 10;
@@ -353,8 +371,12 @@ function constructDataTable() {
 		destroy: true,
 		columnDefs: [
 			{ // Sort KO Chance by damage% instead
-				"orderData": [2], // percentRange = col 2
-				"targets": 3 // koChance = col 3
+				orderData: [2], // percentRange = col 2
+				targets: 3 // koChance = col 3
+			},
+			{
+				width: "0", // this makes the column as small as possible
+				targets: 4 // speed = col 4
 			}
 		],
 		columns: [
@@ -362,9 +384,28 @@ function constructDataTable() {
 			{ data: "move" },
 			{ data: 'percentRange', type: "damage100" }, // type specifies that this column is sorted via the damage100 functions
 			{ data: 'koChance' },
+			{ data: 'speed' },
 			{ data: 'type1', visible: false, searchable: false },
 			{ data: 'type2', visible: false, searchable: false }
 		],
+		rowCallback: function(row, data, index) {
+			let userSpeed = parseInt($(".totalMod").text());
+			let massSpeed = data["speed"];
+			if (parseInt($(".sp .ivs").val()) <= 7) {
+				if (massSpeed > userSpeed) {
+					return;
+				}
+			} else {
+				if (massSpeed < userSpeed) {
+					return;
+				}
+			}
+			// speed is col 4
+			$(row).find("td:eq(4)").css({
+				"color": massSpeed === userSpeed ? "gold" : "#F02020",
+				"font-weight": "bold"
+			});
+		},
 		dom: 'frti',
 		/*colVis: { The options that allows selection of which columns to include in the table
 			exclude: (gen > 2) ? [0, 1, 2] : (gen === 2) ? [0, 1, 2, 7] : [0, 1, 2, 7, 8],
@@ -466,44 +507,11 @@ function getBottomOffset(obj) {
 }
 
 $(".isActivated").bind("change", function () {
-	getFinalSpeedHonk();
+	setDisplayedSpeed();
 });
 
-function getFinalSpeedHonk() {
-	var speed = getModifiedStat($(".sp .total").text(), $(".sp .boost").val());
-	var item = $(".item").val();
-	var ability = $(".ability").val();
-	var weather = $("input[name=weather]:checked").attr('value');
-	var terrain = $("input[name=terrain]:checked").attr('value');
-	if ((ability === "Protosynthesis" && (item === "Booster Energy" || weather.indexOf("Sun") > -1)) ||
-		(ability === "Quark Drive" && (item === "Booster Energy" || terrain === "Electric"))) {
-		if (speed > getModifiedStat($(".at .total").text(), $(".at .boost").val()) && speed > getModifiedStat($(".df .total").text(), $(".df .boost").val()) &&
-			speed > getModifiedStat($(".sa .total").text(), $(".sa .boost").val()) && speed > getModifiedStat($(".sd .total").text(), $(".sd .boost").val())) {
-			speed = Math.floor(speed * 1.5);
-		}
-	}
-	if (item === "Choice Scarf") {
-		speed = Math.floor(speed * 1.5);
-	} else if (item === "Macho Brace" || item === "Iron Ball") {
-		speed = Math.floor(speed / 2);
-	}
-
-	if ($(".status").val() === "Paralyzed" && ability !== "Quick Feet") {
-		speed = Math.floor(speed / (gen <= 6 ? 4 : 2));
-	}
-
-	if (ability === "Chlorophyll" && weather.indexOf("Sun") > -1 && item !== "Utility Umbrella" ||
-		ability === "Sand Rush" && weather === "Sand" ||
-		ability === "Swift Swim" && weather.indexOf("Rain") > -1 && item !== "Utility Umbrella" ||
-		ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
-		ability === "Surge Surfer" && terrain === "Electric") {
-		speed *= 2;
-	} else if (ability === "Quick Feet" && ($(".status").val() !== "Healthy" || $(".isActivated").prop("checked"))) {
-		speed = Math.floor(speed * 1.5);
-	} else if (ability === "Slow Start" && $(".isActivated").prop("checked")) {
-		speed = Math.floor(speed * 0.5);
-	}
-	$(".totalMod").text(speed);
+function setDisplayedSpeed() {
+	$(".totalMod").text(getFinalSpeed(new Pokemon($("#p1")), {}, new Field()));
 }
 
 var dtHeight, dtWidth;
@@ -530,6 +538,6 @@ $(document).ready(function () {
 	constructDataTable();
 	placeBsBtn();
 
-	$(".calc-trigger").bind("change keyup", getFinalSpeedHonk);
-	getFinalSpeedHonk();
+	$(".calc-trigger").bind("change keyup", setDisplayedSpeed);
+	setDisplayedSpeed();
 });
