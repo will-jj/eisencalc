@@ -391,7 +391,7 @@ function constructDataTable() {
 		rowCallback: function(row, data, index) {
 			let userSpeed = parseInt($(".totalMod").text());
 			let massSpeed = data["speed"];
-			if (parseInt($(".sp .iv").text()) <= 5) {
+			if (parseInt($(".sp .ivs").val()) <= 7) {
 				if (massSpeed > userSpeed) {
 					return;
 				}
