@@ -375,7 +375,7 @@ function constructDataTable() {
 				targets: 3 // koChance = col 3
 			},
 			{
-				width: "0", // this makes the column as small as possible
+				width: "5%", // this makes the column as small as possible
 				targets: 4 // speed = col 4
 			}
 		],
