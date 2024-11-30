@@ -297,38 +297,38 @@ $(".gen").change(function () {
 	//$(".tiers input").prop("checked", false); // since tiers is a radio button now, don't uncheck it
 	adjustTierBorderRadius();
 	let defaultChecked = "#All";
+	let thresholdLabel = "";
+	calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_MODERN;
 	switch (gen) {
 	case 3:
 		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_ADV;
-		$("#threshold").next("label").text("50+");
+		thresholdLabel = "50+";
 		break;
 	case 4:
 		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_PTHGSS;
-		$("#threshold").next("label").text("50+");
+		thresholdLabel = "50+";
 		break;
 	case 5:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_MODERN;
-		$("#threshold").next("label").text("28+");
+		thresholdLabel = "28+";
 		break;
 	case 6:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_MODERN;
-		$("#threshold").next("label").text("40+");
+		thresholdLabel = "40+";
 		break;
 	case 7:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_MODERN;
-		$("#threshold").next("label").text("40+");
+		thresholdLabel = "40+";
 		break;
 	case 8:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_MODERN;
 		defaultChecked = "#Tower";
 		break;
 	case 80:
 	case 9:
 	default:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_MODERN;
 		break;
 	}
 	$(defaultChecked).prop("checked", true);
+	if (thresholdLabel) {
+		$("#threshold").next("label").text(thresholdLabel);
+	}
 	$("#ohkoCounter").text("");
 	if ($.fn.DataTable.isDataTable("#holder-2")) {
 		table.clear();
