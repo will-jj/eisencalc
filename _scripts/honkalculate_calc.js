@@ -219,24 +219,41 @@ function performCalculations() {
 			setPoke.resetCurAbility();
 
 			let damageResults = calculateMovesOfAttacker(attacker, defender, field);
+			let data = {
+				setName: setName,
+				move: "(No Move)",
+				percentRange: "0 - 0%",
+				koChance: "nice move",
+				speed: setPoke.stats[SP],
+				type1: setPoke.type1,
+				type2: setPoke.type2 ? setPoke.type2 : ""
+			};
 			let result;
 			let maxDamage;
 			let highestDamage = 0;
+			let highestDamageMinRange = 0;
 			let highestN = 0;
-			let data = { setName: setName, move: "(No Move)", percentRange: "0 - 0%", koChance: "nice move", speed: setPoke.stats[SP] };
-			if (mode === "one-vs-all") {
-				data.type1 = defender.type1;
-				data.type2 = defender.type2 ? defender.type2 : "";
-			} else {
-				data.type1 = attacker.type1;
-				data.type2 = attacker.type2 ? attacker.type2 : "";
-			}
 			for (let n = 0; n < 4; n++) {
 				result = damageResults[n];
-				let moveHits = result.childDamage ? 2 : attacker.moves[n].hits; // this is placeholder.
-				maxDamage = moveHits * (result.firstHitDamage ? result.firstHitDamage[result.firstHitDamage.length - 1] : result.damage[result.damage.length - 1]);
-				if (maxDamage > highestDamage) {
+				let moveHits = attacker.moves[n].hits;
+				maxDamage = moveHits * (result.firstHitDamage ? result.firstHitDamage[result.firstHitDamage.length - 1] : result.damage[result.damage.length - 1]) +
+					(result.childDamage ? result.childDamage[result.childDamage.length - 1] : 0);
+				minDamage = moveHits * (result.firstHitDamage ? result.firstHitDamage[0] : result.damage[0]) +
+					(result.childDamage ? result.childDamage[0] : 0);
+				// four cases (without expanding to include <=/>=):
+				// > min, > max (better move)
+				// < min, > max (I guess multihits? This would also come up if s toss was the max and min)
+				// > min, < max (s toss)
+				// < min, < max (worse move)
+				if (minDamage >= highestDamageMinRange && maxDamage > highestDamageMinRange) {
 					highestDamage = maxDamage;
+					highestDamageMinRange = minDamage;
+					highestN = n;
+				} else if (minDamage < highestDamageMinRange && maxDamage > highestDamageMinRange) {
+					// I think this case can be ignored
+				} else if (minDamage > highestDamageMinRange && maxDamage <= highestDamageMinRange) {
+					highestDamage = maxDamage;
+					highestDamageMinRange = minDamage;
 					highestN = n;
 				}
 			}
@@ -246,7 +263,8 @@ function performCalculations() {
 				let moveHits = result.childDamage ? 2 : move.hits; // this is placeholder.
 				let mainDamageInfo = DamageInfo(result, moveHits);
 				let firstHitDamageInfo = result.firstHitDamage ? DamageInfo(result, moveHits, true) : mainDamageInfo;
-				setKOChanceText(result, move, moveHits, attacker, defender, field.getSide(~~(mode === "one-vs-all")), mainDamageInfo, firstHitDamageInfo);
+				// do not want to pass child damage as 2 hits here, at least for now until KO text can figure out parental bond damage
+				setKOChanceText(result, move, move.hits, attacker, defender, field.getSide(~~(mode === "one-vs-all")), mainDamageInfo, firstHitDamageInfo);
 				data.koChance = result.koChanceText ? result.koChanceText : "Did not get koChanceText";
 				let minPercentage = Math.round(firstHitDamageInfo.min * 1000 / defender.maxHP) / 10;
 				let maxPercentage = Math.round(firstHitDamageInfo.max * 1000 / defender.maxHP) / 10;
