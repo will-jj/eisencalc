@@ -507,44 +507,11 @@ function getBottomOffset(obj) {
 }
 
 $(".isActivated").bind("change", function () {
-	getFinalSpeedHonk();
+	setDisplayedSpeed();
 });
 
-function getFinalSpeedHonk() {
-	var speed = getModifiedStat($(".sp .total").text(), $(".sp .boost").val());
-	var item = $(".item").val();
-	var ability = $(".ability").val();
-	var weather = $("input[name=weather]:checked").attr('value');
-	var terrain = $("input[name=terrain]:checked").attr('value');
-	if ((ability === "Protosynthesis" && (item === "Booster Energy" || weather.indexOf("Sun") > -1)) ||
-		(ability === "Quark Drive" && (item === "Booster Energy" || terrain === "Electric"))) {
-		if (speed > getModifiedStat($(".at .total").text(), $(".at .boost").val()) && speed > getModifiedStat($(".df .total").text(), $(".df .boost").val()) &&
-			speed > getModifiedStat($(".sa .total").text(), $(".sa .boost").val()) && speed > getModifiedStat($(".sd .total").text(), $(".sd .boost").val())) {
-			speed = Math.floor(speed * 1.5);
-		}
-	}
-	if (item === "Choice Scarf") {
-		speed = Math.floor(speed * 1.5);
-	} else if (item === "Macho Brace" || item === "Iron Ball") {
-		speed = Math.floor(speed / 2);
-	}
-
-	if ($(".status").val() === "Paralyzed" && ability !== "Quick Feet") {
-		speed = Math.floor(speed / (gen <= 6 ? 4 : 2));
-	}
-
-	if (ability === "Chlorophyll" && weather.indexOf("Sun") > -1 && item !== "Utility Umbrella" ||
-		ability === "Sand Rush" && weather === "Sand" ||
-		ability === "Swift Swim" && weather.indexOf("Rain") > -1 && item !== "Utility Umbrella" ||
-		ability === "Slush Rush" && (weather.indexOf("Hail") > -1 || weather === "Snow") ||
-		ability === "Surge Surfer" && terrain === "Electric") {
-		speed *= 2;
-	} else if (ability === "Quick Feet" && ($(".status").val() !== "Healthy" || $(".isActivated").prop("checked"))) {
-		speed = Math.floor(speed * 1.5);
-	} else if (ability === "Slow Start" && $(".isActivated").prop("checked")) {
-		speed = Math.floor(speed * 0.5);
-	}
-	$(".totalMod").text(speed);
+function setDisplayedSpeed() {
+	$(".totalMod").text(getFinalSpeed(new Pokemon($("#p1")), {}, new Field()));
 }
 
 var dtHeight, dtWidth;
@@ -571,6 +538,6 @@ $(document).ready(function () {
 	constructDataTable();
 	placeBsBtn();
 
-	$(".calc-trigger").bind("change keyup", getFinalSpeedHonk);
-	getFinalSpeedHonk();
+	$(".calc-trigger").bind("change keyup", setDisplayedSpeed);
+	setDisplayedSpeed();
 });
