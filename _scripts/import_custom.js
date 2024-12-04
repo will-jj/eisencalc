@@ -9,8 +9,6 @@ var showdownFormes = {
 	"Floette-Eternal": "Floette-E",
 	"Wormadam-Sandy": "Wormadam-G",
 	"Wormadam-Trash": "Wormadam-S",
-	"Groudon-Primal": "Primal Groudon",
-	"Kyogre-Primal": "Primal Kyogre",
 	"Necrozma-Dusk-Mane": "Necrozma-Dusk Mane",
 	"Necrozma-Dawn-Wings": "Necrozma-Dawn Wings",
 	"Necrozma-Ultra": "Ultra Necrozma"

@@ -7607,7 +7607,20 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sp": 98
 		},
 		"w": 18.0,
-		"abilities": ["Rock Head", "Reckless", "Adaptability", "Mold Breaker"]
+		"abilities": ["Reckless", "Adaptability", "Mold Breaker"]
+	},
+	"Basculin-Blue": {
+		"t1": "Water",
+		"bs": {
+			"hp": 70,
+			"at": 92,
+			"df": 65,
+			"sa": 80,
+			"sd": 55,
+			"sp": 98
+		},
+		"w": 18.0,
+		"abilities": ["Rock Head", "Adaptability", "Mold Breaker"]
 	},
 	"Beartic": {
 		"t1": "Ice",
@@ -7850,6 +7863,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sp": 95
 		},
 		"w": 92.9,
+		"ab": "Sheer Force",
 		"abilities": ["Sheer Force", "Zen Mode"],
 		"formes": [ "Darmanitan", "Darmanitan-Zen"]
 	},
@@ -11519,7 +11533,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sp": 115
 		},
 		"w": 33.0,
-		"abilities": ["Pickup", "Technician", "Rattled"]
+		"abilities": ["Fur Coat", "Technician", "Rattled"]
 	},
 	"Raichu-Alola": {
 		"t1": "Electric",
@@ -16586,6 +16600,19 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 		"w": 290,
 		"abilities": ["Guts", "Bulletproof", "Unnerve"]
 	},
+	"Basculin-White": {
+		"t1": "Water",
+		"bs": {
+			"hp": 70,
+			"at": 92,
+			"df": 65,
+			"sa": 80,
+			"sd": 55,
+			"sp": 98
+		},
+		"w": 18.0,
+		"abilities": ["Rattled", "Adaptability", "Mold Breaker"]
+	},
 	"Basculegion-M": {
 		"t1": "Water",
 		"t2": "Ghost",
@@ -17224,8 +17251,8 @@ var POKEDEX_SV = $.extend(true, {}, POKEDEX_SS, {
 });
 
 POKEDEX_SV["Gallade"].abilities.push("Sharpness");
-POKEDEX_SV["Empoleon"].abilities[1] = "Competitive";
-POKEDEX_SV["Shiftry"].abilities[1] = "Wind Rider";
+POKEDEX_SV["Empoleon"].abilities[POKEDEX_SV["Empoleon"].abilities.indexOf("Defiant")] = "Competitive";
+POKEDEX_SV["Shiftry"].abilities[POKEDEX_SV["Shiftry"].abilities.indexOf("Early Bird")] = "Wind Rider";
 
 
 var POKEDEX_MEGAS = {
@@ -17989,7 +18016,7 @@ var POKEDEX_MEGAS = {
 };
 
 var POKEDEX_PRIMALS = {
-	"Primal Groudon": {
+	"Groudon-Primal": {
 		"t1": "Ground",
 		"t2": "Fire",
 		"bs": {
@@ -18001,11 +18028,9 @@ var POKEDEX_PRIMALS = {
 			"sp": 90
 		},
 		"w": 999.7,
-		"abilities": ["Desolate Land"],
-		"hasBaseForme": "Groudon"
+		"abilities": ["Desolate Land"]
 	},
-	"Groudon": {"formes": ["Groudon", "Primal Groudon"]},
-	"Primal Kyogre": {
+	"Kyogre-Primal": {
 		"t1": "Water",
 		"bs": {
 			"hp": 100,
@@ -18016,10 +18041,8 @@ var POKEDEX_PRIMALS = {
 			"sp": 90
 		},
 		"w": 430.0,
-		"abilities": ["Primordial Sea"],
-		"hasBaseForme": "Kyogre"
-	},
-	"Kyogre": {"formes": ["Kyogre", "Primal Kyogre"]}
+		"abilities": ["Primordial Sea"]
+	}
 };
 
 let floetteEternal = {
