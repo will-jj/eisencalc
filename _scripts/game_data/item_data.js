@@ -294,11 +294,11 @@ ITEMS_BW = ITEMS_BW.concat(NON_NORMAL_GEMS);
 ITEMS_SM = ITEMS_SM.concat(Z_CRYSTALS);
 
 // Remove Plates from an item array.
-for (let itemSet of [ITEMS_SS]) {
-	for (let plate of PLATES) {
-		itemSet.splice(itemSet.indexOf(plate), 1);
-	}
-}
+// for (let itemSet of [ITEMS_SS]) {
+//	for (let plate of PLATES) {
+//		itemSet.splice(itemSet.indexOf(plate), 1);
+//	}
+// }
 
 function getTechnoBlast(item) {
 	switch (item) {
