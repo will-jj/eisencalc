@@ -11742,7 +11742,7 @@ SETDEX_PHGSS = {
       "item": "Salac Berry",
       "tier": "50"
     },
-    "Miltank-3 (539)": {
+    "Miltank-3 (675)": {
       "evs": {
         "at": 252,
         "df": 252
