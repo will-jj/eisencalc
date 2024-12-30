@@ -1679,7 +1679,7 @@ $(".gen").change(function () {
 		setdex = SETDEX_GEN80;
 		typeChart = TYPE_CHART_XY;
 		moves = MOVES_SS;
-		items = ITEMS_SS;
+		items = ITEMS_DPP;
 		abilities = ABILITIES_SS;
 		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
 		forumLink = "https://www.smogon.com/forums/threads/bdsp-battle-tower-discussion-records.3693739/";
