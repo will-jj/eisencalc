@@ -94,8 +94,9 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.defenderLevel = defender.level;
 	}
 
-	if (move.name === "Seismic Toss" || move.name === "Night Shade") {
-		return {"damage": [attackerLevel], "description": buildDescription(description)};
+	let singletonDamageValue = getSingletonDamage(attacker, defender, move, field, description);
+	if (singletonDamageValue) {
+		return {"damage": [singletonDamageValue], "description": buildDescription(description)};
 	}
 
 	if (move.hits > 1) {
@@ -118,6 +119,11 @@ function getDamageResultADV(attacker, defender, move, field) {
 	case "Low Kick":
 		var w = defender.weight;
 		basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+		description.moveBP = basePower;
+		break;
+	case "Magnitude":
+		// always print these moves' power
+		basePower = move.bp;
 		description.moveBP = basePower;
 		break;
 	default:

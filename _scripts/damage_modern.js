@@ -327,12 +327,9 @@ function getDamageResult(attacker, defender, move, field) {
 		description.defenderLevel = defender.level;
 	}
 
-	if (["Seismic Toss", "Night Shade"].includes(move.name)) {
-		return {"damage": [attackerLevel * (attacker.curAbility === "Parental Bond" ? 2 : 1)], "description": buildDescription(description)};
-	}
-
-	if (move.name === "Final Gambit") {
-		return {"damage": [attacker.curHP]};
+	let singletonDamageValue = getSingletonDamage(attacker, defender, move, field, description);
+	if (singletonDamageValue) {
+		return {"damage": [singletonDamageValue], "description": buildDescription(description)};
 	}
 
 	if (move.hits > 1) {
@@ -578,8 +575,9 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		basePower += 50 * field.faintedCount;
 		description.moveBP = basePower;
 		break;
+	case "Magnitude":
 	case "Rage Fist":
-		// always print Rage Fist's power
+		// always print these moves' power
 		description.moveBP = basePower;
 		break;
 	case "Psyblade":
@@ -1433,6 +1431,56 @@ function killsShedinja(attacker, defender, move, field = {}) {
 	let confusion = ["Confuse Ray", "Flatter", "Supersonic", "Swagger", "Sweet Kiss", "Teeter Dance"].includes(move.name);
 	let otherPassive = (move.name === "Leech Seed" && !defender.hasType("Grass")) || (move.name === "Curse" && attacker.hasType("Ghost"));
 	return weather || poison || burn || dangerItem || confusion || otherPassive;
+}
+
+function getSingletonDamage(attacker, defender, move, field, description) {
+	let singletonDamageValue;
+
+	switch (move.name) {
+		case "Seismic Toss":
+		case "Night Shade":
+			singletonDamageValue = attacker.level;
+			break;
+		case "Psywave":
+			singletonDamageValue = attacker.level * 150 / 100;
+			break;
+		case "Sonic Boom":
+			singletonDamageValue = 20;
+			break;
+		case "Dragon Rage":
+			singletonDamageValue = 40;
+			break;
+	}
+	if (singletonDamageValue && attacker.curAbility === "Parental Bond") {
+		description.attackerAbility = attacker.curAbility;
+		return singletonDamageValue *= 2;
+	}
+
+	switch (move.name) {
+		case "Super Fang":
+		case "Nature\'s Madness":
+		case "Ruination":
+			singletonDamageValue = Math.max(Math.floor(defender.curHP / 2), 1);
+			break;
+		case "Guardian of Alola":
+			singletonDamageValue = Math.max(Math.floor(defender.curHP * 3 / 4), 1);
+			if (field.isProtect) {
+				singletonDamageValue = Math.max(Math.floor(singletonDamageValue / 4), 1);
+				description.isQuarteredByProtect = true;
+			}
+			break;
+	}
+	if (singletonDamageValue && attacker.curAbility === "Parental Bond") {
+		description.attackerAbility = attacker.curAbility;
+		singletonDamageValue += Math.max(Math.floor((defender.curHP - singletonDamageValue) / 2), 1);
+		return singletonDamageValue;
+	}
+
+	if (move.name === "Final Gambit") {
+		return attacker.curHP;
+	}
+
+	return singletonDamageValue;
 }
 
 function activateResistBerry(attacker, defender, typeEffectiveness) {

@@ -263,9 +263,13 @@ function performCalculations() {
 				let moveHits = result.childDamage ? 2 : move.hits; // this is placeholder.
 				let mainDamageInfo = DamageInfo(result, moveHits);
 				let firstHitDamageInfo = result.firstHitDamage ? DamageInfo(result, moveHits, true) : mainDamageInfo;
-				// do not want to pass child damage as 2 hits here, at least for now until KO text can figure out parental bond damage
-				setKOChanceText(result, move, move.hits, attacker, defender, field.getSide(~~(mode === "one-vs-all")), mainDamageInfo, firstHitDamageInfo);
-				data.koChance = result.koChanceText ? result.koChanceText : "Did not get koChanceText";
+				if (move.noKOChance) {
+					data.koChance = "-";
+				} else {
+					// do not want to pass child damage as 2 hits here, at least for now until KO text can figure out parental bond damage
+					setKOChanceText(result, move, move.hits, attacker, defender, field.getSide(~~(mode === "one-vs-all")), mainDamageInfo, firstHitDamageInfo);
+					data.koChance = result.koChanceText ? result.koChanceText : "Did not get koChanceText";
+				}
 				let minPercentage = Math.round(firstHitDamageInfo.min * 1000 / defender.maxHP) / 10;
 				let maxPercentage = Math.round(firstHitDamageInfo.max * 1000 / defender.maxHP) / 10;
 				data.percentRange = minPercentage + " - " + maxPercentage + "%";

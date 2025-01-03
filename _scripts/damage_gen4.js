@@ -129,8 +129,9 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.defenderLevel = defender.level;
 	}
 
-	if (move.name === "Seismic Toss" || move.name === "Night Shade") {
-		return {"damage": [attackerLevel], "description": buildDescription(description)};
+	let singletonDamageValue = getSingletonDamage(attacker, defender, move, field, description);
+	if (singletonDamageValue) {
+		return {"damage": [singletonDamageValue], "description": buildDescription(description)};
 	}
 
 	if (move.hits > 1) {
@@ -178,6 +179,10 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		break;
 	case "Gyro Ball":
 		basePower = attacker.stats[SP] === 0 ? 1 : Math.min(150, Math.floor(25 * defender.stats[SP] / attacker.stats[SP]) + 1);
+		description.moveBP = basePower;
+		break;
+	case "Magnitude":
+		// always print these moves' power
 		description.moveBP = basePower;
 		break;
 	case "Payback":
