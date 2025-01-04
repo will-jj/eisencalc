@@ -94,8 +94,9 @@ function getDamageResultADV(attacker, defender, move, field) {
 		description.defenderLevel = defender.level;
 	}
 
-	if (move.name === "Seismic Toss" || move.name === "Night Shade") {
-		return {"damage": [attackerLevel], "description": buildDescription(description)};
+	let singletonDamageValue = getSingletonDamage(attacker, defender, move, field, description);
+	if (singletonDamageValue) {
+		return {"damage": [singletonDamageValue], "description": buildDescription(description)};
 	}
 
 	if (move.hits > 1) {
@@ -118,6 +119,18 @@ function getDamageResultADV(attacker, defender, move, field) {
 	case "Low Kick":
 		var w = defender.weight;
 		basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+		description.moveBP = basePower;
+		break;
+	case "Triple Kick":
+		basePower = move.bp;
+		description.moveBP = basePower;
+		for (let i = 2; i <= move.hits; i++) {
+			description.moveBP += ", " + (basePower * i);
+		}
+		break;
+	case "Magnitude":
+		// always print these moves' power
+		basePower = move.bp;
 		description.moveBP = basePower;
 		break;
 	default:
@@ -282,5 +295,20 @@ function getDamageResultADV(attacker, defender, move, field) {
 	for (var i = 85; i <= 100; i++) {
 		damage[i - 85] = Math.max(1, Math.floor(baseDamage * i / 100));
 	}
-	return {"damage": damage, "description": buildDescription(description)};
+	let result = {"damage": damage, "description": buildDescription(description)};
+
+	if (isFirstHit && move.name === "Triple Kick") {
+		// tripleAxelDamage is an array of damage arrays; a 2D number array
+		result.tripleAxelDamage = [];
+		let startingBP = move.bp;
+		isFirstHit = false;
+		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
+			move.bp = startingBP * hitNum;
+			result.tripleAxelDamage.push(getDamageResultADV(attacker, defender, move, field).damage);
+		}
+		isFirstHit = true;
+		move.bp = startingBP;
+	}
+
+	return result;
 }

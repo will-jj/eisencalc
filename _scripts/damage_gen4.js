@@ -129,8 +129,9 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.defenderLevel = defender.level;
 	}
 
-	if (move.name === "Seismic Toss" || move.name === "Night Shade") {
-		return {"damage": [attackerLevel], "description": buildDescription(description)};
+	let singletonDamageValue = getSingletonDamage(attacker, defender, move, field, description);
+	if (singletonDamageValue) {
+		return {"damage": [singletonDamageValue], "description": buildDescription(description)};
 	}
 
 	if (move.hits > 1) {
@@ -180,6 +181,10 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		basePower = attacker.stats[SP] === 0 ? 1 : Math.min(150, Math.floor(25 * defender.stats[SP] / attacker.stats[SP]) + 1);
 		description.moveBP = basePower;
 		break;
+	case "Magnitude":
+		// always print these moves' power
+		description.moveBP = basePower;
+		break;
 	case "Payback":
 		if (turnOrder !== "FIRST") {
 			basePower *= 2;
@@ -191,6 +196,12 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		if (boostCount > 0) {
 			basePower = Math.min(200, basePower + 20 * boostCount);
 			description.moveBP = basePower;
+		}
+		break;
+	case "Triple Kick":
+		description.moveBP = basePower;
+		for (let i = 2; i <= move.hits; i++) {
+			description.moveBP += ", " + (basePower * i);
 		}
 		break;
 	case "Wake-Up Slap":
@@ -484,6 +495,19 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		damage[i] = Math.max(1, damage[i]);
 	}
 	let result = {"damage": damage, "description": buildDescription(description)};
+
+	if (isFirstHit && move.name === "Triple Kick") {
+		// tripleAxelDamage is an array of damage arrays; a 2D number array
+		result.tripleAxelDamage = [];
+		let startingBP = move.bp;
+		isFirstHit = false;
+		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
+			move.bp = startingBP * hitNum;
+			result.tripleAxelDamage.push(getDamageResultPtHGSS(attacker, defender, move, field).damage);
+		}
+		isFirstHit = true;
+		move.bp = startingBP;
+	}
 
 	if (berryMod != 1) {
 		// this branch actually calculates the damage without the resist berry

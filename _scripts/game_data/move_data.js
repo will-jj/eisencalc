@@ -152,6 +152,12 @@ var MOVES_RBY = {
 		"hasSecondaryEffect": true,
 		"acc": 100
 	},
+	"Dragon Rage": {
+		"bp": 1,
+		"type": "Dragon",
+		"category": "Special",
+		"acc": 100
+	},
 	"Dream Eater": {
 		"bp": 100,
 		"type": "Psychic",
@@ -369,6 +375,13 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Normal"
 	},
+	"Magnitude": {
+		"bp": 150,
+		"type": "Ground",
+		"category": "Physical",
+		"acc": 100,
+		"noKOChance": true
+	},
 	"Mega Drain": {
 		"bp": 40,
 		"type": "Grass",
@@ -562,6 +575,12 @@ var MOVES_RBY = {
 		"bp": 0,
 		"type": "Normal"
 	},
+	"Sonic Boom": {
+		"bp": 1,
+		"type": "Normal",
+		"category": "Special",
+		"acc": 90
+	},
 	"Spore": {
 		"bp": 0,
 		"type": "Grass"
@@ -609,10 +628,12 @@ var MOVES_RBY = {
 		"type": "Normal"
 	},
 	"Super Fang": {
-		"bp": 0,
+		"bp": 1,
+		"category": "Physical",
 		"type": "Normal",
 		"makesContact": true,
-		"acc": 90
+		"acc": 90,
+		"noKOChance": true
 	},
 	"Surf": {
 		"bp": 95,
@@ -1115,6 +1136,13 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"bp": 0,
 		"type": "Normal"
 	},
+	"Psywave": {
+		"bp": 1,
+		"type": "Psychic",
+		"category": "Special",
+		"acc": 80,
+		"noKOChance": true
+	},
 	"Pursuit": {
 		"bp": 40,
 		"type": "Dark",
@@ -1271,6 +1299,14 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"acc": 100
 	},
 	"Tri Attack": {"hasSecondaryEffect": true},
+	"Triple Kick": {
+		"bp": 10,
+		"type": "Fighting",
+		"category": "Physical",
+		"makesContact": true,
+		"maxMultiHits": 3,
+		"acc": 90
+	},
 	"Twister": {
 		"bp": 40,
 		"type": "Dragon",
@@ -3577,6 +3613,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		"bp": 0,
 		"type": "Psychic"
 	},
+	"Psywave": {"acc": 100},
 	"Rock Tomb": {"bp": 60},
 	"Skull Bash": {"bp": 130},
 	"Spiky Shield": {
@@ -3790,6 +3827,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	"Dragon Ascent": {"zp": 190},
 	"Dragon Claw": {"zp": 160},
 	"Dragon Pulse": {"zp": 160},
+	"Dragon Rage": {"zp": 100},
 	"Dragon Rush": {"zp": 180},
 	"Dragon Tail": {"zp": 120},
 	"Drain Punch": {"zp": 140},
@@ -3991,6 +4029,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	"Magical Leaf": {"zp": 120},
 	"Magma Storm": {"zp": 180},
 	"Magnet Bomb": {"zp": 120},
+	"Magnitude": {"zp": 140},
 	"Megahorn": {"zp": 190},
 	"Metal Claw": {"zp": 100},
 	"Meteor Mash": {"zp": 175},
@@ -4033,7 +4072,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"type": "Fairy",
 		"category": "Special",
 		"zp": 100,
-		"acc": 90
+		"acc": 90,
+		"noKOChance": true
 	},
 	"Needle Arm": {"zp": 120},
 	"Night Daze": {"zp": 160},
@@ -4045,7 +4085,6 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	"Origin Pulse": {"zp": 185},
 	"Outrage": {"zp": 190},
 	"Overheat": {"zp": 195},
-	"Paleo Wave": {"zp": 160},
 	"Parabolic Charge": {"bp": 65, "zp": 120},
 	"Payback": {"zp": 100},
 	"Petal Dance": {"zp": 190},
@@ -4114,6 +4153,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	"Psycho Cut": {"zp": 140},
 	"Psyshock": {"zp": 160},
 	"Psystrike": {"zp": 180},
+	"Psywave": {"zp": 100},
 	"Punishment": {"zp": 160},
 	"Pursuit": {"zp": 100},
 	"Quick Attack": {"zp": 100},
@@ -4227,6 +4267,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		"zp": 190,
 		"acc": 100
 	},
+	"Sonic Boom": {"zp": 100},
 	"Spacial Rend": {"zp": 180},
 	"Spark": {"zp": 120},
 	"Sparkling Aria": {
@@ -4316,6 +4357,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	"Thunder Fang": {"zp": 120},
 	"Thunder Punch": {"zp": 140},
 	"Tri Attack": {"zp": 160},
+	"Triple Kick": {"zp": 120},
 	"Trop Kick": {
 		"bp": 70,
 		"type": "Grass",
@@ -5023,8 +5065,11 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS, {
 		"type": "Normal"
 	},
 	"Ruination": {
-		"bp": 0,
-		"type": "Dark"
+		"bp": 1,
+		"category": "Special",
+		"type": "Dark",
+		"acc": 90,
+		"noKOChance": true
 	},
 	"Salt Cure": {
 		"bp": 40,
@@ -5496,8 +5541,8 @@ var EXCLUSIVE_ZMOVES_LOOKUP = {
 		"baseMove": "Volt Tackle"
 	},
 	"Tapunium Z": {
-		"zMoveName": "Nature\'s Madness",
-		"baseMove": "Guardian of Alola"
+		"zMoveName": "Guardian of Alola",
+		"baseMove": "Nature\'s Madness"
 	}
 };
 
@@ -5529,7 +5574,8 @@ var EXCLUSIVE_ZMOVES = {
 	"Guardian of Alola": {
 		"bp": 1,
 		"type": "Fairy",
-		"category": "Special"
+		"category": "Special",
+		"noKOChance": true
 	},
 	"Let's Snuggle Forever": {
 		"bp": 190,

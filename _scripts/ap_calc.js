@@ -225,6 +225,9 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 		result.koChanceText = "nice move";
 	} else if (move.isMLG) {
 		result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=iD92h-M474g'>it's a one-hit KO!</a>";
+	} else if (move.noKOChance) {
+		result.koChanceText = "";
+		result.noKOChance = true;
 	} else {
 		setKOChanceText(result, move, moveHits, attacker, defender, fieldSide, mainDamageInfo, firstHitDamageInfo);
 	}
@@ -368,12 +371,15 @@ function setUpRecoilRecoveryText(result, attacker, defender, move, minDamage, ma
 var mainResult = "";
 function updateDamageText(resultMoveObj) {
 	if (damageResults) {
-		var result = findDamageResult(resultMoveObj);
+		let result = findDamageResult(resultMoveObj);
 		if (result) {
 			let recoilText = result.recoilRange ? ("; " + result.recoilType + " damage: " + result.recoilRange + " (" + result.recoilPercent + "%)") : "";
 			let recoveryText = result.recoveryRange ? ("; recovers " + result.recoveryRange + " (" + result.recoveryPercent + "%)") : "";
-			let koChanceText = result.koChanceText ? (result.koChanceText + (result.afterText ? result.afterText : "")) : "Did not get koChanceText";
-			mainResult = result.description + ": " + result.damageText + recoilText + recoveryText + " -- " + koChanceText;
+			mainResult = result.description + ": " + result.damageText + recoilText + recoveryText;
+			if (!result.noKOChance) {
+				let koChanceText = result.koChanceText ? (result.koChanceText + (result.afterText ? result.afterText : "")) : "Did not get koChanceText";
+				mainResult += " -- " + koChanceText;
+			}
 			$("#mainResult").html(mainResult);
 			$("#afterAcc").html(result.afterAccText ? result.afterAccText : "");
 			$("#damageValues").html(result.hitDamageValues + (result.multiHitPercents ? "<br />" + result.multiHitPercents : ""));
