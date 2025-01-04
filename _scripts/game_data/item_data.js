@@ -300,6 +300,8 @@ for (let itemSet of [ITEMS_SS]) {
 	}
 }
 
+ITEMS_SS.push("Pixie Plate"); // SwSh specially includes only the Pixie Plate.
+
 function getTechnoBlast(item) {
 	switch (item) {
 	case "Burn Drive":
