@@ -198,6 +198,12 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 			description.moveBP = basePower;
 		}
 		break;
+	case "Triple Kick":
+		description.moveBP = basePower;
+		for (let i = 2; i <= move.hits; i++) {
+			description.moveBP += ", " + (basePower * i);
+		}
+		break;
 	case "Wake-Up Slap":
 		if (defender.status === "Asleep") {
 			basePower *= 2;
@@ -489,6 +495,19 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		damage[i] = Math.max(1, damage[i]);
 	}
 	let result = {"damage": damage, "description": buildDescription(description)};
+
+	if (isFirstHit && move.name === "Triple Kick") {
+		// tripleAxelDamage is an array of damage arrays; a 2D number array
+		result.tripleAxelDamage = [];
+		let startingBP = move.bp;
+		isFirstHit = false;
+		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
+			move.bp = startingBP * hitNum;
+			result.tripleAxelDamage.push(getDamageResultPtHGSS(attacker, defender, move, field).damage);
+		}
+		isFirstHit = true;
+		move.bp = startingBP;
+	}
 
 	if (berryMod != 1) {
 		// this branch actually calculates the damage without the resist berry

@@ -738,7 +738,7 @@ function getDefaultMultiHits(moveName, ability, item) {
 	if (!move || !move.maxMultiHits) {
 		return 1;
 	}
-	if (ability === "Skill Link" || moveName === "Population Bomb" || moveName === "Triple Axel") {
+	if (ability === "Skill Link" || ["Triple Kick", "Triple Axel", "Population Bomb"].includes(moveName)) {
 		return move.maxMultiHits;
 	} else if (item === "Loaded Dice") {
 		return 4;

@@ -121,6 +121,13 @@ function getDamageResultADV(attacker, defender, move, field) {
 		basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
 		description.moveBP = basePower;
 		break;
+	case "Triple Kick":
+		basePower = move.bp;
+		description.moveBP = basePower;
+		for (let i = 2; i <= move.hits; i++) {
+			description.moveBP += ", " + (basePower * i);
+		}
+		break;
 	case "Magnitude":
 		// always print these moves' power
 		basePower = move.bp;
@@ -288,5 +295,20 @@ function getDamageResultADV(attacker, defender, move, field) {
 	for (var i = 85; i <= 100; i++) {
 		damage[i - 85] = Math.max(1, Math.floor(baseDamage * i / 100));
 	}
-	return {"damage": damage, "description": buildDescription(description)};
+	let result = {"damage": damage, "description": buildDescription(description)};
+
+	if (isFirstHit && move.name === "Triple Kick") {
+		// tripleAxelDamage is an array of damage arrays; a 2D number array
+		result.tripleAxelDamage = [];
+		let startingBP = move.bp;
+		isFirstHit = false;
+		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
+			move.bp = startingBP * hitNum;
+			result.tripleAxelDamage.push(getDamageResultADV(attacker, defender, move, field).damage);
+		}
+		isFirstHit = true;
+		move.bp = startingBP;
+	}
+
+	return result;
 }

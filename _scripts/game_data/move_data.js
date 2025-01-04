@@ -1299,6 +1299,14 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		"acc": 100
 	},
 	"Tri Attack": {"hasSecondaryEffect": true},
+	"Triple Kick": {
+		"bp": 10,
+		"type": "Fighting",
+		"category": "Physical",
+		"makesContact": true,
+		"maxMultiHits": 3,
+		"acc": 90
+	},
 	"Twister": {
 		"bp": 40,
 		"type": "Dragon",
@@ -4349,6 +4357,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	"Thunder Fang": {"zp": 120},
 	"Thunder Punch": {"zp": 140},
 	"Tri Attack": {"zp": 160},
+	"Triple Kick": {"zp": 120},
 	"Trop Kick": {
 		"bp": 70,
 		"type": "Grass",

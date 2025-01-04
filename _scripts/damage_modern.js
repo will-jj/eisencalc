@@ -390,7 +390,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	// Triple Axel
-	if (move.name === "Triple Axel") {
+	if (["Triple Axel", "Triple Kick"].includes(move.name)) {
 		// tripleAxelDamage is an array of damage arrays; a 2D number array
 		result.tripleAxelDamage = [];
 		let startingBP = move.bp;
@@ -564,6 +564,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		basePower *= (field.terrain === "Psychic" && attackerGrounded ? 1.5 : 1);
 		description.moveBP = basePower;
 		break;
+	case "Triple Kick":
 	case "Triple Axel":
 		basePower = move.bp;
 		description.moveBP = basePower;
