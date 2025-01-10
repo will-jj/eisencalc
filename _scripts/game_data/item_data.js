@@ -30,6 +30,7 @@ var ITEMS_GSC = [
 ];
 
 var ITEMS_ADV = ITEMS_GSC.concat([
+	"Aguav Berry",
 	"Apicot Berry",
 	"Aspear Berry",
 	"BrightPowder",
@@ -39,14 +40,17 @@ var ITEMS_ADV = ITEMS_GSC.concat([
 	"DeepSeaScale",
 	"DeepSeaTooth",
 	"Enigma Berry",
+	"Figy Berry",
 	"Focus Band",
 	"Ganlon Berry",
+	"Iapapa Berry",
 	"Lansat Berry",
 	"Lax Incense",
 	"Leppa Berry",
 	"Liechi Berry",
 	"Lum Berry",
 	"Macho Brace",
+	"Mago Berry",
 	"Mental Herb",
 	"Quick Claw",
 	"Oran Berry",
@@ -62,7 +66,8 @@ var ITEMS_ADV = ITEMS_GSC.concat([
 	"Sitrus Berry",
 	"Soul Dew",
 	"Starf Berry",
-	"White Herb"
+	"White Herb",
+	"Wiki Berry"
 ]);
 
 ITEMS_ADV.splice(ITEMS_ADV.indexOf("Berry"), 1);
@@ -194,11 +199,6 @@ var ITEMS_SM = ITEMS_XY.concat([
 	"Adrenaline Orb",
 	"Protective Pads",
 	"Terrain Extender",
-	"Figy Berry",
-	"Iapapa Berry",
-	"Wiki Berry",
-	"Aguav Berry",
-	"Mago Berry",
 	"Electric Seed",
 	"Psychic Seed",
 	"Misty Seed",
