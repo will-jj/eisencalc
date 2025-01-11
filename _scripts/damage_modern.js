@@ -906,7 +906,7 @@ function calcAtk(attacker, defender, move, field, description) {
 		atMods.push(0x1800);
 		description.attackerItem = attacker.item;
 	} else if (attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak" || attacker.name === "Marowak-Alola") && moveCategory === "Physical" ||
-		attacker.item.replaceAll(" ", "") === "DeepSeaTooth" && attacker.name === "Clamperl" && moveCategory === "Special" ||
+		attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl" && moveCategory === "Special" ||
 		attacker.item === "Light Ball" && attacker.name === "Pikachu" && !move.isZ) {
 		atMods.push(0x2000);
 		description.attackerItem = attacker.item;
@@ -975,7 +975,7 @@ function calcDef(attacker, defender, move, field, description) {
 		description.defenderItem = defender.item;
 	}
 
-	if (defender.item.replaceAll(" ", "") === "DeepSeaScale" && defender.name === "Clamperl" && !hitsPhysical ||
+	if (defender.item === "Deep Sea Scale" && defender.name === "Clamperl" && !hitsPhysical ||
 		defender.item === "Metal Powder" && defender.name === "Ditto" && hitsPhysical) {
 		dfMods.push(0x2000);
 		description.defenderItem = defender.item;

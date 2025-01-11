@@ -205,6 +205,9 @@ var savecustom = function () {
 
 		if (lines[0].indexOf("@") != -1)
 			item = lines[0].substring(lines[0].indexOf("@") + 1).trim(); //item is always after @
+			if (oldItemNames[item]) {
+				item = oldItemNames[item]; // if the item has an old name, convert it to the new name
+			}
 		if (lines.length > 1) {
 			for (var i = 1; i < lines.length; ++i) {
 				if (lines[i].indexOf("Ability") != -1) {

@@ -853,7 +853,7 @@ var SETDEX_GEN5 =
         "Toxic"
       ],
       "nature": "Calm",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     },
     "Serperior-4 (746)": {
@@ -1071,7 +1071,7 @@ var SETDEX_GEN5 =
         "Sandstorm"
       ],
       "nature": "Jolly",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     }
   },
@@ -1171,7 +1171,7 @@ var SETDEX_GEN5 =
         "Calm Mind"
       ],
       "nature": "Timid",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "28"
     },
     "Medicham-3 (576)": {
@@ -1804,7 +1804,7 @@ var SETDEX_GEN5 =
         "Will-O-Wisp"
       ],
       "nature": "Jolly",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     }
   },
@@ -2107,7 +2107,7 @@ var SETDEX_GEN5 =
         "Encore"
       ],
       "nature": "Rash",
-      "item": "NeverMeltIce",
+      "item": "Never-Melt Ice",
       "tier": "28"
     },
     "Dewgong-3 (590)": {
@@ -2606,7 +2606,7 @@ var SETDEX_GEN5 =
         "Fly"
       ],
       "nature": "Impish",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     }
   },
@@ -4283,7 +4283,7 @@ var SETDEX_GEN5 =
         "Guard Split"
       ],
       "nature": "Timid",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "28"
     },
     "Alakazam-2 (448)": {
@@ -4631,7 +4631,7 @@ var SETDEX_GEN5 =
         "Tickle"
       ],
       "nature": "Modest",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "28"
     },
     "Gothitelle-3 (628)": {
@@ -4663,7 +4663,7 @@ var SETDEX_GEN5 =
         "Psychic"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     }
   },
@@ -5396,7 +5396,7 @@ var SETDEX_GEN5 =
         "Mean Look"
       ],
       "nature": "Bold",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     }
   },
@@ -7221,7 +7221,7 @@ var SETDEX_GEN5 =
         "Protect"
       ],
       "nature": "Brave",
-      "item": "BlackGlasses",
+      "item": "Black Glasses",
       "tier": "28"
     },
     "Honchkrow-3 (667)": {
@@ -7438,7 +7438,7 @@ var SETDEX_GEN5 =
         "Poison Jab"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     },
     "Excadrill-4 (845)": {
@@ -7474,7 +7474,7 @@ var SETDEX_GEN5 =
         "Counter"
       ],
       "nature": "Naughty",
-      "item": "BlackGlasses",
+      "item": "Black Glasses",
       "tier": "28"
     },
     "Krookodile-2 (496)": {
@@ -7622,7 +7622,7 @@ var SETDEX_GEN5 =
         "Protect"
       ],
       "nature": "Jolly",
-      "item": "NeverMeltIce",
+      "item": "Never-Melt Ice",
       "tier": "28"
     },
     "Weavile-3 (673)": {
@@ -8306,7 +8306,7 @@ var SETDEX_GEN5 =
         "Focus Blast"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     },
     "Gardevoir-4 (858)": {
@@ -9183,7 +9183,7 @@ var SETDEX_GEN5 =
         "Detect"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     }
   },
@@ -9577,7 +9577,7 @@ var SETDEX_GEN5 =
         "Blizzard"
       ],
       "nature": "Rash",
-      "item": "NeverMeltIce",
+      "item": "Never-Melt Ice",
       "tier": "28"
     },
     "Beartic-3 (702)": {
@@ -9986,7 +9986,7 @@ var SETDEX_GEN5 =
         "Psychic"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     },
     "Lapras-4 (882)": {
@@ -10118,7 +10118,7 @@ var SETDEX_GEN5 =
         "Thunder Wave"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     },
     "Magnezone-4 (884)": {
@@ -10353,7 +10353,7 @@ var SETDEX_GEN5 =
         "Icy Wind"
       ],
       "nature": "Calm",
-      "item": "NeverMeltIce",
+      "item": "Never-Melt Ice",
       "tier": "28"
     },
     "Vanilluxe-2 (538)": {
@@ -11834,7 +11834,7 @@ var SETDEX_GEN5 =
         "Roost"
       ],
       "nature": "Bold",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     },
     "Zapdos-3 (950)": {
@@ -12924,7 +12924,7 @@ var SETDEX_GEN5 =
         "Trick Room"
       ],
       "nature": "Bold",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     }
   },
@@ -13008,7 +13008,7 @@ var SETDEX_GEN5 =
         "Payback"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "28"
     },
     "Regigigas-2 (948)": {
@@ -13364,7 +13364,7 @@ var SETDEX_GEN5 =
         "Fake Out"
       ],
       "nature": "Docile",
-      "item": "BlackGlasses"
+      "item": "Black Glasses"
     },
     "Purrloin-2 (76)": {
       "level": 50,
@@ -13460,7 +13460,7 @@ var SETDEX_GEN5 =
         "Moonlight"
       ],
       "nature": "Modest",
-      "item": "TwistedSpoon"
+      "item": "Twisted Spoon"
     },
     "Munna-2 (79)": {
       "level": 50,
@@ -13571,7 +13571,7 @@ var SETDEX_GEN5 =
         "Spore"
       ],
       "nature": "Modest",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Blitzle": {
@@ -14161,7 +14161,7 @@ var SETDEX_GEN5 =
         "Grass Knot"
       ],
       "nature": "Impish",
-      "item": "SilverPowder"
+      "item": "Silver Powder"
     },
     "Sewaddle-2 (101)": {
       "level": 50,
@@ -14272,7 +14272,7 @@ var SETDEX_GEN5 =
         "Swords Dance"
       ],
       "nature": "Jolly",
-      "item": "SilverPowder"
+      "item": "Silver Powder"
     }
   },
   "Joltik": {
@@ -14478,7 +14478,7 @@ var SETDEX_GEN5 =
         "Leer"
       ],
       "nature": "Adamant",
-      "item": "BlackGlasses"
+      "item": "Black Glasses"
     },
     "Zorua-2 (111)": {
       "level": 50,
@@ -15098,7 +15098,7 @@ var SETDEX_GEN5 =
         "Thunder Wave"
       ],
       "nature": "Calm",
-      "item": "TwistedSpoon"
+      "item": "Twisted Spoon"
     }
   },
   "Vanillish": {
@@ -15436,7 +15436,7 @@ var SETDEX_GEN5 =
         "Encore"
       ],
       "nature": "Hardy",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     },
     "Emolga-2 (180)": {
       "level": 50,
@@ -15740,7 +15740,7 @@ var SETDEX_GEN5 =
         "Spore"
       ],
       "nature": "Modest",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Eelektrik": {
@@ -16110,7 +16110,7 @@ var SETDEX_GEN5 =
         "Trick Room"
       ],
       "nature": "Calm",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     },
     "Jellicent-2 (201)": {
       "level": 50,

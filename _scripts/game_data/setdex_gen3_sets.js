@@ -92,7 +92,7 @@ SETDEX_EM = {
         "Light Screen"
       ],
       "nature": "Docile",
-      "item": "TwistedSpoon"
+      "item": "Twisted Spoon"
     }
   },
   "Magikarp": {
@@ -372,7 +372,7 @@ SETDEX_EM = {
         "Aerial Ace"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Makuhita": {
@@ -613,7 +613,7 @@ SETDEX_EM = {
         "Double Slap"
       ],
       "nature": "Docile",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Spearow": {
@@ -983,7 +983,7 @@ SETDEX_EM = {
         "Mud-Slap"
       ],
       "nature": "Docile",
-      "item": "NeverMeltIce"
+      "item": "Never-Melt Ice"
     }
   },
   "Horsea": {
@@ -1385,7 +1385,7 @@ SETDEX_EM = {
         "Fake Out"
       ],
       "nature": "Docile",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Numel": {
@@ -1481,7 +1481,7 @@ SETDEX_EM = {
         "Seismic Toss"
       ],
       "nature": "Lonely",
-      "item": "TwistedSpoon"
+      "item": "Twisted Spoon"
     }
   },
   "Doduo": {
@@ -1561,7 +1561,7 @@ SETDEX_EM = {
         "Double Team"
       ],
       "nature": "Lonely",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Mudkip": {
@@ -1641,7 +1641,7 @@ SETDEX_EM = {
         "Light Screen"
       ],
       "nature": "Relaxed",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Chikorita": {
@@ -1657,7 +1657,7 @@ SETDEX_EM = {
         "Light Screen"
       ],
       "nature": "Relaxed",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Oddish": {
@@ -1737,7 +1737,7 @@ SETDEX_EM = {
         "Flash"
       ],
       "nature": "Relaxed",
-      "item": "TwistedSpoon"
+      "item": "Twisted Spoon"
     }
   },
   "Clefairy": {
@@ -1931,7 +1931,7 @@ SETDEX_EM = {
         "Hail"
       ],
       "nature": "Docile",
-      "item": "NeverMeltIce"
+      "item": "Never-Melt Ice"
     }
   },
   "Houndour": {
@@ -2190,7 +2190,7 @@ SETDEX_EM = {
         "Double Team"
       ],
       "nature": "Docile",
-      "item": "DeepSeaScale"
+      "item": "Deep Sea Scale"
     }
   },
   "Pidgeotto": {
@@ -2481,7 +2481,7 @@ SETDEX_EM = {
         "Baton Pass"
       ],
       "nature": "Docile",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Butterfree": {
@@ -2578,7 +2578,7 @@ SETDEX_EM = {
         "Whirlwind"
       ],
       "nature": "Docile",
-      "item": "SilverPowder"
+      "item": "Silver Powder"
     }
   },
   "Ledian": {
@@ -2673,7 +2673,7 @@ SETDEX_EM = {
         "Fake Out"
       ],
       "nature": "Lonely",
-      "item": "BlackGlasses"
+      "item": "Black Glasses"
     },
     "Sableye-2 (269)": {
       "evs": {
@@ -2857,7 +2857,7 @@ SETDEX_EM = {
         "Disable"
       ],
       "nature": "Impish",
-      "item": "TwistedSpoon"
+      "item": "Twisted Spoon"
     },
     "Kadabra-2 (275)": {
       "evs": {
@@ -2871,7 +2871,7 @@ SETDEX_EM = {
         "Recover"
       ],
       "nature": "Modest",
-      "item": "TwistedSpoon"
+      "item": "Twisted Spoon"
     }
   },
   "Wailmer": {
@@ -3021,7 +3021,7 @@ SETDEX_EM = {
         "Leech Seed"
       ],
       "nature": "Quirky",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Charmeleon": {
@@ -3190,7 +3190,7 @@ SETDEX_EM = {
         "Light Screen"
       ],
       "nature": "Docile",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     },
     "Bayleef-2 (286)": {
       "evs": {
@@ -3235,7 +3235,7 @@ SETDEX_EM = {
         "Smokescreen"
       ],
       "nature": "Docile",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Croconaw": {
@@ -3327,7 +3327,7 @@ SETDEX_EM = {
         "Thunder Wave"
       ],
       "nature": "Quirky",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Wobbuffet": {
@@ -3436,7 +3436,7 @@ SETDEX_EM = {
         "Double Team"
       ],
       "nature": "Relaxed",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     },
     "Grovyle-2 (294)": {
       "evs": {
@@ -4104,7 +4104,7 @@ SETDEX_EM = {
         "Safeguard"
       ],
       "nature": "Sassy",
-      "item": "TwistedSpoon"
+      "item": "Twisted Spoon"
     },
     "Chimecho-2 (315)": {
       "evs": {
@@ -4119,7 +4119,7 @@ SETDEX_EM = {
         "Heal Bell"
       ],
       "nature": "Quiet",
-      "item": "TwistedSpoon"
+      "item": "Twisted Spoon"
     }
   },
   "Gligar": {
@@ -5279,7 +5279,7 @@ SETDEX_EM = {
         "Sand Attack"
       ],
       "nature": "Gentle",
-      "item": "TwistedSpoon"
+      "item": "Twisted Spoon"
     },
     "Stantler-2 (352)": {
       "evs": {
@@ -5309,7 +5309,7 @@ SETDEX_EM = {
         "Quick Attack"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     },
     "Absol-2 (353)": {
       "evs": {
@@ -5366,7 +5366,7 @@ SETDEX_EM = {
       },
       "moves": [
         "Bubble Beam",
-        "Vice Grip",
+        "Vise Grip",
         "Knock Off",
         "Protect"
       ],
@@ -5569,7 +5569,7 @@ SETDEX_EM = {
         "Synthesis"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -5816,7 +5816,7 @@ SETDEX_EM = {
         "Double Team"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -5894,7 +5894,7 @@ SETDEX_EM = {
         "Protect"
       ],
       "nature": "Sassy",
-      "item": "NeverMeltIce"
+      "item": "Never-Melt Ice"
     },
     "Cloyster-2 (372)": {
       "evs": {
@@ -6079,7 +6079,7 @@ SETDEX_EM = {
         "Confuse Ray"
       ],
       "nature": "Bold",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Misdreavus-4 (663)": {
@@ -6250,7 +6250,7 @@ SETDEX_EM = {
         "Protect"
       ],
       "nature": "Impish",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Jynx-3 (570)": {
@@ -6470,7 +6470,7 @@ SETDEX_EM = {
         "Fire Punch"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -6517,7 +6517,7 @@ SETDEX_EM = {
         "Rain Dance"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Lanturn-4 (670)": {
@@ -6564,7 +6564,7 @@ SETDEX_EM = {
         "Spore"
       ],
       "nature": "Docile",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Breloom-3 (575)": {
@@ -6833,7 +6833,7 @@ SETDEX_EM = {
         "Toxic"
       ],
       "nature": "Careful",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Skarmory-3 (579)": {
@@ -7161,7 +7161,7 @@ SETDEX_EM = {
         "Double Team"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Raichu-2 (488)": {
@@ -7206,7 +7206,7 @@ SETDEX_EM = {
         "Mega Kick"
       ],
       "nature": "Docile",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -7223,7 +7223,7 @@ SETDEX_EM = {
         "Fake Out"
       ],
       "nature": "Quiet",
-      "item": "NeverMeltIce",
+      "item": "Never-Melt Ice",
       "tier": "50"
     },
     "Dewgong-2 (489)": {
@@ -7363,7 +7363,7 @@ SETDEX_EM = {
         "Giga Drain"
       ],
       "nature": "Bold",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Vileplume-3 (587)": {
@@ -7440,7 +7440,7 @@ SETDEX_EM = {
         "Sludge Bomb"
       ],
       "nature": "Quirky",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Victreebel-4 (684)": {
@@ -7455,7 +7455,7 @@ SETDEX_EM = {
         "Synthesis"
       ],
       "nature": "Quirky",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -7488,7 +7488,7 @@ SETDEX_EM = {
         "Swagger"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Electrode-3 (589)": {
@@ -7789,7 +7789,7 @@ SETDEX_EM = {
         "Hypnosis"
       ],
       "nature": "Quiet",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "50"
     },
     "Hypno-2 (498)": {
@@ -7804,7 +7804,7 @@ SETDEX_EM = {
         "Psychic"
       ],
       "nature": "Modest",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "50"
     },
     "Hypno-3 (594)": {
@@ -8021,7 +8021,7 @@ SETDEX_EM = {
         "Ice Punch"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Alakazam (Anabel Silver)": {
@@ -8046,7 +8046,7 @@ SETDEX_EM = {
         "Disable"
       ],
       "nature": "Modest",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Weezing": {
@@ -8062,7 +8062,7 @@ SETDEX_EM = {
         "Smokescreen"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Weezing-2 (502)": {
@@ -8169,7 +8169,7 @@ SETDEX_EM = {
         "Shadow Ball"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -8295,7 +8295,7 @@ SETDEX_EM = {
         "Surf"
       ],
       "nature": "Docile",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -9129,7 +9129,7 @@ SETDEX_EM = {
         "Fire Punch"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Gengar-6 (802)": {
@@ -9144,7 +9144,7 @@ SETDEX_EM = {
         "Ice Punch"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Gengar-7 (803)": {
@@ -9221,7 +9221,7 @@ SETDEX_EM = {
         "Thunder Wave"
       ],
       "nature": "Hardy",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Ampharos-3 (615)": {
@@ -9313,7 +9313,7 @@ SETDEX_EM = {
         "Baton Pass"
       ],
       "nature": "Careful",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -9360,7 +9360,7 @@ SETDEX_EM = {
         "Brick Break"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Heracross-4 (713)": {
@@ -9463,7 +9463,7 @@ SETDEX_EM = {
         "Aerial Ace"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Ursaring-5 (805)": {
@@ -9826,7 +9826,7 @@ SETDEX_EM = {
         "Attract"
       ],
       "nature": "Quirky",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Ninetales-4 (719)": {
@@ -9949,7 +9949,7 @@ SETDEX_EM = {
         "Double Team"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Machamp-8 (812)": {
@@ -10127,7 +10127,7 @@ SETDEX_EM = {
         "Screech"
       ],
       "nature": "Brave",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Tentacruel": {
@@ -10317,7 +10317,7 @@ SETDEX_EM = {
         "Recover"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -10380,7 +10380,7 @@ SETDEX_EM = {
         "Fire Punch"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Gardevoir-5 (813)": {
@@ -10442,7 +10442,7 @@ SETDEX_EM = {
         "Double Team"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -10505,7 +10505,7 @@ SETDEX_EM = {
         "Explosion"
       ],
       "nature": "Hardy",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -10614,7 +10614,7 @@ SETDEX_EM = {
         "Recover"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Starmie-8 (820)": {
@@ -10629,7 +10629,7 @@ SETDEX_EM = {
         "Recover"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -10646,7 +10646,7 @@ SETDEX_EM = {
         "Facade"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Flygon-2 (537)": {
@@ -10661,7 +10661,7 @@ SETDEX_EM = {
         "Sunny Day"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Flygon-3 (633)": {
@@ -10726,7 +10726,7 @@ SETDEX_EM = {
         "Light Screen"
       ],
       "nature": "Bold",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Venusaur-3 (634)": {
@@ -10872,7 +10872,7 @@ SETDEX_EM = {
         "Baton Pass"
       ],
       "nature": "Bold",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Jolteon-4 (732)": {
@@ -10967,7 +10967,7 @@ SETDEX_EM = {
         "Synthesis"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Meganium-2 (542)": {
@@ -11014,7 +11014,7 @@ SETDEX_EM = {
         "Body Slam"
       ],
       "nature": "Hardy",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -11077,7 +11077,7 @@ SETDEX_EM = {
         "Calm Mind"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -11095,7 +11095,7 @@ SETDEX_EM = {
         "Baton Pass"
       ],
       "nature": "Bold",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Umbreon-2 (544)": {
@@ -11127,7 +11127,7 @@ SETDEX_EM = {
         "Shadow Ball"
       ],
       "nature": "Bold",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Umbreon-4 (736)": {
@@ -11360,7 +11360,7 @@ SETDEX_EM = {
         "Blizzard"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Aggron-4 (739)": {
@@ -11532,7 +11532,7 @@ SETDEX_EM = {
         "Sheer Cold"
       ],
       "nature": "Quiet",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -11595,7 +11595,7 @@ SETDEX_EM = {
         "Thunder Punch"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     }
   },
@@ -11627,7 +11627,7 @@ SETDEX_EM = {
         "Smokescreen"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Charizard-3 (647)": {
@@ -11794,7 +11794,7 @@ SETDEX_EM = {
         "Dragon Dance"
       ],
       "nature": "Docile",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Lapras-4 (745)": {
@@ -11839,7 +11839,7 @@ SETDEX_EM = {
         "Blizzard"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Lapras-7 (823)": {
@@ -11958,7 +11958,7 @@ SETDEX_EM = {
         "Confuse Ray"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Crobat (Spenser Silver)": {
@@ -11983,7 +11983,7 @@ SETDEX_EM = {
         "Fly"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Swampert": {
@@ -12409,7 +12409,7 @@ SETDEX_EM = {
         "Soft-Boiled"
       ],
       "nature": "Bold",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Blissey-2 (559)": {
@@ -12683,7 +12683,7 @@ SETDEX_EM = {
         "Dragon Dance"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Salamence-5 (829)": {
@@ -12699,7 +12699,7 @@ SETDEX_EM = {
         "Dragon Dance"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Salamence-6 (830)": {
@@ -12865,7 +12865,7 @@ SETDEX_EM = {
         "Thunder Punch"
       ],
       "nature": "Hardy",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Metagross-7 (835)": {
@@ -13061,7 +13061,7 @@ SETDEX_EM = {
         "Protect"
       ],
       "nature": "Docile",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Articuno-4 (790)": {
@@ -13153,7 +13153,7 @@ SETDEX_EM = {
         "Double Team"
       ],
       "nature": "Docile",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Zapdos-3 (780)": {
@@ -13338,7 +13338,7 @@ SETDEX_EM = {
         "Safeguard"
       ],
       "nature": "Mild",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Raikou": {
@@ -13369,7 +13369,7 @@ SETDEX_EM = {
         "Reflect"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Raikou-3 (782)": {
@@ -13414,7 +13414,7 @@ SETDEX_EM = {
         "Reflect"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "Open"
     },
     "Raikou-6 (878)": {
@@ -13476,7 +13476,7 @@ SETDEX_EM = {
         "Reflect"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Entei-3 (783)": {
@@ -13624,7 +13624,7 @@ SETDEX_EM = {
         "Reflect"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Suicune-5 (881)": {
@@ -13794,7 +13794,7 @@ SETDEX_EM = {
         "Explosion"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Regirock (Brandon Silver)": {
@@ -13850,7 +13850,7 @@ SETDEX_EM = {
         "Brick Break"
       ],
       "nature": "Quiet",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Regice-3 (786)": {
@@ -13968,7 +13968,7 @@ SETDEX_EM = {
         "Aerial Ace"
       ],
       "nature": "Quiet",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Registeel-3 (787)": {
@@ -14135,7 +14135,7 @@ SETDEX_EM = {
         "Recover"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Latias-6 (844)": {
@@ -14274,7 +14274,7 @@ SETDEX_EM = {
         "Recover"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Latios-6 (848)": {
@@ -14304,7 +14304,7 @@ SETDEX_EM = {
         "Recover"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Latios-8 (850)": {
@@ -14336,7 +14336,7 @@ SETDEX_EM = {
         "Dragon Claw"
       ],
       "nature": "Modest",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     }
   },
   "Dragonite": {
@@ -14353,7 +14353,7 @@ SETDEX_EM = {
         "Dragon Dance"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "Open"
     },
     "Dragonite-2 (852)": {
@@ -14369,7 +14369,7 @@ SETDEX_EM = {
         "Dragon Dance"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "Open"
     },
     "Dragonite-3 (853)": {
@@ -14508,7 +14508,7 @@ SETDEX_EM = {
         "Surf"
       ],
       "nature": "Hardy",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "Open"
     },
     "Tyranitar-2 (862)": {
@@ -14523,7 +14523,7 @@ SETDEX_EM = {
         "Thunderbolt"
       ],
       "nature": "Hardy",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "Open"
     },
     "Tyranitar-3 (863)": {

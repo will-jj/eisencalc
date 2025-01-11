@@ -2,7 +2,7 @@ var ITEMS_GSC = [
 	"Berry",
 	"Berry Juice",
 	"Black Belt",
-	"BlackGlasses",
+	"Black Glasses",
 	"Charcoal",
 	"Dragon Fang",
 	"Gold Berry",
@@ -11,34 +11,35 @@ var ITEMS_GSC = [
 	"Leek",
 	"Leftovers",
 	"Light Ball",
+	"Lucky Punch",
 	"Magnet",
 	"Metal Coat",
 	"Metal Powder",
 	"Miracle Seed",
 	"Mystic Water",
-	"NeverMeltIce",
+	"Never-Melt Ice",
 	"Pink Bow",
 	"Poison Barb",
 	"Polkadot Bow",
 	"Sharp Beak",
-	"SilverPowder",
+	"Silver Powder",
 	"Soft Sand",
 	"Spell Tag",
 	"Stick",
 	"Thick Club",
-	"TwistedSpoon"
+	"Twisted Spoon"
 ];
 
 var ITEMS_ADV = ITEMS_GSC.concat([
 	"Aguav Berry",
 	"Apicot Berry",
 	"Aspear Berry",
-	"BrightPowder",
+	"Bright Powder",
 	"Cheri Berry",
 	"Chesto Berry",
 	"Choice Band",
-	"DeepSeaScale",
-	"DeepSeaTooth",
+	"Deep Sea Scale",
+	"Deep Sea Tooth",
 	"Enigma Berry",
 	"Figy Berry",
 	"Focus Band",
@@ -109,10 +110,12 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	"Colbur Berry",
 	"Custap Berry",
 	"Damp Rock",
+	"Destiny Knot",
 	"Durin Berry",
 	"Expert Belt",
 	"Flame Orb",
 	"Focus Sash",
+	"Full Incense",
 	"Grip Claw",
 	"Griseous Orb",
 	"Haban Berry",
@@ -133,6 +136,8 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	"Odd Incense",
 	"Passho Berry",
 	"Payapa Berry",
+	"Power Herb",
+	"Quick Powder",
 	"Razor Claw",
 	"Razor Fang",
 	"Rindo Berry",
@@ -179,21 +184,12 @@ var ITEMS_XY = ITEMS_BW.concat([
 	"Kee Berry",
 	"Luminous Moss",
 	"Maranga Berry",
-	"Power Herb",
 	"Roseli Berry",
 	"Safety Goggles",
 	"Snowball",
 	"Weakness Policy"
 ]);
 [ITEMS_XY, PLATES].forEach(itemSet => { itemSet.push("Pixie Plate"); });
-
-ITEMS_XY.splice(ITEMS_XY.indexOf("BlackGlasses"), 1, "Black Glasses");
-ITEMS_XY.splice(ITEMS_XY.indexOf("DeepSeaScale"), 1, "Deep Sea Scale");
-ITEMS_XY.splice(ITEMS_XY.indexOf("DeepSeaTooth"), 1, "Deep Sea Tooth");
-ITEMS_XY.splice(ITEMS_XY.indexOf("NeverMeltIce"), 1, "Never-Melt Ice");
-ITEMS_XY.splice(ITEMS_XY.indexOf("SilverPowder"), 1, "Silver Powder");
-ITEMS_XY.splice(ITEMS_XY.indexOf("TwistedSpoon"), 1, "Twisted Spoon");
-ITEMS_XY.splice(ITEMS_XY.indexOf("BrightPowder"), 1, "Bright Powder");
 
 var ITEMS_SM = ITEMS_XY.concat([
 	"Adrenaline Orb",
@@ -323,7 +319,6 @@ function getItemBoostType(item) {
 	case "Dragon Fang":
 		return "Dragon";
 	case "Dread Plate":
-	case "BlackGlasses":
 	case "Black Glasses":
 		return "Dark";
 	case "Earth Plate":
@@ -336,11 +331,9 @@ function getItemBoostType(item) {
 	case "Charcoal":
 		return "Fire";
 	case "Icicle Plate":
-	case "NeverMeltIce":
 	case "Never-Melt Ice":
 		return "Ice";
 	case "Insect Plate":
-	case "SilverPowder":
 	case "Silver Powder":
 		return "Bug";
 	case "Iron Plate":
@@ -352,7 +345,6 @@ function getItemBoostType(item) {
 		return "Grass";
 	case "Mind Plate":
 	case "Odd Incense":
-	case "TwistedSpoon":
 	case "Twisted Spoon":
 		return "Psychic";
 	case "Pixie Plate":
@@ -442,7 +434,6 @@ function getFlingPower(item) {
 		case "Hard Stone":
 		case "Room Service":
 			return 100;
-		case "DeepSeaTooth":
 		case "Deep Sea Tooth":
 		case "Grip Claw":
 		case "Thick Club":

@@ -352,7 +352,7 @@ SETDEX_PHGSS = {
         "Future Sight"
       ],
       "nature": "Timid",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Alakazam-2 (537)": {
@@ -459,7 +459,7 @@ SETDEX_PHGSS = {
         "Dragon Dance"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Altaria-4 (812)": {
@@ -814,7 +814,7 @@ SETDEX_PHGSS = {
         "Spider Web"
       ],
       "nature": "Adamant",
-      "item": "SilverPowder"
+      "item": "Silver Powder"
     },
     "Ariados-H": {
       "evs": {
@@ -828,7 +828,7 @@ SETDEX_PHGSS = {
         "Disable"
       ],
       "nature": "Jolly",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -1293,7 +1293,7 @@ SETDEX_PHGSS = {
         "Attract"
       ],
       "nature": "Modest",
-      "item": "SilverPowder"
+      "item": "Silver Powder"
     },
     "Beautifly-H": {
       "evs": {
@@ -1307,7 +1307,7 @@ SETDEX_PHGSS = {
         "Roost"
       ],
       "nature": "Modest",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -1338,7 +1338,7 @@ SETDEX_PHGSS = {
         "Double Team"
       ],
       "nature": "Jolly",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -1369,7 +1369,7 @@ SETDEX_PHGSS = {
         "Synthesis"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Bellossom-H": {
@@ -1571,7 +1571,7 @@ SETDEX_PHGSS = {
         "Sunny Day"
       ],
       "nature": "Timid",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Blaziken-3 (630)": {
@@ -1663,7 +1663,7 @@ SETDEX_PHGSS = {
         "Calm Mind"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Blissey-4 (883)": {
@@ -1988,7 +1988,7 @@ SETDEX_PHGSS = {
         "Sweet Scent"
       ],
       "nature": "Modest",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     },
     "Bulbasaur-H": {
       "evs": {
@@ -2064,7 +2064,7 @@ SETDEX_PHGSS = {
         ""
       ],
       "nature": "Adamant",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -2095,7 +2095,7 @@ SETDEX_PHGSS = {
         "Double Team"
       ],
       "nature": "Timid",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -2434,7 +2434,7 @@ SETDEX_PHGSS = {
         "Ancient Power"
       ],
       "nature": "Timid",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Charizard-H": {
@@ -2742,7 +2742,7 @@ SETDEX_PHGSS = {
         "Double-Edge"
       ],
       "nature": "Hasty",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "Hall"
     }
   },
@@ -2804,7 +2804,7 @@ SETDEX_PHGSS = {
         "Uproar"
       ],
       "nature": "Modest",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "Hall"
     }
   },
@@ -2821,7 +2821,7 @@ SETDEX_PHGSS = {
         "Protect"
       ],
       "nature": "Bold",
-      "item": "DeepSeaScale"
+      "item": "Deep Sea Scale"
     },
     "Clamperl-H": {
       "evs": {
@@ -2974,7 +2974,7 @@ SETDEX_PHGSS = {
         "Sing"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     },
     "Clefairy-H": {
       "evs": {
@@ -3005,7 +3005,7 @@ SETDEX_PHGSS = {
         "Supersonic"
       ],
       "nature": "Bold",
-      "item": "NeverMeltIce"
+      "item": "Never-Melt Ice"
     },
     "Cloyster-2 (350)": {
       "evs": {
@@ -3052,7 +3052,7 @@ SETDEX_PHGSS = {
         "Sweet Scent"
       ],
       "nature": "Serious",
-      "item": "SilverPowder"
+      "item": "Silver Powder"
     },
     "Combee-H": {
       "evs": {
@@ -3066,7 +3066,7 @@ SETDEX_PHGSS = {
         ""
       ],
       "nature": "Naughty",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -3124,7 +3124,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "Bubble Beam",
-        "Vice Grip",
+        "Vise Grip",
         "Knock Off",
         "Swagger"
       ],
@@ -3519,7 +3519,7 @@ SETDEX_PHGSS = {
         "Toxic"
       ],
       "nature": "Jolly",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -3675,7 +3675,7 @@ SETDEX_PHGSS = {
         "Hail"
       ],
       "nature": "Adamant",
-      "item": "NeverMeltIce"
+      "item": "Never-Melt Ice"
     },
     "Delibird-H": {
       "evs": {
@@ -3689,7 +3689,7 @@ SETDEX_PHGSS = {
         "Aerial Ace"
       ],
       "nature": "Adamant",
-      "item": "NeverMeltIce",
+      "item": "Never-Melt Ice",
       "tier": "Hall"
     }
   },
@@ -4291,7 +4291,7 @@ SETDEX_PHGSS = {
         "Future Sight"
       ],
       "nature": "Rash",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "Hall"
     }
   },
@@ -4571,7 +4571,7 @@ SETDEX_PHGSS = {
         "Whirlwind"
       ],
       "nature": "Modest",
-      "item": "SilverPowder"
+      "item": "Silver Powder"
     },
     "Dustox-H": {
       "evs": {
@@ -4585,7 +4585,7 @@ SETDEX_PHGSS = {
         "Roost"
       ],
       "nature": "Calm",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -4647,7 +4647,7 @@ SETDEX_PHGSS = {
         "Thunder Wave"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Electabuzz-H": {
@@ -4771,7 +4771,7 @@ SETDEX_PHGSS = {
         "Swagger"
       ],
       "nature": "Timid",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Electrode-3 (658)": {
@@ -5033,7 +5033,7 @@ SETDEX_PHGSS = {
         "Attract"
       ],
       "nature": "Timid",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Espeon-3 (727)": {
@@ -5078,7 +5078,7 @@ SETDEX_PHGSS = {
         "Morning Sun"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -5126,7 +5126,7 @@ SETDEX_PHGSS = {
         "Sunny Day"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Exeggutor-2 (585)": {
@@ -5863,7 +5863,7 @@ SETDEX_PHGSS = {
         "Psychic"
       ],
       "nature": "Calm",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -5987,7 +5987,7 @@ SETDEX_PHGSS = {
         "Ice Punch"
       ],
       "nature": "Jolly",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Gallade-3 (720)": {
@@ -6049,7 +6049,7 @@ SETDEX_PHGSS = {
         "Sandstorm"
       ],
       "nature": "Jolly",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Garchomp-2 (621)": {
@@ -6156,7 +6156,7 @@ SETDEX_PHGSS = {
         "Focus Blast"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Gardevoir-4 (855)": {
@@ -7636,7 +7636,7 @@ SETDEX_PHGSS = {
         "Dark Pulse"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Heatran-4 (948)": {
@@ -8176,7 +8176,7 @@ SETDEX_PHGSS = {
         "Sucker Punch"
       ],
       "nature": "Hasty",
-      "item": "BlackGlasses",
+      "item": "Black Glasses",
       "tier": "Hall"
     }
   },
@@ -8330,7 +8330,7 @@ SETDEX_PHGSS = {
         "Frustration"
       ],
       "nature": "Mild",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -8377,7 +8377,7 @@ SETDEX_PHGSS = {
         "Sunny Day"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Infernape-4 (769)": {
@@ -8576,7 +8576,7 @@ SETDEX_PHGSS = {
         "Bounce"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -8653,7 +8653,7 @@ SETDEX_PHGSS = {
         "Energy Ball"
       ],
       "nature": "Timid",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -8776,7 +8776,7 @@ SETDEX_PHGSS = {
         "Thunder Wave"
       ],
       "nature": "Rash",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "Hall"
     }
   },
@@ -8988,7 +8988,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "Bubble Beam",
-        "Vice Grip",
+        "Vise Grip",
         "Harden",
         "Mud Sport"
       ],
@@ -9065,7 +9065,7 @@ SETDEX_PHGSS = {
       },
       "moves": [
         "Bubble Beam",
-        "Vice Grip",
+        "Vise Grip",
         "Leer",
         "Protect"
       ],
@@ -9116,7 +9116,7 @@ SETDEX_PHGSS = {
         "Endeavor"
       ],
       "nature": "Impish",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -9147,7 +9147,7 @@ SETDEX_PHGSS = {
         "Sing"
       ],
       "nature": "Jolly",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -9332,7 +9332,7 @@ SETDEX_PHGSS = {
         "Thunderbolt"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Lapras-H": {
@@ -9425,7 +9425,7 @@ SETDEX_PHGSS = {
         "Shadow Ball"
       ],
       "nature": "Timid",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Latias-4 (946)": {
@@ -9502,7 +9502,7 @@ SETDEX_PHGSS = {
         "Energy Ball"
       ],
       "nature": "Timid",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Latios-4 (947)": {
@@ -9564,7 +9564,7 @@ SETDEX_PHGSS = {
         "Grass Whistle"
       ],
       "nature": "Jolly",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Leafeon-3 (729)": {
@@ -9640,7 +9640,7 @@ SETDEX_PHGSS = {
         "Light Screen"
       ],
       "nature": "Timid",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -9890,7 +9890,7 @@ SETDEX_PHGSS = {
         "Thunder Wave"
       ],
       "nature": "Jolly",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Lopunny-3 (663)": {
@@ -9983,7 +9983,7 @@ SETDEX_PHGSS = {
         "Roar"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Lucario-2 (595)": {
@@ -10167,7 +10167,7 @@ SETDEX_PHGSS = {
         "Air Cutter"
       ],
       "nature": "Timid",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -10860,7 +10860,7 @@ SETDEX_PHGSS = {
         "Signal Beam"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Magnezone-H": {
@@ -11014,7 +11014,7 @@ SETDEX_PHGSS = {
         "Swift"
       ],
       "nature": "Timid",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Manectric-H": {
@@ -11246,7 +11246,7 @@ SETDEX_PHGSS = {
         "Scary Face"
       ],
       "nature": "Bold",
-      "item": "SilverPowder"
+      "item": "Silver Powder"
     },
     "Masquerain-2 (271)": {
       "evs": {
@@ -11275,7 +11275,7 @@ SETDEX_PHGSS = {
         "Double Team"
       ],
       "nature": "Mild",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -11292,7 +11292,7 @@ SETDEX_PHGSS = {
         "Iron Defense"
       ],
       "nature": "Impish",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     },
     "Mawile-H": {
       "evs": {
@@ -11478,7 +11478,7 @@ SETDEX_PHGSS = {
         "Light Screen"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Metagross-2 (620)": {
@@ -11630,7 +11630,7 @@ SETDEX_PHGSS = {
         "Swagger"
       ],
       "nature": "Jolly",
-      "item": "BlackGlasses",
+      "item": "Black Glasses",
       "tier": "Hall"
     }
   },
@@ -11815,7 +11815,7 @@ SETDEX_PHGSS = {
         "Future Sight"
       ],
       "nature": "Calm",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "Hall"
     }
   },
@@ -12138,7 +12138,7 @@ SETDEX_PHGSS = {
         "Roost"
       ],
       "nature": "Timid",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -12371,7 +12371,7 @@ SETDEX_PHGSS = {
         "Taunt"
       ],
       "nature": "Jolly",
-      "item": "BlackGlasses"
+      "item": "Black Glasses"
     },
     "Murkrow-H": {
       "evs": {
@@ -12416,7 +12416,7 @@ SETDEX_PHGSS = {
         "Future Sight"
       ],
       "nature": "Modest",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "Hall"
     }
   },
@@ -12449,7 +12449,7 @@ SETDEX_PHGSS = {
         "Substitute"
       ],
       "nature": "Careful",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Nidoking-3 (680)": {
@@ -12650,7 +12650,7 @@ SETDEX_PHGSS = {
         "Sunny Day"
       ],
       "nature": "Timid",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Ninetales-2 (570)": {
@@ -13142,7 +13142,7 @@ SETDEX_PHGSS = {
         "Double Team"
       ],
       "nature": "Hasty",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -13390,7 +13390,7 @@ SETDEX_PHGSS = {
         "Hail"
       ],
       "nature": "Modest",
-      "item": "NeverMeltIce"
+      "item": "Never-Melt Ice"
     },
     "Piloswine-2 (309)": {
       "evs": {
@@ -13419,7 +13419,7 @@ SETDEX_PHGSS = {
         "Hail"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -14483,7 +14483,7 @@ SETDEX_PHGSS = {
         "Thunder Wave"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Raichu-H": {
@@ -14699,7 +14699,7 @@ SETDEX_PHGSS = {
         "Horn Drill"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Rapidash-4 (825)": {
@@ -14917,7 +14917,7 @@ SETDEX_PHGSS = {
         "Drain Punch"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Regigigas-H": {
@@ -15553,7 +15553,7 @@ SETDEX_PHGSS = {
         "Detect"
       ],
       "nature": "Impish",
-      "item": "BlackGlasses"
+      "item": "Black Glasses"
     },
     "Sableye-H": {
       "evs": {
@@ -15721,7 +15721,7 @@ SETDEX_PHGSS = {
         "Dig"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -15815,7 +15815,7 @@ SETDEX_PHGSS = {
         "Baton Pass"
       ],
       "nature": "Impish",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Scizor-2 (559)": {
@@ -15906,7 +15906,7 @@ SETDEX_PHGSS = {
         "Swords Dance"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Scyther-H": {
@@ -16013,7 +16013,7 @@ SETDEX_PHGSS = {
         "Bounce"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -16059,7 +16059,7 @@ SETDEX_PHGSS = {
         "Snore"
       ],
       "nature": "Modest",
-      "item": "NeverMeltIce",
+      "item": "Never-Melt Ice",
       "tier": "Hall"
     }
   },
@@ -16213,7 +16213,7 @@ SETDEX_PHGSS = {
         "Double Team"
       ],
       "nature": "Adamant",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -16682,7 +16682,7 @@ SETDEX_PHGSS = {
         "Scary Face"
       ],
       "nature": "Jolly",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -17022,7 +17022,7 @@ SETDEX_PHGSS = {
         "Brine"
       ],
       "nature": "Sassy",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "Hall"
     }
   },
@@ -17039,7 +17039,7 @@ SETDEX_PHGSS = {
         "Sweet Kiss"
       ],
       "nature": "Mild",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     },
     "Smoochum-H": {
       "evs": {
@@ -17053,7 +17053,7 @@ SETDEX_PHGSS = {
         "Ice Punch"
       ],
       "nature": "Mild",
-      "item": "NeverMeltIce",
+      "item": "Never-Melt Ice",
       "tier": "Hall"
     }
   },
@@ -17099,7 +17099,7 @@ SETDEX_PHGSS = {
         "Ice Punch"
       ],
       "nature": "Jolly",
-      "item": "BlackGlasses",
+      "item": "Black Glasses",
       "tier": "Hall"
     }
   },
@@ -17207,7 +17207,7 @@ SETDEX_PHGSS = {
         "Hail"
       ],
       "nature": "Brave",
-      "item": "NeverMeltIce",
+      "item": "Never-Melt Ice",
       "tier": "Hall"
     }
   },
@@ -17224,7 +17224,7 @@ SETDEX_PHGSS = {
         "Ingrain"
       ],
       "nature": "Adamant",
-      "item": "NeverMeltIce"
+      "item": "Never-Melt Ice"
     },
     "Snover-H": {
       "evs": {
@@ -17238,7 +17238,7 @@ SETDEX_PHGSS = {
         "Giga Drain"
       ],
       "nature": "Brave",
-      "item": "NeverMeltIce",
+      "item": "Never-Melt Ice",
       "tier": "Hall"
     }
   },
@@ -17377,7 +17377,7 @@ SETDEX_PHGSS = {
         "Calm Mind"
       ],
       "nature": "Hasty",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "Hall"
     }
   },
@@ -17670,7 +17670,7 @@ SETDEX_PHGSS = {
         "Double Team"
       ],
       "nature": "Timid",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -17795,7 +17795,7 @@ SETDEX_PHGSS = {
         "Smokescreen"
       ],
       "nature": "Adamant",
-      "item": "BlackGlasses"
+      "item": "Black Glasses"
     },
     "Stunky-H": {
       "evs": {
@@ -18133,7 +18133,7 @@ SETDEX_PHGSS = {
         "Rest"
       ],
       "nature": "Quiet",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -18519,7 +18519,7 @@ SETDEX_PHGSS = {
         "Dive"
       ],
       "nature": "Adamant",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -18596,7 +18596,7 @@ SETDEX_PHGSS = {
         "Roost"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -19214,7 +19214,7 @@ SETDEX_PHGSS = {
         "Moonlight"
       ],
       "nature": "Impish",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Umbreon-H": {
@@ -19323,7 +19323,7 @@ SETDEX_PHGSS = {
         "Baton Pass"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Vaporeon-2 (588)": {
@@ -19414,7 +19414,7 @@ SETDEX_PHGSS = {
         "Supersonic"
       ],
       "nature": "Modest",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "50"
     },
     "Venomoth-H": {
@@ -19446,7 +19446,7 @@ SETDEX_PHGSS = {
         "Supersonic"
       ],
       "nature": "Relaxed",
-      "item": "SilverPowder"
+      "item": "Silver Powder"
     },
     "Venonat-H": {
       "evs": {
@@ -19460,7 +19460,7 @@ SETDEX_PHGSS = {
         "Bug Bite"
       ],
       "nature": "Mild",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -19616,7 +19616,7 @@ SETDEX_PHGSS = {
         "Air Cutter"
       ],
       "nature": "Brave",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -19879,7 +19879,7 @@ SETDEX_PHGSS = {
         "Attract"
       ],
       "nature": "Rash",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -19927,7 +19927,7 @@ SETDEX_PHGSS = {
         "Confuse Ray"
       ],
       "nature": "Calm",
-      "item": "BrightPowder"
+      "item": "Bright Powder"
     },
     "Vulpix-H": {
       "evs": {
@@ -20050,7 +20050,7 @@ SETDEX_PHGSS = {
         "Rest"
       ],
       "nature": "Quiet",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "HallR10"
     }
   },
@@ -20205,7 +20205,7 @@ SETDEX_PHGSS = {
         "Hail"
       ],
       "nature": "Jolly",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Weavile-3 (712)": {
@@ -20559,7 +20559,7 @@ SETDEX_PHGSS = {
         "Captivate"
       ],
       "nature": "Quiet",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -20636,7 +20636,7 @@ SETDEX_PHGSS = {
         "Supersonic"
       ],
       "nature": "Modest",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -20821,7 +20821,7 @@ SETDEX_PHGSS = {
         "Signal Beam"
       ],
       "nature": "Modest",
-      "item": "BrightPowder",
+      "item": "Bright Powder",
       "tier": "50"
     },
     "Zapdos-H": {
@@ -20853,7 +20853,7 @@ SETDEX_PHGSS = {
         ""
       ],
       "nature": "Jolly",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -20870,7 +20870,7 @@ SETDEX_PHGSS = {
         "Iron Defense"
       ],
       "nature": "Impish",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -20887,7 +20887,7 @@ SETDEX_PHGSS = {
         ""
       ],
       "nature": "Jolly",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -20904,7 +20904,7 @@ SETDEX_PHGSS = {
         "Iron Defense"
       ],
       "nature": "Impish",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -21057,7 +21057,7 @@ SETDEX_PHGSS = {
         "Giga Drain"
       ],
       "nature": "Brave",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -21142,7 +21142,7 @@ SETDEX_PHGSS = {
         "Zen Headbutt"
       ],
       "nature": "Naive",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "Hall"
     }
   },
@@ -21295,7 +21295,7 @@ SETDEX_PHGSS = {
         "Double Team"
       ],
       "nature": "Hasty",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -21312,7 +21312,7 @@ SETDEX_PHGSS = {
         "Double Team"
       ],
       "nature": "Jolly",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -21499,7 +21499,7 @@ SETDEX_PHGSS = {
         "Swift"
       ],
       "nature": "Relaxed",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -21533,7 +21533,7 @@ SETDEX_PHGSS = {
         "Curse"
       ],
       "nature": "Quiet",
-      "item": "NeverMeltIce",
+      "item": "Never-Melt Ice",
       "tier": "Hall"
     }
   },
@@ -21584,7 +21584,7 @@ SETDEX_PHGSS = {
         "Scary Face"
       ],
       "nature": "Naive",
-      "item": "BlackGlasses",
+      "item": "Black Glasses",
       "tier": "Hall"
     }
   },
@@ -21618,7 +21618,7 @@ SETDEX_PHGSS = {
         ""
       ],
       "nature": "Jolly",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -21635,7 +21635,7 @@ SETDEX_PHGSS = {
         "Iron Defense"
       ],
       "nature": "Impish",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -21652,7 +21652,7 @@ SETDEX_PHGSS = {
         "Iron Defense"
       ],
       "nature": "Impish",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -21737,7 +21737,7 @@ SETDEX_PHGSS = {
         "Future Sight"
       ],
       "nature": "Mild",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "Hall"
     }
   },
@@ -21754,7 +21754,7 @@ SETDEX_PHGSS = {
         "Future Sight"
       ],
       "nature": "Rash",
-      "item": "TwistedSpoon",
+      "item": "Twisted Spoon",
       "tier": "Hall"
     }
   },
@@ -21771,7 +21771,7 @@ SETDEX_PHGSS = {
         "Bug Bite"
       ],
       "nature": "Mild",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -21822,7 +21822,7 @@ SETDEX_PHGSS = {
         "Silver Wind"
       ],
       "nature": "Hasty",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -22026,7 +22026,7 @@ SETDEX_PHGSS = {
         "Hail"
       ],
       "nature": "Rash",
-      "item": "NeverMeltIce",
+      "item": "Never-Melt Ice",
       "tier": "Hall"
     }
   },
@@ -22060,7 +22060,7 @@ SETDEX_PHGSS = {
         "Captivate"
       ],
       "nature": "Brave",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },
@@ -22077,7 +22077,7 @@ SETDEX_PHGSS = {
         "Captivate"
       ],
       "nature": "Relaxed",
-      "item": "SilverPowder",
+      "item": "Silver Powder",
       "tier": "Hall"
     }
   },

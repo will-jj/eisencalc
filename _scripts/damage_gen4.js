@@ -326,7 +326,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		description.attackerItem = attacker.item;
 	} else if ((attacker.item === "Light Ball" && attacker.name === "Pikachu") ||
             (attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak") && isPhysical) ||
-            (attacker.item.replaceAll(" ", "") === "DeepSeaTooth" && attacker.name === "Clamperl" && !isPhysical)) {
+            (attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl" && !isPhysical)) {
 		attack *= 2;
 		description.attackerItem = attacker.item;
 	}
@@ -367,7 +367,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	if (defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias") && !isPhysical) {
 		defense = Math.floor(defense * 1.5);
 		description.defenderItem = defender.item;
-	} else if ((defender.item.replaceAll(" ", "") === "DeepSeaScale" && defender.name === "Clamperl" && !isPhysical) ||
+	} else if ((defender.item === "Deep Sea Scale" && defender.name === "Clamperl" && !isPhysical) ||
             (defender.item === "Metal Powder" && defender.name === "Ditto" && isPhysical)) {
 		defense *= 2;
 		description.defenderItem = defender.item;

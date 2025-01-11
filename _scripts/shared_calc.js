@@ -783,6 +783,16 @@ $(".move-selector").change(function () {
 	}
 });
 
+var oldItemNames = {
+	"BlackGlasses": "Black Glasses",
+	"DeepSeaScale": "Deep Sea Scale",
+	"DeepSeaTooth": "Deep Sea Tooth",
+	"NeverMeltIce": "Never-Melt Ice",
+	"SilverPowder": "Silver Powder",
+	"TwistedSpoon": "Twisted Spoon",
+	"BrightPowder": "Bright Powder"
+};
+
 // auto-update set details on select
 $(".set-selector").bind("change", function () {
 	let fullSetName = $(this).val();
@@ -862,7 +872,7 @@ $(".set-selector").bind("change", function () {
 		setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 		setSelectValueIfValid(abilityObj, set.ability ? set.ability : (abilityList && abilityList.length == 1 ? abilityList[0] : pokemon.ab), "");
 		setSelectValueIfValid(pokeObj.find(".tera-type"), set.teraType, pokemon.t1);
-		setSelectValueIfValid(itemObj, set.item, "");
+		setSelectValueIfValid(itemObj, set.item && oldItemNames[set.item] ? oldItemNames[set.item] : set.item, "");
 		for (i = 0; i < 4; i++) {
 			moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
 			setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
