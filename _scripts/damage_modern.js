@@ -392,6 +392,12 @@ function recalcOtherHits(attacker, defender, move, field, description, result,
 		// Just Tera Shell is calculated for the first hit, and no Tera Shell nor berry for the other hits.
 	}
 
+	// recalc final BP
+	if (move.name === "Knock Off" && canKnockOffItem(attacker, defender, field.terrain)) {
+		isFirstHit = false;
+		finalBasePower = calcBP(attacker, defender, move, field, {}, ateizeBoost);
+	}
+
 	// recalc attack
 	if (move.isSound && attacker.item === "Throat Spray" && (attacker.curAbility === "Contrary" ? attacker.boosts[SA] > -6 : attacker.boosts[SA] < 6)) {
 		isFirstHit = false;
@@ -755,18 +761,9 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.weather = field.weather;
 	}
 
-	if (move.name === "Knock Off" && !(getEffectiveItem(defender, attacker, field.terrain) === "" ||
-		defender.item === "Lustrous Globe" && defender.name === "Palkia-O" ||
-		defender.item === "Adamant Crystal" && defender.name === "Dialga-O" ||
-		defender.item === "Griseous Orb" && (gen <= 8 || gen == 80) && defender.name === "Giratina-O" ||
-		defender.item === "Griseous Core" && defender.name === "Giratina-O" ||
-		defender.item.endsWith("Plate") && defender.name.startsWith("Arceus") ||
-		defender.item.endsWith(" Z") ||
-		defender.item === "Booster Energy" && (defender.ability === "Protosynthesis" || defender.ability === "Quark Drive") ||
-		defender.item.endsWith("Mask") && defender.name.startsWith("Ogerpon-"))) {
-		// Mega Stones, Red/Blue Orbs, Memories, and Rusted items are already accounted for by the fact that they don't exist as items
+	if (isFirstHit && move.name === "Knock Off" && canKnockOffItem(attacker, defender, field.terrain)) {
 		bpMods.push(0x1800);
-		description.moveBP = move.bp * 1.5;
+		description.moveBP = Math.floor(move.bp * 1.5);
 	}
 
 	if (field.isHelpingHand) {
@@ -1398,7 +1395,8 @@ function getEffectiveItem(source, opponent, terrain) {
 	// shared calc already accommodates Weakness Policy.
 	// Pokemon objects that hold Weak Pol and have the Weak Pol field button pressed are given the empty string as held item.
 	if (getSeedStat(source.item, terrain) ||
-		(source.item === "Adrenaline Orb" && opponent.curAbility === "Intimidate" && opponent.isAbilityActivated)) {
+		(source.item === "Adrenaline Orb" && opponent.curAbility === "Intimidate" && opponent.isAbilityActivated) ||
+		(source.item === "Booster Energy" && (source.ability === "Protosynthesis" || source.ability === "Quark Drive"))) {
 		return "";
 	}
 	return source.item;
@@ -1547,6 +1545,18 @@ function isShellSideArmPhysical(attacker, defender, move) {
 	let phys = Math.floor(scaler * attacker.stats[AT] / defender.stats[DF]);
 	let spec = Math.floor(scaler * attacker.stats[SA] / defender.stats[SD]);
 	return phys > spec;
+}
+
+function canKnockOffItem(attacker, defender, terrain) {
+	// Mega Stones, Red/Blue Orbs, Memories, and Rusted items are already accounted for by the fact that they don't exist as items
+	return !(getEffectiveItem(defender, attacker, terrain) === "" ||
+	defender.item === "Lustrous Globe" && defender.name === "Palkia-O" ||
+	defender.item === "Adamant Crystal" && defender.name === "Dialga-O" ||
+	defender.item === "Griseous Orb" && (gen <= 8 || gen == 80) && defender.name === "Giratina-O" ||
+	defender.item === "Griseous Core" && defender.name === "Giratina-O" ||
+	defender.item.endsWith("Plate") && defender.name.startsWith("Arceus") ||
+	defender.item.endsWith(" Z") ||
+	defender.item.endsWith("Mask") && defender.name.startsWith("Ogerpon-"));
 }
 
 function checkProtoQuarkHighest(pokemon, weather, terrain) {
