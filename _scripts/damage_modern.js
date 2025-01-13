@@ -261,7 +261,8 @@ function getDamageResult(attacker, defender, move, field) {
 	if (moveType === "Stellar" && attacker.isTerastal && defender.isTerastal) {
 		typeEffectiveness = 2;
 	}
-	if (isFirstHit && defender.curAbility === "Tera Shell" && typeEffectiveness >= 1) {
+	let originalTypeEffectiveness = typeEffectiveness; // save the original type effectiveness for calculating non-first hits
+	if (defender.curAbility === "Tera Shell" && typeEffectiveness >= 1) {
 		typeEffectiveness = 0.5;
 		description.defenderAbility = defender.curAbility;
 	}
@@ -321,9 +322,8 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	description.HPEVs = defender.HPEVs + " HP";
-	let attackerLevel = attacker.level;
-	if (attackerLevel != defender.level || (attackerLevel != 50 && attackerLevel != 100)) {
-		description.attackerLevel = attackerLevel;
+	if (attacker.level != defender.level || (attacker.level != 50 && attacker.level != 100)) {
+		description.attackerLevel = attacker.level;
 		description.defenderLevel = defender.level;
 	}
 
@@ -344,7 +344,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	let defense = calcDef(attacker, defender, move, field, description);
 
-	let baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attackerLevel), attacker, defender, move, field, description);
+	let baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, description);
 
 	let stabMod = calcSTABMod(attacker, move, description);
 
@@ -357,98 +357,111 @@ function getDamageResult(attacker, defender, move, field) {
 
 	let result = {"damage": damage};
 
-
 	// Calculate for scenarios where the first hit does different damage from other hits.
 	// Add these damage results to the result object. They are made sense of and set up for display by ap_calc
-
-	if (!isFirstHit) {
-		return result;
-	}
-
-	// Parental Bond
-	if (attacker.curAbility === "Parental Bond" && !attacker.isChild && move.hits === 1 && (field.format === "singles" || !move.isSpread)) {
-		let originalATBoost = attacker.boosts[AT];
-		if (move.name === "Power-Up Punch") {
-			attacker.boosts[AT] = Math.min(6, attacker.boosts[AT] + 1);
-			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
-		}
-		description.attackerAbility = attacker.curAbility;
-		// the following order of execution is important
-		isFirstHit = false;
-		attacker.isChild = true;
-		result.childDamage = getDamageResult(attacker, defender, move, field).damage;
-		if (move.name === "Power-Up Punch") {
-			attacker.boosts[AT] = originalATBoost;
-			attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
-		}
-		isFirstHit = true;
-		if (activateResistBerry(attacker, defender, typeEffectiveness) ||
-			((defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP)) {
-			result.firstHitDamage = damage;
-		}
-		attacker.isChild = false;
-	}
-
-	// Triple Axel
-	if (["Triple Axel", "Triple Kick"].includes(move.name)) {
-		// tripleAxelDamage is an array of damage arrays; a 2D number array
-		result.tripleAxelDamage = [];
-		let startingBP = move.bp;
-		isFirstHit = false;
-		let finalModNoBerry = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
-		isFirstHit = true;
-		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
-			move.bp = startingBP * hitNum;
-			finalBasePower = calcBP(attacker, defender, move, field, {});
-			baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attackerLevel), attacker, defender, move, field, {});
-			result.tripleAxelDamage.push(calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalModNoBerry));
-		}
-		move.bp = startingBP;
-	}
-
-	// Throat Spray
-	let attackerBoosts = attacker.boosts[move.name === "Body Press" ? DF : (moveCategory === "Physical" ? AT : SA)];
-	if (attacker.item === "Throat Spray" && (attacker.curAbility === "Contrary" ? attackerBoosts > -6 : attackerBoosts < 6)) {
+	let recalcDamage = recalcOtherHits(attacker, defender, move, field, description, result,
+		typeEffectiveness, finalBasePower, attack, defense, baseDamage, stabMod, finalMod, applyBurn,
+		originalTypeEffectiveness, ateizeBoost, bypassProtect);
+	if (recalcDamage) {
 		result.firstHitDamage = damage;
-		isFirstHit = false;
-		attack = calcAtk(attacker, defender, move, field, description);
-		baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attackerLevel), attacker, defender, move, field, description);
-		isFirstHit = true;
-		result.damage = calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod);
-	}
-
-	// Resist Berries/Multiscale
-	if (activateResistBerry(attacker, defender, typeEffectiveness) ||
-		((defender.curAbility === "Multiscale" || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP)) {
-		// this branch calculates the damage without the one-time reducers
-		result.firstHitDamage = damage;
-		isFirstHit = false;
-		finalMod = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
-		isFirstHit = true;
-		result.damage = calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod);
-	}
-
-	// Tera Shell
-	if (defender.ability == "Tera Shell" && defender.curHP === defender.maxHP) {
-		// this branch calculates the damage without applying Tera Shell
-		result.firstHitDamage = damage;
-		isFirstHit = false;
-		result.damage = getDamageResult(attacker, defender, move, field).damage;
-		isFirstHit = true;
-	}
-
-	// Tera Stellar
-	if (attacker.isTerastal && attacker.teraType === "Stellar" && !attacker.name.includes("Terapagos")) {
-		// this branch calculates the damage without applying Stellar STAB
-		result.firstHitDamage = damage;
-		isFirstHit = false;
-		// Adaptability is never factored in for Stellar tera
-		result.damage = calcDamageRange(baseDamage, attacker.hasType(moveType) ? 0x1800 : 0x1000, typeEffectiveness, applyBurn, finalMod);
-		isFirstHit = true;
+		result.damage = recalcDamage;
 	}
 
 	result.description = buildDescription(description);
 	return result;
+}
+
+function recalcOtherHits(attacker, defender, move, field, description, result,
+	typeEffectiveness, finalBasePower, attack, defense, baseDamage, stabMod, finalMod, applyBurn,
+	originalTypeEffectiveness, ateizeBoost, bypassProtect) {
+	let originalATBoost = attacker.boosts[AT];
+	let originalATStat = attacker.stats[AT];
+	let isParentalBond = attacker.curAbility === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread);
+	if (isParentalBond) {
+		isFirstHit = false;
+		description.attackerAbility = attacker.curAbility;
+	}
+
+	// recalc type effectiveness
+	let recalcFinalMod = false;
+	if (defender.curAbility === "Tera Shell" && originalTypeEffectiveness >= 1 && defender.curHP === defender.maxHP) {
+		isFirstHit = false;
+		recalcFinalMod = true;
+		typeEffectiveness = originalTypeEffectiveness;
+		// A quirk with this implementation is that a defender with Tera Shell and a resist berry will never calculate the resist berry (except Chilan).
+		// Just Tera Shell is calculated for the first hit, and no Tera Shell nor berry for the other hits.
+	}
+
+	// recalc attack
+	if (move.isSound && attacker.item === "Throat Spray" && (attacker.curAbility === "Contrary" ? attacker.boosts[SA] > -6 : attacker.boosts[SA] < 6)) {
+		isFirstHit = false;
+		attack = calcAtk(attacker, defender, move, field, {});
+	} else if (isParentalBond && move.name === "Power-Up Punch") {
+		// apply the +1 Atk to the child's hit
+		attacker.boosts[AT] = Math.min(6, attacker.boosts[AT] + 1);
+		attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
+		attack = calcAtk(attacker, defender, move, field, {});
+	}
+
+	// no branch needed for recalc defense at the moment.
+
+	// recalc base damage
+	// and recalc modded base damage
+	if (!isFirstHit) {
+		isFirstHit = false;
+		baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, {});
+	}
+
+	// recalc STAB mod
+	if (attacker.isTerastal && attacker.teraType === "Stellar" && !attacker.name.includes("Terapagos")) {
+		isFirstHit = false;
+		stabMod = calcSTABMod(attacker, move, {});
+	}
+
+	// recalc final mods
+	if (recalcFinalMod ||
+		activateResistBerry(attacker, defender, typeEffectiveness) ||
+		(["Multiscale"].includes(defender.curAbility) || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP) {
+		isFirstHit = false;
+		finalMod = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
+	}
+
+	// calculate hits of Triple Axel, recalc final BP.
+	if (["Triple Axel", "Triple Kick"].includes(move.name)) {
+		// tripleAxelDamage is an array of damage arrays; a 2D number array
+		isFirstHit = false;
+		result.tripleAxelDamage = [result.damage];
+		result.firstHitDamage = result.damage;
+		let startingBP = move.bp;
+		for (let hitNum = 2; hitNum <= move.hits; hitNum++) {
+			move.bp = startingBP * hitNum;
+			finalBasePower = calcBP(attacker, defender, move, field, {}, ateizeBoost);
+			baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, {});
+			result.tripleAxelDamage.push(calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod));
+		}
+		move.bp = startingBP;
+		isFirstHit = true;
+		return; // Triple Axel just needs to update the result with its custom tripleAxelDamage item.
+	}
+
+	if (isFirstHit) {
+		return;
+	}
+
+	// recalc the damage array
+	let recalcDamage = calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod);
+
+	isFirstHit = true;
+
+	if (isParentalBond) {
+		result.childDamage = recalcDamage;
+		// Reset any changes from Power-Up Punch
+		attacker.boosts[AT] = originalATBoost;
+		attacker.stats[AT] = originalATStat;
+		return; // Parental Bond doesn't use firstHitDamage and needs to add its custom childDamage item to the result object.
+	}
+
+	return recalcDamage;
 }
 
 function calcBP(attacker, defender, move, field, description, ateizeBoost) {
@@ -815,9 +828,7 @@ function calcAtk(attacker, defender, move, field, description) {
 		// if isFirstHit is false then the attacker is already guaranteed to not be at +6 (or -6 Contrary)
 		let moddedBoost = attacker.boosts[attackStat] + (attacker.curAbility === "Contrary" ? -1 : 1);
 		attack = getModifiedStat(attacker.rawStats[attackStat], moddedBoost);
-		if (moddedBoost != 0) {
-			description.attackBoost = attackSource.boosts[attackStat];
-		}
+		description.attackerItem = attacker.item;
 	} else if (attackSource.boosts[attackStat] === 0 || isCritical && attackSource.boosts[attackStat] < 0) {
 		attack = attackSource.rawStats[attackStat];
 	} else if (defender.curAbility === "Unaware") {
@@ -994,7 +1005,7 @@ function modBaseDamage(baseDamage, attacker, defender, move, field, description)
 		baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
 		description.isSpread = true;
 	}
-	if (attacker.isChild) { // Parental Bond
+	if (!isFirstHit && attacker.curAbility === "Parental Bond") {
 		baseDamage = pokeRound(baseDamage * (gen == 6 ? 0x800 : 0x400) / 0x1000);
 	}
 
@@ -1042,8 +1053,11 @@ function calcSTABMod(attacker, move, description) {
 	}
 	if (attacker.isTerastal && attacker.teraType === "Stellar") {
 		description.attackerTera = attacker.teraType;
-		// https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9894284
-		return attacker.hasType(moveType) ? 0x2000 : 0x1333;
+		if (!isFirstHit && !attacker.name.includes("Terapagos")) {
+			// return standard STAB when not calcing the first hit for Stellar hits - except Terapagos
+			return attacker.hasType(moveType) ? 0x1800 : 0x1000;
+		}
+		return attacker.hasType(moveType) ? 0x2000 : 0x1333; // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9894284
 	}
 	let stabMod = 0x1000;
 	if (attacker.hasType(moveType) || move.name.includes("Pledge Boosted")) {
