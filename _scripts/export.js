@@ -73,7 +73,17 @@ function exportToPsFormat(pokeInfo) {
 		var speciesName = name;
 	}
 
-	finalText = speciesName + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
+	// convert items that have old names in old gens
+	let item = pokemon.item;
+	if (gen < 6 && item) {
+		for (let [oldName, newName] of Object.entries(oldItemNames)) {
+			if (item === newName) {
+				item = oldName;
+				break;
+			}
+		}
+	}
+	finalText = speciesName + (item ? " @ " + item : "") + "\n";
 	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
 	finalText += pokemon.level !== 50 || gen == 3 || gen == 4 ? "Level: " + pokemon.level + "\n" : "";
 	finalText += pokemon.teraType ? "Tera Type: " + pokemon.teraType + "\n" : "";
