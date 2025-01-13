@@ -1404,7 +1404,7 @@ function getEffectiveItem(source, opponent, terrain) {
 
 function hasPriority(move, attacker, field) {
 	return move.hasPriority ||
-		(attacker.curAbility === "Gale Wings" && moveType === "Flying") ||
+		(attacker.curAbility === "Gale Wings" && moveType === "Flying" && move.name !== "Tera Blast") ||
 		(attacker.curAbility === "Triage" && move.percentHealed) ||
 		(move.name === "Grassy Glide" && field.terrain === "Grassy" && attackerGrounded);
 }
