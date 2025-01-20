@@ -289,7 +289,8 @@ function getDamageResultADV(attacker, defender, move, field) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 	}
 
-	baseDamage = Math.floor(baseDamage * typeEffectiveness);
+	baseDamage = Math.floor(baseDamage * typeEffect1);
+	baseDamage = Math.floor(baseDamage * typeEffect2);
 
 	var damage = [];
 	for (var i = 85; i <= 100; i++) {
