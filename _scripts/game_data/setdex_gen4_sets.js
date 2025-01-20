@@ -2943,7 +2943,8 @@ SETDEX_PHGSS = {
         "Sing"
       ],
       "nature": "Adamant",
-      "item": "Focus Band"
+      "item": "Focus Band",
+      "tier": "50"
     },
     "Clefable-H": {
       "evs": {
@@ -9734,8 +9735,7 @@ SETDEX_PHGSS = {
         "Screech"
       ],
       "nature": "Adamant",
-      "item": "Chesto Berry",
-      "tier": "50"
+      "item": "Chesto Berry"
     },
     "Lickitung-H": {
       "evs": {
