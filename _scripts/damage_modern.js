@@ -771,9 +771,10 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.isHelpingHand = true;
 	}
 
-	if (moveType === "Electric" && (field.isCharge || (["Electromorphosis", "Wind Power"].includes(attacker.curAbility) && attacker.isAbilityActivated))) {
+	let isChargeAbility = ["Electromorphosis", "Wind Power"].includes(attacker.curAbility);
+	if (moveType === "Electric" && (field.isCharge || (isChargeAbility && attacker.isAbilityActivated))) {
 		bpMods.push(0x2000);
-		if (["Electromorphosis", "Wind Power"].includes(attacker.curAbility)) {
+		if (isChargeAbility) {
 			description.attackerAbility = attacker.curAbility;
 		} else {
 			description.isCharge = true;
@@ -789,10 +790,11 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 
 	if (defenderGrounded && (
 		field.terrain === "Misty" && moveType === "Dragon" ||
-		field.terrain === "Grassy" && (move.name === "Bulldoze" || move.name === "Earthquake"))) {
+		field.terrain === "Grassy" && ["Bulldoze", "Earthquake", "Magnitude"].includes(move.name))) {
 		bpMods.push(0x800);
 		description.terrain = field.terrain;
 	}
+
 	if (attackerGrounded && (
 		field.terrain === "Electric" && moveType === "Electric" ||
 		field.terrain === "Grassy" && moveType == "Grass" ||
