@@ -212,11 +212,12 @@ function getAutoIVValue(side) {
 
 function isCustomSet(pokeName) {
 	// pokeName should be the name as displayed in the sets list: speciesName (setName)
-	if (!pokeName) {
+	if (typeof pokeName != "string") {
 		return false;
 	}
+	let setName = pokeName.substring(pokeName.indexOf("(") + 1, pokeName.length - 1);
 	let speciesSets = SETDEX_CUSTOM[pokeName.substring(0, pokeName.indexOf(" ("))];
-	return (speciesSets && (pokeName.substring(pokeName.indexOf("(") + 1, pokeName.length - 1) in speciesSets));
+	return speciesSets !== undefined && setName in speciesSets;
 }
 
 $("#format").change(function () {
@@ -965,8 +966,9 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 	formeObj.show();
 }
 
+var BLANK_SET = "Blank Set";
 function getFormeNum(setName, pokemonName) {
-	if (setName === "Blank Set") {
+	if (setName === BLANK_SET) {
 		return 0;
 	}
 	let set = setdexAll[pokemonName][setName];
@@ -1013,7 +1015,7 @@ $(".forme").change(function () {
 	prependSpeciesAbilities(abilityList, container.parent().parent().prop("id"), container.find(".ability"));
 
 	if (pokemonName && setdexAll && setdexAll[pokemonName] && setdexAll[pokemonName][setName] &&
-		setName !== "Blank Set" && abilities.includes(setdexAll[pokemonName][setName].ability)) {
+		setName !== BLANK_SET && abilities.includes(setdexAll[pokemonName][setName].ability)) {
 		container.find(".ability").val(setdexAll[pokemonName][setName].ability);
 	} else if (abilityList && abilityList.length == 1) {
 		container.find(".ability").val(abilityList[0]);
@@ -1860,9 +1862,9 @@ function getSetOptions() {
 		}
 		setOptions.push({
 			"pokemon": pokeName,
-			"set": "Blank Set",
-			"text": pokeName + " (Blank Set)",
-			"id": pokeName + " (Blank Set)"
+			"set": BLANK_SET,
+			"text": pokeName + " (" + BLANK_SET + ")",
+			"id": pokeName + " (" + BLANK_SET + ")"
 		});
 	});
 
