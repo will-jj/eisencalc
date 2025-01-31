@@ -1118,8 +1118,6 @@ var stickyMoves = (function () {
 
 function Pokemon(pokeInfo) {
 	// pokeInfo is a jquery object
-	let setName = pokeInfo.find("input.set-selector").val();
-	let speciesName = setName.substring(0, setName.indexOf(" ("));
 	let poke = {
 		"type1": pokeInfo.find(".type1").val(),
 		"type2": pokeInfo.find(".type2").val(),
@@ -1149,12 +1147,16 @@ function Pokemon(pokeInfo) {
 		"resetCurAbility": function () { this.curAbility = (isNeutralizingGas && this.item !== "Ability Shield") ? "" : this.ability }
 	};
 	// name
+	let selectorName = pokeInfo.find("input.set-selector").val();
+	let speciesName = selectorName.substring(0, selectorName.indexOf(" ("));
 	let dexEntry = pokedex[speciesName];
-	if (!setName.includes("(")) {
-		poke.name = setName;
+	if (!selectorName.includes("(")) {
+		poke.name = selectorName;
+		poke.setName = "";
 	} else {
+		poke.setName = selectorName.substring(selectorName.indexOf("(") + 1, selectorName.length - 1);
 		let currentForme = pokeInfo.find(".forme").val();
-		if (dexEntry.formes && currentForme != null) {
+		if (currentForme && dexEntry && dexEntry.formes) {
 			poke.name = currentForme;
 			dexEntry = pokedex[currentForme];
 		} else {
@@ -1185,7 +1187,7 @@ function Pokemon(pokeInfo) {
 	let move2 = pokeInfo.find(".move2");
 	let move3 = pokeInfo.find(".move3");
 	let move4 = pokeInfo.find(".move4");
-	let setdexPoke = setdex[speciesName] ? setdex[speciesName][setName.substring(speciesName.length + 2, setName.length - 1)] : false;
+	let setdexPoke = speciesName in setdex && poke.setName in setdex[speciesName] ? setdex[speciesName][poke.setName] : false;
 	poke.baseMoveNames = [ // baseMoveNames is used in set export
 		setdexPoke ? setdexPoke.moves[0] : move1.find("select.move-selector").val(),
 		setdexPoke ? setdexPoke.moves[1] : move2.find("select.move-selector").val(),

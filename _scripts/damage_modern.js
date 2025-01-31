@@ -76,9 +76,9 @@ var originalSABoost;
 var isFirstHit = true;
 function getDamageResult(attacker, defender, move, field) {
 	var description = {
-		"attackerName": attacker.name,
+		"attackerName": getDescriptionPokemonName(attacker),
 		"moveName": move.name,
-		"defenderName": defender.name,
+		"defenderName": getDescriptionPokemonName(defender),
 		"isDynamax": defender.isDynamax
 	};
 
@@ -1176,6 +1176,31 @@ function calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, fina
 		damage[i] = Math.max(1, pokeRound(damage[i] * finalMod / 0x1000) % 65536);
 	}
 	return damage;
+}
+
+const MAX_SET_SUFFIX_LENGTH = 5; // this value includes the hyphen
+const endsInParensRegex = / \(.+\)$/;
+function getDescriptionPokemonName(pokemon) {
+	// if the setName ends with something in parens, remove the parens
+	let regexMatch = endsInParensRegex.exec(pokemon.setName);
+	let displaySetName = regexMatch ? pokemon.setName.substring(0, regexMatch.index) : pokemon.setName;
+	if (pokemon.name in setdex && pokemon.setName in setdex[pokemon.name]) {
+		// the name and setName are straightforward. the setName isn't much longer than the name. setName can simply be returned.
+		if (displaySetName.length > pokemon.name.length + MAX_SET_SUFFIX_LENGTH) {
+			return pokemon.name;
+		}
+		return displaySetName;
+	}
+	let nameDexEntry = pokedex[pokemon.name];
+	if (nameDexEntry && nameDexEntry.hasBaseForme && nameDexEntry.hasBaseForme in setdex && pokemon.setName in setdex[nameDexEntry.hasBaseForme]) {
+		// the pokemon is some forme. take the set suffix and put it at the end of the forme.
+		let setSuffix = displaySetName.substring(displaySetName.lastIndexOf("-"));
+		if (setSuffix.length > MAX_SET_SUFFIX_LENGTH) {
+			return pokemon.name;
+		}
+		return pokemon.name + setSuffix;
+	}
+	return pokemon.name;
 }
 
 function buildDescription(description) {

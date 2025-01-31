@@ -34,9 +34,9 @@ function CALCULATE_MOVES_OF_ATTACKER_ADV(attacker, defender, field) {
 
 function getDamageResultADV(attacker, defender, move, field) {
 	var description = {
-		"attackerName": attacker.name,
+		"attackerName": getDescriptionPokemonName(attacker),
 		"moveName": move.name,
-		"defenderName": defender.name
+		"defenderName": getDescriptionPokemonName(defender)
 	};
 
 	if (killsShedinja(attacker, defender, move)) {

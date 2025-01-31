@@ -335,8 +335,8 @@ function rejectSet(species, spreadName) {
 	if (!pokedex[species]) {
 		alert("Error: something unexpected happened when parsing `" + species + "` as a species. Please contact Silver or Eisen with a screenshot including this popup and the calc.");
 		return true;
-	} else if (spreadName === BLANK_SET) {
-		alert("Error: cannot use " + BLANK_SET + " as a set name. Select a different spread name.");
+	} else if (spreadName.toLowerCase() === BLANK_SET.toLowerCase()) {
+		alert("Error: cannot use " + spreadName + " as a set name. Select a different spread name.");
 		return true;
 	} else if (isFacilitySet(species, spreadName)) {
 		alert("Error: " + spreadName + " is already an AI set. Select a different spread name.");
