@@ -69,8 +69,9 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 	let eotText = [];
 	let eotHealingText = [];
 	let hazardText = [];
-	eotWeather = calcWeatherEOT(defender, field, eotText, eotHealingText);
-	eotTotal = eotWeather + calcOtherEOT(attacker, defender, field, eotText, eotHealingText);
+	let effectiveDefenderItem = defenderHasItem(move.name, attacker.item) ? defender.item : "";
+	eotWeather = calcWeatherEOT(defender, effectiveDefenderItem, field, eotText, eotHealingText);
+	eotTotal = eotWeather + calcOtherEOT(attacker, defender, effectiveDefenderItem, field, eotText, eotHealingText);
 
 	let targetHP = defender.curHP + calcHazards(defender, field, hazardText);
 
@@ -454,49 +455,53 @@ function calcHazards(defender, field, hazardText) {
 }
 
 // eot = end of turn
-function calcWeatherEOT(defender, field, eotText, eotHealingText) {
+function calcWeatherEOT(defender, effectiveDefenderItem, field, eotText, eotHealingText) {
 	if (defender.curAbility === "Magic Guard") {
 		return 0;
 	}
-	let eot = 0;
 	// this effectively hardcodes a dynamax level of 10 and there's not enough reason to fix this
 	let effectiveMaxHP = defender.isDynamax ? defender.maxHP / 2 : defender.maxHP;
+
 	if (field.weather.includes("Sun") && ["Dry Skin", "Solar Power"].includes(defender.curAbility)) {
-		eot -= Math.floor(effectiveMaxHP / 8);
 		eotText.push(defender.curAbility + " damage");
-	} else if (field.weather.includes("Rain")) {
+		return -Math.floor(effectiveMaxHP / 8);
+	}
+	if (field.weather.includes("Rain")) {
 		if (defender.curAbility === "Dry Skin") {
-			eot += Math.floor(effectiveMaxHP / 8);
 			eotHealingText.push("Dry Skin recovery");
+			return Math.floor(effectiveMaxHP / 8);
 		} else if (defender.curAbility === "Rain Dish") {
-			eot += Math.floor(effectiveMaxHP / 16);
 			eotHealingText.push("Rain Dish recovery");
+			return Math.floor(effectiveMaxHP / 16);
 		}
-	} else if (field.weather === "Sand" && !defender.hasType("Rock") && !defender.hasType("Ground") && !defender.hasType("Steel") &&
+		return 0;
+	}
+	if (field.weather === "Sand" && !defender.hasType("Rock") && !defender.hasType("Ground") && !defender.hasType("Steel") &&
 		!["Overcoat", "Sand Force", "Sand Rush", "Sand Veil"].includes(defender.curAbility) &&
-		defender.item !== "Safety Goggles") {
-		eot -= Math.floor(effectiveMaxHP / 16);
+		effectiveDefenderItem !== "Safety Goggles") {
 		eotText.push("sandstorm damage");
-	} else if (defender.curAbility === "Ice Body" && ["Hail", "Snow"].includes(field.weather)) {
-		eot += Math.floor(effectiveMaxHP / 16);
+		return -Math.floor(effectiveMaxHP / 16);
+	}
+	if (defender.curAbility === "Ice Body" && ["Hail", "Snow"].includes(field.weather)) {
 		eotHealingText.push("Ice Body recovery");
+		return Math.floor(effectiveMaxHP / 16);
 	} else if (field.weather === "Hail" && !defender.hasType("Ice") && !["Overcoat", "Snow Cloak"].includes(defender.curAbility) &&
-		defender.item !== "Safety Goggles") {
-		eot -= Math.floor(effectiveMaxHP / 16);
+		effectiveDefenderItem !== "Safety Goggles") {
 		eotText.push("hail damage");
+		return -Math.floor(effectiveMaxHP / 16);
 	}
 
-	return eot;
+	return 0;
 }
 
-function calcOtherEOT(attacker, defender, field, eotText, eotHealingText) {
+function calcOtherEOT(attacker, defender, effectiveDefenderItem, field, eotText, eotHealingText) {
 	let eot = 0;
 	// this effectively hardcodes a dynamax level of 10 and there's not enough reason to fix this
 	let effectiveMaxHP = defender.isDynamax ? defender.maxHP / 2 : defender.maxHP;
-	if (defender.item === "Leftovers") {
+	if (effectiveDefenderItem === "Leftovers") {
 		eot += Math.floor(effectiveMaxHP / 16);
 		eotHealingText.push("Leftovers recovery");
-	} else if (defender.item === "Black Sludge") {
+	} else if (effectiveDefenderItem === "Black Sludge") {
 		if (defender.hasType("Poison")) {
 			eot += Math.floor(effectiveMaxHP / 16);
 			eotHealingText.push("Black Sludge recovery");
@@ -548,6 +553,10 @@ function calcOtherEOT(attacker, defender, field, eotText, eotHealingText) {
 	}
 
 	return eot;
+}
+
+function defenderHasItem(moveName, attackerItem) {
+	return moveName !== "Knock Off" && !(!attackerItem && ["Thief", "Covet"].includes(moveName));
 }
 
 function writeAfterText(afterTextArr, berryText) {
