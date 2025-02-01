@@ -261,8 +261,8 @@ function getDamageResult(attacker, defender, move, field) {
 	if (moveType === "Stellar" && attacker.isTerastal && defender.isTerastal) {
 		typeEffectiveness = 2;
 	}
-	let originalTypeEffectiveness = typeEffectiveness; // save the original type effectiveness for calculating non-first hits
-	if (defender.curAbility === "Tera Shell" && typeEffectiveness >= 1) {
+	let otherHitsTypeEffectiveness = typeEffectiveness; // save the original type effectiveness for calculating non-first hits
+	if (isTeraShell(defender, typeEffectiveness)) {
 		typeEffectiveness = 0.5;
 		description.defenderAbility = defender.curAbility;
 	}
@@ -361,7 +361,7 @@ function getDamageResult(attacker, defender, move, field) {
 	// Add these damage results to the result object. They are made sense of and set up for display by ap_calc
 	let recalcDamage = recalcOtherHits(attacker, defender, move, field, description, result,
 		typeEffectiveness, finalBasePower, attack, defense, baseDamage, stabMod, finalMod, applyBurn,
-		originalTypeEffectiveness, ateizeBoost, bypassProtect);
+		otherHitsTypeEffectiveness, ateizeBoost, bypassProtect);
 	if (recalcDamage) {
 		result.firstHitDamage = damage;
 		result.damage = recalcDamage;
@@ -369,105 +369,6 @@ function getDamageResult(attacker, defender, move, field) {
 
 	result.description = buildDescription(description);
 	return result;
-}
-
-function recalcOtherHits(attacker, defender, move, field, description, result,
-	typeEffectiveness, finalBasePower, attack, defense, baseDamage, stabMod, finalMod, applyBurn,
-	originalTypeEffectiveness, ateizeBoost, bypassProtect) {
-	let originalATBoost = attacker.boosts[AT];
-	let originalATStat = attacker.stats[AT];
-	let isParentalBond = attacker.curAbility === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread);
-	if (isParentalBond) {
-		isFirstHit = false;
-		description.attackerAbility = attacker.curAbility;
-	}
-
-	// recalc type effectiveness
-	let recalcFinalMod = false;
-	if (defender.curAbility === "Tera Shell" && originalTypeEffectiveness >= 1 && defender.curHP === defender.maxHP) {
-		isFirstHit = false;
-		recalcFinalMod = true;
-		typeEffectiveness = originalTypeEffectiveness;
-		// A quirk with this implementation is that a defender with Tera Shell and a resist berry will never calculate the resist berry (except Chilan).
-		// Just Tera Shell is calculated for the first hit, and no Tera Shell nor berry for the other hits.
-	}
-
-	// recalc final BP
-	if (move.name === "Knock Off" && canKnockOffItem(attacker, defender, field.terrain)) {
-		isFirstHit = false;
-		finalBasePower = calcBP(attacker, defender, move, field, {}, ateizeBoost);
-	}
-
-	// recalc attack
-	if (move.isSound && attacker.item === "Throat Spray" && (attacker.curAbility === "Contrary" ? attacker.boosts[SA] > -6 : attacker.boosts[SA] < 6)) {
-		isFirstHit = false;
-		attack = calcAtk(attacker, defender, move, field, {});
-	} else if (isParentalBond && move.name === "Power-Up Punch") {
-		// apply the +1 Atk to the child's hit
-		attacker.boosts[AT] = Math.min(6, attacker.boosts[AT] + 1);
-		attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
-		attack = calcAtk(attacker, defender, move, field, {});
-	}
-
-	// no branch needed for recalc defense at the moment.
-
-	// recalc base damage
-	// and recalc modded base damage
-	if (!isFirstHit) {
-		isFirstHit = false;
-		baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, {});
-	}
-
-	// recalc STAB mod
-	if (attacker.isTerastal && attacker.teraType === "Stellar" && !attacker.name.includes("Terapagos")) {
-		isFirstHit = false;
-		stabMod = calcSTABMod(attacker, move, {});
-	}
-
-	// recalc final mods
-	if (recalcFinalMod ||
-		activateResistBerry(attacker, defender, typeEffectiveness) ||
-		(["Multiscale"].includes(defender.curAbility) || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP) {
-		isFirstHit = false;
-		finalMod = calcFinalMods(attacker, defender, move, field, {}, typeEffectiveness, bypassProtect);
-	}
-
-	// calculate hits of Triple Axel, recalc final BP.
-	if (["Triple Axel", "Triple Kick"].includes(move.name)) {
-		// tripleAxelDamage is an array of damage arrays; a 2D number array
-		isFirstHit = false;
-		result.tripleAxelDamage = [result.damage];
-		result.firstHitDamage = result.damage;
-		let startingBP = move.bp;
-		for (let hitNum = 2; hitNum <= move.hits; hitNum++) {
-			move.bp = startingBP * hitNum;
-			finalBasePower = calcBP(attacker, defender, move, field, {}, ateizeBoost);
-			baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, {});
-			result.tripleAxelDamage.push(calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod));
-		}
-		move.bp = startingBP;
-		isFirstHit = true;
-		return; // Triple Axel just needs to update the result with its custom tripleAxelDamage item.
-	}
-
-	if (isFirstHit) {
-		return;
-	}
-
-	// recalc the damage array
-	let recalcDamage = calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod);
-
-	isFirstHit = true;
-
-	if (isParentalBond) {
-		result.childDamage = recalcDamage;
-		// Reset any changes from Power-Up Punch
-		attacker.boosts[AT] = originalATBoost;
-		attacker.stats[AT] = originalATStat;
-		return; // Parental Bond doesn't use firstHitDamage and needs to add its custom childDamage item to the result object.
-	}
-
-	return recalcDamage;
 }
 
 function calcBP(attacker, defender, move, field, description, ateizeBoost) {
@@ -1178,6 +1079,119 @@ function calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, fina
 	return damage;
 }
 
+function recalcOtherHits(attacker, defender, move, field, description, result,
+	typeEffectiveness, finalBasePower, attack, defense, baseDamage, stabMod, finalMod, applyBurn,
+	otherHitsTypeEffectiveness, ateizeBoost, bypassProtect) {
+	let originalATBoost = attacker.boosts[AT];
+	let originalATStat = attacker.stats[AT];
+	let isParentalBond = attacker.curAbility === "Parental Bond" && move.hits === 1 && (field.format === "singles" || !move.isSpread);
+	if (isParentalBond) {
+		isFirstHit = false;
+		description.attackerAbility = attacker.curAbility;
+	}
+
+	// recalc type effectiveness
+	let isTeraShellActivated = isTeraShell(defender, otherHitsTypeEffectiveness);
+	let recalcFinalMod = false;
+	if (isTeraShellActivated) {
+		isFirstHit = false;
+		recalcFinalMod = true;
+		// A quirk with this implementation is that a defender with Tera Shell and a resist berry will never calculate the resist berry (except Chilan).
+		// Just Tera Shell is calculated for the first hit, and no Tera Shell nor berry for the other hits.
+	}
+
+	// recalc final BP
+	if (move.name === "Knock Off" && canKnockOffItem(attacker, defender, field.terrain)) {
+		isFirstHit = false;
+		finalBasePower = calcBP(attacker, defender, move, field, {}, ateizeBoost);
+	}
+
+	// recalc attack
+	if (move.isSound && attacker.item === "Throat Spray" && (attacker.curAbility === "Contrary" ? attacker.boosts[SA] > -6 : attacker.boosts[SA] < 6)) {
+		isFirstHit = false;
+		attack = calcAtk(attacker, defender, move, field, {});
+	} else if (isParentalBond && move.name === "Power-Up Punch") {
+		// apply the +1 Atk to the child's hit
+		attacker.boosts[AT] = Math.min(6, attacker.boosts[AT] + 1);
+		attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
+		attack = calcAtk(attacker, defender, move, field, {});
+	}
+
+	// no branch needed for recalc defense at the moment.
+
+	// recalc base damage
+	// and recalc modded base damage
+	if (!isFirstHit) {
+		isFirstHit = false;
+		baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, {});
+	}
+
+	// recalc STAB mod
+	if (attacker.isTerastal && attacker.teraType === "Stellar" && !attacker.name.includes("Terapagos")) {
+		isFirstHit = false;
+		stabMod = calcSTABMod(attacker, move, {});
+	}
+
+	// recalc final mods
+	if (recalcFinalMod ||
+		activateResistBerry(attacker, defender, typeEffectiveness) ||
+		(["Multiscale"].includes(defender.curAbility) || (defender.ability == "Shadow Shield" && !isNeutralizingGas)) && defender.curHP === defender.maxHP) {
+		isFirstHit = false;
+		finalMod = calcFinalMods(attacker, defender, move, field, {}, otherHitsTypeEffectiveness, bypassProtect);
+	}
+
+	// calculate hits of Triple Axel, recalc final BP.
+	if (["Triple Axel", "Triple Kick"].includes(move.name)) {
+		// tripleAxelDamage is an array of damage arrays; a 2D number array
+		isFirstHit = false;
+		result.tripleAxelDamage = [];
+		if (isTeraShellActivated) {
+			result.teraShellDamage = [];
+		}
+		result.firstHitDamage = result.damage;
+		let startingBP = move.bp;
+		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
+			move.bp = startingBP * hitNum;
+			finalBasePower = calcBP(attacker, defender, move, field, {}, ateizeBoost);
+			baseDamage = modBaseDamage(calcBaseDamage(finalBasePower, attack, defense, attacker.level), attacker, defender, move, field, {});
+			result.tripleAxelDamage.push(calcDamageRange(baseDamage, stabMod, otherHitsTypeEffectiveness, applyBurn, finalMod));
+			if (isTeraShellActivated) {
+				result.teraShellDamage.push(calcDamageRange(baseDamage, stabMod, typeEffectiveness, applyBurn, finalMod));
+			}
+		}
+		move.bp = startingBP;
+		isFirstHit = true;
+		return; // Nothing to return. Triple Axel just adds its custom tripleAxelDamage property.
+	}
+
+	if (isFirstHit) {
+		return;
+	}
+
+	// recalc the damage array
+	let recalcDamage = calcDamageRange(baseDamage, stabMod, otherHitsTypeEffectiveness, applyBurn, finalMod);
+
+	isFirstHit = true;
+
+	if (isParentalBond) {
+		result.childDamage = recalcDamage;
+		// Reset any changes from Power-Up Punch
+		attacker.boosts[AT] = originalATBoost;
+		attacker.stats[AT] = originalATStat;
+		return; // Nothing to return. Parental Bond just adds its custom childDamage property.
+	}
+
+	if (isTeraShellActivated) {
+		// Tera Shell applies its effect to all strikes of a multistrike move, not just the first strike.
+		result.teraShellDamage = result.damage;
+		result.damage = recalcDamage;
+		result.firstHitDamage = result.teraShellDamage;
+		return; // Nothing to return. Tera Shell just adds its custom teraShellDamage property.
+	}
+
+	return recalcDamage;
+}
+
 const MAX_SET_SUFFIX_LENGTH = 5; // this value includes the hyphen
 const endsInParensRegex = / \(.+\)$/;
 function getDescriptionPokemonName(pokemon) {
@@ -1776,6 +1790,10 @@ function checkMinimize(p1, p2) {
 	if ($("#minimR").prop("checked")) {
 		p2.boosts[ES] = Math.min(6, p2.boosts[ES] + 2);
 	}
+}
+
+function isTeraShell(defender, typeEffectiveness) {
+	return defender.curAbility === "Tera Shell" && typeEffectiveness >= 1 && defender.curHP === defender.maxHP;
 }
 
 function countBoosts(boosts) {

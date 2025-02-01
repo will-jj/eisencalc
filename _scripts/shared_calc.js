@@ -1554,33 +1554,39 @@ function squashDamageMap(damageMap, mapCombinations) {
 	return mapCombinations / divisor;
 }
 
-function getAssembledDamageMap(result, resultDamageMap, moveHits, considerReducedDamage) {
+function getAssembledDamageMap(result, moveHits, isFirstHit) {
+	// resultDamageMap is of a single hit (not sum of multi hits), non first hit
 	if (result.damage.length == 1) {
-		//result.hitDamageValues = "(" + result.damage[0] + ")";
 		return new Map([[result.damage[0], 1]]);
-	} else if (result.tripleAxelDamage) {
-		// result.tripleAxelDamage[0] goes unused, it should be the non-resist berry first hit.
-		let assembledDamageMap = combineDamageMaps((considerReducedDamage ? mapFromArray(result.firstHitDamage) : resultDamageMap), mapFromArray(result.tripleAxelDamage[1]));
-		if (moveHits == 3) {
-			return combineDamageMaps(assembledDamageMap, mapFromArray(result.tripleAxelDamage[2]));
+	}
+	if (result.tripleAxelDamage) {
+		let damageArrays = isFirstHit && result.teraShellDamage ? result.teraShellDamage : result.tripleAxelDamage;
+		let assembledDamageMap = combineDamageMaps(mapFromArray(isFirstHit ? result.firstHitDamage : damageArrays[0]), mapFromArray(damageArrays[1]));
+		if (damageArrays.length == 3) {
+			return combineDamageMaps(assembledDamageMap, mapFromArray(damageArrays[2]));
 		}
 		return assembledDamageMap;
-	} else if (result.childDamage) {
-		return combineDamageMaps((considerReducedDamage ? mapFromArray(result.firstHitDamage) : resultDamageMap), mapFromArray(result.childDamage));
-	} else if (moveHits > 1) {
-		if (considerReducedDamage) {
+	}
+	let resultDamageMap = mapFromArray(result.damage);
+	if (result.childDamage) {
+		return combineDamageMaps((isFirstHit ? mapFromArray(result.firstHitDamage) : resultDamageMap), mapFromArray(result.childDamage));
+	}
+	if (moveHits > 1) {
+		if (isFirstHit) {
+			if (result.teraShellDamage) {
+				return recurseDamageMaps(mapFromArray(result.firstHitDamage), moveHits);
+			}
 			return combineDamageMaps(recurseDamageMaps(resultDamageMap, moveHits - 1), mapFromArray(result.firstHitDamage));
 		}
 		return recurseDamageMaps(resultDamageMap, moveHits);
 	}
 
-	return considerReducedDamage ? mapFromArray(result.firstHitDamage) : resultDamageMap;
+	return isFirstHit ? mapFromArray(result.firstHitDamage) : resultDamageMap;
 }
 
 function DamageInfo(result, moveHits, isFirstHit = false) {
 	let damage = {
-		// mapFromArray is of a single hit (not sum of multi hits), no resist berry
-		"damageMap": getAssembledDamageMap(result, mapFromArray(result.damage), moveHits, isFirstHit),
+		"damageMap": getAssembledDamageMap(result, moveHits, isFirstHit),
 		"mapCombinations": result.damage.length ** moveHits
 	};
 	damage.sortedDamageValues = Array.from(damage.damageMap.keys())

@@ -119,7 +119,7 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 
 	// add clarifying text for 2+HKOs that a resist berry is only being calculated for the first hit. checkMultiHitOHKO() covers the multihit case
 	if (result.firstHitDamage && moveHits == 1) {
-		applyFirstHitText(defender, result, "hit");
+		applyFirstHitText(defender, result, false);
 	}
 	// apply all eot text
 	hazardText = hazardText.concat(eotText, eotHealingText);
@@ -156,12 +156,16 @@ function insertFirstHitOnly(result, effectString, hitText) {
 	result.description = result.description.substring(0, index) + " (first " + hitText + " only)" + result.description.substring(index);
 }
 
-function applyFirstHitText(defender, result, hitText) {
+function applyFirstHitText(defender, result, isMultihitMove) {
+	let hitText = isMultihitMove ? "strike" : "hit";
 	if (getBerryResistType(defender.item) && result.description.includes(defender.item)) {
 		insertFirstHitOnly(result, defender.item, hitText);
 	}
 	if (result.description.includes("Multiscale") || result.description.includes("Shadow Shield")) {
 		insertFirstHitOnly(result, defender.ability, hitText);
+	} else if (result.description.includes("Tera Shell")) {
+		// Tera Shell is special since all multi hits in the first attack become not very effective, not just the first strike
+		insertFirstHitOnly(result, defender.ability, isMultihitMove ? "attack" : "hit");
 	}
 }
 
@@ -251,7 +255,7 @@ function checkMultiHitOHKO(moveHits, result, targetHP, defender, damageInfo, fir
 	}
 
 	if (result.firstHitDamage) {
-		applyFirstHitText(defender, result, "strike");
+		applyFirstHitText(defender, result, true);
 	}
 
 	if (result.childDamage || result.tripleAxelDamage) {
