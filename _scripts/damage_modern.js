@@ -1143,12 +1143,14 @@ function recalcOtherHits(attacker, defender, move, field, description, result,
 	// calculate hits of Triple Axel, recalc final BP.
 	if (["Triple Axel", "Triple Kick"].includes(move.name)) {
 		// tripleAxelDamage is an array of damage arrays; a 2D number array
+		if (!isFirstHit) {
+			result.firstHitDamage = result.damage;
+		}
 		isFirstHit = false;
 		result.tripleAxelDamage = [];
 		if (isTeraShellActivated) {
 			result.teraShellDamage = [];
 		}
-		result.firstHitDamage = result.damage;
 		let startingBP = move.bp;
 		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
 			move.bp = startingBP * hitNum;
