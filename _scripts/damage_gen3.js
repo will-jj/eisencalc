@@ -298,17 +298,9 @@ function getDamageResultADV(attacker, defender, move, field) {
 	}
 	let result = {"damage": damage, "description": buildDescription(description)};
 
-	if (isFirstHit && move.name === "Triple Kick") {
-		// tripleAxelDamage is an array of damage arrays; a 2D number array
-		result.tripleAxelDamage = [];
-		let startingBP = move.bp;
-		isFirstHit = false;
-		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
-			move.bp = startingBP * hitNum;
-			result.tripleAxelDamage.push(getDamageResultADV(attacker, defender, move, field).damage);
-		}
-		isFirstHit = true;
-		move.bp = startingBP;
+	let tripleKickDamage = getTripleKickDamage(getDamageResultADV, attacker, defender, move, field, damage);
+	if (tripleKickDamage) {
+		result.tripleAxelDamage = tripleKickDamage;
 	}
 
 	return result;
