@@ -271,7 +271,7 @@ function checkMultiHitOHKO(moveHits, result, targetHP, attacker, defender, damag
 			hitCount: moveHits,
 			koCombinations: GUARANTEED,
 			berryKO: true,
-			printEOTText: totalDamageMin < targetHP + berryRecovery // only print eot text if the totalDamageMin isn't OHKOing the defender
+			printEOTText: firstHitDamageInfo.min < targetHP + berryRecovery // only print eot text if the min damage isn't OHKOing the defender
 		};
 	}
 

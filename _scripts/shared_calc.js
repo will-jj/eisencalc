@@ -1555,7 +1555,6 @@ function squashDamageMap(damageMap, mapCombinations) {
 }
 
 function getAssembledDamageMap(result, moveHits, isFirstHit) {
-	// resultDamageMap is of a single hit (not sum of multi hits), non first hit
 	if (result.damage.length == 1) {
 		return new Map([[result.damage[0], 1]]);
 	}

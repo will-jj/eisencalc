@@ -1103,7 +1103,7 @@ function recalcOtherHits(attacker, defender, move, field, description, result,
 	// recalc final BP
 	let isGemApplied = applyGem(attacker, move);
 	if (isGemApplied) {
-		result.gemFirstHit = true;
+		result.gemFirstAttack = true;
 	}
 	if (move.name === "Knock Off" && canKnockOffItem(attacker, defender, field.terrain) ||
 		isGemApplied) {
