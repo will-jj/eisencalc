@@ -253,7 +253,7 @@ function setUpDamageRangeText(result, moveHits, mainDamageInfo, firstHitDamageIn
 	} else if (result.firstHitDamage) {
 		let qualifier = "hit";
 		let firstQualifier = qualifier;
-		if (moveHits > 1 && result.teraShellDamage) {
+		if (moveHits > 1 && (result.teraShellDamage || result.gemFirstAttack)) {
 			qualifier = "attack " + qualifier;
 			firstQualifier = qualifier + "s";
 		}

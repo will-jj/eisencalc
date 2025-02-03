@@ -1572,13 +1572,13 @@ function getAssembledDamageMap(result, moveHits, isFirstHit) {
 		return combineDamageMaps((isFirstHit ? mapFromArray(result.firstHitDamage) : resultDamageMap), mapFromArray(result.childDamage));
 	}
 	if (moveHits > 1) {
-		if (isFirstHit) {
-			if (result.teraShellDamage) {
-				return recurseDamageMaps(mapFromArray(result.firstHitDamage), moveHits);
-			}
-			return combineDamageMaps(recurseDamageMaps(resultDamageMap, moveHits - 1), mapFromArray(result.firstHitDamage));
+		if (!isFirstHit) {
+			return recurseDamageMaps(resultDamageMap, moveHits);
 		}
-		return recurseDamageMaps(resultDamageMap, moveHits);
+		if (result.teraShellDamage || result.gemFirstAttack) {
+			return recurseDamageMaps(mapFromArray(result.firstHitDamage), moveHits);
+		}
+		return combineDamageMaps(recurseDamageMaps(resultDamageMap, moveHits - 1), mapFromArray(result.firstHitDamage));
 	}
 
 	return isFirstHit ? mapFromArray(result.firstHitDamage) : resultDamageMap;
@@ -1589,7 +1589,7 @@ function DamageInfo(result, moveHits, isFirstHit = false) {
 		"damageMap": getAssembledDamageMap(result, moveHits, isFirstHit),
 		"mapCombinations": result.damage.length ** moveHits
 	};
-	damage.sortedDamageValues = Array.from(damage.damageMap.keys())
+	damage.sortedDamageValues = Array.from(damage.damageMap.keys());
 	damage.sortedDamageValues.sort((a, b) => a - b);
 	damage.min = damage.sortedDamageValues[0];
 	damage.max = damage.sortedDamageValues[damage.sortedDamageValues.length - 1];

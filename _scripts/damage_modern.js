@@ -649,7 +649,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 	} else if (attacker.name.startsWith("Ogerpon-") && attacker.item == attacker.name.substring(attacker.name.indexOf("-") + 1) + " Mask") {
 		bpMods.push(0x1333);
 		description.attackerItem = attacker.item;
-	} else if (attacker.item === moveType + " Gem" && !move.name.includes("Pledge")) {
+	} else if (isFirstHit && applyGem(attacker, move)) {
 		bpMods.push(gen >= 6 ? 0x14CD : 0x1800);
 		description.attackerItem = attacker.item;
 	}
@@ -1101,7 +1101,12 @@ function recalcOtherHits(attacker, defender, move, field, description, result,
 	}
 
 	// recalc final BP
-	if (move.name === "Knock Off" && canKnockOffItem(attacker, defender, field.terrain)) {
+	let isGemApplied = applyGem(attacker, move);
+	if (isGemApplied) {
+		result.gemFirstHit = true;
+	}
+	if (move.name === "Knock Off" && canKnockOffItem(attacker, defender, field.terrain) ||
+		isGemApplied) {
 		isFirstHit = false;
 		finalBasePower = calcBP(attacker, defender, move, field, {}, ateizeBoost);
 	}
@@ -1600,6 +1605,10 @@ function canKnockOffItem(attacker, defender, terrain) {
 	defender.item.endsWith("Plate") && defender.name.startsWith("Arceus") ||
 	defender.item.endsWith(" Z") ||
 	defender.item.endsWith("Mask") && defender.name.startsWith("Ogerpon-"));
+}
+
+function applyGem(attacker, move) {
+	return attacker.item === moveType + " Gem" && !move.name.includes("Pledge");
 }
 
 function checkProtoQuarkHighest(pokemon, weather, terrain) {

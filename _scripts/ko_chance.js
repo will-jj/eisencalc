@@ -76,7 +76,7 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 	let targetHP = defender.curHP + calcHazards(defender, field, hazardText);
 
 	// Check if a multihit can OHKO.
-	let multiResult = checkMultiHitOHKO(moveHits, result, targetHP, defender, damageInfo, firstHitDamageInfo);
+	let multiResult = checkMultiHitOHKO(moveHits, result, targetHP, attacker, defender, damageInfo, firstHitDamageInfo);
 	if (multiResult && multiResult.hitCount <= moveHits && multiResult.koCombinations) {
 		// checkMultiHitOHKO() uses the base damage of each strike to calculate, so the mapCombinations need to be based on that too.
 		let temp = damageInfo.mapCombinations;
@@ -120,7 +120,7 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 
 	// add clarifying text for 2+HKOs that a resist berry is only being calculated for the first hit. checkMultiHitOHKO() covers the multihit case
 	if (result.firstHitDamage && moveHits == 1) {
-		applyFirstHitText(defender, result, false);
+		applyFirstHitText(attacker, defender, result, false);
 	}
 	// apply all eot text
 	hazardText = hazardText.concat(eotText, eotHealingText);
@@ -157,16 +157,19 @@ function insertFirstHitOnly(result, effectString, hitText) {
 	result.description = result.description.substring(0, index) + " (first " + hitText + " only)" + result.description.substring(index);
 }
 
-function applyFirstHitText(defender, result, isMultihitMove) {
-	let hitText = isMultihitMove ? "strike" : "hit";
+const DEFAULT_HIT_TEXT = "hit";
+function applyFirstHitText(attacker, defender, result, isMultihitMove) {
 	if (getBerryResistType(defender.item) && result.description.includes(defender.item)) {
-		insertFirstHitOnly(result, defender.item, hitText);
+		insertFirstHitOnly(result, defender.item, isMultihitMove ? "strike" : DEFAULT_HIT_TEXT);
 	}
 	if (result.description.includes("Multiscale") || result.description.includes("Shadow Shield")) {
-		insertFirstHitOnly(result, defender.ability, hitText);
+		insertFirstHitOnly(result, defender.ability, isMultihitMove ? "strike" : DEFAULT_HIT_TEXT);
 	} else if (result.description.includes("Tera Shell")) {
 		// Tera Shell is special since all multi hits in the first attack become not very effective, not just the first strike
-		insertFirstHitOnly(result, defender.ability, isMultihitMove ? "attack" : "hit");
+		insertFirstHitOnly(result, defender.ability, isMultihitMove ? "attack" : DEFAULT_HIT_TEXT);
+	}
+	if (attacker.item.endsWith(" Gem") && result.description.includes(attacker.item)) {
+		insertFirstHitOnly(result, attacker.item, isMultihitMove ? "attack" : DEFAULT_HIT_TEXT);
 	}
 }
 
@@ -242,7 +245,7 @@ function setUpBerryValues(attacker, defender) {
 }
 
 // this function does a check on whether a multihit move can OHKO and bypass a healing berry.
-function checkMultiHitOHKO(moveHits, result, targetHP, defender, damageInfo, firstHitDamageInfo) {
+function checkMultiHitOHKO(moveHits, result, targetHP, attacker, defender, damageInfo, firstHitDamageInfo) {
 	if (moveHits == 1) {
 		return; // return nothing
 	}
@@ -256,15 +259,14 @@ function checkMultiHitOHKO(moveHits, result, targetHP, defender, damageInfo, fir
 	}
 
 	if (result.firstHitDamage) {
-		applyFirstHitText(defender, result, true);
+		applyFirstHitText(attacker, defender, result, true);
 	}
 
 	if (result.childDamage || result.tripleAxelDamage) {
 		return; // easier to not deal with these types of damage in here right now. still apply first strike text
 	}
 
-	let totalDamageMin = baseHitDamage[0] + result.damage[0] * (moveHits - 1);
-	if (checkHPThreshold(targetHP + berryRecovery, 0, totalDamageMin, defender.maxHP)) {
+	if (checkHPThreshold(targetHP + berryRecovery, 0, firstHitDamageInfo.min, defender.maxHP)) {
 		return {
 			hitCount: moveHits,
 			koCombinations: GUARANTEED,
