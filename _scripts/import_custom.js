@@ -282,19 +282,7 @@ var savecustom = function () {
 			}
 		}
 
-		let rejectSet = false;
-		if (!pokedex[species]) {
-			rejectSet = true;
-			alert("Error: something unexpected happened when parsing " + species + " as a species. Please contact Silver or Eisen with a screenshot including this popup and the calc.");
-		} else if (isFacilitySet(species, spreadName)) {
-			rejectSet = true;
-			alert("Error: " + spreadName + " is already an AI set. Select a different spread name.");
-		} else if (pokedex[species].hasBaseForme) {
-			// This error might pop up if the pokedex has an entry with a forme of a forme.
-			rejectSet = true;
-			alert("Error: recognized " + species + " as an alternate forme, but did not parse it properly. Please contact Silver or Eisen with a screenshot including this popup and the calc.");
-		}
-		if (rejectSet) {
+		if (rejectSet(species, spreadName)) {
 			alert('Set not saved: "' + species + '"');
 			return;
 		}
@@ -342,6 +330,24 @@ var savecustom = function () {
 	// due to updating the dexes, refreshing shouldn't be necessary
 	//alert("Please refresh your page to get your custom sets to show up!");
 };
+
+function rejectSet(species, spreadName) {
+	if (!pokedex[species]) {
+		alert("Error: something unexpected happened when parsing `" + species + "` as a species. Please contact Silver or Eisen with a screenshot including this popup and the calc.");
+		return true;
+	} else if (spreadName.toLowerCase() === BLANK_SET.toLowerCase()) {
+		alert("Error: cannot use " + spreadName + " as a set name. Select a different spread name.");
+		return true;
+	} else if (isFacilitySet(species, spreadName)) {
+		alert("Error: " + spreadName + " is already an AI set. Select a different spread name.");
+		return true;
+	} else if (pokedex[species].hasBaseForme) {
+		// This error might come up if the pokedex has an entry with a forme of a forme.
+		alert("Error: recognized " + species + " as an alternate forme, but did not parse it properly. Please contact Silver or Eisen with a screenshot including this popup and the calc.");
+		return true;
+	}
+	return false;
+}
 
 $("document").ready(function () {
 	if (readCookie("custom") == null) {

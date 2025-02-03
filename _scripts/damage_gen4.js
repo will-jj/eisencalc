@@ -42,9 +42,9 @@ function CALCULATE_MOVES_OF_ATTACKER_PTHGSS(attacker, defender, field) {
 
 function getDamageResultPtHGSS(attacker, defender, move, field) {
 	var description = {
-		"attackerName": attacker.name,
+		"attackerName": getDescriptionPokemonName(attacker),
 		"moveName": move.name,
-		"defenderName": defender.name
+		"defenderName": getDescriptionPokemonName(defender)
 	};
 
 	if (killsShedinja(attacker, defender, move)) {
@@ -496,21 +496,12 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	}
 	let result = {"damage": damage, "description": buildDescription(description)};
 
-	if (isFirstHit && move.name === "Triple Kick") {
-		// tripleAxelDamage is an array of damage arrays; a 2D number array
-		result.tripleAxelDamage = [];
-		let startingBP = move.bp;
-		isFirstHit = false;
-		for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
-			move.bp = startingBP * hitNum;
-			result.tripleAxelDamage.push(getDamageResultPtHGSS(attacker, defender, move, field).damage);
-		}
-		isFirstHit = true;
-		move.bp = startingBP;
+	let tripleKickDamage = getTripleKickDamage(getDamageResultPtHGSS, attacker, defender, move, field, damage);
+	if (tripleKickDamage) {
+		result.tripleAxelDamage = tripleKickDamage;
 	}
 
-	if (berryMod != 1) {
-		// this branch actually calculates the damage without the resist berry
+	if (isFirstHit && berryMod != 1) {
 		result.firstHitDamage = damage;
 		isFirstHit = false;
 		result.damage = getDamageResultPtHGSS(attacker, defender, move, field).damage;
@@ -525,4 +516,22 @@ function getSimpleModifiedStat(stat, mod) {
 	return simpleMod > 0 ? Math.floor(stat * (2 + simpleMod) / 2) :
 		simpleMod < 0 ? Math.floor(stat * 2 / (2 - simpleMod)) :
 			stat;
+}
+
+// this function is also used by gen 3
+function getTripleKickDamage(getDamageResultFunction, attacker, defender, move, field, firstStrikeDamage) {
+	if (!isFirstHit || move.name !== "Triple Kick") {
+		return;
+	}
+
+	let damageArrays = [];
+	let startingBP = move.bp;
+	isFirstHit = false;
+	for (let hitNum = 1; hitNum <= move.hits; hitNum++) {
+		move.bp = startingBP * hitNum;
+		damageArrays.push(getDamageResultFunction(attacker, defender, move, field).damage);
+	}
+	isFirstHit = true;
+	move.bp = startingBP;
+	return damageArrays;
 }

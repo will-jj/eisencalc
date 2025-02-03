@@ -195,29 +195,6 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 	let mainDamageInfo = DamageInfo(result, moveHits);
 	let firstHitDamageInfo = result.firstHitDamage ? DamageInfo(result, moveHits, true) : mainDamageInfo;
 
-	// put together the primary hit information based on the first hit map
-	if (mainDamageInfo.damageMap) {
-		if (firstHitDamageInfo.mapCombinations > MAX_UNGROUPED_COUNT) {
-			result.multiHitPercents = moveHits + " hits: " + damageMapAsGroups(firstHitDamageInfo);
-		}
-
-		if (result.childDamage) {
-			result.hitDamageValues = "(First hit: " + (result.firstHitDamage ? result.firstHitDamage : result.damage).join(", ") +
-			"; Second hit: " + result.childDamage.join(", ") + ")";
-			if (result.firstHitDamage) {
-				result.hitDamageValues += "; Other parent hits: (" + result.damage.join(", ") + ")";
-			}
-		} else if (result.tripleAxelDamage) {
-			result.hitDamageValues = "(First hit: " + (result.firstHitDamage ? result.firstHitDamage : result.tripleAxelDamage[0]).join(", ") +
-			"; Second hit: " + result.tripleAxelDamage[1].join(", ") +
-			(moveHits > 2 ? "; Third hit: " + result.tripleAxelDamage[2].join(", ") : "") + ")";
-		} else if (result.firstHitDamage) {
-			result.hitDamageValues = "(First hit: " + result.firstHitDamage.join(", ") + "; Other hits: " + result.damage.join(", ") + ")";
-		} else {
-			result.hitDamageValues = "(" + result.damage.join(", ") + ")";
-		}
-	}
-
 	let minPercent = Math.round(firstHitDamageInfo.min * 1000 / defender.maxHP) / 10;
 	let maxPercent = Math.round(firstHitDamageInfo.max * 1000 / defender.maxHP) / 10;
 	result.damageText = firstHitDamageInfo.min + "-" + firstHitDamageInfo.max + " (" + minPercent + " - " + maxPercent + "%)";
@@ -231,6 +208,8 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 	} else {
 		setKOChanceText(result, move, moveHits, attacker, defender, fieldSide, mainDamageInfo, firstHitDamageInfo);
 	}
+	// put together the primary hit information based on the first hit map
+	setUpDamageRangeText(result, moveHits, mainDamageInfo, firstHitDamageInfo);
 	setUpRecoilRecoveryText(result, attacker, defender, move, firstHitDamageInfo.min, firstHitDamageInfo.max);
 	let recoilRecovery = "";
 	// intentionally does not display both recoil and recovery text on the same line
@@ -245,6 +224,44 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 		highestMaxPercent = maxPercent;
 		bestResult = $(resultLocations[1][i].move);
 	}*/
+}
+
+function setUpDamageRangeText(result, moveHits, mainDamageInfo, firstHitDamageInfo) {
+	if (!mainDamageInfo.damageMap) {
+		return;
+	}
+
+	if (firstHitDamageInfo.mapCombinations > MAX_UNGROUPED_COUNT) {
+		result.multiHitPercents = moveHits + " hits: " + damageMapAsGroups(firstHitDamageInfo);
+		if (result.firstHitDamage && !(result.koChanceText && result.koChanceText.endsWith("OHKO"))) {
+			result.multiHitPercents = "First attack " + result.multiHitPercents +
+				"<br />Other attacks " + moveHits + " hits: " + damageMapAsGroups(mainDamageInfo);
+		}
+	}
+
+	if (result.childDamage) {
+		result.hitDamageValues = "(First hit: " + (result.firstHitDamage ? result.firstHitDamage : result.damage).join(", ") +
+		"; Second hit: " + result.childDamage.join(", ") + ")";
+		if (result.firstHitDamage) {
+			result.hitDamageValues += "; Other parent hits: (" + result.damage.join(", ") + ")";
+		}
+	} else if (result.tripleAxelDamage) {
+		let damageArrays = result.teraShellDamage ? result.teraShellDamage : result.tripleAxelDamage;
+		result.hitDamageValues = "(First hit: " + (result.firstHitDamage ? result.firstHitDamage : damageArrays[0]).join(", ") +
+		"; Second hit: " + damageArrays[1].join(", ") +
+		(moveHits > 2 ? "; Third hit: " + damageArrays[2].join(", ") : "") + ")";
+	} else if (result.firstHitDamage) {
+		let qualifier = "hit";
+		let firstQualifier = qualifier;
+		if (moveHits > 1 && (result.teraShellDamage || result.gemFirstAttack)) {
+			qualifier = "attack " + qualifier;
+			firstQualifier = qualifier + "s";
+		}
+		result.hitDamageValues = "(First " + firstQualifier + ": " + result.firstHitDamage.join(", ") +
+			"; Other " + qualifier + "s: " + result.damage.join(", ") + ")";
+	} else {
+		result.hitDamageValues = "(" + result.damage.join(", ") + ")";
+	}
 }
 
 function setUpRecoilRecoveryText(result, attacker, defender, move, minDamage, maxDamage) {

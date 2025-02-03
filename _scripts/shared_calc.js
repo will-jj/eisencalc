@@ -212,11 +212,12 @@ function getAutoIVValue(side) {
 
 function isCustomSet(pokeName) {
 	// pokeName should be the name as displayed in the sets list: speciesName (setName)
-	if (!pokeName) {
+	if (typeof pokeName != "string") {
 		return false;
 	}
+	let setName = pokeName.substring(pokeName.indexOf("(") + 1, pokeName.length - 1);
 	let speciesSets = SETDEX_CUSTOM[pokeName.substring(0, pokeName.indexOf(" ("))];
-	return (speciesSets && (pokeName.substring(pokeName.indexOf("(") + 1, pokeName.length - 1) in speciesSets));
+	return speciesSets !== undefined && setName in speciesSets;
 }
 
 $("#format").change(function () {
@@ -965,8 +966,9 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 	formeObj.show();
 }
 
+var BLANK_SET = "Blank Set";
 function getFormeNum(setName, pokemonName) {
-	if (setName === "Blank Set") {
+	if (setName === BLANK_SET) {
 		return 0;
 	}
 	let set = setdexAll[pokemonName][setName];
@@ -1013,7 +1015,7 @@ $(".forme").change(function () {
 	prependSpeciesAbilities(abilityList, container.parent().parent().prop("id"), container.find(".ability"));
 
 	if (pokemonName && setdexAll && setdexAll[pokemonName] && setdexAll[pokemonName][setName] &&
-		setName !== "Blank Set" && abilities.includes(setdexAll[pokemonName][setName].ability)) {
+		setName !== BLANK_SET && abilities.includes(setdexAll[pokemonName][setName].ability)) {
 		container.find(".ability").val(setdexAll[pokemonName][setName].ability);
 	} else if (abilityList && abilityList.length == 1) {
 		container.find(".ability").val(abilityList[0]);
@@ -1116,8 +1118,6 @@ var stickyMoves = (function () {
 
 function Pokemon(pokeInfo) {
 	// pokeInfo is a jquery object
-	let setName = pokeInfo.find("input.set-selector").val();
-	let speciesName = setName.substring(0, setName.indexOf(" ("));
 	let poke = {
 		"type1": pokeInfo.find(".type1").val(),
 		"type2": pokeInfo.find(".type2").val(),
@@ -1147,12 +1147,16 @@ function Pokemon(pokeInfo) {
 		"resetCurAbility": function () { this.curAbility = (isNeutralizingGas && this.item !== "Ability Shield") ? "" : this.ability }
 	};
 	// name
+	let selectorName = pokeInfo.find("input.set-selector").val();
+	let speciesName = selectorName.substring(0, selectorName.indexOf(" ("));
 	let dexEntry = pokedex[speciesName];
-	if (!setName.includes("(")) {
-		poke.name = setName;
+	if (!selectorName.includes("(")) {
+		poke.name = selectorName;
+		poke.setName = "";
 	} else {
+		poke.setName = selectorName.substring(selectorName.indexOf("(") + 1, selectorName.length - 1);
 		let currentForme = pokeInfo.find(".forme").val();
-		if (dexEntry.formes && currentForme != null) {
+		if (currentForme && dexEntry && dexEntry.formes) {
 			poke.name = currentForme;
 			dexEntry = pokedex[currentForme];
 		} else {
@@ -1183,7 +1187,7 @@ function Pokemon(pokeInfo) {
 	let move2 = pokeInfo.find(".move2");
 	let move3 = pokeInfo.find(".move3");
 	let move4 = pokeInfo.find(".move4");
-	let setdexPoke = setdex[speciesName] ? setdex[speciesName][setName.substring(speciesName.length + 2, setName.length - 1)] : false;
+	let setdexPoke = speciesName in setdex && poke.setName in setdex[speciesName] ? setdex[speciesName][poke.setName] : false;
 	poke.baseMoveNames = [ // baseMoveNames is used in set export
 		setdexPoke ? setdexPoke.moves[0] : move1.find("select.move-selector").val(),
 		setdexPoke ? setdexPoke.moves[1] : move2.find("select.move-selector").val(),
@@ -1550,36 +1554,42 @@ function squashDamageMap(damageMap, mapCombinations) {
 	return mapCombinations / divisor;
 }
 
-function getAssembledDamageMap(result, resultDamageMap, moveHits, considerReducedDamage) {
+function getAssembledDamageMap(result, moveHits, isFirstHit) {
+	// resultDamageMap is of a single hit (not sum of multi hits), non first hit
 	if (result.damage.length == 1) {
-		//result.hitDamageValues = "(" + result.damage[0] + ")";
 		return new Map([[result.damage[0], 1]]);
-	} else if (result.tripleAxelDamage) {
-		// result.tripleAxelDamage[0] goes unused, it should be the non-resist berry first hit.
-		let assembledDamageMap = combineDamageMaps((considerReducedDamage ? mapFromArray(result.firstHitDamage) : resultDamageMap), mapFromArray(result.tripleAxelDamage[1]));
-		if (moveHits == 3) {
-			return combineDamageMaps(assembledDamageMap, mapFromArray(result.tripleAxelDamage[2]));
+	}
+	if (result.tripleAxelDamage) {
+		let damageArrays = isFirstHit && result.teraShellDamage ? result.teraShellDamage : result.tripleAxelDamage;
+		let assembledDamageMap = combineDamageMaps(mapFromArray(isFirstHit ? result.firstHitDamage : damageArrays[0]), mapFromArray(damageArrays[1]));
+		if (damageArrays.length == 3) {
+			return combineDamageMaps(assembledDamageMap, mapFromArray(damageArrays[2]));
 		}
 		return assembledDamageMap;
-	} else if (result.childDamage) {
-		return combineDamageMaps((considerReducedDamage ? mapFromArray(result.firstHitDamage) : resultDamageMap), mapFromArray(result.childDamage));
-	} else if (moveHits > 1) {
-		if (considerReducedDamage) {
-			return combineDamageMaps(recurseDamageMaps(resultDamageMap, moveHits - 1), mapFromArray(result.firstHitDamage));
+	}
+	let resultDamageMap = mapFromArray(result.damage);
+	if (result.childDamage) {
+		return combineDamageMaps((isFirstHit ? mapFromArray(result.firstHitDamage) : resultDamageMap), mapFromArray(result.childDamage));
+	}
+	if (moveHits > 1) {
+		if (!isFirstHit) {
+			return recurseDamageMaps(resultDamageMap, moveHits);
 		}
-		return recurseDamageMaps(resultDamageMap, moveHits);
+		if (result.teraShellDamage || result.gemFirstAttack) {
+			return recurseDamageMaps(mapFromArray(result.firstHitDamage), moveHits);
+		}
+		return combineDamageMaps(recurseDamageMaps(resultDamageMap, moveHits - 1), mapFromArray(result.firstHitDamage));
 	}
 
-	return considerReducedDamage ? mapFromArray(result.firstHitDamage) : resultDamageMap;
+	return isFirstHit ? mapFromArray(result.firstHitDamage) : resultDamageMap;
 }
 
 function DamageInfo(result, moveHits, isFirstHit = false) {
 	let damage = {
-		// mapFromArray is of a single hit (not sum of multi hits), no resist berry
-		"damageMap": getAssembledDamageMap(result, mapFromArray(result.damage), moveHits, isFirstHit),
+		"damageMap": getAssembledDamageMap(result, moveHits, isFirstHit),
 		"mapCombinations": result.damage.length ** moveHits
 	};
-	damage.sortedDamageValues = Array.from(damage.damageMap.keys())
+	damage.sortedDamageValues = Array.from(damage.damageMap.keys());
 	damage.sortedDamageValues.sort((a, b) => a - b);
 	damage.min = damage.sortedDamageValues[0];
 	damage.max = damage.sortedDamageValues[damage.sortedDamageValues.length - 1];
@@ -1860,9 +1870,9 @@ function getSetOptions() {
 		}
 		setOptions.push({
 			"pokemon": pokeName,
-			"set": "Blank Set",
-			"text": pokeName + " (Blank Set)",
-			"id": pokeName + " (Blank Set)"
+			"set": BLANK_SET,
+			"text": pokeName + " (" + BLANK_SET + ")",
+			"id": pokeName + " (" + BLANK_SET + ")"
 		});
 	});
 
