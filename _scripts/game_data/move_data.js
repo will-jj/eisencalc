@@ -2104,7 +2104,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"type": "Normal",
 		"category": "Physical",
 		"makesContact": true,
-		"acc": 100
+		"acc": 100,
+		"noKOChance": true
 	},
 	"Dark Pulse": {
 		"bp": 80,
@@ -2665,7 +2666,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		"type": "Normal",
 		"category": "Special",
 		"makesContact": true,
-		"acc": 100
+		"acc": 100,
+		"noKOChance": true
 	},
 	"X-Scissor": {
 		"bp": 80,
