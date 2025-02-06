@@ -1492,6 +1492,42 @@ function Side(format, terrain, weather, isAuraFairy, isAuraDark, isAuraBreak, is
 	this.isRuinBeads = isRuinBeads;
 }
 
+// note that this function only checks values against the current gen.
+// This means that the passed in setdex should match the currently selected gen.
+function validateSetdex(inputSetdex) {
+	for (const [speciesName, speciesSets] of Object.entries(inputSetdex)) {
+		if (!(speciesName in pokedex)) {
+			console.log(speciesName + " is not a species in the pokedex");
+		}
+		let pokedexEntry = pokedex[speciesName];
+		for (const [setName, setObj] of Object.entries(speciesSets)) {
+			let outputText = [];
+			if (setObj.item && items.indexOf(setObj.item) == -1) {
+				outputText.push("item " + setObj.item);
+			}
+			if (pokedexEntry.abilities && setObj.ability && pokedexEntry.abilities.indexOf(setObj.ability) == -1) {
+				outputText.push("ability " + setObj.ability);
+			}
+			if (setObj.nature && !(setObj.nature in NATURES)) {
+				outputText.push("nature " + setObj.nature);
+			}
+			if (setObj.moves) {
+				for (let i = 0; i < setObj.length; i++) {
+					let moveName = setObj[i];
+					if (moveName && !(moveName in moves)) {
+						outputText.push("move " + moveName);
+					}
+				}
+			} else {
+				outputText.push("no moves found");
+			}
+			if (outputText.length > 0) {
+				console.log(setName + ": " + outputText.join("; "));
+			}
+		}
+	}
+}
+
 // Damage map functions
 function mapFromArray(array) {
 	let map = new Map();
@@ -1604,7 +1640,7 @@ function DamageInfo(result, moveHits, isFirstHit = false) {
 
 // please add the new setdex to this function whenever adding a new gen
 function isFacilitySet(speciesName, setName) {
-	let setdexMaps = [SETDEX_EM, SETDEX_PHGSS, SETDEX_GEN5, SETDEX_GEN6, SETDEX_GEN7, SETDEX_GEN8, SETDEX_GEN80];
+	let setdexMaps = [SETDEX_EM, SETDEX_PHGSS, SETDEX_GEN5, SETDEX_GEN6, SETDEX_GEN7, SETDEX_GEN8, SETDEX_GEN80, SETDEX_EISENBERRY];
 	for (let setdexMap of setdexMaps) {
 		let speciesSets = setdexMap[speciesName];
 		if (speciesSets && (setName in speciesSets)) {
@@ -1707,7 +1743,7 @@ $(".gen").change(function () {
 		$(".evo_img1").attr("src", "_images/dozo.png");
 		$(".evo_img2").attr("src", "_images/giri.png");
 		pokedex = POKEDEX_SV;
-		setdex = [];//SV
+		setdex = SETDEX_EISENBERRY;
 		typeChart = TYPE_CHART_XY;
 		moves = MOVES_SV;
 		items = ITEMS_SV;
