@@ -13927,6 +13927,7 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4
       },
+      "ivs": {
         "sp": 0
       },
       "moves": [
