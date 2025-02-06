@@ -10,6 +10,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 236
       },
+      "ivs": {
+        "at": 20
+      },
       "moves": [
         "Sludge Bomb",
         "Energy Ball",
@@ -28,6 +31,9 @@ SETDEX_EISENBERRY =
         "df": 96,
         "sd": 144,
         "sp": 20
+      },
+      "ivs": {
+        "at": 25
       },
       "moves": [
         "Sludge Bomb",
@@ -49,6 +55,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 11
+      },
       "moves": [
         "Heat Wave",
         "Air Slash",
@@ -66,6 +75,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 1
       },
       "moves": [
         "Fire Blast",
@@ -88,6 +100,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 244
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Water Spout",
@@ -169,6 +184,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Fake Out",
         "Thunderbolt",
@@ -207,6 +225,9 @@ SETDEX_EISENBERRY =
         "at": 244,
         "sd": 68
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "High Horsepower",
         "Rock Slide",
@@ -226,6 +247,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 220,
         "sd": 36
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Follow Me",
@@ -249,6 +273,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 164
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Moonblast",
         "Fire Blast",
@@ -266,6 +293,9 @@ SETDEX_EISENBERRY =
         "hp": 244,
         "df": 248,
         "sp": 16
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Stored Power",
@@ -289,6 +319,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 10
+      },
       "moves": [
         "Heat Wave",
         "Solar Beam",
@@ -308,6 +341,9 @@ SETDEX_EISENBERRY =
         "sa": 84,
         "sd": 4,
         "sp": 164
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Overheat",
@@ -329,6 +365,10 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 108
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Hyper Voice",
         "Alluring Voice",
@@ -349,6 +389,10 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 20
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Sludge Bomb",
         "Giga Drain",
@@ -366,6 +410,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Grass Knot",
@@ -386,6 +433,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Sludge Bomb",
@@ -446,6 +496,9 @@ SETDEX_EISENBERRY =
         "hp": 28,
         "sa": 252,
         "sp": 228
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Hydro Pump",
@@ -569,6 +622,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Grass Knot",
         "Sludge Bomb",
@@ -607,6 +663,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hydro Pump",
         "Sludge Bomb",
@@ -624,6 +683,9 @@ SETDEX_EISENBERRY =
         "hp": 224,
         "df": 252,
         "sp": 32
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Muddy Water",
@@ -645,6 +707,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 4
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Rock Slide",
         "Earthquake",
@@ -665,6 +730,10 @@ SETDEX_EISENBERRY =
         "sa": 100,
         "sd": 164
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Hydro Pump",
         "Psychic",
@@ -682,6 +751,10 @@ SETDEX_EISENBERRY =
         "hp": 244,
         "df": 252,
         "sa": 14
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Muddy Water",
@@ -702,6 +775,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 252,
         "sd": 4
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Thunderbolt",
@@ -761,6 +837,10 @@ SETDEX_EISENBERRY =
         "df": 84,
         "sa": 40,
         "sd": 132
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Fake Out",
@@ -838,6 +918,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hydro Pump",
         "Ice Beam",
@@ -858,6 +941,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Shadow Ball",
         "Sludge Wave",
@@ -875,6 +961,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sd": 60,
         "sp": 196
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Shadow Ball",
@@ -896,6 +985,9 @@ SETDEX_EISENBERRY =
         "df": 132,
         "sa": 132
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Future Sight",
         "Focus Blast",
@@ -916,6 +1008,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Electro Ball",
         "Foul Play",
@@ -933,6 +1028,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Thunder",
@@ -954,6 +1052,9 @@ SETDEX_EISENBERRY =
         "df": 140,
         "sd": 116
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Leaf Storm",
         "Stomping Tantrum",
@@ -971,6 +1072,9 @@ SETDEX_EISENBERRY =
         "hp": 244,
         "df": 148,
         "sd": 116
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Giga Drain",
@@ -1076,6 +1180,9 @@ SETDEX_EISENBERRY =
         "df": 76,
         "sd": 180
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Sludge Bomb",
         "Heat Wave",
@@ -1095,6 +1202,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 140,
         "sp": 116
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Sludge Bomb",
@@ -1116,6 +1226,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 28
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "High Horsepower",
         "Stone Edge",
@@ -1136,6 +1249,9 @@ SETDEX_EISENBERRY =
         "df": 252,
         "sd": 4
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Seismic Toss",
         "Thunder Wave",
@@ -1153,6 +1269,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 252,
         "sd": 4
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Seismic Toss",
@@ -1216,6 +1336,9 @@ SETDEX_EISENBERRY =
         "sd": 36,
         "sp": 4
       },
+      "ivs": {
+        "at": 9
+      },
       "moves": [
         "Thunderbolt",
         "Electroweb",
@@ -1237,6 +1360,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 76,
         "sp": 4
+      },
+      "ivs": {
+        "at": 8
       },
       "moves": [
         "Overheat",
@@ -1340,6 +1466,9 @@ SETDEX_EISENBERRY =
         "sd": 12,
         "sp": 188
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Sparkling Aria",
         "Blizzard",
@@ -1410,6 +1539,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 136
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Scald",
         "Ice Beam",
@@ -1427,6 +1559,9 @@ SETDEX_EISENBERRY =
         "hp": 192,
         "df": 188,
         "sp": 128
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Muddy Water",
@@ -1450,6 +1585,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Thunderbolt",
         "Alluring Voice",
@@ -1469,6 +1607,9 @@ SETDEX_EISENBERRY =
         "sa": 172,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Thunder",
@@ -1508,6 +1649,9 @@ SETDEX_EISENBERRY =
         "df": 108,
         "sd": 148
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Flare Blitz",
         "Scorching Sands",
@@ -1528,6 +1672,9 @@ SETDEX_EISENBERRY =
         "df": 252,
         "sd": 60
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Tera Blast",
         "High Horsepower",
@@ -1545,6 +1692,9 @@ SETDEX_EISENBERRY =
         "at": 196,
         "df": 252,
         "sd": 60
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Double-Edge",
@@ -1564,6 +1714,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "df": 252
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Giga Impact",
         "Heat Crash",
@@ -1581,6 +1734,9 @@ SETDEX_EISENBERRY =
         "at": 4,
         "df": 252,
         "sd": 252
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Body Slam",
@@ -1603,6 +1759,9 @@ SETDEX_EISENBERRY =
         "sa": 196,
         "sd": 12,
         "sp": 220
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Hurricane",
@@ -1646,6 +1805,9 @@ SETDEX_EISENBERRY =
         "sd": 92,
         "sp": 236
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Thunderbolt",
         "Hurricane",
@@ -1663,6 +1825,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Thunder",
@@ -1682,6 +1847,9 @@ SETDEX_EISENBERRY =
         "df": 176,
         "sa": 68,
         "sp": 16
+      },
+      "ivs": {
+        "at": 14
       },
       "moves": [
         "Discharge",
@@ -1703,6 +1871,9 @@ SETDEX_EISENBERRY =
         "sd": 44,
         "sp": 252
       },
+      "ivs": {
+        "at": 22
+      },
       "moves": [
         "Heat Wave",
         "Hurricane",
@@ -1720,6 +1891,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 252,
         "sp": 4
+      },
+      "ivs": {
+        "at": 23
       },
       "moves": [
         "Burning Jealousy",
@@ -1779,6 +1953,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 236
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hurricane",
         "Thunder",
@@ -1799,6 +1976,9 @@ SETDEX_EISENBERRY =
         "df": 72,
         "sd": 152,
         "sp": 32
+      },
+      "ivs": {
+        "at": 23
       },
       "moves": [
         "Stored Power",
@@ -1836,6 +2016,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 19
+      },
       "moves": [
         "Psychic",
         "Fire Blast",
@@ -1855,6 +2038,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 252,
         "sd": 4
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Leaf Storm",
@@ -1893,6 +2079,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Eruption",
@@ -1994,6 +2183,9 @@ SETDEX_EISENBERRY =
         "df": 252,
         "sa": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hyper Voice",
         "Hurricane",
@@ -2013,6 +2205,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 252,
         "sd": 4
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Cross Poison",
@@ -2052,6 +2247,9 @@ SETDEX_EISENBERRY =
         "df": 188,
         "sa": 228
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Thunderbolt",
         "Hydro Pump",
@@ -2069,6 +2267,9 @@ SETDEX_EISENBERRY =
         "hp": 248,
         "df": 252,
         "sd": 8
+      },
+      "ivs": {
+        "at": 3
       },
       "moves": [
         "Whirlpool",
@@ -2092,6 +2293,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 140
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Thunderbolt",
         "Dazzling Gleam",
@@ -2109,6 +2313,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 196,
         "sd": 60
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Zap Cannon",
@@ -2130,6 +2337,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Giga Drain",
         "Moonblast",
@@ -2147,6 +2357,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 236,
         "sd": 20
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Bullet Seed",
@@ -2188,6 +2401,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 12
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Liquidation",
         "Play Rough",
@@ -2207,6 +2423,9 @@ SETDEX_EISENBERRY =
         "hp": 204,
         "at": 252,
         "sd": 52
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Head Smash",
@@ -2228,6 +2447,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Weather Ball",
         "Surf",
@@ -2245,6 +2467,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 180,
         "sd": 76
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Whirlpool",
@@ -2286,6 +2511,10 @@ SETDEX_EISENBERRY =
         "sa": 236,
         "sd": 28
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Giga Drain",
         "Earth Power",
@@ -2308,6 +2537,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 220
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "High Horsepower",
         "Liquidation",
@@ -2325,6 +2557,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sa": 252
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Earth Power",
@@ -2346,6 +2581,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Expanding Force",
         "Shadow Ball",
@@ -2364,6 +2602,9 @@ SETDEX_EISENBERRY =
         "df": 252,
         "sp": 4
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Stored Power",
         "Draining Kiss",
@@ -2381,6 +2622,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Psychic",
@@ -2404,6 +2648,9 @@ SETDEX_EISENBERRY =
         "sd": 76,
         "sp": 44
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Foul Play",
         "Snarl",
@@ -2421,6 +2668,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sd": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Throat Chop",
@@ -2442,6 +2692,9 @@ SETDEX_EISENBERRY =
         "df": 36,
         "sd": 220
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Foul Play",
         "Tailwind",
@@ -2462,6 +2715,10 @@ SETDEX_EISENBERRY =
         "df": 28,
         "sd": 236
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Scald",
         "Flamethrower",
@@ -2479,6 +2736,10 @@ SETDEX_EISENBERRY =
         "hp": 248,
         "df": 8,
         "sa": 252
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Future Sight",
@@ -2502,6 +2763,9 @@ SETDEX_EISENBERRY =
         "sd": 76,
         "sp": 84
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hex",
         "Charge Beam",
@@ -2524,6 +2788,9 @@ SETDEX_EISENBERRY =
         "sd": 28,
         "sp": 188
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hyper Voice",
         "Dazzling Gleam",
@@ -2543,6 +2810,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "at": 252,
         "df": 252
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Gyro Ball",
@@ -2604,6 +2874,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 4
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Play Rough",
         "Stomping Tantrum",
@@ -2621,6 +2894,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 252,
         "sd": 4
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Play Rough",
@@ -2762,6 +3038,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 4
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Facade",
         "High Horsepower",
@@ -2782,6 +3061,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "df": 4
       },
+      "ivs": {
+        "sp": 15
+      },
       "moves": [
         "Fissure",
         "Avalanche",
@@ -2801,6 +3083,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Fake Out",
@@ -2878,6 +3163,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 30
+      },
       "moves": [
         "Heat Wave",
         "Dark Pulse",
@@ -2900,6 +3188,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 228
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hydro Pump",
         "Ice Beam",
@@ -2919,6 +3210,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 20,
         "sp": 228
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Draco Meteor",
@@ -2958,6 +3252,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 196
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "High Horsepower",
         "Seed Bomb",
@@ -2996,6 +3293,9 @@ SETDEX_EISENBERRY =
         "df": 156,
         "sd": 108
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Tera Blast",
         "Ice Beam",
@@ -3013,6 +3313,10 @@ SETDEX_EISENBERRY =
         "hp": 244,
         "sa": 196,
         "sd": 68
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Tri Attack",
@@ -3132,6 +3436,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 4
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hyper Voice",
         "Shadow Ball",
@@ -3149,6 +3456,9 @@ SETDEX_EISENBERRY =
         "df": 252,
         "sa": 252,
         "sp": 4
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Metronome",
@@ -3170,6 +3480,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 8
+      },
       "moves": [
         "Thunderbolt",
         "Scald",
@@ -3190,6 +3503,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Thunderbolt",
         "Scald",
@@ -3207,6 +3523,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 20
       },
       "moves": [
         "Thunder",
@@ -3245,6 +3564,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Eruption",
@@ -3288,6 +3610,9 @@ SETDEX_EISENBERRY =
         "sd": 172,
         "sp": 20
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Scald",
         "Ice Beam",
@@ -3308,6 +3633,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 172
       },
+      "ivs": {
+        "at": 1
+      },
       "moves": [
         "Hydro Pump",
         "Icy Wind",
@@ -3325,6 +3653,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 252,
         "sd": 4
+      },
+      "ivs": {
+        "at": 13
       },
       "moves": [
         "Scald",
@@ -3365,6 +3696,9 @@ SETDEX_EISENBERRY =
         "hp": 236,
         "at": 236,
         "sd": 36
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Stone Edge",
@@ -3604,6 +3938,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hydro Pump",
         "Hurricane",
@@ -3621,6 +3958,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Weather Ball",
@@ -3644,6 +3984,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 236
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Moonblast",
         "Psyshock",
@@ -3661,6 +4004,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 44,
         "sa": 212
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Moonblast",
@@ -3682,6 +4029,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Bug Buzz",
         "Hurricane",
@@ -3699,6 +4049,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Air Slash",
@@ -3758,6 +4111,9 @@ SETDEX_EISENBERRY =
         "df": 116,
         "sd": 188
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Fake Out",
         "Close Combat",
@@ -3796,6 +4152,10 @@ SETDEX_EISENBERRY =
         "df": 60,
         "sd": 196
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Fake Out",
         "Foul Play",
@@ -3813,6 +4173,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 124,
         "sd": 132
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Fake Out",
@@ -3873,6 +4236,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Nuzzle",
         "Alluring Voice",
@@ -3917,6 +4283,9 @@ SETDEX_EISENBERRY =
         "sd": 124,
         "sp": 12
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Struggle Bug",
         "Encore",
@@ -3936,6 +4305,9 @@ SETDEX_EISENBERRY =
         "hp": 244,
         "df": 252,
         "sd": 12
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Body Press",
@@ -3957,6 +4329,10 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Eruption",
         "Fire Blast",
@@ -3974,6 +4350,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sa": 252
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Heat Wave",
@@ -3995,6 +4374,10 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 140
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Eruption",
         "Weather Ball",
@@ -4012,6 +4395,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 252,
         "sd": 4
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Overheat",
@@ -4035,6 +4422,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 20
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Psyshock",
         "Power Gem",
@@ -4052,6 +4442,10 @@ SETDEX_EISENBERRY =
         "hp": 228,
         "sa": 212,
         "sd": 68
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Expanding Force",
@@ -4111,6 +4505,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 60
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Giga Drain",
         "Dark Pulse",
@@ -4150,6 +4547,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 140,
         "sd": 116
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Fire Spin",
@@ -4229,6 +4629,9 @@ SETDEX_EISENBERRY =
         "df": 52,
         "sd": 204
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Fissure",
         "Muddy Water",
@@ -4248,6 +4651,9 @@ SETDEX_EISENBERRY =
         "hp": 180,
         "at": 252,
         "df": 76
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Crabhammer",
@@ -4289,6 +4695,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 176
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hydro Pump",
         "Ice Beam",
@@ -4306,6 +4715,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 136,
         "sd": 120
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Muddy Water",
@@ -4349,6 +4761,10 @@ SETDEX_EISENBERRY =
         "df": 116,
         "sd": 140
       },
+      "ivs": {
+        "at": 7,
+        "sp": 0
+      },
       "moves": [
         "Night Shade",
         "Will-O-Wisp",
@@ -4366,6 +4782,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 92,
         "sd": 164
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Night Shade",
@@ -4405,6 +4825,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Solar Beam",
         "Air Slash",
@@ -4425,6 +4848,10 @@ SETDEX_EISENBERRY =
         "df": 180,
         "sd": 76
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Future Sight",
         "Charge Beam",
@@ -4444,6 +4871,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Frost Breath",
@@ -4483,6 +4913,10 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "hp": 0,
+        "at": 0
+      },
       "moves": [
         "Hydro Pump",
         "Endeavor",
@@ -4521,6 +4955,9 @@ SETDEX_EISENBERRY =
         "sd": 12,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Draco Meteor",
         "Heat Wave",
@@ -4540,6 +4977,9 @@ SETDEX_EISENBERRY =
         "sa": 20,
         "sd": 252,
         "sp": 36
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Dragon Pulse",
@@ -4601,6 +5041,9 @@ SETDEX_EISENBERRY =
         "sd": 28,
         "sp": 4
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Expanding Force",
         "Meteor Beam",
@@ -4661,6 +5104,9 @@ SETDEX_EISENBERRY =
         "df": 20,
         "sa": 236
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Blizzard",
         "Focus Blast",
@@ -4678,6 +5124,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 252,
         "sa": 4
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Blizzard",
@@ -4699,6 +5148,9 @@ SETDEX_EISENBERRY =
         "df": 100,
         "sd": 156
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Body Press",
         "Iron Defense",
@@ -4716,6 +5168,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 184,
         "sd": 72
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Flash Cannon",
@@ -4739,6 +5194,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 196
       },
+      "ivs": {
+        "at": 11
+      },
       "moves": [
         "Stored Power",
         "Draining Kiss",
@@ -4756,6 +5214,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 11
       },
       "moves": [
         "Mist Ball",
@@ -4777,6 +5238,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 6
+      },
       "moves": [
         "Dragon Pulse",
         "Luster Purge",
@@ -4794,6 +5258,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 6
       },
       "moves": [
         "Draco Meteor",
@@ -4895,6 +5362,9 @@ SETDEX_EISENBERRY =
         "df": 252,
         "sd": 4
       },
+      "ivs": {
+        "at": 2
+      },
       "moves": [
         "Night Shade",
         "Teleport",
@@ -4932,6 +5402,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 116,
         "sd": 140
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Body Press",
@@ -4993,6 +5466,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 52
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hydro Pump",
         "Flash Cannon",
@@ -5010,6 +5486,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Hydro Cannon",
@@ -5111,6 +5590,9 @@ SETDEX_EISENBERRY =
         "sd": 164,
         "sp": 12
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Volt Switch",
         "Snarl",
@@ -5149,6 +5631,9 @@ SETDEX_EISENBERRY =
         "at": 244,
         "df": 116
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Rock Slide",
         "Crunch",
@@ -5169,6 +5654,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sd": 252
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Body Press",
         "Foul Play",
@@ -5186,6 +5674,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 148,
         "sd": 108
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Fissure",
@@ -5207,6 +5698,9 @@ SETDEX_EISENBERRY =
         "at": 20,
         "df": 236
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Acrobatics",
         "Fell Stinger",
@@ -5224,6 +5718,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 252,
         "sd": 4
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Pollen Puff",
@@ -5325,6 +5822,10 @@ SETDEX_EISENBERRY =
         "df": 172,
         "sd": 92
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Muddy Water",
         "Earth Power",
@@ -5342,6 +5843,10 @@ SETDEX_EISENBERRY =
         "hp": 236,
         "df": 164,
         "sa": 108
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Hydro Pump",
@@ -5423,6 +5928,9 @@ SETDEX_EISENBERRY =
         "sd": 212,
         "sp": 60
       },
+      "ivs": {
+        "at": 0,
+      },
       "moves": [
         "Stored Power",
         "Stockpile",
@@ -5440,6 +5948,10 @@ SETDEX_EISENBERRY =
         "df": 244,
         "sa": 76,
         "sd": 188
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Shadow Ball",
@@ -5463,6 +5975,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Shadow Ball",
         "Dazzling Gleam",
@@ -5480,6 +5995,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 252,
         "sp": 4
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Shadow Ball",
@@ -5519,6 +6037,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 228
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Drill Peck",
         "Assurance",
@@ -5540,6 +6061,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Foul Play",
@@ -5579,6 +6103,9 @@ SETDEX_EISENBERRY =
         "df": 188,
         "sd": 76
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Body Press",
         "Hard Press",
@@ -5597,6 +6124,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "df": 4
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Gyro Ball",
         "Weather Ball",
@@ -5614,6 +6144,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 108,
         "sd": 148
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Night Shade",
@@ -5635,6 +6168,9 @@ SETDEX_EISENBERRY =
         "df": 180,
         "sd": 84
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Foul Play",
         "Snarl",
@@ -5652,6 +6188,9 @@ SETDEX_EISENBERRY =
         "hp": 244,
         "sa": 252,
         "sd": 12
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Dark Pulse",
@@ -5672,6 +6211,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "df": 252,
         "sd": 252
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Body Slam",
@@ -5769,6 +6311,9 @@ SETDEX_EISENBERRY =
         "df": 12,
         "sd": 252
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Sand Tomb",
         "Heavy Slam",
@@ -5786,6 +6331,9 @@ SETDEX_EISENBERRY =
         "hp": 36,
         "at": 244,
         "sd": 228
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "High Horsepower",
@@ -5827,6 +6375,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Focus Blast",
         "Sludge Bomb",
@@ -5846,6 +6397,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Hydro Pump",
@@ -5884,6 +6438,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 220,
         "sd": 36
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Blizzard",
@@ -5949,6 +6506,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 92
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Thunder",
         "Flash Cannon",
@@ -5966,6 +6526,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 244,
         "sd": 12
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Thunderbolt",
@@ -5987,6 +6551,9 @@ SETDEX_EISENBERRY =
         "at": 236,
         "sd": 188
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Earthquake",
         "Stone Edge",
@@ -6004,6 +6571,9 @@ SETDEX_EISENBERRY =
         "hp": 84,
         "at": 220,
         "sd": 188
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "High Horsepower",
@@ -6069,6 +6639,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Fire Blast",
         "Solar Beam",
@@ -6088,6 +6661,9 @@ SETDEX_EISENBERRY =
         "sa": 36,
         "sd": 4,
         "sp": 4
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Burning Jealousy",
@@ -6109,6 +6685,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Bug Buzz",
         "Air Slash",
@@ -6128,6 +6707,9 @@ SETDEX_EISENBERRY =
         "sa": 188,
         "sd": 108,
         "sp": 148
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Bug Buzz",
@@ -6189,6 +6771,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Blizzard",
         "Freeze-Dry",
@@ -6208,6 +6793,9 @@ SETDEX_EISENBERRY =
         "sa": 188,
         "sd": 12,
         "sp": 124
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Freeze-Dry",
@@ -6313,6 +6901,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 212
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Shadow Ball",
         "Tri Attack",
@@ -6331,6 +6922,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Tera Blast",
@@ -6370,6 +6964,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "df": 116
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Psycho Cut",
         "Sacred Sword",
@@ -6390,6 +6987,10 @@ SETDEX_EISENBERRY =
         "df": 180,
         "sd": 76
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Power Gem",
         "Body Press",
@@ -6407,6 +7008,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 252,
         "sd": 4
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Meteor Beam",
@@ -6427,6 +7032,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 220,
         "sd": 36
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Shadow Punch",
@@ -6484,6 +7092,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hex",
         "Blizzard",
@@ -6503,6 +7114,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Hex",
@@ -6526,6 +7140,9 @@ SETDEX_EISENBERRY =
         "sd": 180,
         "sp": 52
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hydro Pump",
         "Thunderbolt",
@@ -6547,6 +7164,9 @@ SETDEX_EISENBERRY =
         "sa": 116,
         "sd": 4,
         "sp": 228
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Overheat",
@@ -6570,6 +7190,9 @@ SETDEX_EISENBERRY =
         "sd": 12,
         "sp": 212
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Leaf Storm",
         "Thunderbolt",
@@ -6592,6 +7215,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 116
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Air Slash",
         "Thunderbolt",
@@ -6611,6 +7237,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 252,
         "sp": 4
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Blizzard",
@@ -6632,6 +7261,10 @@ SETDEX_EISENBERRY =
         "df": 188,
         "sd": 76
       },
+      "ivs": {
+        "at": 3,
+        "sp": 0
+      },
       "moves": [
         "Mystical Power",
         "Dazzling Gleam",
@@ -6651,6 +7284,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 29
       },
       "moves": [
         "Stored Power",
@@ -6672,6 +7308,10 @@ SETDEX_EISENBERRY =
         "df": 52,
         "sa": 144,
         "sd": 60
+      },
+      "ivs": {
+        "at": 10,
+        "sp": 0
       },
       "moves": [
         "Psychic Noise",
@@ -6729,6 +7369,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 12
+      },
       "moves": [
         "Mystical Power",
         "Flamethrower",
@@ -6751,6 +7394,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 220
       },
+      "ivs": {
+        "at": 2
+      },
       "moves": [
         "Heat Wave",
         "Flash Cannon",
@@ -6770,6 +7416,9 @@ SETDEX_EISENBERRY =
         "sa": 76,
         "sd": 4,
         "sp": 228
+      },
+      "ivs": {
+        "at": 2
       },
       "moves": [
         "Magma Storm",
@@ -6833,6 +7482,10 @@ SETDEX_EISENBERRY =
         "df": 108,
         "sd": 148
       },
+      "ivs": {
+        "at": 1,
+        "sp": 0
+      },
       "moves": [
         "Moonblast",
         "Ice Beam",
@@ -6850,6 +7503,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 156,
         "sd": 104
+      },
+      "ivs": {
+        "at": 1
       },
       "moves": [
         "Psychic",
@@ -6871,6 +7527,9 @@ SETDEX_EISENBERRY =
         "sd": 76,
         "sp": 12
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Future Sight",
         "Dazzling Gleam",
@@ -6890,6 +7549,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 13
       },
       "moves": [
         "Scald",
@@ -6929,6 +7591,9 @@ SETDEX_EISENBERRY =
         "df": 156,
         "sp": 100
       },
+      "ivs": {
+        "at": 25
+      },
       "moves": [
         "Scald",
         "Stored Power",
@@ -6967,6 +7632,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 2
+      },
       "moves": [
         "Dark Pulse",
         "Sludge Bomb",
@@ -6987,6 +7655,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 20
+      },
       "moves": [
         "Seed Flare",
         "Earth Power",
@@ -7004,6 +7675,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 5
       },
       "moves": [
         "Seed Flare",
@@ -7025,6 +7699,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 6
+      },
       "moves": [
         "Seed Flare",
         "Air Slash",
@@ -7042,6 +7719,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 26
       },
       "moves": [
         "Seed Flare",
@@ -7065,6 +7745,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Leaf Storm",
         "Tera Blast",
@@ -7082,6 +7765,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Leaf Storm",
@@ -7102,6 +7788,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 252,
         "sd": 4
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Flare Blitz",
@@ -7161,6 +7850,9 @@ SETDEX_EISENBERRY =
         "df": 12,
         "sa": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hydro Pump",
         "Grass Knot",
@@ -7182,6 +7874,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Volt Switch",
@@ -7279,6 +7974,9 @@ SETDEX_EISENBERRY =
         "at": 164,
         "sd": 148
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Drain Punch",
         "Knock Off",
@@ -7296,6 +7994,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 76,
         "sd": 180
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Drain Punch",
@@ -7357,6 +8058,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Moonblast",
         "Hurricane",
@@ -7374,6 +8078,9 @@ SETDEX_EISENBERRY =
         "hp": 116,
         "df": 140,
         "sd": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Giga Drain",
@@ -7397,6 +8104,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 52
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Petal Dance",
         "Teeter Dance",
@@ -7416,6 +8126,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 12,
         "sp": 164
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Giga Drain",
@@ -7519,6 +8232,9 @@ SETDEX_EISENBERRY =
         "df": 30,
         "sd": 236
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Fake Out",
         "Super Fang",
@@ -7615,6 +8331,10 @@ SETDEX_EISENBERRY =
         "df": 180,
         "sd": 76
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Fake Out",
         "Future Sight",
@@ -7632,6 +8352,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sa": 252
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Psychic Noise",
@@ -7653,6 +8377,10 @@ SETDEX_EISENBERRY =
         "sa": 116,
         "sd": 204
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Psychic",
         "Focus Blast",
@@ -7670,6 +8398,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 252,
         "sd": 4
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Stored Power",
@@ -7690,6 +8421,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Hydro Pump",
@@ -7769,6 +8503,10 @@ SETDEX_EISENBERRY =
         "df": 236,
         "sd": 36
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Clear Smog",
         "Pollen Puff",
@@ -7786,6 +8524,10 @@ SETDEX_EISENBERRY =
         "hp": 236,
         "df": 180,
         "sd": 92
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Giga Drain",
@@ -7807,6 +8549,9 @@ SETDEX_EISENBERRY =
         "df": 252,
         "sd": 252
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Flip Turn",
         "Mirror Coat",
@@ -7824,6 +8569,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "df": 252,
         "sd": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Whirlpool",
@@ -7845,6 +8593,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Thunder",
         "Struggle Bug",
@@ -7862,6 +8613,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Bug Buzz",
@@ -7883,6 +8637,9 @@ SETDEX_EISENBERRY =
         "at": 220,
         "df": 68
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Supercell Slam",
         "Drain Punch",
@@ -7900,6 +8657,9 @@ SETDEX_EISENBERRY =
         "hp": 220,
         "df": 68,
         "sa": 220
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Thunderbolt",
@@ -7923,6 +8683,9 @@ SETDEX_EISENBERRY =
         "sd": 12,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Heat Wave",
         "Shadow Ball",
@@ -7940,6 +8703,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 92,
         "sa": 164
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Inferno",
@@ -8055,6 +8822,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 36
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Icicle Spear",
         "Low Kick",
@@ -8075,6 +8845,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Freeze-Dry",
         "Icy Wind",
@@ -8092,6 +8865,9 @@ SETDEX_EISENBERRY =
         "hp": 92,
         "df": 164,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Freeze-Dry",
@@ -8155,6 +8931,9 @@ SETDEX_EISENBERRY =
         "at": 244,
         "sd": 20
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Poltergeist",
         "High Horsepower",
@@ -8172,6 +8951,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 244,
         "sd": 12
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Shadow Punch",
@@ -8257,6 +9039,9 @@ SETDEX_EISENBERRY =
         "sd": 116,
         "sp": 100
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Foul Play",
         "Snarl",
@@ -8297,6 +9082,9 @@ SETDEX_EISENBERRY =
         "sd": 12,
         "sp": 244
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Dark Pulse",
         "Draco Meteor",
@@ -8316,6 +9104,9 @@ SETDEX_EISENBERRY =
         "sa": 164,
         "sd": 4,
         "sp": 196
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Dark Pulse",
@@ -8339,6 +9130,9 @@ SETDEX_EISENBERRY =
         "sd": 92,
         "sp": 220
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Heat Wave",
         "Bug Buzz",
@@ -8358,6 +9152,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 20,
         "sp": 4
+      },
+      "ivs": {
+        "at": 4
       },
       "moves": [
         "Overheat",
@@ -8396,6 +9193,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Flash Cannon",
@@ -8493,6 +9293,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Giga Drain",
         "Focus Blast",
@@ -8512,6 +9315,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sa": 252
+      },
+      "ivs": {
+        "at": 20
       },
       "moves": [
         "Bleakwind Storm",
@@ -8550,6 +9356,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 20
       },
       "moves": [
         "Hurricane",
@@ -8591,6 +9400,9 @@ SETDEX_EISENBERRY =
         "sd": 44,
         "sp": 12
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Wildbolt Storm",
         "Eerie Impulse",
@@ -8629,6 +9441,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 30
+      },
       "moves": [
         "Wildbolt Storm",
         "Grass Knot",
@@ -8646,6 +9461,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Wildbolt Storm",
@@ -8669,6 +9487,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Sandsear Storm",
         "Sludge Bomb",
@@ -8688,6 +9509,9 @@ SETDEX_EISENBERRY =
         "sa": 228,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Sandsear Storm",
@@ -8833,6 +9657,9 @@ SETDEX_EISENBERRY =
         "sd": 92,
         "sp": 148
       },
+      "ivs": {
+        "at": 11
+      },
       "moves": [
         "Hydro Pump",
         "Secret Sword",
@@ -8850,6 +9677,9 @@ SETDEX_EISENBERRY =
         "hp": 184,
         "sa": 72,
         "sp": 252
+      },
+      "ivs": {
+        "at": 13
       },
       "moves": [
         "Muddy Water",
@@ -8870,6 +9700,9 @@ SETDEX_EISENBERRY =
         "df": 252,
         "sa": 252,
         "sd": 4
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Hyper Voice",
@@ -8951,6 +9784,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Psyshock",
         "Fire Blast",
@@ -8971,6 +9807,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Expanding Force",
         "Mystical Fire",
@@ -8990,6 +9829,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Hydro Pump",
@@ -9026,6 +9868,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Water Shuriken",
@@ -9085,6 +9930,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Pollen Puff",
         "Air Slash",
@@ -9102,6 +9950,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Hurricane",
@@ -9123,6 +9974,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hyper Voice",
         "Heat Wave",
@@ -9142,6 +9996,9 @@ SETDEX_EISENBERRY =
         "sa": 52,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Overheat",
@@ -9165,6 +10022,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 164
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Moonblast",
         "Psychic",
@@ -9184,6 +10044,9 @@ SETDEX_EISENBERRY =
         "sa": 68,
         "sd": 4,
         "sp": 20
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Draining Kiss",
@@ -9247,6 +10110,9 @@ SETDEX_EISENBERRY =
         "df": 188,
         "sd": 68
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Fake Out",
         "Alluring Voice",
@@ -9267,6 +10133,9 @@ SETDEX_EISENBERRY =
         "sd": 68,
         "sp": 12
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Fake Out",
         "Psychic Noise",
@@ -9285,6 +10154,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Expanding Force",
         "Alluring Voice",
@@ -9302,6 +10174,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Extrasensory",
@@ -9341,6 +10216,9 @@ SETDEX_EISENBERRY =
         "df": 36,
         "sd": 220
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Knock Off",
         "Superpower",
@@ -9361,6 +10239,10 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Sludge Bomb",
         "Dragon Pulse",
@@ -9378,6 +10260,9 @@ SETDEX_EISENBERRY =
         "hp": 244,
         "df": 132,
         "sd": 132
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Venoshock",
@@ -9399,6 +10284,10 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Water Pulse",
         "Aura Sphere",
@@ -9416,6 +10305,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 252,
         "sd": 4
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Water Pulse",
@@ -9459,6 +10352,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 164
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hyper Voice",
         "Tera Blast",
@@ -9476,6 +10372,9 @@ SETDEX_EISENBERRY =
         "hp": 244,
         "df": 12,
         "sa": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Hyper Beam",
@@ -9537,6 +10436,9 @@ SETDEX_EISENBERRY =
         "df": 12,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Nuzzle",
         "Super Fang",
@@ -9556,6 +10458,9 @@ SETDEX_EISENBERRY =
         "sa": 148,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Parabolic Charge",
@@ -9577,6 +10482,9 @@ SETDEX_EISENBERRY =
         "at": 20,
         "df": 236
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Rock Slide",
         "Body Press",
@@ -9594,6 +10502,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 252,
         "sd": 4
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Moonblast",
@@ -9616,6 +10528,9 @@ SETDEX_EISENBERRY =
         "sa": 76,
         "sd": 4,
         "sp": 52
+      },
+      "ivs": {
+        "at": 0,
       },
       "moves": [
         "Dragon Pulse",
@@ -9655,6 +10570,9 @@ SETDEX_EISENBERRY =
         "df": 76,
         "sd": 180
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Play Rough",
         "Foul Play",
@@ -9672,6 +10590,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Draining Kiss",
@@ -9693,6 +10614,9 @@ SETDEX_EISENBERRY =
         "sd": 92,
         "sp": 44
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Dazzling Gleam",
         "Flash Cannon",
@@ -9712,6 +10636,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 36,
         "sd": 220
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Wood Hammer",
@@ -9753,6 +10680,9 @@ SETDEX_EISENBERRY =
         "at": 180,
         "sd": 76
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Ice Spinner",
         "High Horsepower",
@@ -9770,6 +10700,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 4,
         "sd": 252
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Avalanche",
@@ -9791,6 +10724,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hurricane",
         "Focus Blast",
@@ -9810,6 +10746,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Air Slash",
@@ -9831,6 +10770,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 4
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Diamond Storm",
         "Play Rough",
@@ -9850,6 +10792,9 @@ SETDEX_EISENBERRY =
         "df": 32,
         "sa": 40,
         "sd": 76
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Diamond Storm",
@@ -9871,6 +10816,10 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252
       },
+      "ivs": {
+        "at": 8,
+        "sp": 1
+      },
       "moves": [
         "Hyperspace Hole",
         "Shadow Ball",
@@ -9888,6 +10837,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 14
       },
       "moves": [
         "Hyperspace Hole",
@@ -9929,6 +10881,9 @@ SETDEX_EISENBERRY =
         "at": 76,
         "df": 180
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Hyperspace Fury",
         "Psychic",
@@ -9948,6 +10903,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 156,
         "sp": 100
+      },
+      "ivs": {
+        "at": 18
       },
       "moves": [
         "Steam Eruption",
@@ -10008,6 +10966,9 @@ SETDEX_EISENBERRY =
         "hp": 204,
         "df": 52,
         "sa": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Shadow Ball",
@@ -10095,6 +11056,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 2
+      },
       "moves": [
         "Hyper Voice",
         "Dazzling Gleam",
@@ -10112,6 +11076,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 60,
         "sa": 196
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Hyper Voice",
@@ -10171,6 +11139,9 @@ SETDEX_EISENBERRY =
         "at": 204,
         "df": 52
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Last Resort",
         "Protect",
@@ -10188,6 +11159,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 252,
         "sd": 4
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Psychic Fangs",
@@ -10231,6 +11205,10 @@ SETDEX_EISENBERRY =
         "sa": 244,
         "sd": 20
       },
+      "ivs": {
+        "at": 1,
+        "sp": 0
+      },
       "moves": [
         "Thunderbolt",
         "Bug Buzz",
@@ -10250,6 +11228,9 @@ SETDEX_EISENBERRY =
         "sa": 28,
         "sd": 116,
         "sp": 44
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Zap Cannon",
@@ -10271,6 +11252,9 @@ SETDEX_EISENBERRY =
         "at": 220,
         "sd": 108
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Ice Hammer",
         "Drain Punch",
@@ -10288,6 +11272,9 @@ SETDEX_EISENBERRY =
         "hp": 180,
         "at": 220,
         "sd": 108
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Ice Spinner",
@@ -10311,6 +11298,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 164
       },
+      "ivs": {
+        "at": 18
+      },
       "moves": [
         "Revelation Dance",
         "Hurricane",
@@ -10332,6 +11322,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 164
+      },
+      "ivs": {
+        "at": 19
       },
       "moves": [
         "Revelation Dance",
@@ -10355,6 +11348,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 20
       },
+      "ivs": {
+        "at": 28
+      },
       "moves": [
         "Revelation Dance",
         "Air Slash",
@@ -10376,6 +11372,9 @@ SETDEX_EISENBERRY =
         "sa": 12,
         "sd": 12,
         "sp": 252
+      },
+      "ivs": {
+        "at": 12
       },
       "moves": [
         "Hurricane",
@@ -10399,6 +11398,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 244
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Moonblast",
         "Pollen Puff",
@@ -10418,6 +11420,9 @@ SETDEX_EISENBERRY =
         "sa": 116,
         "sd": 4,
         "sp": 28
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Draining Kiss",
@@ -10501,6 +11506,9 @@ SETDEX_EISENBERRY =
         "df": 36,
         "sd": 220
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Infestation",
         "Stockpile",
@@ -10539,6 +11547,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 124
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "High Horsepower",
         "Close Combat",
@@ -10556,6 +11567,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sd": 252
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Body Press",
@@ -10577,6 +11592,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "df": 12
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Liquidation",
         "Lunge",
@@ -10594,6 +11612,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 244,
         "sd": 12
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Liquidation",
@@ -10615,6 +11636,9 @@ SETDEX_EISENBERRY =
         "at": 196,
         "sd": 68
       },
+      "ivs": {
+        "sp": 5
+      },
       "moves": [
         "Leaf Blade",
         "Superpower",
@@ -10632,6 +11656,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 252,
         "sd": 4
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Leaf Storm",
@@ -10653,6 +11680,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0,
+      },
       "moves": [
         "Fake Out",
         "Overheat",
@@ -10670,6 +11700,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Fake Out",
@@ -10690,6 +11723,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 12,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Flamethrower",
@@ -10753,6 +11789,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 140
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Calm Mind",
         "Draining Kiss",
@@ -10770,6 +11809,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 244,
         "sd": 12
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Draining Kiss",
@@ -10791,6 +11833,10 @@ SETDEX_EISENBERRY =
         "df": 180,
         "sd": 76
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Psychic Noise",
         "Foul Play",
@@ -10808,6 +11854,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sa": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Tera Blast",
@@ -10867,6 +11916,10 @@ SETDEX_EISENBERRY =
         "sa": 236,
         "sd": 20
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Earth Power",
         "Shadow Ball",
@@ -10884,6 +11937,10 @@ SETDEX_EISENBERRY =
         "hp": 244,
         "df": 236,
         "sd": 28
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Scorching Sands",
@@ -10945,6 +12002,9 @@ SETDEX_EISENBERRY =
         "at": 196,
         "df": 60
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Double-Edge",
         "Ice Spinner",
@@ -11003,6 +12063,9 @@ SETDEX_EISENBERRY =
         "at": 164,
         "df": 172
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Play Rough",
         "Shadow Claw",
@@ -11058,6 +12121,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 132,
         "sd": 124
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Wave Crash",
@@ -11119,6 +12185,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Clanging Scales",
         "Focus Blast",
@@ -11139,6 +12208,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Thunderbolt",
         "Psychic",
@@ -11158,6 +12230,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 236
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Electro Ball",
@@ -11199,6 +12274,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 28
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Ice Spinner",
         "Gyro Ball",
@@ -11219,6 +12297,9 @@ SETDEX_EISENBERRY =
         "df": 44,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Freeze-Dry",
         "Icy Wind",
@@ -11236,6 +12317,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Blizzard",
@@ -11277,6 +12361,9 @@ SETDEX_EISENBERRY =
         "sd": 76,
         "sp": 236
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Fake Out",
         "Foul Play",
@@ -11297,6 +12384,9 @@ SETDEX_EISENBERRY =
         "df": 252,
         "sd": 4
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Supercell Slam",
         "Rock Slide",
@@ -11314,6 +12404,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 252,
         "sd": 4
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Stone Edge",
@@ -11334,6 +12427,9 @@ SETDEX_EISENBERRY =
         "hp": 188,
         "at": 116,
         "df": 204
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Gunk Shot",
@@ -11375,6 +12471,10 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 124
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Draco Meteor",
         "Leaf Storm",
@@ -11393,6 +12493,9 @@ SETDEX_EISENBERRY =
         "at": 80,
         "df": 92,
         "sd": 100
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Dragon Hammer",
@@ -11416,6 +12519,9 @@ SETDEX_EISENBERRY =
         "sd": 92,
         "sp": 52
       },
+      "ivs": {
+        "at": 20
+      },
       "moves": [
         "Photon Geyser",
         "Meteor Beam",
@@ -11433,6 +12539,9 @@ SETDEX_EISENBERRY =
         "hp": 244,
         "df": 252,
         "sa": 12
+      },
+      "ivs": {
+        "at": 3
       },
       "moves": [
         "Stored Power",
@@ -11534,6 +12643,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 12
+      },
       "moves": [
         "Hydro Pump",
         "Blizzard",
@@ -11551,6 +12663,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 27
       },
       "moves": [
         "Snipe Shot",
@@ -11572,6 +12687,9 @@ SETDEX_EISENBERRY =
         "at": 124,
         "sd": 140
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Body Slam",
         "Gyro Ball",
@@ -11589,6 +12707,9 @@ SETDEX_EISENBERRY =
         "at": 4,
         "df": 252,
         "sd": 252
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Body Press",
@@ -11692,6 +12813,9 @@ SETDEX_EISENBERRY =
         "df": 252,
         "sd": 4
       },
+      "ivs": {
+        "at": 3
+      },
       "moves": [
         "Meteor Beam",
         "Body Press",
@@ -11729,6 +12853,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 252,
         "sd": 4
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Heat Crash",
@@ -11788,6 +12915,10 @@ SETDEX_EISENBERRY =
         "sa": 124,
         "sd": 252
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Apple Acid",
         "Draco Meteor",
@@ -11805,6 +12936,10 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "df": 252,
         "sd": 252
+      },
+      "ivs": {
+        "at": 26,
+        "sp": 0
       },
       "moves": [
         "Apple Acid",
@@ -11867,6 +13002,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Surf",
@@ -11962,6 +13100,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Overdrive",
         "Sludge Wave",
@@ -11982,6 +13123,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 25
+      },
       "moves": [
         "Shadow Ball",
         "Stored Power",
@@ -12000,6 +13144,9 @@ SETDEX_EISENBERRY =
         "sa": 124,
         "sp": 132
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Shadow Ball",
         "Stored Power",
@@ -12017,6 +13164,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 124,
         "sp": 132
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Shadow Ball",
@@ -12038,6 +13188,10 @@ SETDEX_EISENBERRY =
         "df": 12,
         "sa": 252
       },
+      "ivs": {
+        "at": 6,
+        "sp": 0
+      },
       "moves": [
         "Expanding Force",
         "Dazzling Gleam",
@@ -12055,6 +13209,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 164,
         "sd": 92
+      },
+      "ivs": {
+        "at": 6,
+        "sp": 0
       },
       "moves": [
         "Draining Kiss",
@@ -12112,6 +13270,9 @@ SETDEX_EISENBERRY =
         "at": 236,
         "sd": 28
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Fake Out",
         "False Surrender",
@@ -12132,6 +13293,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 4
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Fake Out",
         "Iron Head",
@@ -12149,6 +13313,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 76,
         "sd": 180
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Gyro Ball",
@@ -12170,6 +13337,9 @@ SETDEX_EISENBERRY =
         "df": 196,
         "sp": 60
       },
+      "ivs": {
+        "at": 14
+      },
       "moves": [
         "Alluring Voice",
         "Baby-Doll Eyes",
@@ -12187,6 +13357,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 3
       },
       "moves": [
         "Dazzling Gleam",
@@ -12246,6 +13419,9 @@ SETDEX_EISENBERRY =
         "at": 180,
         "df": 76
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Zing Zap",
         "Liquidation",
@@ -12263,6 +13439,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 76,
         "sa": 180
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Thunder",
@@ -12286,6 +13465,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 2
+      },
       "moves": [
         "Ice Beam",
         "Bug Buzz",
@@ -12305,6 +13487,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 28,
         "sp": 212
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Icy Wind",
@@ -12346,6 +13531,9 @@ SETDEX_EISENBERRY =
         "at": 116,
         "sd": 252
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Rock Slide",
         "Heat Crash",
@@ -12384,6 +13572,9 @@ SETDEX_EISENBERRY =
         "df": 76,
         "sd": 180
       },
+      "ivs": {
+        "at": 5
+      },
       "moves": [
         "Whirlpool",
         "Amnesia",
@@ -12403,6 +13594,9 @@ SETDEX_EISENBERRY =
         "sa": 236,
         "sd": 20,
         "sp": 252
+      },
+      "ivs": {
+        "at": 22
       },
       "moves": [
         "Expanding Force",
@@ -12424,6 +13618,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Expanding Force",
         "Tera Blast",
@@ -12443,6 +13640,9 @@ SETDEX_EISENBERRY =
         "sa": 20,
         "sd": 28,
         "sp": 12
+      },
+      "ivs": {
+        "at": 30
       },
       "moves": [
         "Fake Out",
@@ -12466,6 +13666,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 68
       },
+      "ivs": {
+        "at": 1
+      },
       "moves": [
         "Dazzling Gleam",
         "Helping Hand",
@@ -12483,6 +13686,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sa": 252
+      },
+      "ivs": {
+        "at": 2,
+        "sp": 0
       },
       "moves": [
         "Psychic",
@@ -12542,6 +13749,9 @@ SETDEX_EISENBERRY =
         "df": 132,
         "sd": 140
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Iron Head",
         "Play Rough",
@@ -12559,6 +13769,9 @@ SETDEX_EISENBERRY =
         "at": 236,
         "df": 132,
         "sd": 140
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Heavy Slam",
@@ -12581,6 +13794,9 @@ SETDEX_EISENBERRY =
         "sa": 92,
         "sd": 252,
         "sp": 60
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Flash Cannon",
@@ -12619,6 +13835,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Shadow Ball",
@@ -12660,6 +13879,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 68
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Strange Steam",
         "Flamethrower",
@@ -12679,6 +13901,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 124,
         "sp": 124
+      },
+      "ivs": {
+        "at": 25
       },
       "moves": [
         "Strange Steam",
@@ -12702,6 +13927,8 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4
       },
+        "sp": 0
+      },
       "moves": [
         "Psyshock",
         "Shell Side Arm",
@@ -12722,6 +13949,10 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 140
       },
+      "ivs": {
+        "at": 7,
+        "sp": 0
+      },
       "moves": [
         "Psychic",
         "Shell Side Arm",
@@ -12739,6 +13970,9 @@ SETDEX_EISENBERRY =
         "hp": 236,
         "at": 172,
         "sd": 100
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Shell Side Arm",
@@ -12760,6 +13994,9 @@ SETDEX_EISENBERRY =
         "df": 156,
         "sd": 100
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Eerie Spell",
         "Sludge Bomb",
@@ -12777,6 +14014,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 100,
         "sa": 156
+      },
+      "ivs": {
+        "at": 3,
+        "sp": 0
       },
       "moves": [
         "Future Sight",
@@ -12799,6 +14040,9 @@ SETDEX_EISENBERRY =
         "sa": 116,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 23
       },
       "moves": [
         "Freezing Glare",
@@ -12882,6 +14126,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 16
+      },
       "moves": [
         "Fiery Wrath",
         "Air Slash",
@@ -12901,6 +14148,9 @@ SETDEX_EISENBERRY =
         "sa": 76,
         "sd": 4,
         "sp": 84
+      },
+      "ivs": {
+        "at": 29
       },
       "moves": [
         "Fiery Wrath",
@@ -13040,6 +14290,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 52
       },
+      "ivs": {
+        "at": 3
+      },
       "moves": [
         "Thunderbolt",
         "Tera Blast",
@@ -13057,6 +14310,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 3
       },
       "moves": [
         "Electro Ball",
@@ -13116,6 +14372,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 4
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Icicle Crash",
         "High Horsepower",
@@ -13133,6 +14392,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 76,
         "sd": 180
+      },
+      "ivs": {
+        "sp": 1
       },
       "moves": [
         "Icicle Crash",
@@ -13154,6 +14416,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 12
+      },
       "moves": [
         "Shadow Ball",
         "Snarl",
@@ -13174,6 +14439,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 196
       },
+      "ivs": {
+        "at": 3
+      },
       "moves": [
         "Shadow Ball",
         "Draining Kiss",
@@ -13193,6 +14461,10 @@ SETDEX_EISENBERRY =
         "df": 44,
         "sa": 252,
         "sd": 212
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Tera Blast",
@@ -13274,6 +14546,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 116
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Facade",
         "Headlong Rush",
@@ -13352,6 +14627,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 196
       },
+      "ivs": {
+        "at": 5
+      },
       "moves": [
         "Shadow Ball",
         "Muddy Water",
@@ -13369,6 +14647,9 @@ SETDEX_EISENBERRY =
         "hp": 28,
         "sa": 252,
         "sp": 228
+      },
+      "ivs": {
+        "at": 13
       },
       "moves": [
         "Shadow Ball",
@@ -13512,6 +14793,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "df": 4
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Triple Arrows",
         "Leaf Storm",
@@ -13534,6 +14818,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 196
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Inferno",
         "Infernal Parade",
@@ -13551,6 +14838,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Eruption",
@@ -13696,6 +14986,9 @@ SETDEX_EISENBERRY =
         "sd": 20,
         "sp": 196
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Thunder",
         "Giga Drain",
@@ -13713,6 +15006,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 25
       },
       "moves": [
         "Chloroblast",
@@ -13734,6 +15030,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 24
+      },
       "moves": [
         "Bitter Malice",
         "Hyper Voice",
@@ -13751,6 +15050,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 29
       },
       "moves": [
         "Bitter Malice",
@@ -13772,6 +15074,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Psychic",
         "Hurricane",
@@ -13789,6 +15094,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Esper Wing",
@@ -13830,6 +15138,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Heavy Slam",
         "Dragon Pulse",
@@ -13850,6 +15161,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "df": 12
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Mountain Gale",
         "Rock Slide",
@@ -13867,6 +15181,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "at": 252,
         "sd": 252
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Icicle Spear",
@@ -13929,6 +15246,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 252,
         "sd": 4
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Springtide Storm",
@@ -14008,6 +15329,9 @@ SETDEX_EISENBERRY =
         "sd": 156,
         "sp": 36
       },
+      "ivs": {
+        "at": 7
+      },
       "moves": [
         "Torch Song",
         "Hex",
@@ -14025,6 +15349,10 @@ SETDEX_EISENBERRY =
         "hp": 148,
         "sa": 156,
         "sd": 204
+      },
+      "ivs": {
+        "at": 2,
+        "sp": 0
       },
       "moves": [
         "Torch Song",
@@ -14144,6 +15472,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 164
       },
+      "ivs": {
+        "at": 5
+      },
       "moves": [
         "Boomburst",
         "Hurricane",
@@ -14163,6 +15494,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 140,
         "sd": 116
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Skitter Smack",
@@ -14222,6 +15556,10 @@ SETDEX_EISENBERRY =
         "df": 188,
         "sd": 76
       },
+      "ivs": {
+        "at": 11,
+        "sp": 0
+      },
       "moves": [
         "Psychic Noise",
         "Struggle Bug",
@@ -14239,6 +15577,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sa": 252
+      },
+      "ivs": {
+        "at": 11,
+        "sp": 0
       },
       "moves": [
         "Psychic",
@@ -14300,6 +15642,9 @@ SETDEX_EISENBERRY =
         "df": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 15
+      },
       "moves": [
         "Stored Power",
         "Dazzling Gleam",
@@ -14317,6 +15662,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 11
       },
       "moves": [
         "Lumina Crash",
@@ -14340,6 +15688,9 @@ SETDEX_EISENBERRY =
         "sd": 36,
         "sp": 4
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hyper Voice",
         "Dazzling Gleam",
@@ -14357,6 +15708,10 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 12,
         "sa": 244
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Hyper Voice",
@@ -14377,6 +15732,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "df": 4,
         "sp": 252
+      },
+      "ivs": {
+        "hp": 11
       },
       "moves": [
         "Triple Dive",
@@ -14415,6 +15773,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 4,
         "sd": 252
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Wave Crash",
@@ -14514,6 +15875,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Hyper Voice",
         "Giga Drain",
@@ -14531,6 +15895,10 @@ SETDEX_EISENBERRY =
         "hp": 244,
         "df": 164,
         "sd": 100
+      },
+      "ivs": {
+        "at": 20,
+        "sp": 0
       },
       "moves": [
         "Weather Ball",
@@ -14570,6 +15938,9 @@ SETDEX_EISENBERRY =
         "df": 132,
         "sd": 124
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Flamethrower",
         "Rage Powder",
@@ -14592,6 +15963,9 @@ SETDEX_EISENBERRY =
         "sa": 132,
         "sd": 52
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Thunderbolt",
         "Parabolic Charge",
@@ -14609,6 +15983,10 @@ SETDEX_EISENBERRY =
         "hp": 180,
         "df": 148,
         "sd": 180
+      },
+      "ivs": {
+        "at": 0,
+        "sp": 0
       },
       "moves": [
         "Parabolic Charge",
@@ -14649,6 +16027,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 252,
         "sd": 4
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Spin Out",
@@ -14870,6 +16251,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 204
       },
+      "ivs": {
+        "at": 5
+      },
       "moves": [
         "Draco Meteor",
         "Muddy Water",
@@ -14888,6 +16272,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 27
+      },
       "moves": [
         "Dragon Pulse",
         "Hydro Pump",
@@ -14905,6 +16292,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "df": 140,
         "sd": 116
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Chilling Water",
@@ -14925,6 +16315,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 30
       },
       "moves": [
         "U-turn",
@@ -15002,6 +16395,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 27
+      },
       "moves": [
         "Electro Ball",
         "Air Slash",
@@ -15019,6 +16415,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 24
       },
       "moves": [
         "Thunder",
@@ -15192,6 +16591,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sd": 252
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Salt Cure",
         "Body Press",
@@ -15209,6 +16611,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 252,
         "sd": 4
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Stone Edge",
@@ -15230,6 +16635,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Meteor Beam",
         "Sludge Bomb",
@@ -15249,6 +16657,9 @@ SETDEX_EISENBERRY =
         "sa": 76,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 11
       },
       "moves": [
         "Power Gem",
@@ -15307,6 +16718,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sd": 252,
         "sp": 4
+      },
+      "ivs": {
+        "at": 9
       },
       "moves": [
         "Body Press",
@@ -15428,6 +16842,9 @@ SETDEX_EISENBERRY =
         "sd": 20,
         "sp": 20
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Make It Rain",
         "Shadow Ball",
@@ -15445,6 +16862,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Make It Rain",
@@ -15506,6 +16926,10 @@ SETDEX_EISENBERRY =
         "df": 28,
         "sa": 252
       },
+      "ivs": {
+        "at": 0,
+        "sp": 0
+      },
       "moves": [
         "Expanding Force",
         "Armor Cannon",
@@ -15525,6 +16949,9 @@ SETDEX_EISENBERRY =
         "sa": 196,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 0
       },
       "moves": [
         "Stored Power",
@@ -15586,6 +17013,9 @@ SETDEX_EISENBERRY =
         "df": 244,
         "sd": 68
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Earth Power",
         "Giga Drain",
@@ -15603,6 +17033,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 14
       },
       "moves": [
         "Leaf Storm",
@@ -15623,6 +17056,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "at": 196,
         "sd": 60
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Kowtow Cleave",
@@ -15664,6 +17100,9 @@ SETDEX_EISENBERRY =
         "at": 252,
         "sd": 92
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Gunk Shot",
         "High Horsepower",
@@ -15681,6 +17120,9 @@ SETDEX_EISENBERRY =
         "hp": 156,
         "df": 252,
         "sd": 100
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Earthquake",
@@ -15808,6 +17250,9 @@ SETDEX_EISENBERRY =
         "df": 76,
         "sd": 180
       },
+      "ivs": {
+        "at": 29
+      },
       "moves": [
         "Syrup Bomb",
         "Pollen Puff",
@@ -15828,6 +17273,10 @@ SETDEX_EISENBERRY =
         "sa": 236,
         "sd": 132
       },
+      "ivs": {
+        "at": 10,
+        "sp": 0
+      },
       "moves": [
         "Fickle Beam",
         "Giga Drain",
@@ -15845,6 +17294,9 @@ SETDEX_EISENBERRY =
         "hp": 236,
         "sa": 76,
         "sd": 192
+      },
+      "ivs": {
+        "at": 4
       },
       "moves": [
         "Draco Meteor",
@@ -15866,6 +17318,9 @@ SETDEX_EISENBERRY =
         "df": 60,
         "sd": 220
       },
+      "ivs": {
+        "at": 21
+      },
       "moves": [
         "Matcha Gotcha",
         "Rage Powder",
@@ -15885,6 +17340,9 @@ SETDEX_EISENBERRY =
         "sa": 148,
         "sd": 4,
         "sp": 124
+      },
+      "ivs": {
+        "at": 7
       },
       "moves": [
         "Matcha Gotcha",
@@ -15908,6 +17366,9 @@ SETDEX_EISENBERRY =
         "sd": 180,
         "sp": 12
       },
+      "ivs": {
+        "at": 15
+      },
       "moves": [
         "Flash Cannon",
         "Dragon Pulse",
@@ -15927,6 +17388,9 @@ SETDEX_EISENBERRY =
         "sa": 156,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 1
       },
       "moves": [
         "Flash Cannon",
@@ -16024,6 +17488,9 @@ SETDEX_EISENBERRY =
         "sa": 204,
         "sp": 252
       },
+      "ivs": {
+        "at": 1
+      },
       "moves": [
         "Thunderbolt",
         "Earth Power",
@@ -16041,6 +17508,9 @@ SETDEX_EISENBERRY =
         "hp": 252,
         "sa": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 22
       },
       "moves": [
         "Zap Cannon",
@@ -16063,6 +17533,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 12,
         "sp": 188
+      },
+      "ivs": {
+        "at": 25
       },
       "moves": [
         "Dazzling Gleam",
@@ -16104,6 +17577,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 124
       },
+      "ivs": {
+        "at": 13
+      },
       "moves": [
         "Dazzling Gleam",
         "Shadow Ball",
@@ -16121,6 +17597,9 @@ SETDEX_EISENBERRY =
         "hp": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 22
       },
       "moves": [
         "Moonblast",
@@ -16227,6 +17706,9 @@ SETDEX_EISENBERRY =
         "sa": 124,
         "sd": 4,
         "sp": 4
+      },
+      "ivs": {
+        "at": 27
       },
       "moves": [
         "Hydro Pump",
@@ -16392,6 +17874,9 @@ SETDEX_EISENBERRY =
         "sd": 4,
         "sp": 252
       },
+      "ivs": {
+        "at": 10
+      },
       "moves": [
         "Fiery Dance",
         "Sludge Wave",
@@ -16411,6 +17896,9 @@ SETDEX_EISENBERRY =
         "sa": 156,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 4
       },
       "moves": [
         "Heat Wave",
@@ -16452,6 +17940,9 @@ SETDEX_EISENBERRY =
         "at": 156,
         "sd": 252
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Fake Out",
         "Drain Punch",
@@ -16474,6 +17965,9 @@ SETDEX_EISENBERRY =
         "sd": 132,
         "sp": 116
       },
+      "ivs": {
+        "at": 1
+      },
       "moves": [
         "Air Slash",
         "Snarl",
@@ -16491,6 +17985,9 @@ SETDEX_EISENBERRY =
         "sa": 244,
         "sd": 12,
         "sp": 252
+      },
+      "ivs": {
+        "at": 13
       },
       "moves": [
         "Hurricane",
@@ -16550,6 +18047,9 @@ SETDEX_EISENBERRY =
         "sa": 60,
         "sd": 196
       },
+      "ivs": {
+        "at": 0
+      },
       "moves": [
         "Hydro Pump",
         "Freeze-Dry",
@@ -16567,6 +18067,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 21
       },
       "moves": [
         "Hydro Pump",
@@ -16668,6 +18171,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 20
+      },
       "moves": [
         "Expanding Force",
         "Tachyon Cutter",
@@ -16685,6 +18191,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 20
       },
       "moves": [
         "Future Sight",
@@ -16746,6 +18255,9 @@ SETDEX_EISENBERRY =
         "at": 236,
         "sd": 172
       },
+      "ivs": {
+        "sp": 0
+      },
       "moves": [
         "Stomping Tantrum",
         "Throat Chop",
@@ -16763,6 +18275,9 @@ SETDEX_EISENBERRY =
         "hp": 220,
         "df": 36,
         "sd": 252
+      },
+      "ivs": {
+        "sp": 18
       },
       "moves": [
         "Sand Tomb",
@@ -16842,6 +18357,9 @@ SETDEX_EISENBERRY =
         "sd": 92,
         "sp": 4
       },
+      "ivs": {
+        "at": 21
+      },
       "moves": [
         "Grass Knot",
         "Foul Play",
@@ -16862,6 +18380,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 4
+      },
       "moves": [
         "Heat Wave",
         "Snarl",
@@ -16881,6 +18402,9 @@ SETDEX_EISENBERRY =
         "sa": 84,
         "sd": 4,
         "sp": 252
+      },
+      "ivs": {
+        "at": 22
       },
       "moves": [
         "Overheat",
@@ -17030,6 +18554,9 @@ SETDEX_EISENBERRY =
         "sa": 252,
         "sp": 252
       },
+      "ivs": {
+        "at": 4
+      },
       "moves": [
         "Fake Out",
         "Psychic",
@@ -17047,6 +18574,9 @@ SETDEX_EISENBERRY =
         "df": 4,
         "sa": 252,
         "sp": 252
+      },
+      "ivs": {
+        "at": 1
       },
       "moves": [
         "Psyshock",
@@ -17069,6 +18599,9 @@ SETDEX_EISENBERRY =
         "sa": 4,
         "sd": 116,
         "sp": 28
+      },
+      "ivs": {
+        "at": 13
       },
       "moves": [
         "Dazzling Gleam",
@@ -17109,6 +18642,9 @@ SETDEX_EISENBERRY =
         "hp": 132,
         "sa": 252,
         "sd": 124
+      },
+      "ivs": {
+        "sp": 0
       },
       "moves": [
         "Blood Moon",
