@@ -181,6 +181,7 @@ function performCalculations() {
 		this.stats = [];
 	};
 	let userNeutralizingGas = userPoke.ability === "Neutralizing Gas";
+	let autoLevel = $("#autolevel-box").val();
 	if (mode === "one-vs-all") {
 		attacker = userPoke;
 	} else {
@@ -196,7 +197,7 @@ function performCalculations() {
 		for (let setName of setNames) {
 			setPoke = MassPokemon(speciesName, setName);
 			setTier = setPoke.tier; // setPoke.tier can be: 50, Open, Hall, HallR10, 28, 40, Tower, RS, SM, DM, SMDM. A set might not have a tier key.
-			if (gen == 3 && selectedTier === "threshold" && setTier === "Open" && $("#autolevel-box").val() !== "50") {
+			if (gen == 3 && selectedTier === "threshold" && setTier === "Open" && autoLevel !== "50") {
 				// let set be calculated for open level
 				// threshold checks for 50+
 			} else if (gen == 4 && selectedTier === "All" && setTier && setTier.includes("Hall")) {
