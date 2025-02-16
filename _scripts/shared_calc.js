@@ -966,7 +966,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 	formeObj.show();
 }
 
-var BLANK_SET = "Blank Set";
+const BLANK_SET = "Blank Set";
 function getFormeNum(setName, pokemonName) {
 	if (setName === BLANK_SET) {
 		return 0;
@@ -1498,6 +1498,7 @@ function validateSetdex(inputSetdex) {
 	for (const [speciesName, speciesSets] of Object.entries(inputSetdex)) {
 		if (!(speciesName in pokedex)) {
 			console.log(speciesName + " is not a species in the pokedex");
+			continue;
 		}
 		let pokedexEntry = pokedex[speciesName];
 		for (const [setName, setObj] of Object.entries(speciesSets)) {
@@ -1529,112 +1530,126 @@ function validateSetdex(inputSetdex) {
 }
 
 // Damage map functions
-function mapFromArray(array) {
+function damageInfoFromArray(array) {
 	let map = new Map();
 	for (let i = 0; i < array.length; i++) {
 		mapAddKey(map, array[i], 1);
 	}
-	return map;
+	return {
+		damageMap: map,
+		min: array[0],
+		max: array[array.length - 1]
+	};
 }
 
 function mapAddKey(map, key, value) {
 	map.set(key, map.has(key) ? map.get(key) + value : value);
 }
 
-function combineDuplicateDamageMaps(damageMap) {
+function combineDuplicateDamageInfo(damageInfo) {
 	// for combining two damage maps that have the same kv-pairs, thus just one arg
-	let returnDamageMap = new Map();
-	let damageValues = Array.from(damageMap.keys());
+	let combinedMap = new Map();
+	let damageValues = Array.from(damageInfo.damageMap.keys());
 	let valuesLength = damageValues.length;
 	for (let i = 0; i < valuesLength; i++) {
 		let iDamage = damageValues[i];
-		let iCount = damageMap.get(iDamage);
-		mapAddKey(returnDamageMap, iDamage + iDamage, iCount * iCount);
+		let iCount = damageInfo.damageMap.get(iDamage);
+		mapAddKey(combinedMap, iDamage + iDamage, iCount * iCount);
 		for (let j = i + 1; j < valuesLength; j++) {
 			let jDamage = damageValues[j];
-			let jCount = damageMap.get(jDamage);
-			mapAddKey(returnDamageMap, iDamage + jDamage, 2 * iCount * jCount);
+			let jCount = damageInfo.damageMap.get(jDamage);
+			mapAddKey(combinedMap, iDamage + jDamage, 2 * iCount * jCount);
 		}
 	}
-	return returnDamageMap;
+	return {
+		damageMap: combinedMap,
+		min: 2 * damageInfo.min,
+		max: 2 * damageInfo.max
+	};
 }
 
-function combineDamageMaps(iDamageMap, jDamageMap) {
-	let returnDamageMap = new Map();
-	for (const [iDamage, iCount] of iDamageMap) {
-		for (const [jDamage, jCount] of jDamageMap) {
-			mapAddKey(returnDamageMap, iDamage + jDamage, iCount * jCount);
+function combineDamageInfo(iDamageInfo, jDamageInfo) {
+	let combinedMap = new Map();
+	let minDamage = -1;
+	let maxDamage = -1;
+	for (const [iDamage, iCount] of iDamageInfo.damageMap) {
+		for (const [jDamage, jCount] of jDamageInfo.damageMap) {
+			mapAddKey(combinedMap, iDamage + jDamage, iCount * jCount);
 		}
 	}
-	return returnDamageMap;
+	return {
+		damageMap: combinedMap,
+		min: iDamageInfo.min + jDamageInfo.min,
+		max: iDamageInfo.max + jDamageInfo.max
+	};
 }
 
-function recurseDamageMaps(damageMap, numHits) {
-	// this function can be optimized a few ways, but with numHits <= 10, it won't do anything.
+function recurseDamageInfo(damageInfo, numHits) {
+	// this function can be optimized a few ways, but with numHits <= 10, it won't do much.
 	if (numHits == 1) {
-		return damageMap;
+		return damageInfo;
 	}
 	if (numHits % 2 == 0) {
-		return combineDuplicateDamageMaps(recurseDamageMaps(damageMap, numHits / 2));
+		return combineDuplicateDamageInfo(recurseDamageInfo(damageInfo, numHits / 2));
 	} else {
-		return combineDamageMaps(damageMap, recurseDamageMaps(damageMap, numHits - 1));
+		return combineDamageInfo(damageInfo, recurseDamageInfo(damageInfo, numHits - 1));
 	}
 }
 
-var MAP_SQUASH_CONSTANT = 2 ** 13;
-function squashDamageMap(damageMap, mapCombinations) {
-	let divisor = mapCombinations / MAP_SQUASH_CONSTANT;
-	for (const [key, value] of damageMap) {
-		damageMap.set(key, value / divisor);
+const MAP_SQUASH_CONSTANT = 2 ** 13;
+function squashDamageInfo(damageInfo) {
+	if (damageInfo.mapCombinations <= MAP_SQUASH_CONSTANT) {
+		return;
 	}
-	return mapCombinations / divisor;
+	// damageMap numbers use integral numbers, except in this case.
+	// To avoid exceeding Number.MAX_SAFE_INTEGER (2 ** 53 - 1) and avoid needing BigNums, divide all values by the same factor.
+	// Since damage maps are (currently) only used for the first 4 hits when calcing an nHKO, dividing all values by (mapCombinations / (2 ** 13)) works.
+	let divisor = damageInfo.mapCombinations / MAP_SQUASH_CONSTANT;
+	for (const [key, value] of damageInfo.damageMap) {
+		damageInfo.damageMap.set(key, value / divisor);
+	}
+	damageInfo.mapCombinations = MAP_SQUASH_CONSTANT;
 }
 
-function getAssembledDamageMap(result, moveHits, isFirstHit) {
+function getAssembledDamageInfo(result, moveHits, isFirstHit) {
 	if (result.damage.length == 1) {
-		return new Map([[result.damage[0], 1]]);
+		let singletonValue = result.damage[0];
+		return {
+			damageMap: new Map([[singletonValue, 1]]),
+			min: singletonValue,
+			max: singletonValue
+		};
 	}
 	if (result.tripleAxelDamage) {
 		let damageArrays = isFirstHit && result.teraShellDamage ? result.teraShellDamage : result.tripleAxelDamage;
-		let assembledDamageMap = combineDamageMaps(mapFromArray(isFirstHit ? result.firstHitDamage : damageArrays[0]), mapFromArray(damageArrays[1]));
+		let assembledDamageInfo = combineDamageInfo(damageInfoFromArray(isFirstHit ? result.firstHitDamage : damageArrays[0]), damageInfoFromArray(damageArrays[1]));
 		if (damageArrays.length == 3) {
-			return combineDamageMaps(assembledDamageMap, mapFromArray(damageArrays[2]));
+			return combineDamageInfo(assembledDamageInfo, damageInfoFromArray(damageArrays[2]));
 		}
 		return assembledDamageMap;
 	}
-	let resultDamageMap = mapFromArray(result.damage);
+	let resultDamageInfo = damageInfoFromArray(result.damage);
 	if (result.childDamage) {
-		return combineDamageMaps((isFirstHit ? mapFromArray(result.firstHitDamage) : resultDamageMap), mapFromArray(result.childDamage));
+		return combineDamageInfo((isFirstHit ? damageInfoFromArray(result.firstHitDamage) : resultDamageInfo), damageInfoFromArray(result.childDamage));
 	}
 	if (moveHits > 1) {
 		if (!isFirstHit) {
-			return recurseDamageMaps(resultDamageMap, moveHits);
+			return recurseDamageInfo(resultDamageInfo, moveHits);
 		}
 		if (result.teraShellDamage || result.gemFirstAttack) {
-			return recurseDamageMaps(mapFromArray(result.firstHitDamage), moveHits);
+			return recurseDamageInfo(damageInfoFromArray(result.firstHitDamage), moveHits);
 		}
-		return combineDamageMaps(recurseDamageMaps(resultDamageMap, moveHits - 1), mapFromArray(result.firstHitDamage));
+		return combineDamageInfo(recurseDamageInfo(resultDamageInfo, moveHits - 1), damageInfoFromArray(result.firstHitDamage));
 	}
 
-	return isFirstHit ? mapFromArray(result.firstHitDamage) : resultDamageMap;
+	return isFirstHit ? damageInfoFromArray(result.firstHitDamage) : resultDamageInfo;
 }
 
 function DamageInfo(result, moveHits, isFirstHit = false) {
-	let damage = {
-		"damageMap": getAssembledDamageMap(result, moveHits, isFirstHit),
-		"mapCombinations": result.damage.length ** moveHits
-	};
-	damage.sortedDamageValues = Array.from(damage.damageMap.keys());
-	damage.sortedDamageValues.sort((a, b) => a - b);
-	damage.min = damage.sortedDamageValues[0];
-	damage.max = damage.sortedDamageValues[damage.sortedDamageValues.length - 1];
-	// damageMap numbers use integral numbers, except in this if statement.
-	// To avoid exceeding Number.MAX_SAFE_INTEGER (2 ** 53 - 1) and avoid needing BigNums, divide all values by the same factor
-	// Since damage maps are (currently) only used for the first 4 hits when calcing an nHKO, dividing all values by (mapCombinations / (2 ** 13)) works.
-	if (damage.mapCombinations > MAP_SQUASH_CONSTANT) {
-		damage.mapCombinations = squashDamageMap(damage.damageMap, damage.mapCombinations);
-	}
-	return damage;
+	let damageInfo = getAssembledDamageInfo(result, moveHits, isFirstHit);
+	damageInfo.mapCombinations = result.damage.length ** moveHits;
+	squashDamageInfo(damageInfo);
+	return damageInfo;
 }
 // End damage map functions
 

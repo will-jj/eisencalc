@@ -81,7 +81,7 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 		// checkMultiHitOHKO() uses the base damage of each strike to calculate, so the mapCombinations need to be based on that too.
 		let temp = damageInfo.mapCombinations;
 		damageInfo.mapCombinations = result.damage.length ** multiResult.hitCount;
-		setResultText(result, 1, moveAccuracy, multiResult.koCombinations, damageInfo, multiResult.printEOTText ? hazardText.concat(eotText) : hazardText, multiResult.berryKO ? berryText : "");
+		setResultText(result, move, 1, moveAccuracy, multiResult.koCombinations, damageInfo, multiResult.printEOTText ? hazardText.concat(eotText) : hazardText, multiResult.berryKO ? berryText : "");
 		damageInfo.mapCombinations = temp;
 		return;
 	} else if (moveHits > 1 && berryRecovery) {
@@ -95,26 +95,22 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 
 	// Check for OHKO chance
 	if (firstHitDamageInfo.min >= targetHP) {
-		setResultText(result, 1, moveAccuracy, GUARANTEED, damageInfo, hazardText, "");
+		setResultText(result, move, 1, moveAccuracy, GUARANTEED, damageInfo, hazardText, "");
 		return;
 	} else if (checkHPThreshold(targetHP + berryRecovery, 0, firstHitDamageInfo.min, defender.maxHP)) {
 		// since there was not a KO from the first condition, this OHKO could only be guaranteed by eot damage
-		setResultText(result, 1, moveAccuracy, GUARANTEED, damageInfo, hazardText.concat(eotText), "");
+		setResultText(result, move, 1, moveAccuracy, GUARANTEED, damageInfo, hazardText.concat(eotText), "");
 		return;
 	} else if (firstHitDamageInfo.max >= targetHP || checkHPThreshold(targetHP + berryRecovery, 0, firstHitDamageInfo.max, defender.maxHP)) {
-		let koCombinations = firstHitDamageInfo.damageMap.get(firstHitDamageInfo.max);
-		// iterate backwards because as soon as there is a value that cannot KO, exit the loop.
-		for (let i = firstHitDamageInfo.sortedDamageValues.length - 2; i >= 0; i--) {
-			let damageValue = firstHitDamageInfo.sortedDamageValues[i];
+		let koCombinations = 0;
+		for (const [damageValue, combinations] of firstHitDamageInfo.damageMap.entries()) {
 			if (damageValue >= targetHP || checkHPThreshold(targetHP + berryRecovery, 0, damageValue, defender.maxHP)) {
-				koCombinations += firstHitDamageInfo.damageMap.get(damageValue);
-			} else {
-				break;
+				koCombinations += combinations;
 			}
 		}
 		// if the defender holds a berry, then eot can't contribute to any OHKOs, so don't print eot
 		// this is checking hits that bypass berry recovery, so no berryText. Triple Axel could print berryText but that isn't accounted for
-		setResultText(result, 1, moveAccuracy, koCombinations, damageInfo, berryRecovery ? hazardText : hazardText.concat(eotText), "");
+		setResultText(result, move, 1, moveAccuracy, koCombinations, damageInfo, berryRecovery ? hazardText : hazardText.concat(eotText), "");
 		return;
 	}
 
@@ -128,7 +124,7 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 	// Calc 2-4HKO
 	let nhkoResult = calculateNHKO(4, targetHP, defender.maxHP, damageInfo, firstHitDamageInfo);
 	if (nhkoResult) {
-		setResultText(result, nhkoResult.hitCount, moveAccuracy, nhkoResult.koCombinations, damageInfo, hazardText, nhkoResult.berryKO ? berryText : "");
+		setResultText(result, move, nhkoResult.hitCount, moveAccuracy, nhkoResult.koCombinations, damageInfo, hazardText, nhkoResult.berryKO ? berryText : "");
 		return;
 	}
 
@@ -137,10 +133,10 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 		let nonAttackedHP = targetHP + berryRecovery + (hitCount - 1) * eotTotal;
 		// even though it's easy to give an accurate chance of a 5+HKO with damage maps, keep the output text simple.
 		if (checkHPThreshold(nonAttackedHP, 0, firstHitDamageInfo.min + damageInfo.min * (hitCount - 1), defender.maxHP)) {
-			setResultText(result, hitCount, moveAccuracy, GUARANTEED, false, hazardText, berryText);
+			setResultText(result, move, hitCount, moveAccuracy, GUARANTEED, false, hazardText, berryText);
 			return;
 		} else if (checkHPThreshold(nonAttackedHP, 0, firstHitDamageInfo.max + damageInfo.max * (hitCount - 1), defender.maxHP)) {
-			setResultText(result, hitCount, moveAccuracy, 0, false, hazardText, berryText);
+			setResultText(result, move, hitCount, moveAccuracy, 0, false, hazardText, berryText);
 			return;
 		}
 		if (toxicCounter > 0) {
@@ -173,8 +169,8 @@ function applyFirstHitText(attacker, defender, result, isMultihitMove) {
 	}
 }
 
-var GUARANTEED = "guaranteed";
-function setResultText(result, hitCount, moveAccuracy, koCombinations, damageInfo, afterTextArr, berryText) {
+const GUARANTEED = "guaranteed";
+function setResultText(result, move, hitCount, moveAccuracy, koCombinations, damageInfo, afterTextArr, berryText) {
 	// both ap_calc (primary calc) and honk_calc (mass calc) use koChanceText
 	// honk: honk's output table only uses koChanceText; not afterText nor afterAccText
 	// ap: the main result displayed uses koChanceText + afterText + afterAccText
@@ -199,7 +195,7 @@ function setResultText(result, hitCount, moveAccuracy, koCombinations, damageInf
 		result.koChanceText = "unknown% chance to " + hko;
 	}
 
-	if (moveAccuracy < 100 && !result.tripleAxelDamage) {
+	if (moveAccuracy < 100 && !result.tripleAxelDamage && move.name !== "Population Bomb") {
 		let printedAfterAcc = (100 * finalAcc).toFixed(1);
 		if (printedAfterAcc == 0) {
 			printedAfterAcc = "~0";
