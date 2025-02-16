@@ -1221,7 +1221,8 @@ function getDescriptionPokemonName(pokemon) {
 		}
 		return pokemon.name + setSuffix;
 	}
-	return pokemon.name;
+	// don't print Gmax in the description
+	return pokemon.name.endsWith("-Gmax") ? pokemon.name.substring(0, pokemon.name.lastIndexOf("-Gmax")) : pokemon.name;
 }
 
 function buildDescription(description) {
