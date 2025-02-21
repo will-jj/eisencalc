@@ -662,7 +662,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.weather = field.weather;
 	}
 
-	if (isFirstHit && move.name === "Knock Off" && canKnockOffItem(attacker, defender, field.terrain)) {
+	if (isFirstHit && applyKnockOffBoost(attacker, defender, move, field.terrain)) {
 		bpMods.push(0x1800);
 		description.moveBP = Math.floor(move.bp * 1.5);
 	}
@@ -1105,8 +1105,7 @@ function recalcOtherHits(attacker, defender, move, field, description, result,
 	if (isGemApplied) {
 		result.gemFirstAttack = true;
 	}
-	if (move.name === "Knock Off" && canKnockOffItem(attacker, defender, field.terrain) ||
-		isGemApplied) {
+	if (isGemApplied || applyKnockOffBoost(attacker, defender, move, field.terrain)) {
 		isFirstHit = false;
 		finalBasePower = calcBP(attacker, defender, move, field, {}, ateizeBoost);
 	}
@@ -1122,7 +1121,14 @@ function recalcOtherHits(attacker, defender, move, field, description, result,
 		attack = calcAtk(attacker, defender, move, field, {});
 	}
 
-	// no branch needed for recalc defense at the moment.
+	// recalc defense
+	let isItemRemoved = moveRemovesItem(attacker, defender, move, field.terrain) && description.defenderItem;
+	let originalDefenderItem = defender.item;
+	if (isItemRemoved) {
+		isFirstHit = false;
+		defender.item = "";
+		defense = calcDef(attacker, defender, move, field, {});
+	}
 
 	// recalc base damage
 	// and recalc modded base damage
@@ -1180,6 +1186,10 @@ function recalcOtherHits(attacker, defender, move, field, description, result,
 
 	isFirstHit = true;
 
+	if (isItemRemoved) {
+		defender.item = originalDefenderItem;
+	}
+
 	if (isParentalBond) {
 		result.childDamage = recalcDamage;
 		// Reset any changes from Power-Up Punch
@@ -1225,6 +1235,7 @@ function getDescriptionPokemonName(pokemon) {
 	return pokemon.name.endsWith("-Gmax") ? pokemon.name.substring(0, pokemon.name.lastIndexOf("-Gmax")) : pokemon.name;
 }
 
+const VERSUS = "vs. ";
 function buildDescription(description) {
 	var output = "";
 	if (description.attackBoost) {
@@ -1279,7 +1290,7 @@ function buildDescription(description) {
 	if (description.isSpread) {
 		output += "(spread) ";
 	}
-	output += "vs. ";
+	output += VERSUS;
 	if (description.defenseBoost) {
 		if (description.defenseBoost > 0) {
 			output += "+";
@@ -1596,6 +1607,14 @@ function isShellSideArmPhysical(attacker, defender, move) {
 	return phys > spec;
 }
 
+function applyKnockOffBoost(attacker, defender, move, terrain) {
+	return gen >= 6 && move.name === "Knock Off" && canKnockOffItem(attacker, defender, terrain);
+}
+
+function moveRemovesItem(attacker, defender, move, terrain) {
+	return canKnockOffItem(attacker, defender, terrain) && (move.name === "Knock Off" || (["Thief", "Covet"].includes(move.name) && attacker.item === ""));
+}
+
 function canKnockOffItem(attacker, defender, terrain) {
 	// Mega Stones, Red/Blue Orbs, Memories, and Rusted items are already accounted for by the fact that they don't exist as items
 	return !(getEffectiveItem(defender, attacker, terrain) === "" ||
@@ -1605,6 +1624,7 @@ function canKnockOffItem(attacker, defender, terrain) {
 	defender.item === "Griseous Core" && defender.name === "Giratina-O" ||
 	defender.item.endsWith("Plate") && defender.name.startsWith("Arceus") ||
 	defender.item.endsWith(" Z") ||
+	defender.item === "Booster Energy" && ["Protosynthesis", "Quark Drive"].includes(defender.ability) ||
 	defender.item.endsWith("Mask") && defender.name.startsWith("Ogerpon-"));
 }
 
