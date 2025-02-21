@@ -979,23 +979,17 @@ function calcSTABMod(attacker, move, description) {
 
 function calcFinalMods(attacker, defender, move, field, description, typeEffectiveness, bypassProtect) {
 	let finalMods = [];
-	let ignoresScreens = isCritical || ["Brick Break", "Psychic Fangs", "Raging Bull"].includes(move.name) || attacker.curAbility === "Infiltrator";
-	if (field.isReflect && moveCategory === "Physical" && !ignoresScreens) {
-		if (field.format === "singles") {
-			finalMods.push(0x800);
-		} else {
-			finalMods.push(0xA8F);
-			description.isDoublesScreen = true;
+	if (!(isCritical || ["Brick Break", "Psychic Fangs", "Raging Bull"].includes(move.name) || attacker.curAbility === "Infiltrator")) {
+		description.isReflect = field.isReflect && moveCategory === "Physical";
+		description.isLightScreen = field.isLightScreen && moveCategory === "Special";
+		if (description.isReflect || description.isLightScreen) {
+			if (field.format === "singles") {
+				finalMods.push(0x800);
+			} else {
+				finalMods.push(0xA8F);
+				description.isDoublesScreen = true;
+			}
 		}
-		description.isReflect = true;
-	} else if (field.isLightScreen && moveCategory === "Special" && !ignoresScreens) {
-		if (field.format === "singles") {
-			finalMods.push(0x800);
-		} else {
-			finalMods.push(0xA8F);
-			description.isDoublesScreen = true;
-		}
-		description.isLightScreen = true;
 	}
 	if (attacker.curAbility === "Neuroforce" && typeEffectiveness > 1) {
 		finalMods.push(0x1400);
