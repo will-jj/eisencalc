@@ -1356,6 +1356,8 @@ const STRIKE_TEXT = "strike"; // this describes only the first strike of a multi
 const FIRST_STRIKE_ONLY_TEXT = FIRST_HIT_PREFIX + STRIKE_TEXT + FIRST_HIT_SUFFIX;
 const ATTACK_TEXT = "attack"; // this describes all the strikes of the first time a multistrike move is used
 const FIRST_ATTACK_ONLY_TEXT = FIRST_HIT_PREFIX + ATTACK_TEXT + FIRST_HIT_SUFFIX;
+// Describe how something in the description only applies once.
+// This parenthetical can be removed by setDamageText() in ap_calc if the attack can OHKO
 function getFirstHitText(hitText, moveHits) {
 	if (moveHits > 1) {
 		if (hitText === STRIKE_TEXT) {

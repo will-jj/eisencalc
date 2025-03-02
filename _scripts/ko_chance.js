@@ -245,7 +245,7 @@ function checkMultiHitOHKO(moveHits, result, targetHP, attacker, defender, move,
 	let multiDamageInfo = DamageInfo(result, 1);
 	let multiFirstDamageInfo = result.firstHitDamage ? DamageInfo(result, 1, true) : multiDamageInfo;
 	// pass in a maxHP of 0 so that toxic damage doesn't get applied
-	let multiResult = calculateNHKO(moveHits, targetHP, 0, multiDamageInfo, multiFirstDamageInfo, false);
+	let multiResult = calculateNHKO(moveHits, targetHP, 0, multiDamageInfo, multiFirstDamageInfo, true);
 
 	if (!multiResult) {
 		return;
@@ -255,7 +255,7 @@ function checkMultiHitOHKO(moveHits, result, targetHP, attacker, defender, move,
 	return multiResult;
 }
 
-function calculateNHKO(upperHitCount, targetHP, maxHP, damageInfo, firstHitDamageInfo, applyPreviousEOT = true) {
+function calculateNHKO(upperHitCount, targetHP, maxHP, damageInfo, firstHitDamageInfo, isCheckMultihitOHKO = false) {
 	// nHitDamageMap is the combined map of previous hits. So when checking the 3HKO, it contains all damage possibilities from 2 hits.
 	// It does not include any hits that proc'd berry nor accumulated eot. berryDamageMap is a counterpart that only contains hits that proc'd a berry (but did not KO)
 	let nHitDamageMap;
@@ -278,9 +278,11 @@ function calculateNHKO(upperHitCount, targetHP, maxHP, damageInfo, firstHitDamag
 	let koCombinations = 0;
 	let berryKoCombinations = 0;
 	for (let hitCount = 2; hitCount <= upperHitCount; hitCount++) {
+		let isLastHit = hitCount == upperHitCount;
+		let calcMaxHits = isCheckMultihitOHKO && !isLastHit;
 		nextDamageMap = new Map();
 		nextBerryDamageMap = new Map();
-		let previousTurnsEot = applyPreviousEOT ? (hitCount - 1) * eotTotal : 0;
+		let previousTurnsEot = isCheckMultihitOHKO ? 0 : (hitCount - 1) * eotTotal;
 
 		if (checkHPThreshold(targetHP + berryRecovery + previousTurnsEot, 0, firstHitDamageInfo.min + damageInfo.min * (hitCount - 1), maxHP)) {
 			return {
@@ -301,11 +303,19 @@ function calculateNHKO(upperHitCount, targetHP, maxHP, damageInfo, firstHitDamag
 				// if it can only get the KO with eot, then berry would proc instead. nHitDamageMap only contains damages that didn't activate berry.
 				if (targetHP + previousTurnsEot <= damageTotal) {
 					// a KO occurs
-					koCombinations += countTotal;
+					if (calcMaxHits) {
+						mapAddKey(nextDamageMap, damageTotal, countTotal);
+					} else {
+						koCombinations += countTotal;
+					}
 				} else if (checkHPThreshold(targetHP + berryRecovery + previousTurnsEot, 0, damageTotal, maxHP)) {
 					// a KO occurs and a berry was eaten
-					berryKoCombinations += countTotal;
-				} else if (koCombinations || berryKoCombinations || hitCount == upperHitCount) {
+					if (calcMaxHits) {
+						mapAddKey(nextBerryDamageMap, damageTotal, countTotal);
+					} else {
+						berryKoCombinations += countTotal;
+					}
+				} else if (!calcMaxHits && (koCombinations || berryKoCombinations || isLastHit)) {
 					// skip the following branches if the loop will be ending
 				} else if (berryRecovery && checkHPThreshold(targetHP + previousTurnsEot, berryThreshold, damageTotal, maxHP)) {
 					// no KO occurs and a berry was eaten
@@ -321,8 +331,12 @@ function calculateNHKO(upperHitCount, targetHP, maxHP, damageInfo, firstHitDamag
 				let countTotal = baseCount * berryCount;
 				if (checkHPThreshold(targetHP + berryRecovery + previousTurnsEot, 0, damageTotal, maxHP)) {
 					// a KO occurs
-					berryKoCombinations += countTotal;
-				} else if (koCombinations || berryKoCombinations || hitCount == upperHitCount) {
+					if (calcMaxHits) {
+						mapAddKey(nextBerryDamageMap, damageTotal, countTotal);
+					} else {
+						berryKoCombinations += countTotal;
+					}
+				} else if (!calcMaxHits && (koCombinations || berryKoCombinations || isLastHit)) {
 					// skip the following branch if the loop will be ending
 				} else {
 					// since a berry was already consumed, add this to the berry damageMap
@@ -331,7 +345,9 @@ function calculateNHKO(upperHitCount, targetHP, maxHP, damageInfo, firstHitDamag
 			}
 		}
 
-		if (koCombinations || berryKoCombinations) {
+		// If a KO was found, return that information
+		// However if calcing a multihit OHKO, allow all strikes to be factored in
+		if ((koCombinations || berryKoCombinations) && !calcMaxHits) {
 			return {
 				hitCount: hitCount,
 				koCombinations: koCombinations + berryKoCombinations,
