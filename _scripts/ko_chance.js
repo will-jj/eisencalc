@@ -114,10 +114,6 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 		return;
 	}
 
-	// add clarifying text for 2+HKOs that a resist berry is only being calculated for the first hit. checkMultiHitOHKO() covers the multihit case
-	if (result.firstHitDamage && moveHits == 1) {
-		applyFirstHitText(attacker, defender, move, result, false);
-	}
 	// apply all eot text
 	hazardText = hazardText.concat(eotText, eotHealingText);
 
@@ -146,32 +142,6 @@ function setKOChanceText(result, move, moveHits, attacker, defender, field, dama
 
 	result.koChanceText = "every bit counts";
 	result.afterText = "";
-}
-
-function insertFirstHitOnly(description, effectString, hitText) {
-	let index = description.indexOf(effectString) + effectString.length;
-	return description.substring(0, index) + " (first " + hitText + " only)" + description.substring(index);
-}
-
-const DEFAULT_HIT_TEXT = "hit";
-function applyFirstHitText(attacker, defender, move, result, isMultihitMove) {
-	let versusIndex = result.description.indexOf(VERSUS); // versusIndex is set to the index of the "v" in "vs."
-	let attackerDescription = result.description.substring(0, versusIndex);
-	let defenderDescription = result.description.substring(versusIndex);
-	if (getBerryResistType(defender.item) && defenderDescription.includes(defender.item)) {
-		defenderDescription = insertFirstHitOnly(defenderDescription, defender.item, isMultihitMove ? "strike" : DEFAULT_HIT_TEXT);
-	} else if (defender.item && defenderDescription.includes(defender.item) && moveRemovesItem(attacker, defender, move, "")) {
-		defenderDescription = insertFirstHitOnly(defenderDescription, defender.item, DEFAULT_HIT_TEXT);
-	}
-	if (defenderDescription.includes("Multiscale") || defenderDescription.includes("Shadow Shield")) {
-		defenderDescription = insertFirstHitOnly(defenderDescription, defender.ability, isMultihitMove ? "strike" : DEFAULT_HIT_TEXT);
-	} else if (defenderDescription.includes("Tera Shell")) {
-		defenderDescription = insertFirstHitOnly(defenderDescription, defender.ability, isMultihitMove ? "attack" : DEFAULT_HIT_TEXT);
-	}
-	if (attacker.item.endsWith(" Gem") && attackerDescription.includes(attacker.item)) {
-		attackerDescription = insertFirstHitOnly(attackerDescription, attacker.item, isMultihitMove ? "attack" : DEFAULT_HIT_TEXT);
-	}
-	result.description = attackerDescription + defenderDescription;
 }
 
 const GUARANTEED = "guaranteed";
@@ -257,10 +227,6 @@ function checkMultiHitOHKO(moveHits, result, targetHP, attacker, defender, move,
 			hitCount: 1,
 			koCombinations: GUARANTEED
 		};
-	}
-
-	if (result.firstHitDamage) {
-		applyFirstHitText(attacker, defender, move, result, true);
 	}
 
 	if (result.childDamage || result.tripleAxelDamage) {

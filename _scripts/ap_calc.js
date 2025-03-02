@@ -182,14 +182,7 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 		console.log(move.name + " from " + attacker.name + " (" + attacker.ability + ") vs. " + defender.name + " (" + defender.ability + ")");
 		return;
 	}
-	let moveHits = 1;
-	if (move.isThreeHit) {
-		moveHits = 3;
-	} else if (move.isTwoHit || result.childDamage) {
-		moveHits = 2;
-	} else if (move.hits) {
-		moveHits = move.hits;
-	}
+	let moveHits = move.hits ? move.hits : 1;
 
 	// mainDamageInfo contains the damage map of all moveHits number of hits. Resist berry is not applied
 	// firstHit is the same as mainDamageInfo, but with resist berry applied if applicable. On multi hit moves the berry only applies to the first strike of the multihit.
@@ -213,15 +206,20 @@ function setDamageText(result, attacker, defender, move, fieldSide, resultLocati
 	// put together the primary hit information based on the first hit map
 	setUpDamageRangeText(result, moveHits, mainDamageInfo, firstHitDamageInfo);
 	setUpRecoilRecoveryText(result, attacker, defender, move, firstHitDamageInfo.min, firstHitDamageInfo.max);
-	let recoilRecovery = "";
+	if (result.koChanceText.includes("OHKO")) {
+		// don't remove "first strike only" text from the description
+		// it's both difficult to determine when it needs to be removed and comes up very rarely
+		result.description = result.description.replaceAll(FIRST_HIT_ONLY_TEXT, "").replaceAll(FIRST_ATTACK_ONLY_TEXT, "");
+	}
+	let damageText = minPercent + " - " + maxPercent + "%";
 	// intentionally does not display both recoil and recovery text on the same line
 	if (result.recoilPercent) {
-		recoilRecovery = " (" + result.recoilPercent + "% " + result.recoilType + " damage)";
+		damageText += " (" + result.recoilPercent + "% " + result.recoilType + " damage)";
 	} else if (result.recoveryPercent) {
-		recoilRecovery = " (recovers " + result.recoveryPercent + "%)";
+		damageText += " (recovers " + result.recoveryPercent + "%)";
 	}
 	$(resultLocation.move + " + label").text(move.name.replace("Hidden Power", "HP"));
-	$(resultLocation.damage).text(minPercent + " - " + maxPercent + "%" + recoilRecovery);
+	$(resultLocation.damage).text(damageText);
 	/*if (maxPercent > highestMaxPercent) {
 		highestMaxPercent = maxPercent;
 		bestResult = $(resultLocations[1][i].move);
