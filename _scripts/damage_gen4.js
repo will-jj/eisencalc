@@ -395,23 +395,17 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 		baseDamage = Math.floor(baseDamage * 0.5);
 		description.isBurned = true;
 	}
-	let ignoresScreens = isCritical || move.name == "Brick Break";
-	if (isPhysical && field.isReflect && !ignoresScreens) {
-		if (field.format === "singles") {
-			baseDamage = Math.floor(baseDamage / 2);
-		} else {
-			baseDamage = Math.floor(baseDamage * 2 / 3);
-			description.isDoublesScreen = true;
+	if (!(isCritical || move.name === "Brick Break")) {
+		description.isReflect = field.isReflect && isPhysical;
+		description.isLightScreen = field.isLightScreen && !isPhysical;
+		if (description.isReflect || description.isLightScreen) {
+			if (field.format === "singles") {
+				baseDamage = Math.floor(baseDamage / 2);
+			} else {
+				baseDamage = Math.floor(baseDamage * 2 / 3);
+				description.isDoublesScreen = true;
+			}
 		}
-		description.isReflect = true;
-	} else if (!isPhysical && field.isLightScreen && !ignoresScreens) {
-		if (field.format === "singles") {
-			baseDamage = Math.floor(baseDamage / 2);
-		} else {
-			baseDamage = Math.floor(baseDamage * 2 / 3);
-			description.isDoublesScreen = true;
-		}
-		description.isLightScreen = true;
 	}
 
 	if (field.format === "doubles" && move.isSpread) {

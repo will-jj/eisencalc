@@ -264,7 +264,7 @@ function getDamageResult(attacker, defender, move, field) {
 	let otherHitsTypeEffectiveness = typeEffectiveness; // save the original type effectiveness for calculating non-first hits
 	if (isTeraShell(defender, typeEffectiveness)) {
 		typeEffectiveness = 0.5;
-		description.defenderAbility = defender.curAbility;
+		description.defenderAbility = defender.curAbility + getFirstHitText(ATTACK_TEXT, move.hits);
 	}
 
 	if (typeEffectiveness === 0) {
@@ -332,9 +332,7 @@ function getDamageResult(attacker, defender, move, field) {
 		return {"damage": [singletonDamageValue], "description": buildDescription(description)};
 	}
 
-	if (move.hits > 1) {
-		description.hits = move.hits;
-	}
+	description.hits = move.hits;
 
 	isCritical = move.isCrit && !["Battle Armor", "Shell Armor"].includes(defender.curAbility);
 
@@ -651,7 +649,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.attackerItem = attacker.item;
 	} else if (isFirstHit && applyGem(attacker, move)) {
 		bpMods.push(gen >= 6 ? 0x14CD : 0x1800);
-		description.attackerItem = attacker.item;
+		description.attackerItem = attacker.item + getFirstHitText(ATTACK_TEXT, move.hits);
 	}
 
 	if (["Solar Beam", "SolarBeam", "Solar Blade"].includes(move.name) &&
@@ -662,7 +660,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 		description.weather = field.weather;
 	}
 
-	if (isFirstHit && move.name === "Knock Off" && canKnockOffItem(attacker, defender, field.terrain)) {
+	if (isFirstHit && applyKnockOffBoost(attacker, defender, move, field.terrain)) {
 		bpMods.push(0x1800);
 		description.moveBP = Math.floor(move.bp * 1.5);
 	}
@@ -707,7 +705,7 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 	let finalBasePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096));
 	
 	// if a move has 1 bp, then it bypasses damage calc or has variable power. Variable power moves do not receive this boost.
-	if (attacker.isTerastal && (moveType === attacker.teraType || attacker.teraType === "Stellar") && finalBasePower < 60 && !hasPriority(move, attacker, field) && !move.maxMultiHits && !move.isTwoHit && !move.isThreeHit && move.bp != 1) {
+	if (attacker.isTerastal && (moveType === attacker.teraType || attacker.teraType === "Stellar") && finalBasePower < 60 && !hasPriority(move, attacker, field) && move.hits === 1 && move.bp != 1) {
 		finalBasePower = 60; // https://www.smogon.com/forums/threads/scarlet-violet-battle-mechanics-research.3709545/post-9425737
 		description.moveBP = 60;
 	}
@@ -979,23 +977,17 @@ function calcSTABMod(attacker, move, description) {
 
 function calcFinalMods(attacker, defender, move, field, description, typeEffectiveness, bypassProtect) {
 	let finalMods = [];
-	let ignoresScreens = isCritical || ["Brick Break", "Psychic Fangs", "Raging Bull"].includes(move.name) || attacker.curAbility === "Infiltrator";
-	if (field.isReflect && moveCategory === "Physical" && !ignoresScreens) {
-		if (field.format === "singles") {
-			finalMods.push(0x800);
-		} else {
-			finalMods.push(0xA8F);
-			description.isDoublesScreen = true;
+	if (!(isCritical || ["Brick Break", "Psychic Fangs", "Raging Bull"].includes(move.name) || attacker.curAbility === "Infiltrator")) {
+		description.isReflect = field.isReflect && moveCategory === "Physical";
+		description.isLightScreen = field.isLightScreen && moveCategory === "Special";
+		if (description.isReflect || description.isLightScreen) {
+			if (field.format === "singles") {
+				finalMods.push(0x800);
+			} else {
+				finalMods.push(0xA8F);
+				description.isDoublesScreen = true;
+			}
 		}
-		description.isReflect = true;
-	} else if (field.isLightScreen && moveCategory === "Special" && !ignoresScreens) {
-		if (field.format === "singles") {
-			finalMods.push(0x800);
-		} else {
-			finalMods.push(0xA8F);
-			description.isDoublesScreen = true;
-		}
-		description.isLightScreen = true;
 	}
 	if (attacker.curAbility === "Neuroforce" && typeEffectiveness > 1) {
 		finalMods.push(0x1400);
@@ -1014,7 +1006,7 @@ function calcFinalMods(attacker, defender, move, field, description, typeEffecti
 		defender.curAbility === "Punk Rock" && move.isSound ||
 		defender.curAbility === "Ice Scales" && moveCategory === "Special") {
 		finalMods.push(0x800);
-		description.defenderAbility = defender.ability; // print base ability for Shadow Shield
+		description.defenderAbility = defender.ability + getFirstHitText(STRIKE_TEXT, move.hits);
 	}
 	if (field.isFriendGuard) {
 		finalMods.push(0xC00);
@@ -1042,8 +1034,7 @@ function calcFinalMods(attacker, defender, move, field, description, typeEffecti
 		} else {
 			finalMods.push(0x800);
 		}
-		description.defenderItem = defender.item;
-		// "first hit/strike only" text is inserted in ko_chance
+		description.defenderItem = defender.item + getFirstHitText(STRIKE_TEXT, move.hits);
 	}
 	if (field.isMinimized && (["Astonish", "Body Slam", "Dragon Rush", "Extrasensory", "Flying Press", "Heat Crash", "Heavy Slam", "Malicious Moonsault", "Needle Arm", "Phantom Force", "Shadow Force", "Steamroller", "Stomp"].includes(move.name))) {
 		finalMods.push(0x2000);
@@ -1105,8 +1096,7 @@ function recalcOtherHits(attacker, defender, move, field, description, result,
 	if (isGemApplied) {
 		result.gemFirstAttack = true;
 	}
-	if (move.name === "Knock Off" && canKnockOffItem(attacker, defender, field.terrain) ||
-		isGemApplied) {
+	if (isGemApplied || applyKnockOffBoost(attacker, defender, move, field.terrain)) {
 		isFirstHit = false;
 		finalBasePower = calcBP(attacker, defender, move, field, {}, ateizeBoost);
 	}
@@ -1122,7 +1112,17 @@ function recalcOtherHits(attacker, defender, move, field, description, result,
 		attack = calcAtk(attacker, defender, move, field, {});
 	}
 
-	// no branch needed for recalc defense at the moment.
+	// recalc defense
+	let isItemRemoved = moveRemovesItem(attacker, defender, move, field.terrain) && description.defenderItem;
+	let originalDefenderItem = defender.item;
+	if (isItemRemoved) {
+		isFirstHit = false;
+		defender.item = "";
+		if (description.defenderItem) {
+			description.defenderItem += getFirstHitText(STRIKE_TEXT, move.hits);
+		}
+		defense = calcDef(attacker, defender, move, field, {});
+	}
 
 	// recalc base damage
 	// and recalc modded base damage
@@ -1180,11 +1180,16 @@ function recalcOtherHits(attacker, defender, move, field, description, result,
 
 	isFirstHit = true;
 
+	if (isItemRemoved) {
+		defender.item = originalDefenderItem;
+	}
+
 	if (isParentalBond) {
 		result.childDamage = recalcDamage;
 		// Reset any changes from Power-Up Punch
 		attacker.boosts[AT] = originalATBoost;
 		attacker.stats[AT] = originalATStat;
+		move.hits = 2;
 		return; // Nothing to return. Parental Bond just adds its custom childDamage property.
 	}
 
@@ -1221,9 +1226,11 @@ function getDescriptionPokemonName(pokemon) {
 		}
 		return pokemon.name + setSuffix;
 	}
-	return pokemon.name;
+	// don't print Gmax in the description
+	return pokemon.name.endsWith("-Gmax") ? pokemon.name.substring(0, pokemon.name.lastIndexOf("-Gmax")) : pokemon.name;
 }
 
+const VERSUS = "vs. ";
 function buildDescription(description) {
 	var output = "";
 	if (description.attackBoost) {
@@ -1272,13 +1279,13 @@ function buildDescription(description) {
 	} else if (description.moveType) {
 		output += "(" + description.moveType + ") ";
 	}
-	if (description.hits) {
+	if (description.hits && description.hits > 1) {
 		output += "(" + description.hits + " hits) ";
 	}
 	if (description.isSpread) {
 		output += "(spread) ";
 	}
-	output += "vs. ";
+	output += VERSUS;
 	if (description.defenseBoost) {
 		if (description.defenseBoost > 0) {
 			output += "+";
@@ -1339,6 +1346,27 @@ function buildDescription(description) {
 	}
 
 	return output;
+}
+
+const FIRST_HIT_PREFIX = " (first ";
+const FIRST_HIT_SUFFIX = " only)";
+const HIT_TEXT = "hit"; // this describes the first time a non-multistrike move is used
+const FIRST_HIT_ONLY_TEXT = FIRST_HIT_PREFIX + HIT_TEXT + FIRST_HIT_SUFFIX;
+const STRIKE_TEXT = "strike"; // this describes only the first strike of a multistrike move
+const FIRST_STRIKE_ONLY_TEXT = FIRST_HIT_PREFIX + STRIKE_TEXT + FIRST_HIT_SUFFIX;
+const ATTACK_TEXT = "attack"; // this describes all the strikes of the first time a multistrike move is used
+const FIRST_ATTACK_ONLY_TEXT = FIRST_HIT_PREFIX + ATTACK_TEXT + FIRST_HIT_SUFFIX;
+// Describe how something in the description only applies once.
+// This parenthetical can be removed by setDamageText() in ap_calc if the attack can OHKO
+function getFirstHitText(hitText, moveHits) {
+	if (moveHits > 1) {
+		if (hitText === STRIKE_TEXT) {
+			return FIRST_STRIKE_ONLY_TEXT;
+		} else if (hitText === ATTACK_TEXT) {
+			return FIRST_ATTACK_ONLY_TEXT;
+		}
+	}
+	return FIRST_HIT_ONLY_TEXT;
 }
 
 function appendIfSet(str, toAppend) {
@@ -1595,6 +1623,14 @@ function isShellSideArmPhysical(attacker, defender, move) {
 	return phys > spec;
 }
 
+function applyKnockOffBoost(attacker, defender, move, terrain) {
+	return gen >= 6 && move.name === "Knock Off" && canKnockOffItem(attacker, defender, terrain);
+}
+
+function moveRemovesItem(attacker, defender, move, terrain) {
+	return canKnockOffItem(attacker, defender, terrain) && (move.name === "Knock Off" || (["Thief", "Covet"].includes(move.name) && attacker.item === ""));
+}
+
 function canKnockOffItem(attacker, defender, terrain) {
 	// Mega Stones, Red/Blue Orbs, Memories, and Rusted items are already accounted for by the fact that they don't exist as items
 	return !(getEffectiveItem(defender, attacker, terrain) === "" ||
@@ -1604,6 +1640,7 @@ function canKnockOffItem(attacker, defender, terrain) {
 	defender.item === "Griseous Core" && defender.name === "Giratina-O" ||
 	defender.item.endsWith("Plate") && defender.name.startsWith("Arceus") ||
 	defender.item.endsWith(" Z") ||
+	defender.item === "Booster Energy" && ["Protosynthesis", "Quark Drive"].includes(defender.ability) ||
 	defender.item.endsWith("Mask") && defender.name.startsWith("Ogerpon-"));
 }
 
