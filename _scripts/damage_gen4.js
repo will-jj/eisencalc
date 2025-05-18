@@ -473,7 +473,7 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 	var berryMod = 1;
 	if (isFirstHit && getBerryResistType(defender.item) === moveType && (typeEffectiveness > 1 || moveType === "Normal") && attacker.ability !== "Unnerve") {
 		berryMod = 0.5;
-		description.defenderItem = defender.item;
+		description.defenderItem = defender.item + getFirstHitText(STRIKE_TEXT, move.hits);
 	}
 
 	var damage = [];

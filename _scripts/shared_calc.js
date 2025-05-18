@@ -879,6 +879,10 @@ $(".set-selector").bind("change", function () {
 			setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
 			moveObj.change();
 		}
+		if (gen == 8 && pokemonName in setdex && setName in setdex[pokemonName]) {
+			// all AI mons have a dynamax level of 0
+			pokeObj.find(".max-level").val(0);
+		}
 		if (set.startDmax && gen == 8) {
 			pokeObj.find(".max").prop("checked", true);
 		} else if (set.startTera && gen == 9) {

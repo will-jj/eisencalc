@@ -125,7 +125,8 @@ function MassPokemon(speciesName, setName) {
 		// ~~ is used as a faster Math.floor() for positive numbers
 		massPoke.maxHP = ~~((pokemon.bs.hp * 2 + HPIVs + ~~(massPoke.HPEVs / 4)) * massPoke.level / 100) + massPoke.level + 10;
 		if (set.startDmax) {
-			massPoke.maxHP *= 2;
+			// assume a dynamax level of 0 for all AI mons
+			massPoke.maxHP = ~~(massPoke.maxHP * 1.5);
 		}
 	}
 	// curHP
