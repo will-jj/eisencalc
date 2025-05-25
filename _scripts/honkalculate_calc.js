@@ -344,7 +344,7 @@ $(".gen").change(function () {
 		thresholdLabel = "40+";
 		break;
 	case 8:
-		defaultChecked = "#Tower";
+		defaultChecked = "#RS";
 		break;
 	case 80:
 	case 9:
@@ -363,24 +363,24 @@ $(".gen").change(function () {
 	}
 });
 
+const squaredRightCorner = { "border-top-right-radius": 0, "border-bottom-right-radius": 0 };
+const roundedRightCorner = { "border-top-right-radius": "8px", "border-bottom-right-radius": "8px" };
+const squaredLeftCorner = { "border-top-left-radius": 0, "border-bottom-left-radius": 0 };
+const roundedLeftCorner = { "border-top-left-radius": "8px", "border-bottom-left-radius": "8px" };
 function adjustTierBorderRadius() {
 	 // Used to round the tier buttons to appear like the gens or mode buttons
-	var squaredRightCorner = {"border-top-right-radius": 0, "border-bottom-right-radius": 0};
-	var roundedRightCorner = {"border-top-right-radius": "8px", "border-bottom-right-radius": "8px"};
-	var squaredLeftCorner = {"border-top-left-radius": 0, "border-bottom-left-radius": 0};
-	var roundedLeftCorner = {"border-top-left-radius": "8px", "border-bottom-left-radius": "8px"};
-	if (gen == 4) {
+	if (gen == 3 || gen == 5 || gen == 6 || gen == 7) {
+		$("#All").next("label").css(squaredRightCorner);
+		$("#threshold").next("label").css(roundedRightCorner);
+	}
+	else if (gen == 4) {
 		$("#All").next("label").css(squaredRightCorner);
 		$("#threshold").next("label").css(squaredRightCorner);
 		$("#HallR10").next("label").css(roundedRightCorner);
 	}
-	else if (gen == 3 || gen == 5 || gen == 6 || gen == 7) {
-		$("#All").next("label").css(squaredRightCorner);
-		$("#threshold").next("label").css(roundedRightCorner);
-	}
 	else if (gen == 8) {
-		$("#Tower").next("label").css(roundedLeftCorner);
-		$("#RS").next("label").css(roundedRightCorner);
+		$("#RS").next("label").css(roundedLeftCorner);
+		$("#Tower").next("label").css(roundedRightCorner);
 	}
 	else if (gen == 80) {
 		$("#All").next("label").css(squaredRightCorner);
