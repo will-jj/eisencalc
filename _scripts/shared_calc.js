@@ -1905,6 +1905,7 @@ function getSetOptions() {
 	let customSetOptions = [];
 	Object.keys(pokedex).sort().forEach(function(pokeName) {
 		if (pokedex[pokeName].hasBaseForme) {
+			// do not do anything for additional formes
 			return;
 		}
 
@@ -1913,39 +1914,64 @@ function getSetOptions() {
 			"text": pokeName
 		});
 		if (pokeName in setdex) {
-			for (setName in setdex[pokeName]) {
-				setOptions.push({
-					"pokemon": pokeName, // string used in searches
-					"set": setName, // string that displays in the dropdown list
-					"text": pokeName + " (" + setName + ")", // string that displays in the selector
-					"id": pokeName + " (" + setName + ")"
-				});
-			}
+			Object.keys(setdex[pokeName]).sort(setOrderComparison).forEach(setName => {
+				setOptions.push(setOptionsObject(pokeName, setName));
+			});
 		}
 		if (pokeName in SETDEX_CUSTOM) {
-			for (setName in SETDEX_CUSTOM[pokeName]) {
-				customSetOptions.push({
-					"pokemon": pokeName,
-					"set": pokeName + " (" + setName + ")",
-					"text": pokeName + " (" + setName + ")",
-					"id": pokeName + " (" + setName + ")"
-				});
-			}
+			Object.keys(SETDEX_CUSTOM[pokeName]).sort().forEach(setName => {
+				setOption = setOptionsObject(pokeName, setName);
+				setOption.set = setOption.text; // the selectable text matches the display text
+				customSetOptions.push(setOption);
+			});
 		}
-		setOptions.push({
-			"pokemon": pokeName,
-			"set": BLANK_SET,
-			"text": pokeName + " (" + BLANK_SET + ")",
-			"id": pokeName + " (" + BLANK_SET + ")"
-		});
+		setOptions.push(setOptionsObject(pokeName, BLANK_SET));
 	});
 
 	if (customSetOptions.length > 0) {
-		customSetOptions.sort((a, b) => a.set < b.set ? -1 : (a.set > b.set ? 1 : 0));
 		setOptions = [{"pokemon": "", "text": "Custom Sets"}, ...customSetOptions, ...setOptions];
 	}
 
 	return setOptions;
+}
+
+function setOrderComparison(a, b) {
+	// Restricted Sparring sets display before other sets
+	if (gen == 8) {
+		if (a.endsWith("-RS")) {
+			return -1;
+		}
+		if (b.endsWith("-RS")) {
+			return 1;
+		}
+	}
+	// if the set is special, list it last, grouped with other paren sets (e.g. Leon's sets)
+	let bIncludesParen = b.includes("(");
+	if (a.includes("(")) {
+		if (bIncludesParen) {
+			return comparison(a, b);
+		}
+		return 1;
+	}
+	if (bIncludesParen) {
+		return -1;
+	}
+	// normal comparison
+	return comparison(a, b);
+}
+
+function comparison(a, b) {
+	return a < b ? -1 : (a > b ? 1 : 0);
+}
+
+function setOptionsObject(pokeName, setName) {
+	let text = pokeName + " (" + setName + ")";
+	return {
+		"pokemon": pokeName, // string used in searches
+		"set": setName, // string that displays in the dropdown list
+		"text": text, // string that displays in the selector
+		"id": text
+	};
 }
 
 function getSelectOptions(arr, sort, defaultIdx) {
