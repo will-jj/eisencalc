@@ -879,6 +879,10 @@ $(".set-selector").bind("change", function () {
 			setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
 			moveObj.change();
 		}
+		if (gen == 8 && pokemonName in setdex && setName in setdex[pokemonName]) {
+			// all AI mons have a dynamax level of 0
+			pokeObj.find(".max-level").val(0);
+		}
 		if (set.startDmax && gen == 8) {
 			pokeObj.find(".max").prop("checked", true);
 		} else if (set.startTera && gen == 9) {
@@ -1675,113 +1679,17 @@ function isFacilitySet(speciesName, setName) {
 	return false;
 }
 
-const IVS_GEN3 = [31, 21, 18, 15, 12, 9, 6, 3];
-const IVS_OTHER = [31, 27, 23, 19];
-
 var gen, pokedex, setdex, setdexAll, typeChart, moves, abilities, items, calculateAllMoves;
 var STATS = STATS_GSC;
 var calcHP = CALC_HP_ADV;
 var calcStat = CALC_STAT_ADV;
-var forumLink = "https://www.smogon.com/forums/forums/battle-facilities.697/";
 $(".gen").change(function () {
 	gen = ~~$(this).val();
-	switch (gen) {
-	case 3:
-		pokedex = POKEDEX_ADV;
-		setdex = SETDEX_EM;
-		typeChart = TYPE_CHART_GSC;
-		moves = MOVES_ADV;
-		items = ITEMS_ADV;
-		abilities = ABILITIES_ADV;
-		calculateAllMoves = CALCULATE_ALL_MOVES_ADV;
-		$(".autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_GEN3));
-		forumLink = "https://www.smogon.com/forums/threads/gen-iii-battle-frontier-discussion-and-records.3648697/";
-		break;
-	case 4:
-		pokedex = POKEDEX_DPP;
-		setdex = SETDEX_PHGSS;
-		typeChart = TYPE_CHART_GSC;
-		moves = MOVES_DPP;
-		items = ITEMS_DPP;
-		abilities = ABILITIES_DPP;
-		calculateAllMoves = CALCULATE_ALL_MOVES_PTHGSS;
-		forumLink = "https://www.smogon.com/forums/threads/4th-generation-battle-facilities-discussion-and-records.3663294/";
-		break;
-	case 5:
-		pokedex = POKEDEX_BW;
-		setdex = SETDEX_GEN5;
-		typeChart = TYPE_CHART_GSC;
-		moves = MOVES_BW;
-		items = ITEMS_BW;
-		abilities = ABILITIES_BW;
-		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		$("#autoivs-center #autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
-		forumLink = "https://www.smogon.com/forums/threads/black-white-battle-subway-records-now-with-gen-4-records.102593/";
-		break;
-	case 6:
-		pokedex = POKEDEX_XY;
-		setdex = SETDEX_GEN6;
-		typeChart = TYPE_CHART_XY;
-		moves = MOVES_XY;
-		items = ITEMS_XY;
-		abilities = ABILITIES_XY;
-		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		$("#autoivs-center #autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
-		forumLink = "https://www.smogon.com/forums/threads/battle-maison-discussion-records.3492706/";
-		break;
-	case 7:
-		$(".evo_img1").attr("src", "_images/eevee.png");
-		$(".evo_img2").attr("src", "_images/eevium.png");
-		pokedex = POKEDEX_SM;
-		setdex = SETDEX_GEN7;
-		typeChart = TYPE_CHART_XY;
-		moves = MOVES_SM;
-		items = ITEMS_SM;
-		abilities = ABILITIES_SM;
-		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		$("#autoivs-center #autoivs-select").find("option").remove().end().append(getSelectOptions(IVS_OTHER));
-		forumLink = "https://www.smogon.com/forums/threads/battle-tree-discussion-and-records.3587215/";
-		break;
-	case 8:
-		pokedex = POKEDEX_SS;
-		setdex = SETDEX_GEN8;
-		typeChart = TYPE_CHART_XY;
-		moves = MOVES_SS;
-		items = ITEMS_SS;
-		abilities = ABILITIES_SS;
-		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		forumLink = "https://www.smogon.com/forums/threads/swsh-battle-facilities-discussion-records.3656190/";
-		$("#startGimmick-label").text("Start Dynamaxed");
-		$("#startGimmick-label").prop("title", "This custom set starts Dynamaxed when loaded");
-		break;
-	case 80:
-		pokedex = POKEDEX_BDSP;
-		setdex = SETDEX_GEN80;
-		typeChart = TYPE_CHART_XY;
-		moves = MOVES_SS;
-		items = ITEMS_DPP;
-		abilities = ABILITIES_SS;
-		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		forumLink = "https://www.smogon.com/forums/threads/bdsp-battle-tower-discussion-records.3693739/";
-		break;
-	case 9:
-		$(".evo_img1").attr("src", "_images/dozo.png");
-		$(".evo_img2").attr("src", "_images/giri.png");
-		pokedex = POKEDEX_SV;
-		setdex = {};
-		typeChart = TYPE_CHART_XY;
-		moves = MOVES_SV;
-		items = ITEMS_SV;
-		abilities = ABILITIES_SV;
-		calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
-		forumLink = "https://www.smogon.com/forums/forums/battle-facilities.697/";
-		$("#startGimmick-label").text("Start Terastallized");
-		$("#startGimmick-label").prop("title", "This custom set starts Terastallized when loaded");
-	}
 	localStorage.setItem("selectedGen", gen);
+
+	setGenProperties();
 	$("#autolevel-title").text((gen == 4 ? "AI " : "") + "Auto-Level to:");
 	setdexAll = joinDexes([setdex, SETDEX_CUSTOM]);
-	$("#midimg").parent().prop("href", forumLink);
 	clearField();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
@@ -1808,6 +1716,101 @@ $(".gen").change(function () {
 	$(".set-selector").val(getSetOptions()[1].id); // load the first set after the unselectable species name
 	$(".set-selector").change();
 });
+const IV_LISTS = {
+	"IVS_GEN3": { ivs: [31, 21, 18, 15, 12, 9, 6, 3], select: ".autoivs-select" },
+	"IVS_OTHER": { ivs: [31, 27, 23, 19], select: "#autoivs-center #autoivs-select" }
+}
+
+const FORUM_LINK_DEFAULT = "https://www.smogon.com/forums/forums/battle-facilities.697/";
+function setGenProperties() {
+	typeChart = TYPE_CHART_XY;
+	calculateAllMoves = CALCULATE_ALL_MOVES_MODERN;
+	let gimmickType, plus2StatsPath1, plus2StatsPath2, ivList, forumLink;
+	if (gen == 3) {
+		pokedex = POKEDEX_ADV;
+		setdex = SETDEX_EM;
+		typeChart = TYPE_CHART_GSC;
+		moves = MOVES_ADV;
+		items = ITEMS_ADV;
+		abilities = ABILITIES_ADV;
+		calculateAllMoves = CALCULATE_ALL_MOVES_ADV;
+		ivList = IV_LISTS.IVS_GEN3;
+		forumLink = "https://www.smogon.com/forums/threads/gen-iii-battle-frontier-discussion-and-records.3648697/";
+	} else if (gen == 4) {
+		pokedex = POKEDEX_DPP;
+		setdex = SETDEX_PHGSS;
+		typeChart = TYPE_CHART_GSC;
+		moves = MOVES_DPP;
+		items = ITEMS_DPP;
+		abilities = ABILITIES_DPP;
+		calculateAllMoves = CALCULATE_ALL_MOVES_PTHGSS;
+		forumLink = "https://www.smogon.com/forums/threads/4th-generation-battle-facilities-discussion-and-records.3663294/";
+	} else if (gen == 5) {
+		pokedex = POKEDEX_BW;
+		setdex = SETDEX_GEN5;
+		typeChart = TYPE_CHART_GSC;
+		moves = MOVES_BW;
+		items = ITEMS_BW;
+		abilities = ABILITIES_BW;
+		ivList = IV_LISTS.IVS_OTHER;
+		forumLink = "https://www.smogon.com/forums/threads/black-white-battle-subway-records-now-with-gen-4-records.102593/";
+	} else if (gen == 6) {
+		pokedex = POKEDEX_XY;
+		setdex = SETDEX_GEN6;
+		moves = MOVES_XY;
+		items = ITEMS_XY;
+		abilities = ABILITIES_XY;
+		ivList = IV_LISTS.IVS_OTHER;
+		forumLink = "https://www.smogon.com/forums/threads/battle-maison-discussion-records.3492706/";
+	} else if (gen == 7) {
+		pokedex = POKEDEX_SM;
+		setdex = SETDEX_GEN7;
+		moves = MOVES_SM;
+		items = ITEMS_SM;
+		abilities = ABILITIES_SM;
+		ivList = IV_LISTS.IVS_OTHER;
+		plus2StatsPath1 = "_images/eevee.png";
+		plus2StatsPath2 = "_images/eevium.png";
+		forumLink = "https://www.smogon.com/forums/threads/battle-tree-discussion-and-records.3587215/";
+	} else if (gen == 8) {
+		pokedex = POKEDEX_SS;
+		setdex = SETDEX_GEN8;
+		moves = MOVES_SS;
+		items = ITEMS_SS;
+		abilities = ABILITIES_SS;
+		gimmickType = "Dynamaxed";
+		forumLink = "https://www.smogon.com/forums/threads/swsh-battle-facilities-discussion-records.3656190/";
+	} else if (gen == 80) {
+		pokedex = POKEDEX_BDSP;
+		setdex = SETDEX_GEN80;
+		moves = MOVES_SS;
+		items = ITEMS_DPP;
+		abilities = ABILITIES_SS;
+		forumLink = "https://www.smogon.com/forums/threads/bdsp-battle-tower-discussion-records.3693739/";
+	} else if (gen == 9) {
+		pokedex = POKEDEX_SV;
+		setdex = {};
+		moves = MOVES_SV;
+		items = ITEMS_SV;
+		abilities = ABILITIES_SV;
+		gimmickType = "Terastallized";
+		plus2StatsPath1 = "_images/dozo.png";
+		plus2StatsPath2 = "_images/giri.png";
+	}
+
+	if (gimmickType) {
+		$("#startGimmick-label").text("Start " + gimmickType);
+		$("#startGimmick-label").prop("title", "This custom set starts " + gimmickType + " when loaded");
+	}
+	if (plus2StatsPath1 && plus2StatsPath2) {
+		$(".evo_img1").attr("src", plus2StatsPath1);
+		$(".evo_img2").attr("src", plus2StatsPath2);
+	}
+	if (ivList) {
+		$(ivList.select).find("option").remove().end().append(getSelectOptions(ivList.ivs));
+	}
+	$("#midimg").parent().prop("href", forumLink ? forumLink : FORUM_LINK_DEFAULT);
+}
 
 function joinDexes(components) {
 	var joinedDex = {};
@@ -1902,6 +1905,7 @@ function getSetOptions() {
 	let customSetOptions = [];
 	Object.keys(pokedex).sort().forEach(function(pokeName) {
 		if (pokedex[pokeName].hasBaseForme) {
+			// do not do anything for additional formes
 			return;
 		}
 
@@ -1910,39 +1914,64 @@ function getSetOptions() {
 			"text": pokeName
 		});
 		if (pokeName in setdex) {
-			for (setName in setdex[pokeName]) {
-				setOptions.push({
-					"pokemon": pokeName, // string used in searches
-					"set": setName, // string that displays in the dropdown list
-					"text": pokeName + " (" + setName + ")", // string that displays in the selector
-					"id": pokeName + " (" + setName + ")"
-				});
-			}
+			Object.keys(setdex[pokeName]).sort(setOrderComparison).forEach(setName => {
+				setOptions.push(setOptionsObject(pokeName, setName));
+			});
 		}
 		if (pokeName in SETDEX_CUSTOM) {
-			for (setName in SETDEX_CUSTOM[pokeName]) {
-				customSetOptions.push({
-					"pokemon": pokeName,
-					"set": pokeName + " (" + setName + ")",
-					"text": pokeName + " (" + setName + ")",
-					"id": pokeName + " (" + setName + ")"
-				});
-			}
+			Object.keys(SETDEX_CUSTOM[pokeName]).sort().forEach(setName => {
+				setOption = setOptionsObject(pokeName, setName);
+				setOption.set = setOption.text; // the selectable text matches the display text
+				customSetOptions.push(setOption);
+			});
 		}
-		setOptions.push({
-			"pokemon": pokeName,
-			"set": BLANK_SET,
-			"text": pokeName + " (" + BLANK_SET + ")",
-			"id": pokeName + " (" + BLANK_SET + ")"
-		});
+		setOptions.push(setOptionsObject(pokeName, BLANK_SET));
 	});
 
 	if (customSetOptions.length > 0) {
-		customSetOptions.sort((a, b) => a.set < b.set ? -1 : (a.set > b.set ? 1 : 0));
 		setOptions = [{"pokemon": "", "text": "Custom Sets"}, ...customSetOptions, ...setOptions];
 	}
 
 	return setOptions;
+}
+
+function setOrderComparison(a, b) {
+	// Restricted Sparring sets display before other sets
+	if (gen == 8) {
+		if (a.endsWith("-RS")) {
+			return -1;
+		}
+		if (b.endsWith("-RS")) {
+			return 1;
+		}
+	}
+	// if the set is special, list it last, grouped with other paren sets (e.g. Leon's sets)
+	let bIncludesParen = b.includes("(");
+	if (a.includes("(")) {
+		if (bIncludesParen) {
+			return comparison(a, b);
+		}
+		return 1;
+	}
+	if (bIncludesParen) {
+		return -1;
+	}
+	// normal comparison
+	return comparison(a, b);
+}
+
+function comparison(a, b) {
+	return a < b ? -1 : (a > b ? 1 : 0);
+}
+
+function setOptionsObject(pokeName, setName) {
+	let text = pokeName + " (" + setName + ")";
+	return {
+		"pokemon": pokeName, // string used in searches
+		"set": setName, // string that displays in the dropdown list
+		"text": text, // string that displays in the selector
+		"id": text
+	};
 }
 
 function getSelectOptions(arr, sort, defaultIdx) {
@@ -1965,57 +1994,14 @@ function getSelectOptions(arr, sort, defaultIdx) {
 }
 
 $(document).ready(function () {
-	if (localStorage.getItem("selectedGen") != null) {
-		switch (localStorage.getItem("selectedGen") + "") {
-
-		case "3":
-			$("#gen3").prop("checked", true);
-			$("#gen3").change();
-			break;
-
-		case "4":
-			$("#gen4").prop("checked", true);
-			$("#gen4").change();
-			break;
-
-		case "5":
-			$("#gen5").prop("checked", true);
-			$("#gen5").change();
-			break;
-
-		case "6":
-			$("#gen6").prop("checked", true);
-			$("#gen6").change();
-			break;
-
-		case "7":
-			$("#gen7").prop("checked", true);
-			$("#gen7").change();
-			break;
-
-		case "8":
-			$("#gen8").prop("checked", true);
-			$("#gen8").change();
-			break;
-				
-		case "80": // BDSP
-			$("#gen80").prop("checked", true);
-			$("#gen80").change();
-			break;
-				
-		case "9":
-			$("#gen9").prop("checked", true);
-			$("#gen9").change();
-			break;
-
-		default:
-			$("#gen9").prop("checked", true);
-			$("#gen9").change();
-		}
-	} else {
-		$("#gen9").prop("checked", true);
-		$("#gen9").change();
+	let localGen = localStorage.getItem("selectedGen");
+	let latestGenJQuery = $(".gen").last();
+	let genJQuery = localGen == null ? latestGenJQuery : $("#gen" + localGen);
+	if (genJQuery.length == 0) {
+		genJQuery = latestGenJQuery;
 	}
+	genJQuery.prop("checked", true);
+	genJQuery.change();
 	//$(".terrain-trigger").bind("change keyup", getTerrainEffects);
 	//$(".calc-trigger").bind("change keyup", calculate);
 	$(".set-selector").select2({
