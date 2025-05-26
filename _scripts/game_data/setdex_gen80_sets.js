@@ -16562,7 +16562,7 @@ var SETDEX_GEN80 = {
       "item": "White Herb",
       "tier": "SMDM"
     },
-    "Roserade-3": {
+    "Roserade-3 (Gardenia)": {
       "level": 50,
       "evs": {
         "hp": 4,
@@ -16580,7 +16580,8 @@ var SETDEX_GEN80 = {
       ],
       "nature": "Timid",
       "ability": "Poison Point",
-      "item": "Focus Sash"
+      "item": "White Herb",
+      "tier": "SM"
     },
     "Roserade-4 (Gardenia)": {
       "level": 50,
