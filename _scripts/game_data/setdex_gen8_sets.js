@@ -328,7 +328,7 @@ var SETDEX_GEN8 =
         "Iron Head"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Cinderace-4": {
@@ -424,7 +424,7 @@ var SETDEX_GEN8 =
         "Iron Head"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Cinderace-8": {
@@ -496,7 +496,7 @@ var SETDEX_GEN8 =
         "Iron Head"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Cinderace-4 (Leon)": {
@@ -775,6 +775,30 @@ var SETDEX_GEN8 =
     }
   },
   "Orbeetle": {
+    "Orbeetle-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "sa": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Trick Room",
+        "Calm Mind",
+        "Psychic",
+        "Shadow Ball"
+      ],
+      "nature": "Quiet",
+      "item": "Room Service",
+      "tier": "RS"
+    },
     "Orbeetle-1": {
       "level": 50,
       "evs": {
@@ -870,12 +894,14 @@ var SETDEX_GEN8 =
       "nature": "Calm",
       "item": "Weakness Policy",
       "tier": "Tower"
-    },
-    "Orbeetle-RS": {
+    }
+  },
+  "Butterfree": {
+    "Butterfree-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "sa": 252
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -886,17 +912,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Trick Room",
-        "Calm Mind",
-        "Psychic",
-        "Shadow Ball"
+        "Sleep Powder",
+        "Substitute",
+        "Quiver Dance",
+        "Hurricane"
       ],
-      "nature": "Quiet",
-      "item": "Room Service",
+      "nature": "Timid",
+      "item": "Leftovers",
       "tier": "RS"
-    }
-  },
-  "Butterfree": {
+    },
     "Butterfree-1": {
       "level": 50,
       "evs": {
@@ -992,30 +1016,6 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Focus Sash",
       "tier": "Tower"
-    },
-    "Butterfree-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sp": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Sleep Powder",
-        "Substitute",
-        "Quiver Dance",
-        "Hurricane"
-      ],
-      "nature": "Timid",
-      "item": "Leftovers",
-      "tier": "RS"
     }
   },
   "Vikavolt": {
@@ -1311,6 +1311,30 @@ var SETDEX_GEN8 =
     }
   },
   "Corviknight": {
+    "Corviknight-RS": {
+      "level": 50,
+      "evs": {
+        "df": 252,
+        "sa": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Steel Beam",
+        "Metal Sound",
+        "Taunt",
+        "Spite"
+      ],
+      "nature": "Bold",
+      "item": "Petaya Berry",
+      "tier": "RS"
+    },
     "Corviknight-1": {
       "level": 50,
       "evs": {
@@ -1406,12 +1430,14 @@ var SETDEX_GEN8 =
       "nature": "Jolly",
       "item": "Salac Berry",
       "tier": "Tower"
-    },
-    "Corviknight-RS": {
+    }
+  },
+  "Greedent": {
+    "Greedent-RS": {
       "level": 50,
       "evs": {
-        "df": 252,
-        "sa": 252
+        "hp": 252,
+        "df": 252
       },
       "ivs": {
         "hp": 15,
@@ -1422,17 +1448,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Steel Beam",
-        "Metal Sound",
-        "Taunt",
-        "Spite"
+        "Stuff Cheeks",
+        "Belch",
+        "Thief",
+        "Hyper Beam"
       ],
-      "nature": "Bold",
+      "nature": "Modest",
       "item": "Petaya Berry",
       "tier": "RS"
-    }
-  },
-  "Greedent": {
+    },
     "Greedent-1": {
       "level": 50,
       "evs": {
@@ -1528,30 +1552,6 @@ var SETDEX_GEN8 =
       "nature": "Relaxed",
       "item": "White Herb",
       "tier": "Tower"
-    },
-    "Greedent-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "df": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Stuff Cheeks",
-        "Belch",
-        "Thief",
-        "Hyper Beam"
-      ],
-      "nature": "Modest",
-      "item": "Petaya Berry",
-      "tier": "RS"
     }
   },
   "Unfezant": {
@@ -1624,7 +1624,7 @@ var SETDEX_GEN8 =
         "Defog"
       ],
       "nature": "Timid",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Unfezant-4": {
@@ -1653,6 +1653,30 @@ var SETDEX_GEN8 =
     }
   },
   "Thievul": {
+    "Thievul-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Torment",
+        "Knock Off",
+        "Burning Jealousy",
+        "Parting Shot"
+      ],
+      "nature": "Modest",
+      "item": "Red Card",
+      "tier": "RS"
+    },
     "Thievul-1": {
       "level": 50,
       "evs": {
@@ -1698,7 +1722,7 @@ var SETDEX_GEN8 =
         "Ice Fang"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Thievul-3": {
@@ -1794,7 +1818,7 @@ var SETDEX_GEN8 =
         "Ice Fang"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Thievul-7": {
@@ -1844,8 +1868,10 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Assault Vest",
       "tier": "Tower"
-    },
-    "Thievul-RS": {
+    }
+  },
+  "Obstagoon": {
+    "Obstagoon-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
@@ -1860,17 +1886,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Torment",
-        "Knock Off",
-        "Burning Jealousy",
-        "Parting Shot"
+        "Obstruct",
+        "Parting Shot",
+        "Lash Out",
+        "Counter"
       ],
-      "nature": "Modest",
-      "item": "Red Card",
+      "nature": "Jolly",
+      "item": "Kee Berry",
       "tier": "RS"
-    }
-  },
-  "Obstagoon": {
+    },
     "Obstagoon-1": {
       "level": 50,
       "evs": {
@@ -1966,12 +1990,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Obstagoon-RS": {
+    }
+  },
+  "Dubwool": {
+    "Dubwool-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "sp": 252
+        "df": 252
       },
       "ivs": {
         "hp": 15,
@@ -1982,17 +2008,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Obstruct",
-        "Parting Shot",
-        "Lash Out",
-        "Counter"
+        "Cotton Guard",
+        "Copycat",
+        "Last Resort",
+        "Reversal"
       ],
-      "nature": "Jolly",
-      "item": "Kee Berry",
+      "nature": "Bold",
+      "item": "Luminous Moss",
       "tier": "RS"
-    }
-  },
-  "Dubwool": {
+    },
     "Dubwool-1": {
       "level": 50,
       "evs": {
@@ -2088,30 +2112,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Leftovers",
       "tier": "Tower"
-    },
-    "Dubwool-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "df": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Cotton Guard",
-        "Copycat",
-        "Last Resort",
-        "Reversal"
-      ],
-      "nature": "Bold",
-      "item": "Luminous Moss",
-      "tier": "RS"
     }
   },
   "Ludicolo": {
@@ -2160,7 +2160,7 @@ var SETDEX_GEN8 =
         "Bullet Seed"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Ludicolo-3": {
@@ -2311,6 +2311,30 @@ var SETDEX_GEN8 =
     }
   },
   "Drednaw": {
+    "Drednaw-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "at": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Skitter Smack",
+        "Jaw Lock",
+        "Skull Bash",
+        "Dragon Tail"
+      ],
+      "nature": "Adamant",
+      "item": "Expert Belt",
+      "tier": "RS"
+    },
     "Drednaw-1": {
       "level": 50,
       "evs": {
@@ -2406,30 +2430,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Expert Belt",
       "tier": "Tower"
-    },
-    "Drednaw-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "at": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Skitter Smack",
-        "Jaw Lock",
-        "Skull Bash",
-        "Dragon Tail"
-      ],
-      "nature": "Adamant",
-      "item": "Expert Belt",
-      "tier": "RS"
     }
   },
   "Liepard": {
@@ -2531,6 +2531,30 @@ var SETDEX_GEN8 =
     }
   },
   "Boltund": {
+    "Boltund-RS": {
+      "level": 50,
+      "evs": {
+        "at": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Electrify",
+        "Wild Charge",
+        "Fire Fang",
+        "Crunch"
+      ],
+      "nature": "Jolly",
+      "item": "Cell Battery",
+      "tier": "RS"
+    },
     "Boltund-1": {
       "level": 50,
       "evs": {
@@ -2600,7 +2624,7 @@ var SETDEX_GEN8 =
         "Thunder Fang"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Boltund-4": {
@@ -2696,7 +2720,7 @@ var SETDEX_GEN8 =
         "Thunder Fang"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Boltund-8": {
@@ -2722,30 +2746,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Boltund-RS": {
-      "level": 50,
-      "evs": {
-        "at": 252,
-        "sp": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Electrify",
-        "Wild Charge",
-        "Fire Fang",
-        "Crunch"
-      ],
-      "nature": "Jolly",
-      "item": "Cell Battery",
-      "tier": "RS"
     }
   },
   "Diggersby": {
@@ -2847,6 +2847,30 @@ var SETDEX_GEN8 =
     }
   },
   "Cinccino": {
+    "Cinccino-RS": {
+      "level": 50,
+      "evs": {
+        "at": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Bullet Seed",
+        "Rock Blast",
+        "Tail Slap",
+        "Triple Axel"
+      ],
+      "nature": "Jolly",
+      "item": "Metronome",
+      "tier": "RS"
+    },
     "Cinccino-1": {
       "level": 50,
       "evs": {
@@ -2940,32 +2964,8 @@ var SETDEX_GEN8 =
         "Knock Off"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
-    },
-    "Cinccino-RS": {
-      "level": 50,
-      "evs": {
-        "at": 252,
-        "sp": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Bullet Seed",
-        "Rock Blast",
-        "Tail Slap",
-        "Triple Axel"
-      ],
-      "nature": "Jolly",
-      "item": "Metronome",
-      "tier": "RS"
     }
   },
   "Tsareena": {
@@ -3067,6 +3067,30 @@ var SETDEX_GEN8 =
     }
   },
   "Vileplume": {
+    "Vileplume-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "sd": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Corrosive Gas",
+        "Giga Drain",
+        "Moonblast",
+        "Strength Sap"
+      ],
+      "nature": "Gentle",
+      "item": "Big Root",
+      "tier": "RS"
+    },
     "Vileplume-1": {
       "level": 50,
       "evs": {
@@ -3162,30 +3186,6 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Quick Claw",
       "tier": "Tower"
-    },
-    "Vileplume-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sd": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Corrosive Gas",
-        "Giga Drain",
-        "Moonblast",
-        "Strength Sap"
-      ],
-      "nature": "Gentle",
-      "item": "Big Root",
-      "tier": "RS"
     }
   },
   "Bellossom": {
@@ -3385,6 +3385,30 @@ var SETDEX_GEN8 =
     }
   },
   "Pelipper": {
+    "Pelipper-RS": {
+      "level": 50,
+      "evs": {
+        "sa": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Stockpile",
+        "Swallow",
+        "Spit Up",
+        "Hurricane"
+      ],
+      "nature": "Modest",
+      "item": "Sharp Beak",
+      "tier": "RS"
+    },
     "Pelipper-1": {
       "level": 50,
       "evs": {
@@ -3406,7 +3430,7 @@ var SETDEX_GEN8 =
         "Icy Wind"
       ],
       "nature": "Timid",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Pelipper-2": {
@@ -3480,12 +3504,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Wacan Berry",
       "tier": "Tower"
-    },
-    "Pelipper-RS": {
+    }
+  },
+  "Galvantula": {
+    "Galvantula-RS": {
       "level": 50,
       "evs": {
-        "sa": 252,
-        "sp": 252
+        "at": 252,
+        "sa": 252
       },
       "ivs": {
         "hp": 15,
@@ -3496,17 +3522,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Stockpile",
-        "Swallow",
-        "Spit Up",
-        "Hurricane"
+        "Thunder",
+        "Sticky Web",
+        "Sucker Punch",
+        "Bug Bite"
       ],
-      "nature": "Modest",
-      "item": "Sharp Beak",
+      "nature": "Hardy",
+      "item": "Utility Umbrella",
       "tier": "RS"
-    }
-  },
-  "Galvantula": {
+    },
     "Galvantula-1": {
       "level": 50,
       "evs": {
@@ -3602,30 +3626,6 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Galvantula-RS": {
-      "level": 50,
-      "evs": {
-        "at": 252,
-        "sa": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Thunder",
-        "Sticky Web",
-        "Sucker Punch",
-        "Bug Bite"
-      ],
-      "nature": "Hardy",
-      "item": "Utility Umbrella",
-      "tier": "RS"
     }
   },
   "Manectric": {
@@ -3923,6 +3923,30 @@ var SETDEX_GEN8 =
     }
   },
   "Vanilluxe": {
+    "Vanilluxe-RS": {
+      "level": 50,
+      "evs": {
+        "sa": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Acid Armor",
+        "Ice Beam",
+        "Light Screen",
+        "Flash Cannon"
+      ],
+      "nature": "Hasty",
+      "item": "Never-Melt Ice",
+      "tier": "RS"
+    },
     "Vanilluxe-1": {
       "level": 50,
       "evs": {
@@ -4018,12 +4042,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Assault Vest",
       "tier": "Tower"
-    },
-    "Vanilluxe-RS": {
+    }
+  },
+  "Mamoswine": {
+    "Mamoswine-RS": {
       "level": 50,
       "evs": {
-        "sa": 252,
-        "sp": 252
+        "hp": 252,
+        "sa": 252
       },
       "ivs": {
         "hp": 15,
@@ -4034,17 +4060,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Acid Armor",
+        "Icy Wind",
+        "Amnesia",
         "Ice Beam",
-        "Light Screen",
-        "Flash Cannon"
+        "Earth Power"
       ],
-      "nature": "Hasty",
-      "item": "Never-Melt Ice",
+      "nature": "Timid",
+      "item": "Wise Glasses",
       "tier": "RS"
-    }
-  },
-  "Mamoswine": {
+    },
     "Mamoswine-1": {
       "level": 50,
       "evs": {
@@ -4140,30 +4164,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Assault Vest",
       "tier": "Tower"
-    },
-    "Mamoswine-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sa": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Icy Wind",
-        "Amnesia",
-        "Ice Beam",
-        "Earth Power"
-      ],
-      "nature": "Timid",
-      "item": "Wise Glasses",
-      "tier": "RS"
     }
   },
   "Glalie": {
@@ -4188,7 +4188,7 @@ var SETDEX_GEN8 =
         "Sleep Talk"
       ],
       "nature": "Modest",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Glalie-2": {
@@ -4265,6 +4265,30 @@ var SETDEX_GEN8 =
     }
   },
   "Froslass": {
+    "Froslass-RS": {
+      "level": 50,
+      "evs": {
+        "at": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Will-O-Wisp",
+        "Triple Axel",
+        "Poltergeist",
+        "Draining Kiss"
+      ],
+      "nature": "Jolly",
+      "item": "Lum Berry",
+      "tier": "RS"
+    },
     "Froslass-1": {
       "level": 50,
       "evs": {
@@ -4360,30 +4384,6 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Icy Rock",
       "tier": "Tower"
-    },
-    "Froslass-RS": {
-      "level": 50,
-      "evs": {
-        "at": 252,
-        "sp": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Will-O-Wisp",
-        "Triple Axel",
-        "Poltergeist",
-        "Draining Kiss"
-      ],
-      "nature": "Jolly",
-      "item": "Lum Berry",
-      "tier": "RS"
     }
   },
   "Claydol": {
@@ -4583,6 +4583,30 @@ var SETDEX_GEN8 =
     }
   },
   "Crustle": {
+    "Crustle-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "df": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Heavy Slam",
+        "Body Press",
+        "Iron Defense",
+        "Sandstorm"
+      ],
+      "nature": "Impish",
+      "item": "Smooth Rock",
+      "tier": "RS"
+    },
     "Crustle-1": {
       "level": 50,
       "evs": {
@@ -4678,12 +4702,14 @@ var SETDEX_GEN8 =
       "nature": "Jolly",
       "item": "Salac Berry",
       "tier": "Tower"
-    },
-    "Crustle-RS": {
+    }
+  },
+  "Golurk": {
+    "Golurk-RS": {
       "level": 50,
       "evs": {
-        "hp": 252,
-        "df": 252
+        "at": 252,
+        "sd": 252
       },
       "ivs": {
         "hp": 15,
@@ -4694,17 +4720,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Heavy Slam",
-        "Body Press",
-        "Iron Defense",
-        "Sandstorm"
+        "Phantom Force",
+        "Dynamic Punch",
+        "Fly",
+        "Dig"
       ],
-      "nature": "Impish",
-      "item": "Smooth Rock",
+      "nature": "Adamant",
+      "item": "Life Orb",
       "tier": "RS"
-    }
-  },
-  "Golurk": {
+    },
     "Golurk-1": {
       "level": 50,
       "evs": {
@@ -4800,11 +4824,13 @@ var SETDEX_GEN8 =
       "nature": "Jolly",
       "item": "Choice Scarf",
       "tier": "Tower"
-    },
-    "Golurk-RS": {
+    }
+  },
+  "Musharna": {
+    "Musharna-RS": {
       "level": 50,
       "evs": {
-        "at": 252,
+        "hp": 252,
         "sd": 252
       },
       "ivs": {
@@ -4816,17 +4842,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Phantom Force",
-        "Dynamic Punch",
-        "Fly",
-        "Dig"
+        "Psychic Terrain",
+        "Expanding Force",
+        "Trick Room",
+        "Yawn"
       ],
-      "nature": "Adamant",
-      "item": "Life Orb",
+      "nature": "Bold",
+      "item": "Sitrus Berry",
       "tier": "RS"
-    }
-  },
-  "Musharna": {
+    },
     "Musharna-1": {
       "level": 50,
       "evs": {
@@ -4922,30 +4946,6 @@ var SETDEX_GEN8 =
       "nature": "Quiet",
       "item": "Weakness Policy",
       "tier": "Tower"
-    },
-    "Musharna-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sd": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Psychic Terrain",
-        "Expanding Force",
-        "Trick Room",
-        "Yawn"
-      ],
-      "nature": "Bold",
-      "item": "Sitrus Berry",
-      "tier": "RS"
     }
   },
   "Xatu": {
@@ -5092,7 +5092,7 @@ var SETDEX_GEN8 =
         "Stomp"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Bewear-3": {
@@ -5145,6 +5145,30 @@ var SETDEX_GEN8 =
     }
   },
   "Abomasnow": {
+    "Abomasnow-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "at": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Ice Punch",
+        "Wood Hammer",
+        "Ice Shard",
+        "Ingrain"
+      ],
+      "nature": "Adamant",
+      "item": "Miracle Seed",
+      "tier": "RS"
+    },
     "Abomasnow-1": {
       "level": 50,
       "evs": {
@@ -5240,12 +5264,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "White Herb",
       "tier": "Tower"
-    },
-    "Abomasnow-RS": {
+    }
+  },
+  "Kingler": {
+    "Kingler-RS": {
       "level": 50,
       "evs": {
-        "hp": 252,
-        "at": 252
+        "at": 252,
+        "df": 252
       },
       "ivs": {
         "hp": 15,
@@ -5256,17 +5282,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Ice Punch",
-        "Wood Hammer",
-        "Ice Shard",
-        "Ingrain"
+        "High Horsepower",
+        "Crabhammer",
+        "X-Scissor",
+        "Agility"
       ],
       "nature": "Adamant",
-      "item": "Miracle Seed",
+      "item": "Wacan Berry",
       "tier": "RS"
-    }
-  },
-  "Kingler": {
+    },
     "Kingler-1": {
       "level": 50,
       "evs": {
@@ -5362,12 +5386,14 @@ var SETDEX_GEN8 =
       "nature": "Jolly",
       "item": "Razor Fang",
       "tier": "Tower"
-    },
-    "Kingler-RS": {
+    }
+  },
+  "Quagsire": {
+    "Quagsire-RS": {
       "level": 50,
       "evs": {
-        "at": 252,
-        "df": 252
+        "hp": 252,
+        "sd": 252
       },
       "ivs": {
         "hp": 15,
@@ -5378,17 +5404,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "High Horsepower",
-        "Crabhammer",
-        "X-Scissor",
-        "Agility"
+        "Earthquake",
+        "Aqua Tail",
+        "Power-Up Punch",
+        "Yawn"
       ],
-      "nature": "Adamant",
-      "item": "Wacan Berry",
+      "nature": "Careful",
+      "item": "Leftovers",
       "tier": "RS"
-    }
-  },
-  "Quagsire": {
+    },
     "Quagsire-1": {
       "level": 50,
       "evs": {
@@ -5484,12 +5508,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Quick Claw",
       "tier": "Tower"
-    },
-    "Quagsire-RS": {
+    }
+  },
+  "Crawdaunt": {
+    "Crawdaunt-RS": {
       "level": 50,
       "evs": {
-        "hp": 252,
-        "sd": 252
+        "at": 252,
+        "df": 252
       },
       "ivs": {
         "hp": 15,
@@ -5500,17 +5526,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Earthquake",
-        "Aqua Tail",
-        "Power-Up Punch",
-        "Yawn"
+        "Knock Off",
+        "Crabhammer",
+        "Brick Break",
+        "Rock Tomb"
       ],
-      "nature": "Careful",
-      "item": "Leftovers",
+      "nature": "Adamant",
+      "item": "Assault Vest",
       "tier": "RS"
-    }
-  },
-  "Crawdaunt": {
+    },
     "Crawdaunt-1": {
       "level": 50,
       "evs": {
@@ -5606,30 +5630,6 @@ var SETDEX_GEN8 =
       "nature": "Jolly",
       "item": "Choice Scarf",
       "tier": "Tower"
-    },
-    "Crawdaunt-RS": {
-      "level": 50,
-      "evs": {
-        "at": 252,
-        "df": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Knock Off",
-        "Crabhammer",
-        "Brick Break",
-        "Rock Tomb"
-      ],
-      "nature": "Adamant",
-      "item": "Assault Vest",
-      "tier": "RS"
     }
   },
   "Ninjask": {
@@ -5850,7 +5850,7 @@ var SETDEX_GEN8 =
         "Rock Slide"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Hitmonlee-2": {
@@ -6221,6 +6221,30 @@ var SETDEX_GEN8 =
     }
   },
   "Klinklang": {
+    "Klinklang-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "at": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Shift Gear",
+        "Wild Charge",
+        "Gear Grind",
+        "Power Gem"
+      ],
+      "nature": "Adamant",
+      "item": "Lum Berry",
+      "tier": "RS"
+    },
     "Klinklang-1": {
       "level": 50,
       "evs": {
@@ -6316,12 +6340,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Klinklang-RS": {
+    }
+  },
+  "Vespiquen": {
+    "Vespiquen-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "at": 252
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -6332,17 +6358,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Shift Gear",
-        "Wild Charge",
-        "Gear Grind",
-        "Power Gem"
+        "Toxic Spikes",
+        "U-turn",
+        "Venoshock",
+        "Thief"
       ],
-      "nature": "Adamant",
-      "item": "Lum Berry",
+      "nature": "Hardy",
+      "item": "Red Card",
       "tier": "RS"
-    }
-  },
-  "Vespiquen": {
+    },
     "Vespiquen-1": {
       "level": 50,
       "evs": {
@@ -6534,30 +6558,6 @@ var SETDEX_GEN8 =
       "nature": "Timid",
       "item": "Quick Claw",
       "tier": "Tower"
-    },
-    "Vespiquen-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sp": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Toxic Spikes",
-        "U-turn",
-        "Venoshock",
-        "Thief"
-      ],
-      "nature": "Hardy",
-      "item": "Red Card",
-      "tier": "RS"
     }
   },
   "Bronzong": {
@@ -6659,6 +6659,30 @@ var SETDEX_GEN8 =
     }
   },
   "Gardevoir": {
+    "Gardevoir-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "sa": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Psychic Terrain",
+        "Psychic",
+        "Mystical Fire",
+        "Grudge"
+      ],
+      "nature": "Modest",
+      "item": "Psychic Seed",
+      "tier": "RS"
+    },
     "Gardevoir-1": {
       "level": 50,
       "evs": {
@@ -6850,12 +6874,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Gardevoir-RS": {
+    }
+  },
+  "Gallade": {
+    "Gallade-RS": {
       "level": 50,
       "evs": {
-        "hp": 252,
-        "sa": 252
+        "at": 252,
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -6866,17 +6892,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Psychic Terrain",
-        "Psychic",
-        "Mystical Fire",
-        "Grudge"
+        "Psycho Cut",
+        "Aerial Ace",
+        "Swords Dance",
+        "Leaf Blade"
       ],
-      "nature": "Modest",
-      "item": "Psychic Seed",
+      "nature": "Adamant",
+      "item": "Cell Battery",
       "tier": "RS"
-    }
-  },
-  "Gallade": {
+    },
     "Gallade-1": {
       "level": 50,
       "evs": {
@@ -6972,12 +6996,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Eject Pack",
       "tier": "Tower"
-    },
-    "Gallade-RS": {
+    }
+  },
+  "Drifblim": {
+    "Drifblim-RS": {
       "level": 50,
       "evs": {
-        "at": 252,
-        "sp": 252
+        "hp": 252,
+        "sa": 252
       },
       "ivs": {
         "hp": 15,
@@ -6988,17 +7014,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Psycho Cut",
-        "Aerial Ace",
-        "Swords Dance",
-        "Leaf Blade"
+        "Trick",
+        "Tailwind",
+        "Hex",
+        "Thunderbolt"
       ],
-      "nature": "Adamant",
-      "item": "Cell Battery",
+      "nature": "Calm",
+      "item": "Flame Orb",
       "tier": "RS"
-    }
-  },
-  "Drifblim": {
+    },
     "Drifblim-1": {
       "level": 50,
       "evs": {
@@ -7094,12 +7118,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Flame Orb",
       "tier": "Tower"
-    },
-    "Drifblim-RS": {
+    }
+  },
+  "Eldegoss": {
+    "Eldegoss-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "sa": 252
+        "sd": 252
       },
       "ivs": {
         "hp": 15,
@@ -7110,17 +7136,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Trick",
-        "Tailwind",
-        "Hex",
-        "Thunderbolt"
+        "Worry Seed",
+        "Hyper Voice",
+        "Leaf Storm",
+        "Grassy Terrain"
       ],
-      "nature": "Calm",
-      "item": "Flame Orb",
+      "nature": "Modest",
+      "item": "Eject Pack",
       "tier": "RS"
-    }
-  },
-  "Eldegoss": {
+    },
     "Eldegoss-1": {
       "level": 50,
       "evs": {
@@ -7216,30 +7240,6 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Assault Vest",
       "tier": "Tower"
-    },
-    "Eldegoss-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sd": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Worry Seed",
-        "Hyper Voice",
-        "Leaf Storm",
-        "Grassy Terrain"
-      ],
-      "nature": "Modest",
-      "item": "Eject Pack",
-      "tier": "RS"
     }
   },
   "Cherrim": {
@@ -7341,6 +7341,30 @@ var SETDEX_GEN8 =
     }
   },
   "Skuntank": {
+    "Skuntank-RS": {
+      "level": 50,
+      "evs": {
+        "sa": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Burning Jealousy",
+        "Corrosive Gas",
+        "Memento",
+        "Acid Spray"
+      ],
+      "nature": "Timid",
+      "item": "Salac Berry",
+      "tier": "RS"
+    },
     "Skuntank-1": {
       "level": 50,
       "evs": {
@@ -7386,7 +7410,7 @@ var SETDEX_GEN8 =
         "Sucker Punch"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Skuntank-3": {
@@ -7436,12 +7460,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Expert Belt",
       "tier": "Tower"
-    },
-    "Skuntank-RS": {
+    }
+  },
+  "Seismitoad": {
+    "Seismitoad-RS": {
       "level": 50,
       "evs": {
-        "sa": 252,
-        "sp": 252
+        "hp": 252,
+        "sd": 252
       },
       "ivs": {
         "hp": 15,
@@ -7452,17 +7478,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Burning Jealousy",
-        "Corrosive Gas",
-        "Memento",
-        "Acid Spray"
+        "Gastro Acid",
+        "Poison Jab",
+        "Surf",
+        "Venom Drench"
       ],
-      "nature": "Timid",
-      "item": "Salac Berry",
+      "nature": "Lonely",
+      "item": "Poison Barb",
       "tier": "RS"
-    }
-  },
-  "Seismitoad": {
+    },
     "Seismitoad-1": {
       "level": 50,
       "evs": {
@@ -7622,12 +7646,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Seismitoad-RS": {
+    }
+  },
+  "Dusknoir": {
+    "Dusknoir-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "sd": 252
+        "at": 252
       },
       "ivs": {
         "hp": 15,
@@ -7638,17 +7664,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Gastro Acid",
-        "Poison Jab",
-        "Surf",
-        "Venom Drench"
+        "Shadow Punch",
+        "Fire Punch",
+        "Ice Punch",
+        "Thunder Punch"
       ],
-      "nature": "Lonely",
-      "item": "Poison Barb",
+      "nature": "Adamant",
+      "item": "Expert Belt",
       "tier": "RS"
-    }
-  },
-  "Dusknoir": {
+    },
     "Dusknoir-1": {
       "level": 50,
       "evs": {
@@ -7840,30 +7864,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Assault Vest",
       "tier": "Tower"
-    },
-    "Dusknoir-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "at": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Shadow Punch",
-        "Fire Punch",
-        "Ice Punch",
-        "Thunder Punch"
-      ],
-      "nature": "Adamant",
-      "item": "Expert Belt",
-      "tier": "RS"
     }
   },
   "Machamp": {
@@ -8063,6 +8063,30 @@ var SETDEX_GEN8 =
     }
   },
   "Gyarados": {
+    "Gyarados-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "df": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Scald",
+        "Taunt",
+        "Whirlpool",
+        "Icy Wind"
+      ],
+      "nature": "Bold",
+      "item": "Rocky Helmet",
+      "tier": "RS"
+    },
     "Gyarados-1": {
       "level": 50,
       "evs": {
@@ -8158,12 +8182,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Wacan Berry",
       "tier": "Tower"
-    },
-    "Gyarados-RS": {
+    }
+  },
+  "Seaking": {
+    "Seaking-RS": {
       "level": 50,
       "evs": {
-        "hp": 252,
-        "df": 252
+        "at": 252,
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -8174,17 +8200,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Scald",
-        "Taunt",
-        "Whirlpool",
-        "Icy Wind"
+        "Flip Turn",
+        "Waterfall",
+        "Drill Run",
+        "Bounce"
       ],
-      "nature": "Bold",
-      "item": "Rocky Helmet",
+      "nature": "Jolly",
+      "item": "Assault Vest",
       "tier": "RS"
-    }
-  },
-  "Seaking": {
+    },
     "Seaking-1": {
       "level": 50,
       "evs": {
@@ -8280,12 +8304,14 @@ var SETDEX_GEN8 =
       "nature": "Jolly",
       "item": "Cell Battery",
       "tier": "Tower"
-    },
-    "Seaking-RS": {
+    }
+  },
+  "Octillery": {
+    "Octillery-RS": {
       "level": 50,
       "evs": {
         "at": 252,
-        "sp": 252
+        "sa": 252
       },
       "ivs": {
         "hp": 15,
@@ -8296,17 +8322,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Flip Turn",
-        "Waterfall",
-        "Drill Run",
-        "Bounce"
+        "Octazooka",
+        "Gunk Shot",
+        "Rock Blast",
+        "Endure"
       ],
-      "nature": "Jolly",
-      "item": "Assault Vest",
+      "nature": "Quiet",
+      "item": "Starf Berry",
       "tier": "RS"
-    }
-  },
-  "Octillery": {
+    },
     "Octillery-1": {
       "level": 50,
       "evs": {
@@ -8402,12 +8426,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Scope Lens",
       "tier": "Tower"
-    },
-    "Octillery-RS": {
+    }
+  },
+  "Cloyster": {
+    "Cloyster-RS": {
       "level": 50,
       "evs": {
         "at": 252,
-        "sa": 252
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -8418,17 +8444,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Octazooka",
-        "Gunk Shot",
+        "Shell Smash",
+        "Icicle Spear",
         "Rock Blast",
-        "Endure"
+        "Razor Shell"
       ],
-      "nature": "Quiet",
-      "item": "Starf Berry",
+      "nature": "Adamant",
+      "item": "Shell Bell",
       "tier": "RS"
-    }
-  },
-  "Cloyster": {
+    },
     "Cloyster-1": {
       "level": 50,
       "evs": {
@@ -8524,12 +8548,14 @@ var SETDEX_GEN8 =
       "nature": "Jolly",
       "item": "Focus Sash",
       "tier": "Tower"
-    },
-    "Cloyster-RS": {
+    }
+  },
+  "Milotic": {
+    "Milotic-RS": {
       "level": 50,
       "evs": {
-        "at": 252,
-        "sp": 252
+        "hp": 252,
+        "sd": 252
       },
       "ivs": {
         "hp": 15,
@@ -8540,17 +8566,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Shell Smash",
-        "Icicle Spear",
-        "Rock Blast",
-        "Razor Shell"
+        "Ice Beam",
+        "Scald",
+        "Rest",
+        "Sleep Talk"
       ],
-      "nature": "Adamant",
-      "item": "Shell Bell",
+      "nature": "Hardy",
+      "item": "Leftovers",
       "tier": "RS"
-    }
-  },
-  "Milotic": {
+    },
     "Milotic-1": {
       "level": 50,
       "evs": {
@@ -8646,30 +8670,6 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Assault Vest",
       "tier": "Tower"
-    },
-    "Milotic-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sd": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Ice Beam",
-        "Scald",
-        "Rest",
-        "Sleep Talk"
-      ],
-      "nature": "Hardy",
-      "item": "Leftovers",
-      "tier": "RS"
     }
   },
   "Basculin": {
@@ -8742,7 +8742,7 @@ var SETDEX_GEN8 =
         "Ice Fang"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Basculin-4": {
@@ -8771,6 +8771,30 @@ var SETDEX_GEN8 =
     }
   },
   "Wishiwashi": {
+    "Wishiwashi-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "sa": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Ice Beam",
+        "Aqua Ring",
+        "Earthquake",
+        "Brine"
+      ],
+      "nature": "Quiet",
+      "item": "Figy Berry",
+      "tier": "RS"
+    },
     "Wishiwashi-1": {
       "level": 50,
       "evs": {
@@ -8866,12 +8890,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Weakness Policy",
       "tier": "Tower"
-    },
-    "Wishiwashi-RS": {
+    }
+  },
+  "Pyukumuku": {
+    "Pyukumuku-RS": {
       "level": 50,
       "evs": {
-        "hp": 252,
-        "sa": 252
+        "df": 252,
+        "sd": 252
       },
       "ivs": {
         "hp": 15,
@@ -8882,17 +8908,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Ice Beam",
-        "Aqua Ring",
-        "Earthquake",
-        "Brine"
+        "Spite",
+        "Toxic",
+        "Mirror Coat",
+        "Counter"
       ],
-      "nature": "Quiet",
-      "item": "Figy Berry",
+      "nature": "Sassy",
+      "item": "Red Card",
       "tier": "RS"
-    }
-  },
-  "Pyukumuku": {
+    },
     "Pyukumuku-1": {
       "level": 50,
       "evs": {
@@ -8988,12 +9012,14 @@ var SETDEX_GEN8 =
       "nature": "Sassy",
       "item": "Leftovers",
       "tier": "Tower"
-    },
-    "Pyukumuku-RS": {
+    }
+  },
+  "Garbodor": {
+    "Garbodor-RS": {
       "level": 50,
       "evs": {
-        "df": 252,
-        "sd": 252
+        "at": 252,
+        "df": 252
       },
       "ivs": {
         "hp": 15,
@@ -9004,17 +9030,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Spite",
-        "Toxic",
-        "Mirror Coat",
-        "Counter"
+        "Gunk Shot",
+        "Body Slam",
+        "Seed Bomb",
+        "Stomping Tantrum"
       ],
-      "nature": "Sassy",
-      "item": "Red Card",
+      "nature": "Adamant",
+      "item": "Blunder Policy",
       "tier": "RS"
-    }
-  },
-  "Garbodor": {
+    },
     "Garbodor-1": {
       "level": 50,
       "evs": {
@@ -9110,12 +9134,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Garbodor-RS": {
+    }
+  },
+  "Centiskorch": {
+    "Centiskorch-RS": {
       "level": 50,
       "evs": {
-        "at": 252,
-        "df": 252
+        "hp": 252,
+        "sd": 252
       },
       "ivs": {
         "hp": 15,
@@ -9126,17 +9152,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Gunk Shot",
-        "Body Slam",
-        "Seed Bomb",
-        "Stomping Tantrum"
+        "Scorching Sands",
+        "Burn Up",
+        "Skitter Smack",
+        "Lunge"
       ],
-      "nature": "Adamant",
-      "item": "Blunder Policy",
+      "nature": "Hardy",
+      "item": "Leftovers",
       "tier": "RS"
-    }
-  },
-  "Centiskorch": {
+    },
     "Centiskorch-1": {
       "level": 50,
       "evs": {
@@ -9328,12 +9352,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Leftovers",
       "tier": "Tower"
-    },
-    "Centiskorch-RS": {
+    }
+  },
+  "Coalossal": {
+    "Coalossal-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "sd": 252
+        "at": 252
       },
       "ivs": {
         "hp": 15,
@@ -9344,17 +9370,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Scorching Sands",
-        "Burn Up",
-        "Skitter Smack",
-        "Lunge"
+        "Tar Shot",
+        "Heat Crash",
+        "Endure",
+        "Rock Blast"
       ],
-      "nature": "Hardy",
-      "item": "Leftovers",
+      "nature": "Adamant",
+      "item": "Liechi Berry",
       "tier": "RS"
-    }
-  },
-  "Coalossal": {
+    },
     "Coalossal-1": {
       "level": 50,
       "evs": {
@@ -9450,30 +9474,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Quick Claw",
       "tier": "Tower"
-    },
-    "Coalossal-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "at": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Tar Shot",
-        "Heat Crash",
-        "Endure",
-        "Rock Blast"
-      ],
-      "nature": "Adamant",
-      "item": "Liechi Berry",
-      "tier": "RS"
     }
   },
   "Dugtrio": {
@@ -9644,7 +9644,7 @@ var SETDEX_GEN8 =
         "Rock Blast"
       ],
       "nature": "Adamant",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Excadrill-4": {
@@ -9673,6 +9673,30 @@ var SETDEX_GEN8 =
     }
   },
   "Gigalith": {
+    "Gigalith-RS": {
+      "level": 50,
+      "evs": {
+        "sa": 252,
+        "sd": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Meteor Beam",
+        "Weather Ball",
+        "Flash Cannon",
+        "Body Press"
+      ],
+      "nature": "Modest",
+      "item": "Power Herb",
+      "tier": "RS"
+    },
     "Gigalith-1": {
       "level": 50,
       "evs": {
@@ -9768,12 +9792,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Smooth Rock",
       "tier": "Tower"
-    },
-    "Gigalith-RS": {
+    }
+  },
+  "Conkeldurr": {
+    "Conkeldurr-RS": {
       "level": 50,
       "evs": {
-        "sa": 252,
-        "sd": 252
+        "hp": 252,
+        "df": 252
       },
       "ivs": {
         "hp": 15,
@@ -9784,17 +9810,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Meteor Beam",
-        "Weather Ball",
-        "Flash Cannon",
-        "Body Press"
+        "Low Kick",
+        "Bulk Up",
+        "Focus Punch",
+        "Stone Edge"
       ],
-      "nature": "Modest",
-      "item": "Power Herb",
+      "nature": "Impish",
+      "item": "Life Orb",
       "tier": "RS"
-    }
-  },
-  "Conkeldurr": {
+    },
     "Conkeldurr-1": {
       "level": 50,
       "evs": {
@@ -9890,12 +9914,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Conkeldurr-RS": {
+    }
+  },
+  "Swoobat": {
+    "Swoobat-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "df": 252
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -9906,17 +9932,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Low Kick",
-        "Bulk Up",
-        "Focus Punch",
-        "Stone Edge"
+        "Future Sight",
+        "U-turn",
+        "Skill Swap",
+        "Light Screen"
       ],
-      "nature": "Impish",
-      "item": "Life Orb",
+      "nature": "Timid",
+      "item": "Mental Herb",
       "tier": "RS"
-    }
-  },
-  "Swoobat": {
+    },
     "Swoobat-1": {
       "level": 50,
       "evs": {
@@ -10012,30 +10036,6 @@ var SETDEX_GEN8 =
       "nature": "Timid",
       "item": "Expert Belt",
       "tier": "Tower"
-    },
-    "Swoobat-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sp": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Future Sight",
-        "U-turn",
-        "Skill Swap",
-        "Light Screen"
-      ],
-      "nature": "Timid",
-      "item": "Mental Herb",
-      "tier": "RS"
     }
   },
   "Noivern": {
@@ -10137,6 +10137,30 @@ var SETDEX_GEN8 =
     }
   },
   "Steelix": {
+    "Steelix-RS": {
+      "level": 50,
+      "evs": {
+        "at": 252,
+        "df": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Dig",
+        "Steel Roller",
+        "Heavy Slam",
+        "Body Press"
+      ],
+      "nature": "Impish",
+      "item": "Ganlon Berry",
+      "tier": "RS"
+    },
     "Steelix-1": {
       "level": 50,
       "evs": {
@@ -10232,12 +10256,14 @@ var SETDEX_GEN8 =
       "nature": "Impish",
       "item": "Red Card",
       "tier": "Tower"
-    },
-    "Steelix-RS": {
+    }
+  },
+  "Barraskewda": {
+    "Barraskewda-RS": {
       "level": 50,
       "evs": {
         "at": 252,
-        "df": 252
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -10248,17 +10274,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Dig",
-        "Steel Roller",
-        "Heavy Slam",
-        "Body Press"
+        "Acupressure",
+        "Waterfall",
+        "Ice Fang",
+        "Drill Run"
       ],
-      "nature": "Impish",
-      "item": "Ganlon Berry",
+      "nature": "Jolly",
+      "item": "Rindo Berry",
       "tier": "RS"
-    }
-  },
-  "Barraskewda": {
+    },
     "Barraskewda-1": {
       "level": 50,
       "evs": {
@@ -10354,12 +10378,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Barraskewda-RS": {
+    }
+  },
+  "Perrserker": {
+    "Perrserker-RS": {
       "level": 50,
       "evs": {
-        "at": 252,
-        "sp": 252
+        "hp": 252,
+        "at": 252
       },
       "ivs": {
         "hp": 15,
@@ -10370,17 +10396,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Acupressure",
-        "Waterfall",
-        "Ice Fang",
-        "Drill Run"
+        "Iron Head",
+        "Screech",
+        "Fake Out",
+        "Close Combat"
       ],
-      "nature": "Jolly",
-      "item": "Rindo Berry",
+      "nature": "Adamant",
+      "item": "Metal Coat",
       "tier": "RS"
-    }
-  },
-  "Perrserker": {
+    },
     "Perrserker-1": {
       "level": 50,
       "evs": {
@@ -10476,12 +10500,14 @@ var SETDEX_GEN8 =
       "nature": "Brave",
       "item": "Quick Claw",
       "tier": "Tower"
-    },
-    "Perrserker-RS": {
+    }
+  },
+  "Alcremie": {
+    "Alcremie-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "at": 252
+        "sd": 252
       },
       "ivs": {
         "hp": 15,
@@ -10492,17 +10518,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Iron Head",
-        "Screech",
-        "Fake Out",
-        "Close Combat"
+        "Baby-Doll Eyes",
+        "Misty Explosion",
+        "Safeguard",
+        "Fake Tears"
       ],
-      "nature": "Adamant",
-      "item": "Metal Coat",
+      "nature": "Calm",
+      "item": "Misty Seed",
       "tier": "RS"
-    }
-  },
-  "Alcremie": {
+    },
     "Alcremie-1": {
       "level": 50,
       "evs": {
@@ -10598,12 +10622,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Choice Scarf",
       "tier": "Tower"
-    },
-    "Alcremie-RS": {
+    }
+  },
+  "Ribombee": {
+    "Ribombee-RS": {
       "level": 50,
       "evs": {
-        "hp": 252,
-        "sd": 252
+        "sa": 252,
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -10614,17 +10640,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Baby-Doll Eyes",
-        "Misty Explosion",
-        "Safeguard",
-        "Fake Tears"
+        "Pollen Puff",
+        "Moonblast",
+        "Psychic",
+        "Bug Buzz"
       ],
-      "nature": "Calm",
-      "item": "Misty Seed",
+      "nature": "Timid",
+      "item": "Pixie Plate",
       "tier": "RS"
-    }
-  },
-  "Ribombee": {
+    },
     "Ribombee-1": {
       "level": 50,
       "evs": {
@@ -10816,30 +10840,6 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Expert Belt",
       "tier": "Tower"
-    },
-    "Ribombee-RS": {
-      "level": 50,
-      "evs": {
-        "sa": 252,
-        "sp": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Pollen Puff",
-        "Moonblast",
-        "Psychic",
-        "Bug Buzz"
-      ],
-      "nature": "Timid",
-      "item": "Pixie Plate",
-      "tier": "RS"
     }
   },
   "Ferrothorn": {
@@ -10941,6 +10941,30 @@ var SETDEX_GEN8 =
     }
   },
   "Gourgeist": {
+    "Gourgeist-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "at": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Trick-or-Treat",
+        "Shadow Sneak",
+        "Phantom Force",
+        "Disable"
+      ],
+      "nature": "Hardy",
+      "item": "Spell Tag",
+      "tier": "RS"
+    },
     "Gourgeist-1": {
       "level": 50,
       "evs": {
@@ -11036,30 +11060,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Gourgeist-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "at": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Trick-or-Treat",
-        "Shadow Sneak",
-        "Phantom Force",
-        "Disable"
-      ],
-      "nature": "Hardy",
-      "item": "Spell Tag",
-      "tier": "RS"
     }
   },
   "Raichu": {
@@ -11945,6 +11945,30 @@ var SETDEX_GEN8 =
     }
   },
   "Slurpuff": {
+    "Slurpuff-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "df": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Cotton Guard",
+        "Misty Explosion",
+        "Wish",
+        "Sticky Web"
+      ],
+      "nature": "Bold",
+      "item": "Misty Seed",
+      "tier": "RS"
+    },
     "Slurpuff-1": {
       "level": 50,
       "evs": {
@@ -12040,12 +12064,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Expert Belt",
       "tier": "Tower"
-    },
-    "Slurpuff-RS": {
+    }
+  },
+  "Aromatisse": {
+    "Aromatisse-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "df": 252
+        "sd": 252
       },
       "ivs": {
         "hp": 15,
@@ -12056,17 +12082,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Cotton Guard",
-        "Misty Explosion",
+        "Moonblast",
         "Wish",
-        "Sticky Web"
+        "Calm Mind",
+        "Draining Kiss"
       ],
-      "nature": "Bold",
-      "item": "Misty Seed",
+      "nature": "Calm",
+      "item": "Pixie Plate",
       "tier": "RS"
-    }
-  },
-  "Aromatisse": {
+    },
     "Aromatisse-1": {
       "level": 50,
       "evs": {
@@ -12162,30 +12186,6 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Quick Claw",
       "tier": "Tower"
-    },
-    "Aromatisse-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sd": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Moonblast",
-        "Wish",
-        "Calm Mind",
-        "Draining Kiss"
-      ],
-      "nature": "Calm",
-      "item": "Pixie Plate",
-      "tier": "RS"
     }
   },
   "Araquanid": {
@@ -12384,8 +12384,32 @@ var SETDEX_GEN8 =
       "tier": "Tower"
     }
   },
-  "Sirfetch'd": {
-    "Sirfetch'd-1": {
+  "Sirfetch\u0027d": {
+    "Sirfetch\u0027d-RS": {
+      "level": 50,
+      "evs": {
+        "at": 252,
+        "df": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Grassy Glide",
+        "Meteor Assault",
+        "Brave Bird",
+        "Defog"
+      ],
+      "nature": "Brave",
+      "item": "Leek",
+      "tier": "RS"
+    },
+    "Sirfetch\u0027d-1": {
       "level": 50,
       "evs": {
         "df": 252,
@@ -12409,7 +12433,7 @@ var SETDEX_GEN8 =
       "item": "Leftovers",
       "tier": "Tower"
     },
-    "Sirfetch'd-2": {
+    "Sirfetch\u0027d-2": {
       "level": 50,
       "evs": {
         "at": 252,
@@ -12433,7 +12457,7 @@ var SETDEX_GEN8 =
       "item": "Power Herb",
       "tier": "Tower"
     },
-    "Sirfetch'd-3": {
+    "Sirfetch\u0027d-3": {
       "level": 50,
       "evs": {
         "df": 252,
@@ -12457,7 +12481,7 @@ var SETDEX_GEN8 =
       "item": "Assault Vest",
       "tier": "Tower"
     },
-    "Sirfetch'd-4": {
+    "Sirfetch\u0027d-4": {
       "level": 50,
       "evs": {
         "at": 252,
@@ -12481,7 +12505,7 @@ var SETDEX_GEN8 =
       "item": "Leek",
       "tier": "Tower"
     },
-    "Sirfetch'd-5": {
+    "Sirfetch\u0027d-5": {
       "level": 50,
       "evs": {
         "df": 252,
@@ -12505,7 +12529,7 @@ var SETDEX_GEN8 =
       "item": "Leftovers",
       "tier": "Tower"
     },
-    "Sirfetch'd-6": {
+    "Sirfetch\u0027d-6": {
       "level": 50,
       "evs": {
         "at": 252,
@@ -12529,7 +12553,7 @@ var SETDEX_GEN8 =
       "item": "Power Herb",
       "tier": "Tower"
     },
-    "Sirfetch'd-7": {
+    "Sirfetch\u0027d-7": {
       "level": 50,
       "evs": {
         "df": 252,
@@ -12553,7 +12577,7 @@ var SETDEX_GEN8 =
       "item": "Assault Vest",
       "tier": "Tower"
     },
-    "Sirfetch'd-8": {
+    "Sirfetch\u0027d-8": {
       "level": 50,
       "evs": {
         "at": 252,
@@ -12576,12 +12600,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Leek",
       "tier": "Tower"
-    },
-    "Sirfetch'd-RS": {
+    }
+  },
+  "Lanturn": {
+    "Lanturn-RS": {
       "level": 50,
       "evs": {
-        "at": 252,
-        "df": 252
+        "hp": 252,
+        "sa": 252
       },
       "ivs": {
         "hp": 15,
@@ -12592,17 +12618,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Grassy Glide",
-        "Meteor Assault",
-        "Brave Bird",
-        "Defog"
+        "Stockpile",
+        "Aqua Ring",
+        "Surf",
+        "Thunderbolt"
       ],
-      "nature": "Brave",
-      "item": "Leek",
+      "nature": "Modest",
+      "item": "Leftovers",
       "tier": "RS"
-    }
-  },
-  "Lanturn": {
+    },
     "Lanturn-1": {
       "level": 50,
       "evs": {
@@ -12698,12 +12722,14 @@ var SETDEX_GEN8 =
       "nature": "Quiet",
       "item": "Lum Berry",
       "tier": "Tower"
-    },
-    "Lanturn-RS": {
+    }
+  },
+  "Toxicroak": {
+    "Toxicroak-RS": {
       "level": 50,
       "evs": {
-        "hp": 252,
-        "sa": 252
+        "at": 252,
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -12714,17 +12740,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Stockpile",
-        "Aqua Ring",
-        "Surf",
-        "Thunderbolt"
+        "Corrosive Gas",
+        "Sludge Wave",
+        "Nasty Plot",
+        "Shadow Ball"
       ],
       "nature": "Modest",
-      "item": "Leftovers",
+      "item": "Payapa Berry",
       "tier": "RS"
-    }
-  },
-  "Toxicroak": {
+    },
     "Toxicroak-1": {
       "level": 50,
       "evs": {
@@ -12820,12 +12844,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Scope Lens",
       "tier": "Tower"
-    },
-    "Toxicroak-RS": {
+    }
+  },
+  "Scrafty": {
+    "Scrafty-RS": {
       "level": 50,
       "evs": {
-        "at": 252,
-        "sp": 252
+        "hp": 252,
+        "at": 252
       },
       "ivs": {
         "hp": 15,
@@ -12836,17 +12862,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Corrosive Gas",
-        "Sludge Wave",
-        "Nasty Plot",
-        "Shadow Ball"
+        "Low Kick",
+        "Drain Punch",
+        "Facade",
+        "Swagger"
       ],
-      "nature": "Modest",
-      "item": "Payapa Berry",
+      "nature": "Adamant",
+      "item": "Life Orb",
       "tier": "RS"
-    }
-  },
-  "Scrafty": {
+    },
     "Scrafty-1": {
       "level": 50,
       "evs": {
@@ -12942,30 +12966,6 @@ var SETDEX_GEN8 =
       "nature": "Brave",
       "item": "Zoom Lens",
       "tier": "Tower"
-    },
-    "Scrafty-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "at": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Low Kick",
-        "Drain Punch",
-        "Facade",
-        "Swagger"
-      ],
-      "nature": "Adamant",
-      "item": "Life Orb",
-      "tier": "RS"
     }
   },
   "Stunfisk-Galar": {
@@ -13165,6 +13165,30 @@ var SETDEX_GEN8 =
     }
   },
   "Whiscash": {
+    "Whiscash-RS": {
+      "level": 50,
+      "evs": {
+        "at": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Dragon Dance",
+        "Waterfall",
+        "Zen Headbutt",
+        "Earthquake"
+      ],
+      "nature": "Jolly",
+      "item": "Adrenaline Orb",
+      "tier": "RS"
+    },
     "Whiscash-1": {
       "level": 50,
       "evs": {
@@ -13260,30 +13284,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Expert Belt",
       "tier": "Tower"
-    },
-    "Whiscash-RS": {
-      "level": 50,
-      "evs": {
-        "at": 252,
-        "sp": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Dragon Dance",
-        "Waterfall",
-        "Zen Headbutt",
-        "Earthquake"
-      ],
-      "nature": "Jolly",
-      "item": "Adrenaline Orb",
-      "tier": "RS"
     }
   },
   "Gastrodon": {
@@ -13385,6 +13385,30 @@ var SETDEX_GEN8 =
     }
   },
   "Golisopod": {
+    "Golisopod-RS": {
+      "level": 50,
+      "evs": {
+        "at": 252,
+        "df": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "First Impression",
+        "Razor Shell",
+        "Skitter Smack",
+        "Close Combat"
+      ],
+      "nature": "Impish",
+      "item": "Leftovers",
+      "tier": "RS"
+    },
     "Golisopod-1": {
       "level": 50,
       "evs": {
@@ -13480,30 +13504,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Quick Claw",
       "tier": "Tower"
-    },
-    "Golisopod-RS": {
-      "level": 50,
-      "evs": {
-        "at": 252,
-        "df": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "First Impression",
-        "Razor Shell",
-        "Skitter Smack",
-        "Close Combat"
-      ],
-      "nature": "Impish",
-      "item": "Leftovers",
-      "tier": "RS"
     }
   },
   "Barbaracle": {
@@ -13650,7 +13650,7 @@ var SETDEX_GEN8 =
         "Destiny Bond"
       ],
       "nature": "Adamant",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Delibird-3": {
@@ -13703,6 +13703,30 @@ var SETDEX_GEN8 =
     }
   },
   "Cursola": {
+    "Cursola-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "df": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Spite",
+        "Shadow Ball",
+        "Grudge",
+        "Endure"
+      ],
+      "nature": "Calm",
+      "item": "Ring Target",
+      "tier": "RS"
+    },
     "Cursola-1": {
       "level": 50,
       "evs": {
@@ -13798,30 +13822,6 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Assault Vest",
       "tier": "Tower"
-    },
-    "Cursola-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "df": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Spite",
-        "Shadow Ball",
-        "Grudge",
-        "Endure"
-      ],
-      "nature": "Calm",
-      "item": "Ring Target",
-      "tier": "RS"
     }
   },
   "Grimmsnarl": {
@@ -14021,6 +14021,30 @@ var SETDEX_GEN8 =
     }
   },
   "Salazzle": {
+    "Salazzle-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Scale Shot",
+        "Corrosive Gas",
+        "Acrobatics",
+        "Disable"
+      ],
+      "nature": "Jolly",
+      "item": "Dragon Fang",
+      "tier": "RS"
+    },
     "Salazzle-1": {
       "level": 50,
       "evs": {
@@ -14116,12 +14140,14 @@ var SETDEX_GEN8 =
       "nature": "Timid",
       "item": "Shuca Berry",
       "tier": "Tower"
-    },
-    "Salazzle-RS": {
+    }
+  },
+  "Bisharp": {
+    "Bisharp-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "sp": 252
+        "at": 252
       },
       "ivs": {
         "hp": 15,
@@ -14132,17 +14158,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Scale Shot",
-        "Corrosive Gas",
-        "Acrobatics",
-        "Disable"
+        "Sucker Punch",
+        "Torment",
+        "Brick Break",
+        "Slash"
       ],
-      "nature": "Jolly",
-      "item": "Dragon Fang",
+      "nature": "Adamant",
+      "item": "Black Glasses",
       "tier": "RS"
-    }
-  },
-  "Bisharp": {
+    },
     "Bisharp-1": {
       "level": 50,
       "evs": {
@@ -14238,30 +14262,6 @@ var SETDEX_GEN8 =
       "nature": "Relaxed",
       "item": "Focus Sash",
       "tier": "Tower"
-    },
-    "Bisharp-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "at": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Sucker Punch",
-        "Torment",
-        "Brick Break",
-        "Slash"
-      ],
-      "nature": "Adamant",
-      "item": "Black Glasses",
-      "tier": "RS"
     }
   },
   "Throh": {
@@ -14408,7 +14408,7 @@ var SETDEX_GEN8 =
         "Low Sweep"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Sawk-3": {
@@ -14800,7 +14800,7 @@ var SETDEX_GEN8 =
         "Morning Sun"
       ],
       "nature": "Timid",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Togekiss-3": {
@@ -14896,7 +14896,7 @@ var SETDEX_GEN8 =
         "Morning Sun"
       ],
       "nature": "Timid",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Togekiss-7": {
@@ -15145,6 +15145,30 @@ var SETDEX_GEN8 =
     }
   },
   "Rhyperior": {
+    "Rhyperior-RS": {
+      "level": 50,
+      "evs": {
+        "at": 252,
+        "df": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Rock Wrecker",
+        "Heat Crash",
+        "Sandstorm",
+        "Breaking Swipe"
+      ],
+      "nature": "Brave",
+      "item": "Weakness Policy",
+      "tier": "RS"
+    },
     "Rhyperior-1": {
       "level": 50,
       "evs": {
@@ -15304,30 +15328,6 @@ var SETDEX_GEN8 =
       "nature": "Brave",
       "item": "Assault Vest",
       "tier": "Tower"
-    },
-    "Rhyperior-RS": {
-      "level": 50,
-      "evs": {
-        "at": 252,
-        "df": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Rock Wrecker",
-        "Heat Crash",
-        "Sandstorm",
-        "Breaking Swipe"
-      ],
-      "nature": "Brave",
-      "item": "Weakness Policy",
-      "tier": "RS"
     }
   },
   "Gothitelle": {
@@ -15527,6 +15527,30 @@ var SETDEX_GEN8 =
     }
   },
   "Escavalier": {
+    "Escavalier-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "at": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Screech",
+        "Smart Strike",
+        "Razor Shell",
+        "Metal Burst"
+      ],
+      "nature": "Brave",
+      "item": "Occa Berry",
+      "tier": "RS"
+    },
     "Escavalier-1": {
       "level": 50,
       "evs": {
@@ -15718,12 +15742,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Escavalier-RS": {
+    }
+  },
+  "Accelgor": {
+    "Accelgor-RS": {
       "level": 50,
       "evs": {
-        "hp": 252,
-        "at": 252
+        "sa": 252,
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -15734,17 +15760,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Screech",
-        "Smart Strike",
-        "Razor Shell",
-        "Metal Burst"
+        "Acid Spray",
+        "Leech Life",
+        "Sludge Bomb",
+        "Spikes"
       ],
-      "nature": "Brave",
-      "item": "Occa Berry",
+      "nature": "Timid",
+      "item": "Wiki Berry",
       "tier": "RS"
-    }
-  },
-  "Accelgor": {
+    },
     "Accelgor-1": {
       "level": 50,
       "evs": {
@@ -15840,12 +15864,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Accelgor-RS": {
+    }
+  },
+  "Beheeyem": {
+    "Beheeyem-RS": {
       "level": 50,
       "evs": {
-        "sa": 252,
-        "sp": 252
+        "hp": 252,
+        "sa": 252
       },
       "ivs": {
         "hp": 15,
@@ -15856,17 +15882,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Acid Spray",
-        "Leech Life",
-        "Sludge Bomb",
-        "Spikes"
+        "Psychic Terrain",
+        "Psychic",
+        "Cosmic Power",
+        "Energy Ball"
       ],
-      "nature": "Timid",
-      "item": "Wiki Berry",
+      "nature": "Quiet",
+      "item": "Psychic Seed",
       "tier": "RS"
-    }
-  },
-  "Beheeyem": {
+    },
     "Beheeyem-1": {
       "level": 50,
       "evs": {
@@ -15962,12 +15986,14 @@ var SETDEX_GEN8 =
       "nature": "Quiet",
       "item": "Expert Belt",
       "tier": "Tower"
-    },
-    "Beheeyem-RS": {
+    }
+  },
+  "Beartic": {
+    "Beartic-RS": {
       "level": 50,
       "evs": {
-        "hp": 252,
-        "sa": 252
+        "at": 252,
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -15978,17 +16004,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Psychic Terrain",
-        "Psychic",
-        "Cosmic Power",
-        "Energy Ball"
+        "Rain Dance",
+        "Liquidation",
+        "Superpower",
+        "Swords Dance"
       ],
-      "nature": "Quiet",
-      "item": "Psychic Seed",
+      "nature": "Adamant",
+      "item": "Damp Rock",
       "tier": "RS"
-    }
-  },
-  "Beartic": {
+    },
     "Beartic-1": {
       "level": 50,
       "evs": {
@@ -16058,7 +16082,7 @@ var SETDEX_GEN8 =
         "Throat Chop"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Beartic-4": {
@@ -16084,8 +16108,10 @@ var SETDEX_GEN8 =
       "nature": "Brave",
       "item": "Sitrus Berry",
       "tier": "Tower"
-    },
-    "Beartic-RS": {
+    }
+  },
+  "Braviary": {
+    "Braviary-RS": {
       "level": 50,
       "evs": {
         "at": 252,
@@ -16100,17 +16126,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Rain Dance",
-        "Liquidation",
-        "Superpower",
-        "Swords Dance"
+        "Brave Bird",
+        "Whirlwind",
+        "Iron Head",
+        "Bulk Up"
       ],
-      "nature": "Adamant",
-      "item": "Damp Rock",
+      "nature": "Jolly",
+      "item": "Adrenaline Orb",
       "tier": "RS"
-    }
-  },
-  "Braviary": {
+    },
     "Braviary-1": {
       "level": 50,
       "evs": {
@@ -16204,13 +16228,15 @@ var SETDEX_GEN8 =
         "Iron Head"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
-    },
-    "Braviary-RS": {
+    }
+  },
+  "Mandibuzz": {
+    "Mandibuzz-RS": {
       "level": 50,
       "evs": {
-        "at": 252,
+        "hp": 252,
         "sp": 252
       },
       "ivs": {
@@ -16222,17 +16248,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Brave Bird",
-        "Whirlwind",
-        "Iron Head",
-        "Bulk Up"
+        "Snarl",
+        "Tailwind",
+        "Knock Off",
+        "Bone Rush"
       ],
-      "nature": "Jolly",
-      "item": "Adrenaline Orb",
+      "nature": "Timid",
+      "item": "Sticky Barb",
       "tier": "RS"
-    }
-  },
-  "Mandibuzz": {
+    },
     "Mandibuzz-1": {
       "level": 50,
       "evs": {
@@ -16328,8 +16352,10 @@ var SETDEX_GEN8 =
       "nature": "Impish",
       "item": "Rocky Helmet",
       "tier": "Tower"
-    },
-    "Mandibuzz-RS": {
+    }
+  },
+  "Drapion": {
+    "Drapion-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
@@ -16344,17 +16370,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Snarl",
-        "Tailwind",
-        "Knock Off",
-        "Bone Rush"
+        "Acupressure",
+        "Poison Fang",
+        "Skitter Smack",
+        "Crunch"
       ],
-      "nature": "Timid",
-      "item": "Sticky Barb",
+      "nature": "Jolly",
+      "item": "Chilan Berry",
       "tier": "RS"
-    }
-  },
-  "Drapion": {
+    },
     "Drapion-1": {
       "level": 50,
       "evs": {
@@ -16546,30 +16570,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Scope Lens",
       "tier": "Tower"
-    },
-    "Drapion-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sp": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Acupressure",
-        "Poison Fang",
-        "Skitter Smack",
-        "Crunch"
-      ],
-      "nature": "Jolly",
-      "item": "Chilan Berry",
-      "tier": "RS"
     }
   },
   "Chandelure": {
@@ -16671,6 +16671,30 @@ var SETDEX_GEN8 =
     }
   },
   "Malamar": {
+    "Malamar-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "at": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Superpower",
+        "Baton Pass",
+        "Liquidation",
+        "Night Slash"
+      ],
+      "nature": "Brave",
+      "item": "Quick Claw",
+      "tier": "RS"
+    },
     "Malamar-1": {
       "level": 50,
       "evs": {
@@ -16766,12 +16790,14 @@ var SETDEX_GEN8 =
       "nature": "Jolly",
       "item": "Choice Scarf",
       "tier": "Tower"
-    },
-    "Malamar-RS": {
+    }
+  },
+  "Weavile": {
+    "Weavile-RS": {
       "level": 50,
       "evs": {
-        "hp": 252,
-        "at": 252
+        "at": 252,
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -16782,17 +16808,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Superpower",
-        "Baton Pass",
-        "Liquidation",
-        "Night Slash"
+        "Triple Axel",
+        "Night Slash",
+        "Shadow Claw",
+        "Taunt"
       ],
-      "nature": "Brave",
-      "item": "Quick Claw",
+      "nature": "Jolly",
+      "item": "Scope Lens",
       "tier": "RS"
-    }
-  },
-  "Weavile": {
+    },
     "Weavile-1": {
       "level": 50,
       "evs": {
@@ -16984,30 +17008,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Weavile-RS": {
-      "level": 50,
-      "evs": {
-        "at": 252,
-        "sp": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Triple Axel",
-        "Night Slash",
-        "Shadow Claw",
-        "Taunt"
-      ],
-      "nature": "Jolly",
-      "item": "Scope Lens",
-      "tier": "RS"
     }
   },
   "Sableye": {
@@ -17326,7 +17326,7 @@ var SETDEX_GEN8 =
         "Reflect"
       ],
       "nature": "Timid",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Sigilyph-2": {
@@ -17597,6 +17597,30 @@ var SETDEX_GEN8 =
     }
   },
   "Torkoal": {
+    "Torkoal-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "sa": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Lava Plume",
+        "Scorching Sands",
+        "Amnesia",
+        "Solar Beam"
+      ],
+      "nature": "Quiet",
+      "item": "Charcoal",
+      "tier": "RS"
+    },
     "Torkoal-1": {
       "level": 50,
       "evs": {
@@ -17692,30 +17716,6 @@ var SETDEX_GEN8 =
       "nature": "Impish",
       "item": "Leftovers",
       "tier": "Tower"
-    },
-    "Torkoal-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sa": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Lava Plume",
-        "Scorching Sands",
-        "Amnesia",
-        "Solar Beam"
-      ],
-      "nature": "Quiet",
-      "item": "Charcoal",
-      "tier": "RS"
     }
   },
   "Mimikyu": {
@@ -18013,6 +18013,30 @@ var SETDEX_GEN8 =
     }
   },
   "Jellicent": {
+    "Jellicent-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "sd": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Poltergeist",
+        "Brine",
+        "Substitute",
+        "Sludge Wave"
+      ],
+      "nature": "Calm",
+      "item": "Spell Tag",
+      "tier": "RS"
+    },
     "Jellicent-1": {
       "level": 50,
       "evs": {
@@ -18108,12 +18132,14 @@ var SETDEX_GEN8 =
       "nature": "Calm",
       "item": "Assault Vest",
       "tier": "Tower"
-    },
-    "Jellicent-RS": {
+    }
+  },
+  "Toxapex": {
+    "Toxapex-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "sd": 252
+        "df": 252
       },
       "ivs": {
         "hp": 15,
@@ -18124,17 +18150,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Poltergeist",
-        "Brine",
-        "Substitute",
-        "Sludge Wave"
+        "Baneful Bunker",
+        "Venoshock",
+        "Venom Drench",
+        "Surf"
       ],
-      "nature": "Calm",
-      "item": "Spell Tag",
+      "nature": "Bold",
+      "item": "Rocky Helmet",
       "tier": "RS"
-    }
-  },
-  "Toxapex": {
+    },
     "Toxapex-1": {
       "level": 50,
       "evs": {
@@ -18230,12 +18254,14 @@ var SETDEX_GEN8 =
       "nature": "Bold",
       "item": "Black Sludge",
       "tier": "Tower"
-    },
-    "Toxapex-RS": {
+    }
+  },
+  "Cramorant": {
+    "Cramorant-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "df": 252
+        "sd": 252
       },
       "ivs": {
         "hp": 15,
@@ -18246,17 +18272,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Baneful Bunker",
-        "Venoshock",
-        "Venom Drench",
-        "Surf"
+        "Surf",
+        "Aqua Ring",
+        "Endure",
+        "Feather Dance"
       ],
-      "nature": "Bold",
-      "item": "Rocky Helmet",
+      "nature": "Calm",
+      "item": "Leftovers",
       "tier": "RS"
-    }
-  },
-  "Cramorant": {
+    },
     "Cramorant-1": {
       "level": 50,
       "evs": {
@@ -18352,12 +18376,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Power Herb",
       "tier": "Tower"
-    },
-    "Cramorant-RS": {
+    }
+  },
+  "Sandaconda": {
+    "Sandaconda-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "sd": 252
+        "df": 252
       },
       "ivs": {
         "hp": 15,
@@ -18368,17 +18394,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Surf",
-        "Aqua Ring",
-        "Endure",
-        "Feather Dance"
+        "Scorching Sands",
+        "Skitter Smack",
+        "Coil",
+        "Sand Tomb"
       ],
-      "nature": "Calm",
-      "item": "Leftovers",
+      "nature": "Relaxed",
+      "item": "Quick Claw",
       "tier": "RS"
-    }
-  },
-  "Sandaconda": {
+    },
     "Sandaconda-1": {
       "level": 50,
       "evs": {
@@ -18474,30 +18498,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Razor Fang",
       "tier": "Tower"
-    },
-    "Sandaconda-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "df": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Scorching Sands",
-        "Skitter Smack",
-        "Coil",
-        "Sand Tomb"
-      ],
-      "nature": "Relaxed",
-      "item": "Quick Claw",
-      "tier": "RS"
     }
   },
   "Hippowdon": {
@@ -18620,7 +18620,7 @@ var SETDEX_GEN8 =
         "Thunder Fang"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Durant-2": {
@@ -19251,6 +19251,30 @@ var SETDEX_GEN8 =
     }
   },
   "Runerigus": {
+    "Runerigus-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "sa": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Haze",
+        "Night Shade",
+        "Dark Pulse",
+        "Earth Power"
+      ],
+      "nature": "Gentle",
+      "item": "Sticky Barb",
+      "tier": "RS"
+    },
     "Runerigus-1": {
       "level": 50,
       "evs": {
@@ -19346,30 +19370,6 @@ var SETDEX_GEN8 =
       "nature": "Relaxed",
       "item": "Quick Claw",
       "tier": "Tower"
-    },
-    "Runerigus-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sa": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Haze",
-        "Night Shade",
-        "Dark Pulse",
-        "Earth Power"
-      ],
-      "nature": "Gentle",
-      "item": "Sticky Barb",
-      "tier": "RS"
     }
   },
   "Aegislash": {
@@ -19388,7 +19388,7 @@ var SETDEX_GEN8 =
         "sp": 16
       },
       "moves": [
-        "King's Shield",
+        "King\u0027s Shield",
         "Swords Dance",
         "Shadow Sneak",
         "Iron Head"
@@ -19436,7 +19436,7 @@ var SETDEX_GEN8 =
         "sp": 23
       },
       "moves": [
-        "King's Shield",
+        "King\u0027s Shield",
         "Shadow Ball",
         "Flash Cannon",
         "Air Slash"
@@ -19460,7 +19460,7 @@ var SETDEX_GEN8 =
         "sp": 27
       },
       "moves": [
-        "King's Shield",
+        "King\u0027s Shield",
         "Shadow Sneak",
         "Psycho Cut",
         "Sacred Sword"
@@ -19476,7 +19476,7 @@ var SETDEX_GEN8 =
         "df": 252
       },
       "moves": [
-        "King's Shield",
+        "King\u0027s Shield",
         "Swords Dance",
         "Shadow Sneak",
         "Iron Head"
@@ -19508,7 +19508,7 @@ var SETDEX_GEN8 =
         "sa": 252
       },
       "moves": [
-        "King's Shield",
+        "King\u0027s Shield",
         "Shadow Ball",
         "Flash Cannon",
         "Air Slash"
@@ -19524,7 +19524,7 @@ var SETDEX_GEN8 =
         "at": 252
       },
       "moves": [
-        "King's Shield",
+        "King\u0027s Shield",
         "Shadow Sneak",
         "Psycho Cut",
         "Sacred Sword"
@@ -19604,7 +19604,7 @@ var SETDEX_GEN8 =
         "Throat Chop"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Rapidash-Galar-4": {
@@ -19700,7 +19700,7 @@ var SETDEX_GEN8 =
         "Throat Chop"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Rapidash-Galar-8": {
@@ -19827,6 +19827,30 @@ var SETDEX_GEN8 =
     }
   },
   "Trevenant": {
+    "Trevenant-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "at": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Earthquake",
+        "Skitter Smack",
+        "Poltergeist",
+        "Horn Leech"
+      ],
+      "nature": "Adamant",
+      "item": "Assault Vest",
+      "tier": "RS"
+    },
     "Trevenant-1": {
       "level": 50,
       "evs": {
@@ -19866,7 +19890,7 @@ var SETDEX_GEN8 =
         "sp": 19
       },
       "moves": [
-        "Forest's Curse",
+        "Forest\u0027s Curse",
         "X-Scissor",
         "Poison Jab",
         "Shadow Claw"
@@ -19922,30 +19946,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Assault Vest",
       "tier": "Tower"
-    },
-    "Trevenant-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "at": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Earthquake",
-        "Skitter Smack",
-        "Poltergeist",
-        "Horn Leech"
-      ],
-      "nature": "Adamant",
-      "item": "Assault Vest",
-      "tier": "RS"
     }
   },
   "Shiinotic": {
@@ -20047,6 +20047,30 @@ var SETDEX_GEN8 =
     }
   },
   "Oranguru": {
+    "Oranguru-RS": {
+      "level": 50,
+      "evs": {
+        "sa": 252,
+        "sd": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Psych Up",
+        "Terrain Pulse",
+        "Psychic",
+        "Thunder"
+      ],
+      "nature": "Calm",
+      "item": "Wise Glasses",
+      "tier": "RS"
+    },
     "Oranguru-1": {
       "level": 50,
       "evs": {
@@ -20142,12 +20166,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Weakness Policy",
       "tier": "Tower"
-    },
-    "Oranguru-RS": {
+    }
+  },
+  "Passimian": {
+    "Passimian-RS": {
       "level": 50,
       "evs": {
-        "sa": 252,
-        "sd": 252
+        "at": 252,
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -20158,17 +20184,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Psych Up",
-        "Terrain Pulse",
-        "Psychic",
-        "Thunder"
+        "Electroweb",
+        "Fling",
+        "Acrobatics",
+        "Drain Punch"
       ],
-      "nature": "Calm",
-      "item": "Wise Glasses",
+      "nature": "Jolly",
+      "item": "Light Ball",
       "tier": "RS"
-    }
-  },
-  "Passimian": {
+    },
     "Passimian-1": {
       "level": 50,
       "evs": {
@@ -20264,12 +20288,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Choice Scarf",
       "tier": "Tower"
-    },
-    "Passimian-RS": {
+    }
+  },
+  "Morpeko": {
+    "Morpeko-RS": {
       "level": 50,
       "evs": {
-        "at": 252,
-        "sp": 252
+        "hp": 252,
+        "at": 252
       },
       "ivs": {
         "hp": 15,
@@ -20280,17 +20306,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Electroweb",
-        "Fling",
-        "Acrobatics",
-        "Drain Punch"
+        "Aura Wheel",
+        "Fake Out",
+        "Parting Shot",
+        "Bullet Seed"
       ],
       "nature": "Jolly",
-      "item": "Light Ball",
+      "item": "Liechi Berry",
       "tier": "RS"
-    }
-  },
-  "Morpeko": {
+    },
     "Morpeko-1": {
       "level": 50,
       "evs": {
@@ -20384,10 +20408,12 @@ var SETDEX_GEN8 =
         "Ice Fang"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
-    },
-    "Morpeko-RS": {
+    }
+  },
+  "Falinks": {
+    "Falinks-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
@@ -20402,17 +20428,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Aura Wheel",
-        "Fake Out",
-        "Parting Shot",
-        "Bullet Seed"
+        "No Retreat",
+        "First Impression",
+        "Bulk Up",
+        "Brick Break"
       ],
-      "nature": "Jolly",
-      "item": "Liechi Berry",
+      "nature": "Brave",
+      "item": "Rocky Helmet",
       "tier": "RS"
-    }
-  },
-  "Falinks": {
+    },
     "Falinks-1": {
       "level": 50,
       "evs": {
@@ -20458,7 +20482,7 @@ var SETDEX_GEN8 =
         "Zen Headbutt"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Falinks-3": {
@@ -20508,12 +20532,14 @@ var SETDEX_GEN8 =
       "nature": "Impish",
       "item": "Leftovers",
       "tier": "Tower"
-    },
-    "Falinks-RS": {
+    }
+  },
+  "Lunatone": {
+    "Lunatone-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "at": 252
+        "sd": 252
       },
       "ivs": {
         "hp": 15,
@@ -20524,17 +20550,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "No Retreat",
-        "First Impression",
-        "Bulk Up",
-        "Brick Break"
+        "Moonlight",
+        "Moonblast",
+        "Cosmic Power",
+        "Power Gem"
       ],
-      "nature": "Brave",
-      "item": "Rocky Helmet",
+      "nature": "Calm",
+      "item": "Utility Umbrella",
       "tier": "RS"
-    }
-  },
-  "Lunatone": {
+    },
     "Lunatone-1": {
       "level": 50,
       "evs": {
@@ -20630,12 +20654,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Expert Belt",
       "tier": "Tower"
-    },
-    "Lunatone-RS": {
+    }
+  },
+  "Solrock": {
+    "Solrock-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "sd": 252
+        "at": 252
       },
       "ivs": {
         "hp": 15,
@@ -20646,17 +20672,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Moonlight",
-        "Moonblast",
         "Cosmic Power",
-        "Power Gem"
+        "Flare Blitz",
+        "Rock Blast",
+        "Zen Headbutt"
       ],
-      "nature": "Calm",
-      "item": "Utility Umbrella",
+      "nature": "Jolly",
+      "item": "Hard Stone",
       "tier": "RS"
-    }
-  },
-  "Solrock": {
+    },
     "Solrock-1": {
       "level": 50,
       "evs": {
@@ -20752,30 +20776,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Expert Belt",
       "tier": "Tower"
-    },
-    "Solrock-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "at": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Cosmic Power",
-        "Flare Blitz",
-        "Rock Blast",
-        "Zen Headbutt"
-      ],
-      "nature": "Jolly",
-      "item": "Hard Stone",
-      "tier": "RS"
     }
   },
   "Togedemaru": {
@@ -20872,7 +20872,7 @@ var SETDEX_GEN8 =
         "Zen Headbutt"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     }
   },
@@ -21071,6 +21071,30 @@ var SETDEX_GEN8 =
     }
   },
   "Grapploct": {
+    "Grapploct-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "at": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Taunt",
+        "Stomping Tantrum",
+        "Submission",
+        "Circle Throw"
+      ],
+      "nature": "Impish",
+      "item": "Cell Battery",
+      "tier": "RS"
+    },
     "Grapploct-1": {
       "level": 50,
       "evs": {
@@ -21166,12 +21190,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Grapploct-RS": {
+    }
+  },
+  "Pincurchin": {
+    "Pincurchin-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "at": 252
+        "sa": 252
       },
       "ivs": {
         "hp": 15,
@@ -21182,17 +21208,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Taunt",
-        "Stomping Tantrum",
-        "Submission",
-        "Circle Throw"
+        "Rising Voltage",
+        "Hex",
+        "Charge",
+        "Brine"
       ],
-      "nature": "Impish",
-      "item": "Cell Battery",
+      "nature": "Modest",
+      "item": "Electric Seed",
       "tier": "RS"
-    }
-  },
-  "Pincurchin": {
+    },
     "Pincurchin-1": {
       "level": 50,
       "evs": {
@@ -21288,12 +21312,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Shuca Berry",
       "tier": "Tower"
-    },
-    "Pincurchin-RS": {
+    }
+  },
+  "Mantine": {
+    "Mantine-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "sa": 252
+        "sd": 252
       },
       "ivs": {
         "hp": 15,
@@ -21304,17 +21330,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Rising Voltage",
-        "Hex",
-        "Charge",
-        "Brine"
+        "Rain Dance",
+        "Hurricane",
+        "Hydro Pump",
+        "Rest"
       ],
       "nature": "Modest",
-      "item": "Electric Seed",
+      "item": "Chesto Berry",
       "tier": "RS"
-    }
-  },
-  "Mantine": {
+    },
     "Mantine-1": {
       "level": 50,
       "evs": {
@@ -21336,7 +21360,7 @@ var SETDEX_GEN8 =
         "Tailwind"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Mantine-2": {
@@ -21410,12 +21434,14 @@ var SETDEX_GEN8 =
       "nature": "Quiet",
       "item": "Zoom Lens",
       "tier": "Tower"
-    },
-    "Mantine-RS": {
+    }
+  },
+  "Wailord": {
+    "Wailord-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "sd": 252
+        "at": 252
       },
       "ivs": {
         "hp": 15,
@@ -21426,17 +21452,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Rain Dance",
-        "Hurricane",
-        "Hydro Pump",
-        "Rest"
+        "Tickle",
+        "Self-Destruct",
+        "Bulldoze",
+        "Soak"
       ],
-      "nature": "Modest",
-      "item": "Chesto Berry",
+      "nature": "Impish",
+      "item": "Liechi Berry",
       "tier": "RS"
-    }
-  },
-  "Wailord": {
+    },
     "Wailord-1": {
       "level": 50,
       "evs": {
@@ -21532,30 +21556,6 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Choice Band",
       "tier": "Tower"
-    },
-    "Wailord-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "at": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Tickle",
-        "Self-Destruct",
-        "Bulldoze",
-        "Soak"
-      ],
-      "nature": "Impish",
-      "item": "Liechi Berry",
-      "tier": "RS"
     }
   },
   "Avalugg": {
@@ -21776,7 +21776,7 @@ var SETDEX_GEN8 =
         "Dragon Dance"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Lapras-2": {
@@ -21853,6 +21853,30 @@ var SETDEX_GEN8 =
     }
   },
   "Drampa": {
+    "Drampa-RS": {
+      "level": 50,
+      "evs": {
+        "at": 252,
+        "sa": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Scale Shot",
+        "Dragon Pulse",
+        "Snarl",
+        "Fly"
+      ],
+      "nature": "Timid",
+      "item": "Adrenaline Orb",
+      "tier": "RS"
+    },
     "Drampa-1": {
       "level": 50,
       "evs": {
@@ -21948,11 +21972,13 @@ var SETDEX_GEN8 =
       "nature": "Quiet",
       "item": "Zoom Lens",
       "tier": "Tower"
-    },
-    "Drampa-RS": {
+    }
+  },
+  "Turtonator": {
+    "Turtonator-RS": {
       "level": 50,
       "evs": {
-        "at": 252,
+        "hp": 252,
         "sa": 252
       },
       "ivs": {
@@ -21964,17 +21990,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Scale Shot",
+        "Shell Trap",
+        "Incinerate",
         "Dragon Pulse",
-        "Snarl",
-        "Fly"
+        "Burning Jealousy"
       ],
-      "nature": "Timid",
-      "item": "Adrenaline Orb",
+      "nature": "Modest",
+      "item": "Absorb Bulb",
       "tier": "RS"
-    }
-  },
-  "Turtonator": {
+    },
     "Turtonator-1": {
       "level": 50,
       "evs": {
@@ -22070,12 +22094,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "White Herb",
       "tier": "Tower"
-    },
-    "Turtonator-RS": {
+    }
+  },
+  "Mr. Rime": {
+    "Mr. Rime-RS": {
       "level": 50,
       "evs": {
         "hp": 252,
-        "sa": 252
+        "sp": 252
       },
       "ivs": {
         "hp": 15,
@@ -22086,17 +22112,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Shell Trap",
-        "Incinerate",
-        "Dragon Pulse",
-        "Burning Jealousy"
+        "Recycle",
+        "Copycat",
+        "Mirror Coat",
+        "Psychic"
       ],
-      "nature": "Modest",
-      "item": "Absorb Bulb",
+      "nature": "Timid",
+      "item": "Sitrus Berry",
       "tier": "RS"
-    }
-  },
-  "Mr. Rime": {
+    },
     "Mr. Rime-1": {
       "level": 50,
       "evs": {
@@ -22256,30 +22280,6 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Expert Belt",
       "tier": "Tower"
-    },
-    "Mr. Rime-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sp": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Recycle",
-        "Copycat",
-        "Mirror Coat",
-        "Psychic"
-      ],
-      "nature": "Timid",
-      "item": "Sitrus Berry",
-      "tier": "RS"
     }
   },
   "Darmanitan-Galar": {
@@ -22352,7 +22352,7 @@ var SETDEX_GEN8 =
         "Zen Headbutt"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Darmanitan-Galar-4": {
@@ -22548,7 +22548,7 @@ var SETDEX_GEN8 =
         "Iron Head"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Eiscue-4": {
@@ -22675,6 +22675,30 @@ var SETDEX_GEN8 =
     }
   },
   "Rotom": {
+    "Rotom-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Discharge",
+        "Volt Switch",
+        "Light Screen",
+        "Hyper Voice"
+      ],
+      "nature": "Timid",
+      "item": "Shuca Berry",
+      "tier": "RS"
+    },
     "Rotom-1": {
       "level": 50,
       "evs": {
@@ -22722,30 +22746,6 @@ var SETDEX_GEN8 =
       "nature": "Timid",
       "item": "Leftovers",
       "tier": "Tower"
-    },
-    "Rotom-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sp": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Discharge",
-        "Volt Switch",
-        "Light Screen",
-        "Hyper Voice"
-      ],
-      "nature": "Timid",
-      "item": "Shuca Berry",
-      "tier": "RS"
     }
   },
   "Ditto": {
@@ -23112,7 +23112,7 @@ var SETDEX_GEN8 =
         "Waterfall"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Dracovish-4": {
@@ -23210,7 +23210,7 @@ var SETDEX_GEN8 =
         "Waterfall"
       ],
       "nature": "Jolly",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     },
     "Arctovish-4": {
@@ -23239,6 +23239,30 @@ var SETDEX_GEN8 =
     }
   },
   "Flapple": {
+    "Flapple-RS": {
+      "level": 50,
+      "evs": {
+        "at": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Grassy Glide",
+        "Dual Wingbeat",
+        "Dragon Rush",
+        "Grav Apple"
+      ],
+      "nature": "Jolly",
+      "item": "Yache Berry",
+      "tier": "RS"
+    },
     "Flapple-1": {
       "level": 50,
       "evs": {
@@ -23286,12 +23310,14 @@ var SETDEX_GEN8 =
       "nature": "Adamant",
       "item": "Liechi Berry",
       "tier": "Tower"
-    },
-    "Flapple-RS": {
+    }
+  },
+  "Appletun": {
+    "Appletun-RS": {
       "level": 50,
       "evs": {
-        "at": 252,
-        "sp": 252
+        "hp": 252,
+        "sa": 252
       },
       "ivs": {
         "hp": 15,
@@ -23302,17 +23328,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
-        "Grassy Glide",
-        "Dual Wingbeat",
-        "Dragon Rush",
-        "Grav Apple"
+        "Dragon Pulse",
+        "Recycle",
+        "Sunny Day",
+        "Solar Beam"
       ],
-      "nature": "Jolly",
-      "item": "Yache Berry",
+      "nature": "Calm",
+      "item": "Sitrus Berry",
       "tier": "RS"
-    }
-  },
-  "Appletun": {
+    },
     "Appletun-1": {
       "level": 50,
       "evs": {
@@ -23360,30 +23384,6 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Petaya Berry",
       "tier": "Tower"
-    },
-    "Appletun-RS": {
-      "level": 50,
-      "evs": {
-        "hp": 252,
-        "sa": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Dragon Pulse",
-        "Recycle",
-        "Sunny Day",
-        "Solar Beam"
-      ],
-      "nature": "Calm",
-      "item": "Sitrus Berry",
-      "tier": "RS"
     }
   },
   "Meowstic": {
@@ -23750,7 +23750,7 @@ var SETDEX_GEN8 =
         "Shadow Ball"
       ],
       "nature": "Timid",
-      "item": "King's Rock",
+      "item": "King\u0027s Rock",
       "tier": "Tower"
     }
   },
@@ -24003,7 +24003,7 @@ var SETDEX_GEN8 =
       "item": "Life Orb",
       "tier": "Tower"
     },
-    "Leon's Charizard": {
+    "Leon\u0027s Charizard": {
       "level": 50,
       "evs": {
         "sa": 252,
@@ -24220,6 +24220,30 @@ var SETDEX_GEN8 =
     }
   },
   "Goodra": {
+    "Goodra-RS": {
+      "level": 50,
+      "evs": {
+        "hp": 252,
+        "sp": 252
+      },
+      "ivs": {
+        "hp": 15,
+        "at": 15,
+        "df": 15,
+        "sa": 15,
+        "sd": 15,
+        "sp": 15
+      },
+      "moves": [
+        "Draco Meteor",
+        "Breaking Swipe",
+        "Focus Blast",
+        "Bulldoze"
+      ],
+      "nature": "Hardy",
+      "item": "Lansat Berry",
+      "tier": "RS"
+    },
     "Goodra-1": {
       "level": 50,
       "evs": {
@@ -24267,12 +24291,14 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "White Herb",
       "tier": "Tower"
-    },
-    "Goodra-RS": {
+    }
+  },
+  "Kommo-o": {
+    "Kommo-o-RS": {
       "level": 50,
       "evs": {
-        "hp": 252,
-        "sp": 252
+        "at": 252,
+        "sa": 252
       },
       "ivs": {
         "hp": 15,
@@ -24283,17 +24309,15 @@ var SETDEX_GEN8 =
         "sp": 15
       },
       "moves": [
+        "Clangorous Soul",
+        "Scale Shot",
         "Draco Meteor",
-        "Breaking Swipe",
-        "Focus Blast",
-        "Bulldoze"
+        "Close Combat"
       ],
       "nature": "Hardy",
-      "item": "Lansat Berry",
+      "item": "Muscle Band",
       "tier": "RS"
-    }
-  },
-  "Kommo-o": {
+    },
     "Kommo-o-1": {
       "level": 50,
       "evs": {
@@ -24389,30 +24413,6 @@ var SETDEX_GEN8 =
       "nature": "Modest",
       "item": "Life Orb",
       "tier": "Tower"
-    },
-    "Kommo-o-RS": {
-      "level": 50,
-      "evs": {
-        "at": 252,
-        "sa": 252
-      },
-      "ivs": {
-        "hp": 15,
-        "at": 15,
-        "df": 15,
-        "sa": 15,
-        "sd": 15,
-        "sp": 15
-      },
-      "moves": [
-        "Clangorous Soul",
-        "Scale Shot",
-        "Draco Meteor",
-        "Close Combat"
-      ],
-      "nature": "Hardy",
-      "item": "Muscle Band",
-      "tier": "RS"
     }
   },
   "Dragapult": {
@@ -25849,4 +25849,4 @@ var SETDEX_GEN8 =
       "tier": "RS"
     }
   }
-};
+}
