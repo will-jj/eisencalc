@@ -1914,16 +1914,16 @@ function getSetOptions() {
 			"text": pokeName
 		});
 		if (pokeName in setdex) {
-			Object.keys(setdex[pokeName]).sort(setOrderComparison).forEach(setName => {
+			for (setName in setdex[pokeName]) {
 				setOptions.push(setOptionsObject(pokeName, setName));
-			});
+			}
 		}
 		if (pokeName in SETDEX_CUSTOM) {
-			Object.keys(SETDEX_CUSTOM[pokeName]).sort().forEach(setName => {
+			for (setName in SETDEX_CUSTOM[pokeName]) {
 				setOption = setOptionsObject(pokeName, setName);
 				setOption.set = setOption.text; // the selectable text matches the display text
 				customSetOptions.push(setOption);
-			});
+			}
 		}
 		setOptions.push(setOptionsObject(pokeName, BLANK_SET));
 	});
@@ -1933,35 +1933,6 @@ function getSetOptions() {
 	}
 
 	return setOptions;
-}
-
-function setOrderComparison(a, b) {
-	// Restricted Sparring sets display before other sets
-	if (gen == 8) {
-		if (a.endsWith("-RS")) {
-			return -1;
-		}
-		if (b.endsWith("-RS")) {
-			return 1;
-		}
-	}
-	// if the set is special, list it last, grouped with other paren sets (e.g. Leon's sets)
-	let bIncludesParen = b.includes("(");
-	if (a.includes("(")) {
-		if (bIncludesParen) {
-			return comparison(a, b);
-		}
-		return 1;
-	}
-	if (bIncludesParen) {
-		return -1;
-	}
-	// normal comparison
-	return comparison(a, b);
-}
-
-function comparison(a, b) {
-	return a < b ? -1 : (a > b ? 1 : 0);
 }
 
 function setOptionsObject(pokeName, setName) {
