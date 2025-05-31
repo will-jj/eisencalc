@@ -1,7 +1,7 @@
 name: Build Jekyll site
 on:
- push:
-   branches: ["master"]
+  push:
+    branches: ["master"]
 permissions:
   contents: read
   pages: write
@@ -16,6 +16,10 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build
         uses: actions/jekyll-build-pages@v1
+      - name: List _site contents
+        run: |
+          echo "Listing _site directory after Jekyll build:"
+          ls -lhR _site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
   deploy:
