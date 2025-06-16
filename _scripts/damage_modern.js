@@ -682,7 +682,8 @@ function calcBP(attacker, defender, move, field, description, ateizeBoost) {
 
 	if (move.name === "Facade" && ["Burned", "Paralyzed", "Poisoned", "Badly Poisoned"].includes(attacker.status) ||
 		move.name === "Brine" && defender.curHP <= defender.maxHP / 2 ||
-		(move.name === "Venoshock" || move.name === "Barb Barrage") && (defender.status === "Poisoned" || defender.status === "Badly Poisoned")) {
+		(move.name === "Venoshock" || move.name === "Barb Barrage") && (defender.status === "Poisoned" || defender.status === "Badly Poisoned") ||
+		move.name === "Smelling Salts" && defender.status === "Paralyzed") {
 		bpMods.push(0x2000);
 		description.moveBP = move.bp * 2;
 	}

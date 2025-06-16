@@ -198,6 +198,12 @@ function getDamageResultPtHGSS(attacker, defender, move, field) {
 			description.moveBP = basePower;
 		}
 		break;
+	case "Smelling Salts":
+		if (defender.status === "Paralyzed") {
+			basePower *= 2;
+			description.moveBP = basePower;
+		}
+		break;
 	case "Triple Kick":
 		description.moveBP = basePower;
 		for (let i = 2; i <= move.hits; i++) {
